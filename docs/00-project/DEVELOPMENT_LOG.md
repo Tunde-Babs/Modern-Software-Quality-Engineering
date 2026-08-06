@@ -7,10 +7,10 @@
 - Developed and merged `BOOK_BLUEPRINT.md`
 - Developed `LEARNING_FRAMEWORK.md`
 - Developed `EDITORIAL_STYLE_GUIDE.md`
+- Developed `ARCHITECTURE.md`.
 
 ## Next Deliverables
 
-- ARCHITECTURE.md
 - ROADMAP.md
 - VERSIONING.md
 - RELEASE_PLAN.md
