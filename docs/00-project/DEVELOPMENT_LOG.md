@@ -1,17 +1,17 @@
-# Milestone M1 – Governance 🚧
+## Milestone M1 – Governance 🚧
 
-## Completed
+### Completed
 
 - Authored and merged `PROJECT_CHARTER.md`
 - Developed and merged `MQE_BOK.md`
 - Developed and merged `BOOK_BLUEPRINT.md`
 - Developed `LEARNING_FRAMEWORK.md`
-- Developed `EDITORIAL_STYLE_GUIDE.md`
-- Developed `ARCHITECTURE.md`.
+- Developed and merged `EDITORIAL_STYLE_GUIDE.md`
+- Developed and merged `ARCHITECTURE.md`
+- Developed `ROADMAP.md`
 
-## Next Deliverables
+### Remaining
 
-- ROADMAP.md
 - VERSIONING.md
-- RELEASE_PLAN.md
-- DECISIONS.md
+- RELEASE_POLICY.md
+- DECISION_RECORDS.md
