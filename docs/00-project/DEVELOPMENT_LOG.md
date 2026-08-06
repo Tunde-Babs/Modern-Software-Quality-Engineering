@@ -10,8 +10,8 @@
 - Developed and merged `ARCHITECTURE.md`
 - Developed `ROADMAP.md`
 - Developed `VERSIONING.md`
+- Developed `RELEASE_POLICY.md`
 
 ### Remaining
 
-- RELEASE_POLICY.md
 - DECISION_RECORDS.md
