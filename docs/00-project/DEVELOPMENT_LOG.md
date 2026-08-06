@@ -9,9 +9,9 @@
 - Developed and merged `EDITORIAL_STYLE_GUIDE.md`
 - Developed and merged `ARCHITECTURE.md`
 - Developed `ROADMAP.md`
+- Developed `VERSIONING.md`
 
 ### Remaining
 
-- VERSIONING.md
 - RELEASE_POLICY.md
 - DECISION_RECORDS.md
