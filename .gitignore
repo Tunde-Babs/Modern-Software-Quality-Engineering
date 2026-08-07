@@ -1,0 +1,36 @@
+# macOS
+.DS_Store
+
+# VS Code
+.vscode/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-error.log*
+pnpm-lock.yaml
+
+# Environment
+.env
+.env.*
+
+# Build
+dist/
+build/
+coverage/
+
+# Logs
+*.log
+
+# Temporary
+tmp/
+temp/
+
+# OS
+Thumbs.db
