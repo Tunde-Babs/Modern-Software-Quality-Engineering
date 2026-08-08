@@ -14,7 +14,7 @@
 
 🚀 **Current Phase:** M2 – Handbook Development
 
-📦 **Latest Release:** v0.2.0 – Governance Foundation
+📦 **Latest Release:** v0.4.0 – Foundations Complete
 
 </p>
 
@@ -43,7 +43,7 @@ The project follows an incremental release strategy, with each release represent
 | **v0.1.0** | ✅ Released | Project Foundation |
 | **v0.2.0** | ✅ Released | Governance Foundation |
 | **v0.3.0** | 🚧 Planned | Publishing Infrastructure |
-| **v0.4.0** | 🚧 Planned | Part I – Foundations |
+| **v0.4.0** | ✅ Released | Foundations Complete |
 | **v1.0.0** | 🎯 Planned | First Edition |
 
 ## Current Focus
