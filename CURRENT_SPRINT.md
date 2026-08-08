@@ -22,7 +22,7 @@ Programming for Quality Engineers
 
 ## Current Work
 
-Delivery 3 targeted P1 corrections completed; validation passed.
+Delivery 4 — Collaborative and Testable Contribution drafted; companion validation passed.
 
 ---
 
@@ -61,7 +61,7 @@ Delivery 3 targeted P1 corrections completed; validation passed.
 
 ## Next Gate
 
-Delivery 4 may begin.
+Targeted Delivery 4 technical, editorial, learning-experience, and practical review.
 
 ---
 
@@ -70,6 +70,8 @@ Delivery 4 may begin.
 10. Git, Code Review, and Collaborative Engineering
 11. Testing Quality Engineering Utilities
 
+- Status: Chapters 10–11 drafted; TypeScript check, build, deterministic test suite, and executable example passed
+
 ---
 
 ## Definition of Done
@@ -77,11 +79,12 @@ Delivery 4 may begin.
 - Delivery 1 and Delivery 2 remain draft complete and reviewed
 - Delivery 3 P1 corrections and targeted validation passed
 - Chapters 6–9 remain Draft manuscripts aligned with the approved chapter template
-- Part I and Chapters 1–5 remain unchanged
-- No Delivery 4 content is created before the next gate passes
+- Part I and Part II Chapters 1–9 remain unchanged
+- Delivery 4 Chapters 10–11 and their companion remain within the approved scope
+- No Delivery 5 or Chapter 12 content is created before the next gate passes
 
 ---
 
 ## Outcome
 
-Delivery 1 and Delivery 2 are draft complete and reviewed. Delivery 3 P1 findings are closed; Delivery 4 is the next authorized scope.
+Delivery 1 and Delivery 2 are draft complete and reviewed. Delivery 3 P1 findings are closed. Delivery 4 is drafted and ready for its targeted review gate.
