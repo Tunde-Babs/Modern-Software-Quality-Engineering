@@ -481,6 +481,12 @@ Part I is therefore a beginning, not a conclusion. The remaining handbook parts 
 
 ---
 
+## Practical Resources
+
+- **Build from:** [Chapter 8: The Modern Quality Engineer](chapter-08-the-modern-quality-engineer.md) and [Chapter 9: The Modern Software Quality Engineering Framework](chapter-09-the-modern-software-quality-engineering-framework.md).
+- Use the [QA to QE Transition Framework](../../../docs/00-project/QA_TO_QE_TRANSITION_FRAMEWORK.md), [Personal Transition Plan](../exercises/worksheet-qa-to-qe-personal-transition-plan.md), and [Portfolio Evidence Map](../exercises/worksheet-quality-engineering-portfolio-evidence-map.md) to turn future-oriented learning into practical next steps.
+- Consolidate those assets through [Case Study 3: From Senior QA Engineer to Quality Engineer](../case-studies/case-study-03-qa-to-quality-engineering-transition.md).
+
 ## Further Reading
 
 - National Institute of Standards and Technology. [AI Risk Management Framework resources](https://airc.nist.gov/).

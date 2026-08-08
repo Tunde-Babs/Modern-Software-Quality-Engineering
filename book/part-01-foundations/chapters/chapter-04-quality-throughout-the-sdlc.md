@@ -401,6 +401,12 @@ Then answer the following:
 
 Use the [Continuous Quality Planning Worksheet](../exercises/worksheet-continuous-quality-planning.md) for a reusable lifecycle quality map and facilitation guide. It distinguishes where quality work happens from when evidence is acquired and fed back into later decisions.
 
+## Practical Resources
+
+- **Build from:** [Chapter 3: Understanding Software Quality](chapter-03-understanding-software-quality.md) to identify the quality claims that need lifecycle evidence.
+- Use the [Continuous Quality Planning worksheet](../exercises/worksheet-continuous-quality-planning.md) to plan discovery, delivery, release, and operational evidence.
+- **Continue:** [Chapter 5: Shift Left, Shift Right, Shift Everywhere](chapter-05-shift-left-shift-right-shift-everywhere.md) deepens the feedback-loop view; [Case Study 2](../case-studies/case-study-02-shared-ownership-and-engineering-culture.md) applies it to an incident.
+
 ## Further Reading
 
 - ISO/IEC/IEEE 12207:2026, *Systems and software engineering — Software life cycle processes*.[^iso12207]

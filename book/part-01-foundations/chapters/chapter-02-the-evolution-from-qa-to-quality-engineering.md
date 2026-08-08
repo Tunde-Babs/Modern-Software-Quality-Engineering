@@ -321,6 +321,12 @@ Then answer the following questions:
 
 The embedded evolution-and-evidence map is intentionally self-contained. For a reusable lifecycle evidence activity, use the [Continuous Quality Planning Worksheet](../exercises/worksheet-continuous-quality-planning.md).
 
+## Practical Resources
+
+- **Build from:** [Chapter 1: What Is Modern Software Quality Engineering?](chapter-01-what-is-modern-software-quality-engineering.md) establishes the engineering-first definition used in this chapter.
+- Use the [QA to QE Personal Transition Plan](../exercises/worksheet-qa-to-qe-personal-transition-plan.md) to translate the evolution into an individual development path.
+- **Continue:** [Chapter 3: Understanding Software Quality](chapter-03-understanding-software-quality.md) examines the quality concerns that this evolving profession must address.
+
 ## Further Reading
 
 - International Organization for Standardization. [ISO 9000:2026 — Quality management — Fundamentals and vocabulary](https://www.iso.org/standard/9000).

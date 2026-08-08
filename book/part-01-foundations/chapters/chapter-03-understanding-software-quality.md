@@ -407,6 +407,12 @@ Ask a product, engineering, operations, or support colleague:
 
 Use the [Software Quality Profile Worksheet](../exercises/worksheet-software-quality-profile.md) for a reusable quality-profile canvas and review guide.
 
+## Practical Resources
+
+- **Build from:** [Chapter 2: The Evolution from QA to Quality Engineering](chapter-02-the-evolution-from-qa-to-quality-engineering.md) explains why quality work expanded beyond final verification.
+- Use the [Software Quality Profile worksheet](../exercises/worksheet-software-quality-profile.md) and [Case Study 1: Quality Beyond Test Execution](../case-studies/case-study-01-quality-beyond-test-execution.md) to make quality claims and evidence explicit.
+- **Continue:** [Chapter 4: Quality Throughout the SDLC](chapter-04-quality-throughout-the-sdlc.md) applies those claims across the lifecycle.
+
 ## Further Reading
 
 - International Organization for Standardization. [ISO/IEC 25010:2023 — Product quality model](https://www.iso.org/standard/78176.html).

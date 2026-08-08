@@ -388,6 +388,12 @@ Then answer:
 
 Use the [Continuous Quality Planning Worksheet](../exercises/worksheet-continuous-quality-planning.md) to extend this exercise into a reusable Continuous Quality Loop planning activity.
 
+## Practical Resources
+
+- **Build from:** [Chapter 4: Quality Throughout the SDLC](chapter-04-quality-throughout-the-sdlc.md), which establishes where quality work and evidence belong in the lifecycle.
+- Use the [Continuous Quality Planning worksheet](../exercises/worksheet-continuous-quality-planning.md) to connect preventive checks with production feedback.
+- **Continue:** [Chapter 6: Systems Thinking for Quality Engineers](chapter-06-systems-thinking-for-quality-engineers.md) explains why those feedback loops cross technical and organisational boundaries.
+
 ## Further Reading
 
 - International Organization for Standardization, International Electrotechnical Commission, and IEEE. [ISO/IEC/IEEE 12207:2026 — Software life cycle processes](https://www.iso.org/standard/90219.html).

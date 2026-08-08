@@ -426,6 +426,12 @@ The Quality Engineer Competency Model is an original MSQE educational framework 
 9. What technical area would you develop deeply as a Quality Engineer, and how would it create leverage for a team?
 10. How would you assess and coach a QA Engineer who wants to transition into Quality Engineering?
 
+## Practical Resources
+
+- **Build from:** [Chapter 7: Engineering Culture and DevOps Mindset](chapter-07-engineering-culture-and-devops-mindset.md), where collaborative quality behaviours become visible.
+- Use the [Quality Engineer Competency Self-Assessment](../exercises/worksheet-quality-engineer-competency-self-assessment.md) and [Case Study 3: From Senior QA Engineer to Quality Engineer](../case-studies/case-study-03-qa-to-quality-engineering-transition.md) to identify an evidence-based development path.
+- **Continue:** [Chapter 9: The Modern Software Quality Engineering Framework](chapter-09-the-modern-software-quality-engineering-framework.md) places individual capability in the larger engineering system.
+
 ## Further Reading
 
 - International Organization for Standardization and International Electrotechnical Commission. [ISO/IEC 25010:2023 — Product quality model](https://www.iso.org/standard/78176.html).

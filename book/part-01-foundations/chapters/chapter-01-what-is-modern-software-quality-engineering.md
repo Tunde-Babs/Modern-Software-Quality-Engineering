@@ -423,6 +423,12 @@ The practical habit introduced in this chapter is simple: for every important qu
 6. What evidence would you seek before approving a high-risk change to a payment or identity system?
 7. How would you balance the desire for fast delivery with the need for quality controls?
 
+## Practical Resources
+
+- Apply the chapter's quality-as-an-engineering-property model in [Lab 1: From Testing a Feature to Engineering Quality](../labs/lab-01-from-testing-a-feature-to-engineering-quality.md).
+- Practise defining evidence boundaries in [Case Study 1: Quality Beyond Test Execution](../case-studies/case-study-01-quality-beyond-test-execution.md).
+- **Continue:** [Chapter 2: The Evolution from QA to Quality Engineering](chapter-02-the-evolution-from-qa-to-quality-engineering.md) explains why this broader engineering model emerged.
+
 ## Further Reading
 
 - International Organization for Standardization. [ISO/IEC 25030:2019 — Quality requirements framework](https://www.iso.org/standard/72116.html). A framework for eliciting, defining, using, and governing quality requirements.

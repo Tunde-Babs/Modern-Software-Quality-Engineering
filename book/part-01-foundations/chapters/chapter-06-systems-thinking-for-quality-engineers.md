@@ -457,6 +457,12 @@ Identify one local measure that could look healthy while the flow harms users. R
 
 Use the [Quality System Map Worksheet](../exercises/worksheet-quality-system-map.md) for a reusable canvas, failure-propagation analysis, and delivery-team review prompts.
 
+## Practical Resources
+
+- **Build from:** [Chapter 5: Shift Left, Shift Right, Shift Everywhere](chapter-05-shift-left-shift-right-shift-everywhere.md) to connect system feedback with lifecycle decisions.
+- Use the [Quality System Map worksheet](../exercises/worksheet-quality-system-map.md), then apply it in [Case Study 1](../case-studies/case-study-01-quality-beyond-test-execution.md) or [Case Study 2](../case-studies/case-study-02-shared-ownership-and-engineering-culture.md).
+- **Continue:** [Chapter 7: Engineering Culture and DevOps Mindset](chapter-07-engineering-culture-and-devops-mindset.md) examines the human system that shapes quality decisions.
+
 ## Further Reading
 
 - International Council on Systems Engineering. [Systems Engineering Guidebook](https://www.incose.org/docs/default-source/default-document-library/systems-engineering-guidebook---isbn-9780692091807bb88028572db67488e78ff000036190a.pdf?sfvrsn=365365c7_0).

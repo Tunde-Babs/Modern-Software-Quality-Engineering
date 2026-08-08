@@ -460,6 +460,12 @@ The framework should be used with, not instead of, established standards, resear
 
 ---
 
+## Practical Resources
+
+- **Build from:** [Chapter 6: Systems Thinking for Quality Engineers](chapter-06-systems-thinking-for-quality-engineers.md), [Chapter 7: Engineering Culture and DevOps Mindset](chapter-07-engineering-culture-and-devops-mindset.md), and [Chapter 8: The Modern Quality Engineer](chapter-08-the-modern-quality-engineer.md).
+- Use the [MSQE Framework Assessment workshop](../exercises/workshop-msqe-framework-assessment.md) to assess a quality system, then record development evidence in [Case Study 3](../case-studies/case-study-03-qa-to-quality-engineering-transition.md).
+- **Continue:** [Chapter 10: The Future of Quality Engineering](chapter-10-the-future-of-quality-engineering.md) considers how to keep this framework adaptive.
+
 ## Further Reading
 
 - [ISO/IEC 25010:2023 — Product quality model](https://www.iso.org/standard/78176.html)

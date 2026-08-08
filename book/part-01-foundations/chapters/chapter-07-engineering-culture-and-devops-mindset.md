@@ -422,6 +422,12 @@ The Quality Culture Flywheel is an original MSQE teaching model that connects sh
 9. How would you make technical-debt work visible and actionable to product stakeholders?
 10. Tell us how you would help a team move from QA gatekeeping to Quality Engineering enablement in 90 days.
 
+## Practical Resources
+
+- **Build from:** [Chapter 6: Systems Thinking for Quality Engineers](chapter-06-systems-thinking-for-quality-engineers.md) to see culture as part of a wider quality system.
+- Use the [Quality Culture Assessment worksheet](../exercises/worksheet-quality-culture-assessment.md) and [Case Study 2: Shared Ownership and Engineering Culture](../case-studies/case-study-02-shared-ownership-and-engineering-culture.md) to turn cultural observations into explicit actions.
+- **Continue:** [Chapter 8: The Modern Quality Engineer](chapter-08-the-modern-quality-engineer.md) connects these practices to individual and team capability.
+
 ## Further Reading
 
 - DORA. [Research and reports](https://dora.dev/research/).
