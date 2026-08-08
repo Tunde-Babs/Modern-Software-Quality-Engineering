@@ -22,7 +22,7 @@ Programming for Quality Engineers
 
 ## Current Work
 
-Prepare Delivery 3 — Reliable and Maintainable Programming.
+Delivery 3 targeted P1 corrections completed; validation passed.
 
 ---
 
@@ -55,25 +55,33 @@ Prepare Delivery 3 — Reliable and Maintainable Programming.
 8. Debugging Quality Engineering Code
 9. Maintainable Code and Refactoring
 
+- Status: Chapters 6–9 drafted; review completed; targeted P1 corrections completed
+
 ---
 
 ## Next Gate
 
-Delivery 3 may begin.
+Delivery 4 may begin.
+
+---
+
+## Delivery 4 Scope
+
+10. Git, Code Review, and Collaborative Engineering
+11. Testing Quality Engineering Utilities
 
 ---
 
 ## Definition of Done
 
-- Chapters 1–3 are coherent Draft manuscripts aligned with the approved chapter template
-- Delivery 1 companion code is functional and documented
-- Every drafted chapter includes an executable code example where appropriate
-- Delivery 1 code compiles or runs successfully in the documented environment
-- Part I remains unchanged
-- No Delivery 3 content, standalone labs, diagrams, or later chapters are created
+- Delivery 1 and Delivery 2 remain draft complete and reviewed
+- Delivery 3 P1 corrections and targeted validation passed
+- Chapters 6–9 remain Draft manuscripts aligned with the approved chapter template
+- Part I and Chapters 1–5 remain unchanged
+- No Delivery 4 content is created before the next gate passes
 
 ---
 
 ## Outcome
 
-Delivery 1 and Delivery 2 are draft complete and reviewed. Delivery 3 is the active next scope.
+Delivery 1 and Delivery 2 are draft complete and reviewed. Delivery 3 P1 findings are closed; Delivery 4 is the next authorized scope.
