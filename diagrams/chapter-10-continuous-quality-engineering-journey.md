@@ -34,7 +34,7 @@ This Mermaid representation follows the original MSQE Continuous Quality Enginee
 ## Diagram
 
 ```mermaid
-flowchart LR
+flowchart TB
     Foundations[Foundations]
     Skills[Engineering Skills]
     Systems[Systems Thinking]
@@ -77,4 +77,3 @@ The solid path gives a useful development sequence: Foundations, Engineering Ski
 - [x] The canonical model name and stages are preserved.
 - [x] Continuous learning visibly returns to earlier capability areas.
 - [x] The Mermaid source and textual interpretation provide an accessible alternative.
-

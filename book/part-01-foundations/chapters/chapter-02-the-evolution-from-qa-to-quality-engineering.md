@@ -263,6 +263,16 @@ The Software Engineering Body of Knowledge also recognises software requirements
 
 For regulated, safety-critical, or high-consequence systems, formal assurance and independent assessment may be indispensable. For a small internal tool, a lighter approach may be sufficient. In both cases, the governing principle is the same: choose controls and evidence that are proportionate to the consequences of failure, and improve them as the system and its risks change.
 
+## Engineering Perspective
+
+The evolution from QA toward Quality Engineering is visible in the boundary of feedback that a team can use. A testing-focused role may receive an implemented feature, exercise its behaviour, and report evidence about defects or unmet acceptance criteria. That remains valuable: empirical testing, exploratory investigation, and clear defect communication are essential ways to reveal risk. Quality Engineering widens the point at which those capabilities influence an engineering decision.
+
+In practice, this means bringing risk questions into discovery and requirements; considering testability, interfaces, data, configuration, and failure behaviour during design; and choosing automation that creates timely, diagnosable feedback. It also means treating CI/CD results as evidence with stated limits, rather than as a blanket guarantee. A delivery pipeline can confirm that selected controls passed. It cannot by itself establish that production dependencies, real workloads, customer data, or operational conditions will behave as assumed.
+
+The widened boundary continues after deployment. Production signals, support evidence, incidents, and recovery outcomes can reveal whether a quality claim still holds under real conditions. That information should inform the next requirement, design, verification, or operational decision. The aim is not to assign every activity to a Quality Engineer, or to replace QA, testing, or automation with a new title. It is to ensure that the people who define, build, deliver, and operate a system have relevant risks, evidence, and decision ownership visible while meaningful options remain.
+
+Chapter 4 examines this work across the delivery lifecycle, and Chapter 8 develops the Modern Quality Engineer role in depth. Here, the central point is the professional evolution: established QA strengths gain greater engineering leverage when they are connected to earlier decisions, delivery evidence, production learning, and continuous improvement.
+
 ## Summary
 
 Software quality practices expanded because software delivery expanded. Quality Control addressed conformance of outputs. Quality Assurance added prevention and confidence in the system of work. Software testing supplied empirical evidence about behaviour. Test automation made selected feedback repeatable at delivery speed. Agile, DevOps, and cloud delivery made it necessary to connect all of these practices to rapid change, production operation, and shared ownership.

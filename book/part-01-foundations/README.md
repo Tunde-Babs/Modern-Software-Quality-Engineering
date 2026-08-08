@@ -48,7 +48,7 @@ Upon completion of this part, readers will be able to:
 
 ### Full Foundation Path
 
-Read Chapters 1–10 in sequence. Complete [Lab 1: From Testing a Feature to Engineering Quality](labs/lab-01-from-testing-a-feature-to-engineering-quality.md) after Chapter 1, use the chapter-linked worksheets as you progress, and complete the three case studies after Chapters 6, 7, and 10 respectively:
+Read Chapters 1–6 in sequence, then complete [Lab 1: From Testing a Feature to Engineering Quality](labs/lab-01-from-testing-a-feature-to-engineering-quality.md). Continue through Chapters 7–10, use the chapter-linked worksheets as you progress, and complete the three case studies after Chapters 6, 7, and 10 respectively:
 
 1. [Case Study 1: Quality Beyond Test Execution](case-studies/case-study-01-quality-beyond-test-execution.md)
 2. [Case Study 2: Shared Ownership and Engineering Culture](case-studies/case-study-02-shared-ownership-and-engineering-culture.md)

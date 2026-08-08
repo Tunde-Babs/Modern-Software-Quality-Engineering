@@ -34,7 +34,7 @@ This Mermaid representation is based on the comparison and evolution narrative i
 ## Diagram
 
 ```mermaid
-flowchart LR
+flowchart TB
     QC[Quality Control: conformance of an output]
     QA[Quality Assurance: prevention and confidence in the process]
     Test[Software Testing: behavioural evidence]
@@ -78,4 +78,3 @@ The solid path reads as an expansion of the problems teams needed to solve: conf
 - [x] Earlier practices are shown as continuing contributions.
 - [x] Labels distinguish the practices by purpose rather than title.
 - [x] The Mermaid source provides an accessible textual representation.
-

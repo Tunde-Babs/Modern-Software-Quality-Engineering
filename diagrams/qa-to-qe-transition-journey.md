@@ -53,9 +53,9 @@ flowchart TB
     Engineering -. broadens .-> QE
     Delivery -. broadens .-> Senior
     Influence -. enables .-> Principal
-    Growth -. applies throughout .-> Traditional
-    Growth -. applies throughout .-> QE
-    Growth -. applies throughout .-> Principal
+    Growth -.-> Traditional
+    Growth -.-> QE
+    Growth -.-> Principal
 ```
 
 ## Textual Interpretation and Accessibility
@@ -82,4 +82,3 @@ The solid vertical path shows a typical expansion of contribution from Tradition
 - [x] The progression is explicitly described as capability-based, not title-based.
 - [x] The visual contains a readable capability expansion rather than a full competency matrix.
 - [x] The Mermaid source and textual interpretation provide an accessible alternative.
-

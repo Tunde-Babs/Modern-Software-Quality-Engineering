@@ -34,7 +34,7 @@ This Mermaid representation follows the original MSQE Continuous Quality Loop de
 ## Diagram
 
 ```mermaid
-flowchart LR
+flowchart TB
     Requirements[Requirements]
     Architecture[Architecture]
     Development[Development]
@@ -72,4 +72,3 @@ Read the loop from Requirements through Continuous Improvement. Each element cre
 - [x] The canonical model name and sequence are preserved.
 - [x] The return arrow states the purpose of feedback.
 - [x] The Mermaid source provides an accessible textual representation.
-

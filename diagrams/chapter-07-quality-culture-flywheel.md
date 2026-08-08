@@ -34,7 +34,7 @@ This Mermaid representation follows the original MSQE Quality Culture Flywheel d
 ## Diagram
 
 ```mermaid
-flowchart LR
+flowchart TB
     Context[Shared Context]
     Collaboration[Collaboration]
     Discovery[Early Risk Discovery]
@@ -72,4 +72,3 @@ Shared context enables collaboration. Collaboration exposes risk earlier. Early 
 - [x] The canonical model name and reinforcing return are preserved.
 - [x] The diagram communicates a pattern of behaviour rather than a process mandate.
 - [x] The Mermaid source provides an accessible textual representation.
-

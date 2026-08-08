@@ -59,16 +59,16 @@ flowchart TB
         end
     end
 
-    Foundations -. integrates with .-> Framework
-    Quality -. integrates with .-> Framework
-    Testing -. integrates with .-> Framework
-    Automation -. integrates with .-> Framework
-    Data -. integrates with .-> Framework
-    Cloud -. integrates with .-> Framework
-    Reliability -. integrates with .-> Framework
-    AI -. integrates with .-> Framework
-    Performance -. integrates with .-> Framework
-    Leadership -. integrates with .-> Framework
+    Foundations -.-> Framework
+    Quality -.-> Framework
+    Testing -.-> Framework
+    Automation -.-> Framework
+    Data -.-> Framework
+    Cloud -.-> Framework
+    Reliability -.-> Framework
+    AI -.-> Framework
+    Performance -.-> Framework
+    Leadership -.-> Framework
     Cross -. applies across .-> Framework
     Lifecycle -. informs .-> Framework
     Framework -. shapes .-> Lifecycle

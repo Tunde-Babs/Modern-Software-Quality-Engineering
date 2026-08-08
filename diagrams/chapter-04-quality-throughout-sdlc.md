@@ -34,7 +34,7 @@ This Mermaid representation follows Chapter 4's modern software delivery lifecyc
 ## Diagram
 
 ```mermaid
-flowchart LR
+flowchart TB
     Idea[Idea and discovery]
     Requirements[Requirements]
     Design[Architecture and design]
@@ -82,4 +82,3 @@ The main path names the lifecycle activities: idea and discovery, requirements, 
 - [x] Lifecycle coverage is distinguished from the Continuous Quality Loop.
 - [x] The model does not require a linear delivery method.
 - [x] The Mermaid source provides an accessible textual representation.
-
