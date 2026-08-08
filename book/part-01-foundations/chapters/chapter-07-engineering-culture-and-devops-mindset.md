@@ -235,7 +235,7 @@ Improvement work needs capacity. If every iteration is planned to full feature c
 
 Greater trust strengthens shared context because people share more complete information at the start of the next decision. The flywheel can also run in reverse: blame, hidden risk, slow feedback, and ignored findings reduce trust and make the next failure more likely.
 
-> **Supporting asset (Pass 2, planned):** A *Quality Culture Flywheel* diagram will show Shared Context through Greater Trust, with the reinforcing return to Shared Context.
+The [Quality Culture Flywheel diagram](../../../diagrams/chapter-07-quality-culture-flywheel.md) shows Shared Context through Greater Trust, with the reinforcing return to Shared Context.
 
 ## Quality Culture Anti-Patterns
 

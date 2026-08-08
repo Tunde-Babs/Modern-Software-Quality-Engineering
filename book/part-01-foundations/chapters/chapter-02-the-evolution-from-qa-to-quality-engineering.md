@@ -60,7 +60,7 @@ As software systems became more connected and delivery cycles shortened, teams n
 
 ISO 9000:2026 provides a current vocabulary for quality-management fundamentals, while ISO/IEC/IEEE 29119-1:2022 defines general software-testing concepts and presents key concepts for the wider 29119 series.[^iso9000][^iso29119] These standards do not prescribe one organisational model for software teams. They provide common language that teams can adapt to their product context and obligations.
 
-> **Supporting asset (Pass 2, planned):** A *Quality Evolution Timeline* diagram will map the feedback loops, ownership boundaries, and typical evidence associated with the practices in this chapter.
+The [QA to Quality Engineering Evolution diagram](../../../diagrams/chapter-02-qa-to-qe-evolution.md) maps the expanding feedback, ownership, and evidence scope of these practices without treating them as replacements for one another.
 
 ## Quality Control
 

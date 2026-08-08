@@ -254,7 +254,7 @@ The depth should increase with customer impact, irreversibility, complexity, reg
 
 Use the map as a prompt, not a mechanical checklist. Feedback completes the model by connecting operational evidence to the next design and delivery decision.
 
-> **Supporting asset (Pass 2, planned):** A *Quality System Map* diagram will show the relationship from Users through Interfaces, Services, Data, Infrastructure, Dependencies, Operations, and Feedback, with evidence returning to earlier decisions.
+The [Quality System Map diagram](../../../diagrams/chapter-06-quality-system-map.md) shows the relationship among Users, Interfaces, Services, Data, Infrastructure, Dependencies, Operations, and Feedback, with evidence returning to earlier decisions.
 
 ## Systems Thinking in Test Strategy
 

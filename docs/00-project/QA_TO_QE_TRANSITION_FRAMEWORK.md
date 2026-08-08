@@ -52,17 +52,7 @@ selected areas of specialisation
 
 The progression below describes expanding capability, not a mandatory job-title sequence.
 
-```text
-Traditional QA
-      ↓
-Engineering-oriented QA
-      ↓
-Quality Engineer
-      ↓
-Senior Quality Engineer
-      ↓
-Principal / Quality Engineering Leadership
-```
+The [QA to Quality Engineering Transition Journey](../../diagrams/qa-to-qe-transition-journey.md) gives a visual overview of this capability progression and the engineering capabilities that expand alongside it.
 
 | Capability position | Primary contribution | Development focus |
 |---|---|---|

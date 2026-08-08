@@ -127,7 +127,7 @@ A modern software delivery lifecycle can be represented as a continuous learning
 
 The loop is deliberately simple. In practice, a team may perform several steps in parallel, revisit a design after an experiment, or maintain a service while developing a replacement. The value of the model is that it makes a missing connection visible. If an operational incident never changes a requirement or architecture decision, the lifecycle is incomplete.
 
-> **Supporting asset (Pass 2, planned):** A lifecycle-feedback diagram will show quality evidence flowing from each activity to both adjacent and earlier decisions.
+The [Quality Throughout the Software Development Lifecycle diagram](../../../diagrams/chapter-04-quality-throughout-sdlc.md) shows quality activities and evidence across every lifecycle activity, with operational learning informing future work.
 
 Every phase should have explicit inputs and outputs. Inputs identify what a decision is based on. Outputs provide evidence, decisions, or artefacts that other people can use. The following teaching model is an **original MSQE framing**, not an ISO or IEEE process definition.
 

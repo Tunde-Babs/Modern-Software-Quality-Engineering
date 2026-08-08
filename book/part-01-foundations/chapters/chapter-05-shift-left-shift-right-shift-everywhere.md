@@ -240,7 +240,7 @@ The sequence names places where evidence is created and used. It is not a one-wa
 | Feedback | interpret evidence and decide improvement | prioritised findings, updated requirements, tests, controls, and documentation |
 | Continuous improvement | strengthen the delivery system over time | platform investment, standards, training, simplified workflows, retired risks |
 
-> **Supporting asset (Pass 2, planned):** A *Continuous Quality Loop* diagram will visualise evidence moving both forwards and backwards between lifecycle activities.
+The [Continuous Quality Loop diagram](../../../diagrams/chapter-05-continuous-quality-loop.md) visualises evidence moving through the lifecycle and back into the next engineering decision.
 
 ## The Role of the Modern Quality Engineer
 

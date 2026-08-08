@@ -153,7 +153,7 @@ The competencies reinforce one another. Programming without risk judgement can p
 
 The model is a map, not a checklist. A QE might build early depth in API automation and later add cloud operations, or begin as a data tester and deepen software engineering. The aim is an increasingly connected capability, not uniform expertise.
 
-> **Supporting asset (Pass 2, planned):** A *Quality Engineer Competency Model* diagram will show the seven competency categories and their connected development paths.
+The [Quality Engineer Competency Model diagram](../../../diagrams/chapter-08-quality-engineer-competency-model.md) shows the seven competency categories and their connected development paths.
 
 ## The Quality Engineer Across the Delivery Lifecycle
 

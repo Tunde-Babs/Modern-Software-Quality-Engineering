@@ -115,36 +115,7 @@ The following model is an MSQE teaching aid. It identifies five areas in which q
 
 ### Diagram: MSQE Quality System Model
 
-```text
-                         Stakeholder needs and risk
-                                      │
-                                      ▼
- ┌────────────┐    ┌────────────┐    ┌────────────┐
- │ People     │───▶│ Process    │───▶│ Product    │
- │ skills,    │    │ discovery, │    │ requirements,
- │ ownership, │    │ delivery,  │    │ architecture,
- │ culture    │    │ learning   │    │ code, data
- └────────────┘    └────────────┘    └────────────┘
-                                      │
-                                      ▼
-                              ┌────────────┐
-                              │ Platform   │
-                              │ environments,
-                              │ pipelines,
-                              │ dependencies
-                              └────────────┘
-                                      │
-                                      ▼
-                              ┌────────────┐
-                              │ Production │
-                              │ telemetry,
-                              │ support,
-                              │ incidents
-                              └────────────┘
-                                      │
-                                      ▼
-                         Evidence and continuous improvement
-```
+[View the MSQE Quality System Model diagram](../../../diagrams/chapter-01-quality-engineering-model.md). The linked source includes a textual interpretation for readers who cannot view a rendered diagram.
 
 The arrows do not describe a one-way phase sequence. Production evidence should influence all preceding areas. For example, a recurring support issue may trigger a design change, a new automated check, a clarified requirement, and a review of team ownership.
 

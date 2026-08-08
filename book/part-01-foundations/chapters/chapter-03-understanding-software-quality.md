@@ -81,7 +81,7 @@ This is not a story in which one idea replaced another. It is an accumulation of
 
 The ISO/IEC SQuaRE family provides an organised set of standards for quality management, quality models, measurement, requirements, and evaluation.[^square] ISO/IEC 25030:2019, for example, provides a framework for eliciting, defining, using, and governing quality requirements for systems, software products, and data.[^iso25030] These standards are reference points for rigorous work; they do not remove the need for product judgment or choose the appropriate trade-off for a particular context.
 
-> **Supporting asset (Pass 2, planned):** A *Software Quality Perspectives* diagram will show how stakeholder needs, product properties, delivery practices, and production evidence combine to shape quality.
+The [Software Quality Perspectives diagram](../../../diagrams/chapter-03-software-quality-perspectives.md) shows how stakeholder needs, product properties, delivery practices, and production evidence combine to shape quality. It also keeps ISO/IEC 25010:2023 product-quality characteristics distinct from engineering capabilities that support their evaluation.
 
 ## Quality as a System Property
 

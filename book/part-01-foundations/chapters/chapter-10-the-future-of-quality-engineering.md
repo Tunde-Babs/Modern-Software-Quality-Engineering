@@ -296,7 +296,7 @@ Mentoring strengthens both the learner and the mentor. Teaching a colleague how 
 
 The arrows implied by the journey should not be read as a one-way progression. An experienced engineer may return to foundations when entering a new domain, strengthen a technical skill after taking a leadership role, or discover a systems-thinking gap during an incident. Future readiness is the ability to continue this cycle deliberately.
 
-> **Supporting asset (Pass 2, planned):** A *Continuous Quality Engineering Journey* diagram will show the progression from Foundations through Future Readiness, with feedback from continuous learning returning to every stage.
+The [Continuous Quality Engineering Journey diagram](../../../diagrams/chapter-10-continuous-quality-engineering-journey.md) shows the progression from Foundations through Future Readiness, with feedback from continuous learning returning to every stage.
 
 ---
 

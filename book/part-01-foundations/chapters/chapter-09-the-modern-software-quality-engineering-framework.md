@@ -133,7 +133,7 @@ The framework is intentionally a map, not a hierarchy. The domains are shown as 
 
 The framework also differs from the **Quality Engineer Competency Model** introduced in Chapter 8. The competency model describes the knowledge, skills, and behaviours an individual Quality Engineer may develop. The MSQE Educational Framework describes the organisational and technical capability areas that must work together. A Quality Engineer may contribute to several framework domains, but no individual is expected to be the sole expert in all of them.
 
-> **Supporting asset (Pass 2, planned):** Diagram of the MSQE Educational Framework showing the ten core domains, cross-cutting concerns, and the continuous lifecycle feedback loop.
+The [Modern Software Quality Engineering Framework diagram](../../../diagrams/chapter-09-msqe-framework.md) shows the ten core domains, cross-cutting concerns, and continuous lifecycle feedback. It is an **MSQE Educational Framework**, not an industry standard, maturity model, or certification standard.
 
 ### Core Domains at a Glance
 
