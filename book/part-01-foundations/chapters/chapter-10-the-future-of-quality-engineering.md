@@ -374,6 +374,8 @@ These are established reference points, not evidence that every organisation mus
 
 This exercise helps you turn future-facing ideas into a sustainable plan. Use your current role, a desired role, or a fictional context. It is a planning exercise, not a performance evaluation or a promise that every milestone will occur on schedule.
 
+For a shorter, capability-focused companion, use the [QA to QE Personal Transition Plan](../exercises/worksheet-qa-to-qe-personal-transition-plan.md) and the [Quality Engineering Portfolio Evidence Map](../exercises/worksheet-quality-engineering-portfolio-evidence-map.md).
+
 ### Step 1: Establish Your Starting Point
 
 Assess your current capability using the dimensions below. Use evidence rather than aspiration: recent work, feedback from colleagues, artefacts you have created, or decisions you have influenced.

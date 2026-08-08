@@ -319,7 +319,7 @@ Then answer the following questions:
 3. What single change could move useful feedback earlier or make it more actionable?
 4. Who would need to collaborate to make that change sustainable?
 
-> **Supporting asset (Pass 2, planned):** A practical worksheet will provide a printable version of this evolution-and-evidence map.
+The embedded evolution-and-evidence map is intentionally self-contained. For a reusable lifecycle evidence activity, use the [Continuous Quality Planning Worksheet](../exercises/worksheet-continuous-quality-planning.md).
 
 ## Further Reading
 

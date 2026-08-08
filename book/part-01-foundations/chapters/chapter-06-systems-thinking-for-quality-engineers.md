@@ -455,7 +455,7 @@ Select one dependency or shared resource. Describe what happens when it is slow,
 
 Identify one local measure that could look healthy while the flow harms users. Replace it with a question or measure that better represents the system outcome. Discuss the result with a developer, product colleague, or operations specialist and record one change to your map.
 
-> **Supporting asset (Pass 2, planned):** A *Quality System Map* workshop worksheet will provide a completed example, facilitation guidance, and review prompts for a delivery team.
+Use the [Quality System Map Worksheet](../exercises/worksheet-quality-system-map.md) for a reusable canvas, failure-propagation analysis, and delivery-team review prompts.
 
 ## Further Reading
 

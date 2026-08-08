@@ -386,7 +386,7 @@ Then answer:
 4. What control would limit exposure if that signal deteriorates?
 5. How would the evidence from production change the next requirement, design, or test decision?
 
-> **Supporting asset (Pass 2, planned):** A workshop worksheet will provide a completed Continuous Quality Loop map and facilitation guidance.
+Use the [Continuous Quality Planning Worksheet](../exercises/worksheet-continuous-quality-planning.md) to extend this exercise into a reusable Continuous Quality Loop planning activity.
 
 ## Further Reading
 

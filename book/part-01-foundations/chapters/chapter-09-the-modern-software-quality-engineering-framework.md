@@ -374,6 +374,8 @@ It does not. It explains why skilled testing is necessary but insufficient on it
 
 The following exercise is a facilitated, illustrative workshop. Use a fictional organisation or a non-sensitive service from your own context. Do not treat the result as a formal audit.
 
+For a reusable, facilitated version with a Quality Engineering Improvement Plan, use the [MSQE Framework Assessment Workshop](../exercises/workshop-msqe-framework-assessment.md).
+
 ### Scenario
 
 Atlas Learning provides an online learning platform. Over the last quarter it has experienced intermittent assessment-submission failures, slow page loads during enrolment peaks, and occasional discrepancies between teacher dashboards and exported reports. Its leadership has asked whether it should invest first in more UI automation, infrastructure capacity, or data controls.

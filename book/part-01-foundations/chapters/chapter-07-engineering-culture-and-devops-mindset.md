@@ -373,7 +373,7 @@ For each action, ask:
 - How will the team know that a customer outcome or recovery capability has improved?
 - What would you stop doing to make capacity for the improvement?
 
-> **Supporting asset (Pass 2, planned):** A *Quality Culture Diagnostic* workshop worksheet will provide facilitation guidance, a completed example, and a team discussion format.
+Use the [Quality Culture Assessment Worksheet](../exercises/worksheet-quality-culture-assessment.md) for qualitative evidence gathering, improvement planning, and team discussion guidance.
 
 ## Summary
 

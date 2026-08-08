@@ -399,7 +399,7 @@ Then answer the following:
 3. What production signal would tell you whether the intended customer outcome is occurring?
 4. What information from production should change the next requirement, design, or test decision?
 
-> **Supporting asset (Pass 2, planned):** A practical worksheet will provide a completed lifecycle quality map and facilitation guidance for a team workshop.
+Use the [Continuous Quality Planning Worksheet](../exercises/worksheet-continuous-quality-planning.md) for a reusable lifecycle quality map and facilitation guide. It distinguishes where quality work happens from when evidence is acquired and fed back into later decisions.
 
 ## Further Reading
 

@@ -36,6 +36,8 @@ Use the framework as a planning and reflection tool.
 4. Produce evidence that a colleague, manager, or interviewer can examine.
 5. Review progress, revise priorities, and deepen one or more areas over time.
 
+Companion activities are available in Part I: [Lab 1 — From Testing a Feature to Engineering Quality](../../book/part-01-foundations/labs/lab-01-from-testing-a-feature-to-engineering-quality.md), [Quality Engineer Competency Self-Assessment](../../book/part-01-foundations/exercises/worksheet-quality-engineer-competency-self-assessment.md), [QA to QE Personal Transition Plan](../../book/part-01-foundations/exercises/worksheet-qa-to-qe-personal-transition-plan.md), and [Quality Engineering Portfolio Evidence Map](../../book/part-01-foundations/exercises/worksheet-quality-engineering-portfolio-evidence-map.md).
+
 The framework is deliberately progressive. It does not assume that every learner starts in the same place or should become an expert in every domain. The expected profile is:
 
 ```text

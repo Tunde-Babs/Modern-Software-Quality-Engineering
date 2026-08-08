@@ -405,7 +405,7 @@ Ask a product, engineering, operations, or support colleague:
 - Which measure could be misleading?
 - What production signal would tell us that the feature remains fit for use?
 
-> **Supporting asset (Pass 2, planned):** A practical worksheet will provide a printable quality-profile canvas for this exercise.
+Use the [Software Quality Profile Worksheet](../exercises/worksheet-software-quality-profile.md) for a reusable quality-profile canvas and review guide.
 
 ## Further Reading
 

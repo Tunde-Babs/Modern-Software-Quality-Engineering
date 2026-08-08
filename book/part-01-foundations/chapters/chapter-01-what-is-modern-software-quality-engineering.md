@@ -323,7 +323,7 @@ The goal is not to produce a perfect document. It is to practise moving from a f
 
 ## Lab
 
-> **Supporting asset (Pass 2, planned):** **Lab 1 — Quality Engineering Discovery Workshop** will provide the complete problem statement, tasks, validation, and reflection questions for facilitating this workshop with a delivery team.
+Continue with [Lab 1 — From Testing a Feature to Engineering Quality](../labs/lab-01-from-testing-a-feature-to-engineering-quality.md) for a guided, end-to-end application of this exercise.
 
 ## Common Misconceptions and Pitfalls
 

@@ -378,7 +378,7 @@ Then choose no more than three goals for the next six months:
 
 For each goal, identify a real team change through which you can practise it, a collaborator who can provide feedback, a constraint you may face, and an observable sign of progress. Review the plan after three months. Adapt it if the work has not created useful evidence or if the team's needs have changed.
 
-> **Supporting asset (Pass 2, planned):** A *Quality Engineer Career Assessment* worksheet will provide a completed example, reflection prompts, and a manager or mentor discussion guide.
+Use the [Quality Engineer Competency Self-Assessment](../exercises/worksheet-quality-engineer-competency-self-assessment.md) to record evidence, capability gaps, target levels, next actions, and mentor or manager feedback.
 
 ## Summary
 
