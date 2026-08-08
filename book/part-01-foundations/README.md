@@ -31,11 +31,16 @@ Upon completion of this part, readers will be able to:
 
 ## Planned Chapters
 
-1. What is Modern Software Quality Engineering?
-2. Evolution of Software Quality
-3. Engineering Quality Throughout the SDLC
-4. Systems Thinking
-5. The Modern Quality Engineer
+1. What Is Modern Software Quality Engineering?
+2. The Evolution from QA to Quality Engineering
+3. Understanding Software Quality
+4. Quality Throughout the Software Development Lifecycle
+5. Shift Left, Shift Right & Shift Everywhere
+6. Systems Thinking for Quality Engineers
+7. Engineering Culture & DevOps Mindset
+8. The Modern Quality Engineer
+9. The Modern Software Quality Engineering Framework
+10. The Future of Quality Engineering
 
 ---
 
@@ -76,7 +81,5 @@ None.
 
 ## Completion Criteria
 
-- All chapters completed
-- Labs completed
-- Review questions answered
-- Interview preparation completed
+- Pass 1: All chapters completed, with review questions, interview questions, practical exercises, references, and chapter checklists
+- Pass 2: Labs and companion learning assets completed and integrated
