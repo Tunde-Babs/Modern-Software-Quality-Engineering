@@ -4,6 +4,8 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [0.5.0] — Programming Complete — 2026-08-09
+
 ### Part II — Programming for Quality Engineers
 
 #### Added
@@ -28,6 +30,8 @@ All notable changes to this project will be documented in this file.
 #### Known Limitations
 
 - Part II companions are deterministic local learning utilities using fictional data; they are not production services, automation frameworks, or live integrations.
+
+## [0.4.0] — Foundations Complete — 2026-08-08
 
 ### Part I — Foundations
 

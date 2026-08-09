@@ -10,7 +10,7 @@ M2 — Handbook Development
 
 ## Branch
 
-`feature/part-02-programming`
+`release/v0.5.0`
 
 ---
 
@@ -22,7 +22,7 @@ Programming for Quality Engineers
 
 ## Current Work
 
-Part II — Programming for Quality Engineers is complete: Chapters 1–12 and Deliveries 1–5. Prepare the approved change set for merge and release; do not begin Part III.
+Part II — Programming for Quality Engineers is complete: Chapters 1–12 and Deliveries 1–5. It is merged into `develop`, and the `release/v0.5.0` candidate is prepared. Do not begin Part III.
 
 ---
 
@@ -75,10 +75,10 @@ Part II — Programming for Quality Engineers is complete: Chapters 1–12 and D
 
 ## Next Gate
 
-- Commit and push `feature/part-02-programming`.
-- Open, approve, and merge a pull request to `develop`.
-- Promote `develop` to `main` according to the repository release workflow.
-- Prepare the v0.5.0 tag and release according to `RELEASE_POLICY.md` after final approval.
+- Open, approve, and merge the `release/v0.5.0` pull request to `main`.
+- Obtain Founder final approval.
+- Create tag `v0.5.0`.
+- Create the GitHub Release for v0.5.0.
 
 ---
 
@@ -94,4 +94,4 @@ Part II — Programming for Quality Engineers is complete: Chapters 1–12 and D
 
 ## Outcome
 
-Deliveries 1–5 are complete. Part II normalization and the final quality gate are complete; release preparation is active for v0.5.0 — Programming Complete. No Part III work has begun.
+Deliveries 1–5 are complete. Part II normalization and the final quality gate are complete; v0.5.0 — Programming Complete is prepared as a release candidate. Founder approval, tag creation, and the GitHub Release remain pending. No Part III work has begun.

@@ -136,3 +136,15 @@ Part II is ready for merge and release preparation as **v0.5.0 — Programming C
 **Status:** Release preparation active
 
 **Last Updated:** 2026-08-09
+
+---
+
+## Release Candidate v0.5.0 — Programming Complete
+
+- Merged the approved Part II change set into `develop` and prepared `release/v0.5.0`.
+- Finalized release-candidate metadata for Part II; the Final Quality Gate remains **95/100**, with no P0 findings and the final P1 closed.
+- Founder final approval, tag creation, and the GitHub Release remain pending.
+
+**Status:** Release candidate prepared
+
+**Last Updated:** 2026-08-09

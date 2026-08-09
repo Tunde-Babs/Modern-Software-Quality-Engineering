@@ -112,7 +112,7 @@ This progression prepares later parts without prematurely teaching their full sp
 | Delivery 4 — Collaborative and Testable Contribution | 10–11 | Readers can contribute code through a reviewable workflow and validate their own utilities. | Git-review simulation and unit-testing mini-project. |
 | Delivery 5 — Capstone and Review | 12 | Readers combine the curriculum into a portfolio-ready Quality Engineering Toolkit. | Capstone design, implementation, test, evidence, and reflection. |
 
-Deliveries 1–5 are draft complete and reviewed or validated, including the validated capstone companion. The final cross-Part II quality gate is complete; Part II is in release preparation for v0.5.0 — Programming Complete. Diagrams, standalone labs, case studies, and repository-based projects remain Pass 2 enrichment and must be introduced only where their learning value is explicit.
+Deliveries 1–5 are draft complete and reviewed or validated, including the validated capstone companion. The final cross-Part II quality gate is complete; Part II is completed for the v0.5.0 — Programming Complete release candidate. Diagrams, standalone labs, case studies, and repository-based projects remain Pass 2 enrichment and must be introduced only where their learning value is explicit.
 
 ---
 
@@ -120,7 +120,7 @@ Deliveries 1–5 are draft complete and reviewed or validated, including the val
 
 All twelve chapter manuscripts remain **Draft**. Delivery 1 (Chapters 1–3), Delivery 2 (Chapters 4–5), Delivery 3 (Chapters 6–9), Delivery 4 (Chapters 10–11), and Delivery 5 (Chapter 12 and the Quality Engineering Toolkit) are draft complete and reviewed or validated. The Delivery 5 executable companion has passed its documented checks, build, tests, and local run.
 
-The Part II normalization pass and final quality gate are complete: **95/100 — Exceptional / Reference Quality**, with no P0 findings and the final P1 finding closed. This is not an approval, published-release, or chapter-status decision; the manuscripts remain Draft while merge and release preparation proceed.
+The Part II normalization pass and final quality gate are complete: **95/100 — Exceptional / Reference Quality**, with no P0 findings and the final P1 finding closed. The v0.5.0 release candidate is prepared; final approval, the Git tag, and the GitHub Release remain pending. This is not a chapter-status decision; the manuscripts remain Draft.
 
 ### Local Tooling Baseline
 
