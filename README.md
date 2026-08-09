@@ -49,9 +49,10 @@ The project follows an incremental release strategy, with each release represent
 
 ## Current Focus
 
-- Part II – Programming for Quality Engineers completed for v0.5.0
-- Release-candidate final approval, tag, and GitHub Release preparation
-- Planning the next approved handbook scope; no Part III work has started
+- Part I — Foundations completed and released as v0.4.0
+- Part II — Programming for Quality Engineers completed and released as v0.5.0
+- Part III — Software Testing manuscript drafting complete; normalization and final-quality-review preparation are active
+- Part IV has not started
 
 ---
 
@@ -246,9 +247,9 @@ Completed
 
 Current focus:
 
-- Part II – Programming for Quality Engineers completed for v0.5.0
-- Release-candidate final approval, tag, and GitHub Release preparation
-- Future handbook planning; no Part III work has started
+- Part I and Part II released as v0.4.0 and v0.5.0
+- Part III — Software Testing manuscript normalization and final-quality-review preparation
+- Future handbook planning; Part IV has not started
 
 ## 🔜 M3 — Digital Learning Platform
 
@@ -294,7 +295,7 @@ Rather than documenting individual tools, this project seeks to define the endur
 |------|--------|
 | Current Milestone | **M2 – Handbook Development** |
 | Latest Release | **v0.5.0 – Programming Complete** |
-| Current Release Candidate | **v0.5.0 — final approval and tag pending** |
+| Current Release Candidate | **None — Part III is not yet release-ready** |
 | Handbook | 🚧 In Development |
 | Practical Labs | 🚧 Planned |
 | Documentation Website | 🚧 Planned |
