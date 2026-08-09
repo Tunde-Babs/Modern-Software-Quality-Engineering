@@ -14,7 +14,7 @@
 
 🚀 **Current Phase:** M2 – Handbook Development
 
-📦 **Latest Release:** v0.4.0 – Foundations Complete
+📦 **Latest Release:** v0.5.0 – Programming Complete
 
 </p>
 
@@ -42,17 +42,16 @@ The project follows an incremental release strategy, with each release represent
 |----------|:------:|-----------|
 | **v0.1.0** | ✅ Released | Project Foundation |
 | **v0.2.0** | ✅ Released | Governance Foundation |
-| **v0.3.0** | 🚧 Planned | Publishing Infrastructure |
+| **v0.3.0** | 🧭 Internal milestone | Publishing Infrastructure |
 | **v0.4.0** | ✅ Released | Foundations Complete |
+| **v0.5.0** | ✅ Released | Programming Complete |
 | **v1.0.0** | 🎯 Planned | First Edition |
 
 ## Current Focus
 
-- Publishing Templates
-- Chapter Templates
-- Laboratory Templates
-- Part I – Foundations
-- Companion Learning Resources
+- Part II – Programming for Quality Engineers completed for v0.5.0
+- Release-candidate final approval, tag, and GitHub Release preparation
+- Planning the next approved handbook scope; no Part III work has started
 
 ---
 
@@ -247,10 +246,9 @@ Completed
 
 Current focus:
 
-- Publishing Infrastructure
-- Part I – Foundations
-- Practical Laboratories
-- Companion Learning Resources
+- Part II – Programming for Quality Engineers completed for v0.5.0
+- Release-candidate final approval, tag, and GitHub Release preparation
+- Future handbook planning; no Part III work has started
 
 ## 🔜 M3 — Digital Learning Platform
 
@@ -295,8 +293,8 @@ Rather than documenting individual tools, this project seeks to define the endur
 | Item | Status |
 |------|--------|
 | Current Milestone | **M2 – Handbook Development** |
-| Latest Release | **v0.2.0 – Governance Foundation** |
-| Current Version | **v0.2.0** |
+| Latest Release | **v0.5.0 – Programming Complete** |
+| Current Release Candidate | **v0.5.0 — final approval and tag pending** |
 | Handbook | 🚧 In Development |
 | Practical Labs | 🚧 Planned |
 | Documentation Website | 🚧 Planned |

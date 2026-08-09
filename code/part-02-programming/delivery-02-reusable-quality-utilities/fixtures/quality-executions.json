@@ -1,0 +1,26 @@
+[
+  {
+    "executionId": "staging-orders-001",
+    "endpoint": "POST /orders",
+    "statusCode": 201,
+    "responseTimeMs": 185,
+    "environment": "staging",
+    "validationPassed": true
+  },
+  {
+    "executionId": "staging-orders-002",
+    "endpoint": "POST /orders",
+    "statusCode": 503,
+    "responseTimeMs": 1240,
+    "environment": "staging",
+    "validationPassed": false
+  },
+  {
+    "executionId": "test-catalogue-003",
+    "endpoint": "GET /catalogue",
+    "statusCode": 200,
+    "responseTimeMs": 810,
+    "environment": "test",
+    "validationPassed": true
+  }
+]

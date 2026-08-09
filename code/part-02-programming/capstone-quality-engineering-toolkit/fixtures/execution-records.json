@@ -1,0 +1,36 @@
+[
+  {
+    "executionId": "exec-001",
+    "operation": " GET /catalogue ",
+    "environment": "Staging",
+    "outcome": "passed",
+    "durationMs": 500,
+    "timestamp": "2026-08-09T09:00:00.000Z"
+  },
+  {
+    "executionId": "exec-002",
+    "operation": "POST /orders",
+    "environment": "staging",
+    "outcome": "failed",
+    "durationMs": 680,
+    "timestamp": "2026-08-09T09:01:00.000Z",
+    "diagnosticCode": "ORDER_VALIDATION_FAILED"
+  },
+  {
+    "executionId": "exec-003",
+    "operation": "GET /catalogue",
+    "environment": "staging",
+    "outcome": "passed",
+    "durationMs": 120,
+    "timestamp": "2026-08-09T09:02:00.000Z"
+  },
+  {
+    "executionId": "exec-002",
+    "operation": "POST /orders",
+    "environment": "staging",
+    "outcome": "failed",
+    "durationMs": 680,
+    "timestamp": "2026-08-09T09:01:00.000Z",
+    "diagnosticCode": "ORDER_VALIDATION_FAILED"
+  }
+]

@@ -108,3 +108,43 @@ Part I remains **Technical Review Ready** and proceeds to merge preparation and 
 **Status:** Final corrections completed
 
 **Last Updated:** 2026-08-08
+
+---
+
+# 2026-08-09
+
+## Milestone M2 — Handbook Development: Part II Programming for Quality Engineers
+
+### Completed
+
+- Completed Part II Chapters 1–12, its five planned deliveries, and the Quality Engineering Toolkit capstone.
+- Completed the QA → QE programming progression from code-reading and typed utilities through debugging, collaboration, testing, and integrated evidence production.
+- Completed the Part II normalization pass and Final Quality Gate Review: **95/100 — Exceptional / Reference Quality**.
+- Closed the final P1 correction by aligning the Delivery 4 clean-install instruction with the committed lockfile.
+- Validated documented companion installation, TypeScript checks, builds, deterministic tests, executable runs, Markdown, links, manifests, and repository hygiene.
+
+### Outcome
+
+Part II is ready for merge and release preparation as **v0.5.0 — Programming Complete**. The chapter manuscripts remain Draft; no approved release, Git tag, or publication has been created by this milestone record.
+
+### Next Steps
+
+- Commit the approved Part II change set and open a pull request from `feature/part-02-programming` to `develop`.
+- Complete the approved release workflow through `main`, then create the v0.5.0 tag and GitHub release only after final approval.
+- Do not begin Part III until explicitly authorized.
+
+**Status:** Release preparation active
+
+**Last Updated:** 2026-08-09
+
+---
+
+## Release Candidate v0.5.0 — Programming Complete
+
+- Merged the approved Part II change set into `develop` and prepared `release/v0.5.0`.
+- Finalized release-candidate metadata for Part II; the Final Quality Gate remains **95/100**, with no P0 findings and the final P1 closed.
+- Founder final approval, tag creation, and the GitHub Release remain pending.
+
+**Status:** Release candidate prepared
+
+**Last Updated:** 2026-08-09

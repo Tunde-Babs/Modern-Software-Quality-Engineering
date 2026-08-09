@@ -1,0 +1,21 @@
+{
+  "name": "msqe-delivery-04-collaborative-tested-utilities",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Companion TypeScript examples for MSQE Part II, Delivery 4.",
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "scripts": {
+    "build": "tsc --noEmit false --outDir .build",
+    "check": "tsc --noEmit",
+    "start": "npm run build && node .build/src/runIllustrativeExample.js",
+    "test": "npm run build && node --test .build/test/qualitySummary.test.js .build/test/asyncUtilities.test.js .build/test/errorSemantics.test.js",
+    "validate": "npm run check && npm run test"
+  },
+  "devDependencies": {
+    "@types/node": "^22.14.0",
+    "typescript": "^5.9.3"
+  }
+}

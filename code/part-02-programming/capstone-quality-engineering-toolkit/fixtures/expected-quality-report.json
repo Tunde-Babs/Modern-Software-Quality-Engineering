@@ -1,0 +1,51 @@
+{
+  "reportName": "quality-engineering-toolkit",
+  "targetEnvironment": "staging",
+  "inputRecordCount": 4,
+  "duplicateExecutionCount": 1,
+  "summary": {
+    "executionCount": 3,
+    "passedExecutionCount": 2,
+    "failedExecutionCount": 1,
+    "skippedExecutionCount": 0,
+    "slowExecutionCount": 2,
+    "failedOperationCount": {
+      "POST /orders": 1
+    },
+    "executionCountByEnvironment": {
+      "staging": 3
+    },
+    "slowOperations": [
+      "GET /catalogue",
+      "POST /orders"
+    ]
+  },
+  "asynchronousEvidence": {
+    "readinessAttempts": 2,
+    "readinessElapsedMs": 25,
+    "snapshotReadAttempts": 2,
+    "snapshotId": "fixture-snapshot-001"
+  },
+  "diagnostics": [
+    {
+      "severity": "information",
+      "operation": "wait-for-quality-evidence",
+      "detail": "Readiness condition observed.",
+      "attempt": 2,
+      "elapsedMs": 25,
+      "expected": "ready",
+      "observed": "ready"
+    },
+    {
+      "severity": "information",
+      "operation": "read-evidence-snapshot",
+      "detail": "Fixture evidence snapshot read after bounded attempts.",
+      "attempt": 2
+    },
+    {
+      "severity": "warning",
+      "operation": "deduplicate-executions",
+      "detail": "1 replayed execution record(s) were removed."
+    }
+  ]
+}
