@@ -187,7 +187,7 @@ Do not begin by extracting functions because “functions should be short.” Fi
 | Diagnostic evidence | Which identifiers and outcomes help an engineer investigate without exposing secrets? | structured logging boundary |
 | Cleanup | What data must be removed even after an earlier failure? | `deleteTestUser` in a `finally` path |
 
-This map does not prescribe a final architecture. It exposes decisions. For example, retrying an ambiguous reset request may be unsafe unless the product's operation is designed to tolerate repeated requests. That is an idempotency and product-behaviour question, not merely a loop question. Part II will return to asynchronous work and failure handling later; this chapter's purpose is to notice the responsibility before adding another retry.
+This map does not prescribe a final architecture. It exposes decisions. For example, retrying an ambiguous reset request may be unsafe unless the product's operation is designed to tolerate repeated requests. **Idempotency** means that repeating an operation has the same intended externally observable effect as performing it once; it is a product-behaviour question, not merely a loop question. Part II applies the idea to retry decisions in Chapter 6; this chapter's purpose is to notice the responsibility before adding another retry.
 
 ## Decomposition and Abstraction
 

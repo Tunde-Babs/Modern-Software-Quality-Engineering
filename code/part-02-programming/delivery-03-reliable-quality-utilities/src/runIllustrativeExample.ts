@@ -1,5 +1,5 @@
 import { DeterministicClock } from "./deterministicClock.js";
-import { describeObservation, hasExpectedCompletionPredicate } from "./debuggingScenario.js";
+import { describeObservation, matchesDocumentedCompletionState } from "./debuggingScenario.js";
 import { isRetryableDependencyFailure } from "./errors.js";
 import type { QualityCheckObservation } from "./models.js";
 import { pollUntil } from "./polling.js";
@@ -20,7 +20,7 @@ const pollingResult = await pollUntil({
     { endpoint: "POST /orders", state: "pending", responseTimeMs: 120 },
     completeObservation,
   ]),
-  isComplete: hasExpectedCompletionPredicate,
+  isComplete: matchesDocumentedCompletionState,
   describe: describeObservation,
   timeoutMs: 1_000,
   intervalMs: 100,

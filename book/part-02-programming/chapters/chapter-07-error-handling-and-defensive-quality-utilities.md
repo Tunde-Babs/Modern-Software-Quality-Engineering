@@ -56,6 +56,7 @@ The following categories are teaching distinctions, not an industry standard or 
 | Timeout | Polling did not observe its completion condition within the declared window. | Investigate the last state, timing assumption, dependency, and check design. |
 | Expected negative result | A validation runs successfully and finds that a required condition is not met. | Report the failed evidence; it is not an exception in the utility's execution. |
 | Programming defect | A supposedly exhaustive branch is missing or an invariant is violated. | Fix the utility; do not present it as ordinary product evidence. |
+| Unexpected caught value | A boundary catches a thrown string, number, or object rather than a controlled error. | Preserve the cause for local inspection, but expose a safe, generic category rather than treating it as a classified operational failure. |
 
 An expected negative result is particularly important for QA Engineers. A check may correctly complete and conclude that `POST /orders` returned an unacceptable response. That is quality evidence, not necessarily a failure of the checking utility. A malformed test fixture is different: the utility cannot honestly claim to have evaluated the intended evidence population.
 
@@ -122,7 +123,7 @@ throw new QualityUtilityError(
 
 Useful context helps the next reader locate the failed boundary and compare expected with observed behaviour. It must not expose credentials, access tokens, authorization headers, private keys, customer payloads, or raw personally identifiable information. A correlation identifier may be appropriate if its handling is approved; its presence should not become a reason to log all request content.
 
-A retry boundary should not erase this distinction. If an `invalid-input` failure is not retryable, the terminal result must remain `invalid-input`. If a retryable dependency failure uses every allowed **total attempt**, the terminal result can retain `dependency-failure` and state that retries were exhausted. In both cases, the utility can preserve the underlying cause object for programmatic inspection without copying its arbitrary message into user-facing output.
+A retry boundary should not erase this distinction. If an `invalid-input` failure is not retryable, the terminal result must remain `invalid-input`. If a retryable dependency failure uses every allowed **total attempt**, the terminal result can retain `dependency-failure` and state that retries were exhausted. If the caught value is not a controlled error, the companion uses `unexpected-result` to identify that limited fact without inventing a dependency or input category. In every case, the utility can preserve the underlying cause object for programmatic inspection without copying its arbitrary message into user-facing output.
 
 ### Error message quality is a design concern
 
@@ -141,6 +142,8 @@ Avoid claiming more certainty than the utility has. “Timed out while waiting f
 `finally` runs after a `try` path completes or throws, and after a `catch` path completes or throws. It is useful for cleanup of a resource the current function owns: a temporary fixture, an open handle, or an explicitly created fictional record. It is not a general place to perform unrelated work.
 
 Chapter 1's inherited account-recovery example intentionally demonstrates a risk: an unguarded cleanup rejection in `finally` can override a pending Boolean result or obscure the original error. The lesson is not to avoid cleanup; it is to decide which failure is primary and what evidence must survive.
+
+The Delivery 3 runnable companion does not simulate cleanup or resource ownership. Its deterministic scenarios demonstrate timing, retry, and diagnostic boundaries only; the cleanup policy in this section is a conceptual manuscript example, not an executable companion contract.
 
 ```ts
 let primaryFailure: unknown;

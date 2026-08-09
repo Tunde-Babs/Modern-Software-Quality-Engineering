@@ -22,69 +22,76 @@ Programming for Quality Engineers
 
 ## Current Work
 
-Delivery 4 — Collaborative and Testable Contribution drafted; companion validation passed.
+Part II — Programming for Quality Engineers is complete: Chapters 1–12 and Deliveries 1–5. Prepare the approved change set for merge and release; do not begin Part III.
 
 ---
 
 ## Delivery 1 — Programming Foundations
 
 - Chapters 1–3
-- Status: Draft complete, reviewed; P1 findings closed
+- Status: Draft complete and reviewed; P0/P1 findings closed
 
 ---
 
 ## Delivery 2 — Engineering Reusable Code
 
 - Chapters 4–5
-- Status: Draft complete and reviewed
+- Status: Draft complete and reviewed; P0/P1 findings closed
 - Review result: 94/100
 - QA → QE progression: CLEAR
 - Validation passed: TypeScript check, build, executable example, configuration failure-path checks, and Markdown and repository validation
 
-### Deferred Findings
-
-- P2 — Normalization stage is redundant/no-op; clarify the blank optional output-path policy; require integer `statusCode` semantics
-- P3 — Node.js support/version policy; `npm ci` guidance; a non-POSIX environment-variable example if needed
+- Delivery 2 normalization and companion-consistency findings are closed.
 
 ---
 
-## Delivery 3 Scope
+## Delivery 3 — Reliable and Maintainable Programming
 
 6. Asynchronous Programming for Reliable Quality Feedback
 7. Error Handling and Defensive Quality Utilities
 8. Debugging Quality Engineering Code
 9. Maintainable Code and Refactoring
 
-- Status: Chapters 6–9 drafted; review completed; targeted P1 corrections completed
+- Status: Draft complete and reviewed; P0/P1 findings closed
+
+---
+
+## Delivery 4 — Collaborative and Testable Contribution
+
+10. Git, Code Review, and Collaborative Engineering
+11. Testing Quality Engineering Utilities
+
+- Status: Draft complete and reviewed — 94/100 (Excellent); P0/P1 findings closed
+
+---
+
+## Delivery 5 — Capstone and Integration
+
+- Chapter 12 — Capstone: Quality Engineering Toolkit
+- Reference companion: `code/part-02-programming/capstone-quality-engineering-toolkit/`
+- Status: Draft complete and validated; `npm ci`, TypeScript check, build, deterministic tests, executable run, and report-output validation passed; P0/P1 findings closed
 
 ---
 
 ## Next Gate
 
-Targeted Delivery 4 technical, editorial, learning-experience, and practical review.
-
----
-
-## Delivery 4 Scope
-
-10. Git, Code Review, and Collaborative Engineering
-11. Testing Quality Engineering Utilities
-
-- Status: Chapters 10–11 drafted; TypeScript check, build, deterministic test suite, and executable example passed
+- Commit and push `feature/part-02-programming`.
+- Open, approve, and merge a pull request to `develop`.
+- Promote `develop` to `main` according to the repository release workflow.
+- Prepare the v0.5.0 tag and release according to `RELEASE_POLICY.md` after final approval.
 
 ---
 
 ## Definition of Done
 
-- Delivery 1 and Delivery 2 remain draft complete and reviewed
-- Delivery 3 P1 corrections and targeted validation passed
-- Chapters 6–9 remain Draft manuscripts aligned with the approved chapter template
-- Part I and Part II Chapters 1–9 remain unchanged
-- Delivery 4 Chapters 10–11 and their companion remain within the approved scope
-- No Delivery 5 or Chapter 12 content is created before the next gate passes
+- All five deliveries remain within their approved Part II scope
+- Chapters 1–12 remain Draft manuscripts aligned with the approved template
+- Documented companions and their validation evidence remain synchronized with the manuscripts
+- The final Part II Quality Gate result is 95/100; no P0 findings remain and the final P1 is closed
+- No Part III work begins until explicit authorization
 
 ---
 
 ## Outcome
 
-Delivery 1 and Delivery 2 are draft complete and reviewed. Delivery 3 P1 findings are closed. Delivery 4 is drafted and ready for its targeted review gate.
+Deliveries 1–5 are complete. Part II normalization and the final quality gate are complete; release preparation is active for v0.5.0 — Programming Complete. No Part III work has begun.

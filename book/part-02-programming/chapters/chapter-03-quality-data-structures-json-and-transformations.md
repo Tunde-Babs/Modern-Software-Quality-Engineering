@@ -43,7 +43,7 @@ By the end of this chapter, you should be able to:
 - explain JSON as a data-interchange format and distinguish parsing from validation;
 - treat external data as `unknown` until its relevant shape is established at runtime;
 - traverse nested records and handle optional or missing values safely;
-- use immutable transformations such as `filter`, `map`, `find`, `reduce`, sorting, and deduplication to answer a quality question;
+- use collection transformations such as `filter`, `map`, `find`, `reduce`, sorting, and deduplication to answer a quality question, while making mutation boundaries explicit;
 - explain the purpose and limits of a summary derived from execution results; and
 - produce a structured, reviewable evidence summary from a realistic Quality Engineering dataset.
 

@@ -81,19 +81,19 @@ interface TestResult {
 }
 ```
 
-#### Context
+**Context.**
 
 The model supports a result processor, report, or small test utility. It deliberately does not try to model every possible test-management field.
 
-#### What it does
+**What it does.**
 
 `TestStatus` is a **literal union**: the value must be one of the three named strings. `TestResult` is an object shape with required properties and one optional property, marked by `?`.
 
-#### Why it matters
+**Why it matters.**
 
 The model prevents a misspelling such as `"passsed"` from being silently accepted by typed code. It also tells a reader that a skipped result may not have a reason. The type becomes part of the code's documentation and its feedback loop.
 
-#### Engineering trade-off
+**Engineering trade-off.**
 
 Types add names and constraints that must evolve when the domain evolves. An overly broad model communicates little; an overly detailed model can make a small utility hard to change. Model the information needed for the current decision, then extend it deliberately when evidence requires it.
 
@@ -219,19 +219,19 @@ function classifyResponseTime(responseTimeMs: number, thresholdMs: number): "wit
 const classification = classifyResponseTime(810, 750);
 ```
 
-#### Context
+**Context.**
 
 The function classifies one measured response against a threshold selected by the caller.
 
-#### What it does
+**What it does.**
 
 It returns only `"within-limit"` or `"slow"`. A caller cannot receive an unannounced third outcome without changing the function's declared contract.
 
-#### Why it matters
+**Why it matters.**
 
 The function separates a small mechanism from the policy that selected `750`. A report can count slow operations, while a separate quality strategy can explain why that threshold matters in its environment.
 
-#### Engineering trade-off
+**Engineering trade-off.**
 
 The union is intentionally small. Real performance evidence often needs percentiles, workload context, error rates, and user outcomes; those concerns belong to later performance and reliability work. The narrow function is useful because its limitation is clear.
 
@@ -261,7 +261,7 @@ This is not needless ceremony. It makes an absence visible at the point where th
 
 ## Optional Values, `null`, `undefined`, and Narrowing
 
-An optional property may be absent. In JavaScript, reading a missing property yields `undefined`. Under strict TypeScript settings, the compiler asks you to account for that possibility before you use it as though it were definitely present.
+An optional property may be absent. In JavaScript, reading a missing property yields `undefined`. `null` is a value a contract can deliberately use to mean “known to have no value”; `undefined` usually means a value is absent or has not been supplied. Under strict TypeScript settings, the compiler asks you to account for either possibility before you use it as though it were definitely present.
 
 ```ts
 interface FailureDetail {
@@ -277,6 +277,8 @@ function formatFailure(detail: FailureDetail): string {
   return detail.message;
 }
 ```
+
+In a quality-evidence utility, an omitted `correlationId` can mean that the producing system did not supply a diagnostic identifier; that is different from `correlationId: null`, which might mean the producer explicitly established that no identifier exists. Choose one representation only when the distinction changes a consumer's decision. Do not use `null` and omission interchangeably without documenting the domain meaning.
 
 **Narrowing** is TypeScript's process of using a runtime check to reduce a broader type to a safer one within a branch. Checks such as `value !== undefined`, `typeof value === "string"`, and a discriminating property can narrow a union. TypeScript's official guidance documents how these checks connect runtime control flow to the types available in each branch.[^typescript-narrowing]
 
@@ -372,6 +374,7 @@ A **module** is a file with its own scope that explicitly exports values for oth
 The Delivery 1 companion utility keeps its types and transformations in one module and its fixture-based execution in another:
 
 ```ts
+// Illustrative abbreviated module excerpts; the companion source is the runnable version.
 // qualityEvidence.ts
 export interface ApiExecutionResult {
   executionId: string;
@@ -397,19 +400,19 @@ const results = parseApiExecutionResults(rawExecutionResults);
 const summary = summariseExecutionResults(results, 750);
 ```
 
-#### Context
+**Context.**
 
 The runner owns sample data and output. The module owns the reusable model and transformations.
 
-#### What it does
+**What it does.**
 
 The import makes the dependency explicit. A reader can inspect `qualityEvidence.ts` to understand the contract rather than searching through a long script.
 
-#### Why it matters
+**Why it matters.**
 
 Separating a reusable rule from execution-specific setup makes both testing and change safer. A future API, pipeline, or report command can use the same transformation without duplicating it.
 
-#### Engineering trade-off
+**Engineering trade-off.**
 
 Too many files can obscure a very small program. Extract a module when it represents a meaningful responsibility, is reused, needs separate testing, or benefits from a clear public boundary.
 
@@ -437,19 +440,19 @@ function describeDecision(decision: ValidationDecision): string {
 }
 ```
 
-#### Context
+**Context.**
 
 An evidence utility needs to communicate more than pass or fail. It must distinguish an observed failed rule from a situation where it cannot make a reliable conclusion.
 
-#### What it does
+**What it does.**
 
 The `kind` field allows TypeScript to narrow the union in each `case`. In the `supported` and `failed` branches, `evidenceId` is known to exist. In the `inconclusive` branch, the program cannot accidentally claim an evidence identifier that was never produced.
 
-#### Why it matters
+**Why it matters.**
 
 This model keeps uncertainty visible. An inconclusive check is not a passing check with an inconvenient note. It may need a different follow-up: restore an environment, collect missing data, investigate a dependency, or decide whether the absence blocks a release. Clear outcome modelling helps a Quality Engineer communicate what the code observed without overstating confidence.
 
-#### Engineering trade-off
+**Engineering trade-off.**
 
 More outcome states require callers, reports, and tests to handle them. Add a state only when it represents a decision-relevant difference. A model with dozens of outcome labels can be just as opaque as a Boolean if nobody can explain which action each label should trigger.
 

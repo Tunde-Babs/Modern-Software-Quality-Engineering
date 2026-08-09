@@ -19,10 +19,10 @@ package.json         Minimal TypeScript and Node test-runner configuration
 
 ## Run Locally
 
-Use a current Node.js installation with npm:
+Use Node.js 20 or later with npm:
 
 ```bash
-npm install
+npm ci
 npm run check
 npm test
 npm run start
@@ -34,7 +34,7 @@ npm run start
 
 - Unit and table-driven tests check summary results and invalid thresholds.
 - A boundary test establishes that a duration equal to the slow threshold is treated as slow.
-- Asynchronous tests cover polling success, timeout context, retry success, non-retryable invalid input, and bounded retry exhaustion.
+- Asynchronous tests cover polling success, timeout context, invalid public polling and retry options, retry success, non-retryable invalid input, and bounded retry exhaustion.
 - A characterization test compares the legacy teaching fixture to the refactored summary over representative inputs. It documents observed behaviour; it does not prove that the legacy behaviour is universally correct.
 - The error test deliberately checks that the public retry message excludes a raw dependency marker. The marker is a harmless teaching value, not a secret.
 

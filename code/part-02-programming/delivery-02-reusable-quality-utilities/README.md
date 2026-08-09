@@ -9,8 +9,8 @@ external configuration
   → trusted QualityToolConfig
   → file read
   → JSON.parse as unknown
-  → runtime validation
-  → normalisation
+  → runtime validation of the source shape
+  → canonical normalisation
   → pure summary
   → report formatting
   → file write
@@ -31,11 +31,14 @@ The fixture is fictional and contains no credentials, customer data, tokens, or 
 
 ## Install and Validate
 
+Use Node.js 20 or later with npm.
+
 ```bash
-npm install
+npm ci
 npm run check
 npm run build
 npm run start
+npm run validate
 ```
 
 `npm run start` writes `.build/quality-summary.json` and prints this summary:
@@ -67,9 +70,19 @@ QE_OUTPUT_PATH=.build/quality-summary-from-environment.json \
 npm run start:environment
 ```
 
-`QE_ENVIRONMENT` and `QE_INPUT_PATH` are required. `QE_SLOW_RESPONSE_THRESHOLD_MS` defaults to `750` only because this teaching utility has an explicitly documented local example threshold; a delivery decision should not silently inherit an unexplained default. `QE_OUTPUT_PATH` defaults to `.build/quality-summary.json`.
+`QE_ENVIRONMENT` and `QE_INPUT_PATH` are required. `QE_SLOW_RESPONSE_THRESHOLD_MS` defaults to `750` only because this teaching utility has an explicitly documented local example threshold; a delivery decision should not silently inherit an unexplained default. `QE_OUTPUT_PATH` defaults to `.build/quality-summary.json` when it is absent or contains only whitespace.
 
-Environment values are external text, not trusted typed configuration. For example, `QE_SLOW_RESPONSE_THRESHOLD_MS=slow` produces a useful configuration error rather than allowing `NaN` into the summary rule. A missing fixture, malformed JSON, or malformed record also stops the workflow before a report is written.
+The command above uses POSIX shell syntax. In PowerShell, set the values first, then run the command:
+
+```powershell
+$env:QE_ENVIRONMENT = "staging"
+$env:QE_SLOW_RESPONSE_THRESHOLD_MS = "750"
+$env:QE_INPUT_PATH = "fixtures/quality-executions.json"
+$env:QE_OUTPUT_PATH = ".build/quality-summary-from-environment.json"
+npm run start:environment
+```
+
+Environment values are external text, not trusted typed configuration. For example, `QE_SLOW_RESPONSE_THRESHOLD_MS=slow` produces a useful configuration error rather than allowing `NaN` into the summary rule. Records must contain an integer HTTP `statusCode` between 100 and 599. A missing fixture, malformed JSON, or malformed record also stops the workflow before a report is written. `npm run validate` checks the whitespace-normalisation boundary, the output-path default, and representative status-code failures.
 
 ## Learning Boundaries
 

@@ -22,6 +22,7 @@ Make the threshold contract and aggregation responsibilities easier to inspect w
 
 - Do not change the definition of a slow endpoint.
 - Do not alter retry or polling policy.
+- Do not add or expand asynchronous tests; the existing deterministic async suite is retained as regression evidence.
 - Do not add a dependency, configuration format, reporting channel, or formatting-only sweep.
 - Do not claim universal equivalence between the two summary implementations.
 

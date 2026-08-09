@@ -47,6 +47,11 @@ function readNonNegativeFiniteNumber(
   return parsed;
 }
 
+function readOptionalOutputPath(environment: EnvironmentSource): string {
+  const outputPath = environment.QE_OUTPUT_PATH?.trim();
+  return outputPath || defaultOutputPath;
+}
+
 /**
  * Converts external string values into a trusted internal configuration. The
  * caller supplies the environment source so this module never reaches into
@@ -61,6 +66,6 @@ export function loadQualityToolConfig(environment: EnvironmentSource): QualityTo
       defaultSlowResponseThresholdMs,
     ),
     inputPath: readRequiredText(environment, "QE_INPUT_PATH"),
-    outputPath: environment.QE_OUTPUT_PATH?.trim() || defaultOutputPath,
+    outputPath: readOptionalOutputPath(environment),
   };
 }

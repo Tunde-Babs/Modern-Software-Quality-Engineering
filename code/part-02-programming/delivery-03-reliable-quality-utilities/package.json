@@ -4,6 +4,9 @@
   "private": true,
   "type": "module",
   "description": "Companion TypeScript examples for MSQE Part II, Delivery 3.",
+  "engines": {
+    "node": ">=20.0.0"
+  },
   "scripts": {
     "build": "tsc --noEmit false --outDir .build",
     "check": "tsc --noEmit",

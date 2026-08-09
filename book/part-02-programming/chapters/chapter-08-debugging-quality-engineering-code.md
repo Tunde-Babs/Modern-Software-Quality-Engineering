@@ -21,7 +21,7 @@
 
 The following illustrative scenario concerns a deterministic polling check. The simulated dependency repeatedly returns `complete`, yet the check times out and reports that the last observed state was complete. A developer adds a longer timeout. The check still times out. Another developer adds a retry. The same timeout now takes longer and creates more log entries.
 
-The evidence already contains a contradiction: the observation says complete, while the completion predicate says it is not complete. The problem is neither a slow dependency nor an insufficient retry count. In the Delivery 3 companion, the deliberately defective predicate looks for the string `completed` rather than the documented state `complete`.
+The evidence already contains a contradiction: the observation says complete, while the completion predicate says it is not complete. The problem is neither a slow dependency nor an insufficient retry count. The Delivery 3 companion provides the deterministic symptom and the observations needed to investigate it; the cause is established through the workflow in this chapter rather than announced at the start.
 
 The example is small, but the habit matters. Quality Engineers frequently investigate code, configuration, data, asynchronous dependencies, and application behaviour at the same time. Systematic debugging prevents an understandable symptom from becoming a sequence of unsupported changes.
 
@@ -59,13 +59,19 @@ The following is an MSQE-compatible teaching workflow, not a new industry standa
 
 The flow is deliberately linear enough for learning, though real investigation may revisit earlier steps. Its value is that it separates observation from modification and correlation from causation.
 
+### Worked diagnosis chain: a timeout that observes `complete`
+
+The companion scenario provides a compact example of the workflow. **Symptom:** a named polling operation times out, although its final diagnostic says `POST /orders is complete after 420 ms`. **Evidence:** the same result occurs with a deterministic clock and a scripted local observation, so neither network latency nor live environment capacity explains it. **Competing hypotheses:** the timeout may be too short, the observation may be stale, the clock may advance incorrectly, or the caller's completion rule may not match the observation contract.
+
+**Controlled probe:** keep the observation and clock unchanged, then compare the scenario's completion rule with a rule that accepts the documented `complete` state. The latter succeeds immediately. The timeout-duration and stale-observation hypotheses are rejected for this reproduction. **Bounded correction:** align the scenario rule with the documented state contract. **Regression protection:** retain an assertion that `complete` succeeds and the original mismatched rule produces the diagnostic timeout. The conclusion applies to this controlled case; it is not a claim that all polling timeouts have the same cause.
+
 ## Reproduce Before You Generalise
 
 ### Build a minimal, faithful reproduction
 
 A reproduction need not mirror a whole production environment. It needs to preserve the condition relevant to the symptom. A local fixture that includes the malformed record, a fixed configuration object, or a scripted asynchronous operation can be more valuable than repeatedly running a large pipeline with uncontrolled dependencies.
 
-The companion project's `DeterministicClock` advances virtual time instead of waiting. Its debugging scenario always returns a `complete` observation and always times out with the defective predicate. That determinism makes the timing contract inspectable. It does not prove that every live-system timeout is a predicate defect; it creates one controlled case in which competing explanations can be rejected.
+The companion project's `DeterministicClock` advances virtual time instead of waiting. Its debugging scenario always returns a `complete` observation and always times out with its scenario completion rule. That determinism makes the timing contract inspectable. It does not prove that every live-system timeout has a predicate cause; it creates one controlled case in which competing explanations can be rejected.
 
 ### Observation before modification
 
@@ -115,7 +121,7 @@ This prevents a familiar but weak conclusion: “the test failed, therefore the 
 
 ### Controlled experiments and binary-search thinking
 
-An experiment changes one meaningful variable while retaining the others. Replace a network-like boundary with a scripted local response. Substitute the known configuration object for process environment values. Run one failing record through a parser instead of a full data set. Compare the defective completion predicate with the contract-correct predicate.
+An experiment changes one meaningful variable while retaining the others. Replace a network-like boundary with a scripted local response. Substitute the known configuration object for process environment values. Run one failing record through a parser instead of a full data set. Compare the scenario completion rule with a rule derived from the documented state contract.
 
 **Binary-search thinking** is the conceptual habit of dividing a large search space into meaningful halves. If the input is correct before a transformation and wrong after it, focus on that transformation rather than every upstream system. It is not always literal binary search; it is disciplined narrowing.
 
@@ -189,7 +195,7 @@ Chapter 9 applies the same discipline to structural code change: understand obse
 
 ### Diagnose Before You Fix
 
-Use the Delivery 3 companion's deliberately defective completion predicate. The local dependency returns `complete`, but the utility times out. Treat the predicate as only one of several plausible hypotheses at the start.
+Use the Delivery 3 companion's deterministic timeout scenario. The local dependency returns `complete`, but the utility times out. Treat the completion rule as only one of several plausible hypotheses at the start.
 
 1. Reproduce the deterministic timeout and capture its final diagnostic context.
 2. List hypotheses involving the polling timeout, observation data, predicate, and clock.

@@ -288,7 +288,7 @@ Its source and tests are intentionally reviewable together. The [change plan](..
 Run the project locally with:
 
 ```bash
-npm install
+npm ci
 npm run check
 npm test
 npm run start

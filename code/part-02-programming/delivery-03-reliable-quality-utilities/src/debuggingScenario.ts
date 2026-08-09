@@ -1,16 +1,12 @@
 import type { QualityCheckObservation } from "./models.js";
 
-/**
- * Deliberately defective predicate for Chapter 8. The simulated dependency
- * returns `complete`; this predicate searches for `completed` and therefore
- * creates a reproducible timeout symptom.
- */
-export function hasDefectiveCompletionPredicate(observation: QualityCheckObservation): boolean {
+/** Provides the fixed-input completion rule used by Chapter 8's diagnosis scenario. */
+export function matchesScenarioCompletionState(observation: QualityCheckObservation): boolean {
   return observation.state === ("completed" as QualityCheckObservation["state"]);
 }
 
-/** The bounded correction: use the actual state contract. */
-export function hasExpectedCompletionPredicate(observation: QualityCheckObservation): boolean {
+/** Applies the documented completion-state contract after the diagnosis. */
+export function matchesDocumentedCompletionState(observation: QualityCheckObservation): boolean {
   return observation.state === "complete";
 }
 

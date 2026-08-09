@@ -12,7 +12,7 @@ function readNonEmptyString(record: Record<string, unknown>, key: string): strin
     throw new Error(`Expected a non-empty string for ${key}.`);
   }
 
-  return value.trim();
+  return value;
 }
 
 function readFiniteNumber(record: Record<string, unknown>, key: string): number {
@@ -34,7 +34,7 @@ function readBoolean(record: Record<string, unknown>, key: string): boolean {
 }
 
 function readQualityEnvironment(record: Record<string, unknown>): QualityEnvironment {
-  const environment = readNonEmptyString(record, "environment");
+  const environment = readNonEmptyString(record, "environment").trim();
   if (!qualityEnvironments.has(environment as QualityEnvironment)) {
     throw new Error(`Unexpected environment: ${environment}.`);
   }
@@ -61,8 +61,8 @@ export function parseQualityExecutionResult(input: unknown): QualityExecutionRes
     validationPassed: readBoolean(input, "validationPassed"),
   };
 
-  if (result.statusCode < 100 || result.statusCode > 599) {
-    throw new Error("statusCode must be between 100 and 599.");
+  if (!Number.isInteger(result.statusCode) || result.statusCode < 100 || result.statusCode > 599) {
+    throw new Error("statusCode must be an integer between 100 and 599.");
   }
 
   if (result.responseTimeMs < 0) {

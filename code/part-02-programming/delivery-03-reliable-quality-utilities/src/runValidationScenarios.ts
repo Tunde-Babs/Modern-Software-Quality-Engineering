@@ -2,8 +2,8 @@ import assert from "node:assert/strict";
 import { DeterministicClock } from "./deterministicClock.js";
 import {
   describeObservation,
-  hasDefectiveCompletionPredicate,
-  hasExpectedCompletionPredicate,
+  matchesDocumentedCompletionState,
+  matchesScenarioCompletionState,
 } from "./debuggingScenario.js";
 import { isRetryableDependencyFailure, QualityUtilityError } from "./errors.js";
 import type { QualityCheckObservation } from "./models.js";
@@ -22,7 +22,7 @@ const pollingClock = new DeterministicClock();
 const pollingSuccess = await pollUntil({
   operationName: "polling-success",
   operation: scriptedObservations([{ ...completeObservation, state: "pending" }, completeObservation]),
-  isComplete: hasExpectedCompletionPredicate,
+  isComplete: matchesDocumentedCompletionState,
   describe: describeObservation,
   timeoutMs: 500,
   intervalMs: 100,
@@ -37,7 +37,7 @@ await assert.rejects(
     pollUntil({
       operationName: "timeout-scenario",
       operation: scriptedObservations([{ ...completeObservation, state: "pending" }]),
-      isComplete: hasExpectedCompletionPredicate,
+      isComplete: matchesDocumentedCompletionState,
       describe: describeObservation,
       timeoutMs: 200,
       intervalMs: 100,
@@ -47,6 +47,20 @@ await assert.rejects(
     error instanceof QualityUtilityError &&
     error.kind === "timeout" &&
     error.context.observedState === "POST /orders is pending after 420 ms",
+  );
+
+await assert.rejects(
+  () =>
+    pollUntil({
+      operationName: "invalid-polling-options",
+      operation: async () => completeObservation,
+      isComplete: matchesDocumentedCompletionState,
+      describe: describeObservation,
+      timeoutMs: -1,
+      intervalMs: 100,
+      clock: new DeterministicClock(),
+    }),
+  (error: unknown) => error instanceof QualityUtilityError && error.kind === "invalid-input",
 );
 
 const retryClock = new DeterministicClock();
@@ -59,6 +73,19 @@ const retried = await retryBounded({
   clock: retryClock,
 });
 assert.deepEqual(retried, { value: "received", attempts: 2 });
+
+await assert.rejects(
+  () =>
+    retryBounded({
+      operationName: "invalid-retry-options",
+      operation: async () => "not-called",
+      shouldRetry: () => false,
+      maxAttempts: 1.5,
+      delayMs: 0,
+      clock: new DeterministicClock(),
+    }),
+  (error: unknown) => error instanceof QualityUtilityError && error.kind === "invalid-input",
+);
 
 const nonRetryableCause = new QualityUtilityError(
   "invalid-input",
@@ -146,7 +173,7 @@ await assert.rejects(
     pollUntil({
       operationName: "debugging-scenario",
       operation: scriptedObservations([completeObservation]),
-      isComplete: hasDefectiveCompletionPredicate,
+      isComplete: matchesScenarioCompletionState,
       describe: describeObservation,
       timeoutMs: 100,
       intervalMs: 100,

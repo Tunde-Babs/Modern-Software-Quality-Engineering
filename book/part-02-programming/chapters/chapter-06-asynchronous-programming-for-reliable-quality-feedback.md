@@ -113,7 +113,7 @@ const results = await Promise.all([cataloguePromise, ordersPromise, accountPromi
 
 The operations may now be in flight at the same time. This can reduce elapsed time, but it also changes resource use, failure handling, ordering, and diagnostic behaviour. A shared test account, a rate-limited dependency, or a database fixture that must be cleaned up in a particular order may make concurrent work unsafe or less interpretable.
 
-`Promise.all` fulfills only if every input promise fulfills. It rejects when an input rejects; its array of values is ordered by the input array, not by completion time.[^mdn-promise-all] This is useful when the workflow cannot continue without every result. It is not a report of every outcome after the first rejection.
+`Promise.all` fulfills only if every input promise fulfills. It rejects when an input rejects; its array of values is ordered by the input array, not by completion time.[^mdn-promise-all] This is useful when the workflow cannot continue without every result. It is not a report of every outcome after the first rejection, and rejection does not by itself cancel the other operations already started. If stopping work matters, design and test an explicit cancellation or abort contract at the boundary that supports it.
 
 ```ts
 const outcomes = await Promise.allSettled([
@@ -190,7 +190,7 @@ Do not catch a timeout and replace it with `false` unless the caller's contract 
 
 A retry starts an operation again after a failure. It is not “run failed code again until it passes.” A transient failure may plausibly succeed on a later attempt—for example, a local dependency signals temporary unavailability. A deterministic failure, such as invalid input, an unsupported configuration, or a rejected business rule, will usually not improve by repetition.
 
-Before retrying, ask whether the operation is **idempotent**. An operation is idempotent when performing it more than once has the same intended externally observable effect as performing it once. Reading a named result is typically idempotent. Creating an order, charging a payment, or sending a notification may not be unless the interface supplies a stable idempotency key or another duplicate-protection mechanism. A transport timeout can leave the caller uncertain whether the original request took effect; that uncertainty makes retry design especially important.
+Before retrying, ask whether the operation is **idempotent**, using the definition introduced in Chapter 1. Reading a named result is typically idempotent. Creating an order, charging a payment, or sending a notification may not be unless the interface supplies a stable idempotency key or another duplicate-protection mechanism. A transport timeout can leave the caller uncertain whether the original request took effect; that uncertainty makes retry design especially important.
 
 The companion makes the retry boundary explicit:
 

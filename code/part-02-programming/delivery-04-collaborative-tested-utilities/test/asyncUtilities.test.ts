@@ -55,6 +55,28 @@ test("reports timeout context at a bounded virtual deadline", async () => {
   assert.deepEqual(clock.sleepRequests, [100, 100]);
 });
 
+test("rejects invalid polling options before calling the operation", async () => {
+  let called = false;
+
+  await assert.rejects(
+    pollUntil({
+      operationName: "invalid polling options",
+      operation: async () => {
+        called = true;
+        return "complete";
+      },
+      isComplete: (state) => state === "complete",
+      describe: (state) => state,
+      timeoutMs: -1,
+      intervalMs: 100,
+      clock: new DeterministicClock(),
+    }),
+    (error: unknown) => error instanceof QualityUtilityError && error.kind === "invalid-input",
+  );
+
+  assert.equal(called, false);
+});
+
 test("retries a classified transient failure and records the attempted delay", async () => {
   const clock = new DeterministicClock();
   let attempts = 0;
@@ -79,4 +101,25 @@ test("retries a classified transient failure and records the attempted delay", a
 
   assert.deepEqual(result, { value: "ready", attempts: 2 });
   assert.deepEqual(clock.sleepRequests, [50]);
+});
+
+test("rejects invalid retry options before calling the operation", async () => {
+  let called = false;
+
+  await assert.rejects(
+    retryBounded({
+      operationName: "invalid retry options",
+      operation: async () => {
+        called = true;
+        return "ready";
+      },
+      shouldRetry: () => false,
+      maxAttempts: 1.5,
+      delayMs: 0,
+      clock: new DeterministicClock(),
+    }),
+    (error: unknown) => error instanceof QualityUtilityError && error.kind === "invalid-input",
+  );
+
+  assert.equal(called, false);
 });

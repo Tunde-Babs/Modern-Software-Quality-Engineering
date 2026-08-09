@@ -15,12 +15,12 @@ The quality-summary implementation combined the threshold contract and state agg
 - Validates `slowThresholdMs` as a finite, non-negative input.
 - Uses a named helper to count each quality state.
 - Preserves a legacy implementation only as a characterization-test fixture.
-- Adds deterministic tests for normal output, an equality boundary, invalid input, polling, timeout, retry, and controlled terminal errors.
+- Adds deterministic summary and threshold tests; retains the existing polling, timeout, retry, and controlled-terminal-error tests as regression evidence.
 
 ## Evidence
 
 - `npm run check`
-- `npm test` — 11 deterministic tests; no network calls or real sleeps
+- `npm test` — deterministic tests with no application-runtime network dependency or real sleeps
 - Characterization comparisons over no observations, an equality boundary, and mixed/repeated endpoints
 
 ## Risks and Limits

@@ -12,7 +12,7 @@ It is not an API-testing framework, a production service, or a schema-validation
 
 ## Validation
 
-Install the declared development dependency and run:
+Use Node.js 20 or later. Install the declared development dependency and run:
 
 ```bash
 npm install

@@ -59,7 +59,7 @@ Upon completion of this part, readers will be able to:
 
 ### Primary implementation language: TypeScript
 
-Part II will use TypeScript as the primary implementation language. Its type system makes data contracts, nullability, function boundaries, and refactoring consequences visible; its asynchronous model is directly relevant to browser, API, event-driven, and automation work; and its JavaScript interoperability helps readers understand much of the existing test and quality-tooling ecosystem.
+Part II uses TypeScript as the primary implementation language. Its type system makes data contracts, nullability, function boundaries, and refactoring consequences visible; its asynchronous model is directly relevant to browser, API, event-driven, and automation work; and its JavaScript interoperability helps readers understand much of the existing test and quality-tooling ecosystem.
 
 This is a curriculum implementation choice, not a claim that every Quality Engineer must use TypeScript or that one language guarantees quality. Concepts are introduced before syntax, and readers should be able to transfer the reasoning to the language used in their organisation.
 
@@ -84,11 +84,11 @@ SQL, Bash, and Linux remain relevant MQE-BOK topics, but this part introduces on
 | 7. Error Handling and Defensive Quality Utilities | Model invalid input, exceptions, error propagation, cleanup, failure classification, and actionable diagnostics. | A hardened utility that distinguishes transient, permanent, and configuration failures. |
 | 8. Debugging Quality Engineering Code | Reproduce failures; read stack traces; use breakpoints, logs, and minimal experiments; separate test failure, utility defect, and system behaviour. | A concise debugging record that states evidence, cause, fix, and regression check. |
 | 9. Maintainable Code and Refactoring | Improve names, duplication, cohesion, coupling, complexity, and testability without treating style rules as universal laws. | A behaviour-preserving refactor with before-and-after rationale and tests. |
-| 10. Git, Code Review, and Collaborative Engineering | Use branches, commits, pull requests, reviews, and conflict resolution to make changes inspectable and recoverable. | A reviewable change set with a focused commit history and pull-request description. |
+| 10. Git, Code Review, and Collaborative Engineering | Use branches, commits, pull requests, reviews, and conflict resolution to make changes inspectable and recoverable. | A reviewable change set with a focused proposed commit sequence and pull-request description. |
 | 11. Testing Quality Engineering Utilities | Test utility code with deterministic inputs, assertions, test doubles at boundaries, and proportionate coverage evidence. | A unit-tested utility with stated evidence and coverage limitations. |
 | 12. Capstone: Quality Engineering Toolkit | Integrate the part's programming practices into a small, reusable, evidence-producing toolkit. | A maintainable toolkit, tests, documentation, and a portfolio-ready engineering evidence pack. |
 
-This curriculum plan governs every manuscript. Each chapter follows the approved chapter template and uses supporting assets only where they improve a learning objective. Delivery 1 chapters are Draft; later delivery manuscripts begin only after the preceding delivery has completed review.
+This curriculum plan governs every manuscript. Each chapter follows the approved chapter template and uses supporting assets only where they improve a learning objective. Chapters 1–12 are Draft manuscripts; the completed delivery reviews and this normalization pass do not mark them Approved or published.
 
 ---
 
@@ -112,7 +112,19 @@ This progression prepares later parts without prematurely teaching their full sp
 | Delivery 4 — Collaborative and Testable Contribution | 10–11 | Readers can contribute code through a reviewable workflow and validate their own utilities. | Git-review simulation and unit-testing mini-project. |
 | Delivery 5 — Capstone and Review | 12 | Readers combine the curriculum into a portfolio-ready Quality Engineering Toolkit. | Capstone design, implementation, test, evidence, and reflection. |
 
-Each delivery should complete its manuscript review before the next delivery begins. Diagrams, standalone labs, case studies, and repository-based projects are Pass 2 enrichment and must be introduced only where their learning value is explicit.
+Deliveries 1–5 are draft complete and reviewed or validated, including the validated capstone companion. The final cross-Part II quality gate is complete; Part II is in release preparation for v0.5.0 — Programming Complete. Diagrams, standalone labs, case studies, and repository-based projects remain Pass 2 enrichment and must be introduced only where their learning value is explicit.
+
+---
+
+## Current Manuscript and Companion State
+
+All twelve chapter manuscripts remain **Draft**. Delivery 1 (Chapters 1–3), Delivery 2 (Chapters 4–5), Delivery 3 (Chapters 6–9), Delivery 4 (Chapters 10–11), and Delivery 5 (Chapter 12 and the Quality Engineering Toolkit) are draft complete and reviewed or validated. The Delivery 5 executable companion has passed its documented checks, build, tests, and local run.
+
+The Part II normalization pass and final quality gate are complete: **95/100 — Exceptional / Reference Quality**, with no P0 findings and the final P1 finding closed. This is not an approval, published-release, or chapter-status decision; the manuscripts remain Draft while merge and release preparation proceed.
+
+### Local Tooling Baseline
+
+Part II companions require Node.js 20 or later. Use `npm ci` where a committed lockfile is present (Deliveries 2–5 and the capstone); Delivery 1 has no committed lockfile and documents `npm install`. Examples have no application-runtime network dependency and use fictional local data. Environment-variable guidance includes POSIX and PowerShell forms where applicable.
 
 ---
 
@@ -128,7 +140,7 @@ Part II is deliberately more hands-on than Part I. Every major concept must even
 | Refactoring exercises | Make maintainability a behaviour-preserving engineering practice. | Before-and-after rationale, tests, and trade-offs. |
 | Mini-projects | Connect related concepts into an inspectable utility. | Reusable module, documentation, test results, and review notes. |
 | Planned labs | Apply several chapters to a realistic but bounded quality problem. | Strategy, source, diagnostics, and reflection. |
-| Capstone portfolio | Demonstrate integrated capability without claiming production-scale system design. | Toolkit, tests, README, Git history, and evidence summary. |
+| Capstone portfolio | Demonstrate integrated capability without claiming production-scale system design. | Toolkit, tests, README, proposed collaboration artifacts, and evidence summary. |
 
 Planned Pass 2 labs are: **Lab 1 — Designing a Configurable Quality-Data Utility** after Chapter 5, and **Lab 2 — Debugging and Hardening Asynchronous Quality Feedback** after Chapter 9. They are planning commitments only; no lab is created by this document.
 
@@ -152,7 +164,7 @@ The toolkit should:
 - include unit tests for important success, failure, and boundary cases; and
 - be maintained through a focused Git workflow and reviewable documentation.
 
-The capstone evidence pack should include a short design note, source and tests, sample configuration and fixtures, representative output, a README with limits and safe-use notes, and a brief reflection on the risk, evidence, trade-offs, and next improvement. The learner must not use secrets, customer data, or unsupported production claims.
+The capstone evidence pack should include a short design note, source and tests, sample configuration and fixtures, representative output, a README with limits and safe-use notes, proposed collaboration artifacts, and a brief reflection on the risk, evidence, trade-offs, and next improvement. The learner must not use secrets, customer data, or unsupported production claims.
 
 ---
 

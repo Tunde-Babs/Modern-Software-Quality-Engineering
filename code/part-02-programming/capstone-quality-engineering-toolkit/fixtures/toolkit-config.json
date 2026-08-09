@@ -1,0 +1,10 @@
+{
+  "environment": "staging",
+  "inputPath": "fixtures/execution-records.json",
+  "outputPath": ".build/quality-report.json",
+  "slowThresholdMs": 500,
+  "pollingTimeoutMs": 100,
+  "pollingIntervalMs": 25,
+  "retryMaxAttempts": 2,
+  "retryDelayMs": 10
+}
