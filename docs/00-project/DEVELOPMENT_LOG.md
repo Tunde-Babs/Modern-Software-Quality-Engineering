@@ -148,3 +148,28 @@ Part II is ready for merge and release preparation as **v0.5.0 — Programming C
 **Status:** Release candidate prepared
 
 **Last Updated:** 2026-08-09
+
+---
+
+## Milestone M2 — Handbook Development: Part III Software Testing
+
+### Completed
+
+- Completed Part III Chapters 1–12 and the QA → QE testing progression from evidence interpretation and risk-informed strategy through testability, test design, exploration, reliable feedback, distributed-system evidence, regression strategy, and production learning.
+- Completed Delivery quality gates: Delivery 1 **94/100**, Delivery 2 **96/100**, Delivery 3 **94/100**, Delivery 4 **95/100**, and the Chapter 12 capstone **97/100**.
+- Completed the Risk-Informed Test Strategy and Evidence Portfolio capstone, comprehensive normalization, and the Final Part III Quality Gate: **96/100 — Exceptional / Reference Quality**.
+- Established the committed Part III manuscript baseline on `feature/part-03-testing`; no P0 or P1 findings remain.
+
+### Outcome
+
+Part III is ready for merge and release preparation. The chapter manuscripts remain Draft; no release branch, tag, GitHub Release, or publication is claimed by this record.
+
+### Next Steps
+
+- Commit and push approved release-administration changes, then open the pull request from `feature/part-03-testing` to `develop`.
+- Complete the approved release workflow through the release branch and `main`, then create the tag and GitHub Release only after final approval.
+- Do not begin Part IV until explicitly authorized.
+
+**Status:** Release preparation active
+
+**Last Updated:** 2026-08-09

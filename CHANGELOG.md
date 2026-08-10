@@ -2,6 +2,33 @@
 
 All notable changes to this project will be documented in this file.
 
+## [Unreleased]
+
+### Added
+
+- Part III — Software Testing Engineering, Chapters 1–12.
+- A risk-informed testing and evidence-engineering curriculum for QA Engineers progressing into Quality Engineering.
+- Practical exercises and the Risk-Informed Test Strategy and Evidence Portfolio capstone.
+- Testing-strategy coverage across testability, test design, exploration, evidence boundaries, reliable feedback, distributed systems, regression, and production learning.
+
+### Changed
+
+- Updated project status and Part III navigation for release preparation.
+- Normalized Part III terminology and references.
+- Added Chapter 10's worked change-impact and regression-feedback example.
+- Completed final ISO/IEC 25010:2023 terminology alignment.
+
+### Validation
+
+- Final Part III Quality Gate: **96/100 — Exceptional / Reference Quality**.
+- No P0 or P1 findings.
+- All 12 chapters validated, including Markdown structure and local links.
+- Final capstone quality gate: **97/100 — High Quality**.
+
+### Known Limitations
+
+- Part III is a strategy-and-evidence curriculum. Companion laboratories, diagrams, case studies, and implementation-heavy assets remain intentionally deferred to a later enrichment pass; it does not provide automation frameworks, live integrations, or production tooling.
+
 ## [0.4.0] — Foundations Complete — 2026-08-08
 
 ## [0.5.0] — Programming Complete — 2026-08-09

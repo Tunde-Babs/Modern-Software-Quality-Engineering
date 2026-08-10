@@ -51,7 +51,7 @@ The project follows an incremental release strategy, with each release represent
 
 - Part I — Foundations completed and released as v0.4.0
 - Part II — Programming for Quality Engineers completed and released as v0.5.0
-- Part III — Software Testing manuscript drafting complete; normalization and final-quality-review preparation are active
+- Part III — Software Testing complete and in release preparation
 - Part IV has not started
 
 ---

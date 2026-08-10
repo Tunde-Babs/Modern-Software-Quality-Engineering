@@ -23,34 +23,26 @@ M2 — Handbook Development
 
 ## Active Scope
 
-Part III — Software Testing Engineering, comprehensive normalization complete.
+Part III — Software Testing Engineering is complete and in release preparation.
 
-- Delivery 1 quality gate is closed: **94/100 — High Quality**; P0 findings: none; P1 and P2 corrections closed.
-- Delivery 2 quality gate is closed: **96/100 — High Quality**; P0, P1, and P2 findings: none.
-- Delivery 3 quality gate is closed: **94/100 — Strong**; P0 findings: none; P1 finding: closed; P2 findings: none.
-- Delivery 4 quality gate is closed: **95/100 — High Quality**; P0 and P1 findings: none.
-- Delivery 5 capstone quality gate is closed: **97/100 — High Quality**; P0 and P1 findings: none.
-- Part III manuscript drafting and normalization are complete; all chapters remain Draft.
-- No Part III companion code, laboratories, diagrams, case studies, or implementation-heavy assets have been created.
+- Chapters 1–12 are complete; all chapter metadata remains Draft.
+- Delivery gates are complete: Delivery 1 **94/100**, Delivery 2 **96/100**, Delivery 3 **94/100**, Delivery 4 **95/100**, and Delivery 5 capstone **97/100**.
+- Comprehensive normalization and the Final Part III Quality Gate are complete: **96/100 — Exceptional / Reference Quality**.
+- P0 findings: none. P1 findings: none.
+- The Part III manuscript baseline is established on `feature/part-03-testing`.
 - Part III is not approved or released. Do not begin Part IV or any later handbook part.
 
 ---
 
-## Next Gate
+## Next Actions
 
-Conduct the Final Part III Quality Gate. Establish the intended Part III manuscript tracking baseline through the approved repository workflow before final release validation; do not stage, commit, or begin Part IV automatically.
-
----
-
-## Normalization Record
-
-- Root project status, Part III navigation, reference labels, terminology, ISO/IEC 25010:2023 usage, evidence language, and practical-resource continuity were reviewed and normalized where needed.
-- Chapter 10 now includes the targeted change-impact and staged-feedback worked example; Chapters 9 and 11 now include the targeted supporting sources.
-- The optional evidence-portfolio/boundary visual remains deferred: the Chapter 12 evidence matrix and staged portfolio guidance already provide the needed model without a redundant Pass 2 diagram.
-- Chapters 1–12 are present and eligible for tracking but currently untracked; no files were staged or committed during normalization.
+- Commit and push the approved release-administration changes.
+- Open and review the pull request from `feature/part-03-testing` to `develop`.
+- After approval, merge to `develop`, prepare the release branch, promote to `main`, and create the tag and GitHub Release according to policy.
+- Do not begin Part IV automatically.
 
 ---
 
 ## Outcome
 
-All Part III chapters are drafted and normalized. The Final Part III Quality Gate is next; approval, release preparation, and Part IV remain out of scope.
+Part III is ready for merge and release preparation. Final approval, release-branch preparation, promotion, tagging, and publication remain governed by the approved release workflow.
