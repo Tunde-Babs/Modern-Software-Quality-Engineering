@@ -252,7 +252,7 @@ The project follows an incremental release model.
 | v0.3.0 | Educational Architecture |
 | v0.4.0 | Foundations Complete |
 | v0.5.0 | Programming Complete |
-| v0.6.0 | Testing & Automation Complete |
+| v0.6.0 | Software Testing Complete |
 | v0.7.0 | Data, Cloud & Reliability |
 | v0.8.0 | AI Quality Engineering |
 | v0.9.0 | First Edition Review |
