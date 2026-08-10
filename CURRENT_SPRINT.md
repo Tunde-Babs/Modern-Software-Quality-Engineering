@@ -10,88 +10,39 @@ M2 — Handbook Development
 
 ## Branch
 
-`release/v0.5.0`
+`feature/part-03-testing`
 
 ---
 
-## Part II
+## Released Milestones
 
-Programming for Quality Engineers
-
----
-
-## Current Work
-
-Part II — Programming for Quality Engineers is complete: Chapters 1–12 and Deliveries 1–5. It is merged into `develop`, and the `release/v0.5.0` candidate is prepared. Do not begin Part III.
+- Part I — Foundations released as **v0.4.0 — Foundations Complete**.
+- Part II — Programming for Quality Engineers released as **v0.5.0 — Programming Complete**.
 
 ---
 
-## Delivery 1 — Programming Foundations
+## Active Scope
 
-- Chapters 1–3
-- Status: Draft complete and reviewed; P0/P1 findings closed
+Part III — Software Testing Engineering is complete and in release preparation.
 
----
-
-## Delivery 2 — Engineering Reusable Code
-
-- Chapters 4–5
-- Status: Draft complete and reviewed; P0/P1 findings closed
-- Review result: 94/100
-- QA → QE progression: CLEAR
-- Validation passed: TypeScript check, build, executable example, configuration failure-path checks, and Markdown and repository validation
-
-- Delivery 2 normalization and companion-consistency findings are closed.
+- Chapters 1–12 are complete; all chapter metadata remains Draft.
+- Delivery gates are complete: Delivery 1 **94/100**, Delivery 2 **96/100**, Delivery 3 **94/100**, Delivery 4 **95/100**, and Delivery 5 capstone **97/100**.
+- Comprehensive normalization and the Final Part III Quality Gate are complete: **96/100 — Exceptional / Reference Quality**.
+- P0 findings: none. P1 findings: none.
+- The Part III manuscript baseline is established on `feature/part-03-testing`.
+- Part III is not approved or released. Do not begin Part IV or any later handbook part.
 
 ---
 
-## Delivery 3 — Reliable and Maintainable Programming
+## Next Actions
 
-6. Asynchronous Programming for Reliable Quality Feedback
-7. Error Handling and Defensive Quality Utilities
-8. Debugging Quality Engineering Code
-9. Maintainable Code and Refactoring
-
-- Status: Draft complete and reviewed; P0/P1 findings closed
-
----
-
-## Delivery 4 — Collaborative and Testable Contribution
-
-10. Git, Code Review, and Collaborative Engineering
-11. Testing Quality Engineering Utilities
-
-- Status: Draft complete and reviewed — 94/100 (Excellent); P0/P1 findings closed
-
----
-
-## Delivery 5 — Capstone and Integration
-
-- Chapter 12 — Capstone: Quality Engineering Toolkit
-- Reference companion: `code/part-02-programming/capstone-quality-engineering-toolkit/`
-- Status: Draft complete and validated; `npm ci`, TypeScript check, build, deterministic tests, executable run, and report-output validation passed; P0/P1 findings closed
-
----
-
-## Next Gate
-
-- Open, approve, and merge the `release/v0.5.0` pull request to `main`.
-- Obtain Founder final approval.
-- Create tag `v0.5.0`.
-- Create the GitHub Release for v0.5.0.
-
----
-
-## Definition of Done
-
-- All five deliveries remain within their approved Part II scope
-- Chapters 1–12 remain Draft manuscripts aligned with the approved template
-- Documented companions and their validation evidence remain synchronized with the manuscripts
-- The final Part II Quality Gate result is 95/100; no P0 findings remain and the final P1 is closed
-- No Part III work begins until explicit authorization
+- Commit and push the approved release-administration changes.
+- Open and review the pull request from `feature/part-03-testing` to `develop`.
+- After approval, merge to `develop`, prepare the release branch, promote to `main`, and create the tag and GitHub Release according to policy.
+- Do not begin Part IV automatically.
 
 ---
 
 ## Outcome
 
-Deliveries 1–5 are complete. Part II normalization and the final quality gate are complete; v0.5.0 — Programming Complete is prepared as a release candidate. Founder approval, tag creation, and the GitHub Release remain pending. No Part III work has begun.
+Part III is ready for merge and release preparation. Final approval, release-branch preparation, promotion, tagging, and publication remain governed by the approved release workflow.
