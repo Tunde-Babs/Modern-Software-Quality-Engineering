@@ -4,7 +4,7 @@
 
 ## Curriculum Status
 
-**Curriculum approved. Delivery 1 (Chapters 1–4), Delivery 2 (Chapters 5–8), and Delivery 3 (Chapters 9–12) each closed at 98/100 with no P0, P1, or P2 findings. All Chapters 1–12 remain Draft.** Part V manuscript drafting and its comprehensive normalization pass are complete. Companion implementation, Lab 1, Lab 2, diagrams, case studies, CI configuration, and other Pass 2 learning assets remain deferred. The Final Part V Quality Gate is next. Website work remains separate, Part VI has not started, and Part V is not approved, published, or released.
+**Curriculum complete. Delivery 1 (Chapters 1–4), Delivery 2 (Chapters 5–8), Delivery 3 (Chapters 9–12), and the Final Part V Quality Gate each closed at 98/100 with no P0, P1, or P2 findings. All Chapters 1–12 remain Draft.** Part V manuscript drafting and its comprehensive normalization pass are complete at committed baseline `64a3c9f`. Release preparation is active for the planned **v0.8.0 — Automation Engineering Complete** release. Companion implementation, Lab 1, Lab 2, diagrams, case studies, CI configuration, and other Pass 2 learning assets remain deferred. Website work remains separate, Part VI has not started, and Part V is not approved, published, or released.
 
 ---
 
@@ -460,6 +460,6 @@ Part V must not modify `website/` while the separate website-foundation worktree
 
 ## Curriculum Approval Record
 
-Delivery 1, Delivery 2, and Delivery 3 closed at 98/100 with no P0, P1, or P2 findings. All Chapters 1–12 remain Draft. Part V manuscript drafting and normalization are complete; no companion implementation or Pass 2 asset work has started.
+Delivery 1, Delivery 2, Delivery 3, and the Final Part V Quality Gate closed at 98/100 with no P0, P1, or P2 findings. All Chapters 1–12 remain Draft. Part V manuscript drafting and normalization are complete at committed baseline `64a3c9f`; release preparation is active for planned **v0.8.0 — Automation Engineering Complete**.
 
-The next Part V action is the Final Part V Quality Gate. The Quality Automation System companion, Lab 1, and Lab 2 are **recommended Pass 2 after the manuscript gate**, not prerequisites for it. Do not begin companion implementation or Part VI automatically.
+The Quality Automation System companion, Lab 1, and Lab 2 are **recommended Pass 2 after the manuscript gate**, not prerequisites for it. Do not begin companion implementation or Part VI automatically.

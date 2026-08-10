@@ -25,27 +25,29 @@ M2 — Handbook Development
 
 ## Active Scope
 
-Part V — Automation Engineering is active on `feature/part-05-automation-engineering`.
+Part V — Automation Engineering release administration is active on `feature/part-05-automation-engineering`.
 
-- The Part V curriculum is approved.
-- Delivery 1 — Automation Foundations and Determinism: Chapters 1–4 completed their independent quality gate at **98/100** with no P0, P1, or P2 findings.
-- Delivery 2 — Execution Boundaries and Diagnostics: Chapters 5–8 completed their independent quality gate at **98/100** with no P0, P1, or P2 findings.
-- Delivery 3 — Sustainable Feedback and Capstone: Chapters 9–12 completed drafting and their independent quality gate at **98/100** with no P0, P1, or P2 findings.
-- All Chapters 1–12 remain Draft. Part V manuscript drafting is complete.
-- Companion implementation, Lab 1, Lab 2, diagrams, case studies, CI configuration, and other Pass 2 learning assets have not started.
-- Part V comprehensive normalization is complete. Its chapter-level P3 backlog has been resolved in this pass.
-- Repository-level P3 backlog remains the stale root README v0.7.0 wording and empty editorial/citation governance files.
-- The website foundation remains a separate parallel worktree; no website work is included in this scope.
+- The Part V curriculum, manuscript drafting, and comprehensive normalization are complete.
+- Delivery 1 — Automation Foundations and Determinism: Chapters 1–4 closed at **98/100** with no P0, P1, or P2 findings.
+- Delivery 2 — Execution Boundaries and Diagnostics: Chapters 5–8 closed at **98/100** with no P0, P1, or P2 findings.
+- Delivery 3 — Sustainable Feedback and Capstone: Chapters 9–12 closed at **98/100** with no P0, P1, or P2 findings.
+- Final Part V Quality Gate: **98/100**; P0/P1/P2: none.
+- Committed manuscript baseline: `64a3c9f`.
+- Canonical planned release: **v0.8.0 — Automation Engineering Complete**.
+- All Chapters 1–12 remain Draft.
+- The Quality Automation System companion and Labs 1–2 are recommended Pass 2 enrichment and remain deferred.
+- Repository-level P3 backlog: empty editorial/citation governance files and future release mappings for Parts VI–IX.
+- The website foundation remains a separate parallel worktree; no website work is included in this scope. Part VI has not started.
 
 ---
 
 ## Next Actions
 
-- Run the Final Part V Quality Gate.
+- Commit and push the approved release-administration changes, then open the `feature/part-05-automation-engineering` → `develop` pull request.
 - Do not begin companion code, laboratories, diagrams, CI configuration, website work, or Part VI automatically.
 
 ---
 
 ## Outcome
 
-Part V Deliveries 1–3 are closed at 98/100. All Chapters 1–12 remain Draft; manuscript drafting and comprehensive normalization are complete, and the Final Part V Quality Gate is the next authorized action. Pass 2 assets have not started, Part VI has not started, and website work remains separate.
+Part V is complete at manuscript level and ready for release administration as **v0.8.0 — Automation Engineering Complete**. All Chapters 1–12 remain Draft; no tag, GitHub Release, publication, companion implementation, laboratory work, or Part VI work is claimed by this record.
