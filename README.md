@@ -46,6 +46,7 @@ The project follows an incremental release strategy, with each release represent
 | **v0.4.0** | ✅ Released | Foundations Complete |
 | **v0.5.0** | ✅ Released | Programming Complete |
 | **v0.6.0** | ✅ Released | Software Testing Complete |
+| **v0.7.0** | 🧭 Planned | API Quality Engineering Complete |
 | **v1.0.0** | 🎯 Planned | First Edition |
 
 ## Current Focus
@@ -53,7 +54,7 @@ The project follows an incremental release strategy, with each release represent
 - Part I — Foundations completed and released as v0.4.0
 - Part II — Programming for Quality Engineers completed and released as v0.5.0
 - Part III — Software Testing completed for v0.6.0
-- Part IV — API Quality Engineering manuscript drafting, normalization, and Final Part IV Quality Gate are complete; version-control baseline and release-governance preparation are next
+- Part IV — API Quality Engineering is complete at manuscript/content level and in release preparation for planned v0.7.0
 - Part V — Automation Engineering remains a separate planned handbook part
 
 ---
@@ -251,7 +252,7 @@ Current focus:
 
 - Part I, Part II, and Part III released as v0.4.0, v0.5.0, and v0.6.0
 - Part III — Software Testing completed with its Final Quality Gate and capstone quality gate
-- Part IV manuscript drafting, normalization, and Final Part IV Quality Gate are complete; version-control baseline and release-governance preparation are next; Part V has not started
+- Part IV manuscript drafting, normalization, and Final Part IV Quality Gate are complete; release preparation is active for planned v0.7.0; Part V has not started
 
 ## 🔜 M3 — Digital Learning Platform
 
@@ -297,7 +298,7 @@ Rather than documenting individual tools, this project seeks to define the endur
 |------|--------|
 | Current Milestone | **M2 – Handbook Development** |
 | Latest Release | **v0.6.0 – Software Testing Complete** |
-| Current Release Candidate | **v0.6.0 — main promotion and tag pending** |
+| Planned Next Release | **v0.7.0 — API Quality Engineering Complete** (release preparation active) |
 | Handbook | 🚧 In Development |
 | Practical Labs | 🚧 Planned |
 | Documentation Website | 🚧 Planned |

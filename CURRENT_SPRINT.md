@@ -24,12 +24,14 @@ M2 — Handbook Development
 
 ## Active Scope
 
-Part IV — API Quality Engineering manuscript drafting and comprehensive normalization are complete. The Final Part IV Quality Gate passed at **97/100**; an intentional version-control baseline is next.
+Part IV — API Quality Engineering is complete at manuscript/content level. Release preparation is active for the planned **v0.7.0 — API Quality Engineering Complete** release.
 
 - The Part IV curriculum is approved.
 - Deliveries 1–5 quality gates are complete: **96/100** each.
 - Final Part IV Quality Gate: **97/100**.
 - P0: none. P1: none. P2: none. P3: none.
+- The Part IV manuscript/status baseline is committed.
+- Canonical planned release: **v0.7.0 — API Quality Engineering Complete**.
 - Chapters 1–10 remain Draft manuscripts.
 - No companion code, laboratories, diagrams, case studies, or other Pass 2 learning assets have been created.
 - Part V — Automation Engineering has not started.
@@ -38,12 +40,12 @@ Part IV — API Quality Engineering manuscript drafting and comprehensive normal
 
 ## Next Actions
 
-- Establish the approved Part IV manuscript/status version-control baseline.
-- Resolve the canonical Part IV release version and title through governance before release administration.
+- Commit and push the approved governance-correction and release-administration changes.
+- Open a pull request from `feature/part-04-api-quality-engineering` to `develop`.
 - Do not begin Part V automatically.
 
 ---
 
 ## Outcome
 
-Part IV manuscript drafting and normalization are complete, and the Final Part IV Quality Gate passed at 97/100. Chapter metadata remains Draft, Pass 2 assets have not started, and Part V work has not begun. Version-control baseline and release-governance decisions remain next.
+Part IV manuscript drafting, normalization, and final quality review are complete. Its baseline is committed, and release preparation is active for planned v0.7.0. Chapter metadata remains Draft, Pass 2 assets are deferred, and Part V work has not begun.

@@ -4,6 +4,29 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+### Added
+
+- Completed Part IV — API Quality Engineering, Chapters 1–10.
+- Added the API Quality Strategy and Evidence Portfolio capstone.
+- Added practical engineering artifacts covering boundaries, semantics, contracts, state, data, identity, dependencies, reliability, change, regression, and production learning.
+
+### Changed
+
+- Added Part IV navigation and its QA → QE progression from endpoint checking to API-quality judgement.
+- Normalized protocol/application semantics, references, and cross-chapter terminology.
+- Clarified REST, `If-Match`, asynchronous completion, ordering, and related evidence semantics.
+
+### Validation
+
+- Final Part IV Quality Gate: **97/100**.
+- P0/P1/P2/P3: none remaining.
+- Markdown structure, links, references, navigation, and repository-scope validation passed.
+
+### Known Limitations
+
+- The deterministic companion API and two laboratories remain deferred to future Pass 2 enrichment.
+- Part IV develops API-quality judgement and evidence strategy; automation-framework architecture remains in Part V.
+
 ## [0.6.0] — Software Testing Complete — 2026-08-10
 
 ### Added
