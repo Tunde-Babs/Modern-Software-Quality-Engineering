@@ -14,7 +14,7 @@
 
 🚀 **Current Phase:** M2 – Handbook Development
 
-📦 **Latest Release:** v0.5.0 – Programming Complete
+📦 **Latest Release:** v0.6.0 – Software Testing Complete
 
 </p>
 
@@ -45,13 +45,16 @@ The project follows an incremental release strategy, with each release represent
 | **v0.3.0** | 🧭 Internal milestone | Publishing Infrastructure |
 | **v0.4.0** | ✅ Released | Foundations Complete |
 | **v0.5.0** | ✅ Released | Programming Complete |
+| **v0.6.0** | ✅ Released | Software Testing Complete |
 | **v1.0.0** | 🎯 Planned | First Edition |
 
 ## Current Focus
 
-- Part II – Programming for Quality Engineers completed for v0.5.0
-- Release-candidate final approval, tag, and GitHub Release preparation
-- Planning the next approved handbook scope; no Part III work has started
+- Part I — Foundations completed and released as v0.4.0
+- Part II — Programming for Quality Engineers completed and released as v0.5.0
+- Part III — Software Testing completed for v0.6.0
+- Part IV has not started
+- Part V — Automation Engineering remains a separate planned handbook part
 
 ---
 
@@ -246,9 +249,9 @@ Completed
 
 Current focus:
 
-- Part II – Programming for Quality Engineers completed for v0.5.0
-- Release-candidate final approval, tag, and GitHub Release preparation
-- Future handbook planning; no Part III work has started
+- Part I, Part II, and Part III released as v0.4.0, v0.5.0, and v0.6.0
+- Part III — Software Testing completed with its Final Quality Gate and capstone quality gate
+- Future handbook planning; Parts IV and V have not started
 
 ## 🔜 M3 — Digital Learning Platform
 
@@ -293,8 +296,8 @@ Rather than documenting individual tools, this project seeks to define the endur
 | Item | Status |
 |------|--------|
 | Current Milestone | **M2 – Handbook Development** |
-| Latest Release | **v0.5.0 – Programming Complete** |
-| Current Release Candidate | **v0.5.0 — final approval and tag pending** |
+| Latest Release | **v0.6.0 – Software Testing Complete** |
+| Current Release Candidate | **v0.6.0 — main promotion and tag pending** |
 | Handbook | 🚧 In Development |
 | Practical Labs | 🚧 Planned |
 | Documentation Website | 🚧 Planned |
