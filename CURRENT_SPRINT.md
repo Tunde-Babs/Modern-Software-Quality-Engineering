@@ -10,7 +10,7 @@ M2 — Handbook Development
 
 ## Branch
 
-`feature/part-04-api-quality-engineering`
+`release/v0.7.0`
 
 ---
 
@@ -24,14 +24,15 @@ M2 — Handbook Development
 
 ## Active Scope
 
-Part IV — API Quality Engineering is complete at manuscript/content level. Release preparation is active for the planned **v0.7.0 — API Quality Engineering Complete** release.
+Part IV — API Quality Engineering is complete at manuscript/content level, merged into `develop`, and prepared as the **v0.7.0 — API Quality Engineering Complete** release candidate. Final release-candidate review is active.
 
 - The Part IV curriculum is approved.
 - Deliveries 1–5 quality gates are complete: **96/100** each.
 - Final Part IV Quality Gate: **97/100**.
 - P0: none. P1: none. P2: none. P3: none.
-- The Part IV manuscript/status baseline is committed.
-- Canonical planned release: **v0.7.0 — API Quality Engineering Complete**.
+- The Part IV manuscript/status baseline is merged into `develop`.
+- The `release/v0.7.0` branch is prepared.
+- Canonical planned stable release: **v0.7.0 — API Quality Engineering Complete**.
 - Chapters 1–10 remain Draft manuscripts.
 - No companion code, laboratories, diagrams, case studies, or other Pass 2 learning assets have been created.
 - Part V — Automation Engineering has not started.
@@ -40,12 +41,13 @@ Part IV — API Quality Engineering is complete at manuscript/content level. Rel
 
 ## Next Actions
 
-- Commit and push the approved governance-correction and release-administration changes.
-- Open a pull request from `feature/part-04-api-quality-engineering` to `develop`.
+- Complete final release-candidate review.
+- Open and approve the `release/v0.7.0` → `main` pull request.
+- Merge to `main`, create the annotated `v0.7.0` tag, and publish the GitHub Release after final approval.
 - Do not begin Part V automatically.
 
 ---
 
 ## Outcome
 
-Part IV manuscript drafting, normalization, and final quality review are complete. Its baseline is committed, and release preparation is active for planned v0.7.0. Chapter metadata remains Draft, Pass 2 assets are deferred, and Part V work has not begun.
+Part IV manuscript drafting, normalization, and final quality review are complete. Its feature work is merged into `develop`, and `release/v0.7.0` is prepared for final review and promotion to `main`. Chapter metadata remains Draft, Pass 2 assets are deferred, and Part V work has not begun.

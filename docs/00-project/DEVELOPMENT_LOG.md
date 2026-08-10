@@ -211,3 +211,16 @@ Part IV is complete at manuscript/content level and ready for release administra
 **Status:** Release preparation active
 
 **Last Updated:** 2026-08-10
+
+---
+
+## Release Candidate v0.7.0 — API Quality Engineering Complete
+
+- Merged the approved Part IV manuscript, governance correction, and release-administration work into `develop`, then prepared `release/v0.7.0`.
+- Confirmed the canonical planned stable release mapping: **v0.7.0 — API Quality Engineering Complete**.
+- Final Part IV Quality Gate: **97/100**; P0/P1/P2/P3 findings: none. Chapters 1–10 remain Draft.
+- Main promotion, annotated tag creation, and GitHub Release publication remain pending. Pass 2 enrichment is deferred, and Part V has not started.
+
+**Status:** Final release-candidate review active
+
+**Last Updated:** 2026-08-10

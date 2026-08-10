@@ -4,6 +4,8 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+**Release candidate:** `v0.7.0 — API Quality Engineering Complete`. Promotion to `main`, annotated tagging, and GitHub Release publication remain pending.
+
 ### Added
 
 - Completed Part IV — API Quality Engineering, Chapters 1–10.
