@@ -53,7 +53,7 @@ The project follows an incremental release strategy, with each release represent
 - Part I — Foundations completed and released as v0.4.0
 - Part II — Programming for Quality Engineers completed and released as v0.5.0
 - Part III — Software Testing completed for v0.6.0
-- Part IV has not started
+- Part IV — API Quality Engineering manuscript drafting, normalization, and Final Part IV Quality Gate are complete; version-control baseline and release-governance preparation are next
 - Part V — Automation Engineering remains a separate planned handbook part
 
 ---
@@ -251,7 +251,7 @@ Current focus:
 
 - Part I, Part II, and Part III released as v0.4.0, v0.5.0, and v0.6.0
 - Part III — Software Testing completed with its Final Quality Gate and capstone quality gate
-- Future handbook planning; Parts IV and V have not started
+- Part IV manuscript drafting, normalization, and Final Part IV Quality Gate are complete; version-control baseline and release-governance preparation are next; Part V has not started
 
 ## 🔜 M3 — Digital Learning Platform
 
