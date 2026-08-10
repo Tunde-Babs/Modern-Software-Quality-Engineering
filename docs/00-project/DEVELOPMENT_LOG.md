@@ -186,3 +186,28 @@ Part III is ready for merge and release preparation. The chapter manuscripts rem
 **Status:** Release preparation active
 
 **Last Updated:** 2026-08-09
+
+---
+
+## Milestone M2 — Handbook Development: Part IV API Quality Engineering
+
+### Completed
+
+- Completed Part IV Chapters 1–10 and the QA → QE API progression from boundary reasoning through interface semantics, contracts, state, data, identity, dependencies, reliability, change, and production learning.
+- Completed Deliveries 1–5 quality gates at **96/100** each, comprehensive normalization, and the Final Part IV Quality Gate at **97/100**.
+- Completed the API Quality Strategy and Evidence Portfolio capstone and established the committed Part IV manuscript/status baseline on `feature/part-04-api-quality-engineering`.
+- Approved the canonical planned release mapping: **v0.7.0 — API Quality Engineering Complete**.
+
+### Outcome
+
+Part IV is complete at manuscript/content level and ready for release administration. Chapters remain Draft; no tag, GitHub Release, publication, or Part V work is claimed by this record.
+
+### Next Steps
+
+- Commit and push the approved governance-correction and release-administration changes, then open a pull request to `develop`.
+- Complete the approved release workflow through `release/v0.7.0` and `main`; create the tag and GitHub Release only after final approval.
+- Keep the deterministic companion API and Labs 1–2 deferred to later Pass 2 enrichment, and do not begin Part V automatically.
+
+**Status:** Release preparation active
+
+**Last Updated:** 2026-08-10
