@@ -4,7 +4,31 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
-**Release candidate:** `v0.7.0 — API Quality Engineering Complete`. Promotion to `main`, annotated tagging, and GitHub Release publication remain pending.
+**Planned release:** `v0.8.0 — Automation Engineering Complete`. Release administration is active; promotion to `main`, annotated tagging, and GitHub Release publication have not started.
+
+### Added
+
+- Completed Part V — Automation Engineering, Chapters 1–12, the **Trustworthy Feedback Systems** curriculum.
+- Added the Quality Automation System capstone and practical artifacts that develop evidence-led automation-system design.
+- Added coverage of automation selection, architecture, abstractions, fixtures, test data, deterministic feedback, browser evidence, boundary composition, isolation, diagnostics, continuous feedback, sustainability, and specialized evidence.
+
+### Changed
+
+- Established the Part V QA → QE progression from automating checks to engineering trustworthy, proportionate, and diagnosable feedback systems.
+- Normalized Part V terminology, references, cross-chapter boundaries, and navigation.
+
+### Validation
+
+- Final Part V Quality Gate: **98/100**.
+- P0/P1/P2: none.
+- Markdown structure, local links, references, navigation, and repository-scope validation passed.
+
+### Known Limitations
+
+- The Quality Automation System companion and Labs 1–2 remain deferred to future Pass 2 enrichment.
+- Part V teaches automation-system engineering; CI/CD platform implementation remains in Part VII.
+
+## [0.7.0] — API Quality Engineering Complete — 2026-08-10
 
 ### Added
 
