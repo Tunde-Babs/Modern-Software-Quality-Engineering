@@ -224,3 +224,26 @@ Part IV is complete at manuscript/content level and ready for release administra
 **Status:** Final release-candidate review active
 
 **Last Updated:** 2026-08-10
+
+---
+
+## Milestone M2 — Handbook Development: Part V Automation Engineering
+
+### Completed
+
+- Completed Part V — Automation Engineering, Chapters 1–12, and its QA → QE progression from automating checks to engineering trustworthy, proportionate, and diagnosable feedback systems.
+- Closed Delivery 1, Delivery 2, Delivery 3, comprehensive normalization, and the Final Part V Quality Gate at **98/100**; P0/P1/P2 findings: none.
+- Established committed manuscript baseline `64a3c9f` and confirmed the canonical planned release mapping: **v0.8.0 — Automation Engineering Complete**.
+
+### Outcome
+
+Part V is complete at manuscript level and ready for release administration. All Chapters 1–12 remain Draft. The Quality Automation System companion and Labs 1–2 remain deferred Pass 2 enrichment; Part VI has not started.
+
+### Next Steps
+
+- Commit and push the approved release-administration changes, then open the pull request from `feature/part-05-automation-engineering` to `develop`.
+- Prepare `release/v0.8.0` only after the feature pull request is approved and merged; do not create a tag, GitHub Release, companion implementation, or laboratory work without separate approval.
+
+**Status:** Release preparation active
+
+**Last Updated:** 2026-08-10

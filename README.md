@@ -14,9 +14,11 @@
 
 🚀 **Current Phase:** M2 – Handbook Development
 
-📦 **Latest Stable Release:** v0.6.0 – Software Testing Complete
+📦 **Latest Stable Release:** v0.7.0 – API Quality Engineering Complete
 
-🧭 **Release Candidate:** v0.7.0 – API Quality Engineering Complete
+📍 **Planned Next Release:** v0.8.0 – Automation Engineering Complete
+
+🧭 **Current Handbook Work:** Part V — Automation Engineering manuscript complete; Final Quality Gate passed at 98/100; release preparation active
 
 </p>
 
@@ -48,7 +50,8 @@ The project follows an incremental release strategy, with each release represent
 | **v0.4.0** | ✅ Released | Foundations Complete |
 | **v0.5.0** | ✅ Released | Programming Complete |
 | **v0.6.0** | ✅ Released | Software Testing Complete |
-| **v0.7.0** | 🧭 Release candidate | API Quality Engineering Complete — main promotion, tag, and GitHub Release pending |
+| **v0.7.0** | ✅ Released | API Quality Engineering Complete |
+| **v0.8.0** | 🧭 Planned | Automation Engineering Complete |
 | **v1.0.0** | 🎯 Planned | First Edition |
 
 ## Current Focus
@@ -56,8 +59,9 @@ The project follows an incremental release strategy, with each release represent
 - Part I — Foundations completed and released as v0.4.0
 - Part II — Programming for Quality Engineers completed and released as v0.5.0
 - Part III — Software Testing completed for v0.6.0
-- Part IV — API Quality Engineering is complete at manuscript/content level; `release/v0.7.0` is prepared for main promotion, tagging, and GitHub Release publication
-- Part V — Automation Engineering remains a separate planned handbook part
+- Part IV — API Quality Engineering released as v0.7.0
+- Part V — Automation Engineering manuscript and normalization are complete; Final Quality Gate passed at 98/100 and release preparation is active for planned v0.8.0
+- Part VI — Data Quality Engineering has not started
 
 ---
 
@@ -252,9 +256,9 @@ Completed
 
 Current focus:
 
-- Part I, Part II, and Part III released as v0.4.0, v0.5.0, and v0.6.0
+- Part I, Part II, Part III, and Part IV released as v0.4.0, v0.5.0, v0.6.0, and v0.7.0
 - Part III — Software Testing completed with its Final Quality Gate and capstone quality gate
-- Part IV manuscript drafting, normalization, and Final Part IV Quality Gate are complete; `release/v0.7.0` is prepared for main promotion, tagging, and GitHub Release publication; Part V has not started
+- Part IV released as v0.7.0; Part V is complete at manuscript level, passed its Final Quality Gate at 98/100, and is in release preparation for planned v0.8.0; Part VI has not started
 
 ## 🔜 M3 — Digital Learning Platform
 
@@ -299,8 +303,9 @@ Rather than documenting individual tools, this project seeks to define the endur
 | Item | Status |
 |------|--------|
 | Current Milestone | **M2 – Handbook Development** |
-| Latest Release | **v0.6.0 – Software Testing Complete** |
-| Current Release Candidate | **v0.7.0 — API Quality Engineering Complete** (main promotion, tag, and GitHub Release pending) |
+| Latest Release | **v0.7.0 – API Quality Engineering Complete** |
+| Planned Next Release | **v0.8.0 – Automation Engineering Complete** |
+| Current Handbook Work | **Part V — Automation Engineering** manuscript complete; Final Quality Gate passed at 98/100; release preparation active |
 | Handbook | 🚧 In Development |
 | Practical Labs | 🚧 Planned |
 | Documentation Website | 🚧 Planned |
