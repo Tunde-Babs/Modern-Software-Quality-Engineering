@@ -4,6 +4,8 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [0.6.0] — Software Testing Complete — 2026-08-10
+
 ### Added
 
 - Part III — Software Testing Engineering, Chapters 1–12.

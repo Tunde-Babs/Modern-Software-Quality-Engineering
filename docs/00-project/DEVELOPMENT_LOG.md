@@ -139,6 +139,19 @@ Part II is ready for merge and release preparation as **v0.5.0 — Programming C
 
 ---
 
+## Release Candidate v0.6.0 — Software Testing Complete
+
+- Merged the approved Part III manuscript and release-administration work into `develop` and prepared `release/v0.6.0`.
+- Corrected the canonical v0.6.0 governance title to **Software Testing Complete**, preserving Automation Engineering as the separate planned Part V scope.
+- Finalized release-candidate metadata for Part III; the Final Part III Quality Gate remains **96/100**, the capstone quality gate remains **97/100**, and no P0 or P1 findings remain.
+- Founder final approval, promotion to `main`, tag creation, and the GitHub Release remain pending.
+
+**Status:** Release candidate prepared
+
+**Last Updated:** 2026-08-10
+
+---
+
 ## Release Candidate v0.5.0 — Programming Complete
 
 - Merged the approved Part II change set into `develop` and prepared `release/v0.5.0`.

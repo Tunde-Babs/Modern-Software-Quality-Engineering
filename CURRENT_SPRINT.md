@@ -10,7 +10,7 @@ M2 — Handbook Development
 
 ## Branch
 
-`feature/part-03-testing`
+`release/v0.6.0`
 
 ---
 
@@ -23,26 +23,27 @@ M2 — Handbook Development
 
 ## Active Scope
 
-Part III — Software Testing Engineering is complete and in release preparation.
+Part III — Software Testing Engineering is complete; the v0.6.0 release candidate is prepared for promotion to `main`.
 
 - Chapters 1–12 are complete; all chapter metadata remains Draft.
 - Delivery gates are complete: Delivery 1 **94/100**, Delivery 2 **96/100**, Delivery 3 **94/100**, Delivery 4 **95/100**, and Delivery 5 capstone **97/100**.
 - Comprehensive normalization and the Final Part III Quality Gate are complete: **96/100 — Exceptional / Reference Quality**.
 - P0 findings: none. P1 findings: none.
-- The Part III manuscript baseline is established on `feature/part-03-testing`.
-- Part III is not approved or released. Do not begin Part IV or any later handbook part.
+- Part III is merged into `develop`; `release/v0.6.0` is prepared.
+- The canonical release title is **v0.6.0 — Software Testing Complete**.
+- Part III is not tagged or published. Do not begin Part IV or any later handbook part.
 
 ---
 
 ## Next Actions
 
-- Commit and push the approved release-administration changes.
-- Open and review the pull request from `feature/part-03-testing` to `develop`.
-- After approval, merge to `develop`, prepare the release branch, promote to `main`, and create the tag and GitHub Release according to policy.
+- Open and review the pull request from `release/v0.6.0` to `main`.
+- Obtain Founder final approval.
+- Merge to `main`, create the annotated `v0.6.0` tag, and publish the GitHub Release according to policy.
 - Do not begin Part IV automatically.
 
 ---
 
 ## Outcome
 
-Part III is ready for merge and release preparation. Final approval, release-branch preparation, promotion, tagging, and publication remain governed by the approved release workflow.
+The v0.6.0 release candidate is ready for its `main` pull request. Final approval, promotion, tagging, and publication remain governed by the approved release workflow.
