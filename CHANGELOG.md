@@ -4,7 +4,7 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
-**Planned release:** `v0.9.0 — Data Quality Engineering Complete`. Release administration is active; v0.9.0 has not been released, tagged, or published.
+**Release candidate:** `v0.9.0 — Data Quality Engineering Complete`. Release Candidate validation is active; v0.9.0 has not been released, tagged, or published.
 
 ### Added
 

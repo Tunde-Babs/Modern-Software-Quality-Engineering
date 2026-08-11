@@ -18,7 +18,7 @@
 
 📍 **Planned Next Release:** v0.9.0 – Data Quality Engineering Complete
 
-🧭 **Current Handbook Work:** Part VI — Data Quality Engineering manuscript complete; Final Quality Gate passed at 96/100; release preparation active
+🧭 **Current Handbook Work:** Part VI — Data Quality Engineering manuscript complete; Final Quality Gate passed at 96/100; Release Candidate validation active
 
 </p>
 
@@ -62,7 +62,7 @@ The project follows an incremental release strategy, with each release represent
 - Part III — Software Testing completed for v0.6.0
 - Part IV — API Quality Engineering released as v0.7.0
 - Part V — Automation Engineering released as v0.8.0
-- Part VI — Data Quality Engineering manuscript complete; Final Quality Gate passed at 96/100 and release preparation is active for planned v0.9.0
+- Part VI — Data Quality Engineering manuscript complete; Final Quality Gate passed at 96/100 and Release Candidate validation is active for v0.9.0
 - Part VII — Cloud & DevOps has not started
 
 ---
@@ -259,7 +259,7 @@ Completed
 Current focus:
 
 - Part I through Part V released as v0.4.0 through v0.8.0
-- Part VI — Data Quality Engineering is complete at manuscript level, passed its Final Quality Gate at 96/100, and is in release preparation for planned v0.9.0; Part VII has not started
+- Part VI — Data Quality Engineering is complete at manuscript level, passed its Final Quality Gate at 96/100, and is in Release Candidate validation for v0.9.0; Part VII has not started
 
 ## 🔜 M3 — Digital Learning Platform
 
@@ -306,7 +306,7 @@ Rather than documenting individual tools, this project seeks to define the endur
 | Current Milestone | **M2 – Handbook Development** |
 | Latest Release | **v0.8.0 – Automation Engineering Complete** |
 | Planned Next Release | **v0.9.0 – Data Quality Engineering Complete** |
-| Current Handbook Work | **Part VI — Data Quality Engineering** manuscript complete; Final Quality Gate passed at 96/100; release preparation active |
+| Current Handbook Work | **Part VI — Data Quality Engineering** manuscript complete; Final Quality Gate passed at 96/100; Release Candidate validation active |
 | Handbook | 🚧 In Development |
 | Practical Labs | 🚧 Planned |
 | Documentation Website | 🚧 Planned |

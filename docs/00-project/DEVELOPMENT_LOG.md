@@ -261,13 +261,13 @@ Part V is complete at manuscript level and ready for release administration. All
 
 ### Outcome
 
-Part VI is complete at manuscript level and ready for release administration for planned **v0.9.0 — Data Quality Engineering Complete**. Chapters 1–11 remain Draft; no companion implementation or laboratories have been created, and Part VII has not started.
+Part VI is complete at manuscript level. Its release administration was merged into `develop`, and `release/v0.9.0` is prepared for Release Candidate validation of planned **v0.9.0 — Data Quality Engineering Complete**. Chapters 1–11 remain Draft; no companion implementation or laboratories have been created, and Part VII has not started. Main promotion, tag creation, and GitHub Release publication remain pending.
 
 ### Next Steps
 
-- Commit and push approved release-administration metadata, then open the feature-to-`develop` pull request.
-- Keep Pass 2 enrichment deferred and do not create a release branch, tag, GitHub Release, or Part VII work without separate authorization.
+- Complete Release Candidate review, then open the release pull request to `main` after approval.
+- Keep Pass 2 enrichment deferred and do not create a tag, GitHub Release, or Part VII work without separate authorization.
 
-**Status:** Release preparation active
+**Status:** Release Candidate validation active
 
 **Last Updated:** 2026-08-11
