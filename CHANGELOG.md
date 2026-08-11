@@ -4,7 +4,29 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
-**Release candidate:** `v0.9.0 — Data Quality Engineering Complete`. Release Candidate validation is active; v0.9.0 has not been released, tagged, or published.
+### Release Candidate v0.10.0 — Cloud & DevOps Complete
+
+#### Added
+
+- Completed Part VII — Cloud & DevOps, Chapters 1–11, including Cloud & DevOps Quality Engineering, controlled delivery systems, environment and configuration quality, container/runtime consistency, Infrastructure-as-Code (IaC) change evidence, delivery pipelines, deployment strategies, deployment verification, recovery decisions, release readiness, operational handoff, and delivery learning.
+- Added the **Cloud & DevOps Quality Strategy and Release Evidence Portfolio** capstone, including a concise Release Decision Brief.
+
+#### Changed
+
+- Established the Part VII QA → QE progression from validating a deployed application or pipeline result to making bounded, evidence-led delivery-system decisions about promotion, pause, recovery, and learning.
+- Applied Quality Gates v1.1 to distinguish the complete manuscript from approved deferred Pass 2 enrichment.
+
+#### Validation
+
+- Final Part VII Quality Gate: **97/100**.
+- P0/P1/P2/P3 findings: none within the approved manuscript scope.
+- Markdown structure, local links, navigation, references, chapter-status consistency, and repository-scope validation passed.
+
+#### Deferred Pass 2 Enrichment
+
+- The Atlas Commerce Local Delivery Simulator and Labs 1–3 remain recommended Pass 2 enrichment under Quality Gates v1.1; no standalone practical asset is required for the Part VII manuscript release.
+
+## [0.9.0] — Data Quality Engineering Complete — 2026-08-11
 
 ### Added
 
