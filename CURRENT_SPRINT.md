@@ -10,7 +10,7 @@ M2 — Handbook Development
 
 ## Branch
 
-`feature/part-05-automation-engineering`
+`feature/part-06-data-quality-engineering`
 
 ---
 
@@ -20,34 +20,31 @@ M2 — Handbook Development
 - Part II — Programming for Quality Engineers released as **v0.5.0 — Programming Complete**.
 - Part III — Software Testing Engineering released as **v0.6.0 — Software Testing Complete**.
 - Part IV — API Quality Engineering released as **v0.7.0 — API Quality Engineering Complete**.
+- Part V — Automation Engineering released as **v0.8.0 — Automation Engineering Complete**.
 
 ---
 
 ## Active Scope
 
-Part V — Automation Engineering release administration is active on `feature/part-05-automation-engineering`.
+Part VI — Data Quality Engineering manuscript work is complete on `feature/part-06-data-quality-engineering`; release administration is active for **v0.9.0 — Data Quality Engineering Complete**.
 
-- The Part V curriculum, manuscript drafting, and comprehensive normalization are complete.
-- Delivery 1 — Automation Foundations and Determinism: Chapters 1–4 closed at **98/100** with no P0, P1, or P2 findings.
-- Delivery 2 — Execution Boundaries and Diagnostics: Chapters 5–8 closed at **98/100** with no P0, P1, or P2 findings.
-- Delivery 3 — Sustainable Feedback and Capstone: Chapters 9–12 closed at **98/100** with no P0, P1, or P2 findings.
-- Final Part V Quality Gate: **98/100**; P0/P1/P2: none.
-- Committed manuscript baseline: `64a3c9f`.
-- Canonical planned release: **v0.8.0 — Automation Engineering Complete**.
-- All Chapters 1–12 remain Draft.
-- The Quality Automation System companion and Labs 1–2 are recommended Pass 2 enrichment and remain deferred.
-- Repository-level P3 backlog: empty editorial/citation governance files and future release mappings for Parts VI–IX.
-- The website foundation remains a separate parallel worktree; no website work is included in this scope. Part VI has not started.
+- The approved curriculum contains 11 chapters in four deliveries, culminating in the Data Quality Strategy and Evidence Portfolio capstone; all Chapters 1–11 remain **Draft**.
+- Final Part VI Quality Gate: **96/100**. Manuscript P0, P1, and P2 findings: none.
+- The manuscript baseline is committed and pushed as `6ca58c6`.
+- Quality Gates v1.1 closed the laboratory/practical-asset policy issue: required assets must be validated, while explicitly classified Pass 2 enrichment does not block manuscript release.
+- The Atlas Commerce Data Pipeline companion and Labs 1–3 remain recommended Pass 2 enrichment and are deferred.
+- No Part VI companion code, laboratories, diagrams, case studies, CI/CD work, or website work have been created.
+- The website remains a separate parallel track. Part VII has not started.
 
 ---
 
 ## Next Actions
 
-- Commit and push the approved release-administration changes, then open the `feature/part-05-automation-engineering` → `develop` pull request.
-- Do not begin companion code, laboratories, diagrams, CI configuration, website work, or Part VI automatically.
+- Commit and push the approved release-administration changes, then open the pull request from `feature/part-06-data-quality-engineering` to `develop`.
+- Do not begin Pass 2 companion code, laboratories, diagrams, CI/CD work, website work, a release branch, or Part VII automatically.
 
 ---
 
 ## Outcome
 
-Part V is complete at manuscript level and ready for release administration as **v0.8.0 — Automation Engineering Complete**. All Chapters 1–12 remain Draft; no tag, GitHub Release, publication, companion implementation, laboratory work, or Part VI work is claimed by this record.
+Part VI is complete at manuscript level and ready for release administration for **v0.9.0 — Data Quality Engineering Complete**. Chapters 1–11 remain Draft. Pass 2 enrichment is deferred, v0.9.0 is not released, and Part VII has not started.
