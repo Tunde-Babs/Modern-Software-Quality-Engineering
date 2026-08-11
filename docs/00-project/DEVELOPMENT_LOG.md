@@ -271,3 +271,18 @@ Part VI is complete at manuscript level. Its release administration was merged i
 **Status:** Release Candidate validation active
 
 **Last Updated:** 2026-08-11
+
+---
+
+## Release v0.9.0 — Data Quality Engineering Complete
+
+- Completed Part VI release closure after the 96/100 Final Part VI Quality Gate, with no manuscript P0, P1, or P2 findings.
+- Applied Quality Gates v1.1: the Atlas Commerce Data Pipeline companion and Labs 1–3 remain deferred Pass 2 enrichment rather than release requirements.
+- Completed Release Candidate review, merged the release PR to `main`, created annotated tag `v0.9.0`, and published the GitHub Release.
+- Chapters 1–11 remain Draft; no companion implementation or laboratories were created.
+
+**Outcome:** Part VI is released. Part VII — Cloud & DevOps curriculum architecture/planning is the next authorized action; no Part VII work has begun.
+
+**Status:** Released
+
+**Last Updated:** 2026-08-11

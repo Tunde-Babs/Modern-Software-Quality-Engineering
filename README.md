@@ -14,11 +14,11 @@
 
 🚀 **Current Phase:** M2 – Handbook Development
 
-📦 **Latest Stable Release:** v0.8.0 – Automation Engineering Complete
+📦 **Latest Stable Release:** v0.9.0 – Data Quality Engineering Complete
 
-📍 **Planned Next Release:** v0.9.0 – Data Quality Engineering Complete
+📍 **Planned Next Release:** v0.10.0 – Cloud & DevOps Complete
 
-🧭 **Current Handbook Work:** Part VI — Data Quality Engineering manuscript complete; Final Quality Gate passed at 96/100; Release Candidate validation active
+🧭 **Current Handbook Work:** Post-v0.9.0 reconciliation complete; Part VII — Cloud & DevOps curriculum architecture/planning is the next authorized action
 
 </p>
 
@@ -52,8 +52,15 @@ The project follows an incremental release strategy, with each release represent
 | **v0.6.0** | ✅ Released | Software Testing Complete |
 | **v0.7.0** | ✅ Released | API Quality Engineering Complete |
 | **v0.8.0** | ✅ Released | Automation Engineering Complete |
-| **v0.9.0** | 🧭 Planned | Data Quality Engineering Complete |
-| **v1.0.0** | 🎯 Planned | First Edition |
+| **v0.9.0** | ✅ Released | Data Quality Engineering Complete |
+| **v0.10.0** | 🧭 Planned | Cloud & DevOps Complete |
+| **v0.11.0** | 🧭 Planned | Observability & Reliability Engineering Complete |
+| **v0.12.0** | 🧭 Planned | AI Quality Engineering Complete |
+| **v0.13.0** | 🧭 Planned | Performance & Security Engineering Complete |
+| **v0.14.0** | 🧭 Planned | System Design & Architecture Complete |
+| **v0.15.0** | 🧭 Planned | Engineering Leadership & Career Growth Complete |
+| **v0.16.0** | 🧭 Planned | First Edition Review |
+| **v1.0.0** | 🎯 Planned | First Edition Published |
 
 ## Current Focus
 
@@ -62,8 +69,8 @@ The project follows an incremental release strategy, with each release represent
 - Part III — Software Testing completed for v0.6.0
 - Part IV — API Quality Engineering released as v0.7.0
 - Part V — Automation Engineering released as v0.8.0
-- Part VI — Data Quality Engineering manuscript complete; Final Quality Gate passed at 96/100 and Release Candidate validation is active for v0.9.0
-- Part VII — Cloud & DevOps has not started
+- Part VI — Data Quality Engineering released as v0.9.0; Final Quality Gate passed at 96/100
+- Part VII — Cloud & DevOps curriculum architecture/planning is the next authorized action; no Part VII work has started
 
 ---
 
@@ -258,8 +265,8 @@ Completed
 
 Current focus:
 
-- Part I through Part V released as v0.4.0 through v0.8.0
-- Part VI — Data Quality Engineering is complete at manuscript level, passed its Final Quality Gate at 96/100, and is in Release Candidate validation for v0.9.0; Part VII has not started
+- Part I through Part VI released as v0.4.0 through v0.9.0
+- Part VII — Cloud & DevOps curriculum architecture/planning is the next authorized action; no Part VII work has started
 
 ## 🔜 M3 — Digital Learning Platform
 
@@ -304,9 +311,9 @@ Rather than documenting individual tools, this project seeks to define the endur
 | Item | Status |
 |------|--------|
 | Current Milestone | **M2 – Handbook Development** |
-| Latest Release | **v0.8.0 – Automation Engineering Complete** |
-| Planned Next Release | **v0.9.0 – Data Quality Engineering Complete** |
-| Current Handbook Work | **Part VI — Data Quality Engineering** manuscript complete; Final Quality Gate passed at 96/100; Release Candidate validation active |
+| Latest Release | **v0.9.0 – Data Quality Engineering Complete** |
+| Planned Next Release | **v0.10.0 – Cloud & DevOps Complete** |
+| Current Handbook Work | Post-v0.9.0 reconciliation complete; **Part VII — Cloud & DevOps** curriculum architecture/planning is the next authorized action |
 | Handbook | 🚧 In Development |
 | Practical Labs | 🚧 Planned |
 | Documentation Website | 🚧 Planned |

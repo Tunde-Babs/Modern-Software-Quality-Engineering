@@ -4,7 +4,7 @@
 
 ## Curriculum Status
 
-**Curriculum complete. Chapters 1–11 are manuscript-complete and remain Draft.** The Final Part VI Quality Gate passed at **96/100** with no manuscript P0, P1, or P2 findings. The manuscript baseline is committed as `6ca58c6`; `release/v0.9.0` is prepared from `develop` and is undergoing Release Candidate validation for **v0.9.0 — Data Quality Engineering Complete**. Quality Gates v1.1 confirms that the Atlas Commerce Data Pipeline companion and Labs 1–3 are recommended Pass 2 enrichment, not release requirements. No companion code, laboratories, diagrams, case studies, website work, or CI/CD implementation has been created. Main promotion, tagging, and GitHub Release publication remain pending. Part VII has not started.
+**Curriculum complete. Chapters 1–11 are manuscript-complete and remain Draft.** Part VI was released as **v0.9.0 — Data Quality Engineering Complete** after its Final Part VI Quality Gate passed at **96/100** with no manuscript P0, P1, or P2 findings. The manuscript baseline is `6ca58c6`; Quality Gates v1.1 applied to the release and confirms that the Atlas Commerce Data Pipeline companion and Labs 1–3 are recommended Pass 2 enrichment, not release requirements. No companion code, laboratories, diagrams, case studies, website work, or CI/CD implementation has been created. Part VII work has not begun.
 
 ---
 
@@ -287,7 +287,7 @@ The capstone should demonstrate primarily **Practitioner-to-Engineer** evidence:
 
 ## Definition of Done for Part VI Manuscript Work
 
-Part VI will be ready for release preparation only when:
+Part VI satisfied manuscript release readiness when:
 
 1. The curriculum architecture is approved.
 2. All planned chapters are drafted with the approved chapter template and remain accurately statused.
@@ -296,7 +296,7 @@ Part VI will be ready for release preparation only when:
 5. A stable Git manuscript baseline and release-administration record exist.
 6. The release decision clearly separates manuscript readiness, optional Pass 2 enrichment, and formal publication approval.
 
-Quality Gates v1.1 now provides that classification: the companion and Labs 1–3 are recommended Pass 2 enrichment, not required practical assets for v0.9.0. Formal release approval remains a separate decision.
+Quality Gates v1.1 applied that classification to v0.9.0: the companion and Labs 1–3 remain recommended Pass 2 enrichment, not required practical assets for the release.
 
 ---
 
