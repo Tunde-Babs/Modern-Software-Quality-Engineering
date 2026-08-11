@@ -27,31 +27,26 @@ M2 — Handbook Development
 
 ## Active Scope
 
-Part VII — Cloud & DevOps accelerated Pass 1, consolidated independent review, and light P3 normalization are complete on `feature/part-07-cloud-devops`. The Final Part VII Quality Gate is the next authorized gate.
+Part VII — Cloud & DevOps manuscript work is complete on `feature/part-07-cloud-devops`; release administration for the planned **v0.10.0 — Cloud & DevOps Complete** is active.
 
-- Part VI manuscript completion was released as **v0.9.0 — Data Quality Engineering Complete**. The Final Part VI Quality Gate remains **96/100**; manuscript P0, P1, and P2 findings: none.
-- The release PR merged to `main`; annotated tag `v0.9.0` was created and the GitHub Release was published.
-- All Part VI Chapters 1–11 remain **Draft** under the manuscript-status workflow.
-- Quality Gates v1.1 applied: required assets require validation, while the Atlas Commerce Data Pipeline companion and Labs 1–3 remain recommended Pass 2 enrichment and are deferred.
-- No Part VI companion code, laboratories, diagrams, case studies, CI/CD work, or website work has been created.
-- Chapters 1–11 are drafted across four coherent deliveries and all remain **Draft** under the manuscript-status workflow.
-- The mandatory Chapter 6 boundary checkpoint found no P0/P1 Part V/VI overlap, Part VIII–XI leakage, tool-neutrality, or applied-reasoning defect.
-- The consolidated independent review assessed Part VII at **96/100** with P0, P1, and P2 findings: none.
-- Light P3 normalization is complete: Chapter 1 citation precision, Chapter 4 IaC source framing, and targeted repetition reductions in Chapters 7, 9, and 11.
-- The Atlas Commerce release-evidence capstone is drafted with a synthetic evidence packet and professional Decision Brief; no real cloud infrastructure or credential is required.
-- No Part VII laboratory, companion implementation, standalone diagram, case-study file, CI/CD configuration, cloud infrastructure, or website asset has been created.
-- The Atlas Commerce Local Delivery Simulator, Labs 1–3, and any planned diagrams are recommended Pass 2 enrichment; no standalone practical asset is required for the Part VII manuscript release.
+- The latest stable release is **v0.9.0 — Data Quality Engineering Complete**.
+- Chapters 1–11 are complete and remain **Draft** under the manuscript-status workflow.
+- Accelerated curriculum architecture, Pass 1 drafting, consolidated independent review, and light normalization are complete.
+- The Final Part VII Quality Gate is **97/100**; P0/P1/P2/P3 findings: none within the approved manuscript scope.
+- The reviewed manuscript baseline is committed and pushed as `2da10fd`.
+- Quality Gates v1.1 applies. The Atlas Commerce Local Delivery Simulator and Labs 1–3 remain recommended Pass 2 enrichment; no standalone practical asset is required for the manuscript release.
+- No Part VII companion implementation, laboratory, standalone diagram, case-study file, CI/CD configuration, cloud infrastructure, or website asset has been created.
 - The website remains a separate parallel track. Part VIII has not started.
 
 ---
 
-## Next Actions
+## Next Action
 
-- Conduct the Final Part VII Quality Gate.
-- Do not begin Pass 2 assets, companion code, laboratories, diagrams, case studies, website work, release administration, or Part VIII automatically.
+- Commit and push the approved release-administration metadata, then open the feature-to-`develop` pull request.
+- Do not begin Pass 2 assets, companion code, laboratories, diagrams, case studies, website work, or Part VIII automatically.
 
 ---
 
 ## Outcome
 
-Part VI is released as **v0.9.0 — Data Quality Engineering Complete**. Chapters 1–11 remain Draft, and Pass 2 enrichment is deferred. Part VII Chapters 1–11 are drafted, independently reviewed at **96/100**, and lightly normalized; the Final Part VII Quality Gate is next.
+Part VII is complete at manuscript level and prepared for release administration only. **v0.10.0 — Cloud & DevOps Complete** remains planned and unreleased; Chapters 1–11 remain Draft, Pass 2 enrichment is deferred, and Part VIII has not started.
