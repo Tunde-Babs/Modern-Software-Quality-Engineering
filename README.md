@@ -16,9 +16,9 @@
 
 📦 **Latest Stable Release:** v0.9.0 – Data Quality Engineering Complete
 
-📍 **Planned Next Release:** v0.10.0 – Cloud & DevOps Complete
+📍 **Current Release Candidate:** v0.10.0 – Cloud & DevOps Complete
 
-🧭 **Current Handbook Work:** Part VII — Cloud & DevOps manuscript complete; Final Quality Gate **97/100**; release preparation active
+🧭 **Current Handbook Work:** Part VII — Cloud & DevOps manuscript complete; Final Quality Gate **97/100**; Release Candidate review active
 
 </p>
 
@@ -53,7 +53,7 @@ The project follows an incremental release strategy, with each release represent
 | **v0.7.0** | ✅ Released | API Quality Engineering Complete |
 | **v0.8.0** | ✅ Released | Automation Engineering Complete |
 | **v0.9.0** | ✅ Released | Data Quality Engineering Complete |
-| **v0.10.0** | 🧭 Planned | Cloud & DevOps Complete |
+| **v0.10.0** | 🧪 Release Candidate | Cloud & DevOps Complete |
 | **v0.11.0** | 🧭 Planned | Observability & Reliability Engineering Complete |
 | **v0.12.0** | 🧭 Planned | AI Quality Engineering Complete |
 | **v0.13.0** | 🧭 Planned | Performance & Security Engineering Complete |
@@ -70,7 +70,7 @@ The project follows an incremental release strategy, with each release represent
 - Part IV — API Quality Engineering released as v0.7.0
 - Part V — Automation Engineering released as v0.8.0
 - Part VI — Data Quality Engineering released as v0.9.0; Final Quality Gate passed at 96/100
-- Part VII — Cloud & DevOps manuscript complete; Final Quality Gate **97/100**; release preparation active; Part VIII has not started
+- Part VII — Cloud & DevOps manuscript complete; Final Quality Gate **97/100**; Release Candidate review active; Part VIII has not started
 
 ---
 
@@ -266,7 +266,7 @@ Completed
 Current focus:
 
 - Part I through Part VI released as v0.4.0 through v0.9.0
-- Part VII — Cloud & DevOps manuscript complete; Final Quality Gate **97/100**; release preparation active; Part VIII has not started
+- Part VII — Cloud & DevOps manuscript complete; Final Quality Gate **97/100**; Release Candidate review active; Part VIII has not started
 
 ## 🔜 M3 — Digital Learning Platform
 
@@ -312,8 +312,8 @@ Rather than documenting individual tools, this project seeks to define the endur
 |------|--------|
 | Current Milestone | **M2 – Handbook Development** |
 | Latest Release | **v0.9.0 – Data Quality Engineering Complete** |
-| Planned Next Release | **v0.10.0 – Cloud & DevOps Complete** |
-| Current Handbook Work | **Part VII — Cloud & DevOps** manuscript complete; Final Quality Gate **97/100**; release preparation active; Part VIII has not started |
+| Current Release Candidate | **v0.10.0 – Cloud & DevOps Complete** |
+| Current Handbook Work | **Part VII — Cloud & DevOps** manuscript complete; Final Quality Gate **97/100**; Release Candidate review active; Part VIII has not started |
 | Handbook | 🚧 In Development |
 | Practical Labs | 🚧 Planned |
 | Documentation Website | 🚧 Planned |

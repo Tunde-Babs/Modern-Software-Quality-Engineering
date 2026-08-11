@@ -310,3 +310,15 @@ Part VII is complete at manuscript level and enters release administration for p
 **Status:** Release preparation active
 
 **Last Updated:** 2026-08-11
+
+---
+
+## Release Candidate v0.10.0 — Cloud & DevOps Complete
+
+- Merged the approved Part VII manuscript and release-administration metadata into `develop`, then prepared `release/v0.10.0` from that updated state.
+- The Final Part VII Quality Gate remains **97/100**; P0/P1/P2/P3 findings: none within the approved manuscript scope. Chapters 1–11 remain Draft.
+- Release Candidate validation is active. Main promotion, annotated tag creation, and GitHub Release publication remain pending; the Local Delivery Simulator and Labs 1–3 remain deferred Pass 2 enrichment, and Part VIII has not started.
+
+**Status:** Release Candidate validation active
+
+**Last Updated:** 2026-08-11

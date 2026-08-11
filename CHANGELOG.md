@@ -4,7 +4,7 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
-### Planned v0.10.0 — Cloud & DevOps Complete
+### Release Candidate v0.10.0 — Cloud & DevOps Complete
 
 #### Added
 
