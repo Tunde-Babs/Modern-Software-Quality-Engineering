@@ -247,3 +247,27 @@ Part V is complete at manuscript level and ready for release administration. All
 **Status:** Release preparation active
 
 **Last Updated:** 2026-08-10
+
+---
+
+## Milestone M2 — Handbook Development: Part VI Data Quality Engineering
+
+### Completed
+
+- Completed accelerated Pass 1 production of Part VI — Data Quality Engineering, Chapters 1–11, followed by consolidated review, targeted expansion, and comprehensive normalization.
+- Completed the Final Part VI Quality Gate at **96/100**; manuscript P0, P1, and P2 findings: none.
+- Established and pushed manuscript baseline `6ca58c6` on `feature/part-06-data-quality-engineering`.
+- Clarified practical-asset governance through Quality Gates v1.1: required assets require validation, while the Atlas Commerce Data Pipeline companion and Labs 1–3 remain recommended Pass 2 enrichment.
+
+### Outcome
+
+Part VI is complete at manuscript level. Its release administration was merged into `develop`, and `release/v0.9.0` is prepared for Release Candidate validation of planned **v0.9.0 — Data Quality Engineering Complete**. Chapters 1–11 remain Draft; no companion implementation or laboratories have been created, and Part VII has not started. Main promotion, tag creation, and GitHub Release publication remain pending.
+
+### Next Steps
+
+- Complete Release Candidate review, then open the release pull request to `main` after approval.
+- Keep Pass 2 enrichment deferred and do not create a tag, GitHub Release, or Part VII work without separate authorization.
+
+**Status:** Release Candidate validation active
+
+**Last Updated:** 2026-08-11

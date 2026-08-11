@@ -4,7 +4,30 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
-**Planned release:** `v0.8.0 — Automation Engineering Complete`. Release administration is active; promotion to `main`, annotated tagging, and GitHub Release publication have not started.
+**Release candidate:** `v0.9.0 — Data Quality Engineering Complete`. Release Candidate validation is active; v0.9.0 has not been released, tagged, or published.
+
+### Added
+
+- Completed Part VI — Data Quality Engineering, Chapters 1–11, including decision-oriented data-quality evidence, representations, contextual dimensions, query and integrity evidence, transformations, pipeline quality, reconciliation, temporal data, contracts, lineage, provenance, ownership, analytics, reporting integrity, and production learning.
+- Added the **Data Quality Strategy and Evidence Portfolio** capstone, including an Evidence Matrix and Decision Brief.
+
+### Changed
+
+- Established the Part VI QA → QE progression from checking data values to making bounded, decision-oriented data-quality claims with explicit evidence, limitations, ownership, and residual risk.
+- Clarified Quality Gates v1.1: required practical assets must be validated, while explicitly deferred Pass 2 enrichment remains planned and is not represented as delivered.
+
+### Validation
+
+- Final Part VI Quality Gate: **96/100**.
+- P0/P1/manuscript P2: none.
+- Markdown structure, local links, references, navigation, worked-example calculations, and repository-scope validation passed.
+
+### Known Limitations
+
+- The Atlas Commerce Data Pipeline companion and Labs 1–3 remain deferred as recommended Pass 2 enrichment under Quality Gates v1.1.
+- Part VI is a Data Quality Engineering curriculum; cloud and DevOps implementation remains in Part VII.
+
+## [0.8.0] — Automation Engineering Complete — 2026-08-10
 
 ### Added
 

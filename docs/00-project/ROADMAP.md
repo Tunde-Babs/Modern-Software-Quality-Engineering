@@ -255,8 +255,23 @@ The project follows an incremental release model.
 | v0.6.0 | Software Testing Complete |
 | v0.7.0 | API Quality Engineering Complete |
 | v0.8.0 | Automation Engineering Complete |
-| v0.9.0 | First Edition Review |
+| v0.9.0 | Data Quality Engineering Complete |
+| v0.10.0 | Cloud & DevOps Complete |
+| v0.11.0 | Observability & Reliability Engineering Complete |
+| v0.12.0 | AI Quality Engineering Complete |
+| v0.13.0 | Performance & Security Engineering Complete |
+| v0.14.0 | System Design & Architecture Complete |
+| v0.15.0 | Engineering Leadership & Career Growth Complete |
+| v0.16.0 | First Edition Review |
 | v1.0.0 | First Edition Published |
+
+---
+
+## Handbook and First Edition Milestones
+
+Each completed handbook part is released as a distinct pre-1.0 milestone in handbook order. The part-completion sequence continues through Part XII at `v0.15.0`; it does not make a whole-book publication claim.
+
+After the Part XII release, `v0.16.0 — First Edition Review` covers whole-book normalization, cross-part consistency review, First Edition technical and editorial gates, practical-asset validation where required, and website/publication validation. `v1.0.0 — First Edition Published` is the approved whole-book First Edition milestone.
 
 ---
 

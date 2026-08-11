@@ -85,8 +85,31 @@ Project releases use Semantic Versioning.
 | v0.6.0 | Software Testing Complete |
 | v0.7.0 | API Quality Engineering Complete |
 | v0.8.0 | Automation Engineering Complete |
-| v0.9.0 | First Edition Review |
+| v0.9.0 | Data Quality Engineering Complete |
+| v0.10.0 | Cloud & DevOps Complete |
+| v0.11.0 | Observability & Reliability Engineering Complete |
+| v0.12.0 | AI Quality Engineering Complete |
+| v0.13.0 | Performance & Security Engineering Complete |
+| v0.14.0 | System Design & Architecture Complete |
+| v0.15.0 | Engineering Leadership & Career Growth Complete |
+| v0.16.0 | First Edition Review |
 | v1.0.0 | First Edition Published |
+
+---
+
+# Handbook Release Model
+
+The project distinguishes between two release milestones before the First Edition.
+
+## Part Completion Releases
+
+Each completed handbook part receives an identifiable pre-1.0 minor release in handbook order. A part release records the reviewed manuscript scope for that part; it does not by itself claim that the entire handbook is complete or published.
+
+## First Edition Milestones
+
+`v0.16.0 — First Edition Review` is the whole-book review milestone after Parts I–XII have their planned part-completion releases. It provides time for whole-book normalization, cross-part consistency review, First Edition quality gates, practical-asset validation where required, and website/publication validation.
+
+`v1.0.0 — First Edition Published` is the whole-book publication milestone. It represents the approved, release-ready First Edition rather than completion of an individual handbook part.
 
 ---
 
