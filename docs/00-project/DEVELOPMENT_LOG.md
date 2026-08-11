@@ -322,3 +322,17 @@ Part VII is complete at manuscript level and enters release administration for p
 **Status:** Release Candidate validation active
 
 **Last Updated:** 2026-08-11
+
+---
+
+## Release v0.10.0 — Cloud & DevOps Complete
+
+- Completed Part VII release closure after the **97/100** Final Part VII Quality Gate, with no P0/P1/P2/P3 findings within the approved manuscript scope.
+- Merged the release pull request to `main`, created annotated tag `v0.10.0`, and published the GitHub Release.
+- Quality Gates v1.1 remains applied: the Atlas Commerce Local Delivery Simulator and Labs 1–3 remain deferred Pass 2 enrichment. Chapters 1–11 remain Draft.
+
+**Outcome:** Part VII is released. Part VIII — Observability & Reliability Engineering curriculum architecture/planning is the next authorized activity; planning has not started.
+
+**Status:** Released
+
+**Last Updated:** 2026-08-11

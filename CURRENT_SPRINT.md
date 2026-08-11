@@ -10,7 +10,7 @@ M2 — Handbook Development
 
 ## Branch
 
-`release/v0.10.0`
+`main`
 
 ---
 
@@ -27,26 +27,24 @@ M2 — Handbook Development
 
 ## Active Scope
 
-Part VII — Cloud & DevOps is merged into `develop`, and `release/v0.10.0` is prepared for Release Candidate review of **v0.10.0 — Cloud & DevOps Complete**.
+Part VII — Cloud & DevOps release lifecycle is complete. **v0.10.0 — Cloud & DevOps Complete** is released.
 
-- The latest stable release is **v0.9.0 — Data Quality Engineering Complete**.
-- Chapters 1–11 are complete and remain **Draft** under the manuscript-status workflow.
-- Accelerated curriculum architecture, Pass 1 drafting, consolidated independent review, and light normalization are complete.
+- The latest stable release is **v0.10.0 — Cloud & DevOps Complete**.
+- Part VII Chapters 1–11 remain **Draft** under manuscript-status governance.
 - The Final Part VII Quality Gate is **97/100**; P0/P1/P2/P3 findings: none within the approved manuscript scope.
-- The reviewed manuscript baseline is committed and pushed as `2da10fd`; release administration is complete and the release branch matches `develop`.
+- Feature-to-`develop` integration and `release/v0.10.0`-to-`main` promotion are complete. The annotated `v0.10.0` tag and GitHub Release are published.
 - Quality Gates v1.1 applies. The Atlas Commerce Local Delivery Simulator and Labs 1–3 remain recommended Pass 2 enrichment; no standalone practical asset is required for the manuscript release.
 - No Part VII companion implementation, laboratory, standalone diagram, case-study file, CI/CD configuration, cloud infrastructure, or website asset has been created.
-- The website remains a separate parallel track. Part VIII has not started.
 
 ---
 
-## Next Action
+## Next Authorized Activity
 
-- Complete Release Candidate validation, then open the release pull request from `release/v0.10.0` to `main` only after approval.
-- Main promotion, tag creation, and GitHub Release publication remain pending. Do not begin Pass 2 assets, companion code, laboratories, diagrams, case studies, website work, or Part VIII automatically.
+- Part VIII — Observability & Reliability Engineering curriculum architecture/planning.
+- Part VIII planning has not started. Do not begin manuscript work, create a Part VIII feature branch, or create Pass 2 assets, companion code, laboratories, diagrams, case studies, website work, or cloud infrastructure automatically.
 
 ---
 
 ## Outcome
 
-Part VII is complete at manuscript level. **v0.10.0 — Cloud & DevOps Complete** is an unreleased Release Candidate; Chapters 1–11 remain Draft, Pass 2 enrichment is deferred, and Part VIII has not started.
+Part VII is released as **v0.10.0 — Cloud & DevOps Complete**. Chapters 1–11 remain Draft, Pass 2 enrichment is deferred, and Part VIII planning has not started.

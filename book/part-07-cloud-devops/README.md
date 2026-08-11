@@ -4,7 +4,7 @@
 
 ## Curriculum Status
 
-**The Part VII curriculum and Chapters 1–11 manuscript are complete.** Accelerated Pass 1, consolidated independent review, light normalization, and the Final Part VII Quality Gate are complete. The final gate assessed Part VII at **97/100**, with no P0, P1, P2, or P3 findings within the approved manuscript scope. Chapters 1–11 remain `Status: Draft`. The reviewed manuscript baseline is committed and pushed as `2da10fd`; release administration is merged into `develop`, and `release/v0.10.0` is prepared for Release Candidate review. Main promotion, tag creation, and GitHub Release publication remain pending. The status does not claim publication or release, and Part VIII has not started.
+**Part VII — Cloud & DevOps is released as v0.10.0 — Cloud & DevOps Complete.** The Part VII curriculum and Chapters 1–11 manuscript are complete. Accelerated Pass 1, consolidated independent review, light normalization, and the Final Part VII Quality Gate are complete. The final gate assessed Part VII at **97/100**, with no P0, P1, P2, or P3 findings within the approved manuscript scope. Chapters 1–11 remain `Status: Draft`. The reviewed manuscript baseline is `2da10fd`; the release PR was merged to `main`, the annotated `v0.10.0` tag was created, and the GitHub Release was published. Quality Gates v1.1 applies: no standalone practical asset is required for this manuscript release, and Part VIII planning has not started.
 
 No Part VII laboratory, companion implementation, standalone diagram, case-study file, CI/CD configuration, cloud resource, or website asset has been created. The Atlas Commerce Local Delivery Simulator, Labs 1–3, and any diagrams remain recommended Pass 2 enrichment.
 
@@ -340,7 +340,7 @@ The accelerated model preserves depth and independent review:
 3. **Early boundary checkpoint after Chapter 6:** completed with no P0/P1 concern. Chapters 1–6 retain delivery-system focus, limited data/schema examples to compatibility, defer Part VIII operational depth, avoid Part X/XI specialist depth, and keep tools illustrative.
 4. **Consolidated independent review:** completed at **96/100** with no P0, P1, or P2 findings.
 5. **Light P3 normalization:** completed for citation precision and repeated phrasing; all chapters remain Draft.
-6. **Final Part VII Quality Gate:** completed at **97/100** with no P0, P1, P2, or P3 findings within the approved manuscript scope. The reviewed manuscript baseline is committed and pushed as `2da10fd`; release administration is merged into `develop`, and `release/v0.10.0` is prepared for Release Candidate review. Main promotion, tag creation, and GitHub Release publication remain pending.
+6. **Final Part VII Quality Gate:** completed at **97/100** with no P0, P1, P2, or P3 findings within the approved manuscript scope. The reviewed manuscript baseline is `2da10fd`; the release PR was merged to `main`, the annotated `v0.10.0` tag was created, and the GitHub Release was published.
 
 The architecture decision itself did not constitute drafting. The completed Pass 1 chapters use the approved template, including Metadata, Opening Quote or Motivating Scenario, Why This Chapter Matters, Learning Objectives, Engineering Perspective, Industry Perspective, misconceptions/pitfalls where relevant, Practical Exercise, Further Reading, References, and Chapter Checklist.
 
