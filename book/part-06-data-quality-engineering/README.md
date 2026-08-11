@@ -4,7 +4,7 @@
 
 ## Curriculum Status
 
-**Consolidated independent review completed at 89/100; targeted expansion and comprehensive normalization complete.** P0 and P1 findings: none. Chapters 1–11 remain Draft pending the Final Part VI Quality Gate. Companion code, laboratories, diagrams, case studies, website work, and CI/CD implementation have not started. The planned Part-completion release is **v0.9.0 — Data Quality Engineering Complete**. Part VII has not started.
+**Curriculum complete. Chapters 1–11 are manuscript-complete and remain Draft.** The Final Part VI Quality Gate passed at **96/100** with no manuscript P0, P1, or P2 findings. The manuscript baseline is committed as `6ca58c6`; release preparation is active for the planned **v0.9.0 — Data Quality Engineering Complete** release. Quality Gates v1.1 confirms that the Atlas Commerce Data Pipeline companion and Labs 1–3 are recommended Pass 2 enrichment, not release requirements. No companion code, laboratories, diagrams, case studies, website work, or CI/CD implementation has been created. Part VII has not started.
 
 ---
 
@@ -210,10 +210,10 @@ Risk → data expectation → evidence boundary → oracle/comparison
 
 | Delivery | Chapters | Status | Capability focus | Cumulative professional artifacts |
 |---|---:|---|---|---|
-| Delivery 1 — Meaning, Representation, and Integrity | 1–3 | Consolidated review complete; all chapters Draft. | Data claims, contextual dimensions, queries, and relationships. | Data Quality Evidence Review; Representation Analysis; Data Integrity and Relationship Analysis. |
-| Delivery 2 — Transformation, Pipelines, and Reconciliation | 4–6 | Targeted expansion and normalization complete; all chapters Draft. | Transformations, data movement, and cross-system agreement. | Transformation Quality Evidence Plan; Pipeline Quality Evidence Map; Cross-System Reconciliation Strategy. |
-| Delivery 3 — Time, Trust Boundaries, and Reporting | 7–9 | Targeted expansion and normalization complete; all chapters Draft. | Temporal data, provenance, contracts, ownership, and analytical integrity. | Temporal Data Quality Investigation; Data Trust Boundary and Ownership Review; Analytics and Metric Integrity Review. |
-| Delivery 4 — Learning and Integrated Strategy | 10–11 | Targeted expansion and normalization complete; all chapters Draft. | Production learning, sustainability, and end-to-end data-quality judgement. | Production Data Quality Learning Review; Data Quality Strategy and Evidence Portfolio. |
+| Delivery 1 — Meaning, Representation, and Integrity | 1–3 | Complete; all chapters Draft. | Data claims, contextual dimensions, queries, and relationships. | Data Quality Evidence Review; Representation Analysis; Data Integrity and Relationship Analysis. |
+| Delivery 2 — Transformation, Pipelines, and Reconciliation | 4–6 | Complete; all chapters Draft. | Transformations, data movement, and cross-system agreement. | Transformation Quality Evidence Plan; Pipeline Quality Evidence Map; Cross-System Reconciliation Strategy. |
+| Delivery 3 — Time, Trust Boundaries, and Reporting | 7–9 | Complete; all chapters Draft. | Temporal data, provenance, contracts, ownership, and analytical integrity. | Temporal Data Quality Investigation; Data Trust Boundary and Ownership Review; Analytics and Metric Integrity Review. |
+| Delivery 4 — Learning and Integrated Strategy | 10–11 | Complete; all chapters Draft. | Production learning, sustainability, and end-to-end data-quality judgement. | Production Data Quality Learning Review; Data Quality Strategy and Evidence Portfolio. |
 
 ---
 
@@ -242,7 +242,7 @@ Detailed SQL syntax belongs primarily to Part II foundations and, where justifie
 
 ## Companion and Laboratory Strategy
 
-**Companion decision: RECOMMENDED PASS 2.** A later, separately authorised, small deterministic **Atlas Commerce Data Pipeline** companion may use synthetic orders, payments, refunds, fulfilment, and reporting data to support repeated evidence exercises. It is not required for Pass 1 manuscript development or curriculum approval.
+**Companion decision: RECOMMENDED PASS 2.** A later, separately authorised, small deterministic **Atlas Commerce Data Pipeline** companion may use synthetic orders, payments, refunds, fulfilment, and reporting data to support repeated evidence exercises. Quality Gates v1.1 confirms that it is not required for the Part VI manuscript release.
 
 **Laboratory decision: RECOMMENDED PASS 2.** If separately authorised, the planned laboratories are:
 
@@ -250,7 +250,7 @@ Detailed SQL syntax belongs primarily to Part II foundations and, where justifie
 2. **Lab 2 — Transformation and Aggregation Quality**
 3. **Lab 3 — Late, Duplicate, and Corrected Data Investigation**
 
-No companion or laboratory is created by this planning document. The active Quality Gates policy’s laboratory requirement requires a separate governance clarification before a future Part VI release-readiness decision.
+No companion or laboratory is created by this planning document. Quality Gates v1.1 resolves the former policy ambiguity: these explicitly deferred Pass 2 assets do not block the Part VI manuscript release and must pass their own applicable quality validation if later published.
 
 ---
 
@@ -296,7 +296,7 @@ Part VI will be ready for release preparation only when:
 5. A stable Git manuscript baseline and release-administration record exist.
 6. The release decision clearly separates manuscript readiness, optional Pass 2 enrichment, and formal publication approval.
 
-The separate Quality Gates/laboratory-policy clarification must determine which practical assets are required for future stable-release readiness; this planning architecture does not silently change that policy.
+Quality Gates v1.1 now provides that classification: the companion and Labs 1–3 are recommended Pass 2 enrichment, not required practical assets for v0.9.0. Formal release approval remains a separate decision.
 
 ---
 
