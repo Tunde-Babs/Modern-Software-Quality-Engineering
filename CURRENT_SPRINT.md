@@ -10,7 +10,7 @@ M2 — Handbook Development
 
 ## Branch
 
-`main`
+`feature/part-07-cloud-devops`
 
 ---
 
@@ -27,24 +27,26 @@ M2 — Handbook Development
 
 ## Active Scope
 
-Post-v0.9.0 release reconciliation is complete. Part VII — Cloud & DevOps curriculum architecture/planning is the next authorized project action; no Part VII curriculum or manuscript work has started.
+Part VII — Cloud & DevOps manuscript work is complete on `feature/part-07-cloud-devops`; release administration for the planned **v0.10.0 — Cloud & DevOps Complete** is active.
 
-- Part VI manuscript completion was released as **v0.9.0 — Data Quality Engineering Complete**. The Final Part VI Quality Gate remains **96/100**; manuscript P0, P1, and P2 findings: none.
-- The release PR merged to `main`; annotated tag `v0.9.0` was created and the GitHub Release was published.
-- All Part VI Chapters 1–11 remain **Draft** under the manuscript-status workflow.
-- Quality Gates v1.1 applied: required assets require validation, while the Atlas Commerce Data Pipeline companion and Labs 1–3 remain recommended Pass 2 enrichment and are deferred.
-- No Part VI companion code, laboratories, diagrams, case studies, CI/CD work, or website work has been created.
-- The website remains a separate parallel track. Part VII has not started.
+- The latest stable release is **v0.9.0 — Data Quality Engineering Complete**.
+- Chapters 1–11 are complete and remain **Draft** under the manuscript-status workflow.
+- Accelerated curriculum architecture, Pass 1 drafting, consolidated independent review, and light normalization are complete.
+- The Final Part VII Quality Gate is **97/100**; P0/P1/P2/P3 findings: none within the approved manuscript scope.
+- The reviewed manuscript baseline is committed and pushed as `2da10fd`.
+- Quality Gates v1.1 applies. The Atlas Commerce Local Delivery Simulator and Labs 1–3 remain recommended Pass 2 enrichment; no standalone practical asset is required for the manuscript release.
+- No Part VII companion implementation, laboratory, standalone diagram, case-study file, CI/CD configuration, cloud infrastructure, or website asset has been created.
+- The website remains a separate parallel track. Part VIII has not started.
 
 ---
 
-## Next Actions
+## Next Action
 
-- Begin Part VII — Cloud & DevOps curriculum architecture/planning only after explicit authorization.
-- Do not begin Part VII manuscript drafting, companion code, laboratories, diagrams, case studies, website work, or release administration automatically.
+- Commit and push the approved release-administration metadata, then open the feature-to-`develop` pull request.
+- Do not begin Pass 2 assets, companion code, laboratories, diagrams, case studies, website work, or Part VIII automatically.
 
 ---
 
 ## Outcome
 
-Part VI is released as **v0.9.0 — Data Quality Engineering Complete**. Chapters 1–11 remain Draft, and Pass 2 enrichment is deferred. Part VII curriculum architecture/planning is next; Part VII has not started.
+Part VII is complete at manuscript level and prepared for release administration only. **v0.10.0 — Cloud & DevOps Complete** remains planned and unreleased; Chapters 1–11 remain Draft, Pass 2 enrichment is deferred, and Part VIII has not started.
