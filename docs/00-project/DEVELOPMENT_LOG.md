@@ -397,3 +397,60 @@ Part VII is complete at manuscript level and enters release administration for p
 **Status:** Release administration active
 
 **Last Updated:** 2026-08-12
+
+---
+
+## Release Candidate v0.12.0 — AI Quality Engineering Complete
+
+- Completed feature-to-`develop` integration and aligned `release/v0.12.0` with `develop`.
+- Performed current Release Candidate validation against frozen baseline `4df2b8d2409cfa0fc474cad8e1bbdbe652eb9dd5`; all 12 chapters remain Draft, the manuscript is frozen, and the Final Part IX Quality Gate remains **97/100** with P0/P1/P2/P3 manuscript findings: none.
+- The Atlas Commerce AI Evaluation Simulator, Labs 1–4, conceptual diagrams, standalone datasets, executable examples, and case-study files remain deferred, non-blocking Pass 2 enrichment. Part X has not started.
+
+**Outcome:** v0.12.0 is the current unreleased Release Candidate. Commit and push this metadata correction, then open the release pull request to `main`; promotion, annotated tag creation, and GitHub Release publication remain pending.
+
+**Status:** Release Candidate validation current; main promotion pending
+
+**Last Updated:** 2026-08-12
+
+---
+
+## Release v0.12.0 — AI Quality Engineering Complete
+
+- Merged the approved `release/v0.12.0` branch to `main`, created annotated tag `v0.12.0`, and published the GitHub Release on 2026-08-12.
+- The Final Part IX Quality Gate remains **97/100** with P0/P1/P2/P3 manuscript findings: none. Chapters 1–12 remain Draft under manuscript-status governance, and baseline `4df2b8d2409cfa0fc474cad8e1bbdbe652eb9dd5` remains preserved.
+- The Atlas Commerce AI Evaluation Simulator, Labs 1–4, conceptual diagrams, standalone datasets, executable examples, and case-study files remain deferred, non-blocking Pass 2 enrichment.
+
+**Outcome:** Part IX is released. Part X — Performance & Security Engineering architecture and curriculum planning are the next authorized handbook activity; no Part X manuscript or standalone practical asset has started.
+
+**Status:** Released
+
+**Last Updated:** 2026-08-12
+
+---
+
+## Milestone M2 — Handbook Development: Part X Performance & Security Engineering Planning
+
+- Reconciled active project state after the v0.12.0 release and started a proposed, review-pending Part X architecture for planned **v0.13.0 — Performance & Security Engineering Complete**.
+- The proposed curriculum joins performance and security through system boundaries, workload and threat assumptions, experiments, evidence, limitations, decisions, and residual risk. It does not treat load testing or vulnerability scanning as sufficient quality-engineering conclusions.
+- No Part X chapter manuscript, laboratory, simulator, diagram, dataset, performance script, security tool, case-study file, companion implementation, website asset, CI/CD configuration, or infrastructure has been created. Part XI has not started.
+
+**Outcome:** Architecture and curriculum planning are active and require independent approval before Pass 1 manuscript drafting. Proposed standalone practical assets are deferred, non-blocking Pass 2 enrichment.
+
+**Status:** Architecture planning active; approval pending
+
+**Last Updated:** 2026-08-12
+
+---
+
+## Milestone M2 — Handbook Development: Part X Performance & Security Engineering
+
+- Completed Part X — Performance & Security Engineering, Chapters 1–12, following architecture approval, the **91/100** independent architecture review, focused architecture closure, Accelerated Pass 1, and Checkpoints A and B.
+- Completed the **93/100** consolidated independent manuscript review, P1 correction and focused closure, then the **97/100** Final Part X Quality Gate; P0/P1/P2 findings are none, and non-blocking Gunther bibliographic refinement is the only P3.
+- Established controlled manuscript baseline `3f7391b5fd939a5dd973d25386811031f3448180`; all 12 chapters remain Draft under manuscript-status governance.
+- Applied Quality Gates v1.1: the Atlas Commerce Performance & Security Simulator; performance, workload-modelling, security-evidence/threat-modelling, and integrated regression/capstone labs; conceptual diagrams; synthetic datasets; executable performance examples; safe security-testing examples; and case-study files remain deferred recommended Pass 2 enrichment.
+
+**Outcome:** Part X manuscript quality is accepted. Release administration is active for planned, unreleased **v0.13.0 — Performance & Security Engineering Complete**; Part XI has not started.
+
+**Status:** Release administration active
+
+**Last Updated:** 2026-08-12
