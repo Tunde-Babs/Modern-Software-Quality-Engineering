@@ -397,3 +397,17 @@ Part VII is complete at manuscript level and enters release administration for p
 **Status:** Release administration active
 
 **Last Updated:** 2026-08-12
+
+---
+
+## Release Candidate v0.12.0 — AI Quality Engineering Complete
+
+- Completed feature-to-`develop` integration and aligned `release/v0.12.0` with `develop`.
+- Performed current Release Candidate validation against frozen baseline `4df2b8d2409cfa0fc474cad8e1bbdbe652eb9dd5`; all 12 chapters remain Draft, the manuscript is frozen, and the Final Part IX Quality Gate remains **97/100** with P0/P1/P2/P3 manuscript findings: none.
+- The Atlas Commerce AI Evaluation Simulator, Labs 1–4, conceptual diagrams, standalone datasets, executable examples, and case-study files remain deferred, non-blocking Pass 2 enrichment. Part X has not started.
+
+**Outcome:** v0.12.0 is the current unreleased Release Candidate. Commit and push this metadata correction, then open the release pull request to `main`; promotion, annotated tag creation, and GitHub Release publication remain pending.
+
+**Status:** Release Candidate validation current; main promotion pending
+
+**Last Updated:** 2026-08-12

@@ -4,7 +4,7 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
-### Planned — v0.12.0 — AI Quality Engineering Complete
+### Release Candidate — v0.12.0 — AI Quality Engineering Complete
 
 #### Added
 
@@ -18,7 +18,8 @@ All notable changes to this project will be documented in this file.
 #### Validation
 
 - Final Part IX Quality Gate: **97/100**; P0/P1/P2/P3 findings: none.
-- All 12 chapters remain **Draft** under manuscript-status governance. Source-currentness, numerical reasoning, Markdown structure, local links, navigation, and repository-scope validation passed.
+- All 12 chapters remain **Draft** under manuscript-status governance. Controlled baseline `4df2b8d2409cfa0fc474cad8e1bbdbe652eb9dd5` is frozen; source-currentness, numerical reasoning, Markdown structure, local links, navigation, and repository-scope validation passed.
+- Feature-to-`develop` integration is complete. `release/v0.12.0` is the current unreleased Release Candidate; promotion to `main`, annotated tag creation, and GitHub Release publication remain pending.
 
 #### Deferred Pass 2 Enrichment
 
