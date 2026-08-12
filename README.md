@@ -14,11 +14,11 @@
 
 🚀 **Current Phase:** M2 – Handbook Development
 
-📦 **Latest Stable Release:** v0.10.0 – Cloud & DevOps Complete
+📦 **Latest Stable Release:** v0.11.0 – Observability & Reliability Engineering Complete
 
-📍 **Current Release Candidate:** v0.11.0 – Observability & Reliability Engineering Complete
+📍 **Planned Next Release:** v0.12.0 – AI Quality Engineering Complete
 
-🧭 **Current Handbook Work:** Part VII — Cloud & DevOps released; Part VIII — Observability & Reliability Engineering content-quality work is complete: curriculum architecture, Pass 1 drafting of Chapters 1–11 (all remain Draft), consolidated review, targeted expansion and normalization, focused re-review, and the Final Quality Gate (**96/100**) are complete; no P0/P1/manuscript P2 findings remain; manuscript baseline `ee20d306b88b`, feature-to-`develop` integration, and Release Candidate validation are complete on `release/v0.11.0`; v0.11.0 remains unreleased pending promotion to `main`, an annotated tag, and GitHub Release publication; the simulator, Labs 1–3, and conceptual diagrams remain deferred Pass 2 enrichment; Part IX — AI Quality Engineering has not started
+🧭 **Current Handbook Work:** Part VIII — Observability & Reliability Engineering released as v0.11.0 after its **96/100** Final Quality Gate; Chapters 1–11 remain Draft under manuscript-status governance, and its simulator, Labs 1–3, and conceptual diagrams remain deferred Pass 2 enrichment. Part IX — AI Quality Engineering passed its **97/100** Final Quality Gate with no P0, P1, P2, or P3 findings; Chapters 1–12 remain Draft, manuscript quality is accepted, Pass 2 practical assets are deferred, controlled manuscript-baseline establishment is in progress, and Part X — Performance & Security Engineering has not started
 
 </p>
 
@@ -54,7 +54,7 @@ The project follows an incremental release strategy, with each release represent
 | **v0.8.0** | ✅ Released | Automation Engineering Complete |
 | **v0.9.0** | ✅ Released | Data Quality Engineering Complete |
 | **v0.10.0** | ✅ Released | Cloud & DevOps Complete |
-| **v0.11.0** | 🧭 Release Candidate | Observability & Reliability Engineering Complete |
+| **v0.11.0** | ✅ Released | Observability & Reliability Engineering Complete |
 | **v0.12.0** | 🧭 Planned | AI Quality Engineering Complete |
 | **v0.13.0** | 🧭 Planned | Performance & Security Engineering Complete |
 | **v0.14.0** | 🧭 Planned | System Design & Architecture Complete |
@@ -71,7 +71,8 @@ The project follows an incremental release strategy, with each release represent
 - Part V — Automation Engineering released as v0.8.0
 - Part VI — Data Quality Engineering released as v0.9.0; Final Quality Gate passed at 96/100
 - Part VII — Cloud & DevOps released as v0.10.0; Final Quality Gate passed at **97/100**
-- Part VIII — Observability & Reliability Engineering content-quality work is complete; Chapters 1–11 remain Draft; the Final Quality Gate passed at **96/100** with no P0/P1/manuscript P2 findings; manuscript baseline `ee20d306b88b`, feature-to-`develop` integration, and Release Candidate validation are complete on `release/v0.11.0`; v0.11.0 remains unreleased pending promotion to `main`, an annotated tag, and GitHub Release publication; Pass 2 enrichment is deferred; Part IX — AI Quality Engineering has not started
+- Part VIII — Observability & Reliability Engineering released as v0.11.0 after its **96/100** Final Quality Gate; Chapters 1–11 remain Draft under manuscript-status governance, and Pass 2 enrichment remains deferred
+- Part IX — AI Quality Engineering passed its **97/100** Final Quality Gate with no P0, P1, P2, or P3 findings; Chapters 1–12 remain Draft, manuscript quality is accepted, Pass 2 practical assets are deferred, controlled manuscript-baseline establishment is in progress, and Part X — Performance & Security Engineering has not started
 
 ---
 
@@ -267,7 +268,8 @@ Completed
 Current focus:
 
 - Part I through Part VII released as v0.4.0 through v0.10.0
-- Part VIII — Observability & Reliability Engineering content-quality work is complete; Chapters 1–11 remain Draft; the Final Quality Gate passed at **96/100** with no P0/P1/manuscript P2 findings; manuscript baseline `ee20d306b88b`, feature-to-`develop` integration, and Release Candidate validation are complete on `release/v0.11.0`; v0.11.0 remains unreleased pending promotion to `main`, an annotated tag, and GitHub Release publication; Pass 2 enrichment is deferred; Part IX — AI Quality Engineering has not started
+- Part VIII — Observability & Reliability Engineering released as v0.11.0 after its **96/100** Final Quality Gate; Chapters 1–11 remain Draft under manuscript-status governance, and Pass 2 enrichment remains deferred
+- Part IX — AI Quality Engineering passed its **97/100** Final Quality Gate with no P0, P1, P2, or P3 findings; Chapters 1–12 remain Draft, manuscript quality is accepted, Pass 2 practical assets are deferred, controlled manuscript-baseline establishment is in progress, and Part X — Performance & Security Engineering has not started
 
 ## 🔜 M3 — Digital Learning Platform
 
@@ -312,9 +314,9 @@ Rather than documenting individual tools, this project seeks to define the endur
 | Item | Status |
 |------|--------|
 | Current Milestone | **M2 – Handbook Development** |
-| Latest Release | **v0.10.0 – Cloud & DevOps Complete** |
-| Current Release Candidate | **v0.11.0 – Observability & Reliability Engineering Complete** |
-| Current Handbook Work | **Part VII — Cloud & DevOps** released; Part VIII — Observability & Reliability Engineering content-quality work is complete; Chapters 1–11 remain Draft; the Final Quality Gate passed at **96/100**; manuscript baseline `ee20d306b88b`, feature-to-`develop` integration, and Release Candidate validation are complete on `release/v0.11.0`; v0.11.0 remains unreleased pending promotion to `main`, an annotated tag, and GitHub Release publication; Pass 2 enrichment is deferred; Part IX — AI Quality Engineering has not started |
+| Latest Release | **v0.11.0 – Observability & Reliability Engineering Complete** |
+| Planned Next Release | **v0.12.0 – AI Quality Engineering Complete** |
+| Current Handbook Work | **Part VIII — Observability & Reliability Engineering** released as v0.11.0 after its **96/100** Final Quality Gate; Chapters 1–11 remain Draft and Pass 2 enrichment remains deferred. **Part IX — AI Quality Engineering** passed its **97/100** Final Quality Gate with no P0, P1, P2, or P3 findings; Chapters 1–12 remain Draft, manuscript quality is accepted, Pass 2 practical assets are deferred, controlled manuscript-baseline establishment is in progress, and Part X has not started. |
 | Handbook | 🚧 In Development |
 | Practical Labs | 🚧 Planned |
 | Documentation Website | 🚧 Planned |
