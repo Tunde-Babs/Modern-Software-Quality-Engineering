@@ -6,9 +6,9 @@
 
 **Part IX curriculum architecture is approved; accelerated Full Pass 1 and depth-completion work are complete, and the Final Part IX Quality Gate passed at 97/100.** P0, P1, P2, and P3 findings are **none**, and manuscript quality is accepted. All 12 chapters remain **Draft** under manuscript-status governance. No companion implementation, laboratory, diagram, dataset, evaluation code, case-study file, website asset, CI/CD configuration, or infrastructure has been created; these practical assets remain deferred to Pass 2 enrichment.
 
-The planned release is **v0.12.0 — AI Quality Engineering Complete** and remains unreleased. The part has followed the MSQE accelerated workflow: architecture approval, one coherent Full Pass 1 across internal batches, one consolidated independent review, one targeted correction and normalization pass, one focused closure review, and one Final Part IX Quality Gate. The current workflow is controlled Part IX manuscript-baseline establishment; release administration follows only after separately authorized baseline completion.
+The planned release is **v0.12.0 — AI Quality Engineering Complete** and remains unreleased. The part has followed the MSQE accelerated workflow: architecture approval, one coherent Full Pass 1 across internal batches, one consolidated independent review, one targeted correction and normalization pass, one focused closure review, and one Final Part IX Quality Gate. Controlled manuscript baseline `4df2b8d2409cfa0fc474cad8e1bbdbe652eb9dd5` is established, and release administration is active.
 
-The initial drafting coverage records the architecture, scope boundaries, and practical-asset classifications. It does not authorize practical assets, release administration, or Part X work.
+The manuscript records the architecture, scope boundaries, and practical-asset classifications. It does not authorize practical assets or Part X work.
 
 ---
 
@@ -611,8 +611,8 @@ Each chapter must develop concepts, worked reasoning, practical application, lim
 
 ## Current State and Next Action
 
-- **Current state:** Part VIII is released as v0.11.0. Part IX passed its **97/100** Final Quality Gate with no P0, P1, P2, or P3 findings; manuscript quality is accepted and all 12 chapters remain Draft. No standalone practical asset exists; Pass 2 assets are deferred.
-- **Planned release:** v0.12.0 — AI Quality Engineering Complete.
-- **Current workflow:** Establish the controlled Part IX manuscript baseline. v0.12.0 remains planned and unreleased; release administration has not started.
+- **Current state:** Part VIII is released as v0.11.0. Part IX passed its **97/100** Final Quality Gate with no P0, P1, P2, or P3 findings; the consolidated independent review, targeted P1/P2 evidence-traceability correction, and focused closure review are complete; manuscript quality is accepted; and all 12 chapters remain Draft. No standalone practical asset exists; Pass 2 assets are deferred.
+- **Planned release:** v0.12.0 — AI Quality Engineering Complete, planned and unreleased.
+- **Current workflow:** Controlled manuscript baseline `4df2b8d2409cfa0fc474cad8e1bbdbe652eb9dd5` is established. Release administration is active.
 - **Final Gate findings:** P0, P1, P2, and P3: none. Source-freshness review is complete and closed.
-- **Out of scope until separately authorised:** companion implementation; labs; diagrams; datasets; evaluation code; agents; release administration; Part X work; website, CI/CD, and infrastructure work.
+- **Out of scope until separately authorised:** companion implementation; labs; diagrams; datasets; evaluation code; agents; Part X work; website, CI/CD, and infrastructure work.
