@@ -336,3 +336,20 @@ Part VII is complete at manuscript level and enters release administration for p
 **Status:** Released
 
 **Last Updated:** 2026-08-11
+
+---
+
+## Milestone M2 — Handbook Development: Part VIII Observability & Reliability Engineering
+
+- Completed Part VIII Chapters 1–11 and the observability-and-reliability QA → QE progression, culminating in the **Observability & Reliability Strategy and Evidence Portfolio** capstone and Reliability Decision Brief.
+- Completed the Final Part VIII Quality Gate at **96/100**; manuscript P0, P1, and P2 findings: none.
+- Established and pushed manuscript baseline `ee20d306b88b` on `feature/part-08-observability-reliability`; all chapters remain Draft.
+- Applied Quality Gates v1.1: the Atlas Commerce Observability & Reliability Simulator, Labs 1–3, and conceptual diagrams remain deferred recommended Pass 2 enrichment.
+
+**Outcome:** Part VIII is complete at manuscript level and release administration is active for planned **v0.11.0 — Observability & Reliability Engineering Complete**. No release branch, tag, GitHub Release, companion implementation, laboratory, diagram, or Part IX work is claimed.
+
+**Next Steps:** Commit and push approved release-administration metadata, then open the feature-to-`develop` pull request. After merge to `develop`, create `release/v0.11.0` and conduct a separate Release Candidate review before promotion to `main`.
+
+**Status:** Release preparation active
+
+**Last Updated:** 2026-08-12
