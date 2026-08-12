@@ -322,3 +322,48 @@ Part VII is complete at manuscript level and enters release administration for p
 **Status:** Release Candidate validation active
 
 **Last Updated:** 2026-08-11
+
+---
+
+## Release v0.10.0 — Cloud & DevOps Complete
+
+- Completed Part VII release closure after the **97/100** Final Part VII Quality Gate, with no P0/P1/P2/P3 findings within the approved manuscript scope.
+- Merged the release pull request to `main`, created annotated tag `v0.10.0`, and published the GitHub Release.
+- Quality Gates v1.1 remains applied: the Atlas Commerce Local Delivery Simulator and Labs 1–3 remain deferred Pass 2 enrichment. Chapters 1–11 remain Draft.
+
+**Outcome:** Part VII is released. Part VIII — Observability & Reliability Engineering curriculum architecture/planning is the next authorized activity; planning has not started.
+
+**Status:** Released
+
+**Last Updated:** 2026-08-11
+
+---
+
+## Milestone M2 — Handbook Development: Part VIII Observability & Reliability Engineering
+
+- Completed Part VIII Chapters 1–11 and the observability-and-reliability QA → QE progression, culminating in the **Observability & Reliability Strategy and Evidence Portfolio** capstone and Reliability Decision Brief.
+- Completed the Final Part VIII Quality Gate at **96/100**; manuscript P0, P1, and P2 findings: none.
+- Established and pushed manuscript baseline `ee20d306b88b` on `feature/part-08-observability-reliability`; all chapters remain Draft.
+- Applied Quality Gates v1.1: the Atlas Commerce Observability & Reliability Simulator, Labs 1–3, and conceptual diagrams remain deferred recommended Pass 2 enrichment.
+
+**Outcome:** Part VIII is complete at manuscript level and release administration is active for planned **v0.11.0 — Observability & Reliability Engineering Complete**. No release branch, tag, GitHub Release, companion implementation, laboratory, diagram, or Part IX work is claimed.
+
+**Next Steps:** Commit and push approved release-administration metadata, then open the feature-to-`develop` pull request. After merge to `develop`, create `release/v0.11.0` and conduct a separate Release Candidate review before promotion to `main`.
+
+**Status:** Release preparation active
+
+**Last Updated:** 2026-08-12
+
+---
+
+## Release Candidate v0.11.0 — Observability & Reliability Engineering Complete
+
+- Merged the approved Part VIII release-administration metadata into `develop` and created `release/v0.11.0` from the merged state.
+- Completed Release Candidate validation against manuscript baseline `ee20d306b88b`; all 11 chapters remain Draft, and the Final Part VIII Quality Gate remains **96/100** with no P0/P1/manuscript P2 findings.
+- The Atlas Commerce Observability & Reliability Simulator, Labs 1–3, and conceptual diagrams remain deferred, non-blocking Pass 2 enrichment; Part IX has not started.
+
+**Outcome:** The Release Candidate is validated. Promotion to `main`, annotated tag `v0.11.0`, and GitHub Release publication remain pending.
+
+**Status:** Release Candidate validated; main promotion pending
+
+**Last Updated:** 2026-08-12
