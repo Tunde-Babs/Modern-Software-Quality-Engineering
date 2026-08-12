@@ -367,3 +367,47 @@ Part VII is complete at manuscript level and enters release administration for p
 **Status:** Release Candidate validated; main promotion pending
 
 **Last Updated:** 2026-08-12
+
+---
+
+## Release v0.11.0 — Observability & Reliability Engineering Complete
+
+- Merged the approved release branch to `main`, created annotated tag `v0.11.0`, and published the GitHub Release on 2026-08-12.
+- The Final Part VIII Quality Gate remains **96/100** with no P0/P1/manuscript P2 findings. Chapters 1–11 remain Draft under manuscript-status governance, and baseline `ee20d306b88b` remains preserved.
+- The Atlas Commerce Observability & Reliability Simulator, Labs 1–3, and conceptual diagrams remain deferred, non-blocking Pass 2 enrichment.
+
+**Outcome:** Part VIII is released. Part IX — AI Quality Engineering planning is the next authorized handbook activity; no Part IX manuscript has started.
+
+**Status:** Released
+
+**Last Updated:** 2026-08-12
+
+---
+
+## Milestone M2 — Handbook Development: Part IX AI Quality Engineering
+
+- Completed Part IX — AI Quality Engineering, Chapters 1–12, spanning AI system and failure boundaries; evaluation data and oracles; predictive, generative, retrieval, evaluator, agent, safety, fairness, privacy, regression, and production-learning evidence; and the **AI Quality Strategy and Evaluation Portfolio** capstone with its Evidence Index and AI Quality Decision Brief.
+- Completed the consolidated independent review at **89/100**, followed by the targeted P1/P2 evidence-traceability correction and focused closure review.
+- Completed the Final Part IX Quality Gate at **97/100**; P0/P1/P2/P3 findings: none. Source-freshness and numerical validation controls are complete.
+- Established and pushed manuscript baseline `4df2b8d2409cfa0fc474cad8e1bbdbe652eb9dd5`; all 12 chapters remain Draft under manuscript-status governance.
+- Applied Quality Gates v1.1: the Atlas Commerce AI Evaluation Simulator, Labs 1–4, conceptual diagrams, standalone datasets, executable examples, and case-study files remain deferred recommended Pass 2 enrichment.
+
+**Outcome:** Part IX is complete at manuscript level and release administration is active for planned **v0.12.0 — AI Quality Engineering Complete**. No Part X manuscript, companion implementation, or Pass 2 asset has been created.
+
+**Status:** Release administration active
+
+**Last Updated:** 2026-08-12
+
+---
+
+## Release Candidate v0.12.0 — AI Quality Engineering Complete
+
+- Completed feature-to-`develop` integration and aligned `release/v0.12.0` with `develop`.
+- Performed current Release Candidate validation against frozen baseline `4df2b8d2409cfa0fc474cad8e1bbdbe652eb9dd5`; all 12 chapters remain Draft, the manuscript is frozen, and the Final Part IX Quality Gate remains **97/100** with P0/P1/P2/P3 manuscript findings: none.
+- The Atlas Commerce AI Evaluation Simulator, Labs 1–4, conceptual diagrams, standalone datasets, executable examples, and case-study files remain deferred, non-blocking Pass 2 enrichment. Part X has not started.
+
+**Outcome:** v0.12.0 is the current unreleased Release Candidate. Commit and push this metadata correction, then open the release pull request to `main`; promotion, annotated tag creation, and GitHub Release publication remain pending.
+
+**Status:** Release Candidate validation current; main promotion pending
+
+**Last Updated:** 2026-08-12
