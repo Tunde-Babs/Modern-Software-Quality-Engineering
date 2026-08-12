@@ -353,3 +353,17 @@ Part VII is complete at manuscript level and enters release administration for p
 **Status:** Release preparation active
 
 **Last Updated:** 2026-08-12
+
+---
+
+## Release Candidate v0.11.0 — Observability & Reliability Engineering Complete
+
+- Merged the approved Part VIII release-administration metadata into `develop` and created `release/v0.11.0` from the merged state.
+- Completed Release Candidate validation against manuscript baseline `ee20d306b88b`; all 11 chapters remain Draft, and the Final Part VIII Quality Gate remains **96/100** with no P0/P1/manuscript P2 findings.
+- The Atlas Commerce Observability & Reliability Simulator, Labs 1–3, and conceptual diagrams remain deferred, non-blocking Pass 2 enrichment; Part IX has not started.
+
+**Outcome:** The Release Candidate is validated. Promotion to `main`, annotated tag `v0.11.0`, and GitHub Release publication remain pending.
+
+**Status:** Release Candidate validated; main promotion pending
+
+**Last Updated:** 2026-08-12
