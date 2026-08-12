@@ -400,6 +400,20 @@ Part VII is complete at manuscript level and enters release administration for p
 
 ---
 
+## Release v0.13.0 — Performance & Security Engineering Complete
+
+- Closed the Part X release lifecycle after its **97/100** Final Quality Gate; P0/P1/P2 findings remain none, and non-blocking Gunther bibliographic refinement remains the only P3.
+- Merged the approved `release/v0.13.0` branch to `main`, created annotated tag `v0.13.0`, and published the GitHub Release on 2026-08-12. Controlled manuscript baseline `3f7391b5fd939a5dd973d25386811031f3448180` remains preserved, and all 12 chapters remain Draft under manuscript-status governance.
+- The Atlas Commerce Performance & Security Simulator; laboratories; conceptual diagrams; synthetic datasets; executable performance examples; safe security-testing examples; and case-study files remain deferred, non-blocking Pass 2 enrichment. Part XI has not started.
+
+**Outcome:** Part X is released. v0.14.0 — System Design & Architecture Complete remains planned; no Part XI manuscript, architecture, or practical-asset work is represented as started.
+
+**Status:** Released
+
+**Last Updated:** 2026-08-12
+
+---
+
 ## Release Candidate v0.13.0 — Performance & Security Engineering Complete
 
 - Completed feature-to-`develop` integration and created `release/v0.13.0` from the merged state for consolidated Release Candidate validation.
