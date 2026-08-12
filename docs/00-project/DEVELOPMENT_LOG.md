@@ -400,6 +400,20 @@ Part VII is complete at manuscript level and enters release administration for p
 
 ---
 
+## Release Candidate v0.13.0 — Performance & Security Engineering Complete
+
+- Completed feature-to-`develop` integration and created `release/v0.13.0` from the merged state for consolidated Release Candidate validation.
+- The Final Part X Quality Gate remains **97/100** with P0/P1/P2 findings: none; non-blocking Gunther bibliographic refinement remains the only P3. Baseline `3f7391b5fd939a5dd973d25386811031f3448180` is frozen, and all 12 chapters remain Draft.
+- The Atlas Commerce Performance & Security Simulator; laboratories; conceptual diagrams; synthetic datasets; executable performance examples; safe security-testing examples; and case-study files remain deferred, non-blocking Pass 2 enrichment. Part XI has not started.
+
+**Outcome:** v0.13.0 is the current unreleased Release Candidate. Release PR review to `main`, approval and merge, annotated tag creation, GitHub Release publication, and post-release reconciliation remain pending.
+
+**Status:** Release Candidate validation active
+
+**Last Updated:** 2026-08-12
+
+---
+
 ## Release Candidate v0.12.0 — AI Quality Engineering Complete
 
 - Completed feature-to-`develop` integration and aligned `release/v0.12.0` with `develop`.

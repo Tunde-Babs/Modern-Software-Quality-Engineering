@@ -4,7 +4,7 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
-### Planned — v0.13.0 — Performance & Security Engineering Complete
+### Release Candidate — v0.13.0 — Performance & Security Engineering Complete
 
 #### Added
 
@@ -18,7 +18,7 @@ All notable changes to this project will be documented in this file.
 #### Validation
 
 - Final Part X Quality Gate: **97/100**; P0/P1/P2 findings: none. The only P3 is non-blocking Gunther bibliographic polish.
-- All 12 chapters remain **Draft** under manuscript-status governance. Controlled manuscript baseline `3f7391b5fd939a5dd973d25386811031f3448180` is established; numerical reasoning, defensive-security safety, source-currentness, Markdown structure, local links, navigation, and repository-scope validation passed.
+- All 12 chapters remain **Draft** under manuscript-status governance. Controlled manuscript baseline `3f7391b5fd939a5dd973d25386811031f3448180` is established; feature-to-`develop` integration is complete, and the current Release Candidate is under validation on `release/v0.13.0`. Numerical reasoning, defensive-security safety, source-currentness, Markdown structure, local links, navigation, and repository-scope validation passed.
 
 #### Deferred Pass 2 Enrichment
 
