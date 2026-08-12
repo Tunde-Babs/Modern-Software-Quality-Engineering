@@ -4,7 +4,27 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
-### Release Candidate — v0.12.0 — AI Quality Engineering Complete
+### Release Candidate — v0.13.0 — Performance & Security Engineering Complete
+
+#### Added
+
+- Completed Part X — Performance & Security Engineering, Chapters 1–12, establishing a shared performance-and-security evidence model across workload and threat assumptions, Little’s Law, latency distributions and percentiles, coordinated omission, capacity, saturation, queues, bottlenecks, performance regression, assets and trust boundaries, authentication, authorization, API quality, input/output/dependency trust, and the security finding and remediation lifecycle.
+- Added integrated performance × security trade-off and dual-regression reasoning, culminating in the **Performance & Security Engineering Strategy and Evidence Portfolio** and its **Performance & Security Decision Brief** capstone.
+
+#### Changed
+
+- Established the Part X QA → QE progression from checking response-time results or security defects to making bounded performance and security engineering decisions using workloads, threats, measurement validity, evidence limitations, residual risk, and explicit ownership.
+
+#### Validation
+
+- Final Part X Quality Gate: **97/100**; P0/P1/P2 findings: none. The only P3 is non-blocking Gunther bibliographic polish.
+- All 12 chapters remain **Draft** under manuscript-status governance. Controlled manuscript baseline `3f7391b5fd939a5dd973d25386811031f3448180` is established; feature-to-`develop` integration is complete, and the current Release Candidate is under validation on `release/v0.13.0`. Numerical reasoning, defensive-security safety, source-currentness, Markdown structure, local links, navigation, and repository-scope validation passed.
+
+#### Deferred Pass 2 Enrichment
+
+- The Atlas Commerce Performance & Security Simulator; performance, workload-modelling, security-evidence/threat-modelling, and integrated regression/capstone labs; conceptual diagrams; synthetic datasets; executable performance examples; safe security-testing examples; and case-study files remain recommended Pass 2 enrichment under Quality Gates v1.1.
+
+## [0.12.0] — AI Quality Engineering Complete — 2026-08-12
 
 #### Added
 
@@ -19,7 +39,7 @@ All notable changes to this project will be documented in this file.
 
 - Final Part IX Quality Gate: **97/100**; P0/P1/P2/P3 findings: none.
 - All 12 chapters remain **Draft** under manuscript-status governance. Controlled baseline `4df2b8d2409cfa0fc474cad8e1bbdbe652eb9dd5` is frozen; source-currentness, numerical reasoning, Markdown structure, local links, navigation, and repository-scope validation passed.
-- Feature-to-`develop` integration is complete. `release/v0.12.0` is the current unreleased Release Candidate; promotion to `main`, annotated tag creation, and GitHub Release publication remain pending.
+- Release administration completed: the approved release branch was merged to `main`, annotated tag `v0.12.0` was created, and the GitHub Release was published on 2026-08-12.
 
 #### Deferred Pass 2 Enrichment
 
