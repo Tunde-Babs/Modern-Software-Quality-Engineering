@@ -18,7 +18,7 @@
 
 📍 **Planned Next Release:** v0.13.0 – Performance & Security Engineering Complete
 
-🧭 **Current Handbook Work:** Part IX — AI Quality Engineering released as v0.12.0 after its **97/100** Final Quality Gate; Chapters 1–12 remain Draft under manuscript-status governance, and Pass 2 practical assets remain deferred. Part X — Performance & Security Engineering has completed its **97/100** Final Quality Gate for planned, unreleased v0.13.0; P0/P1/P2 findings are none, the only P3 is non-blocking Gunther bibliographic refinement, all Chapters 1–12 remain Draft, controlled manuscript baseline establishment is the current workflow, practical assets remain deferred, and Part XI — System Design & Architecture has not started
+🧭 **Current Handbook Work:** Part IX — AI Quality Engineering released as v0.12.0 after its **97/100** Final Quality Gate; Chapters 1–12 remain Draft under manuscript-status governance, and Pass 2 practical assets remain deferred. Part X — Performance & Security Engineering completed its **97/100** Final Quality Gate for planned, unreleased v0.13.0; P0/P1/P2 findings are none, the only P3 is non-blocking Gunther bibliographic refinement, controlled manuscript baseline `3f7391b5fd939a5dd973d25386811031f3448180` is established, all Chapters 1–12 remain Draft, release administration is active, practical assets remain deferred, and Part XI — System Design & Architecture has not started
 
 </p>
 
@@ -73,7 +73,7 @@ The project follows an incremental release strategy, with each release represent
 - Part VII — Cloud & DevOps released as v0.10.0; Final Quality Gate passed at **97/100**
 - Part VIII — Observability & Reliability Engineering released as v0.11.0 after its **96/100** Final Quality Gate; Chapters 1–11 remain Draft under manuscript-status governance, and Pass 2 enrichment remains deferred
 - Part IX — AI Quality Engineering released as v0.12.0; its **97/100** Final Quality Gate passed with no P0, P1, P2, or P3 manuscript findings, Chapters 1–12 remain Draft, and Pass 2 practical assets remain deferred
-- Part X — Performance & Security Engineering has completed its **97/100** Final Quality Gate for planned, unreleased v0.13.0; P0/P1/P2 findings are none, the only P3 is non-blocking Gunther bibliographic refinement, Chapters 1–12 remain Draft, controlled manuscript baseline establishment is the current workflow, practical assets remain deferred, and Part XI has not started
+- Part X — Performance & Security Engineering completed its **97/100** Final Quality Gate for planned, unreleased v0.13.0; P0/P1/P2 findings are none, the only P3 is non-blocking Gunther bibliographic refinement, controlled manuscript baseline `3f7391b5fd939a5dd973d25386811031f3448180` is established, Chapters 1–12 remain Draft, release administration is active, practical assets remain deferred, and Part XI has not started
 
 ---
 
@@ -271,7 +271,7 @@ Current focus:
 - Part I through Part VII released as v0.4.0 through v0.10.0
 - Part VIII — Observability & Reliability Engineering released as v0.11.0 after its **96/100** Final Quality Gate; Chapters 1–11 remain Draft under manuscript-status governance, and Pass 2 enrichment remains deferred
 - Part IX — AI Quality Engineering released as v0.12.0; its **97/100** Final Quality Gate passed with no P0, P1, P2, or P3 manuscript findings, Chapters 1–12 remain Draft, and Pass 2 practical assets remain deferred
-- Part X — Performance & Security Engineering has completed its **97/100** Final Quality Gate for planned, unreleased v0.13.0; P0/P1/P2 findings are none, the only P3 is non-blocking Gunther bibliographic refinement, Chapters 1–12 remain Draft, controlled manuscript baseline establishment is the current workflow, practical assets remain deferred, and Part XI has not started
+- Part X — Performance & Security Engineering completed its **97/100** Final Quality Gate for planned, unreleased v0.13.0; P0/P1/P2 findings are none, the only P3 is non-blocking Gunther bibliographic refinement, controlled manuscript baseline `3f7391b5fd939a5dd973d25386811031f3448180` is established, Chapters 1–12 remain Draft, release administration is active, practical assets remain deferred, and Part XI has not started
 
 ## 🔜 M3 — Digital Learning Platform
 
@@ -318,7 +318,7 @@ Rather than documenting individual tools, this project seeks to define the endur
 | Current Milestone | **M2 – Handbook Development** |
 | Latest Release | **v0.12.0 – AI Quality Engineering Complete** |
 | Planned Next Release | **v0.13.0 – Performance & Security Engineering Complete** |
-| Current Handbook Work | **Part IX — AI Quality Engineering** released as v0.12.0 after its **97/100** Final Quality Gate; Chapters 1–12 remain Draft and Pass 2 enrichment remains deferred. **Part X — Performance & Security Engineering** has completed its **97/100** Final Quality Gate for planned, unreleased v0.13.0; P0/P1/P2 findings are none, the only P3 is non-blocking Gunther bibliographic refinement, Chapters 1–12 remain Draft, controlled manuscript baseline establishment is the current workflow, practical assets remain deferred, and Part XI has not started. |
+| Current Handbook Work | **Part IX — AI Quality Engineering** released as v0.12.0 after its **97/100** Final Quality Gate; Chapters 1–12 remain Draft and Pass 2 enrichment remains deferred. **Part X — Performance & Security Engineering** completed its **97/100** Final Quality Gate for planned, unreleased v0.13.0; P0/P1/P2 findings are none, the only P3 is non-blocking Gunther bibliographic refinement, controlled manuscript baseline `3f7391b5fd939a5dd973d25386811031f3448180` is established, Chapters 1–12 remain Draft, release administration is active, practical assets remain deferred, and Part XI has not started. |
 | Handbook | 🚧 In Development |
 | Practical Labs | 🚧 Planned |
 | Documentation Website | 🚧 Planned |
