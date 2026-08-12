@@ -4,7 +4,7 @@
 
 ## Curriculum Status
 
-**Curriculum architecture is approved and accelerated Pass 1 manuscript drafting is complete.** All 11 chapters exist and remain **Draft**. The consolidated independent review scored the manuscript **89/100** and identified one P1 arithmetic correction plus targeted P2/P3 improvements. The authorized targeted expansion and normalization pass, followed by focused independent re-review, is complete; the re-review scored **94/100** and confirmed the Chapter 7 numerical P1 and all P2/P3 findings closed. The Final Part VIII Quality Gate passed at **96/100**; no P0/P1/manuscript P2 findings remain, manuscript content quality is accepted, and controlled version-control baseline establishment is next. Part VIII is the planned basis for **v0.11.0 — Observability & Reliability Engineering Complete**, which remains unreleased. Companion code, laboratories, diagrams, case studies, and production infrastructure remain deferred, non-blocking Pass 2 enrichment.
+**Curriculum architecture is approved and accelerated Pass 1 manuscript drafting is complete.** All 11 chapters exist and remain **Draft**. The consolidated independent review scored the manuscript **89/100** and identified one P1 arithmetic correction plus targeted P2/P3 improvements. The authorized targeted expansion and normalization pass, followed by focused independent re-review, is complete; the re-review scored **94/100** and confirmed the Chapter 7 numerical P1 and all P2/P3 findings closed. The Final Part VIII Quality Gate passed at **96/100**; no P0/P1/manuscript P2 findings remain, manuscript content quality is accepted, and baseline `ee20d306b88b` is established. Release administration for planned, unreleased **v0.11.0 — Observability & Reliability Engineering Complete** is active. Companion code, laboratories, diagrams, case studies, and production infrastructure remain deferred, non-blocking Pass 2 enrichment.
 
 ---
 
@@ -230,7 +230,7 @@ All worked scenarios use **Atlas Commerce**, a fictional service-based commerce 
 10. [Fault Injection, Recovery Evidence, and Reliability Learning](chapters/chapter-10-fault-injection-recovery-evidence-and-reliability-learning.md)
 11. [Capstone: Observability & Reliability Strategy and Evidence Portfolio](chapters/chapter-11-capstone-observability-reliability-strategy-and-evidence-portfolio.md)
 
-All manuscripts are **Draft**. The internal batch checks, consolidated independent review, authorized targeted expansion and normalization pass, focused independent re-review, and Final Part VIII Quality Gate are complete; controlled version-control baseline establishment is next.
+All manuscripts are **Draft**. The internal batch checks, consolidated independent review, authorized targeted expansion and normalization pass, focused independent re-review, and Final Part VIII Quality Gate are complete; manuscript baseline `ee20d306b88b` is established and release administration is active.
 
 ---
 
@@ -567,7 +567,7 @@ The architecture phase is complete when:
 
 ## Current State and Next Action
 
-- **Current state:** Part VIII manuscript content quality is accepted. Curriculum architecture and accelerated Pass 1 manuscript drafting are complete, and Chapters 1–11 remain Draft. The consolidated independent review scored 89/100; the completed expansion and normalization pass and focused independent re-review scored 94/100, confirming the Chapter 7 numerical P1 and all P2/P3 findings closed; the Final Part VIII Quality Gate passed at 96/100, with no P0/P1/manuscript P2 findings remaining. The simulator, Labs 1–3, and conceptual diagrams remain deferred, non-blocking Pass 2 enrichment; no supporting asset, release artifact, or website work has begun; Part IX — AI Quality Engineering has not started.
+- **Current state:** Part VIII manuscript content quality is accepted. Curriculum architecture and accelerated Pass 1 manuscript drafting are complete, and Chapters 1–11 remain Draft. The consolidated independent review scored 89/100; the completed expansion and normalization pass and focused independent re-review scored 94/100, confirming the Chapter 7 numerical P1 and all P2/P3 findings closed; the Final Part VIII Quality Gate passed at 96/100, with no P0/P1/manuscript P2 findings remaining; manuscript baseline `ee20d306b88b` is established, and release administration is active. The simulator, Labs 1–3, and conceptual diagrams remain deferred, non-blocking Pass 2 enrichment; no supporting asset, release branch, tag, GitHub Release, or website work exists; Part IX — AI Quality Engineering has not started.
 - **Planned release:** v0.11.0 — Observability & Reliability Engineering Complete.
-- **Next authorized action:** Establish the controlled Part VIII version-control baseline after explicit approval.
-- **Out of scope until separately authorised:** Part IX planning or drafting; companion implementation; laboratories; diagrams; case studies; executable examples; cloud infrastructure; release administration; commits, tags, or releases.
+- **Next authorized action:** Commit the approved release-administration metadata and open the feature-to-`develop` pull request after explicit approval.
+- **Out of scope until separately authorised:** Part IX planning or drafting; companion implementation; laboratories; diagrams; case studies; executable examples; cloud infrastructure; a release branch, merge, tag, or GitHub Release.

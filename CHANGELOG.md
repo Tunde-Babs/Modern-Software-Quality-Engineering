@@ -4,7 +4,26 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
-No unreleased changes recorded.
+### v0.11.0 — Observability & Reliability Engineering Complete
+
+#### Added
+
+- Completed Part VIII — Observability & Reliability Engineering, Chapters 1–11, covering operational evidence and telemetry quality, metrics, distributed tracing, observable-system design, reliability outcomes, SLIs/SLOs/error budgets, alert and incident evidence, resilience, fault injection, recovery learning, and the **Observability & Reliability Strategy and Evidence Portfolio** capstone with its Reliability Decision Brief.
+
+#### Changed
+
+- Established the Part VIII QA → QE progression from inspecting isolated runtime signals to making bounded, evidence-led reliability decisions with explicit populations, limitations, ownership, recovery conditions, and residual risk.
+- Applied Quality Gates v1.1 to distinguish the accepted manuscript from deferred Pass 2 enrichment.
+
+#### Validation
+
+- Final Part VIII Quality Gate: **96/100**.
+- P0/P1/manuscript P2 findings: none remaining. Chapters 1–11 remain **Draft** under manuscript-status governance.
+- Markdown structure, local links, navigation, references, numerical reasoning, chapter status, and repository-scope validation passed.
+
+#### Deferred Pass 2 Enrichment
+
+- The Atlas Commerce Observability & Reliability Simulator, Labs 1–3, and conceptual diagrams remain recommended Pass 2 enrichment under Quality Gates v1.1; no standalone practical asset is required for the Part VIII manuscript release.
 
 ## [0.10.0] — Cloud & DevOps Complete — 2026-08-11
 
