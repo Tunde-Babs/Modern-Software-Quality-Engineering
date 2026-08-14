@@ -31,7 +31,7 @@ M2 — Handbook Development
 
 ## Active Scope
 
-Part XI — System Design & Architecture has passed its **Final Quality Gate at 96/100 (verdict A)** and is ready for manuscript baseline. Chapters 1–12 are drafted and all remain `Status: Draft`. The baseline has not been established and no release administration has begun.
+Part XI — System Design & Architecture has passed its **Final Quality Gate at 96/100 (verdict A)** and its **controlled manuscript baseline is established at `7067ebb54cba199a9215363188171d2e4966ed15`**. Chapters 1–12 are drafted and all remain `Status: Draft`. No v0.14.0 release administration has begun.
 
 - **v0.13.0 — Performance & Security Engineering Complete** is the latest stable release. Its lifecycle is complete: `release/v0.13.0` was merged to `main`, annotated tag `v0.13.0` was created, and the GitHub Release was published on 2026-08-12. Its Final Quality Gate remains **97/100**; Chapters 1–12 remain **Draft** under manuscript-status governance, and the non-blocking Gunther bibliographic refinement remains its only P3.
 - The Part XI architecture defines a 12-chapter, evidence-led System Design & Architecture curriculum for experienced QA Engineers progressing to Quality Engineers. It uses the fictional Atlas Commerce teaching baseline, a clearly labelled original MSQE Architecture Decision Reasoning Model, explicit Part III–XII boundaries, cumulative professional artefacts, an architecture-decision capstone, authoritative-source strategy, and recommended Pass 2 classification.
@@ -56,7 +56,8 @@ Part XI — System Design & Architecture has passed its **Final Quality Gate at 
 
 ## Next Authorized Activity
 
-- Establish the Part XI manuscript baseline.
+- Prepare v0.14.0 release-administration metadata (separately authorized).
+- Part XI controlled manuscript baseline: `7067ebb54cba199a9215363188171d2e4966ed15`.
 - Do not begin Part XI practical assets, Part XII, or release administration without separate authorization.
 - Drafting and review are complete. The remaining workflow is: manuscript baseline, then separately authorized v0.14.0 release administration. Part XII remains not started.
 
@@ -64,4 +65,4 @@ Part XI — System Design & Architecture has passed its **Final Quality Gate at 
 
 ## Outcome
 
-The Part XI curriculum architecture is approved following its **97/100** independent review and closed corrections, and **accelerated Pass 1 is complete**. Chapters 1–12 are drafted, carry `Status: Draft`, and passed Checkpoints A and B and the Batch C integration checkpoint with no P0 or P1 finding. No chapter is represented as approved or published. The latest stable release remains **v0.13.0 — Performance & Security Engineering Complete**. **v0.14.0 — System Design & Architecture Complete** remains planned and unreleased, no Part XI practical asset exists, and Part XII has not started. The consolidated independent manuscript review scored **94/100** with verdict **B**, recording no P0, two P1, four P2, and six P3 findings; all P1 and P2 findings were corrected on 2026-08-14 and confirmed by a **focused P1/P2 closure review at 96/100**. The **Final Part XI Quality Gate then passed at 96/100 with verdict A**, recording P0 = 0, P1 = 0, P2 = 0 and six non-blocking P3 items. All twelve chapters remain `Status: Draft`. The next authorized activity is to establish the Part XI manuscript baseline; **v0.14.0 remains planned and unreleased**, Pass 2 enrichment remains deferred, and Part XII has not started.
+The Part XI curriculum architecture is approved following its **97/100** independent review and closed corrections, and **accelerated Pass 1 is complete**. Chapters 1–12 are drafted, carry `Status: Draft`, and passed Checkpoints A and B and the Batch C integration checkpoint with no P0 or P1 finding. No chapter is represented as approved or published. The latest stable release remains **v0.13.0 — Performance & Security Engineering Complete**. **v0.14.0 — System Design & Architecture Complete** remains planned and unreleased, no Part XI practical asset exists, and Part XII has not started. The consolidated independent manuscript review scored **94/100** with verdict **B**, recording no P0, two P1, four P2, and six P3 findings; all P1 and P2 findings were corrected on 2026-08-14 and confirmed by a **focused P1/P2 closure review at 96/100**. The **Final Part XI Quality Gate then passed at 96/100 with verdict A**, recording P0 = 0, P1 = 0, P2 = 0 and six non-blocking P3 items. All twelve chapters remain `Status: Draft`. The **controlled manuscript baseline is established at `7067ebb54cba199a9215363188171d2e4966ed15`**, fixing the authoritative Git state of the reviewed manuscript without releasing anything or changing any chapter status. The next authorized activity is preparation of v0.14.0 release-administration metadata; **v0.14.0 remains planned and unreleased**, Pass 2 enrichment remains deferred, and Part XII has not started.
