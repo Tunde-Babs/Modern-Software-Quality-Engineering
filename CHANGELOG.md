@@ -4,7 +4,7 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
-### Release Candidate — v0.14.0 — System Design & Architecture Complete
+## [0.14.0] — System Design & Architecture Complete — 2026-08-14
 
 #### Added
 
@@ -19,7 +19,7 @@ All notable changes to this project will be documented in this file.
 
 - Final Part XI Quality Gate: **96/100**; P0/P1/P2 findings: none. Six residual P3 items are non-blocking.
 - Preceded by an independent curriculum-architecture review at **97/100** with corrections closed, a consolidated independent manuscript review at **94/100**, and a focused P1/P2 closure review at **96/100**. These are four distinct review events; the two 96/100 results are different reviews and neither is Part VIII's separate historical 96/100 Final Quality Gate.
-- All 12 chapters remain **Draft** under manuscript-status governance. Controlled manuscript baseline `7067ebb54cba199a9215363188171d2e4966ed15` is established; feature-to-`develop` integration is complete, and the current Release Candidate is under validation on `release/v0.14.0`. Every numerical example was recalculated with each displayed chain tested as written; ISO/IEC 25010:2023 terminology was verified at characteristic and subcharacteristic level; all DOI-registered citations were verified against Crossref; Markdown structure, tables, footnotes, local links, navigation, and repository-scope validation passed.
+- All 12 chapters remain **Draft** under manuscript-status governance. Controlled manuscript baseline `7067ebb54cba199a9215363188171d2e4966ed15` is established; the release branch was merged to `main`, annotated tag `v0.14.0` was created, and the GitHub Release was published on 2026-08-14. Every numerical example was recalculated with each displayed chain tested as written; ISO/IEC 25010:2023 terminology was verified at characteristic and subcharacteristic level; all DOI-registered citations were verified against Crossref; Markdown structure, tables, footnotes, local links, navigation, and repository-scope validation passed.
 - One residual non-blocking source-verification control is carried forward: ISO/IEC 25010:2023 and ISO/IEC/IEEE 42010:2022 are paywalled and returned HTTP 403 to every access attempt, so their characteristic and subcharacteristic placements rest on consistent secondary references and the repository's already-gated Part III precedent rather than on a purchased copy.
 
 #### Deferred Pass 2 Enrichment

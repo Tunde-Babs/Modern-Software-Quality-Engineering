@@ -14,11 +14,11 @@
 
 🚀 **Current Phase:** M2 – Handbook Development
 
-📦 **Latest Stable Release:** v0.13.0 – Performance & Security Engineering Complete
+📦 **Latest Stable Release:** v0.14.0 – System Design & Architecture Complete
 
-📍 **Planned Next Release:** v0.14.0 – System Design & Architecture Complete
+📍 **Planned Next Release:** v0.15.0 – Engineering Leadership & Career Growth Complete
 
-🧭 **Current Handbook Work:** Part XI — System Design & Architecture has **passed its Final Quality Gate at 96/100 (verdict A)**, with controlled manuscript baseline `7067ebb54cba199a9215363188171d2e4966ed15`. **v0.14.0 is the current unreleased Release Candidate on `release/v0.14.0`**, under consolidated validation. All twelve chapters remain Draft; no annotated tag and no GitHub Release exist, and v0.13.0 remains the latest stable release.
+🧭 **Current Handbook Work:** Part XI — System Design & Architecture is **released as v0.14.0** after its **96/100** Final Quality Gate; P0/P1/P2 findings are none and six residual P3 items remain non-blocking. Controlled manuscript baseline `7067ebb54cba199a9215363188171d2e4966ed15` is preserved, all twelve chapters remain Draft under manuscript-status governance, and Pass 2 enrichment remains deferred. **Part XII — Engineering Leadership & Career Growth is the next planned handbook part and has not started.**
 
 </p>
 
@@ -57,7 +57,7 @@ The project follows an incremental release strategy, with each release represent
 | **v0.11.0** | ✅ Released | Observability & Reliability Engineering Complete |
 | **v0.12.0** | ✅ Released | AI Quality Engineering Complete |
 | **v0.13.0** | ✅ Released | Performance & Security Engineering Complete |
-| **v0.14.0** | 🧭 Planned | System Design & Architecture Complete |
+| **v0.14.0** | ✅ Released | System Design & Architecture Complete |
 | **v0.15.0** | 🧭 Planned | Engineering Leadership & Career Growth Complete |
 | **v0.16.0** | 🧭 Planned | First Edition Review |
 | **v1.0.0** | 🎯 Planned | First Edition Published |
@@ -273,7 +273,7 @@ Current focus:
 - Part VIII — Observability & Reliability Engineering released as v0.11.0 after its **96/100** Final Quality Gate; Chapters 1–11 remain Draft under manuscript-status governance, and Pass 2 enrichment remains deferred
 - Part IX — AI Quality Engineering released as v0.12.0; its **97/100** Final Quality Gate passed with no P0, P1, P2, or P3 manuscript findings, Chapters 1–12 remain Draft, and Pass 2 practical assets remain deferred
 - Part X — Performance & Security Engineering released as v0.13.0 after its **97/100** Final Quality Gate; P0/P1/P2 findings are none, the only P3 is non-blocking Gunther bibliographic refinement, controlled manuscript baseline `3f7391b5fd939a5dd973d25386811031f3448180` is preserved, and Chapters 1–12 remain Draft
-- Part XI — System Design & Architecture **passed its Final Quality Gate at 96/100** with P0/P1/P2 all zero and controlled manuscript baseline `7067ebb54cba199a9215363188171d2e4966ed15`; **v0.14.0 is the current unreleased Release Candidate on `release/v0.14.0`**, Pass 2 assets do not exist, and Part XII has not started
+- Part XI — System Design & Architecture released as v0.14.0 on 2026-08-14 after its **96/100** Final Quality Gate; P0/P1/P2 findings are none, six residual P3 items remain non-blocking, controlled manuscript baseline `7067ebb54cba199a9215363188171d2e4966ed15` is preserved, Chapters 1–12 remain Draft, and Pass 2 enrichment remains deferred
 
 ## 🔜 M3 — Digital Learning Platform
 
@@ -318,9 +318,9 @@ Rather than documenting individual tools, this project seeks to define the endur
 | Item | Status |
 |------|--------|
 | Current Milestone | **M2 – Handbook Development** |
-| Latest Release | **v0.13.0 – Performance & Security Engineering Complete** |
-| Planned Next Release | **v0.14.0 – System Design & Architecture Complete** |
-| Current Handbook Work | **Part XI — System Design & Architecture** **passed its Final Quality Gate at 96/100 (verdict A)** with P0, P1, and P2 all zero and six non-blocking P3 items. All twelve chapters remain **Draft**, with controlled manuscript baseline `7067ebb54cba199a9215363188171d2e4966ed15`. **v0.14.0 is the current unreleased Release Candidate on `release/v0.14.0`.** Companion implementations, laboratories, diagrams, simulators, datasets, website assets, and release work do not exist; **v0.14.0** remains planned and Part XII has not started. |
+| Latest Release | **v0.14.0 – System Design & Architecture Complete** |
+| Planned Next Release | **v0.15.0 – Engineering Leadership & Career Growth Complete** |
+| Current Handbook Work | **Part XI — System Design & Architecture** released as **v0.14.0** on 2026-08-14 after its **96/100** Final Quality Gate; P0, P1, and P2 findings are none and six residual P3 items remain non-blocking. Controlled manuscript baseline `7067ebb54cba199a9215363188171d2e4966ed15` is preserved and all twelve chapters remain **Draft**. Pass 2 enrichment remains deferred. **Part XII — Engineering Leadership & Career Growth** is the next planned handbook part and has not started. |
 | Handbook | 🚧 In Development |
 | Practical Labs | 🚧 Planned |
 | Documentation Website | 🚧 Planned |

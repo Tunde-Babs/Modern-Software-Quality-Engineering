@@ -515,3 +515,19 @@ Part VII is complete at manuscript level and enters release administration for p
 **Status:** Release Candidate validation active
 
 **Last Updated:** 2026-08-14
+
+---
+
+## Release v0.14.0 — System Design & Architecture Complete
+
+- Closed the Part XI release lifecycle after its **96/100** Final Quality Gate; P0/P1/P2 findings remain none, and six residual P3 items remain non-blocking.
+- Merged the approved `release/v0.14.0` branch to `main` via pull request #36, created annotated tag `v0.14.0`, and published the GitHub Release on 2026-08-14. Controlled manuscript baseline `7067ebb54cba199a9215363188171d2e4966ed15` is preserved and reachable from `main`; all 12 chapters remain Draft under manuscript-status governance.
+- The earlier feature-to-`develop` integration (pull request #35) also carried the three v0.13.0 release-line commits into `develop`, closing the pre-existing post-v0.13.0 reconciliation gap.
+- The residual non-blocking source-verification control is carried unchanged: ISO/IEC 25010:2023 and ISO/IEC/IEEE 42010:2022 remain paywalled, so their characteristic and subcharacteristic placements rest on consistent secondary references and the repository's already-gated Part III precedent rather than on a purchased copy.
+- The Atlas Commerce Architecture Decision Simulator; boundary/dependency, asynchronous/consistency, trade-off/evidence, and evolution/capstone laboratories; conceptual diagrams; ADR examples and worksheets; executable fitness-function and dependency-analysis examples; and case-study files, datasets, and migration simulations remain deferred recommended Pass 2 enrichment.
+
+**Outcome:** Part XI is released and v0.14.0 is the latest stable release. v0.15.0 — Engineering Leadership & Career Growth Complete remains planned; no Part XII manuscript, architecture, or practical-asset work is represented as started.
+
+**Status:** Released
+
+**Last Updated:** 2026-08-14
