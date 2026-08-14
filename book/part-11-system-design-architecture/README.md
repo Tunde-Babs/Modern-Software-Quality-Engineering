@@ -4,11 +4,11 @@
 
 ## Curriculum Status
 
-**Curriculum architecture prepared; independent architecture review completed at 97/100; targeted P1/P2/P3 corrections applied and closed.** Part XI is planned for **v0.14.0 — System Design & Architecture Complete**. No Part XI chapter manuscript, laboratory, diagram, ADR example, simulator, dataset, companion implementation, case-study file, website asset, CI/CD configuration, or infrastructure has been created.
+**Architecture approved after focused closure review at 97/100; accelerated Pass 1 in progress. Batch A (Chapters 1–4) is drafted and Checkpoint A has passed.** Part XI is planned for **v0.14.0 — System Design & Architecture Complete**. Chapters 5–12 are not yet drafted. No Part XI laboratory, diagram, ADR example, simulator, dataset, companion implementation, case-study file, website asset, CI/CD configuration, or infrastructure has been created.
 
 The independent architecture review returned verdict **B — targeted architecture corrections required before Pass 1**, with no P0 finding, one P1 standards-accuracy finding on ISO/IEC 25010:2023 terminology, two bounded P2 architecture refinements, and one P3 source-label refinement. It did not require redesign: the 12-chapter progression, QA → QE progression, Atlas Commerce baseline, capstone, source strategy, accelerated workflow, and cross-part boundaries were accepted in principle. Those corrections have now been applied to this document and verified by a focused closure review. The 97/100 figure is an architecture-review score; it is **not** a Final Part XI Quality Gate result, and no Final Gate has been run.
 
-This document is a planning artefact. It defines the intended manuscript, its learning progression, scope boundaries, professional artefacts, source strategy, and Pass 2 classification. It does **not** draft a chapter or authorize manuscript production, and Pass 1 drafting requires separate authorization. Any future Part XI chapter begins with `Status: Draft` under manuscript-status governance.
+This document is the approved curriculum architecture. It defines the intended manuscript, its learning progression, scope boundaries, professional artefacts, source strategy, and Pass 2 classification, and it is authoritative for manuscript production. Every Part XI chapter carries `Status: Draft` under manuscript-status governance and retains it until governance authorizes another status.
 
 Part X — Performance & Security Engineering is the latest released handbook part, as **v0.13.0**. Part XII — Engineering Leadership & Career Growth has not started.
 
@@ -503,7 +503,7 @@ The independent architecture review should assess the plan against these 27 cate
 
 ## Definition of Done for Planned Part XI Manuscript Work
 
-Part XI may advance from architecture planning to Pass 1 only after an independent architecture review accepts this plan or records approved corrections. **That precondition is now met:** the review recorded corrections, the corrections are applied, and a focused closure review confirmed them. A future manuscript release may be considered only when:
+Part XI may advance from architecture planning to Pass 1 only after an independent architecture review accepts this plan or records approved corrections. **That precondition was met** and Pass 1 is under way. A future manuscript release may be considered only when:
 
 1. all 12 chapters are drafted using the approved template and retain `Status: Draft` until governance authorizes another status;
 2. every chapter includes a labelled illustrative scenario, worked reasoning, practical artefact, source-backed claims, limitations, and cross-part handoff;
@@ -516,9 +516,10 @@ Part XI may advance from architecture planning to Pass 1 only after an independe
 
 ## Current State and Next Authorized Activity
 
-- **Current state:** Part XI curriculum architecture is prepared. The independent architecture review is complete at **97/100** with verdict B; its P1, P2, and P3 corrections have been applied to this document and confirmed by a focused closure review with no remaining P0, P1, or P2 finding. The architecture is ready for accelerated Pass 1; Pass 1 has not been authorized or started.
+- **Current state:** The Part XI curriculum architecture is approved. The independent architecture review completed at **97/100** with verdict B; its P1, P2, and P3 corrections were applied and confirmed by a focused closure review with no remaining P0, P1, or P2 finding. Accelerated Pass 1 is authorized and in progress.
+- **Pass 1 progress:** **Batch A (Chapters 1–4) is drafted and Checkpoint A has passed** with no P0 or P1 finding. Batch B (Chapters 5–10) and Batch C (Chapters 11–12) are not yet drafted. Checkpoint A verified ISO/IEC 25010:2023 terminology and edition discipline, the architecture versus architecture-description distinction, boundary taxonomy coherence, synchronous/asynchronous and idempotency semantics, state/consistency and CAP accuracy, independent recalculation of all six numerical examples, Atlas Commerce continuity, cross-part boundaries, and repository integrity.
 - **Correction record:** P1 — ISO/IEC 25010:2023 top-level characteristics restated accurately, with safety correctly recorded as a top-level characteristic of the 2023 edition, flexibility used in place of the superseded portability label, interaction capability used in place of the superseded usability label, and interoperability kept within compatibility. P2 — the architecture versus architecture-description distinction added under ISO/IEC/IEEE 42010:2022 and carried into Chapter 1 and the diagram policy. P2 — Chapter 6 strengthened with an explicit source → stimulus → environment → affected system/artifact → response → response measure scaffold. P3 — the source class renamed to "Protocol and interoperability specifications" with RFC 9110 bounded to protocol semantics.
-- **Manuscript state:** No Part XI chapters exist. No chapter is represented as drafted, reviewed, approved, or published.
+- **Manuscript state:** Chapters 1–4 exist and carry `Status: Draft`. No chapter is represented as reviewed, approved, or published; the consolidated independent manuscript review and the Final Part XI Quality Gate have not been run. Chapters 5–12 do not exist.
 - **Practical assets:** No companion implementation, laboratory, diagram, ADR example, simulator, dataset, case study, website asset, CI/CD configuration, or infrastructure exists. All proposed standalone assets are recommended Pass 2 enrichment only.
 - **Release state:** **v0.14.0 — System Design & Architecture Complete** remains planned and unreleased. Part XII — Engineering Leadership & Career Growth has not started.
-- **Next authorized action:** Obtain authorization to begin accelerated Pass 1 Batch A, drafting Chapters 1–4 to Checkpoint A. Do not create Part XI practical assets, begin Part XII work, or start release administration automatically.
+- **Next authorized action:** Obtain authorization to begin accelerated Pass 1 Batch B, drafting Chapters 5–10 to Checkpoint B. Do not create Part XI practical assets, begin Part XII work, or start release administration automatically.
