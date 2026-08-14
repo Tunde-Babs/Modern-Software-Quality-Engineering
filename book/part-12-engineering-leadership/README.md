@@ -4,13 +4,26 @@
 
 ## Curriculum Status
 
-**Curriculum architecture reviewed and corrected; awaiting focused independent architecture-closure review.** Part XII is planned for **v0.15.0 — Engineering Leadership & Career Growth Complete**. No Part XII chapter manuscript, laboratory, diagram, worksheet, simulator, dataset, companion implementation, case-study file, website asset, CI/CD configuration, or infrastructure has been created.
+**Curriculum architecture COMPLETE and independently VERIFIED. Ready for Pass 1 authorization; Pass 1 has not started.** Part XII is planned for **v0.15.0 — Engineering Leadership & Career Growth Complete**. No Part XII chapter manuscript, laboratory, diagram, worksheet, simulator, dataset, companion implementation, case-study file, website asset, CI/CD configuration, or infrastructure has been created.
 
-An independent curriculum-architecture review scored this architecture **83/100** with verdict **B — targeted architecture corrections required**. It recorded **no P0**, **three P1** findings (MQE-BOK Domain 12 traceability; unhonoured cross-part deferrals from Parts V, IX, X, and XI; source insufficiency across seven chapters), **seven P2** findings, and **five P3** findings. The 12-chapter progression, four-stage structure, chapter sequencing, authority discipline, career-claim discipline, Atlas continuity, central model, capstone design, and Pass 2 classification were accepted; **no redesign was required**.
+The architecture passed through two independent review events, targeted corrections C1–C13, and independent closure verification. **All three P1 findings and all seven P2 findings are closed**, all sixteen load-bearing strengths were preserved, and the closure review found no material generic-management drift and no composite-scoring regression.
 
-All thirteen corrections (C1–C13) have been applied to this document. **Corrections are applied; closure is pending independent verification.** No finding is represented as formally closed, and **Pass 1 manuscript drafting is not authorized** until a focused independent architecture-closure review verifies them.
+### Part XII review-event ledger
 
-This document is a planning artefact. It defines the intended manuscript, its learning progression, scope boundaries, professional artefacts, source strategy, and Pass 2 classification. It does **not** approve the architecture, draft a chapter, or authorize manuscript production. Any future Part XII chapter begins with `Status: Draft` under manuscript-status governance.
+Two separate review events produced two separate scores. **They are distinct events and must not be collapsed, and the second does not replace the first**: 83/100 describes the architecture *before* correction; 97/100 describes independently verified closure *after* correction.
+
+| # | Review event | Score | Result |
+| --- | --- | --- | --- |
+| 1 | Independent curriculum-architecture review | **83/100** | B — targeted architecture corrections required before Pass 1. No P0; **3 P1**; **7 P2**; **5 P3**. No redesign required. |
+| 2 | **Focused independent architecture-closure review** | **97/100** | **A — corrections verified and closed; Pass 1 may be authorized.** P0 = 0; P1 = 0 open (all 3 CLOSED); P2 = 0 open (all 7 CLOSED); P3 = 0 blocking. |
+
+Event 1 recorded three P1 findings — MQE-BOK Domain 12 traceability; unhonoured cross-part deferrals from Parts V, IX, X, and XI; and source insufficiency across seven chapters — alongside seven P2 and five P3 findings. The 12-chapter progression, four-stage structure, chapter sequencing, authority discipline, career-claim discipline, Atlas continuity, central model, capstone design, and Pass 2 classification were accepted at event 1 and are unchanged.
+
+Event 2 verified the corrections independently rather than confirming the correction report: both governance sources were re-read directly, the cross-part deferrals were re-derived from released-part text with three quotations checked verbatim, the segment-mix arithmetic was recomputed with exact rational arithmetic, Goodhart's lineage was confirmed in all three parts, DORA terminology was verified against official DORA material, and Kaner & Bond's construct-validity claim was verified from the primary text.
+
+Part XII's 97/100 is unrelated to Part XI's 97/100 architecture-review score; they are different reviews of different parts at different lifecycle stages. Neither is a Final Quality Gate result. **The Final Part XII Quality Gate is a separate, later event that has not been run.**
+
+This document is the verified curriculum architecture. It defines the intended manuscript, its learning progression, scope boundaries, professional artefacts, source strategy, and Pass 2 classification, and it is authoritative for manuscript production once Pass 1 is separately authorized. It does **not** by itself authorize manuscript production. Any future Part XII chapter begins with `Status: Draft` under manuscript-status governance.
 
 Part XI — System Design & Architecture is the latest released handbook part, as **v0.14.0**. Part XII is the final planned handbook part; after it, the project moves to v0.16.0 — First Edition Review.
 
@@ -715,7 +728,7 @@ The independent architecture review assesses this plan against these 24 categori
 
 ## Definition of Done for Planned Part XII Manuscript Work
 
-Part XII may advance from architecture planning to Pass 1 only after a focused independent architecture-closure review verifies the corrections applied to this document. A future manuscript release may be considered only when:
+Part XII may advance from architecture planning to Pass 1 only after a focused independent architecture-closure review verifies the corrections applied to this document. **That condition is now satisfied** — the closure review returned 97/100, verdict A, with all P1 and P2 findings closed — so Pass 1 may be authorized as a separate task. A future manuscript release may be considered only when:
 
 1. all 12 chapters are drafted using the approved template and retain `Status: Draft` until governance authorizes another status;
 2. every chapter includes a labelled illustrative scenario, worked reasoning, practical artefact, source-backed or explicitly MSQE-original claims, limitations, and cross-part handoff;
@@ -729,15 +742,35 @@ Part XII may advance from architecture planning to Pass 1 only after a focused i
 
 ## Current State and Next Authorized Activity
 
-- **Current state:** Part XII curriculum architecture has been independently reviewed and corrected. It is **not yet approved**.
-- **Independent architecture review:** **83/100**, verdict **B — targeted architecture corrections required**.
-- **Findings:** **P0 — none.** **P1 — 3 identified, corrections applied.** **P2 — 7 identified, corrections applied.** **P3 — 5 identified, applicable architecture corrections applied.**
-- **Correction state:** All thirteen corrections C1–C13 have been applied to this document. **Corrections are applied; closure is pending independent verification.** No finding is represented as formally closed — formal closure belongs to the focused closure review, not to the correction task.
-- **Manuscript state:** No Part XII chapters exist. No chapter is represented as drafted, reviewed, approved, or published. **Pass 1 is NOT YET AUTHORIZED.**
-- **Practical assets:** No companion implementation, laboratory, diagram, worksheet, simulator, dataset, case study, website asset, CI/CD configuration, or infrastructure exists. All proposed standalone assets are recommended Pass 2 enrichment only.
-- **Release state:** **v0.15.0 — Engineering Leadership & Career Growth Complete** remains planned and unreleased. **v0.14.0 — System Design & Architecture Complete** is the latest stable release.
-- **Governance state:** No repository governance file outside this document has been modified. `README.md`, `CURRENT_SPRINT.md`, `CHANGELOG.md`, `ROADMAP.md`, `VERSIONING.md`, `MQE-BOK.md`, and `BOOK_BLUEPRINT.md` are unchanged; governance synchronisation follows closure, not correction.
-- **Next authorized action:** Conduct one **focused independent Part XII architecture-closure review** verifying that the three P1 findings are closed, the seven P2 findings are corrected, no P2 was silently downgraded, the preserved strengths remain intact, the source strategy is sufficient, cross-part promises are honoured, no generic management drift was introduced, and no composite maturity or governance scoring entered the architecture. Do not begin Pass 1 manuscript drafting, practical assets, or release administration automatically.
+- **Architecture status:** **COMPLETE and VERIFIED.** The curriculum architecture passed independent closure review and is authoritative for manuscript production once Pass 1 is separately authorized.
+- **Review events:** Independent curriculum-architecture review **83/100 (verdict B)**; focused independent architecture-closure review **97/100 (verdict A)**. Two distinct events; the second does not replace the first.
+- **Corrections:** All thirteen corrections **C1–C13 applied and independently verified as present and effective**.
+- **Findings after closure:** **P0 = 0.** **P1 = 0 open — all three previous P1 findings CLOSED.** **P2 = 0 open — all seven previous P2 findings CLOSED.** **P3 = 0 blocking** — four closed, one accepted/deferred, two new non-blocking observations recorded below.
+- **Regression state:** **16/16 load-bearing strengths preserved** (the composite-score prohibition was strengthened). **No material generic-management drift.** **No composite-scoring regression.**
+- **Pass 1 state:** **READY FOR PASS 1 AUTHORIZATION — Pass 1 has NOT started and is NOT authorized by this record.** Authorization is a separate task.
+- **Manuscript state:** **No Part XII chapters exist (0).** No chapter is represented as drafted, reviewed, approved, or published.
+- **Practical assets:** None exist (0). No companion implementation, laboratory, diagram, worksheet, simulator, dataset, case study, website asset, CI/CD configuration, or infrastructure. All proposed standalone assets are recommended Pass 2 enrichment only; **Pass 2 has not started**.
+- **Release state:** **v0.15.0 — Engineering Leadership & Career Growth Complete** remains planned and unreleased; no `v0.15.0` tag and no v0.15.0 CHANGELOG release entry exist. **v0.14.0 — System Design & Architecture Complete** is the latest stable release.
+- **Part XIII:** not started.
+- **Next authorized action:** Authorize **Accelerated Pass 1 Batch A** (Chapters 1–4) as a separate task, ending at **Checkpoint A**. Do not begin practical assets, Pass 2 enrichment, or v0.15.0 release administration automatically.
+
+### Non-blocking observations carried forward
+
+| # | Observation | Disposition |
+| --- | --- | --- |
+| new-P3-1 | Part I Chapter 10 contains a roadmap-style forward reference mentioning *“strategy”*, which Part XII does not deliver as a named topic. Part VIII Chapter 10's forward reference to organisational leadership and culture is satisfied by Chapter 6. | Non-blocking; **v0.16.0 First Edition Review** item. |
+| new-P3-2 | The Engineering Management mapping row lists *“capability development”* in its scope while the substantive capability-development treatment lives in Chapter 8. | Non-blocking; **drafting-time cross-reference precision** item. |
+
+Neither is upgraded to P2 or P1 without new evidence.
+
+### Quality controls carried forward — open, not closed
+
+| Control | State |
+| --- | --- |
+| **Source verification level** | Six sources — Edmondson, Westrum, Strathern, Parnas & Clements, SPACE, and Collins, Brown & Newman — are **bibliographic-metadata verified only**; publisher access returned HTTP 403 (bot protection, not link rot). Kaner & Bond is the sole source with **primary full text inspected**. Any substantive manuscript claim relying on a metadata-only source must receive primary verification before that claim is finalised. **This control is open.** |
+| **DORA terminology currency** | DORA's metric model is time-sensitive and has changed in both count and naming. Terminology must be **re-verified against official DORA material during drafting**, and any metric list must carry its source date. **This control is open.** |
+
+Both controls sit alongside the Part XI ISO/IEC 25010:2023 and ISO/IEC/IEEE 42010:2022 purchased-copy control, which also remains open.
 
 ---
 
