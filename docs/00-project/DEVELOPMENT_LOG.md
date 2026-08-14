@@ -482,3 +482,36 @@ Part VII is complete at manuscript level and enters release administration for p
 **Status:** Release administration active
 
 **Last Updated:** 2026-08-12
+
+---
+
+## Milestone M2 — Handbook Development: Part XI System Design & Architecture
+
+- Completed Part XI — System Design & Architecture, Chapters 1–12, following the **97/100** independent curriculum-architecture review, focused architecture-correction closure, Accelerated Pass 1 in three batches, Checkpoints A and B, and the Batch C integration checkpoint.
+- Completed the **94/100** consolidated independent manuscript review, which recorded no P0, two P1 (recoverability misclassified against ISO/IEC 25010:2023 while Chapter 7 stated it correctly; an internally inconsistent fan-out arithmetic chain), four P2, and six P3 findings. All P1 and P2 findings were corrected and confirmed by a **96/100** focused P1/P2 closure review.
+- Completed the **96/100** Final Part XI Quality Gate; P0/P1/P2 findings are none, and six residual P3 items are non-blocking. The gate independently re-verified rather than confirming prior reports: every numerical example was recalculated with each displayed chain tested as written, ISO/IEC 25010:2023 terminology was checked at characteristic and subcharacteristic level, all DOI-registered citations were re-verified against Crossref, and the capstone was re-tested for importable-pivot solvability.
+- Established controlled manuscript baseline `7067ebb54cba199a9215363188171d2e4966ed15`; all 12 chapters remain Draft under manuscript-status governance.
+- Applied Quality Gates v1.1: the Atlas Commerce Architecture Decision Simulator; boundary/dependency, asynchronous/consistency, trade-off/evidence, and evolution/capstone laboratories; conceptual diagrams; ADR examples and architecture-evaluation worksheets; executable fitness-function and dependency-analysis examples; and standalone case-study files, datasets, and migration simulations remain deferred recommended Pass 2 enrichment.
+- Carried one residual non-blocking source-verification control: ISO/IEC 25010:2023 and ISO/IEC/IEEE 42010:2022 are paywalled and returned HTTP 403 to every access attempt, so their characteristic and subcharacteristic placements rest on consistent secondary references and the repository's already-gated Part III precedent rather than on a purchased copy. This was deliberately carried forward, not closed.
+
+**Outcome:** Part XI manuscript quality is accepted and the controlled baseline is fixed. Release-administration metadata is prepared for planned, unreleased **v0.14.0 — System Design & Architecture Complete**; the next step is a reviewed feature → develop pull request. Part XII — Engineering Leadership & Career Growth has not started.
+
+**Status:** Release administration active
+
+**Last Updated:** 2026-08-14
+
+---
+
+## Release Candidate v0.14.0 — System Design & Architecture Complete
+
+- Completed feature-to-`develop` integration via pull request #35 and created `release/v0.14.0` from the merged state for consolidated Release Candidate validation. That integration also carried the three v0.13.0 release-line commits (`e4fb016`, `3fee529`, `0d78303`) into `develop`, closing a pre-existing post-v0.13.0 reconciliation gap.
+- The Final Part XI Quality Gate remains **96/100** with P0/P1/P2 findings: none; six residual P3 items remain non-blocking. Controlled manuscript baseline `7067ebb54cba199a9215363188171d2e4966ed15` is unchanged, and all 12 chapters remain Draft under manuscript-status governance.
+- Release Candidate validation re-verified chapter freeze against the baseline blob-for-blob, release scope, canonical release identity, governance consistency, and merge readiness to `main`; targeted technical spot checks and numerical recalculation were repeated rather than assumed.
+- The residual non-blocking source-verification control is carried unchanged: ISO/IEC 25010:2023 and ISO/IEC/IEEE 42010:2022 remain paywalled, so their characteristic and subcharacteristic placements rest on consistent secondary references and the repository's already-gated Part III precedent rather than on a purchased copy.
+- The Atlas Commerce Architecture Decision Simulator; boundary/dependency, asynchronous/consistency, trade-off/evidence, and evolution/capstone laboratories; conceptual diagrams; ADR examples and worksheets; executable fitness-function and dependency-analysis examples; and case-study files, datasets, and migration simulations remain deferred recommended Pass 2 enrichment.
+
+**Outcome:** v0.14.0 is the current unreleased Release Candidate. Release PR review to `main`, approval and merge, annotated tag creation, GitHub Release publication, and post-release reconciliation remain pending. v0.13.0 remains the latest stable release, and Part XII — Engineering Leadership & Career Growth has not started.
+
+**Status:** Release Candidate validation active
+
+**Last Updated:** 2026-08-14

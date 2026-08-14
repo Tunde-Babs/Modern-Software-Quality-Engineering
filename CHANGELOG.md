@@ -4,6 +4,28 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+### Release Candidate — v0.14.0 — System Design & Architecture Complete
+
+#### Added
+
+- Completed Part XI — System Design & Architecture, Chapters 1–12, establishing architecture as a Quality Engineering concern: architecture-quality claims and the architecture-versus-architecture-description distinction; nine boundary types with responsibilities, cohesion, coupling, and dependency direction; communication, time, timeout-as-unknown-outcome, retries, idempotency, ordering, duplicates, and backpressure; state ownership, transactional boundaries, consistency windows, caches, reconciliation, and a bounded CAP treatment; architectural styles and decomposition as contextual trade-off sets; quality-attribute scenarios with sensitivity and trade-off points; testability, observability, operability, recoverability, and safe degradation as architecture-supplied capabilities; contracts, compatibility layers, and change impact; architecture evidence, fitness functions, and Architecture Decision Records; and evolution, migration, reversibility, and temporary architecture debt.
+- Added integrated architecture decision-making across scale, security, and reliability with separated implication fields and no composite score, culminating in the **System Design & Architecture Quality Strategy and Evidence Portfolio** capstone and its **Architecture Decision Brief**, built on a 34-item identified synthetic evidence packet with deliberately conflicting signals and six independent decision axes.
+
+#### Changed
+
+- Established the Part XI QA → QE progression from asking whether a component works to contributing bounded architecture-quality decisions using context, claims, constraints, options, assumptions, trade-offs, failure modes, evidence, limitations, decisions, residual risk, revision triggers, and explicit ownership — without claiming ownership of the architecture decision itself.
+
+#### Validation
+
+- Final Part XI Quality Gate: **96/100**; P0/P1/P2 findings: none. Six residual P3 items are non-blocking.
+- Preceded by an independent curriculum-architecture review at **97/100** with corrections closed, a consolidated independent manuscript review at **94/100**, and a focused P1/P2 closure review at **96/100**. These are four distinct review events; the two 96/100 results are different reviews and neither is Part VIII's separate historical 96/100 Final Quality Gate.
+- All 12 chapters remain **Draft** under manuscript-status governance. Controlled manuscript baseline `7067ebb54cba199a9215363188171d2e4966ed15` is established; feature-to-`develop` integration is complete, and the current Release Candidate is under validation on `release/v0.14.0`. Every numerical example was recalculated with each displayed chain tested as written; ISO/IEC 25010:2023 terminology was verified at characteristic and subcharacteristic level; all DOI-registered citations were verified against Crossref; Markdown structure, tables, footnotes, local links, navigation, and repository-scope validation passed.
+- One residual non-blocking source-verification control is carried forward: ISO/IEC 25010:2023 and ISO/IEC/IEEE 42010:2022 are paywalled and returned HTTP 403 to every access attempt, so their characteristic and subcharacteristic placements rest on consistent secondary references and the repository's already-gated Part III precedent rather than on a purchased copy.
+
+#### Deferred Pass 2 Enrichment
+
+- The Atlas Commerce Architecture Decision Simulator; boundary/dependency, asynchronous/consistency, architecture trade-off and evidence review, and evolution/capstone laboratories; C4/UML-style conceptual diagrams; ADR examples and architecture-evaluation worksheets; executable fitness-function and dependency-analysis examples; and standalone case-study files, datasets, or migration simulations remain recommended Pass 2 enrichment under Quality Gates v1.1. No standalone practical asset is required for the Part XI manuscript release.
+
 ## [0.13.0] — Performance & Security Engineering Complete — 2026-08-12
 
 #### Added
