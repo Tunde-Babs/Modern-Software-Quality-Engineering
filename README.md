@@ -18,7 +18,7 @@
 
 📍 **Planned Next Release:** v0.14.0 – System Design & Architecture Complete
 
-🧭 **Current Handbook Work:** Part XI — System Design & Architecture is in accelerated Pass 1. Its curriculum architecture is approved after a **97/100** independent review with corrections closed, and Batch A — Chapters 1–4 — is drafted and has passed Checkpoint A. All four chapters remain Draft; Chapters 5–12, Pass 2 assets, and release work have not started. v0.14.0 remains planned.
+🧭 **Current Handbook Work:** Part XI — System Design & Architecture is in accelerated Pass 1. Its curriculum architecture is approved after a **97/100** independent review with corrections closed, and Batches A and B — Chapters 1–10 — are drafted and have passed Checkpoints A and B. All ten chapters remain Draft; Chapters 11–12, Pass 2 assets, and release work have not started. v0.14.0 remains planned.
 
 </p>
 
@@ -74,7 +74,7 @@ The project follows an incremental release strategy, with each release represent
 - Part VIII — Observability & Reliability Engineering released as v0.11.0 after its **96/100** Final Quality Gate; Chapters 1–11 remain Draft under manuscript-status governance, and Pass 2 enrichment remains deferred
 - Part IX — AI Quality Engineering released as v0.12.0; its **97/100** Final Quality Gate passed with no P0, P1, P2, or P3 manuscript findings, Chapters 1–12 remain Draft, and Pass 2 practical assets remain deferred
 - Part X — Performance & Security Engineering released as v0.13.0 after its **97/100** Final Quality Gate; P0/P1/P2 findings are none, the only P3 is non-blocking Gunther bibliographic refinement, controlled manuscript baseline `3f7391b5fd939a5dd973d25386811031f3448180` is preserved, and Chapters 1–12 remain Draft
-- Part XI — System Design & Architecture is in accelerated Pass 1 on an approved curriculum architecture (**97/100** independent review, corrections closed); Batch A Chapters 1–4 are drafted and passed Checkpoint A with no P0 or P1 finding, all four remain Draft, and Chapters 5–12, laboratories, diagrams, companion implementations, simulators, datasets, website assets, and release work have not started
+- Part XI — System Design & Architecture is in accelerated Pass 1 on an approved curriculum architecture (**97/100** independent review, corrections closed); Batch A and Batch B Chapters 1–10 are drafted and passed Checkpoints A and B with no P0 or P1 finding, all ten remain Draft, and Chapters 11–12, laboratories, diagrams, companion implementations, simulators, datasets, website assets, and release work have not started
 
 ---
 
@@ -273,7 +273,7 @@ Current focus:
 - Part VIII — Observability & Reliability Engineering released as v0.11.0 after its **96/100** Final Quality Gate; Chapters 1–11 remain Draft under manuscript-status governance, and Pass 2 enrichment remains deferred
 - Part IX — AI Quality Engineering released as v0.12.0; its **97/100** Final Quality Gate passed with no P0, P1, P2, or P3 manuscript findings, Chapters 1–12 remain Draft, and Pass 2 practical assets remain deferred
 - Part X — Performance & Security Engineering released as v0.13.0 after its **97/100** Final Quality Gate; P0/P1/P2 findings are none, the only P3 is non-blocking Gunther bibliographic refinement, controlled manuscript baseline `3f7391b5fd939a5dd973d25386811031f3448180` is preserved, and Chapters 1–12 remain Draft
-- Part XI — System Design & Architecture is in accelerated Pass 1 on an approved architecture (**97/100**, corrections closed); Chapters 1–4 are drafted and passed Checkpoint A, Chapters 5–12 and Pass 2 assets do not exist, v0.14.0 remains planned, and Part XII has not started
+- Part XI — System Design & Architecture is in accelerated Pass 1 on an approved architecture (**97/100**, corrections closed); Chapters 1–10 are drafted and passed Checkpoints A and B, Chapters 11–12 and Pass 2 assets do not exist, v0.14.0 remains planned, and Part XII has not started
 
 ## 🔜 M3 — Digital Learning Platform
 
@@ -320,7 +320,7 @@ Rather than documenting individual tools, this project seeks to define the endur
 | Current Milestone | **M2 – Handbook Development** |
 | Latest Release | **v0.13.0 – Performance & Security Engineering Complete** |
 | Planned Next Release | **v0.14.0 – System Design & Architecture Complete** |
-| Current Handbook Work | **Part XI — System Design & Architecture** is in accelerated Pass 1 on an approved curriculum architecture (**97/100** independent review, corrections closed). Batch A — Chapters 1–4 — is drafted and has passed Checkpoint A; all four remain **Draft**. Chapters 5–12, companion implementations, laboratories, diagrams, simulators, datasets, website assets, and release work do not exist; **v0.14.0** remains planned and Part XII has not started. |
+| Current Handbook Work | **Part XI — System Design & Architecture** is in accelerated Pass 1 on an approved curriculum architecture (**97/100** independent review, corrections closed). Batches A and B — Chapters 1–10 — are drafted and have passed Checkpoints A and B; all ten remain **Draft**. Chapters 11–12, companion implementations, laboratories, diagrams, simulators, datasets, website assets, and release work do not exist; **v0.14.0** remains planned and Part XII has not started. |
 | Handbook | 🚧 In Development |
 | Practical Labs | 🚧 Planned |
 | Documentation Website | 🚧 Planned |
