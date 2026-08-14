@@ -18,7 +18,7 @@
 
 📍 **Planned Next Release:** v0.14.0 – System Design & Architecture Complete
 
-🧭 **Current Handbook Work:** Part XI — System Design & Architecture has completed accelerated Pass 1 and its consolidated independent manuscript review at **94/100**, with all P1 and P2 findings corrected and closed. All twelve chapters remain Draft; the Final Quality Gate, Pass 2 assets, and release work have not started. v0.14.0 remains planned.
+🧭 **Current Handbook Work:** Part XI — System Design & Architecture has **passed its Final Quality Gate at 96/100 (verdict A)** and is ready for manuscript baseline. All twelve chapters remain Draft; the baseline, Pass 2 assets, and release work have not started. v0.14.0 remains planned.
 
 </p>
 
@@ -74,7 +74,7 @@ The project follows an incremental release strategy, with each release represent
 - Part VIII — Observability & Reliability Engineering released as v0.11.0 after its **96/100** Final Quality Gate; Chapters 1–11 remain Draft under manuscript-status governance, and Pass 2 enrichment remains deferred
 - Part IX — AI Quality Engineering released as v0.12.0; its **97/100** Final Quality Gate passed with no P0, P1, P2, or P3 manuscript findings, Chapters 1–12 remain Draft, and Pass 2 practical assets remain deferred
 - Part X — Performance & Security Engineering released as v0.13.0 after its **97/100** Final Quality Gate; P0/P1/P2 findings are none, the only P3 is non-blocking Gunther bibliographic refinement, controlled manuscript baseline `3f7391b5fd939a5dd973d25386811031f3448180` is preserved, and Chapters 1–12 remain Draft
-- Part XI — System Design & Architecture has completed accelerated Pass 1 and its consolidated independent manuscript review at **94/100** (verdict B; two P1 and four P2 findings corrected and closed, no P0); all twelve chapters remain Draft, and the Final Quality Gate, laboratories, diagrams, companion implementations, simulators, datasets, website assets, and release work have not started
+- Part XI — System Design & Architecture **passed its Final Quality Gate at 96/100** (verdict A; P0/P1/P2 all zero, six non-blocking P3) after an architecture review at 97/100, a consolidated manuscript review at 94/100, and a focused P1/P2 closure review at 96/100 — four distinct review events; all twelve chapters remain Draft, and the manuscript baseline, laboratories, diagrams, companion implementations, simulators, datasets, website assets, and release work have not started
 
 ---
 
@@ -273,7 +273,7 @@ Current focus:
 - Part VIII — Observability & Reliability Engineering released as v0.11.0 after its **96/100** Final Quality Gate; Chapters 1–11 remain Draft under manuscript-status governance, and Pass 2 enrichment remains deferred
 - Part IX — AI Quality Engineering released as v0.12.0; its **97/100** Final Quality Gate passed with no P0, P1, P2, or P3 manuscript findings, Chapters 1–12 remain Draft, and Pass 2 practical assets remain deferred
 - Part X — Performance & Security Engineering released as v0.13.0 after its **97/100** Final Quality Gate; P0/P1/P2 findings are none, the only P3 is non-blocking Gunther bibliographic refinement, controlled manuscript baseline `3f7391b5fd939a5dd973d25386811031f3448180` is preserved, and Chapters 1–12 remain Draft
-- Part XI — System Design & Architecture has completed accelerated Pass 1 and its consolidated manuscript review at **94/100** with P1/P2 findings closed; the Final Quality Gate is outstanding, Pass 2 assets do not exist, v0.14.0 remains planned, and Part XII has not started
+- Part XI — System Design & Architecture **passed its Final Quality Gate at 96/100** with P0/P1/P2 all zero; the manuscript baseline is outstanding, Pass 2 assets do not exist, v0.14.0 remains planned, and Part XII has not started
 
 ## 🔜 M3 — Digital Learning Platform
 
@@ -320,7 +320,7 @@ Rather than documenting individual tools, this project seeks to define the endur
 | Current Milestone | **M2 – Handbook Development** |
 | Latest Release | **v0.13.0 – Performance & Security Engineering Complete** |
 | Planned Next Release | **v0.14.0 – System Design & Architecture Complete** |
-| Current Handbook Work | **Part XI — System Design & Architecture** has completed accelerated Pass 1 and its consolidated independent manuscript review at **94/100** (verdict B), with all P1 and P2 findings corrected and closed. All twelve chapters remain **Draft**. The **Final Quality Gate is outstanding**; companion implementations, laboratories, diagrams, simulators, datasets, website assets, and release work do not exist; **v0.14.0** remains planned and Part XII has not started. |
+| Current Handbook Work | **Part XI — System Design & Architecture** **passed its Final Quality Gate at 96/100 (verdict A)** with P0, P1, and P2 all zero and six non-blocking P3 items. All twelve chapters remain **Draft**. The **manuscript baseline is outstanding**; companion implementations, laboratories, diagrams, simulators, datasets, website assets, and release work do not exist; **v0.14.0** remains planned and Part XII has not started. |
 | Handbook | 🚧 In Development |
 | Practical Labs | 🚧 Planned |
 | Documentation Website | 🚧 Planned |

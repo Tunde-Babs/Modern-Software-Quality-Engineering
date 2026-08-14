@@ -367,13 +367,13 @@ Then identify the tension in the phrase "immediately and correctly" and explain 
 
 - [ISO/IEC/IEEE 42010:2022 — Software, systems and enterprise — Architecture description](https://www.iso.org/standard/74393.html)
 - [ISO/IEC 25010:2023 — Systems and software Quality Requirements and Evaluation (SQuaRE) — Product quality model](https://www.iso.org/standard/78176.html)
-- [SEI — The Architecture Tradeoff Analysis Method](https://www.sei.cmu.edu/library/the-architecture-tradeoff-analysis-method/)
+- [R. Kazman, M. Klein, and P. Clements — ATAM: Method for Architecture Evaluation](https://www.sei.cmu.edu/library/atam-method-for-architecture-evaluation/) — SEI technical report CMU/SEI-2000-TR-004; a facilitated evaluation method, not an MSQE requirement.
 
 ## References
 
 [^iso-42010]: International Organization for Standardization, International Electrotechnical Commission, and Institute of Electrical and Electronics Engineers. [ISO/IEC/IEEE 42010:2022 — Software, systems and enterprise — Architecture description](https://www.iso.org/standard/74393.html). 2022. Accessed 2026-08-14.
 [^iso-25010]: International Organization for Standardization. [ISO/IEC 25010:2023 — Systems and software engineering — Systems and software Quality Requirements and Evaluation (SQuaRE) — Product quality model](https://www.iso.org/standard/78176.html). 2023. Accessed 2026-08-14.
-[^sei-atam]: Software Engineering Institute, Carnegie Mellon University. [The Architecture Tradeoff Analysis Method](https://www.sei.cmu.edu/library/the-architecture-tradeoff-analysis-method/). Accessed 2026-08-14.
+[^sei-atam]: Kazman, R., Klein, M., and Clements, P. [ATAM: Method for Architecture Evaluation](https://www.sei.cmu.edu/library/atam-method-for-architecture-evaluation/). CMU/SEI-2000-TR-004, Software Engineering Institute, Carnegie Mellon University, 2000. Accessed 2026-08-14.
 
 ## Chapter Checklist
 
