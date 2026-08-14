@@ -148,7 +148,7 @@ The following are **bounded, synthetic worked examples**. Each states context, p
 | Population | 200,000 synthetic page compositions in a defined one-hour window. |
 | Assumptions | Each call succeeds with probability 0.999 in this window, and **failures are statistically independent**. The independence assumption is the load-bearing one. |
 | Units | Dimensionless probability; counts of page compositions. |
-| Calculation | P(all six succeed) = 0.999⁶ = **0.99402**. P(at least one fails) = 1 − 0.99402 = **0.00598**. Expected affected compositions = 0.00598 × 200,000 ≈ **1,197**. |
+| Calculation | P(all six succeed) = 0.999⁶ = 0.994014980… ≈ **0.99401**. P(at least one fails) = 1 − 0.999⁶ = 0.005985020… ≈ **0.00599**. Expected affected compositions = 0.005985020… × 200,000 = 1,197.004 ≈ **1,197**. Note that the multiplication uses the unrounded value: carrying the displayed 0.00599 through instead would give 1,198, and carrying a 5-decimal rounding of 0.00598 would give 1,196. Round once, at the end. |
 | Interpretation | Under the stated assumptions, adding backend calls to a composed page degrades page-level success faster than any single call's reliability suggests. Six 99.9% calls do not yield a 99.9% page. |
 | Limitation | **The arithmetic is correct and the inference is weak.** If all six calls share a connection pool, a service-discovery mechanism, a database cluster, or an availability zone, their failures are correlated, and the independence assumption is false. Correlation changes the *shape* of the failure, not only its rate: instead of ~1,200 scattered single-call failures, the real pattern is likely to be long intervals of zero failures punctuated by a common-mode event in which all six fail together for thousands of consecutive requests. A design tuned against the scattered model — per-call retries, for instance — can be actively harmful against the correlated one. |
 | Decision relevance | Justifies asking what the six calls share before treating the number as a reliability estimate. Does not justify a page-level availability claim. |
@@ -217,12 +217,14 @@ The required trace, for each option, is: **timeout → retry → duplicate or un
 | Failure mode (B) | Pending orders accumulate during a long outage; customers cannot tell a slow confirmation from a lost one; a duplicate `PAYMENT_PENDING` event produces a second charge if the worker is not idempotent. |
 | Evidence needed | Provider documentation and a bounded test of idempotency-key behaviour; measured distribution of payment latency under degradation; a product decision on delayed confirmation. |
 | Limitation | No synthetic experiment can establish the provider's real behaviour under real degradation; the reconciliation contract can only be verified against the provider's own record. |
-| Decision | Not made here. The evidence supports adding an idempotency key and an explicit unknown state **regardless of which option is chosen**, because both depend on them. |
+| Decision | Two decisions, of different kinds. **Rejected outright:** the current unconditional retry policy — three immediate attempts with no budget, no backoff, and no idempotency key — is unsafe under the observed failure mode and should not survive the next release, whichever checkout design is chosen. **Deferred with a condition:** the synchronous-versus-asynchronous choice is a product trade-off about what Atlas is willing to tell a customer, and it is not the Quality Engineer's to settle; it should be taken once product has answered whether a delayed confirmation is acceptable. |
 | Owner | Payment domain owner for the interaction design; product owner for the confirmation-timing decision; release authority for rollout. |
 | Residual risk | Provider behaviour under sustained degradation remains unobserved in both options. |
 | Revision trigger | Any change to provider timeout or idempotency semantics; any change to the retry policy; the next promotion window. |
 
-Once again the analysis produces a common prerequisite rather than a winner. The idempotency key and the unknown state are required by both designs; the synchronous-versus-asynchronous question is genuinely a product trade-off that a Quality Engineer should frame rather than settle.
+Notice that the analysis produced two decisions of different shapes, and that only one of them was the Quality Engineer's to make. Rejecting the retry policy is squarely an evidence-led engineering conclusion: the policy is unsafe against the failure mode that actually occurred, and no further information would rescue it. Choosing between synchronous and asynchronous checkout is not, because it turns on what the business is prepared to say to a customer — and framing that question accurately is a more useful contribution than answering it.
+
+The idempotency key and the explicit unknown state sit underneath both, required by either design.
 
 ## The Interaction, Time, and Failure Analysis
 

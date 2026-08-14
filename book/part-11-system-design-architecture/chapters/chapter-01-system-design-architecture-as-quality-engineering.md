@@ -122,8 +122,9 @@ Several of those words also exist inside the standard at subcharacteristic level
 | Testability | A subcharacteristic of maintainability. | The architectural conditions — seams, isolation, controllability, determinism, substitution — that make evidence obtainable at all. |
 | Operability | A subcharacteristic of interaction capability, concerning whether a **user** can operate the product. | Whether a **team** can run, diagnose, and intervene in the system safely in production. |
 | Scalability | A subcharacteristic of flexibility. | An architecture-relevant property assessed against a stated workload, boundary, and constraint. |
+| Recoverability | A subcharacteristic of **reliability**, concerning the product's ability to recover data and re-establish its state after an interruption or failure. | The architectural conditions that allow a system to return to a correct state after a partial failure — **and that allow anyone to verify that it did**. |
 
-Observability, deployability, and recoverability are not ISO/IEC 25010:2023 characteristics or subcharacteristics at any level. Part XI uses them purely as engineering capabilities and says so wherever it does. This mirrors the distinction Part III established for testing evidence.
+**Observability and deployability** are not ISO/IEC 25010:2023 characteristics or subcharacteristics at any level. Part XI uses those two purely as engineering capabilities and says so wherever it does. The other four words above do appear in the standard, at subcharacteristic level, and Part XI names the level it means. This mirrors the distinction Part III established for testing evidence.
 
 Why insist on this? Because imprecise quality language produces unfalsifiable architecture claims. "This design is more maintainable" cannot be challenged. "This design reduces the number of modules a pricing-rule change must touch from four to one, at the cost of one additional deployment unit" can be challenged, checked, and found wrong.
 
@@ -324,7 +325,7 @@ Architecture decisions are quality claims made under incomplete evidence, and th
 - Architecture is the set of decisions that are expensive to reverse and that constrain future behaviour, evidence, and change.
 - `ARCHITECTURE ≠ ARCHITECTURE DESCRIPTION`: a diagram, view, or ADR expresses architecture without proving it sound or current.
 - ISO/IEC 25010:2023 defines nine top-level product-quality characteristics; interoperability sits within compatibility, interaction capability replaced usability, flexibility replaced portability, and safety is top-level.
-- Observability, deployability, and recoverability are engineering capabilities, not ISO characteristics.
+- Observability and deployability do not appear in ISO/IEC 25010:2023 at any level; testability, operability, scalability, and recoverability do appear as subcharacteristics, so name the level you mean.
 - A bounded architecture-quality claim names its population, condition, constraint, assumption, evidence boundary, limitation, owner, and revision trigger.
 - Traversing the reasoning model backwards — from failure to assumption — is how an incident becomes an architecture correction rather than a story.
 - The Quality Engineer supplies evidence and makes uncertainty visible; the accountable authority owns the decision.

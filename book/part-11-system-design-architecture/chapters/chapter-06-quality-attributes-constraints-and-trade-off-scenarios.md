@@ -70,7 +70,7 @@ Three rules carry forward unchanged, and this chapter is where they are exercise
 
 - **Do not mix editions.** Usability and portability are not current top-level characteristics; interaction capability and flexibility occupy those positions, and safety was added in the 2023 revision.
 - **Do not conflate interaction capability with interoperability.** Interaction capability is top-level and concerns *users*. Interoperability is a subcharacteristic of *compatibility* and concerns information exchange between elements. A partner-integration scenario is a compatibility scenario with an interoperability concern inside it — not an interaction-capability scenario.
-- **Do not invent characteristics.** Observability, deployability, and recoverability are engineering capabilities in this handbook's usage, not ISO characteristics; Chapter 7 develops them as architecture concerns in their own right.
+- **Do not invent characteristics, and name the level you mean.** Observability and deployability do not appear in the standard at any level and are engineering capabilities in this handbook's usage. Testability, operability, scalability, and recoverability *do* appear, as subcharacteristics of maintainability, interaction capability, flexibility, and reliability respectively — so a scenario using any of them must say whether it means the ISO subcharacteristic or the broader architectural capability. Chapter 7 develops all of them as architecture concerns in their own right.
 
 The standard is a **reference model for framing concerns**, not an architecture recipe and not a checklist to complete. A scenario set that covers all nine characteristics for every decision is not thorough; it is unfocused. Select the characteristics that the decision actually turns on, and be able to say why the others were excluded. For Atlas's promotion, safety is not material and saying so explicitly is better practice than silently omitting it.
 
@@ -231,7 +231,7 @@ The following is a **bounded, synthetic worked example**.
 | Field | Entry |
 | --- | --- |
 | Context | Atlas wants a figure for checkout availability during the promotion, to decide whether the synchronous payment path is acceptable. |
-| Population and boundary | The synchronous checkout path only: API edge → checkout service → order store → payment provider. Excludes catalogue, search, notification, and the asynchronous fulfilment path. |
+| Population and boundary | The synchronous checkout path only: API edge → checkout service → order store → payment provider. Excludes catalogue, search, notification, and the asynchronous fulfilment path. Chapter 11 performs a differently-decomposed composition of the same broad path for a different question; the component sets differ and the resulting percentages are not directly comparable. |
 | Assumptions | Component availabilities over a 30-day window are: API edge 99.95%, checkout service 99.9%, order store 99.95%, payment provider 99.5%. **All four are assumed to fail independently.** All four must be available for a checkout to complete. |
 | Units | Dimensionless probability; minutes over a 30-day (43,200-minute) window. |
 | Calculation | Composed availability = 0.9995 × 0.999 × 0.9995 × 0.995 = **0.99301**, i.e. **99.301%**. Unavailable time = (1 − 0.99301) × 43,200 = **≈ 302 minutes ≈ 5 h 2 min** per 30 days. The payment provider alone contributes 0.005 × 43,200 = **216 minutes**, about 72% of the total. |

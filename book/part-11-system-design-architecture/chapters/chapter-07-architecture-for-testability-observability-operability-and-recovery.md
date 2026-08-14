@@ -69,7 +69,7 @@ Chapter 1 established this distinction, and this chapter is where it is most lik
 | --- | --- | --- |
 | **Testability** | A subcharacteristic of **maintainability**: the degree to which test criteria can be established and tests performed.[^iso-25010] | The architectural conditions — isolation, controllability, state observability, determinism, substitution — that make evidence obtainable at all. |
 | **Operability** | A subcharacteristic of **interaction capability**, concerning whether a **user** can operate the product. | Whether a **team** can run, diagnose, and intervene in the system safely in production. |
-| **Recoverability** | Not a top-level characteristic. Recovery appears within reliability in the standard's structure. | The architectural conditions that allow a system to return to a correct state after a partial failure, and that allow anyone to *verify* that it did. |
+| **Recoverability** | A subcharacteristic of **reliability** — not a top-level characteristic — concerning the product's ability to recover data and re-establish its state after an interruption or failure.[^iso-25010] | The architectural conditions that allow a system to return to a correct state after a partial failure, and that allow anyone to *verify* that it did. |
 | **Modifiability** | A subcharacteristic of maintainability. | Used only in the standard's sense. |
 
 **Observability, deployability, and safe degradation are not ISO/IEC 25010:2023 characteristics or subcharacteristics at any level.** Part XI uses them purely as engineering capabilities and says so. This is not pedantry: a reviewer who believes "observability" is an ISO characteristic will look for it in the standard, not find it, and reasonably conclude the analysis is unreliable.

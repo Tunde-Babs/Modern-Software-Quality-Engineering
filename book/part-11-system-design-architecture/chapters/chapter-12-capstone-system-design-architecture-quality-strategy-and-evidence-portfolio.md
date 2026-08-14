@@ -115,7 +115,7 @@ Items are grouped for readability. The grouping is not a priority order.
 | --- | --- |
 | **ARCH-SYNC-01** | The synchronous checkout path issues calls sequentially: API edge, session validation, cart/pricing read, payment call, order write, own processing. |
 | **ARCH-ASYNC-01** | Fulfilment work is queued and processed by workers. The queue is unbounded. There is no dead-letter handling; failed jobs are retried indefinitely. |
-| **ARCH-LOAD-01** | Ordinary weekday peak checkout submissions: 260 per minute. Promotional peak: 400 per minute. Catalogue search rises to roughly four times ordinary weekday peak during a campaign. The promotional landing page composes results from six catalogue backend calls. |
+| **ARCH-LOAD-01** | Ordinary weekday peak checkout submissions: 260 per minute. Promotional peak: 400 per minute. Catalogue search rises to roughly four times ordinary weekday peak during a campaign. The promotional landing page composes results from six catalogue backend calls — the same six-call dependency set the catalogue search page uses, though the two pages are distinct and their traffic populations differ. |
 | **ARCH-PERF-01** | Server-side checkout path timings with a healthy provider, per-call medians in milliseconds: edge 8, session validation 25, cart/pricing 40, payment call 180, order write 30, own processing 12. **Identical to the measurement introduced in Chapter 3.** Same measurement, same window, same boundary. |
 | **ARCH-PERF-02** | A prototype benchmark comparing the current in-process checkout arrangement with an extracted arrangement, 200 requests per arm, **payment dependency stubbed**, warm, single-instance, no concurrency: means 250 ms and 190 ms respectively, standard deviation 90 ms in each arm. **Identical to the benchmark introduced in Chapter 9.** |
 
@@ -142,7 +142,8 @@ Items are grouped for readability. The grouping is not a priority order.
 
 | ID | Evidence |
 | --- | --- |
-| **ARCH-CHG-01** | Of the last 60 merged changes, 22 touched both the checkout and fulfilment modules — a 36.7% co-change rate. **A subsequent manual read of those 22 changes** classified them as: **9** fulfilment-only work forced through checkout code; **8** single features genuinely spanning both responsibilities; **5** unclassifiable from the commit record alone. This read is new evidence, not present in earlier chapters. |
+| **ARCH-CHG-01** | **Reclassified evidence — read the provenance note.** Of the last 60 merged changes, 22 touched both the checkout and fulfilment modules — a 36.7% co-change rate. That rate is **reused evidence**, identical to Chapter 5. The breakdown of the 22 is **not**. Chapter 5 reported **14** of the 22 as fulfilment-only, classifying by *stated intent in the commit record*. A subsequent manual read of the same 22 changes, applying a tighter definition — work whose substance concerned fulfilment alone and which touched checkout only because the code required it — classified them as: **9** fulfilment-only work forced through checkout code; **8** single features genuinely spanning both responsibilities; **5** unclassifiable from the commit record alone. |
+| **ARCH-CHG-01 provenance note** | **14 and 9 answer different questions and neither supersedes the other.** Chapter 5's 14 counts changes whose *stated intent* was fulfilment; ARCH-CHG-01's 9 counts changes whose *substance* was fulfilment-only under a stricter reading. The 5 unclassifiable changes are precisely where the two definitions diverge most. Chapter 5's figure must **not** be silently overwritten with 9 — it remains correct for the question it asked. The gap between the two counts is itself evidence: a co-change rate is highly sensitive to classification definition, which is a reason to treat any single figure derived from it with caution. A learner citing either number must say which definition it uses. |
 | **ARCH-MIG-01** | Ten touchpoints are affected by a checkout/fulfilment separation: four direct consumers of order state, three support workflows, two reports, one partner integration. **Identical enumeration to Chapter 10**, and subject to the same caveat: ARCH-DEP-01 shows the enumeration is incomplete. |
 | **ARCH-COST-01** | The order store holds 400 GB of logical data at replication factor 3, giving a 1,200 GB physical footprint, plus 168 GB of backup at the current retention. Splitting 25% of the logical data into a second store leaves the aggregate physical footprint unchanged at 1,200 GB. **Identical to the calculation in Chapter 4.** No figure exists for the operational cost of a second store, because Atlas has never operated one. |
 | **ARCH-TEAM-01** | Four engineers. No second team is funded. Two of the four have never operated a message broker. The engineer who wrote the fourteen-month dual-write shim has left the team. |
@@ -151,9 +152,9 @@ Items are grouped for readability. The grouping is not a priority order.
 
 | ID | Evidence |
 | --- | --- |
-| **ARCH-OPT-A-01** | Option A assumes that an enforced module boundary changes behaviour without changing structure — that is, that a build-time dependency check will not be bypassed under campaign pressure. There is no precedent either way at Atlas. |
-| **ARCH-OPT-B-01** | Option B assumes (i) that product will accept a delayed payment confirmation on the customer-facing confirmation page, and (ii) that the provider's reconciliation query is contractually available and functions while the provider is degraded. Neither has been established. |
-| **ARCH-OPT-C-01** | Option C assumes that a four-engineer team can operate two deployment units and, in its fuller form, two stores, through a campaign period. ARCH-FAIL-01 (iv) is the only directly relevant precedent, and it is unfavourable. |
+| **ARCH-OPT-A-01** | Option A rests on **three** independent unverified beliefs. (i) That a build-time dependency check will not be bypassed under campaign pressure — no precedent either way at Atlas. (ii) That the domain port can be shaped from one payment provider's semantics without leaking them, which ARCH-TEST-01 assumes and no evidence supports. (iii) That the enumeration question in ARCH-CONTRACT-01 — open or closed — can be decided by the order-domain owner without partner negotiation. If (iii) is false, Option A's contract work is blocked behind a commercial conversation on ARCH-CONTRACT-01's quarterly cadence. |
+| **ARCH-OPT-B-01** | Option B rests on **four** independent unverified beliefs, and no one of them is decisive on its own. (i) That product will accept a delayed payment confirmation. (ii) That the provider's reconciliation query is contractually available and functions while the provider is degraded. (iii) That Atlas can make the pending-order population *enumerable and interveneable* — ARCH-OBS-01 and ARCH-OPS-01 say it currently cannot do either, and Option B multiplies that population. (iv) That the fulfilment queue can be bounded, or that ARCH-QUEUE-01's seven-hour drain is acceptable when checkout no longer blocks and order volume through the queue therefore rises. Belief (ii) failing removes a mitigation; belief (iii) failing removes the ability to operate the design at all. |
+| **ARCH-OPT-C-01** | Option C rests on **four** independent unverified beliefs. (i) That four engineers can operate two deployment units and two stores through a campaign — ARCH-FAIL-01 (iv) is the only precedent and it is unfavourable. (ii) That the consumer enumeration in ARCH-DEP-01 can be completed, without which its decommissioning stage has an unsatisfiable precondition. (iii) That a store comparison can be built and watched for the duration of a dual-write, which ARCH-FAIL-01 (iv) records Atlas failing to do. (iv) That cross-store reconciliation for `PAYMENT_UNKNOWN` works, which is a strictly harder version of Option B's belief (ii) because it must hold across two stores as well as against the provider. |
 | **ARCH-GAP-01** | Known evidence gaps: the analytics pipeline's read behaviour; the partner integration's tolerance of new status values; the provider reconciliation contract; the cache's actual share of order-store read load; the operational cost of a second deployment unit; whether the identity dimension can be made available at the caching layer. |
 | **ARCH-RISK-01** | Standing residual-risk indicators: payment failure modes 8 and 9 are unsimulable under any design; consumers outside the catalogue cannot be assessed; provider behaviour under real degradation cannot be established in a synthetic environment; the shared order store means store-level failure has 100% blast radius under every option currently proposed. |
 | **ARCH-TRIG-01** | Conditions already identified as warranting reassessment of any decision taken: a change to the provider's timeout, retry, or reconciliation semantics; a second team becoming available; a new consumer of `orders` appearing; a further status-value addition; a decision on open versus closed enumeration; the campaign window closing. |
@@ -251,7 +252,7 @@ Enforce the fulfilment module boundary with a build-time dependency check; remov
 | --- | --- |
 | Addresses | The 15.0% of changes in N-3; ARCH-TEST-01 (3/9 → 7/9); ARCH-OBS-01 and ARCH-OPS-01 substantially; ARCH-RETRY-01 entirely; the enumeration question in ARCH-CONTRACT-01. |
 | Does not address | The stated request. Fulfilment still cannot ship independently. |
-| Requires you to believe | ARCH-OPT-A-01: that an enforced check survives campaign pressure. |
+| Requires you to believe | ARCH-OPT-A-01, all three parts: that an enforced check survives campaign pressure; that a port shaped from one provider does not leak its semantics; and that the open/closed enumeration question is Atlas's alone to decide. |
 | Strongest argument for | It removes the mechanisms behind three of the four incidents in ARCH-FAIL-01 and is reversible in hours. |
 | Strongest argument against | It answers a question nobody asked while leaving the one they did ask untouched. |
 
@@ -263,7 +264,7 @@ Checkout validates, creates the order in an explicit pending state, and returns;
 | --- | --- |
 | Addresses | N-1 (115 ms synchronous path); the stated request; failure isolation between checkout and a degraded provider; the seven-hour backlog becomes decoupled from customer-facing checkout. |
 | Does not address | The shared store (conflict 5); store-level blast radius; the incomplete consumer inventory. |
-| Requires you to believe | ARCH-OPT-B-01, both parts: product accepts delayed confirmation, and the provider's reconciliation query works while the provider is degraded. |
+| Requires you to believe | ARCH-OPT-B-01, all four parts. Note that (iii) — that the pending population can be made enumerable and interveneable — is load-bearing independently of the reconciliation contract: a working reconciliation query that nobody can trigger for a single order, against a population nobody can list, does not produce an operable system. |
 | Strongest argument for | It is the only option that moves the payment dependency off the path that dominates both the latency and the incident history. |
 | Strongest argument against | It expands the population of orders in pending state, and ARCH-OBS-01 and ARCH-OPS-01 show Atlas currently cannot enumerate, inspect, or intervene in that state at all. |
 
@@ -275,11 +276,30 @@ Fulfilment becomes a separately deployed unit with its own store; consumers migr
 | --- | --- |
 | Addresses | Ownership of state; independent evolution; the data-coupling mechanism behind ARCH-FAIL-01 (i); the request, fully. |
 | Does not address | Anything before its later stages complete. Its early stages leave Atlas in a worse intermediate architecture than it has today. |
-| Requires you to believe | ARCH-OPT-C-01: that four engineers can operate two units and two stores through a campaign. ARCH-FAIL-01 (iv) is the only precedent and it is unfavourable. |
+| Requires you to believe | ARCH-OPT-C-01, all four parts. Belief (ii) — the completability of the consumer enumeration — is the one that gates the option's final stage, and it is a belief Options A and B do not require in the same form. |
 | Strongest argument for | It is the only option that addresses the shared-store coupling that conflict 5 shows is common-mode across the others. |
 | Strongest argument against | Its decommissioning stage has an unsatisfiable precondition (conflict 8), and Atlas has a documented fourteen-month failure to complete exactly this kind of migration. |
 
 **A note on combination.** The options are not mutually exclusive, and a defensible recommendation may sequence them, take part of one, or reject all three in favour of something the packet supports better. If you propose a combination, the same discipline applies: what does each component require you to believe, and what does it cost.
+
+### There is no single pivot
+
+Chapter 11 worked a narrower decision — how to respond to three promotion findings — and reached a conditional position resting on one unverified fact: whether the provider's reconciliation query is contractually available and functions under degradation. That reasoning is sound for the decision it addressed, and **it does not transfer to this one.**
+
+This decision is wider, and the packet is deliberately arranged so that **no single fact determines the recommendation**. Six substantially independent tensions are in play, each capable of changing the answer on its own:
+
+| Axis | The tension | Which options it bears on |
+| --- | --- | --- |
+| **Provider reconciliation** | ARCH-PAY-01, ARCH-OPT-B-01 (ii). Governs whether an unknown outcome is resolvable. | B strongly; C in a harder cross-store form |
+| **State ownership and common-mode failure** | Conflict 5 with ARCH-STATE-01 and ARCH-RISK-01. Every option retains the shared order store, so store-level blast radius stays at 100% under A, B, **and** C. Only C's later stages touch it, and only after the stages that are hardest to reverse. | All three, and it equalises them where they claim to differ |
+| **Operability and observability floor** | ARCH-OBS-01 and ARCH-OPS-01. `PAYMENT_UNKNOWN` cannot be enumerated, reconciliation cannot be triggered per order, and the only interventions are redeploy and a database edit. Any option that increases pending state without raising this floor is unoperable regardless of its other merits. | B most acutely; C compounds it across two stores |
+| **Compatibility and the unenumerable consumer** | ARCH-DEP-01, ARCH-CONTRACT-01, conflict 8. The enumeration is incomplete and the open/closed enumeration question is undecided, which leaves a 180-day deprecation window resting on a consumer list known to be short. | C's final stage cannot proceed; A's contract work may be gated commercially |
+| **Team operating capacity** | ARCH-TEAM-01 with ARCH-FAIL-01 (iv). Four engineers, two of whom have never operated a broker, and one documented failure to complete a migration of exactly the proposed shape. | B and C; it is the axis on which C is most exposed |
+| **Classification sensitivity of the core evidence** | ARCH-CHG-01 and its provenance note. The most-cited number in the packet yields 23.3% or 15.0% depending on definition, and 13.3% of changes would be made *worse* by separation. | The premise of separating at all |
+
+Resolving the reconciliation question alone leaves five of these six untouched. A recommendation that treats it as decisive — including one imported from Chapter 11 — will be strong on one axis and silent on the rest, and stage 11 of the workflow exists to catch exactly that.
+
+Two consequences for your work. **Test whether Chapter 11's conditional still holds under this packet**, rather than assuming it does; the wider evidence may support, qualify, or overturn it. And **state which axes your recommendation is exposed to and which it is not** — a recommendation that is robust on four axes and fragile on two is a better contribution than one that claims to have settled everything.
 
 ## The Investigation Workflow
 
@@ -297,7 +317,7 @@ Twelve stages. They are **revisitable**, not sequential: evidence found at stage
 | 8 | **Identify specialist evidence still required.** Name what Parts VIII and X would need to produce, and what remains unreachable. | A specialist question turns out to be architectural after all, or vice versa. |
 | 9 | **Compare migration and reversibility conditions.** For each option, design the intermediate architectures, evidence gates, and reversibility with expiry (Chapter 10). | An intermediate turns out to be worse than either endpoint for longer than tolerable. |
 | 10 | **Draft the decision brief.** Populate the required fields. | Populating `LIMITATION` honestly often invalidates a draft `DECISION`. |
-| 11 | **Challenge the recommendation.** Argue the strongest case against your own conclusion. Identify the single fact whose falsity would most damage it. | This stage should send you back at least once. If it does not, you have not challenged hard enough. |
+| 11 | **Challenge the recommendation.** Argue the strongest case against your own conclusion. Work each of the six axes in turn and state which your recommendation is exposed to and which it is robust against. | This stage should send you back at least once. If it does not, you have not challenged hard enough. |
 | 12 | **Define revision triggers.** State the observations that would require reassessment, as observable events (Chapter 9). | A trigger you write turns out to be unobservable given ARCH-OBS-01. |
 
 ## The Architecture Decision Brief
@@ -393,13 +413,17 @@ A portfolio is complete when a reviewer who disagrees with your recommendation c
 | Honesty about conflict | At least three conflicts are engaged with, including one you could not resolve. |
 | Ambiguity preserved | Evidence that is genuinely ambiguous (N-3) is not presented as supporting your conclusion. |
 | No score | No composite rating, weighted total, or option ranking by number appears anywhere. |
-| Falsifiability | You have named the single fact whose falsity would most damage your recommendation. |
+| Falsifiability | You have named, for **each axis your recommendation is exposed to**, the fact whose falsity would damage it — and you have said which axes it is not exposed to. |
 | Scope discipline | Your recommendation's scope is narrower than "the architecture" and you say what it excludes. |
 | Ownership | You have not claimed to approve anything. |
 
 ### Common ways this capstone goes wrong
 
 **Choosing an option and then reading the packet for support.** The tell is that ambiguous evidence — N-3, conflict 7 — appears on only one side of your analysis.
+
+**Importing Chapter 11's conditional wholesale.** Chapter 11 reached a defensible position on a narrower decision by treating the provider reconciliation contract as pivotal. Carrying that conclusion here without testing it against the wider packet leaves five of the six axes unexamined — most consequentially the operability floor in ARCH-OBS-01 and ARCH-OPS-01, which can make an option unworkable even when its reconciliation question resolves favourably.
+
+**Treating any one fact as decisive.** A submission whose entire case rests on a single unverified condition has usually found the axis it understands best rather than the one that matters most.
 
 **Producing a score.** Weighting the options across quality attributes and totalling them. This looks rigorous and it converts your judgement into arithmetic while concealing whose judgement it was.
 
@@ -474,7 +498,7 @@ This capstone provides a synthetic, incomplete, internally conflicting evidence 
 - State, per option, what it requires you to believe and whether anyone has checked it.
 - Keep performance, security, and reliability implications separate; produce no composite score.
 - Distinguish gaps, which get plans, from limitations, which get owned residual-risk entries.
-- Name the single fact whose falsity would most damage your recommendation.
+- A wide decision rarely turns on one fact; name your exposure per axis and say which axes you are robust against.
 - Argue the strongest version of the case you are rejecting.
 - Contribute a recommendation with its reasoning attached; the decision belongs to an accountable owner.
 
@@ -516,7 +540,7 @@ Working from the evidence packet, the numerical evidence, and the conflict analy
 9. **Numerical work.** Produce at least one new bounded calculation of your own, with context, population, assumptions, units, calculation, interpretation, and limitation. It must inform a decision you actually make.
 10. **Specialist handoffs.** Name at least three questions for Parts VIII or X, phrased as questions those disciplines could answer.
 11. **Decision brief.** All sixteen required fields. `RESIDUAL RISK` must contain at least three items, at least one drawn from ARCH-RISK-01 that no work will remove. `REVISION TRIGGER` entries must be observable events.
-12. **The one fact.** Name the single unverified fact whose falsity would most damage your recommendation, say how it could be checked and by whom, and state what you would recommend instead if it proved false.
+12. **Axis exposure.** Work all six axes from *There is no single pivot*. For each, state whether your recommendation is **exposed** or **robust**, and why. For every axis you are exposed to, name the unverified fact, say how it could be checked and by whom, and state what you would recommend instead if it proved false. A submission that names only one such fact has not engaged with the packet. Then state explicitly whether Chapter 11's conditional position survives this wider evidence base — and if it does not, what changed it.
 13. **Ownership statement.** State that you are contributing a recommendation and name the role that owns the decision.
 
 **Constraints.**
@@ -552,7 +576,7 @@ Before considering this capstone complete, confirm that you can:
 - [ ] State what each option requires you to believe, and which belief is unverified.
 - [ ] Keep performance, security, and reliability implications separate.
 - [ ] Design intermediate architectures with evidence gates and reversibility that has an expiry.
-- [ ] Name the single fact whose falsity would most damage your recommendation.
+- [ ] Identify, per axis, where a recommendation is exposed and where it is robust, rather than naming one decisive fact.
 - [ ] Argue the strongest case against your own conclusion.
 - [ ] Present a recommendation without claiming to approve an architecture.
 

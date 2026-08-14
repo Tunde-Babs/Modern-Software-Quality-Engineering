@@ -85,7 +85,7 @@ This is the integration move. It is not "consider everything at once" — that p
 
 ## Fan-out: Latency, and What Percentiles Do
 
-Atlas's promotion landing page composes results from six catalogue backend calls — the same six-call fan-out established in Chapter 3, here examined for latency rather than failure probability.
+Atlas's promotion landing page composes results from the same six catalogue backend calls that Chapter 3 used for its fan-out failure example. **The two pages are distinct** — Chapter 3 examined the catalogue *search* page, this chapter examines the promotion *landing* page — but both compose from the same six-call dependency set, so the fan-out structure carries across while the population and the measured attribute do not. Chapter 3 measured failure probability; this example measures latency.
 
 ### Numerical Example 1 — Fan-out latency and percentile composition
 
@@ -113,7 +113,7 @@ Getting this wrong is common, cheap to fix, and expensive to leave.
 | Field | Entry |
 | --- | --- |
 | Context | **New synthetic fact for this chapter:** since Chapter 3, Atlas has adopted the synchronous loyalty-award proposal described in that chapter's exercise. Checkout now awards loyalty points synchronously before returning success; if the loyalty service fails, checkout returns an error and no order is created. This supersedes the earlier arrangement, in which points were awarded asynchronously after fulfilment. |
-| Population and boundary | The synchronous checkout completion path. Excludes catalogue, search, and the asynchronous fulfilment path. |
+| Population and boundary | The synchronous checkout completion path. Excludes catalogue, search, and the asynchronous fulfilment path. **This is not the same composition as Chapter 6's availability example**: that one covered API edge → checkout service → order store → payment provider and produced 99.301%, while this one decomposes the checkout service into session validation and cart/pricing, omits the API edge, and adds the loyalty award. Both are illustrative, the component sets differ, and **the two percentages are not directly comparable**. |
 | Assumptions | Component availabilities over a 30-day window: session validation 99.99%, cart/pricing 99.95%, payment provider 99.5%, order write 99.95%, loyalty award 99.0%. **Failures assumed independent.** All are currently treated as required. |
 | Units | Dimensionless probability; minutes over a 30-day (43,200-minute) window. |
 | Calculation | **Loyalty treated as required:** 0.9999 × 0.9995 × 0.995 × 0.9995 × 0.99 = **0.98397**, i.e. **98.397%**. **Loyalty treated as optional** (points awarded asynchronously; failure does not block the order): 0.9999 × 0.9995 × 0.995 × 0.9995 = **0.99391**, i.e. **99.391%**. Difference = **0.994 percentage points** = 0.00994 × 43,200 ≈ **429 minutes ≈ 7 h 9 min** per 30 days. |

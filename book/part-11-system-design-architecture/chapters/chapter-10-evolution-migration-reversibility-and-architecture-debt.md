@@ -234,10 +234,12 @@ Fulfilment becomes a separate unit **and** owns its own store.
 | Failure mode | A: enforcement bypassed. B: version skew during the promotion. C: the opening story — an unbounded intermediate with unowned debt and unmeasured drift. |
 | Evidence needed | The consumer enumeration; a store-comparison mechanism built *before* any dual-write; the co-change read from Chapter 5. |
 | Limitation | The operational cost of a second store cannot be established before operating one. |
-| Decision | Not made here. A is a prerequisite for both B and C and is symmetric-reversible, so it can proceed on its own merits while the enumeration is completed. The B-versus-C question should not be answered before the enumeration exists, because C's compatibility condition is currently unsatisfiable. |
+| Decision | **Option A is authorized to proceed now**, on its own merits: it is symmetric-reversible, it delivers a testability improvement independently of any later separation, and nothing about it forecloses B or C. **Option C is rejected for this cycle** — not on its architectural merits, which are the strongest of the three for the shared-store problem, but because its stage-6 compatibility condition cannot currently be satisfied and Atlas has a documented failure to complete exactly this migration shape. It may be reconsidered once the enumeration exists and a second team is funded. **Option B remains open**, pending the enumeration. |
 | Owner | Order-domain owner; platform owner for a second store; delivery owner for the promotion constraint; Part XII territory for any ownership transfer. |
 | Residual risk | Unenumerated consumers remain a risk under every option, and are the specific mechanism by which the opening story happened. |
 | Revision trigger | Enumeration complete; comparison mechanism built; a second team available; promotion window closed. |
+
+This record makes three different kinds of decision, and the difference matters. One option is **authorized** because it is cheap, reversible, and independently valuable. One is **rejected for this cycle** on grounds that are explicitly circumstantial rather than architectural — recording *why* it was rejected, and what would revive it, is what keeps a rejection from hardening into permanent received wisdom. One is **held open** pending a specific piece of evidence with a named owner. A record in which every option is deferred is usually a record that has avoided the work; a record in which one option simply wins is usually one that has skipped the constraints.
 
 ## The Evolution, Migration, and Reversibility Strategy
 
