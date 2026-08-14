@@ -10,7 +10,7 @@ M2 — Handbook Development
 
 ## Branch
 
-`main`
+`feature/part-11-system-design-architecture`
 
 ---
 
@@ -31,24 +31,25 @@ M2 — Handbook Development
 
 ## Active Scope
 
-Part X — Performance & Security Engineering release administration is complete. Post-v0.13.0 reconciliation is active; separately authorized Part XI preparation may follow, but Part XI has not started.
+Part XI — System Design & Architecture curriculum architecture is prepared; its independent architecture review is complete and the resulting corrections have been applied and closed.
 
-- **v0.13.0 — Performance & Security Engineering Complete** is the latest stable release. Its release lifecycle is complete: `release/v0.13.0` was merged to `main`, annotated tag `v0.13.0` was created, and the GitHub Release was published on 2026-08-12.
-- The Part X lifecycle included the **91/100** independent architecture review, **99/100** focused architecture closure, Accelerated Pass 1, Checkpoints A and B, **93/100** consolidated independent manuscript review, P1 correction with focused closure, and **97/100** Final Part X Quality Gate. P0/P1/P2 findings remain none; non-blocking Gunther bibliographic refinement remains the only P3. Controlled manuscript baseline `3f7391b5fd939a5dd973d25386811031f3448180` is preserved, and all Chapters 1–12 remain **Draft**.
-- Atlas Commerce is the synthetic teaching environment. The completed manuscript uses bounded storefront, account, checkout, payment, API, queue, cache, database, and dependency scenarios without re-teaching Part VIII observability, Part IX AI evaluation, delivery implementation, or enterprise security governance.
-- Planned standalone practical assets are classified as **recommended Pass 2 enrichment**: the Atlas Commerce Performance & Security Simulator; performance, workload-modelling, threat-modelling/security-evidence, and regression/capstone labs; conceptual diagrams; synthetic datasets; executable performance examples; and safe security-testing examples. These assets are deferred and non-blocking unless their approved classification changes.
-- No Part X companion implementation, laboratory, diagram, dataset, simulator, case-study file, performance script, security tool, website asset, CI/CD configuration, or infrastructure has been created.
-- **v0.14.0 — System Design & Architecture Complete** remains planned. Part XI — System Design & Architecture has not started.
+- **v0.13.0 — Performance & Security Engineering Complete** is the latest stable release. Its lifecycle is complete: `release/v0.13.0` was merged to `main`, annotated tag `v0.13.0` was created, and the GitHub Release was published on 2026-08-12. Its Final Quality Gate remains **97/100**; Chapters 1–12 remain **Draft** under manuscript-status governance, and the non-blocking Gunther bibliographic refinement remains its only P3.
+- The Part XI architecture defines a 12-chapter, evidence-led System Design & Architecture curriculum for experienced QA Engineers progressing to Quality Engineers. It uses the fictional Atlas Commerce teaching baseline, a clearly labelled original MSQE Architecture Decision Reasoning Model, explicit Part III–XII boundaries, cumulative professional artefacts, an architecture-decision capstone, authoritative-source strategy, and recommended Pass 2 classification.
+- The independent Part XI curriculum-architecture review scored **97/100** with verdict **B — targeted architecture corrections required before Pass 1**. It recorded no P0, one P1 (ISO/IEC 25010:2023 terminology accuracy), two P2 refinements (architecture versus architecture description under ISO/IEC/IEEE 42010:2022; Chapter 6 quality-scenario anatomy), and one P3 (source-class label). The 12-chapter progression, QA → QE progression, Atlas baseline, capstone, source strategy, accelerated workflow, and cross-part boundaries were accepted in principle; no redesign was required. This score is an architecture-review result, **not** a Final Part XI Quality Gate.
+- All four corrections were applied to `book/part-11-system-design-architecture/README.md` on 2026-08-14 and confirmed by a focused closure review with no remaining P0, P1, or P2 finding. The architecture is ready for accelerated Pass 1; Pass 1 has **not** been authorized or started.
+- No Part XI manuscript chapter exists. No Part XI laboratory, diagram, ADR example, companion implementation, simulator, dataset, case-study file, website asset, CI/CD configuration, or infrastructure has been created; every proposed standalone asset remains recommended Pass 2 enrichment.
+- **v0.14.0 — System Design & Architecture Complete** remains planned and unreleased. Part XII has not started.
 
 ---
 
 ## Next Authorized Activity
 
-- Commit and push the validated post-v0.13.0 reconciliation metadata.
-- Do not begin Part XI, Pass 2, or any Part X practical asset without separate authorization.
+- Obtain authorization to begin accelerated Pass 1 Batch A: draft Part XI Chapters 1–4 to Checkpoint A.
+- Do not begin Part XI practical assets, Part XII, or release administration without separate authorization.
+- Do not create serial per-chapter review loops; only P0/P1 findings interrupt accelerated drafting.
 
 ---
 
 ## Outcome
 
-Part X is released as **v0.13.0 — Performance & Security Engineering Complete**. Its lifecycle included the **91/100** architecture review, **99/100** focused architecture closure, **93/100** independent manuscript review, P1 correction with focused closure, and **97/100** Final Quality Gate. P0/P1/P2 findings remain none; non-blocking Gunther bibliographic refinement remains the only P3. Controlled manuscript baseline `3f7391b5fd939a5dd973d25386811031f3448180` is preserved. All 12 engineering-first, tool-neutral, evidence-led chapters remain **Draft**; practical assets remain deferred to Pass 2; **v0.14.0** remains planned; and Part XI has not started. The next authorized activity is to commit and push validated post-v0.13.0 reconciliation metadata.
+The post-v0.13.0 reconciliation is complete. The Part XI curriculum architecture has been independently reviewed at **97/100**, and its P1, P2, and P3 corrections are applied and closed by a focused closure review; the architecture is ready for accelerated Pass 1 but is not a drafted manuscript. The latest stable release remains **v0.13.0 — Performance & Security Engineering Complete**. **v0.14.0 — System Design & Architecture Complete** remains planned, no Part XI chapter or practical asset exists, and Part XII has not started. The next authorized activity is authorization of accelerated Pass 1 Batch A (Chapters 1–4 to Checkpoint A).

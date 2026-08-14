@@ -18,7 +18,7 @@
 
 📍 **Planned Next Release:** v0.14.0 – System Design & Architecture Complete
 
-🧭 **Current Handbook Work:** Part X — Performance & Security Engineering released as v0.13.0 after its **97/100** Final Quality Gate; P0/P1/P2 findings are none, the only P3 is non-blocking Gunther bibliographic refinement, controlled manuscript baseline `3f7391b5fd939a5dd973d25386811031f3448180` is preserved, all Chapters 1–12 remain Draft under manuscript-status governance, and Pass 2 practical assets remain deferred. Part XI — System Design & Architecture has not started; v0.14.0 remains planned.
+🧭 **Current Handbook Work:** Part XI — System Design & Architecture curriculum architecture is prepared and independently reviewed at **97/100**, with its targeted P1/P2/P3 corrections applied and closed. It defines a 12-chapter, evidence-led QA → QE progression using the fictional Atlas Commerce teaching baseline; no Part XI manuscript, practical asset, or release work has started. v0.14.0 remains planned.
 
 </p>
 
@@ -73,7 +73,8 @@ The project follows an incremental release strategy, with each release represent
 - Part VII — Cloud & DevOps released as v0.10.0; Final Quality Gate passed at **97/100**
 - Part VIII — Observability & Reliability Engineering released as v0.11.0 after its **96/100** Final Quality Gate; Chapters 1–11 remain Draft under manuscript-status governance, and Pass 2 enrichment remains deferred
 - Part IX — AI Quality Engineering released as v0.12.0; its **97/100** Final Quality Gate passed with no P0, P1, P2, or P3 manuscript findings, Chapters 1–12 remain Draft, and Pass 2 practical assets remain deferred
-- Part X — Performance & Security Engineering released as v0.13.0 after its **97/100** Final Quality Gate; P0/P1/P2 findings are none, the only P3 is non-blocking Gunther bibliographic refinement, controlled manuscript baseline `3f7391b5fd939a5dd973d25386811031f3448180` is preserved, Chapters 1–12 remain Draft, Pass 2 practical assets remain deferred, and Part XI has not started
+- Part X — Performance & Security Engineering released as v0.13.0 after its **97/100** Final Quality Gate; P0/P1/P2 findings are none, the only P3 is non-blocking Gunther bibliographic refinement, controlled manuscript baseline `3f7391b5fd939a5dd973d25386811031f3448180` is preserved, and Chapters 1–12 remain Draft
+- Part XI — System Design & Architecture curriculum architecture is prepared and independently reviewed at **97/100**, with its targeted P1/P2/P3 architecture corrections applied and closed; it defines an evidence-led 12-chapter QA → QE progression, while no Part XI chapter manuscript, laboratory, diagram, companion implementation, simulator, dataset, website asset, or release work has started
 
 ---
 
@@ -271,7 +272,8 @@ Current focus:
 - Part I through Part VII released as v0.4.0 through v0.10.0
 - Part VIII — Observability & Reliability Engineering released as v0.11.0 after its **96/100** Final Quality Gate; Chapters 1–11 remain Draft under manuscript-status governance, and Pass 2 enrichment remains deferred
 - Part IX — AI Quality Engineering released as v0.12.0; its **97/100** Final Quality Gate passed with no P0, P1, P2, or P3 manuscript findings, Chapters 1–12 remain Draft, and Pass 2 practical assets remain deferred
-- Part X — Performance & Security Engineering released as v0.13.0 after its **97/100** Final Quality Gate; P0/P1/P2 findings are none, the only P3 is non-blocking Gunther bibliographic refinement, controlled manuscript baseline `3f7391b5fd939a5dd973d25386811031f3448180` is preserved, Chapters 1–12 remain Draft, Pass 2 practical assets remain deferred, and Part XI has not started
+- Part X — Performance & Security Engineering released as v0.13.0 after its **97/100** Final Quality Gate; P0/P1/P2 findings are none, the only P3 is non-blocking Gunther bibliographic refinement, controlled manuscript baseline `3f7391b5fd939a5dd973d25386811031f3448180` is preserved, and Chapters 1–12 remain Draft
+- Part XI — System Design & Architecture curriculum architecture is prepared and independently reviewed at **97/100**, with its targeted P1/P2/P3 corrections applied and closed; no Part XI manuscript or Pass 2 asset exists, v0.14.0 remains planned, and Part XII has not started
 
 ## 🔜 M3 — Digital Learning Platform
 
@@ -318,7 +320,7 @@ Rather than documenting individual tools, this project seeks to define the endur
 | Current Milestone | **M2 – Handbook Development** |
 | Latest Release | **v0.13.0 – Performance & Security Engineering Complete** |
 | Planned Next Release | **v0.14.0 – System Design & Architecture Complete** |
-| Current Handbook Work | **Part X — Performance & Security Engineering** released as v0.13.0 after its **97/100** Final Quality Gate; P0/P1/P2 findings are none, the only P3 is non-blocking Gunther bibliographic refinement, controlled manuscript baseline `3f7391b5fd939a5dd973d25386811031f3448180` is preserved, Chapters 1–12 remain Draft, and Pass 2 enrichment remains deferred. **Part XI — System Design & Architecture** has not started; v0.14.0 remains planned. |
+| Current Handbook Work | **Part XI — System Design & Architecture** curriculum architecture is prepared and independently reviewed at **97/100**, with its targeted P1/P2/P3 corrections applied and closed. It defines an evidence-led 12-chapter QA → QE progression using the fictional Atlas Commerce teaching baseline. No Part XI manuscript, companion implementation, laboratory, diagram, simulator, dataset, website asset, or release work exists; **v0.14.0** remains planned and Part XII has not started. |
 | Handbook | 🚧 In Development |
 | Practical Labs | 🚧 Planned |
 | Documentation Website | 🚧 Planned |
