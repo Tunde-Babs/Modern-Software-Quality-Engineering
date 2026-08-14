@@ -499,3 +499,19 @@ Part VII is complete at manuscript level and enters release administration for p
 **Status:** Release administration active
 
 **Last Updated:** 2026-08-14
+
+---
+
+## Release Candidate v0.14.0 — System Design & Architecture Complete
+
+- Completed feature-to-`develop` integration via pull request #35 and created `release/v0.14.0` from the merged state for consolidated Release Candidate validation. That integration also carried the three v0.13.0 release-line commits (`e4fb016`, `3fee529`, `0d78303`) into `develop`, closing a pre-existing post-v0.13.0 reconciliation gap.
+- The Final Part XI Quality Gate remains **96/100** with P0/P1/P2 findings: none; six residual P3 items remain non-blocking. Controlled manuscript baseline `7067ebb54cba199a9215363188171d2e4966ed15` is unchanged, and all 12 chapters remain Draft under manuscript-status governance.
+- Release Candidate validation re-verified chapter freeze against the baseline blob-for-blob, release scope, canonical release identity, governance consistency, and merge readiness to `main`; targeted technical spot checks and numerical recalculation were repeated rather than assumed.
+- The residual non-blocking source-verification control is carried unchanged: ISO/IEC 25010:2023 and ISO/IEC/IEEE 42010:2022 remain paywalled, so their characteristic and subcharacteristic placements rest on consistent secondary references and the repository's already-gated Part III precedent rather than on a purchased copy.
+- The Atlas Commerce Architecture Decision Simulator; boundary/dependency, asynchronous/consistency, trade-off/evidence, and evolution/capstone laboratories; conceptual diagrams; ADR examples and worksheets; executable fitness-function and dependency-analysis examples; and case-study files, datasets, and migration simulations remain deferred recommended Pass 2 enrichment.
+
+**Outcome:** v0.14.0 is the current unreleased Release Candidate. Release PR review to `main`, approval and merge, annotated tag creation, GitHub Release publication, and post-release reconciliation remain pending. v0.13.0 remains the latest stable release, and Part XII — Engineering Leadership & Career Growth has not started.
+
+**Status:** Release Candidate validation active
+
+**Last Updated:** 2026-08-14
