@@ -65,9 +65,9 @@ M2 — Handbook Development
 
 ## Next Authorized Activity
 
-- **Conduct one focused independent manuscript-closure review** verifying P2-1 is genuinely closed and no regression was introduced. This is a separate task; **recording the correction does not itself close the finding**, and the closure review has not started. The Final Quality Gate follows closure, **not** this correction.
+- **Conduct the independent Final Part XII Quality Gate** as a separate read-only task. This requires separate authorization; **recording the closure review does not itself authorize the Final Gate**, and the Final Gate has not started. A controlled manuscript baseline and any release administration follow the Final Gate, **not** this record.
 - Do not start Part XII practical assets, Pass 2 enrichment, v0.15.0 release administration, or Part XIII without separate authorization. Do not create Part XI Pass 2 assets automatically.
-- Part XII is **not** complete. No consolidated manuscript review, no Final Part XII Quality Gate, and no manuscript baseline exists, and nothing in Part XII is release-ready.
+- Part XII is **not** complete. The **consolidated independent manuscript review is complete at 97/100, verdict B**; the targeted corrections are complete and committed at `df6c34a`; and the **focused manuscript-closure review is complete at 95.5/100**, confirming **P2-1 CLOSED** with **P0 = 0, P1 = 0, and P2 = 0 open**. The **Final Part XII Quality Gate has NOT been run**, **no manuscript baseline has been established**, **v0.15.0 remains planned and unreleased**, **Part XIII has not started**, and nothing in Part XII is release-ready.
 - Part XI controlled manuscript baseline: `7067ebb54cba199a9215363188171d2e4966ed15`.
 - The v0.14.0 workflow is complete: the release PR was merged to `main`, annotated tag `v0.14.0` was created, and the GitHub Release was published on 2026-08-14. Part XI's release lifecycle is closed.
 
