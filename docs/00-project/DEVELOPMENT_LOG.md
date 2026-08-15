@@ -563,3 +563,21 @@ Part VII is complete at manuscript level and enters release administration for p
 **Status:** Release Candidate validated; promotion pending
 
 **Last Updated:** 2026-08-15
+
+---
+
+## Release v0.15.0 — Engineering Leadership & Career Growth Complete
+
+- Closed the Part XII release lifecycle after its **97/100 (verdict A)** Final Quality Gate; P0 and P1 findings remain none, no release-blocking P2 remains, and six residual P3 items remain non-blocking.
+- Merged the validated `release/v0.15.0` branch to `main` via pull request #38, created annotated tag `v0.15.0` at `c599811d94ca87f9b3994ae213a34593d4733cc5`, and published the GitHub Release on 2026-08-15. Post-release reconciliation is complete: `origin/main` and `origin/develop` both resolve to `c599811d94ca87f9b3994ae213a34593d4733cc5` with zero divergence in either direction.
+- Controlled manuscript baseline `839391e136ac00c757dded170ba8ed94a58ff41d` is preserved and reachable from `main`; all twelve Part XII chapter blobs remain byte-identical to it, and all twelve chapters remain `Status: Draft` under manuscript-status governance. The release does not change any chapter's status.
+- Preserved the five distinct scored review events — curriculum-architecture review **83/100 (verdict B)**, architecture-closure review **97/100 (verdict A)**, consolidated manuscript review **97/100 (verdict B)**, manuscript-closure review **95.5/100 (verdict A)**, and Final Quality Gate **97/100 (verdict A)**. The three 97/100 results are unrelated reviews measuring different things at different lifecycle stages and must not be collapsed.
+- The six residual non-blocking P3 observations are carried forward unchanged and are **not** closed: AI contribution modes not enumerated; Option C elaboration; opener clusters; Chapter 12 table density; the zero-footnote position in Chapters 11–12; and Chapter 5 density slightly above guidance.
+- Source-verification controls are carried forward honestly and unchanged: Parnas & Clements, Edmondson, Kaner & Bond, Conway, and DORA are primary-verified, with DORA re-verified as current at Release Candidate time and remaining time-sensitive; Westrum, SPACE, Collins/Brown/Newman, and Rogers remain metadata- or abstract-verified with claims narrowed accordingly. Part XI's ISO/IEC 25010:2023 and ISO/IEC/IEEE 42010:2022 purchased-copy limitation remains open and unrelated to Part XII.
+- The Atlas Commerce Organisational Decision Simulator; evidence-translation, ownership-and-escalation, culture-claim and measurement-hazard, and practice-change laboratories; ownership, escalation, and structure diagrams; worked artefact examples and blank templates; and synthetic organisational datasets remain deferred recommended Pass 2 enrichment.
+
+**Outcome:** Part XII is released and **v0.15.0 is the latest stable release**. All twelve handbook parts are now complete and released. `v0.16.0 — First Edition Review` remains **planned**; no First Edition Review planning, finding, scorecard, branch, chapter change, or release metadata is represented as started, and Part XIII has not started. Pass 2 enrichment remains deferred.
+
+**Status:** Released
+
+**Last Updated:** 2026-08-15
