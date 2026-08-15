@@ -531,3 +531,20 @@ Part VII is complete at manuscript level and enters release administration for p
 **Status:** Released
 
 **Last Updated:** 2026-08-14
+
+---
+
+## Part XII — Engineering Leadership & Career Growth — Manuscript Baseline and v0.15.0 Release Preparation
+
+- Completed the Part XII lifecycle through five distinct scored review events: independent curriculum-architecture review **83/100 (verdict B)** with corrections C1–C13 closed; focused architecture-closure review **97/100 (verdict A)**; Accelerated Pass 1 Batches A–C with Checkpoints A, B, and the Batch C integration checkpoint; consolidated independent manuscript review **97/100 (verdict B)** recording one P2; focused manuscript-closure review **95.5/100 (verdict A)** closing that P2; and the **Final Part XII Quality Gate at 97/100 (verdict A)**. The three 97/100 results are unrelated reviews and must not be collapsed.
+- **Final Gate result:** P0 = 0, P1 = 0, 0 release-blocking P2, six non-blocking P3. Thirty numerical chains were independently discovered and recomputed with exact rational arithmetic, every displayed intermediate chain tested as written, and all thirty passed. All 73 capstone evidence identifiers validated; authority discipline returned zero hits; career-claim discipline returned zero deterministic claims; no composite scoring exists.
+- **Established the controlled Part XII manuscript baseline `839391e136ac00c757dded170ba8ed94a58ff41d`** — twelve chapters, all `Status: Draft`, 66,914 raw and 51,923 prose words — recorded by governance commit `f92df59538cabc71a69ef6c50c1fcee134a3ac86`. All twelve chapter blobs are frozen and verified identical to the baseline.
+- **Closed the Final Gate's non-release-blocking governance P2** by recording the focused manuscript-closure review as a distinct review event across the authorized governance files and replacing stale current-state pointers with point-in-time records.
+- **Prepared v0.15.0 release-administration metadata**: the CHANGELOG carries a planned, unreleased `v0.15.0 — Engineering Leadership & Career Growth Complete` entry, and governance records the Final Gate, the baseline, the six non-blocking P3 items, the open source controls, and deferred Pass 2 enrichment.
+- Source-verification controls are carried forward honestly: Parnas & Clements, Edmondson, Kaner & Bond, Conway, and DORA are primary-verified, with DORA re-verified as current at Final Gate time and remaining time-sensitive; Westrum, SPACE, Collins/Brown/Newman, and Rogers remain metadata- or abstract-verified with claims narrowed accordingly. Part XI's ISO purchased-copy limitation remains open and unrelated to Part XII.
+
+**Outcome:** The Part XII manuscript is complete, gated, and frozen at a controlled baseline, and v0.15.0 release-administration metadata is prepared. **No release workflow step has been executed** — no feature-to-`develop` merge, no `release/v0.15.0` branch, no `main` promotion, no `v0.15.0` tag, and no GitHub Release. Pass 2 enrichment remains deferred and Part XIII has not started.
+
+**Status:** Manuscript baseline established; release administration prepared, not executed
+
+**Last Updated:** 2026-08-15
