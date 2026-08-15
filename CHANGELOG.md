@@ -4,7 +4,7 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
-### Release Candidate — v0.15.0 — Engineering Leadership & Career Growth Complete
+## [0.15.0] — Engineering Leadership & Career Growth Complete — 2026-08-15
 
 #### Added
 
@@ -21,7 +21,7 @@ All notable changes to this project will be documented in this file.
 
 - Final Part XII Quality Gate: **97/100**, verdict A; P0, P1, and release-blocking P2 findings: none. Six residual P3 items are non-blocking.
 - Preceded by an independent curriculum-architecture review at **83/100** with corrections C1–C13 closed, a focused architecture-closure review at **97/100**, a consolidated independent manuscript review at **97/100**, and a focused manuscript-closure review at **95.5/100** that closed the single P2. These are five distinct review events; the three 97/100 results are unrelated reviews measuring different things at different lifecycle stages.
-- All 12 chapters remain **Draft** under manuscript-status governance. Controlled manuscript baseline `839391e136ac00c757dded170ba8ed94a58ff41d` is established, comprising 66,914 raw and 51,923 prose words. Thirty numerical chains were independently discovered and recomputed with exact rational arithmetic, every displayed intermediate chain tested as written, and all thirty passed; all 73 capstone evidence identifiers validated with no duplicates or undefined references; authority discipline returned zero hits across the manuscript; career-claim discipline returned zero deterministic claims; no composite scoring exists; Atlas Commerce continuity, cross-part boundaries, Markdown structure, tables, footnotes, local links, and repository-scope validation passed.
+- All 12 chapters remain **Draft** under manuscript-status governance. Controlled manuscript baseline `839391e136ac00c757dded170ba8ed94a58ff41d` is established, comprising 66,914 raw and 51,923 prose words; the release branch was merged to `main`, annotated tag `v0.15.0` was created, and the GitHub Release was published on 2026-08-15. Thirty numerical chains were independently discovered and recomputed with exact rational arithmetic, every displayed intermediate chain tested as written, and all thirty passed; all 73 capstone evidence identifiers validated with no duplicates or undefined references; authority discipline returned zero hits across the manuscript; career-claim discipline returned zero deterministic claims; no composite scoring exists; Atlas Commerce continuity, cross-part boundaries, Markdown structure, tables, footnotes, local links, and repository-scope validation passed.
 - Source-verification controls are carried forward honestly. Parnas & Clements, Edmondson, Kaner & Bond, Conway, and DORA were verified against primary text; DORA was re-verified as current at Final Gate time and remains time-sensitive. Westrum (abstract only), SPACE, Collins/Brown/Newman, and Rogers remain metadata- or abstract-verified, with their manuscript claims narrowed accordingly. Part XI's ISO/IEC 25010:2023 and ISO/IEC/IEEE 42010:2022 purchased-copy limitation remains open and is unrelated to Part XII.
 
 #### Deferred Pass 2 Enrichment
