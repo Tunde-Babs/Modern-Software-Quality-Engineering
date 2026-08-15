@@ -4,6 +4,30 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+### Release Candidate — v0.15.0 — Engineering Leadership & Career Growth Complete
+
+#### Added
+
+- Completed Part XII — Engineering Leadership & Career Growth, Chapters 1–12, establishing engineering leadership as a Quality Engineering discipline: leadership as influence exercised without claiming authority, with influence, recommendation, decision, authority, and accountability kept distinct; communicating quality evidence to decision owners with simplification separated from distortion; durable written records, organisational memory, and the `RECORD ≠ REALITY` distinction; proportionate disagreement, escalation, and recording an unheeded concern; decision rights, ownership of components, facts, signals, and policies, governance operating models, and accountability; quality-culture claims bounded by evidence class and falsifiability; organisation structure analysed for quality consequences rather than prescribed; mentoring as reasoning transfer with explicit power-asymmetry controls; measurement validity, the measurement-to-decision chain, and individual-metric hazards; practice change with adoption, reversibility, and stop conditions; and career growth as evidence-led capability rather than title accumulation.
+- Added the **Quality Leadership and Career Strategy Portfolio** capstone and its **Quality Leadership Decision Brief**, built on a 73-item identified synthetic evidence packet spanning nineteen evidence categories with deliberately conflicting stakeholder positions, three defensible options, explicit evidence gaps, and seven fields left for learner synthesis.
+- Added the Part IX cross-part accountability handoff: an AI capability changes the evidence, uncertainty, system boundary, and specialist input required for a quality decision, but does not change the accountable owner. Part IX retains AI evaluation, model quality, safety, fairness, privacy, and agentic evaluation; Part XII retains organisational accountability.
+
+#### Changed
+
+- Established the Part XII QA → QE → engineering-leadership progression from producing credible quality evidence, to bounding what that evidence can and cannot establish, to improving how an organisation understands, decides, records, and learns from it — while preserving accountable decision ownership and without implying that quality engineers progress into people management.
+- Recorded the MQE-BOK Domain 12 mapping for all eight topics, scoping Engineering Management to the Quality Engineering consequences of management and organisational decisions rather than people-management practice, and documenting the MQE-BOK/BOOK_BLUEPRINT topic-list divergence for the First Edition Review.
+
+#### Validation
+
+- Final Part XII Quality Gate: **97/100**, verdict A; P0, P1, and release-blocking P2 findings: none. Six residual P3 items are non-blocking.
+- Preceded by an independent curriculum-architecture review at **83/100** with corrections C1–C13 closed, a focused architecture-closure review at **97/100**, a consolidated independent manuscript review at **97/100**, and a focused manuscript-closure review at **95.5/100** that closed the single P2. These are five distinct review events; the three 97/100 results are unrelated reviews measuring different things at different lifecycle stages.
+- All 12 chapters remain **Draft** under manuscript-status governance. Controlled manuscript baseline `839391e136ac00c757dded170ba8ed94a58ff41d` is established, comprising 66,914 raw and 51,923 prose words. Thirty numerical chains were independently discovered and recomputed with exact rational arithmetic, every displayed intermediate chain tested as written, and all thirty passed; all 73 capstone evidence identifiers validated with no duplicates or undefined references; authority discipline returned zero hits across the manuscript; career-claim discipline returned zero deterministic claims; no composite scoring exists; Atlas Commerce continuity, cross-part boundaries, Markdown structure, tables, footnotes, local links, and repository-scope validation passed.
+- Source-verification controls are carried forward honestly. Parnas & Clements, Edmondson, Kaner & Bond, Conway, and DORA were verified against primary text; DORA was re-verified as current at Final Gate time and remains time-sensitive. Westrum (abstract only), SPACE, Collins/Brown/Newman, and Rogers remain metadata- or abstract-verified, with their manuscript claims narrowed accordingly. Part XI's ISO/IEC 25010:2023 and ISO/IEC/IEEE 42010:2022 purchased-copy limitation remains open and is unrelated to Part XII.
+
+#### Deferred Pass 2 Enrichment
+
+- The Atlas Commerce Organisational Decision Simulator; evidence-translation, ownership-and-escalation, culture-claim and measurement-hazard, and practice-change laboratories; ownership, escalation, and structure diagrams; worked artefact examples and blank templates; and synthetic organisational datasets or standalone case-study files remain recommended Pass 2 enrichment under Quality Gates v1.1. No standalone practical asset is required for the Part XII manuscript release, and none is represented as delivered.
+
 ## [0.14.0] — System Design & Architecture Complete — 2026-08-14
 
 #### Added
