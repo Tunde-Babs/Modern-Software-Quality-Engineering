@@ -5,15 +5,17 @@
 | **Project** | Modern Software Quality Engineering (MSQE) |
 | **Milestone** | v0.16.0 — First Edition Review |
 | **Document type** | Review Architecture / Method |
-| **Document status** | Architecture Candidate — Awaiting Focused Independent Re-Acceptance after Phase D3 |
+| **Document status** | **Architecture Accepted — Phase C4 Independent Re-Acceptance Complete** (95.0/100, verdict A, Architecture Blockers = 0) |
 | **Latest stable release** | v0.15.0 — Engineering Leadership & Career Growth Complete |
 | **Review scope** | Parts I–XII — 137 chapters — 651,161 words |
-| **Phase** | Phase D3 — Quantitative-Census Architecture Corrections |
+| **Phase** | Phase C4 complete — architecture accepted; **Phase E Governance Remediation Gate is the next separately authorised activity and has not started** |
 | **Owner** | Tunde Ajala |
 
 > This is a **governance artefact**, not a manuscript chapter. It deliberately does not carry a chapter-style status such as `Draft` or `Approved`.
 
-> **This plan has not been independently accepted.** Phase C3 returned **89.0/100, verdict B, with three Architecture Blockers**, all confined to the quantitative census; Phase D3 has applied targeted corrections and **cannot close its own work**. The plan awaits a further focused independent re-acceptance. **No First Edition Review execution has begun. Phase E Governance Remediation has not run.** This document contains method only — no manuscript findings, no verification data, no dispositions.
+> **This plan has been independently accepted.** Phase C4 — Final Focused Quantitative Architecture Re-Acceptance — returned **95.0/100, verdict A, Architecture Blockers = 0**, having implemented the classifier fresh from the committed §6.1/§6.2 text and reproduced **all 36 census figures exactly**. Six non-blocking P3 observations are carried forward in §6.8.
+>
+> **Acceptance is of the review architecture only.** It does **not** authorise manuscript-review execution, does **not** imply release readiness, and does **not** mean the First Edition Review is complete. **No First Edition Review execution has begun. Phase E Governance Remediation has not run.** This document contains method only — no manuscript findings, no verification data, no dispositions.
 
 ---
 
@@ -561,6 +563,23 @@ Restated on the corrected census. **Density is no longer offered as the justific
 >
 > **Every Part contains Tier-1 quantitative claims** — the minimum is Part IV at 2, and no Part has zero. **Every confirmed quantitative claim in every Part receives census verification.** No Part is exempt on density grounds.
 
+### 6.8 Carried-forward quantitative observations (Phase C4)
+
+Phase C4 accepted the architecture with **zero Architecture Blockers** and recorded six residual observations. **All six are P3, non-blocking, and carried forward.** None reopens the architecture, and **none is repaired here** — repairing them would constitute a further correction event requiring another independent acceptance review.
+
+| ID | Observation | Measured impact |
+| --- | --- | --- |
+| **C4-1** | The `dec` class admits **15 millisecond-timestamp fragments** (`10:14:02.118` → `02.118`) and **11 version strings** (`v4.0a` → `4.0`) | **26 of 1,213 = 2.1%** contamination. Density ranks 1–6 unchanged; L4/L3 moves 1.60× → 1.68×, *strengthening* the §6.6 conclusion |
+| **C4-2** | Spelled-out percentages (`8 percent`, `4 percentage points`) have no Tier-1 class | 18 observed; **15 handled** (4 Tier-1, 11 Tier-2 triage); **3 invisible** = **0.25%**. No rank, batch or allocation effect |
+| **C4-3** | E10's time-of-day exclusion is defeated by trailing punctuation (`08:42.`, `10:02,`) | **40 clock forms** survive PASS 0. **Zero contaminate the ratio class** (removed in D3); 15 contribute to C4-1 through `dec` |
+| **C4-4** | §6.4's statement *"no false positive was found"* in the sampled classes is no longer literally correct | Documentation accuracy only; C4-1 supplies the corrected figure |
+| **C4-5** | §6.1's E12 precision table measures **pre-protection** candidates. C4's **post-protection** measurement is ±25 → **95.8%**, ±50 → 77.1%, ±75 → 70.2%, ±100 → 66.7% | The selected **±25 window remains correct** and is the best-supported choice under either basis |
+| **C4-6** | D3 counted **132** colon forms (post-E9); C4 counted **237** (pre-E9) | Different counting bases. **Both independently support zero genuine colon ratios** |
+
+> **These observations are below the threshold for changing the active review-planning census (§6.4).** C4 verified that adjusting for all of them leaves every §6.6 conclusion intact: Part IX remains the densest Part, L4 remains the densest batch, L1/L2 remain materially sparser, and the L3 resourcing justification remains grounded in evidence maturity rather than density.
+>
+> **Suggested disposition for a future maintenance pass, not now:** extend E10 to tolerate trailing punctuation and millisecond precision; exclude version strings from `dec`; consider a spelled-out-percentage class; correct the two documentation statements in §6.1 and §6.4.
+
 ---
 
 ## 7. Severity, Blockers and Scoring
@@ -924,11 +943,11 @@ Immutable record. Each entry is a distinct event.
 | **D.5** | **Architecture Materialisation** | This document created — resolves ARC-D-1 |
 | **C2** | **Focused Independent Architecture Re-Acceptance** | **Score 89.5/100 · Verdict B · two Architecture Blockers.** **ARC-P1-2 CLOSED · ARC-P2-2 CLOSED · ARC-D-1 CLOSED · ARC-P1-1 PARTIALLY CLOSED.** Open: **ARC-C2-1** (Level 16 orphaned from the execution model, P1/class A) and **ARC-C2-2** (E11 suppressing 19–21 genuine Tier-1 claims, P2/class A), plus ARC-C2-6 (P2) and ARC-C2-3, -4, -5, -7, -8 (P3) |
 | **D2** | **Targeted Post-Re-Acceptance Corrections** | Corrections applied for ARC-C2-1, -2, -3, -4, -5, -6, -7 and -8: L16 routed through T4 with a transversal-completion rule; §6.1 precedence pipeline added and the census recomputed (Tier-1 1,301 → **1,322**); Level 12 bound to the §12.2 acceptance record; cross-references, level-count terminology, tier ordering, structural-scan evidence and automated-tool independence all specified. **D2 is a correction event and does not close its own findings** |
-
 | **C3** | **Focused Independent Re-Acceptance** | **Score 89.0/100 · Verdict B · three Architecture Blockers, all in the quantitative census.** **CLOSED:** ARC-C2-1, ARC-C2-3, ARC-C2-4, ARC-C2-6, ARC-C2-7, ARC-C2-8. **PARTIALLY CLOSED:** ARC-C2-2. **REOPENED:** ARC-C2-5, ARC-P1-1. New: **ARC-C3-1** (unit set not reproducible; 24 claims uncounted), **ARC-C3-2** (`ratio` class contaminated by 144 clock times, invalidating a stated conclusion), **ARC-C3-3** (code-fence Tier-2 contradiction), ARC-C3-4 (E12 window unspecified), ARC-C3-5 (theoretical bare-year suppression) |
 | **D3** | **Targeted Quantitative Architecture Correction** | Closed unit set of 19 evidenced forms; colon-ratio class removed and time-of-day excluded in PASS 0; code-fence contradiction resolved; E12 window fixed at **±25** on measured precision; `mult` class removed for want of evidence; every inclusion class validated for contamination as well as suppression; census recomputed to **Tier-1 1,213 / Tier-2 1,511 / code-fence 186**; the density-based justification for L3 resourcing **withdrawn and restated** on evidence-tier grounds. **D3 is a correction event and does not close its own findings** |
+| **C4** | **Final Focused Quantitative Architecture Re-Acceptance** | **Score 95.0/100 · Verdict A — ARCHITECTURE ACCEPTED · Architecture Blockers = 0.** Independent evidence: a classifier implemented **fresh from the committed §6.1/§6.2 text** reproduced **all 36 census figures exactly** — Tier-1 **1,213**, Tier-2 **1,511**, code-fence **186**, words **651,161**, all twelve Part metrics and all seven Tier-1 class totals. Full audits: `ratio` 84/84 genuine, `unit` 335/335 conforming, `perN` 16/16. **CLOSED:** ARC-C3-1, ARC-C3-2, ARC-C3-3, ARC-C3-4, **ARC-P1-1**, **ARC-C2-2**, **ARC-C2-5**. **ACCEPTED-P3:** ARC-C3-5 (zero-instance claim falsification-tested across 30+ quantity nouns). Six non-blocking P3 observations recorded in §6.8 |
 
-> **This plan is awaiting a further focused independent re-acceptance following Phase D3. The architecture is not yet approved, and Phase E remains unauthorised.**
+> **The architecture is ACCEPTED.** Architecture design and independent re-acceptance are complete. **Phase E — Governance Remediation Gate — is the next separately authorised lifecycle activity and has NOT started.** Acceptance of the architecture does not authorise manuscript-review execution and does not imply release readiness.
 
 Where a later phase changed an earlier rule, the later phase governs and only the corrected rule appears as active guidance. Superseded metrics — including the Phase D-era census — are recorded in §6.5 and must not be used operationally.
 
@@ -936,7 +955,7 @@ Where a later phase changed an earlier rule, the later phase governs and only th
 
 ## 17. Scope Boundaries of This Plan
 
-This document is method only. As of Phase D3:
+This document is method only. As of Phase C4 acceptance:
 
 - **No First Edition Review execution has begun.**
 - **Phase E Governance Remediation has not run.** No governance item has been remediated, dispositioned or closed.
