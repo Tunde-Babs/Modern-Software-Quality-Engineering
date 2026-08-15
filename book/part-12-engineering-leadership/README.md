@@ -4,7 +4,7 @@
 
 ## Curriculum Status
 
-**Part XII manuscript is COMPLETE and has PASSED its Final Quality Gate at 97/100 (verdict A). A controlled manuscript baseline is established.** Part XII is planned for **v0.15.0 — Engineering Leadership & Career Growth Complete**, which remains **planned and unreleased**. All twelve chapters exist and carry `Status: Draft` under manuscript-status governance. **Release administration has not begun**: there is no `v0.15.0` tag, no release branch, no GitHub Release, and no v0.15.0 CHANGELOG entry. No Part XII laboratory, diagram, worksheet, simulator, dataset, companion implementation, case-study file, website asset, CI/CD configuration, or infrastructure has been created.
+**Part XII manuscript is COMPLETE, has PASSED its Final Quality Gate at 97/100 (verdict A), and a controlled manuscript baseline is established. Release-administration metadata is prepared; feature → develop integration has not started.** Part XII is planned for **v0.15.0 — Engineering Leadership & Career Growth Complete**, which remains **planned and unreleased**. All twelve chapters exist and carry `Status: Draft` under manuscript-status governance. **Release administration has not begun**: there is no `v0.15.0` tag, no release branch, no GitHub Release, and no v0.15.0 CHANGELOG entry. No Part XII laboratory, diagram, worksheet, simulator, dataset, companion implementation, case-study file, website asset, CI/CD configuration, or infrastructure has been created.
 
 The architecture passed through two independent review events, targeted corrections C1–C13, and independent closure verification. **All three P1 findings and all seven P2 findings are closed**, all sixteen load-bearing strengths were preserved, and the closure review found no material generic-management drift and no composite-scoring regression.
 
@@ -767,7 +767,8 @@ Part XII may advance from architecture planning to Pass 1 only after a focused i
 - **Release state:** **v0.15.0 — Engineering Leadership & Career Growth Complete** remains planned and unreleased; no `v0.15.0` tag and no v0.15.0 CHANGELOG release entry exist. **v0.14.0 — System Design & Architecture Complete** is the latest stable release.
 - **Part XIII:** not started.
 - **Controlled manuscript baseline:** `839391e136ac00c757dded170ba8ed94a58ff41d`. This commit contains the exact manuscript reviewed by the Final Quality Gate — twelve chapters, all `Status: Draft`, 66,914 raw words. The **manuscript is frozen at this baseline**; all twelve chapter blobs are identical to their Final-Gate-reviewed state.
-- **Next authorized action:** Prepare **v0.15.0 release-administration metadata** as a separately authorized task. Release administration has **not** begun. Do not create a release branch, tag, GitHub Release, CHANGELOG release entry, Pass 2 asset, or Part XIII work automatically.
+- **Release-administration state:** metadata **prepared** — the CHANGELOG carries a **planned, unreleased** `v0.15.0` entry and governance records the Final Gate and baseline. **Nothing has been released**: no feature → develop merge, no `release/v0.15.0` branch, no `main` promotion, no `v0.15.0` tag, and no GitHub Release.
+- **Next authorized action:** Open the **feature → develop pull request** for Part XII as a separately authorized task. Do not create a release branch, tag, GitHub Release, Pass 2 asset, or Part XIII work automatically.
 
 ### Non-blocking observations carried forward
 
