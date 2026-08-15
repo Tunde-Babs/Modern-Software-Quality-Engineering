@@ -4,7 +4,7 @@
 
 ## Curriculum Status
 
-**Curriculum architecture COMPLETE and independently VERIFIED. Ready for Pass 1 authorization; Pass 1 has not started.** Part XII is planned for **v0.15.0 — Engineering Leadership & Career Growth Complete**. No Part XII chapter manuscript, laboratory, diagram, worksheet, simulator, dataset, companion implementation, case-study file, website asset, CI/CD configuration, or infrastructure has been created.
+**Curriculum architecture COMPLETE and independently VERIFIED. Accelerated Pass 1 is IN PROGRESS: Batch A is complete and Checkpoint A passed.** Part XII is planned for **v0.15.0 — Engineering Leadership & Career Growth Complete**. Chapters 1–4 exist and carry `Status: Draft`; Chapters 5–12 have not been drafted. No Part XII laboratory, diagram, worksheet, simulator, dataset, companion implementation, case-study file, website asset, CI/CD configuration, or infrastructure has been created.
 
 The architecture passed through two independent review events, targeted corrections C1–C13, and independent closure verification. **All three P1 findings and all seven P2 findings are closed**, all sixteen load-bearing strengths were preserved, and the closure review found no material generic-management drift and no composite-scoring regression.
 
@@ -747,12 +747,14 @@ Part XII may advance from architecture planning to Pass 1 only after a focused i
 - **Corrections:** All thirteen corrections **C1–C13 applied and independently verified as present and effective**.
 - **Findings after closure:** **P0 = 0.** **P1 = 0 open — all three previous P1 findings CLOSED.** **P2 = 0 open — all seven previous P2 findings CLOSED.** **P3 = 0 blocking** — four closed, one accepted/deferred, two new non-blocking observations recorded below.
 - **Regression state:** **16/16 load-bearing strengths preserved** (the composite-score prohibition was strengthened). **No material generic-management drift.** **No composite-scoring regression.**
-- **Pass 1 state:** **READY FOR PASS 1 AUTHORIZATION — Pass 1 has NOT started and is NOT authorized by this record.** Authorization is a separate task.
-- **Manuscript state:** **No Part XII chapters exist (0).** No chapter is represented as drafted, reviewed, approved, or published.
+- **Pass 1 state:** **IN PROGRESS. Batch A (Chapters 1–4) is complete and Checkpoint A passed.** Batch B (Chapters 5–10) has **not started** and requires separate authorization.
+- **Manuscript state:** **Four Part XII chapters exist**, all carrying `Status: Draft`. No chapter is represented as reviewed, approved, complete, published, or final. Chapters 5–12 do not exist.
+- **Checkpoint A result:** **Passed.** P0 = 0; P1 = 0 after correction; P2 = 0 after correction; P3 = 3 non-blocking. One arithmetic defect (a stated 78% survey response rate where 9 of 11 is ≈82%) and two anti-formulaic repetitions were found by the checkpoint and corrected before it closed. Independent recalculation covered every numerical claim in Batch A.
+- **Source-control movement:** Two sources were **upgraded from metadata-only to primary full-text verified** during Batch A — Parnas & Clements and Edmondson — each against an institutionally hosted copy rather than the publisher's version of record. **The source-verification control remains OPEN** for Westrum, Strathern, SPACE, and Collins/Brown/Newman, none of which Batch A used substantively.
 - **Practical assets:** None exist (0). No companion implementation, laboratory, diagram, worksheet, simulator, dataset, case study, website asset, CI/CD configuration, or infrastructure. All proposed standalone assets are recommended Pass 2 enrichment only; **Pass 2 has not started**.
 - **Release state:** **v0.15.0 — Engineering Leadership & Career Growth Complete** remains planned and unreleased; no `v0.15.0` tag and no v0.15.0 CHANGELOG release entry exist. **v0.14.0 — System Design & Architecture Complete** is the latest stable release.
 - **Part XIII:** not started.
-- **Next authorized action:** Authorize **Accelerated Pass 1 Batch A** (Chapters 1–4) as a separate task, ending at **Checkpoint A**. Do not begin practical assets, Pass 2 enrichment, or v0.15.0 release administration automatically.
+- **Next authorized action:** Authorize **Accelerated Pass 1 Batch B** (Chapters 5–10) as a separate task, ending at **Checkpoint B**. Do not begin Batch B, practical assets, Pass 2 enrichment, or v0.15.0 release administration automatically. Part XII is **not** complete, no Final Quality Gate has been run, no manuscript baseline exists, and nothing is release-ready.
 
 ### Non-blocking observations carried forward
 
