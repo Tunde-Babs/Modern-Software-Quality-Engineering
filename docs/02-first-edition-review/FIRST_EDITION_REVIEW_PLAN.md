@@ -5,15 +5,15 @@
 | **Project** | Modern Software Quality Engineering (MSQE) |
 | **Milestone** | v0.16.0 — First Edition Review |
 | **Document type** | Review Architecture / Method |
-| **Document status** | Architecture Candidate — Awaiting Focused Independent Re-Acceptance after Phase D2 |
+| **Document status** | Architecture Candidate — Awaiting Focused Independent Re-Acceptance after Phase D3 |
 | **Latest stable release** | v0.15.0 — Engineering Leadership & Career Growth Complete |
 | **Review scope** | Parts I–XII — 137 chapters — 651,161 words |
-| **Phase** | Phase D2 — Targeted Post-Re-Acceptance Corrections |
+| **Phase** | Phase D3 — Quantitative-Census Architecture Corrections |
 | **Owner** | Tunde Ajala |
 
 > This is a **governance artefact**, not a manuscript chapter. It deliberately does not carry a chapter-style status such as `Draft` or `Approved`.
 
-> **This plan has not been independently accepted.** Phase C2 returned **89.5/100, verdict B, with two Architecture Blockers**; Phase D2 has applied targeted corrections and **cannot close its own work**. The plan awaits a further focused independent re-acceptance. **No First Edition Review execution has begun. Phase E Governance Remediation has not run.** This document contains method only — no manuscript findings, no verification data, no dispositions.
+> **This plan has not been independently accepted.** Phase C3 returned **89.0/100, verdict B, with three Architecture Blockers**, all confined to the quantitative census; Phase D3 has applied targeted corrections and **cannot close its own work**. The plan awaits a further focused independent re-acceptance. **No First Edition Review execution has begun. Phase E Governance Remediation has not run.** This document contains method only — no manuscript findings, no verification data, no dispositions.
 
 ---
 
@@ -351,12 +351,12 @@ A longitudinal-only review reproduces the Part gates and finds nothing new. A tr
 
 | Batch | Parts | Chapters | Words | Tier-1 claims | Tier-1/1k | Citations | Verification tier |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| **L1** | I–II — Foundations, Programming | 22 | 125,017 | 25 | 0.200 | 110 | **Deep** |
-| **L2** | III–V — Testing, API, Automation | 34 | 177,748 | 30 | 0.169 | 125 | **Deep** |
-| **L3** | VI–VIII — Data, Cloud/DevOps, Observability | 33 | 115,618 | 450 | 3.892 | 62 | **Deep** |
-| **L4** | IX–X — AI Quality, Performance & Security | 24 | 88,258 | 390 | 4.419 | 42 | Standard, **elevated** (§13.3) |
-| **L5** | XI–XII — Architecture, Leadership | 24 | 144,520 | 427 | 2.955 | 39 | Standard |
-| | **Total** | **137** | **651,161** | **1,322** | | **378** | |
+| **L1** | I–II — Foundations, Programming | 22 | 125,017 | 23 | 0.184 | 110 | **Deep** |
+| **L2** | III–V — Testing, API, Automation | 34 | 177,748 | 29 | 0.163 | 125 | **Deep** |
+| **L3** | VI–VIII — Data, Cloud/DevOps, Observability | 33 | 115,618 | 319 | 2.759 | 62 | **Deep** |
+| **L4** | IX–X — AI Quality, Performance & Security | 24 | 88,258 | 390 | **4.419** | 42 | Standard, **elevated** (§13.3) |
+| **L5** | XI–XII — Architecture, Leadership | 24 | 144,520 | 452 | 3.128 | 39 | Standard |
+| | **Total** | **137** | **651,161** | **1,213** | | **378** | |
 
 **Boundary rationale.** The **VIII | IX** boundary is the evidence-maturity boundary (§13.3) and is absolute — no batch mixes verification tiers. Sub-boundaries follow conceptual continuity: L1 conceptual and skill base (and the Atlas-absent zone); L2 core practice; L3 systems and operational; L4 specialist quantitative; L5 synthesis and capstone.
 
@@ -410,43 +410,77 @@ A longitudinal-only review reproduces the Part gates and finds nothing new. A tr
 
 Classification runs as five ordered passes. The ordering is normative: an independent implementation must reproduce the census without guessing.
 
-| Pass | Action |
-| --- | --- |
-| **PASS 0** | Remove **structurally unambiguous non-claims** — exclusions whose match cannot contain a protected Tier-1 claim (E1–E10 below). |
-| **PASS 1** | **Identify and protect Tier-1 quantitative claims** (§6.2) in the PASS-0 residue. Protected spans are immutable for the remainder of the pipeline. |
-| **PASS 2** | Apply **context-dependent identifier exclusions** (E11) **only to numeric tokens not protected in PASS 1**. |
-| **PASS 3** | Classify the remaining unmatched, ambiguous bare integers as **Tier-2 candidates**. |
-| **PASS 4** | **Deduplicate** using leftmost-longest match with the Tier-1 class order in §6.2 as the tie-break. |
+| Pass | Input | Rule | Output | Precedence |
+| --- | --- | --- | --- | --- |
+| **PASS 0** | chapter source | Remove **structurally unambiguous non-claims** (E1–E11 below). Fenced-code content is set aside as a separate population, not deleted. | PASS-0 residue + code population | Runs first; nothing downstream can restore a PASS-0 removal |
+| **PASS 1** | PASS-0 residue | **Match and protect Tier-1 quantitative claims** (§6.2). Protected spans are immutable for the rest of the pipeline. | Tier-1 set | **Highest precedence.** No later pass may delete a protected span |
+| **PASS 2** | PASS-0 residue minus protected spans | Apply the **context-dependent identifier exclusion** (E12) **only to numeric tokens not protected in PASS 1** | reduced residue | Subordinate to PASS 1 |
+| **PASS 3** | PASS-2 residue minus protected spans | Classify remaining **bare integers of two or more digits** as **Tier-2 candidates** | Tier-2 set | Lowest precedence; residue only |
+| **PASS 4** | Tier-1 set | **Deduplicate** by leftmost-longest match; where two classes match the same span, the §6.2 class order is the tie-break | final counts | Applies within Tier 1 only |
 
-**Why the split between PASS 0 and PASS 2.** An exclusion belongs in PASS 0 when its match is structurally determined and cannot hide a genuine claim — a URL, a footnote definition, a standards designator such as `ISO/IEC 25010:2023` (which would otherwise be misread as a ratio). An exclusion belongs in PASS 2 when it depends on **surrounding context** and could therefore fire on a genuine claim. **E11 is the only context-dependent exclusion**, and placing it after Tier-1 protection is what prevents it destroying value-bearing claims.
+**Why the split between PASS 0 and PASS 2.** An exclusion belongs in PASS 0 when its match is **structurally determined by its own form** and cannot hide a genuine claim. An exclusion belongs in PASS 2 when it depends on **surrounding context** and could therefore fire on a genuine claim. **E12 is the only context-dependent exclusion**, and placing it after Tier-1 protection is what prevents it destroying value-bearing claims.
 
 **PASS 0 — structurally unambiguous non-claims:**
 
-| # | Excluded | Rationale |
-| --- | --- | --- |
-| E1 | Fenced code blocks | counted separately as a distinct population |
-| E2 | Inline code spans | identifiers, not prose claims |
-| E3 | Absolute URLs | contain digits |
-| E4 | Markdown link and image targets | relative paths contain chapter and delivery numbers |
-| E5 | Footnote definition lines | bibliographic volumes, pages, years |
-| E6 | Footnote references | citation identifiers |
-| E7 | Chapter metadata rows | metadata, not teaching claims |
-| E8 | `Chapter N` / `Part N` headings | structural numbering |
-| E9 | Standards designators (ISO/IEC, IEEE, RFC) | reference identifiers; structurally resemble ratios |
-| E10 | Bare years 1900–2099 | bibliographic |
+| # | Excluded | Form | Rationale |
+| --- | --- | --- | --- |
+| E1 | Fenced code blocks | ```` ``` ```` and `~~~` delimited | set aside as a separate population, never Tier 1 or Tier 2 |
+| E2 | Inline code spans | backtick-delimited | identifiers, not prose claims |
+| E3 | Absolute URLs | `http://`, `https://` | contain digits |
+| E4 | Markdown link and image targets | the `](…)` portion only; **link text is retained** | relative paths carry chapter and delivery numbers |
+| E5 | Footnote definition lines | lines beginning `[^key]:` | bibliographic volumes, pages, years |
+| E6 | Footnote references | `[^key]` | citation identifiers |
+| E7 | Chapter metadata rows | table rows whose first cell is `Chapter`, `Part`, `Version`, `Status`, `Estimated study time`, `Prerequisites`, `Reading time`, `Difficulty` | metadata, not teaching claims |
+| E8 | `Chapter N` / `Part N` headings | ATX headings | structural numbering |
+| E9 | Standards designators | `ISO`, `ISO/IEC`, `ISO/IEC/IEEE`, `ISO/TS`, `IEC`, `IEEE`, `RFC`, `BS`, `EN` followed by digits, optional `-nnn` parts, optional `:YYYY` | reference identifiers |
+| **E10** | **Time of day** | `HH:MM` and `HH:MM:SS`, `HH` 00–23, `MM`/`SS` 00–59 | **timestamps are not ratios.** Evaluated **before** E11 so a clock form is never re-read as a bare year |
+| E11 | Bare years | 1900–2099 standing alone | bibliographic and timeline years |
 
 **PASS 2 — context-dependent identifier exclusion, applied to unprotected tokens only:**
 
 | # | Excluded | Rationale and constraint |
 | --- | --- | --- |
-| E11 | Three-digit codes 100–599 where surrounding context establishes identifier use (HTTP, status, response, code, returns) | HTTP status codes are technical identifiers, verified at Levels 4 and 6, not Level 8. **E11 may never remove a token protected in PASS 1.** Without this constraint, genuine latency claims such as `310 ms` in *"Average checkout **response** latency"* are destroyed by the word "response" falling inside E11's context window — a failure measured and corrected in Phase D2. |
+| **E12** | Three-digit numbers **100–599** where a trigger word — `HTTP`, `status`, `response`, `code`, `return`, `returns` — occurs within **25 characters** before or after the match | HTTP status codes are technical identifiers, verified at Levels 4 and 6, not Level 8. **E12 may never remove a token protected in PASS 1.** Without that constraint, genuine latency claims such as `310 ms` in *"Average checkout **response** latency"* are destroyed by the word "response" falling inside the window. A token that E12 does not remove falls to **Tier-2 triage**, where a human decides — so the window errs toward triage rather than deletion. |
+
+**E12 window — chosen empirically, not inherited.** Windows of ±25, ±50, ±75 and ±100 characters were measured against the edition. Precision of true HTTP identifiers among excluded tokens: **±25 → 66%**, ±50 → 55%, ±75 → 54%, ±100 → 51%. **±25 is the smallest window tested and the most precise**; wider windows pull in unrelated numbers through context bleed. Tokens a narrow window misses are not lost — they fall to Tier-2 triage.
 
 ### 6.2 Inclusion pass — two tiers
 
-| Tier | Classes | Treatment |
-| --- | --- | --- |
-| **Tier 1 — quantitative claims** | percentages · currency · value with unit (ms, s, min, h, day, week, month, GB, MB, rps, qps…) · multipliers (`n×`) · ratios and rates (`a:b`, `a/b`, `n per unit`) · thousands-separated numbers · decimals | **counted as claims; census verification** |
-| **Tier 2 — candidates** | bare integers of two or more digits · residual three-digit codes · numerics inside code fences | **never counted as claims**; triaged per chapter into claim or identifier; confirmed claims join the Tier-1 ledger |
+**Tier 1 — seven closed classes.** The set is finite and contains **no ellipsis and no open-ended extension**. Class order below is also the PASS-4 tie-break order.
+
+| # | Class | Definition | Evidenced |
+| --- | --- | --- | --- |
+| 1 | `pct` | number immediately followed by `%` | 415 |
+| 2 | `cur` | `€`, `$` or `£` immediately followed by a number | 56 |
+| 3 | `unit` | number followed by a member of the **closed unit set** below | 335 |
+| 4 | `ratio` | **slash form only** — number `/` number, **where the right operand is not a four-digit year 1900–2099** (which would make it a date) | 84 |
+| 5 | `perN` | number followed by `per` and a word | 16 |
+| 6 | `thou` | thousands-separated number, e.g. `43,200` | 126 |
+| 7 | `dec` | decimal number, e.g. `0.99391` | 181 |
+
+**Closed unit set — 19 forms, every one evidenced in the edition:**
+
+| Kind | Forms |
+| --- | --- |
+| Time | `ms` · `millisecond` · `milliseconds` · `s` · `second` · `seconds` · `min` · `minute` · `minutes` · `h` · `hour` · `hours` · `day` · `days` · `month` · `months` |
+| Data | `GB` |
+| Rate | `requests/s` · `jobs/s` |
+
+**Short forms `s`, `min` and `h` ARE included** — repository evidence confirms them as teaching claims (`7.8 s`, `525 s`, `8 min 45 s`, `6h 12m`, `7 h`, `42s`). A unit must be matched at a word boundary; PASS-0 already removes code spans, URLs, link targets, version strings and standards designators, so no additional lexical guard is required and none is added.
+
+**Units investigated and excluded for want of evidence:** `sec`, `secs`, `hr`, `hrs`, `week`, `weeks`, `B`, `KB`, `MB`, `TB`, `KiB`, `MiB`, `GiB`, `TiB`, `bytes`, `rps`, `qps`, `requests/sec`, `transactions/s`, `events/s`, `records/s`, `ops/s` — all return **zero** matches. Bare `B` was tested and rejected: its only three matches are option labels (`A 16, B 14`), not bytes.
+
+**A multiplier class is deliberately absent.** Searches for `n×`/`nx` used as a multiplier (`3× faster`, `5-fold`) return **zero** matches; the 39 occurrences of `a × b` are arithmetic steps whose operands are already captured by `dec`, `thou` or `cur`. A class with no evidence is not carried.
+
+**No colon-ratio class exists.** Every colon-separated numeral in the edition is a clock time or a standards designator; **not one genuine colon ratio was found across 137 chapters**. Colon forms are therefore removed in PASS 0 (E10, E9) rather than admitted and filtered.
+
+**Tier 2 — candidates**
+
+| Class | Treatment |
+| --- | --- |
+| bare integers of two or more digits · three-digit numbers E12 did not remove | **never counted as claims**; triaged per chapter into claim or identifier; confirmed claims join the Tier-1 ledger |
+
+**Code-fence numerics are a separate population.** They are counted separately, reviewed where technically relevant, and are **neither Tier 1 nor Tier 2**.
 
 **Bare integers cannot be a primary signal.** They cannot be separated from identifiers by pattern alone — genuine values sit beside chapter cross-references, stage numbers, status codes and standards numbers. Tier 2 makes the ambiguity explicit and routes it to human triage rather than silently counting or silently dropping it.
 
@@ -454,9 +488,12 @@ Classification runs as five ordered passes. The ordering is normative: an indepe
 
 - **A token belongs to at most one tier.** Tier-1 membership is exclusive and is decided in PASS 1; a token protected as Tier-1 can never later become Tier-2 or be excluded.
 - **Tier-2 is the residue only** — tokens surviving PASS 0 and PASS 2 that were not protected in PASS 1.
-- **Overlap within Tier 1** is resolved by **leftmost-longest** match; where two classes match the same span, the **class order listed in the table above** is the tie-break (`pct`, `cur`, `unit`, `mult`, `ratio`, `perN`, `thou`, `dec`).
+- **Overlap within Tier 1** is resolved by **leftmost-longest** match; where two classes match the same span, the **class order in §6.2** is the tie-break (`pct`, `cur`, `unit`, `ratio`, `perN`, `thou`, `dec`).
 - **Counts are match occurrences, not distinct values.** The same figure appearing three times is three occurrences, because each is a separate claim requiring verification.
 - **Code-fence numerics** are counted in their own population and are never added to Tier 1 or Tier 2.
+- **A compound duration** such as `8 min 45 s` or `6h 12m` yields at least one Tier-1 claim; the whole compound is verified as one claim at Level 8.
+
+**Accepted architecture observation — ARC-C3-5 (P3, non-blocking).** E11 removes bare years 1900–2099, so a quantity that happens to fall in that range and carries no unit — *"the batch contained 2000 records"* — would be suppressed. **Consequence:** one quantitative claim per occurrence would bypass Level 8. **Rationale for accepting rather than narrowing:** a repository-wide search for a bare 1900–2099 number followed by a quantity noun returns **zero instances**, and narrowing E11 would convert every publication and timeline year into Tier-2 noise — a larger, certain cost against a hypothetical one. **Revision trigger:** if any bare 1900–2099 quantity appears in manuscript text outside a calendar or date context, re-test E11 and narrow it. **Owner:** review architecture owner. **Blocker class:** C. **Severity:** P3.
 
 ### 6.3 Mandatory reflexive validation
 
@@ -464,33 +501,35 @@ Classification runs as five ordered passes. The ordering is normative: an indepe
 
 This rule exists because **three** successive versions of this metric failed construct validity — a percentage-only proxy, then a composite contaminated by file paths and status codes, then an exclusion ordering that silently destroyed 21 genuine claims. The architecture demands construct validity of the manuscript; it must apply the same discipline to itself.
 
-**The rule applies to every individual exclusion and inclusion pattern, not only to the metric as a whole.** Each exclusion must be tested for *suppression* — whether it removes a genuine claim — and each inclusion for *contamination* — whether it counts an identifier. Both tests are performed by sampling matches against source text and reading them.
+**The rule applies to every individual exclusion and inclusion pattern, not only to the metric as a whole.** Each **exclusion** must be tested for *suppression* — whether it removes a genuine claim — and each **inclusion class** for *contamination* — whether it counts an identifier. Both tests are mandatory, and a class is not validated until both have been run.
+
+**A regex running without error is not validation.** For every inclusion class the validator must: enumerate its matches repository-wide · inspect enough of them to identify false positives · test adversarial examples · record the result. Phase D2 tested exclusions for suppression but not inclusions for contamination, and a `ratio` class matching `HH:MM` consequently produced **144 false Tier-1 claims (10.7%)** that stood undetected until Phase C3. **Both directions, every class, every time.**
 
 ### 6.4 Active census
 
 Produced by the §6.1 pipeline as stated. **These are the only operational figures.**
 
-| Part | Tier 1 | Tier 2 | Code-fence | Words | **Tier-1 / 1k words** |
-| --- | --- | --- | --- | --- | --- |
-| I | 20 | 28 | 1 | 64,921 | 0.31 |
-| II | 5 | 19 | 31 | 60,096 | 0.08 |
-| III | 24 | 22 | 0 | 52,741 | 0.46 |
-| IV | 2 | 48 | 70 | 54,811 | 0.04 |
-| V | 4 | 23 | 0 | 70,196 | 0.06 |
-| VI | 194 | 82 | 18 | 45,206 | 4.29 |
-| VII | 53 | 23 | 0 | 40,305 | 1.31 |
-| VIII | 203 | 128 | 70 | 30,107 | **6.74** |
-| IX | 232 | 369 | 0 | 35,028 | 6.62 |
-| X | 158 | 179 | 7 | 53,230 | 2.97 |
-| XI | 306 | 407 | 0 | 77,606 | 3.94 |
-| XII | 121 | 272 | 0 | 66,914 | 1.81 |
-| **Total** | **1,322** | **1,600** | **197** | **651,161** | |
+| Part | Tier 1 | Tier 2 | Code-fence | Words | **Tier-1 / 1k words** | Density rank |
+| --- | --- | --- | --- | --- | --- | --- |
+| I | 18 | 24 | 1 | 64,921 | 0.28 | 9 |
+| II | 5 | 19 | 31 | 60,096 | 0.08 | 10 |
+| III | 23 | 20 | 0 | 52,741 | 0.44 | 8 |
+| IV | 2 | 51 | 66 | 54,811 | 0.04 | 12 |
+| V | 4 | 23 | 0 | 70,196 | 0.06 | 11 |
+| VI | 145 | 75 | 18 | 45,206 | 3.21 | 4 |
+| VII | 53 | 23 | 0 | 40,305 | 1.31 | 7 |
+| VIII | 121 | 126 | 63 | 30,107 | 4.02 | 3 |
+| **IX** | 232 | 371 | 0 | 35,028 | **6.62** | **1** |
+| X | 158 | 179 | 7 | 53,230 | 2.97 | 5 |
+| XI | 330 | 336 | 0 | 77,606 | 4.25 | 2 |
+| XII | 122 | 264 | 0 | 66,914 | 1.82 | 6 |
+| **Total** | **1,213** | **1,511** | **186** | **651,161** | | |
 
-Batch aggregates appear in §5.2. Derived ratios: **L4/L3 = 1.14× · L4/L5 = 1.50× · L4/L1 = 22.1× · L4/L2 = 26.2×**.
+Batch aggregates appear in §5.2. Derived ratios: **L4/L3 = 1.60× · L4/L5 = 1.41× · L4/L1 = 24.0× · L4/L2 = 27.1×**.
 
-**Effect of the §6.1 precedence rule.** Correcting E11's ordering recovered **21 Tier-1 claims** that the previous ordering destroyed — 20 value-with-unit latency figures and one percentage, in Parts VIII (+5), X (+2), XI (+9) and XII (+5). All are genuine teaching claims; none is an identifier.
+**Every Part contains Tier-1 claims** — the minimum is Part IV at 2, and **no Part has zero**, so the census requirement in §6.7 is enforceable everywhere.
 
-**Consequence for batching.** L4 remains the densest batch, but at **1.14× L3** it is **not** an isolated extreme, and **Part VIII is now the densest Part in the edition (6.74/1k), narrowly ahead of Part IX (6.62/1k)** — which strengthens rather than changes the conclusion, since Part VIII sits in L3. **L3 receives numerical-verification resourcing comparable to L4.** Batch boundaries are unchanged, because they are driven by evidence maturity and conceptual continuity, neither of which the metric affects.
+**Precision.** The `ratio` class was audited in full: **84 of 84 matches are genuine** evaluation ratios (`90 / 100`, `24/25`, `17 / 20`). Every other class was validated by declared random sampling; no false positive was found. The 144 clock-time false positives that contaminated the previous census are eliminated by E10.
 
 ### 6.5 Superseded evidence
 
@@ -498,11 +537,25 @@ The following are recorded as **superseded** and must **not** be used operationa
 
 - the **percentage-only** density metric and every figure derived from it, including the claims that L4 was "2.4× the next densest" and ">30× L1–L2", and that Parts II, IV and V had "zero" numerical content;
 - the **Phase C composite** metric and its figures (Part VI to rank 2, Part VII to rank 9, L1/L2 at 4.06/3.90 per 1k), which were inflated by uncorrected integer contamination;
-- the **Phase D-era census** — Tier-1 total 1,301, Tier-2 total 1,480, Part VIII 198/6.58, Part X 156/2.93, Part XI 297/3.83, Part XII 116/1.73, and the ratio L4/L5 = 1.54× — produced before the §6.1 precedence rule existed and therefore missing 21 genuine Tier-1 claims. Superseded by §6.4.
+- the **Phase D-era census** — Tier-1 total 1,301, Tier-2 total 1,480, Part VIII 198/6.58, and the ratio L4/L5 = 1.54× — produced before the §6.1 precedence rule existed and therefore missing genuine Tier-1 claims. Superseded;
+- the **Phase D2-era census** — Tier-1 total 1,322, Tier-2 total 1,600, code-fence 197, Part VIII 203/**6.74**, Part XI 306/3.94, and the ratios **L4/L3 = 1.14×**, L4/L5 = 1.50× — which simultaneously **under-counted** by omitting the short time units `s`, `min` and `h` and **over-counted** by admitting **144 clock times** as ratios. Its claim that *"Part VIII is the densest Part in the edition"* and the density-based justification for L3 resourcing are both **withdrawn**; see §6.4 and §6.6. Superseded.
 
-**One active census only.** Where any figure in this document conflicts with §6.4, §6.4 governs.
+**One active census only.** Where any figure in this document conflicts with §6.4, §6.4 governs. Superseded figures appear in this subsection and in the §16 review history and nowhere else.
 
-### 6.6 Correctness threshold
+### 6.6 Quantitative resourcing conclusion
+
+Restated on the corrected census. **Density is no longer offered as the justification for L3, because the corrected evidence does not support it.**
+
+| Claim | Status on corrected evidence |
+| --- | --- |
+| **L4 is the densest batch** | **Supported** — 4.419/1k, ahead of L5 at 3.128 and L3 at 2.759. **L4/L3 = 1.60×**, so L4 is *materially* denser than L3, not comparable to it |
+| **Part IX is the densest Part** | **Supported** — 6.62/1k, ahead of Part XI at 4.25 and Part VIII at 4.02 |
+| **L1 and L2 are materially sparser** | **Supported** — 0.184 and 0.163 per 1k, 24–27× below L4 |
+| **L3 warrants numerical-verification resourcing comparable to L4** | **Supported, but on different grounds.** Density does **not** justify it. The justification is that **L3 is deep tier** — Parts VI–VIII are unbaselined legacy material (§13.3) — and that Part VIII (4.02/1k) and Part VI (3.21/1k) each carry substantial quantitative content in incident-timeline and data-quality chapters where inference validity is the dominant risk |
+
+> **The allocation decision is not attributed to density where density does not support it.** L4 receives the heaviest numerical effort because it is the densest; L3 receives comparable effort because it is the least-verified evidence tier, not because it is equally dense.
+
+### 6.7 Correctness threshold
 
 > **Density controls review effort and sequencing only. It never changes the correctness threshold, which is identical in every Part.**
 >
@@ -872,7 +925,10 @@ Immutable record. Each entry is a distinct event.
 | **C2** | **Focused Independent Architecture Re-Acceptance** | **Score 89.5/100 · Verdict B · two Architecture Blockers.** **ARC-P1-2 CLOSED · ARC-P2-2 CLOSED · ARC-D-1 CLOSED · ARC-P1-1 PARTIALLY CLOSED.** Open: **ARC-C2-1** (Level 16 orphaned from the execution model, P1/class A) and **ARC-C2-2** (E11 suppressing 19–21 genuine Tier-1 claims, P2/class A), plus ARC-C2-6 (P2) and ARC-C2-3, -4, -5, -7, -8 (P3) |
 | **D2** | **Targeted Post-Re-Acceptance Corrections** | Corrections applied for ARC-C2-1, -2, -3, -4, -5, -6, -7 and -8: L16 routed through T4 with a transversal-completion rule; §6.1 precedence pipeline added and the census recomputed (Tier-1 1,301 → **1,322**); Level 12 bound to the §12.2 acceptance record; cross-references, level-count terminology, tier ordering, structural-scan evidence and automated-tool independence all specified. **D2 is a correction event and does not close its own findings** |
 
-> **This plan is awaiting a further focused independent re-acceptance following Phase D2. The architecture is not yet approved, and Phase E remains unauthorised.**
+| **C3** | **Focused Independent Re-Acceptance** | **Score 89.0/100 · Verdict B · three Architecture Blockers, all in the quantitative census.** **CLOSED:** ARC-C2-1, ARC-C2-3, ARC-C2-4, ARC-C2-6, ARC-C2-7, ARC-C2-8. **PARTIALLY CLOSED:** ARC-C2-2. **REOPENED:** ARC-C2-5, ARC-P1-1. New: **ARC-C3-1** (unit set not reproducible; 24 claims uncounted), **ARC-C3-2** (`ratio` class contaminated by 144 clock times, invalidating a stated conclusion), **ARC-C3-3** (code-fence Tier-2 contradiction), ARC-C3-4 (E12 window unspecified), ARC-C3-5 (theoretical bare-year suppression) |
+| **D3** | **Targeted Quantitative Architecture Correction** | Closed unit set of 19 evidenced forms; colon-ratio class removed and time-of-day excluded in PASS 0; code-fence contradiction resolved; E12 window fixed at **±25** on measured precision; `mult` class removed for want of evidence; every inclusion class validated for contamination as well as suppression; census recomputed to **Tier-1 1,213 / Tier-2 1,511 / code-fence 186**; the density-based justification for L3 resourcing **withdrawn and restated** on evidence-tier grounds. **D3 is a correction event and does not close its own findings** |
+
+> **This plan is awaiting a further focused independent re-acceptance following Phase D3. The architecture is not yet approved, and Phase E remains unauthorised.**
 
 Where a later phase changed an earlier rule, the later phase governs and only the corrected rule appears as active guidance. Superseded metrics — including the Phase D-era census — are recorded in §6.5 and must not be used operationally.
 
@@ -880,7 +936,7 @@ Where a later phase changed an earlier rule, the later phase governs and only th
 
 ## 17. Scope Boundaries of This Plan
 
-This document is method only. As of Phase D2:
+This document is method only. As of Phase D3:
 
 - **No First Edition Review execution has begun.**
 - **Phase E Governance Remediation has not run.** No governance item has been remediated, dispositioned or closed.
