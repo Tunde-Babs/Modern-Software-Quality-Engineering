@@ -28,7 +28,7 @@ Event 2 verified the corrections independently rather than confirming the correc
 
 Part XII's 97/100 is unrelated to Part XI's 97/100 architecture-review score; they are different reviews of different parts at different lifecycle stages. Neither event 1 nor event 2 is a Final Quality Gate result. **The Final Part XII Quality Gate is the separate, later event 5 in the ledger above; it has since been run and PASSED at 97/100 (verdict A).**
 
-This document is the verified curriculum architecture. It defines the intended manuscript, its learning progression, scope boundaries, professional artefacts, source strategy, and Pass 2 classification, and it is authoritative for manuscript production once Pass 1 is separately authorized. It does **not** by itself authorize manuscript production. Any future Part XII chapter begins with `Status: Draft` under manuscript-status governance.
+This document is the verified curriculum architecture. It defines the intended manuscript, its learning progression, scope boundaries, professional artefacts, source strategy, and Pass 2 classification, and it is authoritative for manuscript production. Pass 1 is complete and all twelve chapters were produced under it. Every Part XII chapter carries `Status: Draft` under manuscript-status governance and retains it until governance authorizes another status.
 
 Part XII is the final planned handbook part and is the latest released handbook part, as **v0.15.0**; Part XI — System Design & Architecture remains released as **v0.14.0**. With Part XII released, the project moves to **v0.16.0 — First Edition Review**, which has not started.
 
@@ -747,8 +747,8 @@ Part XII may advance from architecture planning to Pass 1 only after a focused i
 
 ## Current State and Next Authorized Activity
 
-- **Architecture status:** **COMPLETE and VERIFIED.** The curriculum architecture passed independent closure review and is authoritative for manuscript production once Pass 1 is separately authorized.
-- **Review events:** Independent curriculum-architecture review **83/100 (verdict B)**; focused independent architecture-closure review **97/100 (verdict A)**. Two distinct events; the second does not replace the first.
+- **Architecture status:** **COMPLETE and VERIFIED.** The curriculum architecture passed independent closure review and is authoritative for manuscript production. Pass 1 is complete and all twelve chapters were produced under it.
+- **Review events:** Five distinct scored review events, recorded in full in the ledger above and **not to be collapsed**: independent curriculum-architecture review **83/100 (verdict B)**; focused independent architecture-closure review **97/100 (verdict A)**; consolidated independent manuscript review **97/100 (verdict B)**; focused independent manuscript-closure review **95.5/100 (verdict A)**; and the **Final Part XII Quality Gate 97/100 (verdict A)**. No later event replaces an earlier one, and the three 97/100 results are unrelated reviews measuring different things at different lifecycle stages.
 - **Corrections:** All thirteen corrections **C1–C13 applied and independently verified as present and effective**.
 - **Findings after closure:** **P0 = 0.** **P1 = 0 open — all three previous P1 findings CLOSED.** **P2 = 0 open — all seven previous P2 findings CLOSED.** **P3 = 0 blocking** — four closed, one accepted/deferred, two new non-blocking observations recorded below.
 - **Regression state:** **16/16 load-bearing strengths preserved** (the composite-score prohibition was strengthened). **No material generic-management drift.** **No composite-scoring regression.**
