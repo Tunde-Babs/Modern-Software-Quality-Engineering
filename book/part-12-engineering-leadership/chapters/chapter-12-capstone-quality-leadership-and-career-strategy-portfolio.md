@@ -410,6 +410,8 @@ And underneath all of it, the **unowned residue** (section S) is the Chapter 5 p
 
 Earlier parts supply the specialist evidence rather than the reasoning: Part III for what test evidence can and cannot establish, Part V for automated feedback, Part VI for the data dependency in the finance and analytics paths, Part VII for release and delivery constraints, Part VIII for detection and operational signals, Part X for the performance and security findings, Part XI for the architecture decisions and their residual risk. **This capstone does not re-derive any of them.** It asks what a Quality Engineer does with them.
 
+This packet contains no AI-derived evidence, which is a property of the situation rather than a general rule. Had Atlas's Support Assistant contributed to any item here — a classification, a summary, a recommendation — that item would enter the packet as **specialist evidence from [Part IX](../../part-09-ai-quality-engineering/README.md)**, carrying its own provenance, evaluation conditions, and limitations. It would not change the decision-owner model in section R, and it would not move accountability away from the roles named there. Chapter 5 develops that reasoning.
+
 ---
 
 ## Engineering Perspective
@@ -432,7 +434,9 @@ That is a low bar and it is not commonly cleared. Most organisations discover af
 
 ### "The right answer is to fix the underlying problems first."
 
-Sometimes defensible — that is Option C. But it requires the delivery owner to do what they have said they will not, against a date committed externally. A recommendation that ignores LEAD-STAKE-03 and LEAD-STAKE-05 is not more rigorous; it is addressed to an organisation that does not exist.
+Sometimes defensible — that is Option C. But an *indefinite* hold requires the delivery owner to do what they have said they will not, against a date committed externally, and a recommendation that ignores LEAD-STAKE-03 and LEAD-STAKE-05 is not more rigorous; it is addressed to an organisation that does not exist.
+
+The distinction that matters is scope. **Option C is defensible when bounded to a specific unresolved evidence condition** — the cross-customer keying test in LEAD-SEC-02, say, with a stated cost in days and a named decision point — because that is a claim about what evidence a decision needs, which the delivery owner can weigh against the date. It is not defensible as a general hold pending structural repair, because LEAD-STRUCT-02 establishes that the structural condition has persisted for eighteen months and will not resolve inside eleven weeks.
 
 ### "The security owner is being obstructive."
 

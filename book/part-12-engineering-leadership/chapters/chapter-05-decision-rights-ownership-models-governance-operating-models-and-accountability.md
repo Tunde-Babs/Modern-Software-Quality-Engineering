@@ -57,7 +57,8 @@ After completing this chapter you should be able to:
 - describe four common governance arrangements for quality capability, with the context each may fit, its coordination cost, and its characteristic failure mode — **without ranking them**;
 - state what evidence would indicate that a given arrangement is not working, and what would trigger reassessment;
 - explain why "every decision needs exactly one owner" is not a universal rule, and what the real failure mode is;
-- reason about policy ownership, exceptions, and the policy nobody owns; and
+- reason about policy ownership, exceptions, and the policy nobody owns;
+- explain why an AI capability contributing to a quality decision changes the evidence, uncertainty, boundary, and specialist input required — but not the accountable owner; and
 - produce an Ownership and Accountability Model.
 
 ## Four Things Called Ownership
@@ -183,6 +184,50 @@ The Atlas failure mode is the **unowned policy**. Nobody at Atlas ever wrote "th
 
 A second pattern is worth naming: the policy that survives its owner. When the person who wrote a rule moves on and no successor is assigned, the rule continues to be enforced by habit while nobody is entitled to change it. It becomes a constraint the organisation cannot revisit, which is the same shape as Chapter 3's orphaned record.
 
+## AI-Enabled Evidence Does Not Erase Decision Ownership
+
+An AI capability inside a system changes several things about a quality decision. It does not change who owns it.
+
+Atlas has one such capability: the Support Assistant introduced in [Part IX](../../part-09-ai-quality-engineering/README.md), which answers customer questions about deliveries and returns. Suppose it begins classifying incoming support contacts by urgency, and the classification determines which contacts a human sees first.
+
+Four things change, and they are worth separating:
+
+| What changes | What it means for the decision |
+| --- | --- |
+| **The evidence** | Some evidence is now model-produced rather than measured or observed. It has a provenance, an error profile, and conditions under which it degrades |
+| **The uncertainty** | Model output carries uncertainty of a different shape — it can be confidently wrong in ways a failing check is not |
+| **The system boundary** | The behaviour now depends on a component whose failure modes differ from deterministic code, which Part IX Chapter 2 develops as an architecture question |
+| **The specialist input required** | Establishing whether the classification is good enough for its purpose is AI-quality evaluation work — Part IX's, not this chapter's |
+
+What does **not** change is the fifth item, and it is the one this chapter is about: **the accountable owner**. If urgent contacts are missed, the accountability sits with whoever owns the support outcome. It does not sit with the model, and it does not move to the engineer who integrated it.
+
+### Language discipline
+
+Precision here is not pedantry — imprecise language is how accountability quietly relocates.
+
+| Avoid | Use |
+| --- | --- |
+| "The AI decided to deprioritise it" | "The workflow classified it as low urgency, and no one reviewed the classification" |
+| "The model approved the response" | "The model produced a response; the support operator sent it" |
+| "The system chose not to escalate" | "The system did not flag it, and the escalation path depended on a flag" |
+
+The right-hand column keeps a human or organisational actor in every sentence, which is accurate. The left-hand column does not, and a record written that way will be read later as though nobody was answerable.
+
+### What a Quality Engineer records
+
+Four additions to the ownership analysis when an AI capability contributes:
+
+- **Provenance.** Which claims are model-produced, and which are measured or observed. This is an evidence-class judgement in Chapter 2's terms, and model output is not automatically *measured* — it is a system's output about something, with the same "measured about what?" question attached.
+- **Limitations and uncertainty.** What the capability was evaluated on, under what conditions, and what it was not. If nobody can answer, that is the finding.
+- **Whether specialist evidence is required.** Before an AI-derived claim carries weight in a decision, someone must establish that the capability is good enough for *that* purpose. That evidence is Part IX's, and requesting it is a legitimate and often the most useful contribution.
+- **Whether a review step exists, and who owns it.** An AI capability that produces an output nobody reviews has created exactly the unowned signal this chapter opened with — detectable in principle, watched by nobody, nothing automatic.
+
+Part IX makes the corresponding point from its own side, excluding *"replacing accountable domain review with a model evaluator"* and requiring evidence to be connected to a named accountable decision owner. The two parts agree, from different directions: **Part IX establishes whether an AI capability is good enough; Part XII establishes who is still answerable for the decision it informs.**
+
+### The ambiguity case
+
+Where the decision rights around an AI capability are genuinely unclear — nobody can say who owns the classification's consequences, or whether anyone is expected to review it — **the ambiguity is itself the finding**, and it is a governance risk rather than a technical one. It belongs in the unowned residue of the Ownership and Accountability Model below, alongside the settlement signal and the unowned shim. It is the same failure shape arriving through a newer mechanism.
+
 ## The Ownership and Accountability Model
 
 The **Ownership and Accountability Model** is an original MSQE teaching artefact, not an industry standard and not a governance framework. It is a short analysis of ownership around one quality outcome.
@@ -275,6 +320,7 @@ Consider what three engineers would produce after the finance understatement.
 - The four governance arrangements are a recognition vocabulary, **not a ladder, a maturity scale, or a menu** — none is a target state.
 - An assumed policy cannot be violated, which is why nothing alarmed when Atlas's reconciliation stopped balancing.
 - Ask "who owns noticing?" rather than "who owns this?" — the cost asymmetry between assigning a signal and discovering it through an incident is large.
+- **An AI capability changes the evidence, the uncertainty, the system boundary, and the specialist input required — it does not change the accountable owner.** Say "the workflow classified", not "the AI decided"; imprecise language is how accountability quietly relocates.
 
 ## Review Questions
 
@@ -285,6 +331,8 @@ Consider what three engineers would produce after the finance understatement.
 5. For any two of the four governance arrangements, state a context where each may fit and the failure mode each carries. Do not rank them.
 6. Atlas has no recognisable governance arrangement. Explain why this is not automatically a deficiency, and what would make it one.
 7. Distinguish an unowned policy from a violated policy, and explain why the first produces no alarm.
+8. Atlas's Support Assistant begins classifying support contacts by urgency, and an urgent contact is missed. Name what changed about the decision and what did not, and rewrite "the AI deprioritised it" so that an accountable actor remains in the sentence.
+9. What specialist evidence would you request before an AI-derived classification carried weight in a quality decision, and whose evidence is it?
 
 ## Interview Questions
 
@@ -318,6 +366,7 @@ Use only synthetic data.
 
 - [Part VIII — Observability & Reliability Engineering](../../part-08-observability-reliability/README.md) — signals, alerting, and on-call ownership, which this chapter draws on rather than re-teaches.
 - [Part XI — System Design & Architecture](../../part-11-system-design-architecture/README.md) — decision ownership and residual risk in architecture decisions.
+- [Part IX — AI Quality Engineering](../../part-09-ai-quality-engineering/README.md) — whether an AI capability is good enough for a purpose, which this chapter treats as specialist evidence rather than re-teaching.
 
 ## References
 
@@ -334,6 +383,7 @@ Before moving on, confirm that you can:
 - [ ] Explain why zero owners is the failure mode rather than two.
 - [ ] Describe each governance arrangement's context, coordination cost, and failure mode without ranking them.
 - [ ] Explain why an assumed policy produces no alarm when it is broken.
+- [ ] State what an AI capability changes about a quality decision and what it does not, and describe a model-produced classification without removing the human actor from the sentence.
 - [ ] Complete an Ownership and Accountability Model and derive its unowned residue.
 
 ## Chapter Navigation

@@ -185,7 +185,7 @@ The **Disagreement and Escalation Record** is an original MSQE teaching artefact
 | **Decision or response** | What was decided, in the owner's terms rather than yours |
 | **Residual risk** | What risk remains, and **who holds it** |
 | **Detection** | What would signal that the risk has materialised, and who would see it |
-| **Follow-up or revision condition** | What would justify reopening, and when |
+| **Follow-up or revision trigger** | What would justify reopening, and when |
 
 ### What the record must not be
 
