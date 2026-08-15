@@ -548,3 +548,18 @@ Part VII is complete at manuscript level and enters release administration for p
 **Status:** Manuscript baseline established; release administration prepared, not executed
 
 **Last Updated:** 2026-08-15
+
+---
+
+## Release Candidate v0.15.0 — Engineering Leadership & Career Growth Complete
+
+- Merged the Part XII feature branch into `develop` via **pull request #37** and created **`release/v0.15.0`** from the merged state. `origin/develop` and `release/v0.15.0` point to the same commit `a3dcc9d4e559e8121bc62129b3d2bbdf98bc45fd`, and `origin/main` is a clean ancestor with zero conflicts.
+- Completed Release Candidate validation. The controlled manuscript baseline `839391e136ac00c757dded170ba8ed94a58ff41d` remains reachable and all twelve Part XII chapter blobs are byte-identical to it; twelve chapters remain `Status: Draft` at 66,914 raw and 51,923 prose words. The release diff against `main` contains exactly seventeen paths — the Part XII architecture, its twelve chapters, and release/governance metadata — with no Part XIII work, no Pass 2 assets, and no code, CI/CD, infrastructure, or website changes.
+- Re-verified externally mutable sources at Release Candidate time. DORA's five-metric model, names, grouping, and definitions are unchanged since the Final Quality Gate, so Chapter 9 remains accurate. Publisher access controls returning HTTP 403 for Westrum, SPACE, and Edmondson are unchanged bot protection rather than link rot; Conway, Kaner & Bond, Parnas & Clements, and the cognitive-apprenticeship record all resolve.
+- Reconciled release metadata to Release Candidate state: the CHANGELOG entry moved from *Planned* to **Release Candidate**, and the root README, `CURRENT_SPRINT.md`, and the Part XII README now record `release/v0.15.0` as the current Release Candidate with `main` promotion pending.
+
+**Outcome:** `release/v0.15.0` is validated and ready for the release pull request to `main`. **Nothing has been released** — no `main` promotion, no `v0.15.0` tag, and no GitHub Release. Part XII's six non-blocking P3 observations and its open source-verification controls are carried forward unchanged, Pass 2 enrichment remains deferred, and Part XIII has not started.
+
+**Status:** Release Candidate validated; promotion pending
+
+**Last Updated:** 2026-08-15

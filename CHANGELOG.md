@@ -4,7 +4,7 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
-### Planned — v0.15.0 — Engineering Leadership & Career Growth Complete
+### Release Candidate — v0.15.0 — Engineering Leadership & Career Growth Complete
 
 #### Added
 
