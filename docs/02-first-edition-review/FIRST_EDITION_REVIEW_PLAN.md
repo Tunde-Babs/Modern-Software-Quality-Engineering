@@ -5,15 +5,15 @@
 | **Project** | Modern Software Quality Engineering (MSQE) |
 | **Milestone** | v0.16.0 — First Edition Review |
 | **Document type** | Review Architecture / Method |
-| **Document status** | Architecture Candidate — Awaiting Focused Independent Re-Acceptance |
+| **Document status** | Architecture Candidate — Awaiting Focused Independent Re-Acceptance after Phase D2 |
 | **Latest stable release** | v0.15.0 — Engineering Leadership & Career Growth Complete |
 | **Review scope** | Parts I–XII — 137 chapters — 651,161 words |
-| **Phase** | Phase D.5 — Architecture Materialisation |
+| **Phase** | Phase D2 — Targeted Post-Re-Acceptance Corrections |
 | **Owner** | Tunde Ajala |
 
 > This is a **governance artefact**, not a manuscript chapter. It deliberately does not carry a chapter-style status such as `Draft` or `Approved`.
 
-> **This plan has not been independently accepted.** It is the corrected architecture materialised for focused independent re-acceptance (Phase C2). **No First Edition Review execution has begun. Phase E Governance Remediation has not run.** This document contains method only — no manuscript findings, no verification data, no dispositions.
+> **This plan has not been independently accepted.** Phase C2 returned **89.5/100, verdict B, with two Architecture Blockers**; Phase D2 has applied targeted corrections and **cannot close its own work**. The plan awaits a further focused independent re-acceptance. **No First Edition Review execution has begun. Phase E Governance Remediation has not run.** This document contains method only — no manuscript findings, no verification data, no dispositions.
 
 ---
 
@@ -61,10 +61,10 @@ The review levels are the **method by which gate criteria are evidenced**, exten
 | **Gate 1 — Technical Quality**<br>concepts accurate · code executes · commands verified · diagrams correct · references accurate | L4, L6, L7, L8, L19 |
 | **Gate 2 — Editorial Quality**<br>grammar · terminology consistent · style guide · cross references · Markdown renders | L11, L6, L4 |
 | **Gate 3 — Educational Quality**<br>objectives defined · concepts build progressively · examples support theory · summary · takeaways | L9, L5, L2 |
-| **Gate 4 — Practical and Learning Quality**<br>practical activities · exercises validated · interview questions · scenarios · required-asset validation · Pass 2 accurately recorded | L10, L16, L1 |
+| **Gate 4 — Practical and Learning Quality**<br>practical activities · exercises validated · interview questions · scenarios · required-asset validation · Pass 2 accurately recorded | L10, **L16 (executed via T4)**, L1 |
 | **Gate 5 — Publication Quality**<br>chapter version · references complete · images verified · links functional · peer review | **L12**, L11, L7, L13 |
 
-Every gate is covered and no level is orphaned. L1, L3 and L15 support the Part-Level Quality Gate Model's completeness and scope-discipline requirements rather than a single numbered gate.
+Every gate is covered and **every level and supporting pass has a declared execution route** (§5.3). L1, L3 and L15 support the Part-Level Quality Gate Model's completeness and scope-discipline requirements rather than a single numbered gate.
 
 ### 2.3 Authoritative chapter-status model
 
@@ -103,14 +103,20 @@ Governance remediation (Phase E) modifies repository content; its authority deri
 | **H** | G findings | Targeted corrections | Correction record (**unscored**) | separate | All P0/P1 closed |
 | **I** | H | Focused closure review | Closure verdict, score | separate | Closures independently verified |
 | **J** | I | **Final First Edition Quality Gate** | Gate report, score, verdict | separate | Verdict issued; no open Final-Gate Blocker |
-| **K** | J pass | **Controlled Whole-Edition Baseline** | 141-object baseline + manifest | separate | Baseline recorded; drift controls active (§11) |
+| **K** | J pass | **Controlled Whole-Edition Baseline** | 141-object baseline + manifest | separate | Baseline recorded; drift controls active (§13.4) |
 | **L** | K | v0.16.0 release administration | Release metadata | separate | v0.16.0 released from the baselined state |
 
 **Phase E may not begin until Phase C2 returns zero Architecture Blockers.**
 
 ---
 
-## 4. The Thirteen Review Levels
+## 4. Thirteen Numbered Review Levels and Three Supporting Passes
+
+> **Count for execution purposes: 16 defined review dimensions.**
+>
+> **13 primary numbered review levels** (Levels 1–13) **+ 3 supporting passes** (Levels **15**, **16**, **19**) **= 16**.
+>
+> The supporting passes carry inherited identifiers from the architecture's origin. **L14, L17 and L18 do not exist and must not be invented**, and the supporting passes must not be renumbered for cosmetic contiguity. A supporting pass is *not* a lesser obligation: each has an execution route (§5.3), an exit criterion, and the same correctness threshold as a numbered level. **Any coverage structure built for only 13 dimensions is incomplete.**
 
 ### Level 1 — Repository and governance integrity
 
@@ -309,7 +315,7 @@ Inference tests: is the denominator defined? did the population change mid-windo
 | 12 | Known-finding disposition | Phase E and §12 |
 | 13 | Cross-Part coherence | L5, L10, L19 |
 
-- **Exit criterion:** every criterion PASS or formally ACCEPTED with rationale.
+- **Exit criterion:** every criterion **PASS**, or **ACCEPTED solely through the controlled acceptance record defined in §12.2** — all seven fields, without exception. **Rationale alone is never sufficient.** Acceptance is not closure. Where an accepted criterion carries a class-D publication blocker, acceptance permits continuation of the v0.16.0 review only and **does not remove publication blocking**.
 
 ### Level 13 — Final First Edition Quality Gate
 
@@ -317,14 +323,14 @@ Inference tests: is the denominator defined? did the population change mid-windo
 - **Unit:** the edition.
 - **Relationship to the standing framework:** Level 13 is an **edition-scope extension of the Part-Level Quality Gate Model** in `QUALITY_GATES.md`, standing in the same relation to the edition that the Manuscript Quality Gate stands to a Part. It inherits that model's release-readiness logic — *no P0 or P1 release blockers remain; any release-blocking P2 findings are resolved* — and adds edition-wide coherence criteria. **It does not supersede any Part's completed gate and does not reopen released Part decisions.**
 - **Census/sampling:** declared independent sample across Levels 4, 7 and 8, under §8.
-- **Method:** the gate **re-derives from primary evidence; it does not confirm prior reports.** Scorecard (§7) plus blocker overrides (§7.3).
+- **Method:** the gate **re-derives from primary evidence; it does not confirm prior reports.** Scorecard (§7.3) plus blocker overrides (§7.4).
 - **Exit criterion:** verdict issued; no open Final-Gate Blocker.
 
 ### Supporting passes
 
 **Level 15 — Recurring-case (Atlas) continuity.** Scope established by evidence: Atlas spans **Parts III–XII**; Parts I–II are legitimately outside the case and their absence is **not** a continuity failure. Dimensions: organisation, personas, system boundaries, services, architecture, currency, numerical facts, incidents, terminology, chronology, organisational structure, technical decisions. Classification: **EVOLUTION** (signposted) · **CONTEXTUAL VARIATION** (different lens, no conflict) · **AMBIGUITY** (under-specified — record, do not force) · **CONTRADICTION** (facts cannot both hold).
 
-**Level 16 — Exercise progression.** Classify every exercise on a cognitive ladder from recognition to leadership decision-making. Two required tests: the **copy-adjacent-prose test** (can it be answered by restating nearby text?) and the **untaught-capability test** (does it require a capability never taught, per Level 9?).
+**Level 16 — Exercise progression.** *Executed through transversal **T4** (§5.3); supplies Gate 4's "exercises validated" evidence.* Classify every exercise on a cognitive ladder from recognition to leadership decision-making. Two required tests: the **copy-adjacent-prose test** (can it be answered by restating nearby text?) and the **untaught-capability test** (does it require a capability never taught, per Level 9?). **Census** of exercises across all 137 chapters; **exit criterion:** every exercise classified, both tests applied, and the distribution assessed for upward progression across Parts I–XII.
 
 **Level 19 — Technical contradiction pass.** For each recurring technical subject, extract every normative statement with its stated context and compare pairwise across Parts.
 
@@ -347,12 +353,12 @@ A longitudinal-only review reproduces the Part gates and finds nothing new. A tr
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | **L1** | I–II — Foundations, Programming | 22 | 125,017 | 25 | 0.200 | 110 | **Deep** |
 | **L2** | III–V — Testing, API, Automation | 34 | 177,748 | 30 | 0.169 | 125 | **Deep** |
-| **L3** | VI–VIII — Data, Cloud/DevOps, Observability | 33 | 115,618 | 445 | 3.849 | 62 | **Deep** |
-| **L4** | IX–X — AI Quality, Performance & Security | 24 | 88,258 | 388 | 4.396 | 42 | Standard, **elevated** (§6.4) |
-| **L5** | XI–XII — Architecture, Leadership | 24 | 144,520 | 413 | 2.858 | 39 | Standard |
-| | **Total** | **137** | **651,161** | **1,301** | | **378** | |
+| **L3** | VI–VIII — Data, Cloud/DevOps, Observability | 33 | 115,618 | 450 | 3.892 | 62 | **Deep** |
+| **L4** | IX–X — AI Quality, Performance & Security | 24 | 88,258 | 390 | 4.419 | 42 | Standard, **elevated** (§13.3) |
+| **L5** | XI–XII — Architecture, Leadership | 24 | 144,520 | 427 | 2.955 | 39 | Standard |
+| | **Total** | **137** | **651,161** | **1,322** | | **378** | |
 
-**Boundary rationale.** The **VIII | IX** boundary is the evidence-maturity boundary (§6.4) and is absolute — no batch mixes verification tiers. Sub-boundaries follow conceptual continuity: L1 conceptual and skill base (and the Atlas-absent zone); L2 core practice; L3 systems and operational; L4 specialist quantitative; L5 synthesis and capstone.
+**Boundary rationale.** The **VIII | IX** boundary is the evidence-maturity boundary (§13.3) and is absolute — no batch mixes verification tiers. Sub-boundaries follow conceptual continuity: L1 conceptual and skill base (and the Atlas-absent zone); L2 core practice; L3 systems and operational; L4 specialist quantitative; L5 synthesis and capstone.
 
 ### 5.3 Axis 2 — Transversal (finds what Axis 1 cannot)
 
@@ -361,11 +367,15 @@ A longitudinal-only review reproduces the Part gates and finds nothing new. A tr
 | **T1** | Concepts and terminology | L5, L6 |
 | **T2** | Citations and sources | L7 |
 | **T3** | Numerical and analytical | L8 |
-| **T4** | QA → QE progression and dependencies | L9, L10 |
+| **T4** | QA → QE progression, dependencies, and **exercise progression** | L9, L10, **L16** |
 | **T5** | Recurring-case continuity and contradictions | L15, L19 |
 | **T6** | Editorial consistency and formulaic repetition | L11 |
 
 **T5 is scoped to Parts III–XII** by evidence. Parts I–II therefore receive five of six transversal reviews, which is adequate and stated.
+
+**Every level and supporting pass has exactly one declared execution route.** Levels 1–4 and 12–13 execute through the longitudinal axis and the gate phases; Levels 5–11 and supporting passes 15, 16 and 19 execute through the transversals mapped above. **No level or pass is unassigned.**
+
+> **Transversal completion rule.** A transversal may not be recorded complete unless **every level mapped to it** has been inspected with a valid six-field record (§5.4). Completing T4 therefore requires L9, L10 **and L16** each to be inspected. It is not possible to claim transversal completion while a mapped level has never been inspected.
 
 ### 5.4 Coverage exit rule — verifiable inspection record
 
@@ -386,13 +396,31 @@ A longitudinal-only review reproduces the Part gates and finds nothing new. A tr
 >
 > **The purpose is auditability, not paperwork volume.** A ledger row ID is sufficient where a ledger row exists. Quotation is required only where no other artefact captures the inspection, and must not be demanded merely to satisfy the control.
 
+**Structural-scan evidence.** Where the method is a structural scan, the evidence field must identify enough to establish that **the scan actually ran against the named object**. Any one of the following is sufficient: tool or check name **with** its version or script revision · command or check identifier · output or saved-report reference · result digest or hash · a reproducible result summary tied to the inspected object (for example *"heading-order check v3, 0 jumps across 12 chapters"*).
+
+> **A bare `scan clean` is explicitly insufficient**, as is any assertion that does not name what was run. This does not require quotation and adds no paperwork beyond identifying the check and its result.
+
 ---
 
 ## 6. Quantitative-Content Census
 
-### 6.1 Exclusion pass — structural and reference numerals
+### 6.1 Classification pipeline — deterministic ordering
 
-Removed before counting, because they are identifiers rather than quantitative claims:
+> **Governing precedence rule.** **A recognised Tier-1 quantitative claim always takes precedence over an identifier exclusion.** No exclusion may delete a token already classified as a Tier-1 claim.
+
+Classification runs as five ordered passes. The ordering is normative: an independent implementation must reproduce the census without guessing.
+
+| Pass | Action |
+| --- | --- |
+| **PASS 0** | Remove **structurally unambiguous non-claims** — exclusions whose match cannot contain a protected Tier-1 claim (E1–E10 below). |
+| **PASS 1** | **Identify and protect Tier-1 quantitative claims** (§6.2) in the PASS-0 residue. Protected spans are immutable for the remainder of the pipeline. |
+| **PASS 2** | Apply **context-dependent identifier exclusions** (E11) **only to numeric tokens not protected in PASS 1**. |
+| **PASS 3** | Classify the remaining unmatched, ambiguous bare integers as **Tier-2 candidates**. |
+| **PASS 4** | **Deduplicate** using leftmost-longest match with the Tier-1 class order in §6.2 as the tie-break. |
+
+**Why the split between PASS 0 and PASS 2.** An exclusion belongs in PASS 0 when its match is structurally determined and cannot hide a genuine claim — a URL, a footnote definition, a standards designator such as `ISO/IEC 25010:2023` (which would otherwise be misread as a ratio). An exclusion belongs in PASS 2 when it depends on **surrounding context** and could therefore fire on a genuine claim. **E11 is the only context-dependent exclusion**, and placing it after Tier-1 protection is what prevents it destroying value-bearing claims.
+
+**PASS 0 — structurally unambiguous non-claims:**
 
 | # | Excluded | Rationale |
 | --- | --- | --- |
@@ -402,11 +430,16 @@ Removed before counting, because they are identifiers rather than quantitative c
 | E4 | Markdown link and image targets | relative paths contain chapter and delivery numbers |
 | E5 | Footnote definition lines | bibliographic volumes, pages, years |
 | E6 | Footnote references | citation identifiers |
-| E7 | Chapter metadata rows | metadata |
+| E7 | Chapter metadata rows | metadata, not teaching claims |
 | E8 | `Chapter N` / `Part N` headings | structural numbering |
-| E9 | Standards designators (ISO/IEC, IEEE, RFC) | reference identifiers |
+| E9 | Standards designators (ISO/IEC, IEEE, RFC) | reference identifiers; structurally resemble ratios |
 | E10 | Bare years 1900–2099 | bibliographic |
-| E11 | Three-digit codes 100–599 where surrounding context establishes identifier use (HTTP, status, response, code, returns) | HTTP status codes are technical identifiers, verified at Levels 4 and 6, not Level 8 |
+
+**PASS 2 — context-dependent identifier exclusion, applied to unprotected tokens only:**
+
+| # | Excluded | Rationale and constraint |
+| --- | --- | --- |
+| E11 | Three-digit codes 100–599 where surrounding context establishes identifier use (HTTP, status, response, code, returns) | HTTP status codes are technical identifiers, verified at Levels 4 and 6, not Level 8. **E11 may never remove a token protected in PASS 1.** Without this constraint, genuine latency claims such as `310 ms` in *"Average checkout **response** latency"* are destroyed by the word "response" falling inside E11's context window — a failure measured and corrected in Phase D2. |
 
 ### 6.2 Inclusion pass — two tiers
 
@@ -417,40 +450,57 @@ Removed before counting, because they are identifiers rather than quantitative c
 
 **Bare integers cannot be a primary signal.** They cannot be separated from identifiers by pattern alone — genuine values sit beside chapter cross-references, stage numbers, status codes and standards numbers. Tier 2 makes the ambiguity explicit and routes it to human triage rather than silently counting or silently dropping it.
 
+**Tier membership, overlap and counting semantics:**
+
+- **A token belongs to at most one tier.** Tier-1 membership is exclusive and is decided in PASS 1; a token protected as Tier-1 can never later become Tier-2 or be excluded.
+- **Tier-2 is the residue only** — tokens surviving PASS 0 and PASS 2 that were not protected in PASS 1.
+- **Overlap within Tier 1** is resolved by **leftmost-longest** match; where two classes match the same span, the **class order listed in the table above** is the tie-break (`pct`, `cur`, `unit`, `mult`, `ratio`, `perN`, `thou`, `dec`).
+- **Counts are match occurrences, not distinct values.** The same figure appearing three times is three occurrences, because each is a separate claim requiring verification.
+- **Code-fence numerics** are counted in their own population and are never added to Tier 1 or Tier 2.
+
 ### 6.3 Mandatory reflexive validation
 
 > **Any metric used by the review architecture itself must be sampled against source text and validated before its output is used for review allocation or scoring.**
 
-This rule exists because two successive versions of this metric failed construct validity — a percentage-only proxy, then a composite contaminated by file paths and status codes. The architecture demands construct validity of the manuscript; it must apply the same discipline to itself.
+This rule exists because **three** successive versions of this metric failed construct validity — a percentage-only proxy, then a composite contaminated by file paths and status codes, then an exclusion ordering that silently destroyed 21 genuine claims. The architecture demands construct validity of the manuscript; it must apply the same discipline to itself.
 
-### 6.4 Corrected census
+**The rule applies to every individual exclusion and inclusion pattern, not only to the metric as a whole.** Each exclusion must be tested for *suppression* — whether it removes a genuine claim — and each inclusion for *contamination* — whether it counts an identifier. Both tests are performed by sampling matches against source text and reading them.
+
+### 6.4 Active census
+
+Produced by the §6.1 pipeline as stated. **These are the only operational figures.**
 
 | Part | Tier 1 | Tier 2 | Code-fence | Words | **Tier-1 / 1k words** |
 | --- | --- | --- | --- | --- | --- |
 | I | 20 | 28 | 1 | 64,921 | 0.31 |
 | II | 5 | 19 | 31 | 60,096 | 0.08 |
 | III | 24 | 22 | 0 | 52,741 | 0.46 |
-| IV | 2 | 33 | 62 | 54,811 | 0.04 |
-| V | 4 | 22 | 0 | 70,196 | 0.06 |
-| VI | 194 | 82 | 17 | 45,206 | 4.29 |
+| IV | 2 | 48 | 70 | 54,811 | 0.04 |
+| V | 4 | 23 | 0 | 70,196 | 0.06 |
+| VI | 194 | 82 | 18 | 45,206 | 4.29 |
 | VII | 53 | 23 | 0 | 40,305 | 1.31 |
-| VIII | 198 | 97 | 55 | 30,107 | 6.58 |
-| IX | 232 | 368 | 0 | 35,028 | **6.62** |
-| X | 156 | 175 | 7 | 53,230 | 2.93 |
-| XI | 297 | 349 | 0 | 77,606 | 3.83 |
-| XII | 116 | 262 | 0 | 66,914 | 1.73 |
-| **Total** | **1,301** | **1,480** | **173** | **651,161** | |
+| VIII | 203 | 128 | 70 | 30,107 | **6.74** |
+| IX | 232 | 369 | 0 | 35,028 | 6.62 |
+| X | 158 | 179 | 7 | 53,230 | 2.97 |
+| XI | 306 | 407 | 0 | 77,606 | 3.94 |
+| XII | 121 | 272 | 0 | 66,914 | 1.81 |
+| **Total** | **1,322** | **1,600** | **197** | **651,161** | |
 
-Batch aggregates appear in §5.2. Derived ratios: **L4/L3 = 1.14× · L4/L5 = 1.54× · L4/L1 = 22.0× · L4/L2 = 26.0×**.
+Batch aggregates appear in §5.2. Derived ratios: **L4/L3 = 1.14× · L4/L5 = 1.50× · L4/L1 = 22.1× · L4/L2 = 26.2×**.
 
-**Consequence for batching.** L4 remains the densest batch, but at 1.14× L3 it is **not** an isolated extreme. **L3 receives numerical-verification resourcing comparable to L4.** Batch boundaries are unchanged, because they are driven by evidence maturity and conceptual continuity, neither of which the metric affects.
+**Effect of the §6.1 precedence rule.** Correcting E11's ordering recovered **21 Tier-1 claims** that the previous ordering destroyed — 20 value-with-unit latency figures and one percentage, in Parts VIII (+5), X (+2), XI (+9) and XII (+5). All are genuine teaching claims; none is an identifier.
+
+**Consequence for batching.** L4 remains the densest batch, but at **1.14× L3** it is **not** an isolated extreme, and **Part VIII is now the densest Part in the edition (6.74/1k), narrowly ahead of Part IX (6.62/1k)** — which strengthens rather than changes the conclusion, since Part VIII sits in L3. **L3 receives numerical-verification resourcing comparable to L4.** Batch boundaries are unchanged, because they are driven by evidence maturity and conceptual continuity, neither of which the metric affects.
 
 ### 6.5 Superseded evidence
 
 The following are recorded as **superseded** and must **not** be used operationally:
 
 - the **percentage-only** density metric and every figure derived from it, including the claims that L4 was "2.4× the next densest" and ">30× L1–L2", and that Parts II, IV and V had "zero" numerical content;
-- the **Phase C composite** metric and its figures (Part VI to rank 2, Part VII to rank 9, L1/L2 at 4.06/3.90 per 1k), which were inflated by uncorrected integer contamination.
+- the **Phase C composite** metric and its figures (Part VI to rank 2, Part VII to rank 9, L1/L2 at 4.06/3.90 per 1k), which were inflated by uncorrected integer contamination;
+- the **Phase D-era census** — Tier-1 total 1,301, Tier-2 total 1,480, Part VIII 198/6.58, Part X 156/2.93, Part XI 297/3.83, Part XII 116/1.73, and the ratio L4/L5 = 1.54× — produced before the §6.1 precedence rule existed and therefore missing 21 genuine Tier-1 claims. Superseded by §6.4.
+
+**One active census only.** Where any figure in this document conflicts with §6.4, §6.4 governs.
 
 ### 6.6 Correctness threshold
 
@@ -619,6 +669,15 @@ These are reported as a distinct subsection of the Editorial Consistency Report 
 
 **Unavoidable reviewer reuse** elsewhere is permitted only with all four compensating controls: the reuse is declared in `FIRST_EDITION_REVIEW_LOG.md` before the phase begins · the reviewer re-derives from primary evidence rather than reviewing their own report · a declared independent sample of the prior phase's conclusions is re-verified from source · the limitation is stated in the phase verdict.
 
+**Automated tools and independence.** Independence is **procedural and evidentiary**, not a property of which tool or product performs the work.
+
+- **Reusing the same deterministic structural checker across phases is permitted** for *fact production*. A deterministic check returns the same facts to anyone who runs it, so reuse creates no confirmation risk.
+- **Deterministic tools never supply independent verdicts.** They establish facts; a reviewer supplies the judgement (see R-C).
+- **Using a different AI or LLM system does not by itself establish independence**, and using the same one does not by itself destroy it. Neither substitutes for the procedural controls in R1–R5.
+- **A correction author may not evade R3 or R5 by routing the scoring or gating through an automated tool.** The prohibition attaches to the work, not to the instrument.
+- **Where an automated system materially contributes evaluative judgement** — classification, severity assignment, disposition, or scoring — the same human and procedural independence requirements apply as to any reviewer, including the declaration and compensating controls above.
+- **R3 and R5 remain exceptionless** under every arrangement.
+
 **General independence discipline.** Prior reports are evidence, not proof. Numerical claims are recomputed, citations re-verified, definitions re-read from the manuscript, governance verified against Git. **Prior Part scores are never inputs to the edition score.** Where evidence is insufficient, the uncertainty is stated.
 
 ---
@@ -631,7 +690,7 @@ These are reported as a distinct subsection of the Editorial Consistency Report 
 
 | Item | Activity |
 | --- | --- |
-| **Part I chapter status** | Reconcile against **both** hypotheses (§14.1). Reconciliation set: Git history · Part I README · `QUALITY_GATES.md` · `CHAPTER_TEMPLATE.md` · later Part conventions |
+| **Part I chapter status** | Reconcile against **both** hypotheses stated in **§14, open question 1**. Reconciliation set: Git history · Part I README · `QUALITY_GATES.md` · `CHAPTER_TEMPLATE.md` · later Part conventions |
 | **`QUALITY_GATES.md` integration** | Confirm the seven-stage status progression and five-gate model as the authorities named by Levels 1, 4, 12 and 13 |
 | **Empty editorial files** | Disposition each as A/B/C/D per §9 |
 | **Active editorial style guide** | Dispose of `docs/00-project/EDITORIAL_STYLE_GUIDE.md` carrying `Status: Draft` while serving as the de-facto editorial authority |
@@ -809,17 +868,19 @@ Immutable record. Each entry is a distinct event.
 | **1B** | Targeted Architecture Decision Resolution | Eight owner decisions incorporated; publication readiness removed as a scored category; batching re-evaluated |
 | **C** | **Independent Architecture Review** | **Score 80/100 · Verdict B — conditionally acceptable, corrections required · three Architecture Blockers: ARC-P1-1 (invalid numerical-density metric), ARC-P1-2 (`QUALITY_GATES.md` not integrated), ARC-P2-2 (coverage exit criterion administratively satisfiable)** |
 | **D** | Targeted Architecture Corrections | All three blockers corrected; eleven further findings closed; two partially closed. **ARC-D-1 discovered:** the architecture had no persistent authoritative repository artefact |
-| **D.5** | **Architecture Materialisation** | **This document — resolves ARC-D-1** |
+| **D.5** | **Architecture Materialisation** | This document created — resolves ARC-D-1 |
+| **C2** | **Focused Independent Architecture Re-Acceptance** | **Score 89.5/100 · Verdict B · two Architecture Blockers.** **ARC-P1-2 CLOSED · ARC-P2-2 CLOSED · ARC-D-1 CLOSED · ARC-P1-1 PARTIALLY CLOSED.** Open: **ARC-C2-1** (Level 16 orphaned from the execution model, P1/class A) and **ARC-C2-2** (E11 suppressing 19–21 genuine Tier-1 claims, P2/class A), plus ARC-C2-6 (P2) and ARC-C2-3, -4, -5, -7, -8 (P3) |
+| **D2** | **Targeted Post-Re-Acceptance Corrections** | Corrections applied for ARC-C2-1, -2, -3, -4, -5, -6, -7 and -8: L16 routed through T4 with a transversal-completion rule; §6.1 precedence pipeline added and the census recomputed (Tier-1 1,301 → **1,322**); Level 12 bound to the §12.2 acceptance record; cross-references, level-count terminology, tier ordering, structural-scan evidence and automated-tool independence all specified. **D2 is a correction event and does not close its own findings** |
 
-> **This plan is awaiting focused independent re-acceptance (Phase C2). The architecture is not yet approved.**
+> **This plan is awaiting a further focused independent re-acceptance following Phase D2. The architecture is not yet approved, and Phase E remains unauthorised.**
 
-Where Phase D changed an earlier rule, Phase D governs and only the corrected rule appears above as active guidance. Superseded metrics are recorded in §6.5 and must not be used operationally.
+Where a later phase changed an earlier rule, the later phase governs and only the corrected rule appears as active guidance. Superseded metrics — including the Phase D-era census — are recorded in §6.5 and must not be used operationally.
 
 ---
 
 ## 17. Scope Boundaries of This Plan
 
-This document is method only. As of Phase D.5:
+This document is method only. As of Phase D2:
 
 - **No First Edition Review execution has begun.**
 - **Phase E Governance Remediation has not run.** No governance item has been remediated, dispositioned or closed.
