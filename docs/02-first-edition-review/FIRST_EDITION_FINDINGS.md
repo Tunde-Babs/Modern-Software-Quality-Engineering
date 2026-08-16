@@ -7,12 +7,12 @@
 | **Document type** | Review artefact 2 of 4 — **Defects** |
 | **Authority** | [`FIRST_EDITION_REVIEW_PLAN.md`](FIRST_EDITION_REVIEW_PLAN.md) §13.1 |
 | **Lifecycle** | Mutable, Phases F→J |
-| **State** | **Initialised at F0 — no manuscript finding exists** |
+| **State** | **F-L1 complete — 7 findings recorded (Parts I–II). Batches L2–L5 and transversals T1–T6 not started** |
 | **Owner** | Tunde Ajala |
 
 > This is a **governance artefact**, not a manuscript chapter. It carries no chapter-style status.
 
-> **No manuscript finding has been recorded.** Phase F substantive review has not started. The registers below are structure only.
+> **Findings recorded to date: 7, all from F-L1 (Parts I–II).** No other batch or transversal has run. Severity distribution: **P0 = 0 · P1 = 1 · P2 = 2 · P3 = 4.** Blocker classes: **A = 0 · B = 0 · C = 7 · D = 0.**
 
 ---
 
@@ -121,11 +121,157 @@ Every finding records all of the following. A row missing any mandatory field is
 
 ## 3. Manuscript findings register
 
-**0 findings. Phase F substantive review has not started.**
+**7 findings, all from F-L1 (Parts I–II).** Recorded, classified and evidenced only — **no manuscript content was corrected.** Corrections are Phase H.
 
-| Finding ID | Phase/batch | Part | Chapter/path | Level | Defect class | Primary category | Severity | Blocker | Finding | Evidence | Consequence | Recommended action | Status | Owner | Revision trigger | Verification |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| *(none)* | | | | | | | | | | | | | | | | |
+### FE-L1-001 — Part II README states the v0.5.0 tag and GitHub Release are still pending
+
+| Field | Value |
+| --- | --- |
+| **Phase / batch** | Phase F · longitudinal **L1** |
+| **Part / path** | II · `book/part-02-programming/README.md` line 123 (also line 115) |
+| **Review level** | Level 1 — Repository and governance integrity |
+| **Defect class** | False current-state claim; stale lifecycle sweep |
+| **PRIMARY category** | **8 — Governance integrity** |
+| **Secondary** | none |
+| **Severity** | **P1** |
+| **Blocker class** | **C — Final-Gate Blocker** |
+| **Finding** | The Part II README asserts that v0.5.0 has not been released. Line 123: *"The v0.5.0 release candidate is prepared; final approval, the Git tag, and the GitHub Release remain pending."* Line 115: *"Part II is completed for the v0.5.0 — Programming Complete release candidate."* Both statements are false. |
+| **Evidence** | Annotated tag `v0.5.0` exists at commit `f71d28458211488f5c876c492a574287d8002be7`, dated **2026-08-09**, created by merging PR #18 from `release/v0.5.0`. `CHANGELOG.md` line 236 carries a released entry `## [0.5.0] — Programming Complete — 2026-08-09`. `CURRENT_SPRINT.md` line 20 records Part II as released. The claim has been stale for one week at the F-L1 baseline date. |
+| **Consequence** | A reader or reviewer consulting the Part II README is told the Part is unreleased. Plan §7.4 makes *"Governance-integrity failure (materially false current-state claim)"* a **BLOCK** override at gate evaluation, so this cannot be carried into Phase J unresolved. |
+| **Recommended action** | Correct the two statements to the released state at Phase H. Not corrected here. |
+| **Status** | `OPEN` |
+| **Owner** | Project Founder |
+| **Revision trigger** | n/a — P1 requires correction, not acceptance |
+| **Verification** | `NOT VERIFIED` — closure verified independently at Phase I |
+| **Note** | **This confirms the gov-P3-5 lifecycle-drift pattern in Part II.** Before F-L1 the pattern was confirmed only in Parts X, XI and XII (plan §14 open question 7). Parts III–IX remain unassessed and belong to their own batches. |
+
+### FE-L1-002 — Ten Part I chapters carry a status value outside the authoritative status model
+
+| Field | Value |
+| --- | --- |
+| **Phase / batch** | Phase F · longitudinal **L1** |
+| **Part / path** | I · all ten chapters in `book/part-01-foundations/chapters/` |
+| **Review level** | Level 1 and Level 4 |
+| **Defect class** | Chapter status outside the authoritative model (L1); status nonconformance (L4) |
+| **PRIMARY category** | **8 — Governance integrity** |
+| **Secondary** | 7 — Editorial consistency (recorded for analysis; **not re-deducted**) |
+| **Severity** | **P2** |
+| **Blocker class** | **C — Final-Gate Blocker** |
+| **Finding** | All ten Part I chapters carry `\| Status \| Technical Review Ready \|`. **`Technical Review Ready` is not one of the seven stages** in the authoritative model (plan §2.3, `QUALITY_GATES.md`): Draft → Technical Review → Editorial Review → Educational Review → Practical Validation → Publication Review → Approved. Separately, plan §4 Level 4 requires that the stage claimed be *"supported by the review evidence recorded for that Part"*; **the Part I README records no review event, no quality gate and no score.** |
+| **Evidence** | `QUALITY_GATES.md` lines 42–62 define the seven stages; `templates/CHAPTER_TEMPLATE.md` line 33 mandates `\| Status \| Draft \|`. A repository-wide search finds `Technical Review Ready` defined in **no** governance document, template, or Part README — it occurs only in narrative records. `book/part-01-foundations/README.md` contains no gate or review record. By contrast `book/part-02-programming/README.md` line 123 records a completed gate at **95/100** while correctly keeping all twelve chapters at `Draft`. |
+| **Consequence** | The Part with the **weakest recorded review evidence carries the strongest maturity claim**, inverting the edition's status semantics. Level 12 criterion 10 (manuscript completeness — 137/137 conformant) and Gate 5 (chapter status) cannot be evidenced clean while ten chapters sit outside the model. |
+| **Recommended action** | Owner decision at Phase H: normalise to a defined stage, or define `Technical Review Ready` in `QUALITY_GATES.md`. **Not normalised here** — F-L1 records, it does not correct. |
+| **Status** | `OPEN` |
+| **Owner** | Project Founder |
+| **Revision trigger** | n/a while P2 remains open; if accepted rather than corrected, acceptance requires all four §7.1 fields |
+| **Verification** | `NOT VERIFIED` |
+| **Note** | **This trips the revision trigger recorded for Phase E finding E-12**, which accepted the status on condition that it be reopened if *"Phase F Level 1 evidence shows status semantics materially impair edition-level assessment."* E-12 tested legitimacy of origin and found it genuine; F-L1 applies the plan's **objective conformance test** and it fails. The two results are compatible: the value was authored in good faith **and** is out of model. |
+
+### FE-L1-003 — Six footnote definitions in Part II are never cited in the body
+
+| Field | Value |
+| --- | --- |
+| **Phase / batch** | Phase F · longitudinal **L1** |
+| **Part / path** | II · `chapter-10-git-code-review-and-collaborative-engineering.md` (4), `chapter-11-testing-quality-engineering-utilities.md` (2) |
+| **Review level** | Level 4 (structure) with a Level 7 consequence |
+| **Defect class** | Undefined or unused footnote |
+| **PRIMARY category** | **3 — Evidence / citation integrity** |
+| **Secondary** | 7 — Editorial consistency |
+| **Severity** | **P3** |
+| **Blocker class** | **C** |
+| **Finding** | Chapter 10 defines `[^pro-git]`, `[^git-rebase]`, `[^github-pr]`, `[^google-review]` (lines 367–373) and Chapter 11 defines `[^meszaros]`, `[^feathers]` (lines 424–426), but **none of the six appears as an in-body citation marker.** Chapter 10's entire reference list is unreferenced. |
+| **Evidence** | Deterministic reconciliation of `^\[\^key\]:` definitions against `[^key]` occurrences outside definition lines, across all 22 L1 chapters: exactly these two chapters diverge; the other 20 reconcile with zero unused and zero undefined. Contrast `chapter-09-maintainable-code-and-refactoring.md` line 144, which attaches `[^fowler-refactoring]` and `[^google-code-review]` to the sentences they support. |
+| **Consequence** | Six of L1's 110 citations support no claim, so **Level 7's primary test — claim–source alignment — cannot be applied to them.** They function as an uncited bibliography while being counted as citations. |
+| **Recommended action** | Phase H: either attach each to the claim it supports, or move to *Further Reading*. Not corrected here. |
+| **Status** | `OPEN` |
+| **Owner** | Project Founder |
+| **Revision trigger** | Escalate to P2 if the same pattern proves systemic across three or more Parts in later batches |
+| **Verification** | `NOT VERIFIED` |
+
+### FE-L1-004 — Template section naming varies from the required structure (systemic, 5 instances)
+
+| Field | Value |
+| --- | --- |
+| **Phase / batch** | Phase F · longitudinal **L1** |
+| **Part / path** | I · `chapter-04-quality-throughout-the-sdlc.md` · II · `chapter-02-essential-typescript-for-quality-engineers.md`, `chapter-12-capstone-quality-engineering-toolkit.md` |
+| **Review level** | Level 4 |
+| **Defect class** | Missing required section (content present under a non-template heading) |
+| **PRIMARY category** | **7 — Editorial consistency** |
+| **Secondary** | none |
+| **Severity** | **P3** |
+| **Blocker class** | **C** |
+| **Systemic group** | `SYS-TEMPLATE-NAMING` — scored once at the highest instance severity, all five instances enumerated |
+| **Finding** | `CHAPTER_TEMPLATE.md` requires *Common Misconceptions or Common Pitfalls*, *Opening Story*, *Why This Chapter Matters* and *Practical Exercise*. Five headings deviate: I-04 uses **"Common Anti-Patterns"**; II-02 uses **"Common QA Coding Problems"**; II-12 uses **"Opening Scenario"**, **"Why This Capstone Matters"** and **"Practical Capstone Tasks"**. |
+| **Evidence** | Heading census across all 22 L1 chapters against the template's required-section list. **In every case the required content is present** — only the label differs. The other 19 chapters conform exactly. |
+| **Consequence** | Navigation coherence is weakened: a reader or tool locating a required section by heading will miss it in these three chapters. No content is absent. |
+| **Recommended action** | Phase H: rename to template headings, or record the capstone variant as an approved template exception. Not corrected here. |
+| **Status** | `OPEN` |
+| **Owner** | Project Founder |
+| **Revision trigger** | Escalate to P2 if later batches show the edition has no consistent capstone-heading convention |
+| **Verification** | `NOT VERIFIED` |
+
+### FE-L1-005 — The accepted Tier-1 census is not reproducible from the committed classifier text
+
+| Field | Value |
+| --- | --- |
+| **Phase / batch** | Phase F · longitudinal **L1** |
+| **Part / path** | edition · `docs/02-first-edition-review/FIRST_EDITION_REVIEW_PLAN.md` §6.1, §6.2, §6.4 |
+| **Review level** | Level 1 — governance integrity (review-instrument validity, plan §6.3) |
+| **Defect class** | Architecture-internal metric not independently reproducible |
+| **PRIMARY category** | **8 — Governance integrity** |
+| **Secondary** | 4 — Numerical / analytical integrity |
+| **Severity** | **P2** |
+| **Blocker class** | **C — Final-Gate Blocker** (see escalation note) |
+| **Finding** | A classifier implemented independently from the committed §6.1/§6.2 text reproduces the **word counts exactly for all twelve Parts** (651,161 total) but **does not reproduce the Tier-1, Tier-2 or code-fence counts**. Part I returns **15** against the accepted **18**; the edition returns **1,174** against the accepted **1,213** (96.8%); Tier-2 returns 1,507 against 1,511; code-fence returns 262 against 186. |
+| **Evidence** | The Part I difference is **fully explained**: three of the accepted Part I Tier-1 matches are the string `4.0`/`1.1` occurring **inside footnote-definition lines** (`chapter-02` line 363, `chapter-03` line 441, `chapter-10` line 519). **PASS-0 exclusion E5 removes lines beginning `[^key]:` in their entirety**, so these three cannot survive a correct E5. My own implementation reproduced 18 only while carrying two defects — a newline-collapsing mask and an E4 link-target pattern that spanned newlines and thereby defeated E5. **Both defects were found by the reflexive validation plan §6.3 mandates, and correcting them moved Part I from 18 to 15.** Code-fence divergence is a separate matter: §6.1 sets fenced content aside as a population but **never defines how its numerics are counted**, so the figure 186 is not derivable from the committed text. |
+| **Consequence** | Level 8's exit criterion — *every confirmed Tier-1 claim recomputed* — cannot be demonstrated complete for any batch whose Tier-1 population cannot be regenerated. **For L1 the impact is nil**: the population is small enough to enumerate exhaustively, and this review verified the **union** of both runs (23 items), a superset of both. Phase C4 recorded that a fresh classifier reproduced *all 36 census figures exactly*; that result did not reproduce here. |
+| **Recommended action** | Before **F-L3** — the first high-density batch — either publish the reference classifier implementation or specify E5 precedence and the code-fence counting rule in §6.1. **No architecture change was made by this task.** |
+| **Status** | `OPEN` |
+| **Owner** | Review architecture owner |
+| **Revision trigger** | **Escalates to Class B — Review-Execution Blocker for F-L3, F-L4 and F-L5** if unresolved when those batches are authorised, since 319, 390 and 452 Tier-1 claims cannot be exhaustively enumerated by inspection the way L1's 23 can. **It is not a Class-B blocker for L1 and did not stop this batch.** |
+| **Verification** | `NOT VERIFIED` |
+
+### FE-L1-006 — Tier-1 contamination in L1 is an order of magnitude above the accepted edition-wide rate
+
+| Field | Value |
+| --- | --- |
+| **Phase / batch** | Phase F · longitudinal **L1** |
+| **Part / path** | I · chapters 1, 2, 3, 10 |
+| **Review level** | Level 8 |
+| **Defect class** | Identifier counted as a quantitative claim |
+| **PRIMARY category** | **4 — Numerical / analytical integrity** |
+| **Secondary** | 8 — Governance integrity |
+| **Severity** | **P3** |
+| **Blocker class** | **C** |
+| **Finding** | **Six of the 23 accepted L1 Tier-1 claims (26%) are software version strings, not quantitative claims** — five instances of `4.0` from *"SWEBOK Guide, Version 4.0"* and one of `1.1` from *"SSDF Version 1.1"*. **L1's genuine Tier-1 population is 17, not 23.** |
+| **Evidence** | Enumerated with byte offsets: ch01 L435, ch02 L347, ch02 L363, ch03 L423, ch03 L441, ch10 L519. All are captured by the `dec` class from retained Markdown **link text** (E4 retains link text by design) or from footnote-definition lines. |
+| **Consequence** | The plan's accepted observation **C4-1** measured this contamination at **26 of 1,213 = 2.1% edition-wide** and accepted it as P3 non-blocking on that basis. **The local rate in L1 is 26% — roughly twelve times the accepted figure** — because L1 is the sparsest batch (0.184 and 0.163 Tier-1 per 1k words). A rate accepted as immaterial edition-wide is not immaterial here. |
+| **Recommended action** | Record only. C4-1 remains an accepted architecture observation with its own revision trigger; this finding supplies new evidence about its **local** distribution for the owner's consideration at Phase G. |
+| **Status** | `OPEN` |
+| **Owner** | Review architecture owner |
+| **Revision trigger** | Reconsider C4-1's acceptance if a later sparse batch shows a comparable local contamination rate |
+| **Verification** | `NOT VERIFIED` |
+
+### FE-L1-007 — Part I README labels delivered chapters as "Planned" and records no review evidence
+
+| Field | Value |
+| --- | --- |
+| **Phase / batch** | Phase F · longitudinal **L1** |
+| **Part / path** | I · `book/part-01-foundations/README.md` |
+| **Review level** | Level 3 — Part architecture |
+| **Defect class** | README/manuscript divergence |
+| **PRIMARY category** | **8 — Governance integrity** |
+| **Secondary** | 7 — Editorial consistency |
+| **Severity** | **P3** |
+| **Blocker class** | **C** |
+| **Finding** | The Part I README heads its chapter list **"## Planned Chapters"** although all ten chapters are delivered, and the README records no review event, gate, score or release state anywhere. |
+| **Evidence** | All ten chapter files exist and all ten README chapter links resolve (27/27 local links resolve overall). No gate or score string appears in the file. Part II's README, by contrast, carries a *Current Manuscript and Companion State* section with a recorded gate result. |
+| **Consequence** | The two Parts in this batch use **incompatible Part-README conventions**, and Part I's provides no evidence base against which its chapters' status claims can be assessed — the condition that makes FE-L1-002 assessable only from outside the Part. |
+| **Recommended action** | Phase H: retitle to *Chapters* and record Part I's review history, or state explicitly that none exists. Not corrected here. |
+| **Status** | `OPEN` |
+| **Owner** | Project Founder |
+| **Revision trigger** | Escalate to P2 if Level 2/Level 3 in later batches find no consistent Part-README convention across the edition |
+| **Verification** | `NOT VERIFIED` |
 
 ---
 
@@ -150,4 +296,4 @@ These are **not** manuscript findings and **do not** appear in the register abov
 
 ---
 
-**Last Updated:** 2026-08-16
+**Last Updated:** 2026-08-16 (F-L1)
