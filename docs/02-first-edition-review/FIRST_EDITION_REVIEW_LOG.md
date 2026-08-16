@@ -409,6 +409,100 @@ A classifier was implemented independently from the committed §6.1/§6.2 text. 
 
 ---
 
+## Event FE-EV-004 — Phase F-L2: Longitudinal Batch 2 START
+
+| Field | Value |
+| --- | --- |
+| **Event ID** | `FE-EV-004` |
+| **Date** | 2026-08-16 |
+| **Phase** | F — Two-Axis Review, longitudinal axis, batch **L2** |
+| **Scope** | Parts III–V — Software Testing Engineering, API Quality Engineering, Automation Engineering |
+| **Accepted census** | 34 chapters · 177,748 words · Tier-1 **29** · Tier-2 **94** · code-fence **66** · **125** citations · **Deep** verification tier |
+| **Census reconciliation at START** | **Words 177,748 — matched exactly** (III 52,741 · IV 54,811 · V 70,196). **Citations 125 — matched exactly** (III 44 · IV 48 · V 33). Chapter count 34 — matched (12 · 10 · 12) |
+| **Score / verdict** | **START — no verdict issued at this event** |
+| **Independence** | Plan §11 R1 preserved — this event authorises neither Phase G nor F-L3 nor any transversal. Prior Part gate outcomes for Parts III, IV and V are **evidence only, never proof**, and are not inputs to any conclusion |
+| **Baseline digest at START** | `ec588eaa1e61bd0f0fa8706f5cc3dd470b7caa67314df6f77f858425f150a411` — **matched** |
+| **Standing findings relevant to execution** | **FE-L1-005** (P2, class C) remains open: the accepted Tier-1 census is not reproducible from the committed classifier text. **It does not block L2** — 29 Tier-1 claims remain exhaustively enumerable by independent inspection. L2 therefore enumerates its Tier-1 population **without relying on the unresolved instrument to prove completeness**, and reports that evidence for the pre-L3 decision. **FE-L1-001 … FE-L1-007 are standing findings and are not repaired, re-scored or re-opened by this batch** |
+| **F-L3 condition** | **FE-L1-005 must be resolved before F-L3 is authorised**, or it escalates to Class B — Review-Execution Blocker for L3, L4 and L5 (319, 390 and 452 Tier-1 claims respectively) |
+| **Non-collapse note** | F-L2 must not be collapsed with F0 (`FE-EV-001`), F-L1 (`FE-EV-002`, `FE-EV-003`), the Part III/IV/V release gates, or any future batch or transversal event |
+
+**Levels executing in L2 (plan §5.3 longitudinal route, re-read and confirmed):** Levels **1, 2, 3, 4**. Levels 5–11 and supporting passes 15, 16 and 19 route through transversals T1–T6; L2 collects batch-local evidence for them and **does not mark any transversal complete**.
+
+
+---
+
+## Event FE-EV-005 — Phase F-L2: Longitudinal Batch 2 COMPLETE
+
+| Field | Value |
+| --- | --- |
+| **Event ID** | `FE-EV-005` |
+| **Date** | 2026-08-16 |
+| **Phase** | F — longitudinal batch **L2**, Parts III–V |
+| **Scope** | 34 chapters · 177,748 words · 125 citations · 29 accepted Tier-1 claims · **Deep** verification tier |
+| **Score / verdict** | **`UNSCORED`** — the accepted plan defines no batch-level score. Scoring occurs at Phase G and Phase J only. **No verdict on the edition is issued or implied.** |
+| **Independence** | Plan §11 R1 preserved — this event authorises neither Phase G, F-L3, nor any transversal. The recorded Part III (96/100), Part IV (97/100) and Part V (98/100) gate outcomes were **not** inputs to any conclusion; every finding was re-derived from primary evidence |
+| **Baseline digest at START / END** | `ec588eaa…f150a411` / `ec588eaa…f150a411` — **matched both times; zero manuscript mutation** |
+| **Chapter coverage** | **34 / 34** longitudinal, each with a valid six-field record (§5.4). **Cumulative longitudinal coverage: 56 / 137** |
+| **Findings** | **5 new** — P0 = 0 · **P1 = 1** · **P2 = 1** · P3 = 3. Blocker classes: A = 0 · **B = 0** · C = 5 · D = 0. **Three are non-deducting members of existing systemic groups**; new deducting findings: **2** |
+| **Artefacts affected** | `FIRST_EDITION_FINDINGS.md`, `FIRST_EDITION_VERIFICATION_LEDGERS.md` (all six ledgers plus coverage control), this log |
+| **Non-collapse note** | F-L2 must not be collapsed with F0, F-L1 (`FE-EV-002`/`FE-EV-003`), its own START (`FE-EV-004`), the Part III/IV/V release gates, or any future batch or transversal event |
+
+### 5.1 Levels executed
+
+| Level | Status |
+| --- | --- |
+| **Level 1** — repository and governance integrity | **Executed** for Parts III–V; gov-P3-5 discharged |
+| **Level 2** — whole-book architecture | **Batch-local only** — the II→III→IV→V region assessed; the edition-scope BOK↔Part census is **not** completed by one batch. **E-11 not touched** |
+| **Level 3** — Part architecture | **Executed** for Parts III–V, re-derived from the filesystem |
+| **Level 4** — chapter integrity | **Executed** — full census 34/34 |
+| **Levels 5–11, 15, 16, 19** | **NOT executed** — transversal-routed; batch-local evidence only |
+| **Levels 12–13** | **NOT executed** — gate phases |
+
+### 5.2 gov-P3-5 result — deferred Phase E input discharged for Parts I–V
+
+| Part | Result |
+| --- | --- |
+| I | **NO CURRENT-STATE CLAIM TO ASSESS** (F-L1) |
+| II | **LIFECYCLE DRIFT FOUND** — FE-L1-001 |
+| III | **LIFECYCLE DRIFT FOUND** — FE-L2-001 |
+| IV | **LIFECYCLE DRIFT FOUND** — FE-L2-001 |
+| V | **LIFECYCLE DRIFT FOUND** — FE-L2-001 |
+
+**Four consecutive Parts confirmed.** The systemic group `SYS-LIFECYCLE-DRIFT` now spans Parts II–V and is scored **once** at P1. Parts VI–IX remain unassessed.
+
+### 5.3 FE-L1-005 — pre-L3 instrument evidence
+
+L2 enumerated its Tier-1 population **without relying on the unresolved instrument**, by an over-inclusive sweep removing only fenced code — therefore capturing every numeric token in non-code prose — followed by manual adjudication of all **130 raw candidates** against the PASS-0 exclusions.
+
+| Part | Independently enumerated | Accepted census | Agreement |
+| --- | --- | --- | --- |
+| III | **14** | 23 | **✗ −9** |
+| IV | **2** | 2 | **✓ exact** |
+| V | **4** | 4 | **✓ exact** |
+| **L2** | **20** | **29** | **✗ −9** |
+
+**Contamination observed:** version strings (`v4.0.1`, OAuth `2.0`, AsyncAPI `3.1.0`, WCAG `2.2`), URL date fragments (`2024/11`, `2016/05`, `2015/04`), a DOI (`10.6028`), and 34 metadata `Version 0.1.0` / `Estimated study time` rows. **Suppression observed: none** — no genuine quantitative teaching claim was found that the accepted pipeline would exclude.
+
+**Why L2's substantive obligation is nevertheless discharged:** the sweep was deliberately *wider* than the accepted pipeline, so every genuine quantitative claim in Part III prose necessarily appears among the 130 candidates, and each was adjudicated. **The nine unaccounted Part III items cannot be genuine claims.** All 20 genuine claims were recomputed with dual verdicts.
+
+> **Reproducibility assessment for the dense batches: this evidence STRENGTHENS the requirement to resolve FE-L1-005 before F-L3.** L2's method worked only because 130 candidates could be adjudicated by hand. Parts VI–VIII, IX–X and XI–XII carry **319, 390 and 452** accepted Tier-1 claims against far larger candidate pools; hand-adjudication does not scale, and an accepted count that exceeds what an independent implementation can enumerate cannot be shown complete at that scale. **FE-L1-005 was not repaired, no classifier was published, and neither the architecture nor the census was altered by this task.**
+
+### 5.4 Batch state
+
+| Item | Value |
+| --- | --- |
+| L1, L2 | **COMPLETE** |
+| L3–L5 | not started |
+| T1–T6 | not started |
+| Chapters inspected | **56 / 137** |
+| Manuscript mutations | **0** |
+| Corrections applied | **0** |
+
+**Next authorised activity:** a **separately authorised task that resolves FE-L1-005**. **F-L3 is NOT authorised while FE-L1-005 remains open**; if it is still open when F-L3 is proposed, it escalates to **Class B — Review-Execution Blocker** for L3, L4 and L5.
+
+
+---
+
 ## 3. Manuscript-mutation control (plan §13.4 drift discipline, applied to Phase F)
 
 **Rule.** The 137 chapter blobs recorded in §2.5 constitute the Phase F review-execution baseline. **Manuscript chapters must remain unmodified for the duration of Phase F.**
@@ -437,7 +531,9 @@ git ls-files -s book | awk '$4 ~ /chapters\/chapter-.*\.md$/ {print $4":"$2}' | 
 | `FE-EV-001` | 2026-08-16 | F0 | Review-execution baseline and artefact initialisation | **`UNSCORED`** |
 | `FE-EV-002` | 2026-08-16 | F — L1 | Longitudinal Batch 1, Parts I–II — START | START, no verdict |
 | `FE-EV-003` | 2026-08-16 | F — L1 | Longitudinal Batch 1, Parts I–II — COMPLETE · 22/22 chapters · 7 findings | **`UNSCORED`** |
+| `FE-EV-004` | 2026-08-16 | F — L2 | Longitudinal Batch 2, Parts III–V — START | START, no verdict |
+| `FE-EV-005` | 2026-08-16 | F — L2 | Longitudinal Batch 2, Parts III–V — COMPLETE · 34/34 chapters · 5 findings | **`UNSCORED`** |
 
 ---
 
-**Last Updated:** 2026-08-16 (F-L1)
+**Last Updated:** 2026-08-16 (F-L2)

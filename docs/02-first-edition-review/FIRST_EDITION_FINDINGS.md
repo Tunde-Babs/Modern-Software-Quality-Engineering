@@ -7,12 +7,14 @@
 | **Document type** | Review artefact 2 of 4 — **Defects** |
 | **Authority** | [`FIRST_EDITION_REVIEW_PLAN.md`](FIRST_EDITION_REVIEW_PLAN.md) §13.1 |
 | **Lifecycle** | Mutable, Phases F→J |
-| **State** | **F-L1 complete — 7 findings recorded (Parts I–II). Batches L2–L5 and transversals T1–T6 not started** |
+| **State** | **F-L1 and F-L2 complete — 12 findings recorded (Parts I–V). Batches L3–L5 and transversals T1–T6 not started** |
 | **Owner** | Tunde Ajala |
 
 > This is a **governance artefact**, not a manuscript chapter. It carries no chapter-style status.
 
-> **Findings recorded to date: 7, all from F-L1 (Parts I–II).** No other batch or transversal has run. Severity distribution: **P0 = 0 · P1 = 1 · P2 = 2 · P3 = 4.** Blocker classes: **A = 0 · B = 0 · C = 7 · D = 0.**
+> **Findings recorded to date: 12 — 7 from F-L1 (Parts I–II) and 5 from F-L2 (Parts III–V).** No transversal has run. Severity distribution: **P0 = 0 · P1 = 2 · P2 = 3 · P3 = 7.** Blocker classes: **A = 0 · B = 0 · C = 12 · D = 0.**
+>
+> **Three of the five L2 findings are additional instances of existing systemic groups and carry NO separate deduction** (plan §7.3 systemic root-cause rule). Distinct deducting findings to date: **9**.
 
 ---
 
@@ -296,4 +298,117 @@ These are **not** manuscript findings and **do not** appear in the register abov
 
 ---
 
-**Last Updated:** 2026-08-16 (F-L1)
+## 4a. F-L2 findings — Parts III–V
+
+### FE-L2-001 — Lifecycle drift in all three Part III–V READMEs (systemic with FE-L1-001)
+
+| Field | Value |
+| --- | --- |
+| **Phase / batch** | Phase F · longitudinal **L2** |
+| **Part / path** | III, IV, V · `book/part-03-software-testing/README.md` L7 · `book/part-04-api-engineering/README.md` L7, L370 · `book/part-05-automation-engineering/README.md` L7, L463 |
+| **Review level** | Level 1 |
+| **Defect class** | False current-state claim; stale lifecycle sweep |
+| **PRIMARY category** | **8 — Governance integrity** |
+| **Severity** | **P1** — the systemic group's severity, set by its highest instance |
+| **Blocker class** | **C** |
+| **Systemic group** | **`SYS-LIFECYCLE-DRIFT`** — joins **FE-L1-001**. **Scored ONCE at the group level; FE-L2-001 adds instances as evidence and carries NO separate deduction.** |
+| **Finding** | Every one of the three L2 Part READMEs asserts an unreleased state for a Part that is released, and two of them additionally assert that the following Part has not started. **Eight false statements**: <br>**Part III L7** — *"The release candidate is prepared as **v0.6.0**…; Part III **will be released** after promotion to `main` and creation of the annotated tag"* and *"**Part IV has not started**"*. <br>**Part IV L7 / L370** — *"`release/v0.7.0` is prepared for the **planned** stable release…; main promotion, annotated tag, and GitHub Release publication **remain pending**"* and *"**Part V — Automation Engineering has not started**"*. <br>**Part V L7 / L463** — *"**Release preparation is active** for the planned **v0.8.0**"*, *"**Part VI has not started**"*, and *"**Part V is not approved, published, or released**"*. |
+| **Evidence** | Annotated tags `v0.6.0`, `v0.7.0`, `v0.8.0` all exist and are dated **2026-08-10**; `v0.9.0` (Part VI) is dated **2026-08-11**. `CHANGELOG.md` carries released entries at lines 209, 184, 160 and 137 respectively. Every one of the eight statements is falsified by repository state. |
+| **Consequence** | The drift pattern is now confirmed in **four consecutive Parts (II, III, IV, V)** rather than the three (X, XI, XII) recorded when plan §14 open question 7 was written. Plan §7.4 makes a materially false current-state claim a **BLOCK** override at gate evaluation. |
+| **Recommended action** | Phase H: correct all eight statements. **Not corrected here.** The `RELEASE_POLICY.md` Lifecycle State Consistency Sweep now governs these surfaces prospectively. |
+| **Status** | `OPEN` |
+| **Owner** | Project Founder |
+| **Verification** | `NOT VERIFIED` |
+| **Note** | **gov-P3-5 is now discharged for Parts I–V.** Confirmed in II, III, IV, V; **not present in Part I**, which makes no lifecycle claim. Parts VI–IX remain unassessed. |
+
+### FE-L2-002 — Malformed table silently fails to render (Part III Chapter 4)
+
+| Field | Value |
+| --- | --- |
+| **Phase / batch** | Phase F · longitudinal **L2** |
+| **Part / path** | III · `chapters/chapter-04-test-design-for-efficient-evidence.md` line 190 |
+| **Review level** | Level 4 |
+| **Defect class** | Malformed table |
+| **PRIMARY category** | **7 — Editorial consistency** |
+| **Secondary** | 1 — Technical correctness (content becomes unreadable) |
+| **Severity** | **P2** |
+| **Blocker class** | **C** |
+| **Finding** | The table's header row declares **four** columns — *Problem characteristic · Useful reasoning approach · Expected evidence · Important limit* — but its delimiter row is `\|---\|---\|---\|`, only **three**. Under GitHub-Flavored Markdown the delimiter row must match the header row cell count or **the block is not recognised as a table at all**, so the entire block renders as literal text with visible pipe characters. |
+| **Evidence** | Deterministic cell-count check across all 34 L2 chapters: this is the **only** table block in L2 whose header and delimiter rows disagree (widths `{4, 5}`). Body rows carry four columns, consistent with the header, confirming the delimiter is the defect. The affected table teaches the core test-design technique mapping, and its fourth column carries the *limitations* of each technique. |
+| **Consequence** | A released chapter contains a table that does not render. Gate 2 (*Markdown renders correctly*) and Gate 5 (*Markdown rendering verified*) cannot be evidenced clean for Part III while it stands. |
+| **Recommended action** | Phase H: add the fourth delimiter cell. **Not corrected here.** |
+| **Status** | `OPEN` |
+| **Owner** | Project Founder |
+| **Revision trigger** | Phase G may reasonably escalate to P1: this is a visible rendering failure in released material, not a stylistic issue |
+| **Verification** | `NOT VERIFIED` |
+
+### FE-L2-003 — The Atlas recurring case changes organisational identity between Parts without signposting
+
+| Field | Value |
+| --- | --- |
+| **Phase / batch** | Phase F · longitudinal **L2** (batch-local evidence for transversal **T5**) |
+| **Part / path** | III, IV, V · across all 34 chapters |
+| **Review level** | Level 15 (supporting pass) — evidence collected longitudinally, **T5 not executed** |
+| **Defect class** | Recurring-case **AMBIGUITY** (plan L15 classification) |
+| **PRIMARY category** | **2 — Cross-Part coherence** |
+| **Severity** | **P3** |
+| **Blocker class** | **C** |
+| **Finding** | Atlas Commerce is introduced to the edition in this batch and is given **three different organisational descriptors**, one per Part, with no text connecting them: **Part III — "a fictional subscription service"** (8 occurrences); **Part IV — "a fictional retailer"** (10 occurrences); **Part V — "a fictional online retailer"** (8 occurrences). |
+| **Evidence** | Each Part is **internally 100% consistent** — no Part mixes descriptors. Part IV refers to *"the fictional retailer introduced in Chapter 1"* and Part III to *"the fictional subscription service from Chapter 1"*, each pointing at its own Chapter 1, so neither acknowledges the other's framing. Part III's scenarios are subscription renewals, grace periods and payment-method updates; Parts IV–V use orders, SKUs, checkout and fulfilment. Persona continuity is partial: Priya and Marcus appear in Part III only; **Dele carries across Parts IV and V**; Ravi appears once in Part V. |
+| **Classification rationale** | **Not CONTRADICTION** — a retailer can operate a subscription programme, so the facts can both hold. **Not EVOLUTION** — no transition is signposted. Classified **AMBIGUITY**: the recurring case's basic organisational identity is under-specified at the exact point the case enters the edition. Plan L15 directs that ambiguity be **recorded, not forced**. |
+| **Consequence** | A reader following Atlas across Parts III–V receives three different answers to what the company is. The teaching value of a recurring case depends on the reader believing it is one organisation. |
+| **Recommended action** | Phase H or the T5 transversal: add one signposting sentence reconciling the descriptors. **Not corrected here.** |
+| **Status** | `OPEN` |
+| **Owner** | Project Founder |
+| **Revision trigger** | **Escalate to P2 if T5 finds the descriptor continues to diverge across Parts VI–XII**, or if any Atlas fact is found that genuinely cannot hold under both framings |
+| **Verification** | `NOT VERIFIED` |
+
+### FE-L2-004 — Two unused footnote definitions in Part III Chapter 12 (systemic with FE-L1-003)
+
+| Field | Value |
+| --- | --- |
+| **Phase / batch** | Phase F · longitudinal **L2** |
+| **Part / path** | III · `chapters/chapter-12-capstone-risk-informed-test-strategy-and-evidence-portfolio.md` |
+| **Review level** | Level 4, with a Level 7 consequence |
+| **Defect class** | Unused footnote |
+| **PRIMARY category** | **3 — Evidence / citation integrity** |
+| **Severity** | **P3** |
+| **Blocker class** | **C** |
+| **Systemic group** | **`SYS-UNUSED-FOOTNOTE`** — joins **FE-L1-003**. **Scored once at group level; no separate deduction.** |
+| **Finding** | `[^google-sre]` and `[^istqb]` are defined in the References section but carry no in-body citation marker. |
+| **Evidence** | Footnote reconciliation across all 34 L2 chapters: **33 of 34 reconcile exactly** with zero unused and zero undefined; this capstone is the sole exception. |
+| **Consequence** | Two of L2's 125 citations support no claim, so Level 7's claim–source alignment test cannot be applied to them. |
+| **Status** | `OPEN` · **Owner** Project Founder |
+| **Revision trigger assessment** | FE-L1-003's trigger was *"escalate to P2 if the pattern proves systemic across three or more Parts"*. The population is now **two Parts (II and III)**. **The trigger is NOT tripped and severity is NOT escalated.** |
+| **Verification** | `NOT VERIFIED` |
+
+### FE-L2-005 — Template section naming deviates in Part III Chapter 12 (systemic with FE-L1-004)
+
+| Field | Value |
+| --- | --- |
+| **Phase / batch** | Phase F · longitudinal **L2** |
+| **Part / path** | III · `chapters/chapter-12-capstone-risk-informed-test-strategy-and-evidence-portfolio.md` |
+| **Review level** | Level 4 |
+| **Defect class** | Required section present under a non-template heading |
+| **PRIMARY category** | **7 — Editorial consistency** |
+| **Severity** | **P3** |
+| **Blocker class** | **C** |
+| **Systemic group** | **`SYS-TEMPLATE-NAMING`** — joins **FE-L1-004**. **Scored once at group level; no separate deduction.** |
+| **Finding** | Two headings deviate: **"Why This Capstone Matters"** for the template's *Why This Chapter Matters*, and **"Common Mistakes"** for *Common Misconceptions or Common Pitfalls*. Content is present in both cases. |
+| **Evidence** | Heading census across all 34 L2 chapters: **33 of 34 use "Common Misconceptions"**; this capstone alone uses "Common Mistakes". The **Part IV and Part V capstones both use the conformant "Why This Chapter Matters"**. |
+| **Consequence** | Navigation by heading fails for these two sections in one chapter. |
+| **Status** | `OPEN` · **Owner** Project Founder |
+| **Revision trigger assessment** | FE-L1-004's trigger was *"escalate to P2 if later batches show the edition has no consistent capstone-heading convention"*. **L2 evidence WEAKENS that case**: two of three L2 capstones conform, and 33 of 34 chapters use the template heading. **A consistent convention does exist; the deviations are isolated. Severity is NOT escalated.** |
+| **Verification** | `NOT VERIFIED` |
+
+---
+
+## 5. Standing-finding evidence recorded by F-L2
+
+**FE-L1-005 (review-instrument reproducibility) — new evidence, finding not modified.** L2 enumerated its Tier-1 population **without relying on the instrument**, using an over-inclusive sweep that removes only fenced code and therefore captures every numeric token in non-code prose, followed by manual adjudication of all **130 raw hits** against the PASS-0 exclusions. Result: **Part IV returns 2 and Part V returns 4 — both exactly matching the accepted census — while Part III returns 14 against the accepted 23.** The nine unaccounted Part III items **cannot be genuine quantitative teaching claims**, because the over-inclusive sweep captured every candidate in Part III prose and each was adjudicated; the excluded items are metadata rows (E7), footnote-definition lines (E5) and URL fragments inside link targets (E3/E4) — chiefly the ISTQB syllabus version string `v4.0.1` and the URL date fragment `2024/11`. Level 8's substantive obligation for L2 is therefore discharged, but **the accepted count remains non-reproducible**. See the F-L2 review-log event for the pre-L3 assessment.
+
+**FE-L1-002 (Part I chapter status)** — unchanged. All 34 L2 chapters carry `Status: Draft`, which conforms to the plan §2.3 model. **The nonconformance remains confined to Part I.**
+
+---
+
+**Last Updated:** 2026-08-16 (F-L2)
