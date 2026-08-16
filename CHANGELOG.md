@@ -233,8 +233,6 @@ All notable changes to this project will be documented in this file.
 
 - Part III is a strategy-and-evidence curriculum. Companion laboratories, diagrams, case studies, and implementation-heavy assets remain intentionally deferred to a later enrichment pass; it does not provide automation frameworks, live integrations, or production tooling.
 
-## [0.4.0] — Foundations Complete — 2026-08-08
-
 ## [0.5.0] — Programming Complete — 2026-08-09
 
 ### Part II — Programming for Quality Engineers
