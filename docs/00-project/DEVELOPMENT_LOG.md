@@ -666,3 +666,22 @@ All fifteen Phase E closure conditions pass. **E-02, E-03, E-04, E-10 and E-15 r
 **Status:** Phase E complete; Phase F ready for separate authorisation
 
 **Last Updated:** 2026-08-16
+
+---
+
+## 2026-08-16 — Phase F0: First Edition Review Initiation
+
+- **Phase F is INITIATED. Phase F substantive manuscript review has NOT started.** F0 establishes the controlled execution environment required before edition-wide review begins; it is an **unscored initiation event**, recorded as `FE-EV-001` in `docs/02-first-edition-review/FIRST_EDITION_REVIEW_LOG.md`.
+- **Prerequisite satisfied.** Phase E — Governance Remediation Gate is COMPLETE (commit `d341a84`), with every item CLOSED or validly ACCEPTED under review plan §12.2 and **Open Class-B Review-Execution Blockers: 0**.
+- **Review-execution baseline recorded.** Branch `feature/first-edition-review`, HEAD `d341a84925ba1344ffb81f0732931c663b1b88b1`, tree `84b165d67fb70db6b3279d513576a20b5a777fea`, 12 Parts, **137 chapters — 127 `Draft`, 10 `Technical Review Ready`**, manifest digest `ec588eaa1e61bd0f0fa8706f5cc3dd470b7caa67314df6f77f858425f150a411`. A deterministic 137-row manifest recording each chapter's Part, number, title, path, status and Git blob SHA is embedded in the review log for manuscript-mutation detection. **This is the Phase F review-execution baseline — not the v0.16.0 release baseline and not the v1.0.0 publication baseline.** The controlled 141-object whole-edition baseline is a Phase K activity and does not exist.
+- **The three required review artefacts were created**, completing the plan §13.1 four-artefact minimum: `FIRST_EDITION_FINDINGS.md` (defects), `FIRST_EDITION_VERIFICATION_LEDGERS.md` (evidence) and `FIRST_EDITION_REVIEW_LOG.md` (events). All three are **initialised and unpopulated**.
+- **The accepted architecture was reproduced, not redesigned.** Five longitudinal batches (L1 Parts I–II · L2 III–V · L3 VI–VIII · L4 IX–X · L5 XI–XII), six transversals (T1–T6, with T5 scoped to Parts III–XII), the eight-category scorecard summing to 100, the P0–P3 severity model, the A–D blocker taxonomy, and the sixteen review dimensions — thirteen numbered levels plus supporting passes 15, 16 and 19, with **levels 14, 17 and 18 absent by design** — are all carried across verbatim. Every batch chapter count, word count, Tier-1, Tier-2, code-fence and citation figure reconciles exactly with the accepted census: **Tier-1 1,213 · Tier-2 1,511 · code-fence 186 · 651,161 words · 378 citations**. **No classifier was run and no census was recomputed.**
+- **A finding-ID convention was established** — `FE-<CONTEXT>-<NNN>`, where context is a longitudinal batch `L1`–`L5`, a transversal `T1`–`T6`, or a gate phase `G`/`J`. IDs are immutable, encode no mutable attribute, and resolve the plan's dual use of `L` by fixing that **`L1`–`L5` in a finding ID always denote a longitudinal batch, never a review level**.
+- **Carried-forward Phase E inputs were routed to their owning levels**: **E-11** → Level 2; **gov-P3-5 (Parts I–IX)** → Level 1; **E-13** → Level 11 via T6 and Level 12 criterion 8. **E-01 (empty `LICENSE`) is recorded as class D and must not deduct from the v0.16.0 manuscript score** — it blocks v1.0.0 publication only.
+- **The manuscript-mutation rule is active.** The 137 chapter blobs are the Phase F baseline; the manifest digest is re-derived and compared at the start and end of every longitudinal and transversal task. Governance and review artefacts may evolve; **manuscript chapters may not.** Review and correction remain separate: a defect found in Phase F is recorded, classified and evidenced — never silently repaired. Corrections are Phase H, and Phase H is unscored.
+
+**Outcome:** The Phase F execution environment is established and reproducible. **0 of 137 chapters inspected · 0 of 5 longitudinal batches complete · 0 of 6 transversals complete · 0 findings · 0 ledger rows · nothing scored.** No chapter was modified and no chapter status changed. The accepted architecture, `QUALITY_GATES.md` and `RELEASE_POLICY.md` are byte-identical. **`v0.16.0` remains planned and unreleased with no tag and no release branch; `v0.15.0` remains the latest stable release.** The next authorised activity is **F-L1 — Longitudinal Batch 1, Parts I–II (22 chapters)**, under separate authorisation.
+
+**Status:** Phase F initiated; substantive review not started
+
+**Last Updated:** 2026-08-16
