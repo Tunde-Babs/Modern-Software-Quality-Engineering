@@ -598,3 +598,71 @@ Part VII is complete at manuscript level and enters release administration for p
 **Status:** Architecture accepted; Phase E governance remediation active
 
 **Last Updated:** 2026-08-16
+
+---
+
+## 2026-08-16 — Phase E Governance Remediation Gate Complete
+
+This entry is the **Governance Remediation Record** required by `docs/02-first-edition-review/FIRST_EDITION_REVIEW_PLAN.md` §3 (Phase E exit) and §12. It records the disposition of every Phase E item. It is a new dated record: **no historical entry in this log has been rewritten.**
+
+### Remediation batches
+
+- **E-A** — closed **E-02** (review-authority discoverability) by integrating the accepted review authority into `README.md` and `CURRENT_SPRINT.md`. Independently verified against all eight closure conditions.
+- **E-B** — closed **E-03**, **E-04** and **E-15**, normalising First Edition lifecycle state and correcting the duplicated, out-of-order `[0.4.0]` CHANGELOG heading named in review plan §12.1.
+- **E-D** — closed **E-10** by establishing the **Lifecycle State Consistency Sweep** in `docs/00-project/RELEASE_POLICY.md` (v1.1), a prospective control defining the trigger, governed surfaces, mutable-versus-historical distinction, eleven minimum consistency questions, owner, and lightweight evidence expectation.
+- **E-C/E-E** — dispositioned every remaining finding. **Open Class-B Review-Execution Blockers: 0.**
+
+### Accepted items
+
+Each record carries all seven fields required by review plan §12.2.
+
+| Item | Accountable owner | Rationale | Consequence accepted | Revision trigger | Blocker class | Severity | Review event |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| **E-05** — seven empty files in `docs/01-editorial/` (`CITATION_STYLE`, `DIAGRAM_GUIDELINES`, `EDITORIAL_STYLE_GUIDE`, `GLOSSARY_GUIDELINES`, `REFERENCES`, `RESEARCH_GUIDELINES`, `WRITING_GUIDELINES`) retained unpopulated | Project Founder | No review level or gate depends on any of them. The review plan names only `docs/00-project/EDITORIAL_STYLE_GUIDE.md`, `templates/CHAPTER_TEMPLATE.md` and `docs/01-editorial/QUALITY_GATES.md` as editorial authorities, and cites none of these seven | Empty files remain visible in the repository tree and may suggest planned standards that do not exist | A review level, gate or manuscript reference comes to depend on any one of them | C | P3 | Phase E-C/E-E, 2026-08-16 |
+| **E-06** — `docs/00-project/REPOSITORY_STRUCTURE.md` retained empty | Project Founder | Zero inbound references repository-wide. Its subject is already delivered by `README.md` §Repository Structure and `docs/00-project/ARCHITECTURE.md` §Repository Architecture | An empty file remains in the governance directory | The file acquires an inbound dependency, or repository structure ceases to be documented elsewhere | C | P3 | Phase E-C/E-E, 2026-08-16 |
+| **E-07** — `docs/00-project/LEARNING_FRAMEWORK.md` retained empty, and the 2026-08-07 log entry retained unmodified | Project Founder | Git history establishes the file was created empty as `CURRICULUM_FRAMEWORK.md` (`b75e77b`), renamed to `LEARNING_FRAMEWORK.md` (`c2f1822`) with zero content change, and has been 0 bytes throughout. No content was ever lost. The learning-design subject matter is delivered by `BOOK_BLUEPRINT.md` (Educational Philosophy, Learning Outcomes), `ARCHITECTURE.md` Layer 3, and `QA_TO_QE_TRANSITION_FRAMEWORK.md` | The 2026-08-07 entry's bullet *"Developed and merged `LEARNING_FRAMEWORK.md`"* is inaccurate for that one file and is left in place as a point-in-time record | Owner elects to populate or remove the file, or to annotate the historical entry | C | P3 | Phase E-C/E-E, 2026-08-16 |
+| **E-09** — `v0.2.0` retained as the only lightweight tag | Project Founder | The tag resolves unambiguously to a single commit (`1c63f61d`). All twelve later tags are annotated. No release ambiguity, commit ambiguity, history corruption or review-execution risk was found | Tag-type inconsistency persists across release history | Release provenance becomes ambiguous, or publication requires uniform annotated or signed tags | C | P3 | Phase E-C/E-E, 2026-08-16 |
+| **E-12** — Part I chapters retained at `Status: Technical Review Ready` | Project Founder | Both review plan §14 hypotheses were tested against the mandated reconciliation set. The status was authored at first commit (`cf13885`) and never changed, so it is historically legitimate and not a false promotion. **H2 is the better-supported reading**: `QUALITY_GATES.md` places *Technical Review* after *Draft*, `CHAPTER_TEMPLATE.md` mandates `Draft`, Parts II–XII all use `Draft`, and Part I's README records no Final Quality Gate — so Part I asserts greater maturity than Parts with gate evidence | Part I carries a stronger maturity claim than any gated Part, an inversion the edition should not publish uncorrected | Phase F Level 1 evidence shows status semantics materially impair edition-level assessment, or Level 13 requires uniform status before release | C | P3 | Phase E-C/E-E, 2026-08-16 |
+| **E-14 / N-03** — `Status: Draft` retained on `EDITORIAL_STYLE_GUIDE.md`, `VERSIONING.md`, `ARCHITECTURE.md`, `BOOK_BLUEPRINT.md` and `MQE-BOK.md` | Project Founder | This is a consistent authored-state convention across five M1 documents, not a per-file slip. No authority ambiguity results for Phase F: review plan §9 names `docs/00-project/EDITORIAL_STYLE_GUIDE.md` as an existing standard for Level 11 regardless of its status field, and `VERSIONING.md` has governed thirteen releases in practice | Five operationally authoritative documents continue to describe themselves as Draft | Owner activates governance-document status (see owner-decision register), or a review level's exit criterion turns on a document's declared status | C | P3 | Phase E-C/E-E, 2026-08-16 |
+| **N-01 / N-02** — `Project Phase: M1 – Governance` retained in governance front matter | Project Founder | The accepted review architecture rules on this directly: plan §12.1 **gov-P3-6** states the `Project Phase` header is a **document-provenance field and is not in scope**. Repository evidence confirms the convention — `QUALITY_GATES.md` was authored with `M2` at first commit (`e264b9f`) and its 1.0→1.1 revision did not touch the field | Front-matter phase values differ across documents and can be misread as current-state metadata | The repository redefines the field as current-state metadata | C | P3 | Phase E-C/E-E, 2026-08-16 |
+
+### Deferred items
+
+| Item | Reason for deferral | Destination | Trigger | Blocker effect |
+| --- | --- | --- | --- | --- |
+| **E-11** — `MQE-BOK.md` Domain 12 (eight topics) versus `BOOK_BLUEPRINT.md` Part XII (six topics) | The accepted architecture already governs this. Review plan **Level 2** requires coverage to be assessed against **both** documents with the divergence recorded as a Level 2 finding, and plan §14 open question 4 routes the authority question to Level 2 / owner. `book/part-12-engineering-leadership/README.md` already documents the divergence in full and designates `MQE-BOK.md` authoritative for domain coverage, with every Domain 12 topic mapped to a chapter home | Phase F Level 2 | Phase F Level 2 execution | **Not Class B.** Reviewers can determine what Part XII is intended to be from the Part XII README's Domain 12 mapping |
+| **E-13** — no authoritative accessibility policy | Review plan §10 anticipates this exact gap: L11 performs objective accessibility checks across all 137 chapters (heading-order integrity, table-header presence, descriptive link text, image alt-text presence) as a named minimum, while judgement-dependent accessibility is explicitly out of scope while no standard exists. **This entry records the standard-gap disposition** that plan §7 scoring category 8 requires | v1.0.0 publication preparation | Publication preparation for v1.0.0, or a decision to score judgement-dependent accessibility | None for Phase F. Phase F has sufficient objective checks and an explicit scope boundary |
+| **gov-P3-5 (Parts I–IX)** — Part README lifecycle-state drift | Plan §14 open question 7 records that the drift pattern is confirmed in Parts X, XI and XII only and that Parts I–IX are unassessed. Parts X–XII were normalised in `6385c29` and `0349176`. Assessing and correcting nine further Part READMEs is outside this task's authorised edit scope, and plan risk **R-11** makes churn minimisation an explicit Phase E exit constraint | Phase F Level 1 | Phase F Level 1 repository and governance integrity assessment | None. The E-D Lifecycle State Consistency Sweep now governs Part README current-state surfaces prospectively |
+
+### Owner decisions required
+
+| Item | Exact decision required | Required before | Current blocker effect |
+| --- | --- | --- | --- |
+| **E-08** — milestone-model divergence | Which milestone model is canonical. `ROADMAP.md` defines a seven-phase model (M3 Practical Laboratories, M4 Digital Learning Platform, M5 Video Masterclass, M6 Certification, M7 Community); `README.md` defines a five-phase model (M3 Digital Learning Platform, M4 Learning Ecosystem). **The two disagree at M3 and M4.** Separately, whether `ROADMAP.md` should mark M1 complete and M2 active — plan gov-P3-6 requires that any assertion about milestone completion be an explicit owner decision, never an automatic textual correction | v1.0.0 publication planning | None for Phase F. M1 is evidenced complete by this log, `README.md` and `CURRENT_SPRINT.md`; M2 is evidenced active. `v0.16.0` sits within M2 — Handbook Development, and no repository evidence supports inventing a new milestone |
+| **E-05 / E-06** — empty-file removal | Whether to delete the seven empty `docs/01-editorial/` files and `REPOSITORY_STRUCTURE.md`, or retain them as declared placeholders. Under review plan §9 objective tests, `docs/01-editorial/EDITORIAL_STYLE_GUIDE.md` is **class B** (duplicates the populated `docs/00-project/EDITORIAL_STYLE_GUIDE.md` by name and scope); the other six are **class D** (no level, gate, manuscript or governance reference depends on them); `REPOSITORY_STRUCTURE.md` is **class C** (subject covered elsewhere). Deletion is a repository-structure decision and is therefore recommended, not executed | v1.0.0 publication preparation | None |
+| **E-14 / N-03** — governance-document status | Whether to activate the five M1 documents still carrying `Status: Draft`, as a batch rather than individually | v1.0.0 publication preparation | None |
+| **Plan §14 open question 2** — historical tags | Whether the absence of `v0.1.0` and `v0.3.0` tags is intentional or an omission. `VERSIONING.md` and `ROADMAP.md` list both as release milestones; `README.md` records v0.1.0 as Released and v0.3.0 as an internal milestone. Tags are not to be reconstructed | v1.0.0 publication preparation | None. Release provenance for every tagged release remains unambiguous |
+
+### Publication blockers
+
+| Item | Gate blocked | Explicit status |
+| --- | --- | --- |
+| **E-01** — `LICENSE` is empty (0 bytes since `b02fa05`) and no licence is declared anywhere in the repository; the five `package.json` files carry no `license` field | **v1.0.0 First Edition Published** | Accepted for **continuation of the v0.16.0 review**. **NOT closed for publication. Remains a publication blocker.** It does **not** block Phase F and does **not** block v0.16.0 review completion. Requires an owner legal decision; no licence has been selected or written by this task. Owner: Project Founder. Severity: P0. Blocker class: D |
+
+### Corrections recorded forward
+
+Consistent with the Lifecycle State Consistency Sweep established in `RELEASE_POLICY.md`, the following verified facts are recorded here rather than by editing historical entries:
+
+- **`LEARNING_FRAMEWORK.md` was never populated.** The 2026-08-07 M1 deliverables list states *"Developed and merged `LEARNING_FRAMEWORK.md`"*. That file has been 0 bytes for its entire history. Every other document in that list is populated. The historical entry is preserved unmodified as a point-in-time record.
+- **The `docs/01-editorial/` placeholder count is seven, not six** — the earlier Phase E diagnostic under-counted by omitting the duplicate `docs/01-editorial/EDITORIAL_STYLE_GUIDE.md`.
+- **`Project Phase` front matter is a provenance field**, per plan gov-P3-6 and the `QUALITY_GATES.md` authoring evidence. The Phase E-D report's characterisation of these values as stale current-state metadata was incorrect and is superseded by this record.
+
+### Phase E closure
+
+All fifteen Phase E closure conditions pass. **E-02, E-03, E-04, E-10 and E-15 remain CLOSED. Open Class-B Review-Execution Blockers: 0.** Every remaining finding carries an explicit disposition with the fields review plan §12.2 requires. The accepted review architecture is unchanged: `docs/02-first-edition-review/FIRST_EDITION_REVIEW_PLAN.md` remains at blob `a5385197a1b4b0e0e9323c5d1e6050f887acf389`, and the census figures — Tier 1 **1,213**, Tier 2 **1,511**, code-fence **186**, **651,161** words — are untouched.
+
+**Outcome:** **Phase E — Governance Remediation Gate is COMPLETE.** **Phase F — the edition-wide Two-Axis Review — is READY FOR SEPARATE AUTHORISATION and has NOT started.** No manuscript finding, verification ledger, scorecard or review-event log exists, and none is authorized by this record. No chapter was modified: **137 chapters remain — 127 `Draft`, 10 `Technical Review Ready`.** **`v0.16.0` remains planned and unreleased; `v0.15.0` remains the latest stable release.**
+
+**Status:** Phase E complete; Phase F ready for separate authorisation
+
+**Last Updated:** 2026-08-16
