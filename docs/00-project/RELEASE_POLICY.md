@@ -2,7 +2,7 @@
 
 **Project:** Modern Software Quality Engineering (MSQE)
 
-**Document Version:** 1.0
+**Document Version:** 1.1
 
 **Status:** Active
 
@@ -214,6 +214,84 @@ Before publishing, verify:
 - [ ] Code examples tested.
 - [ ] References validated.
 - [ ] Git tag prepared.
+- [ ] Lifecycle state consistency sweep completed.
+
+---
+
+# Lifecycle State Consistency Sweep
+
+A release or milestone transition changes the project's current state. The documents that describe that state are mutable and do not update themselves, so a transition is not governance-complete until they have been checked.
+
+This section is the authoritative definition of that check. It is a consistency sweep, not a rewrite: surfaces are inspected, and only genuinely stale statements are corrected.
+
+## When the Sweep Applies
+
+Perform the sweep at a lifecycle transition:
+
+- before merging a release branch into `main`;
+- immediately after publishing a release and its tag;
+- when advancing `CURRENT_SPRINT.md` to a new lifecycle phase or milestone;
+- before declaring a handbook Part or milestone governance-complete.
+
+The sweep is not required after ordinary chapter, laboratory, or editorial commits.
+
+## Surfaces to Inspect
+
+Inspect the mutable current-state surfaces that the transition could have invalidated:
+
+- `README.md` — project status, release table, roadmap, and summary pointers.
+- `CURRENT_SPRINT.md` — milestone, branch, active scope, and next authorized activity.
+- `CHANGELOG.md` — released versus unreleased entries.
+- `docs/00-project/ROADMAP.md` — where it carries current state rather than plan.
+- The relevant Part README current-state sections.
+- `docs/00-project/DEVELOPMENT_LOG.md` — for event-record consistency only.
+- Release metadata where applicable — tags, release branches, and the GitHub Release.
+
+Not every surface changes at every transition. The requirement is to check each one and update only what has become stale.
+
+## Current State and Historical Record
+
+The sweep distinguishes two kinds of statement.
+
+**Mutable current-state prose** describes where the project is now — the latest stable release, the active milestone, the current lifecycle phase, and the next authorized activity. It must be corrected once it stops being true.
+
+**Immutable historical and point-in-time records** describe what was true at a recorded moment — dated Development Log entries, review and gate outcomes, published release notes, and statements explicitly marked as point-in-time. These must not be rewritten merely because the project later advanced. Where such a record could be misread as a current-state claim, the remedy is to mark it as point-in-time, not to restate it.
+
+## Minimum Consistency Questions
+
+The sweep must answer, at minimum:
+
+1. What is the latest stable release?
+2. What is the active or planned milestone?
+3. Is that milestone released or unreleased?
+4. Which lifecycle phase or gate is complete?
+5. Which phase or gate is currently active?
+6. What is the next authorized activity?
+7. Do `README.md` and `CURRENT_SPRINT.md` agree on answers 1 to 6?
+8. Do the relevant Part README current-state sections agree?
+9. Does `CHANGELOG.md` reflect released versions accurately, without implying that unreleased work is released?
+10. Are tags and release branches consistent with what governance claims?
+11. Are historical records clearly distinguishable from current-state statements?
+
+Any disagreement is resolved in favour of verifiable repository state — tags, merged branches, and published releases.
+
+## Responsibility
+
+The **Project Founder** owns the sweep, consistent with the release responsibilities defined below. The sweep is complete when its owner has answered every question above and corrected any stale statement found.
+
+## Evidence
+
+Evidence should be lightweight and recorded in an artefact the transition already produces. Any one of the following is sufficient:
+
+- the release pull request, with the sweep recorded in its checklist or description;
+- the governance commit carrying the corrections;
+- the Development Log entry for the transition.
+
+No new permanent artefact is required, and no separate sweep report should be created.
+
+## Relationship to Other Governance
+
+This sweep is a release-administration control. It does not alter the quality gates defined in `docs/01-editorial/QUALITY_GATES.md`, which remain the standing authority on content quality and Part release readiness, and it does not alter the version semantics defined in `docs/00-project/VERSIONING.md`. It governs only whether the project's mutable current-state surfaces still describe the project accurately after the project has advanced.
 
 ---
 
@@ -301,6 +379,7 @@ This approach:
 
 Following each release:
 
+- Complete the lifecycle state consistency sweep.
 - Update roadmap if necessary.
 - Record lessons learned.
 - Archive release notes.
@@ -331,6 +410,6 @@ Future enhancements may include:
 
 ---
 
-**Document Version:** 1.0
+**Document Version:** 1.1
 
 **Last Updated:** August 2026
