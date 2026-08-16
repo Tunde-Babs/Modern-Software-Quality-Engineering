@@ -581,3 +581,20 @@ Part VII is complete at manuscript level and enters release administration for p
 **Status:** Released
 
 **Last Updated:** 2026-08-15
+
+---
+
+## 2026-08-16 — v0.16.0 First Edition Review Architecture Accepted
+
+- **Phase C4 — Final Focused Quantitative Architecture Re-Acceptance completed: 95.0/100, verdict A, Architecture Blockers = 0.** The review architecture for `v0.16.0 — First Edition Review` is accepted.
+- Independent evidence: a classifier implemented fresh from the accepted plan's committed classification rules reproduced **all 36 quantitative census figures exactly** — Tier 1 **1,213**, Tier 2 **1,511**, code-fence **186**, **651,161** words, all twelve Part metrics and all seven Tier-1 class totals.
+- The authoritative methodology is `docs/02-first-edition-review/FIRST_EDITION_REVIEW_PLAN.md`. It complements `docs/01-editorial/QUALITY_GATES.md`, which remains the standing quality-gate authority; the plan does not replace or displace it.
+- Preceded by five earlier architecture review events, which remain distinct: independent architecture review **80/100 (B)**, focused re-acceptance **89.5/100 (B)**, focused re-acceptance **89.0/100 (B)**, and the targeted correction passes between them.
+- **Phase E — Governance Remediation Gate began after acceptance.** Its diagnostic returned **A — governance diagnosis complete; targeted remediation authorisable**, identifying exactly one Class-B Review-Execution Blocker: **E-02 — the accepted review architecture lacked governance discoverability**. Thirteen further findings (one P0 publication blocker, two P2, ten P3) were recorded as non-blocking or owner-decision items.
+- **Phase E-A is the targeted remediation for E-02**, integrating the accepted review authority into `README.md` and `CURRENT_SPRINT.md` and recording its acceptance here.
+
+**Outcome:** The v0.16.0 First Edition Review architecture is accepted and discoverable from repository governance. **Phase F — the edition-wide manuscript review — has not started**; no manuscript finding, verification ledger or review-event log exists. **v0.16.0 remains unreleased and v0.15.0 remains the latest stable release.** All 137 chapters are unmodified.
+
+**Status:** Architecture accepted; Phase E governance remediation active
+
+**Last Updated:** 2026-08-16
