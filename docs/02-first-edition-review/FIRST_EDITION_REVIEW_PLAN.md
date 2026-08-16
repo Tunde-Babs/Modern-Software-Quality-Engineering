@@ -5,7 +5,7 @@
 | **Project** | Modern Software Quality Engineering (MSQE) |
 | **Milestone** | v0.16.0 — First Edition Review |
 | **Document type** | Review Architecture / Method |
-| **Document status** | **Architecture Accepted — Phase C4 Independent Re-Acceptance Complete** (95.0/100, verdict A, Architecture Blockers = 0) |
+| **Document status** | **TARGETED QUANTITATIVE METHOD CORRECTION APPLIED — AWAITING FOCUSED INDEPENDENT RE-ACCEPTANCE.** Phase C4 accepted this architecture (95.0/100, verdict A, Architecture Blockers = 0) and that acceptance stands as a historical event. **Phase F-IR1 has since amended §6.1–§6.4 to close finding FE-L1-005; the amended quantitative method is NOT yet independently accepted.** All non-quantitative sections are unchanged and remain accepted |
 | **Latest stable release** | v0.15.0 — Engineering Leadership & Career Growth Complete |
 | **Review scope** | Parts I–XII — 137 chapters — 651,161 words |
 | **Phase** | Phase C4 complete — architecture accepted; **Phase E Governance Remediation Gate is the next separately authorised activity and has not started** |
@@ -13,7 +13,9 @@
 
 > This is a **governance artefact**, not a manuscript chapter. It deliberately does not carry a chapter-style status such as `Draft` or `Approved`.
 
-> **This plan has been independently accepted.** Phase C4 — Final Focused Quantitative Architecture Re-Acceptance — returned **95.0/100, verdict A, Architecture Blockers = 0**, having implemented the classifier fresh from the committed §6.1/§6.2 text and reproduced **all 36 census figures exactly**. Six non-blocking P3 observations are carried forward in §6.8.
+> **Phase C4 accepted this architecture** — Final Focused Quantitative Architecture Re-Acceptance returned **95.0/100, verdict A, Architecture Blockers = 0**. That event is historical and is preserved in §16.
+>
+> **The quantitative method has since been corrected and is not yet re-accepted.** Phase F-L1 and F-L2 established that the §6.4 census could not be reproduced from the committed §6.1/§6.2 text (finding **FE-L1-005**). **Phase F-IR1 amended §6.1–§6.4 and recomputed the census.** Until a focused independent re-acceptance verifies the amended method, **§6.1–§6.4 are corrected but unaccepted**; every other section retains its C4 acceptance.
 >
 > **Acceptance is of the review architecture only.** It does **not** authorise manuscript-review execution, does **not** imply release readiness, and does **not** mean the First Edition Review is complete. **No First Edition Review execution has begun. Phase E Governance Remediation has not run.** This document contains method only — no manuscript findings, no verification data, no dispositions.
 
@@ -351,14 +353,16 @@ A longitudinal-only review reproduces the Part gates and finds nothing new. A tr
 
 ### 5.2 Axis 1 — Longitudinal (guarantees complete coverage)
 
-| Batch | Parts | Chapters | Words | Tier-1 claims | Tier-1/1k | Citations | Verification tier |
+| Batch | Parts | Chapters | Words | Tier-1 candidates | Tier-1/1k | Citations | Verification tier |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| **L1** | I–II — Foundations, Programming | 22 | 125,017 | 23 | 0.184 | 110 | **Deep** |
-| **L2** | III–V — Testing, API, Automation | 34 | 177,748 | 29 | 0.163 | 125 | **Deep** |
-| **L3** | VI–VIII — Data, Cloud/DevOps, Observability | 33 | 115,618 | 319 | 2.759 | 62 | **Deep** |
-| **L4** | IX–X — AI Quality, Performance & Security | 24 | 88,258 | 390 | **4.419** | 42 | Standard, **elevated** (§13.3) |
-| **L5** | XI–XII — Architecture, Leadership | 24 | 144,520 | 452 | 3.128 | 39 | Standard |
-| | **Total** | **137** | **651,161** | **1,213** | | **378** | |
+| **L1** | I–II — Foundations, Programming | 22 | 125,017 | 20 | 0.160 | 110 | **Deep** |
+| **L2** | III–V — Testing, API, Automation | 34 | 177,748 | 19 | 0.107 | 125 | **Deep** |
+| **L3** | VI–VIII — Data, Cloud/DevOps, Observability | 33 | 115,618 | 302 | 2.612 | 62 | **Deep** |
+| **L4** | IX–X — AI Quality, Performance & Security | 24 | 88,258 | 379 | **4.294** | 42 | Standard, **elevated** (§13.3) |
+| **L5** | XI–XII — Architecture, Leadership | 24 | 144,520 | 449 | 3.107 | 39 | Standard |
+| | **Total** | **137** | **651,161** | **1,169** | | **378** | |
+
+> **Tier-1 figures are candidate counts recomputed at Phase F-IR1 (§6.2.4, §6.4).** The chapter, word and citation columns are unchanged from Phase C4 and were independently reconciled during F-L1 and F-L2.
 
 **Boundary rationale.** The **VIII | IX** boundary is the evidence-maturity boundary (§13.3) and is absolute — no batch mixes verification tiers. Sub-boundaries follow conceptual continuity: L1 conceptual and skill base (and the Atlas-absent zone); L2 core practice; L3 systems and operational; L4 specialist quantitative; L5 synthesis and capstone.
 
@@ -408,7 +412,19 @@ A longitudinal-only review reproduces the Part gates and finds nothing new. A tr
 
 ### 6.1 Classification pipeline — deterministic ordering
 
+#### 6.1.0 Input population and masking discipline
+
+**Input population.** The census reads exactly the **137 chapter files** matching `book/part-*/chapters/chapter-*.md`, as UTF-8 text, in sorted path order. No other file, directory or repository artefact contributes to any census figure. Part READMEs, governance documents, templates, diagrams and companion code are **out of population**.
+
+**Word count** is `len(text.split())` over the unmodified file — whitespace-delimited tokens of the raw Markdown, before any exclusion.
+
+**Masking discipline.** Every PASS-0 exclusion **masks** rather than deletes: matched characters are replaced by spaces and **newlines are always preserved**. Character offsets and line numbers are therefore identical in the original text and in the residue at every stage. An exclusion whose pattern could span a newline must be constrained so that it cannot, because a single unclosed delimiter would otherwise mask unrelated later lines.
+
+**Line-scoped exclusions are decided on the original line.** E5, E7 and E8 remove whole lines. Whether a line qualifies is tested against the **original line text**, never against the partially masked text, so their behaviour does not depend on the order in which the character-level maskers ran.
+
 > **Governing precedence rule.** **A recognised Tier-1 quantitative claim always takes precedence over an identifier exclusion.** No exclusion may delete a token already classified as a Tier-1 claim.
+>
+> **Scope of that rule — normative.** Tier-1 classification happens in PASS 1. The precedence rule therefore governs **PASS 2 (E12) only**, which is the sole exclusion running after protection. **It does not govern PASS 0.** PASS-0 exclusions run *before* any token is classified, so they can and do remove text that would otherwise have matched a Tier-1 class. That is intended: a bibliographic line, a metadata row or a URL is not a teaching claim regardless of the digits it contains. **Reading the precedence rule as constraining PASS 0 was the primary ambiguity behind finding FE-L1-005.**
 
 Classification runs as five ordered passes. The ordering is normative: an independent implementation must reproduce the census without guessing.
 
@@ -429,10 +445,10 @@ Classification runs as five ordered passes. The ordering is normative: an indepe
 | E1 | Fenced code blocks | ```` ``` ```` and `~~~` delimited | set aside as a separate population, never Tier 1 or Tier 2 |
 | E2 | Inline code spans | backtick-delimited | identifiers, not prose claims |
 | E3 | Absolute URLs | `http://`, `https://` | contain digits |
-| E4 | Markdown link and image targets | the `](…)` portion only; **link text is retained** | relative paths carry chapter and delivery numbers |
-| E5 | Footnote definition lines | lines beginning `[^key]:` | bibliographic volumes, pages, years |
+| E4 | Markdown link and image targets | the `](…)` portion only; **link text is retained**. The target **must not span a newline** | relative paths carry chapter and delivery numbers |
+| E5 | Footnote definition lines | **the entire line**, where the *original* line matches `^\s*\[\^[^\]]+\]:` | bibliographic volumes, pages, years, edition and version strings. **E5 removes the whole line including any span that would otherwise match a Tier-1 class**, and it removes that content from the Tier-2 residue as well |
 | E6 | Footnote references | `[^key]` | citation identifiers |
-| E7 | Chapter metadata rows | table rows whose first cell is `Chapter`, `Part`, `Version`, `Status`, `Estimated study time`, `Prerequisites`, `Reading time`, `Difficulty` | metadata, not teaching claims |
+| E7 | Chapter metadata rows | **the entire row**, where the *original* row's first cell — lowercased, with surrounding emphasis stripped — is one of the closed set `chapter`, `part`, `version`, `status`, `estimated study time`, `prerequisites`, `reading time`, `difficulty` | metadata, not teaching claims. The set is closed; no other label qualifies |
 | E8 | `Chapter N` / `Part N` headings | ATX headings | structural numbering |
 | E9 | Standards designators | `ISO`, `ISO/IEC`, `ISO/IEC/IEEE`, `ISO/TS`, `IEC`, `IEEE`, `RFC`, `BS`, `EN` followed by digits, optional `-nnn` parts, optional `:YYYY` | reference identifiers |
 | **E10** | **Time of day** | `HH:MM` and `HH:MM:SS`, `HH` 00–23, `MM`/`SS` 00–59 | **timestamps are not ratios.** Evaluated **before** E11 so a clock form is never re-read as a bare year |
@@ -495,6 +511,35 @@ Classification runs as five ordered passes. The ordering is normative: an indepe
 - **Code-fence numerics** are counted in their own population and are never added to Tier 1 or Tier 2.
 - **A compound duration** such as `8 min 45 s` or `6h 12m` yields at least one Tier-1 claim; the whole compound is verified as one claim at Level 8.
 
+#### 6.2.1 Occurrence semantics — normative
+
+**A census figure counts textual match occurrences, not distinct values, not semantic claims, and not chapters.** The same figure appearing three times is **three** occurrences, because each is a separate span requiring verification. Occurrences are counted per chapter after PASS-4 deduplication and summed to Part, batch and edition totals. **No other counting basis is permitted anywhere in this plan.**
+
+#### 6.2.2 Code-fence population — normative
+
+`code-fence = N` means: **N is the number of numeric-literal occurrences inside fenced code blocks**, where a numeric literal is a maximal match of `\d+(?:[.,]\d+)*` and fenced code is the region set aside by E1.
+
+It is **not** a count of code blocks, not a count of blocks containing numbers, and not a count of unique literals. The code-fence population is **neither Tier 1 nor Tier 2** and never contributes to either.
+
+#### 6.2.3 Inline-code candidate population — normative
+
+E2 removes inline code spans on the rationale that they carry identifiers rather than prose claims. That rationale is sound in general but **not universal**: a code span is also used to quote a diagnostic message, and such a message can contain a genuine quantitative claim.
+
+**E2's suppression is therefore measured rather than silent.** Tier-1 grammar is applied to the E2-suppressed text and the result reported as the **inline-code candidate population**. This population is **neither Tier 1 nor Tier 2**, contributes to no census total, and exists so that Level 8 can see what E2 removed and adjudicate it. A confirmed claim found there is verified at Level 8 and recorded in the Numerical Verification Ledger with its origin stated.
+
+#### 6.2.4 Candidate versus confirmed claim — normative
+
+The two counts are different objects and **must never be conflated**.
+
+| | Definition | Determined by | Reproducible |
+| --- | --- | --- | --- |
+| **Tier-1 candidate** | A span surviving the §6.1 pipeline and matching a §6.2 class | The specification alone, mechanically | **Yes — exactly** |
+| **Confirmed quantitative claim** | A Tier-1 candidate that adjudication confirms is a quantitative teaching claim | Human judgement against the surrounding text | No — it is a review judgement |
+
+**The census in §6.4 reports candidates.** Level 8's exit criterion — *every confirmed quantitative claim recomputed* — is discharged by adjudicating the **complete candidate population** and recording, for each candidate, either a dual verdict or an explicit `NOT APPLICABLE` with its reason.
+
+> **This is the structural resolution of FE-L1-005.** Completeness is proved mechanically at the candidate level, where reproducibility is achievable. Claimhood is decided by review, where it belongs. **A reviewer must never be required to discover the candidate population by hand**; hand-discovery does not scale to the 300–450 candidate batches and cannot demonstrate completeness.
+
 **Accepted architecture observation — ARC-C3-5 (P3, non-blocking).** E11 removes bare years 1900–2099, so a quantity that happens to fall in that range and carries no unit — *"the batch contained 2000 records"* — would be suppressed. **Consequence:** one quantitative claim per occurrence would bypass Level 8. **Rationale for accepting rather than narrowing:** a repository-wide search for a bare 1900–2099 number followed by a quantity noun returns **zero instances**, and narrowing E11 would convert every publication and timeline year into Tier-2 noise — a larger, certain cost against a hypothetical one. **Revision trigger:** if any bare 1900–2099 quantity appears in manuscript text outside a calendar or date context, re-test E11 and narrow it. **Owner:** review architecture owner. **Blocker class:** C. **Severity:** P3.
 
 ### 6.3 Mandatory reflexive validation
@@ -507,31 +552,47 @@ This rule exists because **three** successive versions of this metric failed con
 
 **A regex running without error is not validation.** For every inclusion class the validator must: enumerate its matches repository-wide · inspect enough of them to identify false positives · test adversarial examples · record the result. Phase D2 tested exclusions for suppression but not inclusions for contamination, and a `ratio` class matching `HH:MM` consequently produced **144 false Tier-1 claims (10.7%)** that stood undetected until Phase C3. **Both directions, every class, every time.**
 
+#### 6.3.1 Canonical reference implementation
+
+The specification above is executable. Its canonical implementation is **[`tools/quantitative_census.py`](../../tools/quantitative_census.py)** — Python 3.8+, standard library only, deterministic.
+
+| Property | Value |
+| --- | --- |
+| **Authority** | The **specification governs the implementation.** Where they disagree, §6.1–§6.2 are correct and the implementation is defective |
+| **Inputs** | The 137 chapter files, read from the repository at run time |
+| **Outputs** | Per-Part, per-batch and edition aggregates; `--detail` emits every match with Part, path, line, tier, class and matched text; `--json` emits the same machine-readably |
+| **Constraints** | **No accepted or expected total is hard-coded.** Every figure is derived from manuscript content |
+| **Determinism** | Verified: repeated runs are byte-identical, and row order is fixed |
+
+Its existence does not discharge §6.3. **Reflexive validation still applies to every class and every exclusion, in both directions, every time the method changes.**
+
 ### 6.4 Active census
 
-Produced by the §6.1 pipeline as stated. **These are the only operational figures.**
+Produced by the §6.1 pipeline as stated, and **recomputed at Phase F-IR1 by [`tools/quantitative_census.py`](../../tools/quantitative_census.py)**. **These are the only operational figures.** All are **Tier-1 candidate** counts in the §6.2.4 sense.
 
-| Part | Tier 1 | Tier 2 | Code-fence | Words | **Tier-1 / 1k words** | Density rank |
-| --- | --- | --- | --- | --- | --- | --- |
-| I | 18 | 24 | 1 | 64,921 | 0.28 | 9 |
-| II | 5 | 19 | 31 | 60,096 | 0.08 | 10 |
-| III | 23 | 20 | 0 | 52,741 | 0.44 | 8 |
-| IV | 2 | 51 | 66 | 54,811 | 0.04 | 12 |
-| V | 4 | 23 | 0 | 70,196 | 0.06 | 11 |
-| VI | 145 | 75 | 18 | 45,206 | 3.21 | 4 |
-| VII | 53 | 23 | 0 | 40,305 | 1.31 | 7 |
-| VIII | 121 | 126 | 63 | 30,107 | 4.02 | 3 |
-| **IX** | 232 | 371 | 0 | 35,028 | **6.62** | **1** |
-| X | 158 | 179 | 7 | 53,230 | 2.97 | 5 |
-| XI | 330 | 336 | 0 | 77,606 | 4.25 | 2 |
-| XII | 122 | 264 | 0 | 66,914 | 1.82 | 6 |
-| **Total** | **1,213** | **1,511** | **186** | **651,161** | | |
+| Part | Tier 1 | Tier 2 | Code-fence | Inline-code | Words | **Tier-1 / 1k words** | Density rank |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| I | 15 | 13 | 2 | 0 | 64,921 | 0.23 | 9 |
+| II | 5 | 16 | 112 | 5 | 60,096 | 0.08 | 11 |
+| III | 14 | 20 | 0 | 0 | 52,741 | 0.27 | 8 |
+| IV | 2 | 50 | 89 | 0 | 54,811 | 0.04 | 12 |
+| V | 3 | 25 | 0 | 1 | 70,196 | 0.04 | 10 |
+| VI | 143 | 63 | 20 | 6 | 45,206 | 3.16 | 4 |
+| VII | 53 | 46 | 0 | 13 | 40,305 | 1.31 | 7 |
+| VIII | 106 | 89 | 80 | 35 | 30,107 | 3.52 | 3 |
+| **IX** | 222 | 415 | 0 | 135 | 35,028 | **6.34** | **1** |
+| X | 157 | 185 | 7 | 171 | 53,230 | 2.95 | 5 |
+| XI | 327 | 329 | 0 | 0 | 77,606 | 4.21 | 2 |
+| XII | 122 | 265 | 0 | 0 | 66,914 | 1.82 | 6 |
+| **Total** | **1,169** | **1,516** | **310** | **366** | **651,161** | | |
 
-Batch aggregates appear in §5.2. Derived ratios: **L4/L3 = 1.60× · L4/L5 = 1.41× · L4/L1 = 24.0× · L4/L2 = 27.1×**.
+Batch aggregates: **L1** 20 · **L2** 19 · **L3** 302 · **L4** 379 · **L5** 449. Derived ratios on the recomputed census: **L4/L3 = 1.61× · L4/L5 = 1.41× · L4/L1 = 26.9× · L4/L2 = 40.2×**.
 
-**Every Part contains Tier-1 claims** — the minimum is Part IV at 2, and **no Part has zero**, so the census requirement in §6.7 is enforceable everywhere.
+**Every Part contains Tier-1 candidates** — the minimum is Part IV at 2, and **no Part has zero**, so the census requirement in §6.7 is enforceable everywhere.
 
-**Precision.** The `ratio` class was audited in full: **84 of 84 matches are genuine** evaluation ratios (`90 / 100`, `24/25`, `17 / 20`). Every other class was validated by declared random sampling; no false positive was found. The 144 clock-time false positives that contaminated the previous census are eliminated by E10.
+**Superseded by this recomputation.** The Phase C4-era figures — Tier-1 **1,213**, Tier-2 **1,511**, code-fence **186**, and the per-Part values behind them — are recorded in §6.5 and **must not be used operationally**. They were not reproducible from the committed specification; see §6.9.
+
+**Conclusion stability.** Every §6.6 conclusion survives the recomputation unchanged: **Part IX remains the densest Part** (6.34/1k, ahead of Part XI at 4.21); **L4 remains the densest batch**, and **L4/L3 moves 1.60× → 1.61×**, leaving the "materially denser" reading intact; **L1 and L2 remain materially sparser**. The density ranks of Parts I–XII are unchanged except that Parts II and V exchange ranks 10 and 11 at the sparse tail, which carries no allocation consequence.
 
 ### 6.5 Superseded evidence
 
@@ -542,6 +603,8 @@ The following are recorded as **superseded** and must **not** be used operationa
 - the **Phase D-era census** — Tier-1 total 1,301, Tier-2 total 1,480, Part VIII 198/6.58, and the ratio L4/L5 = 1.54× — produced before the §6.1 precedence rule existed and therefore missing genuine Tier-1 claims. Superseded;
 - the **Phase D2-era census** — Tier-1 total 1,322, Tier-2 total 1,600, code-fence 197, Part VIII 203/**6.74**, Part XI 306/3.94, and the ratios **L4/L3 = 1.14×**, L4/L5 = 1.50× — which simultaneously **under-counted** by omitting the short time units `s`, `min` and `h` and **over-counted** by admitting **144 clock times** as ratios. Its claim that *"Part VIII is the densest Part in the edition"* and the density-based justification for L3 resourcing are both **withdrawn**; see §6.4 and §6.6. Superseded.
 
+- the **Phase C4-era census** — Tier-1 total **1,213**, Tier-2 total **1,511**, code-fence **186**, and every per-Part figure behind them, together with the derived ratios **L4/L3 = 1.60×**, L4/L5 = 1.41×, L4/L1 = 24.0× and L4/L2 = 27.1×. **Superseded at Phase F-IR1**: these figures were not reproducible from the committed §6.1/§6.2 specification, which is finding **FE-L1-005**. The recomputed census is §6.4 and the root cause is §6.9.
+
 **One active census only.** Where any figure in this document conflicts with §6.4, §6.4 governs. Superseded figures appear in this subsection and in the §16 review history and nowhere else.
 
 ### 6.6 Quantitative resourcing conclusion
@@ -550,9 +613,9 @@ Restated on the corrected census. **Density is no longer offered as the justific
 
 | Claim | Status on corrected evidence |
 | --- | --- |
-| **L4 is the densest batch** | **Supported** — 4.419/1k, ahead of L5 at 3.128 and L3 at 2.759. **L4/L3 = 1.60×**, so L4 is *materially* denser than L3, not comparable to it |
-| **Part IX is the densest Part** | **Supported** — 6.62/1k, ahead of Part XI at 4.25 and Part VIII at 4.02 |
-| **L1 and L2 are materially sparser** | **Supported** — 0.184 and 0.163 per 1k, 24–27× below L4 |
+| **L4 is the densest batch** | **Supported** — 4.294/1k, ahead of L5 at 3.107 and L3 at 2.612. **L4/L3 = 1.64×**, so L4 is *materially* denser than L3, not comparable to it |
+| **Part IX is the densest Part** | **Supported** — 6.34/1k, ahead of Part XI at 4.21 and Part VIII at 3.52 |
+| **L1 and L2 are materially sparser** | **Supported** — 0.160 and 0.107 per 1k, 27–40× below L4 |
 | **L3 warrants numerical-verification resourcing comparable to L4** | **Supported, but on different grounds.** Density does **not** justify it. The justification is that **L3 is deep tier** — Parts VI–VIII are unbaselined legacy material (§13.3) — and that Part VIII (4.02/1k) and Part VI (3.21/1k) each carry substantial quantitative content in incident-timeline and data-quality chapters where inference validity is the dominant risk |
 
 > **The allocation decision is not attributed to density where density does not support it.** L4 receives the heaviest numerical effort because it is the densest; L3 receives comparable effort because it is the least-verified evidence tier, not because it is equally dense.
@@ -579,6 +642,22 @@ Phase C4 accepted the architecture with **zero Architecture Blockers** and recor
 > **These observations are below the threshold for changing the active review-planning census (§6.4).** C4 verified that adjusting for all of them leaves every §6.6 conclusion intact: Part IX remains the densest Part, L4 remains the densest batch, L1/L2 remain materially sparser, and the L3 resourcing justification remains grounded in evidence maturity rather than density.
 >
 > **Suggested disposition for a future maintenance pass, not now:** extend E10 to tolerate trailing punctuation and millisecond precision; exclude version strings from `dec`; consider a spelled-out-percentage class; correct the two documentation statements in §6.1 and §6.4.
+
+### 6.9 FE-L1-005 — why the census was not reproducible
+
+Recorded so the correction can be independently checked rather than taken on trust.
+
+**What was ambiguous.** Three things, in order of impact.
+
+1. **E5 precedence.** §6.1's governing precedence rule — *"no exclusion may delete a token already classified as a Tier-1 claim"* — sits immediately above the PASS table and reads as though it governs the whole pipeline. Under that reading E5 must not remove a footnote-definition line containing a Tier-1-shaped span; under the opposite reading it removes the line whole. **The two readings differ by 8 candidates in Part III alone.** §6.1.0 now states that the rule governs PASS 2 only.
+2. **Code-fence semantics.** §6.1 set fenced code aside as "a separate population" and §6.4 reported `code-fence = 186`, but **no sentence anywhere defined what was being counted** — tokens, literals, occurrences, blocks, or blocks-containing-numbers. The figure was therefore underivable. §6.2.2 now fixes one definition.
+3. **Inline-code suppression.** E2 removed inline code spans silently, so a genuine quantitative claim quoted inside backticks left no trace. §6.2.3 now measures that population instead of discarding it.
+
+**What was reproduction failure rather than architectural ambiguity.** Phase F-IR1's own first implementation carried three defects, all found by the §6.3 reflexive-validation discipline and all corrected before any figure was published: a mask that collapsed newlines; an E4 link-target pattern that spanned newlines and thereby defeated E5; and a `ratio` class that **ignored §6.2's explicit four-digit-year exclusion**, admitting date forms such as `12/2024`. The third was a defect against a rule the specification already stated correctly — the architecture was right and the implementation was wrong.
+
+**The decisive evidence.** Phase F-IR1 re-implemented the pipeline with each PASS-0 exclusion independently switchable and searched the configuration space against the five known Part values (I = 18, II = 5, III = 23, IV = 2, V = 4). **No configuration reproduces them.** Single-toggle results for Part III are 14 with the full pipeline and 22 with E5 disabled; the nearest overall configuration leaves five Part-level discrepancies. **The accepted §6.4 census was therefore not derivable from the accepted §6.1/§6.2 text under any interpretation of the documented exclusions**, which is why F-L1 and F-L2 could not reproduce it and why F-L2 judged the finding to strengthen.
+
+**Structural resolution.** Reproducibility is now guaranteed at the **candidate** level (§6.2.4), where a mechanical definition can be exact, and claimhood is decided by adjudication, where judgement belongs. This removes the requirement — impossible at 300–450 candidates per batch — that a reviewer discover the population by hand.
 
 ---
 
@@ -947,7 +1026,11 @@ Immutable record. Each entry is a distinct event.
 | **D3** | **Targeted Quantitative Architecture Correction** | Closed unit set of 19 evidenced forms; colon-ratio class removed and time-of-day excluded in PASS 0; code-fence contradiction resolved; E12 window fixed at **±25** on measured precision; `mult` class removed for want of evidence; every inclusion class validated for contamination as well as suppression; census recomputed to **Tier-1 1,213 / Tier-2 1,511 / code-fence 186**; the density-based justification for L3 resourcing **withdrawn and restated** on evidence-tier grounds. **D3 is a correction event and does not close its own findings** |
 | **C4** | **Final Focused Quantitative Architecture Re-Acceptance** | **Score 95.0/100 · Verdict A — ARCHITECTURE ACCEPTED · Architecture Blockers = 0.** Independent evidence: a classifier implemented **fresh from the committed §6.1/§6.2 text** reproduced **all 36 census figures exactly** — Tier-1 **1,213**, Tier-2 **1,511**, code-fence **186**, words **651,161**, all twelve Part metrics and all seven Tier-1 class totals. Full audits: `ratio` 84/84 genuine, `unit` 335/335 conforming, `perN` 16/16. **CLOSED:** ARC-C3-1, ARC-C3-2, ARC-C3-3, ARC-C3-4, **ARC-P1-1**, **ARC-C2-2**, **ARC-C2-5**. **ACCEPTED-P3:** ARC-C3-5 (zero-instance claim falsification-tested across 30+ quantity nouns). Six non-blocking P3 observations recorded in §6.8 |
 
-> **The architecture is ACCEPTED.** Architecture design and independent re-acceptance are complete. **Phase E — Governance Remediation Gate — is the next separately authorised lifecycle activity and has NOT started.** Acceptance of the architecture does not authorise manuscript-review execution and does not imply release readiness.
+| **F-IR1** | **Targeted Quantitative Review-Instrument Remediation** | **Correction event — does not close its own finding.** Triggered by **FE-L1-005**, raised at F-L1 and strengthened at F-L2 when independent enumeration returned 20 genuine claims against an accepted 29 for Parts III–V, matching Parts IV and V exactly while diverging by nine in Part III. A switchable re-implementation established that **no configuration of the ten documented PASS-0 exclusions reproduces the accepted per-Part census**. §6.1.0 fixed E5/E7 precedence and masking discipline; §6.2.1–§6.2.4 fixed occurrence, code-fence, inline-code and candidate-versus-claim semantics; §6.3.1 added the canonical reference implementation `tools/quantitative_census.py`; §6.4 recomputed the census to **Tier-1 1,169 / Tier-2 1,516 / code-fence 310 / inline-code 366**. Every §6.6 conclusion survives. **The amended method is NOT accepted and awaits focused independent re-acceptance** |
+
+> **The non-quantitative architecture remains ACCEPTED at C4.** Architecture design and independent re-acceptance were completed for it.
+>
+> **The quantitative method (§6.1–§6.4) is CORRECTED BUT UNACCEPTED.** Phase F-IR1 amended it to close FE-L1-005; that finding is **CORRECTION APPLIED — AWAITING INDEPENDENT VERIFICATION**, and **F-L3 must not be authorised until a focused independent re-acceptance confirms the amended instrument.** **Phase E — Governance Remediation Gate — is the next separately authorised lifecycle activity and has NOT started.** Acceptance of the architecture does not authorise manuscript-review execution and does not imply release readiness.
 
 Where a later phase changed an earlier rule, the later phase governs and only the corrected rule appears as active guidance. Superseded metrics — including the Phase D-era census — are recorded in §6.5 and must not be used operationally.
 
@@ -964,5 +1047,7 @@ This document is method only. As of Phase C4 acceptance:
 - **No whole-edition baseline exists.**
 - **No v0.16.0 release metadata, branch or tag exists.**
 - **All 137 chapters are unmodified**, and their statuses are unchanged.
+
+**As of Phase F-IR1** the position has advanced: Phase E is complete, Phase F is in execution with batches L1 and L2 complete (56/137 chapters inspected, 0 transversals), and §6.1–§6.4 have been corrected and await independent re-acceptance. **No chapter has been modified at any point.**
 
 Activities described here for Phases E through L are **descriptions of future authorised work**, not records of completed work.

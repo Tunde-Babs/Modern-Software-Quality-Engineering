@@ -503,6 +503,60 @@ L2 enumerated its Tier-1 population **without relying on the unresolved instrume
 
 ---
 
+## Event FE-EV-006 — Phase F-IR1: Quantitative Review-Instrument Remediation
+
+| Field | Value |
+| --- | --- |
+| **Event ID** | `FE-EV-006` |
+| **Date** | 2026-08-16 |
+| **Phase** | F-IR1 — targeted review-instrument correction. **Not a manuscript review event** |
+| **Scope** | The quantitative method only: `FIRST_EDITION_REVIEW_PLAN.md` §5.2 and §6.1–§6.9. **No chapter was read for review, no manuscript finding was corrected, and no transversal ran** |
+| **Score / verdict** | **`UNSCORED` — correction event.** Per the plan's standing discipline a correction event **does not close its own finding** |
+| **Trigger** | **FE-L1-005** (P2, class C), raised at F-L1 and strengthened at F-L2 |
+| **Baseline digest at START / END** | `ec588eaa…f150a411` / `ec588eaa…f150a411` — **matched both times; zero manuscript mutation** |
+| **Non-collapse note** | F-IR1 must not be collapsed with C4, with F-L1 or F-L2, or with the independent verification that must follow it |
+
+### 6.1 Why the correction was required
+
+F-L2 enumerated Parts III–V independently and returned **20 genuine claims against an accepted 29** — matching Parts IV (2) and V (4) exactly while diverging by **nine** in Part III. The divergence was neither uniform nor predictable, and L2 remained reviewable only because 130 over-inclusive candidates could be adjudicated by hand. **L3, L4 and L5 carry 302, 379 and 449 candidates**, where hand-discovery of the population cannot serve as a completeness proof.
+
+### 6.2 Root cause
+
+A re-implementation with each PASS-0 exclusion independently switchable was searched against the five known Part values. **No configuration reproduces them.** Three architectural ambiguities were identified — **E5 precedence**, **undefined code-fence semantics**, and **silent inline-code suppression** — and three defects in F-IR1's own first implementation were caught by reflexive validation and corrected before publication, one of them a violation of a rule §6.2 already stated correctly.
+
+### 6.3 Correction applied
+
+Specification first, implementation second. §6.1.0 fixes input population, masking discipline, E4/E5/E7 precision and the scope of the governing precedence rule. §6.2.1–§6.2.4 fix occurrence semantics, the code-fence population, the new inline-code candidate population, and the **candidate-versus-confirmed-claim** distinction that structurally resolves the finding. §6.3.1 records the canonical implementation **`tools/quantitative_census.py`**. §6.4 recomputes the census; §6.5 supersedes the C4-era figures; §6.6 restates the resourcing conclusions; §6.9 records the root cause; §5.2 and §16 follow.
+
+### 6.4 Recomputed census
+
+| | Tier-1 | Tier-2 | code-fence | inline-code | Words |
+| --- | --- | --- | --- | --- | --- |
+| **C4-era (superseded)** | 1,213 | 1,511 | 186 | — | 651,161 |
+| **F-IR1 recomputed** | **1,169** | **1,516** | **310** | **366** | **651,161** |
+
+Batches: L1 **20** · L2 **19** · L3 **302** · L4 **379** · L5 **449**. **Every §6.6 conclusion survives**: Part IX remains the densest Part, L4 remains the densest batch with L4/L3 moving 1.60× → 1.64×, and L1/L2 remain materially sparser.
+
+### 6.5 Retrospective impact on L1 and L2
+
+**Neither batch's completion is invalidated, and neither record is rewritten.** L1 verified a 23-span superset covering all 20 recomputed candidates; L2 verified 20 genuine claims from a 130-candidate over-inclusive sweep covering all 19 recomputed candidates. **In both batches the population actually adjudicated is a superset of the recomputed candidate population**, so every recomputed candidate has already been inspected. The one substantive addition is Part V's inline-code `47 seconds`, which L2 verified as a genuine claim and which the corrected method now surfaces explicitly. **FE-L1-006's contamination ratio changes basis and is noted in the register; the finding stands.**
+
+### 6.6 Status after this event
+
+| Item | Value |
+| --- | --- |
+| FE-L1-005 | **CORRECTION APPLIED — AWAITING INDEPENDENT VERIFICATION** |
+| Architecture §6.1–§6.4 | **CORRECTED BUT UNACCEPTED** |
+| Architecture, all other sections | Accepted at C4, unchanged |
+| L1, L2 | COMPLETE, unchanged, 56/137 |
+| L3, L4, L5 | not started · T1–T6 not started |
+| Manuscript mutations | **0** |
+
+**Next authorised activity:** **Phase F-IR2 — Independent Quantitative Instrument Verification.** **F-L3 remains NOT AUTHORISED** until that verification confirms FE-L1-005 resolved with no open Class-B blocker.
+
+
+---
+
 ## 3. Manuscript-mutation control (plan §13.4 drift discipline, applied to Phase F)
 
 **Rule.** The 137 chapter blobs recorded in §2.5 constitute the Phase F review-execution baseline. **Manuscript chapters must remain unmodified for the duration of Phase F.**
@@ -533,7 +587,8 @@ git ls-files -s book | awk '$4 ~ /chapters\/chapter-.*\.md$/ {print $4":"$2}' | 
 | `FE-EV-003` | 2026-08-16 | F — L1 | Longitudinal Batch 1, Parts I–II — COMPLETE · 22/22 chapters · 7 findings | **`UNSCORED`** |
 | `FE-EV-004` | 2026-08-16 | F — L2 | Longitudinal Batch 2, Parts III–V — START | START, no verdict |
 | `FE-EV-005` | 2026-08-16 | F — L2 | Longitudinal Batch 2, Parts III–V — COMPLETE · 34/34 chapters · 5 findings | **`UNSCORED`** |
+| `FE-EV-006` | 2026-08-16 | F-IR1 | Quantitative review-instrument remediation · census recomputed · FE-L1-005 correction applied | **`UNSCORED`** — correction event |
 
 ---
 
-**Last Updated:** 2026-08-16 (F-L2)
+**Last Updated:** 2026-08-16 (F-IR1)

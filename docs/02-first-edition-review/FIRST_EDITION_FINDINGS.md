@@ -228,10 +228,26 @@ Every finding records all of the following. A row missing any mandatory field is
 | **Evidence** | The Part I difference is **fully explained**: three of the accepted Part I Tier-1 matches are the string `4.0`/`1.1` occurring **inside footnote-definition lines** (`chapter-02` line 363, `chapter-03` line 441, `chapter-10` line 519). **PASS-0 exclusion E5 removes lines beginning `[^key]:` in their entirety**, so these three cannot survive a correct E5. My own implementation reproduced 18 only while carrying two defects — a newline-collapsing mask and an E4 link-target pattern that spanned newlines and thereby defeated E5. **Both defects were found by the reflexive validation plan §6.3 mandates, and correcting them moved Part I from 18 to 15.** Code-fence divergence is a separate matter: §6.1 sets fenced content aside as a population but **never defines how its numerics are counted**, so the figure 186 is not derivable from the committed text. |
 | **Consequence** | Level 8's exit criterion — *every confirmed Tier-1 claim recomputed* — cannot be demonstrated complete for any batch whose Tier-1 population cannot be regenerated. **For L1 the impact is nil**: the population is small enough to enumerate exhaustively, and this review verified the **union** of both runs (23 items), a superset of both. Phase C4 recorded that a fresh classifier reproduced *all 36 census figures exactly*; that result did not reproduce here. |
 | **Recommended action** | Before **F-L3** — the first high-density batch — either publish the reference classifier implementation or specify E5 precedence and the code-fence counting rule in §6.1. **No architecture change was made by this task.** |
-| **Status** | `OPEN` |
+| **Status** | **`CORRECTION APPLIED — AWAITING INDEPENDENT VERIFICATION`** (Phase F-IR1, 2026-08-16) |
 | **Owner** | Review architecture owner |
-| **Revision trigger** | **Escalates to Class B — Review-Execution Blocker for F-L3, F-L4 and F-L5** if unresolved when those batches are authorised, since 319, 390 and 452 Tier-1 claims cannot be exhaustively enumerated by inspection the way L1's 23 can. **It is not a Class-B blocker for L1 and did not stop this batch.** |
-| **Verification** | `NOT VERIFIED` |
+| **Revision trigger** | **Escalates to Class B — Review-Execution Blocker for F-L3, F-L4 and F-L5** if unresolved when those batches are authorised. **It is not a Class-B blocker for L1 or L2 and stopped neither batch.** |
+| **Verification** | `NOT VERIFIED` — **F-IR1 is a correction event and does not close its own finding** |
+
+#### FE-L1-005 — root cause established at Phase F-IR1
+
+**Decisive evidence.** A re-implementation with each PASS-0 exclusion independently switchable was searched against the five known Part values (I = 18, II = 5, III = 23, IV = 2, V = 4). **No configuration reproduces them.** Part III returns 14 under the full pipeline and 22 with E5 disabled; 23 is not reachable. **The accepted §6.4 census was not derivable from the accepted §6.1/§6.2 text under any interpretation of the ten documented exclusions.**
+
+**Three architectural ambiguities**, now closed: **E5 precedence** — the governing precedence rule read as though it constrained PASS 0, when it governs PASS 2 only (8 candidates in Part III alone); **code-fence semantics** — `code-fence = 186` was published with no definition of what was counted; **inline-code suppression** — E2 discarded a genuine claim in Part V Chapter 8 with no trace.
+
+**Three implementation defects in F-IR1's own first attempt**, all caught by the §6.3 reflexive-validation discipline and corrected before any figure was published: a newline-collapsing mask; an E4 pattern spanning newlines and thereby defeating E5; and a `ratio` class ignoring §6.2's explicit four-digit-year exclusion. **The third was a defect against a rule the specification already stated correctly** — architecture right, implementation wrong.
+
+**Correction applied.** `FIRST_EDITION_REVIEW_PLAN.md` §6.1.0 (input population, masking discipline, E4/E5/E7 precision, precedence scope), §6.2.1–§6.2.4 (occurrence, code-fence, inline-code, candidate-versus-claim), §6.3.1 (reference implementation), §6.4 (recomputed census), §6.5 (C4-era census superseded), §6.6 (conclusions restated), §6.9 (root-cause record), §5.2 (batch table), §16 (F-IR1 event).
+
+**Implementation path.** [`tools/quantitative_census.py`](../../tools/quantitative_census.py) — deterministic, no hard-coded totals, `--detail` and `--json` audit output.
+
+**Recomputed census.** Tier-1 **1,169** · Tier-2 **1,516** · code-fence **310** · inline-code **366** · words **651,161** unchanged. **Every §6.6 conclusion survives.**
+
+**Independent verification required.** The amended method is **not accepted**. **F-L3 must not be authorised** until a focused independent re-acceptance implements the corrected specification from its committed text, reproduces the recomputed census, re-tests the Part III discrepancy, and decides whether FE-L1-005 is CLOSED.
 
 ### FE-L1-006 — Tier-1 contamination in L1 is an order of magnitude above the accepted edition-wide rate
 
@@ -249,6 +265,7 @@ Every finding records all of the following. A row missing any mandatory field is
 | **Evidence** | Enumerated with byte offsets: ch01 L435, ch02 L347, ch02 L363, ch03 L423, ch03 L441, ch10 L519. All are captured by the `dec` class from retained Markdown **link text** (E4 retains link text by design) or from footnote-definition lines. |
 | **Consequence** | The plan's accepted observation **C4-1** measured this contamination at **26 of 1,213 = 2.1% edition-wide** and accepted it as P3 non-blocking on that basis. **The local rate in L1 is 26% — roughly twelve times the accepted figure** — because L1 is the sparsest batch (0.184 and 0.163 Tier-1 per 1k words). A rate accepted as immaterial edition-wide is not immaterial here. |
 | **Recommended action** | Record only. C4-1 remains an accepted architecture observation with its own revision trigger; this finding supplies new evidence about its **local** distribution for the owner's consideration at Phase G. |
+| **F-IR1 note** | The recomputed census (§6.4) changes L1's Tier-1 candidate count from 23 to 20, so the **local contamination ratio changes basis**. The three footnote-line version strings are now correctly excluded by E5; the three remaining version strings sit in retained Markdown **link text**, which E4 preserves by design. **The finding stands and is not closed** — the observation and its revision trigger are unaffected in substance. |
 | **Status** | `OPEN` |
 | **Owner** | Review architecture owner |
 | **Revision trigger** | Reconsider C4-1's acceptance if a later sparse batch shows a comparable local contamination rate |
@@ -411,4 +428,4 @@ These are **not** manuscript findings and **do not** appear in the register abov
 
 ---
 
-**Last Updated:** 2026-08-16 (F-L2)
+**Last Updated:** 2026-08-16 (F-IR1)
