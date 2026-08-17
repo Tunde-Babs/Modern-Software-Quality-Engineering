@@ -557,6 +557,104 @@ Batches: L1 **20** · L2 **19** · L3 **302** · L4 **379** · L5 **449**. **Eve
 
 ---
 
+## Event FE-EV-007 — Phase F-IR3: Genuinely Independent Quantitative Instrument Closure Review
+
+| Field | Value |
+| --- | --- |
+| **Event ID** | `FE-EV-007` |
+| **Date** | 2026-08-17 |
+| **Phase** | F-IR3 — independent review of the corrected quantitative instrument. **Not a manuscript review event and not an acceptance event** |
+| **Scope** | The corrected quantitative architecture only: `FIRST_EDITION_REVIEW_PLAN.md` §6.1–§6.4 and directly dependent batch, density and Level 8 mechanisms, plus `tools/quantitative_census.py`. Covers the corrections applied at **F-IR1** and at **F-IR1B**. **Read-only: no tracked file was modified.** No chapter was read for review; no transversal ran |
+| **Score / verdict** | **B — PARTIALLY VERIFIED · FE-L1-005 REMAINS OPEN · F-L3 BLOCKED.** Closure table **25 PASS · 2 PARTIAL · 3 FAIL** against 30 conditions; closure requires 30/0/0 |
+| **Independence** | **Satisfied.** The reviewer authored neither F-IR1 nor F-IR1B, read plan §6 before the implementation, and froze its results before opening `tools/quantitative_census.py` |
+| **Baseline digest at START / END** | `ec588eaa…f150a411` / `ec588eaa…f150a411` — **matched both times; zero manuscript mutation** |
+| **Non-collapse note** | F-IR3 must not be collapsed with F-IR2, which was performed by the author of the correction and is evidence rather than acceptance, nor with the F-IR4C correction that followed it, nor with the fresh re-acceptance that must still occur |
+
+### 7.1 What was independently confirmed
+
+| Property | Evidence |
+| --- | --- |
+| Canonical implementation deterministic | Three runs of each mode byte-identical; the `--detail` digest was **recomputed**, not assumed, to `c84fe3df…66e5` |
+| **All 60 Part-level census fields reproduce** | Tier-1, Tier-2, code-fence, inline-code and words for Parts I–XII |
+| **Match-level identity across 2,685 rows** | Full tuple comparison with occurrence multiplicity preserved: 0 canonical-only, 0 independent-only |
+| Batch aggregates and densities reproduce | L1 20 · L2 19 · L3 302 · L4 379 · L5 449 |
+| E11 correct | 28/28 boundary tests; fragmentation property holds; the 51 surviving years classify exactly as §6.1.1 states |
+| No hard-coded totals | Every numeric literal in the tool is a specification constant |
+| Retrospective coverage | **L1 20/20 · L2 19/19**, including the Part V inline `47 seconds` |
+
+### 7.2 What failed
+
+**The committed specification was not implementation-complete.** An implementation written from §6.1–§6.2 alone returned **Tier-1 1,179 · Tier-2 1,801 · inline-code 233**; the accepted figures were reachable only by searching an interpretation space against the published totals. **Eight under-specified decision points each move the census**, jointly spanning Tier-1 1,154–1,231 and Tier-2 1,459–1,795. Secondary defects: stale §6.2 class counts summing to the superseded 1,213; three incorrect §6.4 derived ratios, one carried over from the superseded C4 census; an incorrect §6.1.1 consequence mechanism; and **two candidate populations — code-fence 310 and inline-code 366 — reported only as counts**, so plan §6.2.4's *never by hand* rule held for two of four populations.
+
+### 7.3 Status after this event
+
+| Item | Value |
+| --- | --- |
+| FE-L1-005 | **PARTIALLY CLOSED — remains open** |
+| Architecture §6.1–§6.4 | **CORRECTED BUT UNACCEPTED** — targeted re-acceptance **not** granted |
+| Open Class-B blockers | **0** — FE-L1-005 is Class C and escalates only on F-L3 authorisation |
+| L1, L2 | COMPLETE, unchanged, 56/137 · L3–L5 and T1–T6 not started |
+| Manuscript mutations · corrections applied | **0** · **0** |
+
+**Next authorised activity:** a **separately authorised correction task** addressing the F-IR3 defect set. **F-L3 remains NOT AUTHORISED.**
+
+
+---
+
+## Event FE-EV-008 — Phase F-IR4C: Quantitative Specification Completeness & Traceability Correction
+
+| Field | Value |
+| --- | --- |
+| **Event ID** | `FE-EV-008` |
+| **Date** | 2026-08-17 |
+| **Phase** | F-IR4C — targeted specification and traceability correction. **Not a manuscript review event** |
+| **Scope** | The F-IR3 defect set only: `FIRST_EDITION_REVIEW_PLAN.md` §6.1–§6.9 and §16, and `tools/quantitative_census.py`. **No classification rule was altered and no census figure changed.** No chapter was read for review; no transversal ran |
+| **Score / verdict** | **`UNSCORED` — correction event.** A correction event **does not close its own finding** and **may not accept its own architecture** |
+| **Trigger** | **FE-L1-005**, via the F-IR3 independent review (`FE-EV-007`) |
+| **Baseline digest at START / END** | `ec588eaa…f150a411` / `ec588eaa…f150a411` — **matched both times; zero manuscript mutation** |
+| **Non-collapse note** | F-IR4C is a correction event and must not be collapsed with F-IR3, which found the defects, or with the fresh independent re-acceptance (F-IR4) that must still occur |
+
+### 8.1 Specification completed
+
+**§6.1.2 added** — formal definitions for **E9** (word-boundary requirement, single-whitespace separator before the first digit group, `-nnn` and `:nnnn` parts), **E10** (word boundaries on both sides, trailing punctuation and sub-second behaviour) and **E12** (window measured **±25 characters from the nearest edge of the match**, over the PASS-2 working text, case-insensitive triggers).
+
+**§6.2.0 added** — the **`NUM` numeric token**, the **single-whitespace separator rule**, and the **word-boundary asymmetry** under which only `thou` and `dec` are boundary-guarded, with a worked case table. **This is the rule that makes Part III 14 rather than 23, and it is now derivable without opening the implementation.**
+
+**§6.2** gained a **normative pattern column** for all seven classes and the explicit **Tier-2 rule** `(?<![\d.,])\d{2,}(?![\d.,])` with a predicate, a worked table and its relationship to E11. **§6.2.3** states that **PASS-4 deduplication does not apply** to the inline-code population, with the reason. **§6.1.1**'s bounded-consequence note is corrected: retention by E11 does **not** imply Tier-2 admission.
+
+### 8.2 Documentation corrected
+
+§6.2 Evidenced counts refreshed to the active census — `thou` **126 → 116**, `dec` **181 → 147**, sum **1,169**; the replaced pair summed to the superseded 1,213. §6.4 derived ratios recomputed to **L4/L3 1.64× · L4/L5 1.38× · L4/L1 26.84× · L4/L2 40.17×** under a stated rounding convention and reconciled with §6.6, which now carries the same values. §6.8 records **C4-1 as partially resolved** and **C4-3 as resolved**, both as unintended consequences of F-IR1 rather than of Phase C4, with C4-1's residual measured at **14 of 147 `dec` candidates**.
+
+### 8.3 Traceability delivered
+
+`tools/quantitative_census.py` now enumerates **all four candidate populations**. `--detail` emits **3,361 rows** — 1,169 Tier-1, 1,516 Tier-2, 310 code-fence, 366 inline-code — each with Part, path, line, population, class and matched text; `--json` carries the same under an additive `candidates` key. The aggregate mode is unchanged.
+
+### 8.4 Census invariance
+
+| | Tier-1 | Tier-2 | code-fence | inline-code | Words |
+| --- | --- | --- | --- | --- | --- |
+| **Before F-IR4C** | 1,169 | 1,516 | 310 | 366 | 651,161 |
+| **After F-IR4C** | **1,169** | **1,516** | **310** | **366** | **651,161** |
+
+Every Part and batch figure is unchanged. The **Tier-1/Tier-2-only detail digest is byte-identical at `c84fe3df90c114584c5454493156f4c6baed84ccd43f70e2e129e276b69066e5`**; the new **complete** four-population detail digest is `f2bbbd4bf59560aca6f97e2520310f923fb9bff54b5828ed9ccec228187b41ec`.
+
+### 8.5 Status after this event
+
+| Item | Value |
+| --- | --- |
+| FE-L1-005 | **CORRECTION APPLIED — PARTIALLY VERIFIED — AWAITING FRESH INDEPENDENT RE-ACCEPTANCE** |
+| Architecture §6.1–§6.4 | **CORRECTED BUT UNACCEPTED** |
+| Architecture, all other sections | Accepted at C4, unchanged |
+| Open Class-B blockers | **0** |
+| L1, L2 | COMPLETE, unchanged, 56/137 · L3–L5 and T1–T6 not started |
+| Manuscript mutations · corrections applied | **0** · **0** |
+
+**Next authorised activity:** **Phase F-IR4 — Fresh Independent Quantitative Instrument Re-Acceptance**, performed by an actor who authored none of F-IR1, F-IR1B or F-IR4C, implementing §6.1–§6.2 from the committed text alone and freezing results before opening the implementation. **F-L3 remains NOT AUTHORISED.**
+
+
+---
+
 ## 3. Manuscript-mutation control (plan §13.4 drift discipline, applied to Phase F)
 
 **Rule.** The 137 chapter blobs recorded in §2.5 constitute the Phase F review-execution baseline. **Manuscript chapters must remain unmodified for the duration of Phase F.**
@@ -588,7 +686,9 @@ git ls-files -s book | awk '$4 ~ /chapters\/chapter-.*\.md$/ {print $4":"$2}' | 
 | `FE-EV-004` | 2026-08-16 | F — L2 | Longitudinal Batch 2, Parts III–V — START | START, no verdict |
 | `FE-EV-005` | 2026-08-16 | F — L2 | Longitudinal Batch 2, Parts III–V — COMPLETE · 34/34 chapters · 5 findings | **`UNSCORED`** |
 | `FE-EV-006` | 2026-08-16 | F-IR1 | Quantitative review-instrument remediation · census recomputed · FE-L1-005 correction applied | **`UNSCORED`** — correction event |
+| `FE-EV-007` | 2026-08-17 | F-IR3 | Genuinely independent quantitative instrument closure review · 2,685 match rows reproduced · specification found not implementation-complete | **B — PARTIALLY VERIFIED** · 25 PASS / 2 PARTIAL / 3 FAIL |
+| `FE-EV-008` | 2026-08-17 | F-IR4C | Quantitative specification completeness and candidate traceability correction · all four populations enumerable · census unchanged | **`UNSCORED`** — correction event |
 
 ---
 
-**Last Updated:** 2026-08-16 (F-IR1)
+**Last Updated:** 2026-08-17 (F-IR4C)

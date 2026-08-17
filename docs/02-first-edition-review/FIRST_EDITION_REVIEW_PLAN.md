@@ -5,7 +5,7 @@
 | **Project** | Modern Software Quality Engineering (MSQE) |
 | **Milestone** | v0.16.0 — First Edition Review |
 | **Document type** | Review Architecture / Method |
-| **Document status** | **TARGETED QUANTITATIVE METHOD CORRECTION APPLIED — AWAITING FOCUSED INDEPENDENT RE-ACCEPTANCE.** Phase C4 accepted this architecture (95.0/100, verdict A, Architecture Blockers = 0) and that acceptance stands as a historical event. **Phase F-IR1 amended §6.1–§6.4 to close finding FE-L1-005, and Phase F-IR1B made E11 explicit in §6.1.1. The amended quantitative method is NOT independently accepted: the only verification run to date (F-IR2) was performed by the actor who authored the correction and therefore does not satisfy the §11 independence rules.** All non-quantitative sections are unchanged and remain accepted |
+| **Document status** | **TARGETED QUANTITATIVE METHOD CORRECTION APPLIED — AWAITING FRESH INDEPENDENT RE-ACCEPTANCE.** Phase C4 accepted this architecture (95.0/100, verdict A, Architecture Blockers = 0) and that acceptance stands as a historical event. **Phase F-IR1 amended §6.1–§6.4 to close finding FE-L1-005; F-IR1B made E11 explicit in §6.1.1; F-IR3 reviewed the result genuinely independently and returned verdict B — the substantive population verified at match level, but the committed text not implementation-complete; F-IR4C completed the specification (§6.1.2, §6.2.0, the Tier-2 rule, the inline-dedup rule) and made all four candidate populations enumerable. The amended quantitative method is NOT independently accepted** — no acceptance event has occurred, and F-IR4C may not accept its own correction. All non-quantitative sections are unchanged and remain accepted |
 | **Latest stable release** | v0.15.0 — Engineering Leadership & Career Growth Complete |
 | **Review scope** | Parts I–XII — 137 chapters — 651,161 words |
 | **Phase** | Phase C4 complete — architecture accepted; **Phase E Governance Remediation Gate is the next separately authorised activity and has not started** |
@@ -17,7 +17,7 @@
 >
 > **The quantitative method has since been corrected and is not yet re-accepted.** Phase F-L1 and F-L2 established that the §6.4 census could not be reproduced from the committed §6.1/§6.2 text (finding **FE-L1-005**). **Phase F-IR1 amended §6.1–§6.4 and recomputed the census; Phase F-IR1B replaced E11's "standing alone" wording with the formal definition in §6.1.1.**
 >
-> **No independent re-acceptance has occurred.** A technical verification (F-IR2) reproduced the census exactly and compared match-level populations with zero differences, but it was carried out by the same actor that authored the correction. Under §11 R3 and R5 — which admit no exception — that actor cannot gate its own correction, so **F-IR2 is evidence, not acceptance**. Until a genuinely independent re-acceptance is performed, **§6.1–§6.4 are corrected but unaccepted**; every other section retains its C4 acceptance.
+> **No independent re-acceptance has occurred.** F-IR2 reproduced the census exactly but was carried out by the same actor that authored the correction, so under §11 R3 and R5 it is **evidence, not acceptance**. **Phase F-IR3 then performed a genuinely independent review** and returned **verdict B — PARTIALLY VERIFIED**: it confirmed the substantive population at match level (2,685 rows, zero differences) but found the committed specification **not implementation-complete**, because eight material semantics existed only in the implementation. **Phase F-IR4C corrected exactly that defect set** — see §6.1.2, §6.2.0, the Tier-2 formal rule in §6.2, the inline-dedup rule in §6.2.3 and the output contract in §6.3.1 — **without changing any census figure**. F-IR4C is a correction event and does not accept itself. Until a **fresh** independent re-acceptance is performed by an actor who authored none of F-IR1, F-IR1B or F-IR4C, **§6.1–§6.4 are corrected but unaccepted**; every other section retains its C4 acceptance.
 >
 > **Acceptance is of the review architecture only.** It does **not** authorise manuscript-review execution, does **not** imply release readiness, and does **not** mean the First Edition Review is complete. **No First Edition Review execution has begun. Phase E Governance Remediation has not run.** This document contains method only — no manuscript findings, no verification data, no dispositions.
 
@@ -452,15 +452,15 @@ Classification runs as five ordered passes. The ordering is normative: an indepe
 | E6 | Footnote references | `[^key]` | citation identifiers |
 | E7 | Chapter metadata rows | **the entire row**, where the *original* row's first cell — lowercased, with surrounding emphasis stripped — is one of the closed set `chapter`, `part`, `version`, `status`, `estimated study time`, `prerequisites`, `reading time`, `difficulty` | metadata, not teaching claims. The set is closed; no other label qualifies |
 | E8 | `Chapter N` / `Part N` headings | ATX headings | structural numbering |
-| E9 | Standards designators | `ISO`, `ISO/IEC`, `ISO/IEC/IEEE`, `ISO/TS`, `IEC`, `IEEE`, `RFC`, `BS`, `EN` followed by digits, optional `-nnn` parts, optional `:YYYY` | reference identifiers |
-| **E10** | **Time of day** | `HH:MM` and `HH:MM:SS`, `HH` 00–23, `MM`/`SS` 00–59 | **timestamps are not ratios.** Evaluated **before** E11 so a clock form is never re-read as a bare year |
+| E9 | Standards designators | `ISO`, `ISO/IEC`, `ISO/IEC/IEEE`, `ISO/TS`, `IEC`, `IEEE`, `RFC`, `BS`, `EN` followed by digits, optional `-nnn` parts, optional `:YYYY`. Formally defined in **§6.1.2**; that definition is normative and this cell is a summary | reference identifiers |
+| **E10** | **Time of day** | `HH:MM` and `HH:MM:SS`, `HH` 00–23, `MM`/`SS` 00–59. Formally defined in **§6.1.2**; that definition is normative and this cell is a summary | **timestamps are not ratios.** Evaluated **before** E11 so a clock form is never re-read as a bare year |
 | E11 | Bare years | A four-digit year **1900–2099** that is **not part of a larger numeric construct**. Formally defined in **§6.1.1**; that definition is normative and this cell is a summary | bibliographic and timeline years |
 
 **PASS 2 — context-dependent identifier exclusion, applied to unprotected tokens only:**
 
 | # | Excluded | Rationale and constraint |
 | --- | --- | --- |
-| **E12** | Three-digit numbers **100–599** where a trigger word — `HTTP`, `status`, `response`, `code`, `return`, `returns` — occurs within **25 characters** before or after the match | HTTP status codes are technical identifiers, verified at Levels 4 and 6, not Level 8. **E12 may never remove a token protected in PASS 1.** Without that constraint, genuine latency claims such as `310 ms` in *"Average checkout **response** latency"* are destroyed by the word "response" falling inside the window. A token that E12 does not remove falls to **Tier-2 triage**, where a human decides — so the window errs toward triage rather than deletion. |
+| **E12** | Three-digit numbers **100–599** where a trigger word — `HTTP`, `status`, `response`, `code`, `return`, `returns` — occurs within **25 characters** before or after the match. The token form and the window's measurement basis are formally defined in **§6.1.2**; that definition is normative and this cell is a summary | HTTP status codes are technical identifiers, verified at Levels 4 and 6, not Level 8. **E12 may never remove a token protected in PASS 1.** Without that constraint, genuine latency claims such as `310 ms` in *"Average checkout **response** latency"* are destroyed by the word "response" falling inside the window. A token that E12 does not remove falls to **Tier-2 triage**, where a human decides — so the window errs toward triage rather than deletion. |
 
 **E12 window — chosen empirically, not inherited.** Windows of ±25, ±50, ±75 and ±100 characters were measured against the edition. Precision of true HTTP identifiers among excluded tokens: **±25 → 66%**, ±50 → 55%, ±75 → 54%, ±100 → 51%. **±25 is the smallest window tested and the most precise**; wider windows pull in unrelated numbers through context bleed. Tokens a narrow window misses are not lost — they fall to Tier-2 triage.
 
@@ -510,7 +510,11 @@ Start-of-text and end-of-text satisfy conditions 2 and 3 respectively.
 | `x2026` | **Yes** | `x` is in neither set |
 | `2026%` | No | `%` is in the right set, so the token reaches PASS 1 as a `pct` candidate |
 
-> **Known bounded consequence.** A year immediately followed by a full stop or a comma is **retained** rather than excluded, and therefore reaches Tier-2. Lookahead alone cannot distinguish sentence punctuation from decimal punctuation, and narrowing the right set would re-introduce the fragmentation defect described above. **Measured across all 137 chapters this costs nothing**: of the 51 four-digit years reaching Tier-2, **49 are embedded in a numeric construct** (ISO dates, version strings) and the remaining **2 are embedded in alphanumeric identifiers** — `archive-2024` and `CMU/SEI-2000-TR-004` — both of which a human should triage. **No standalone prose year survives E11.** The consequence is recorded because it is a property of the rule, not because it has an observed cost.
+> **Known bounded consequence — corrected at F-IR4C.** A year immediately followed by a full stop or a comma is **retained by E11** rather than excluded. Lookahead alone cannot distinguish sentence punctuation from decimal punctuation, and narrowing the right set would re-introduce the fragmentation defect described above.
+>
+> **Retention by E11 does not imply admission to Tier-2.** E11 and the Tier-2 rule (§6.2) are independent gates that happen to share a boundary principle. A year such as `2018.` is retained here because its right neighbour is numeric punctuation, and is then **rejected by the Tier-2 rule for exactly the same reason** — so it reaches **neither tier**. F-IR3 established that the earlier wording of this note, which asserted that such years "therefore reach Tier-2", stated a mechanism that does not occur.
+>
+> **Measured across all 137 chapters the consequence costs nothing.** Of the **51** four-digit years that do reach Tier-2, **49 are embedded in a numeric construct** (ISO dates, version strings) and the remaining **2 are embedded in alphanumeric identifiers** — `archive-2024` and `CMU/SEI-2000-TR-004` — both of which a human should triage. Every one is hyphen- or slash-separated, which is why the Tier-2 rule admits it. **No standalone prose year appears in Tier 1 or Tier 2.** The consequence is recorded because it is a property of the rule, not because it has an observed cost.
 
 **Interaction with other exclusions.**
 
@@ -527,19 +531,98 @@ Start-of-text and end-of-text satisfy conditions 2 and 3 respectively.
 
 **ARC-C3-5 is unaffected.** The accepted observation that a bare 1900–2099 *quantity* would be suppressed concerns the standalone case, which this clarification does not alter.
 
+#### 6.1.2 E9, E10 and E12 — formal definitions
+
+E11 was made formal at F-IR1B. **F-IR3 found that E9, E10 and E12 still carried material semantics that existed only in the implementation.** The definitions below close that gap. **They are normative**, they describe behaviour the classifier already exhibits, and they change no census figure.
+
+**E9 — standards designators. Regular expression — normative:**
+
+```text
+\b(?:ISO/IEC/IEEE|ISO/IEC|ISO/TS|ISO|IEC|IEEE|RFC|BS|EN)\s?\d+(?:\s?-\s?\d+)*(?::\d{4})?
+```
+
+| Element | Rule |
+| --- | --- |
+| **Designator boundary** | The designator must begin at a **word boundary**. The alternation is ordered longest-first, so `ISO/IEC/IEEE` is preferred over `ISO/IEC` and `ISO` |
+| **Separator before the first digit group** | **At most one whitespace character**, or none. `ISO 25010` and `ISO25010` both match; **`ISO-25010` does not** — a hyphen is not a permitted separator before the *first* digit group |
+| **Subsequent `-nnn` parts** | Optional and repeatable, each with at most one whitespace character either side of the hyphen |
+| **Trailing `:nnnn`** | Optional; exactly four digits. It is a designator edition marker, not a year test, so no 1900–2099 range applies |
+
+> **Why the word boundary is load-bearing.** Without it, the alternative `EN` matches **inside** an ordinary identifier — `GEN-01`, `REG-01`, `CLS-01`, `FAIR-01` all contain `EN` or end in a hyphen-digit form. F-IR3 measured this precisely: an implementation without the boundary suppresses **12 Tier-2 candidates** across Parts IX and XI that the specification intends to retain. `\b` fails between `G` and `E`, so `GEN-01` is untouched and its `01` reaches Tier-2 correctly.
+
+**E10 — time of day. Regular expression — normative:**
+
+```text
+\b(?:[01]\d|2[0-3]):[0-5]\d(?::[0-5]\d)?\b
+```
+
+| Element | Rule |
+| --- | --- |
+| **Grammar** | `HH:MM` or `HH:MM:SS`. `HH` is `00`–`23`, `MM` and `SS` are `00`–`59`. `24:00` is **not** a clock form and is not excluded |
+| **Boundaries** | **Word boundaries on both sides.** The exclusion covers the digits and colons only |
+| **Trailing punctuation** | **Punctuation after the time is not part of the exclusion and does not defeat it.** `08:42.` and `10:02,` are excluded as `08:42` and `10:02`; the `.` and `,` remain in the residue as ordinary punctuation |
+| **Sub-second precision** | `10:14:02.118` is excluded as `10:14:02`. The residue `.118` has no digit before the decimal point and therefore **cannot** be admitted by `dec` (§6.2.0) |
+| **Ordering** | E10 runs **before** E11, so a clock form is never re-read as a bare year |
+
+**E12 — window measurement basis. Normative:**
+
+| Element | Rule |
+| --- | --- |
+| **Token form** | `\b\d{3}\b` — exactly three digits at word boundaries — whose integer value is in the closed range **100–599** |
+| **Window basis** | **±25 characters measured from the nearest edge of the match, excluding the match itself.** The examined context is the **25 characters immediately preceding the match start**, concatenated with the **25 characters immediately following the match end**. It is not measured from the match start alone, not from a token midpoint, and never includes the matched digits |
+| **Clipping** | The window is clipped at the start and end of the chapter text; no padding is added |
+| **Text searched** | The window is read from the **PASS-2 working text** — the PASS-0 residue with PASS-1 protected spans already blanked. A trigger word inside a protected Tier-1 span therefore cannot trigger E12 |
+| **Trigger matching** | `HTTP`, `status`, `response`, `code`, `return`, `returns`, matched **case-insensitively** as substrings |
+
 ### 6.2 Inclusion pass — two tiers
 
-**Tier 1 — seven closed classes.** The set is finite and contains **no ellipsis and no open-ended extension**. Class order below is also the PASS-4 tie-break order.
+#### 6.2.0 Numeric-token semantics — normative
 
-| # | Class | Definition | Evidenced |
-| --- | --- | --- | --- |
-| 1 | `pct` | number immediately followed by `%` | 415 |
-| 2 | `cur` | `€`, `$` or `£` immediately followed by a number | 56 |
-| 3 | `unit` | number followed by a member of the **closed unit set** below | 335 |
-| 4 | `ratio` | **slash form only** — number `/` number, **where the right operand is not a four-digit year 1900–2099** (which would make it a date) | 84 |
-| 5 | `perN` | number followed by `per` and a word | 16 |
-| 6 | `thou` | thousands-separated number, e.g. `43,200` | 126 |
-| 7 | `dec` | decimal number, e.g. `0.99391` | 181 |
+**What "a number" means.** Every Tier-1 class is built from one numeric-token form. **F-IR3 found that this form, and the boundaries around it, existed only in the implementation** — and that the boundary question alone moves the Tier-1 total by 25 candidates. The definitions below close that gap. They describe behaviour the classifier already exhibits and change no census figure.
+
+```text
+NUM  := \d[\d,]*(?:\.\d+)?          the common numeric token
+SEP  := \s?                          at most ONE whitespace character, or none
+```
+
+| Element | Rule |
+| --- | --- |
+| **Digits and separators** | `NUM` is a leading digit, then any run of digits and commas, then an optional decimal part. It admits `7`, `250`, `43,200`, `0.99391` and `1,842` as a single token |
+| **Separator** | Wherever a class joins a number to its marker — `%`, a currency sign, a unit word, `/`, `per` — **at most one whitespace character is permitted**. `50 %` and `50%` are both `pct`; **`50  %` (two spaces) is not**. This is a deliberate tightness: a marker separated by more than one space is not reliably bound to the number |
+| **Left boundary** | **`thou` and `dec` require a word boundary**; the other five classes do not. Alphanumeric adjacency therefore invalidates a `thou` or `dec` candidate but not a `pct`, `cur`, `unit`, `ratio` or `perN` candidate |
+| **Right boundary** | Same asymmetry. `thou` and `dec` close on `\b`; the other five close on their own marker |
+| **Punctuation** | Sentence punctuation adjacent to a number is never part of a Tier-1 match. Numeric punctuation *inside* `NUM` — commas and one decimal point — is part of the token |
+| **Markdown and link text** | Classification runs on the PASS-0 residue. **Link text is retained** (E4 masks only the `](…)` target), so a number inside link text is an ordinary candidate. Inline code and fenced code have already been set aside by E2 and E1 |
+
+> **Why only `thou` and `dec` carry word boundaries.** The other five classes are disambiguated by their own marker: a `%`, a currency sign, a unit word, a slash or the word `per` is itself evidence that the digits are a quantity. `thou` and `dec` have no such marker — they are *shape* classes — so without a boundary they match inside identifiers and version strings. **This single rule is what makes the Part III count 14 rather than 23**, and it is derivable here without opening the implementation.
+
+**Worked boundary cases — every one decided by the rules above:**
+
+| Form | Result | Governing rule |
+| --- | --- | --- |
+| `v4.0a` | **no `dec`** | left `\b` fails between `v` and `4`; right `\b` fails between `0` and `a` |
+| `4.0` standing alone | `dec` | both boundaries clear |
+| `2026.10.4` | `dec` = `2026.10` | boundaries clear; the token is not extended past the second `.` |
+| `abc123` | **no `thou`, no `dec`** | shape classes require `\b`; the `123` falls to Tier-2 |
+| `v123%` | `pct` = `123%` | `pct` carries no left boundary; the `%` supplies the disambiguation |
+| `30 seconds` · `30seconds` | `unit` | `SEP` is one space or none |
+| `30-second` · `30  seconds` | **no `unit`** | a hyphen is not a separator; two spaces exceed `SEP` |
+
+**Tier 1 — seven closed classes.** The set is finite and contains **no ellipsis and no open-ended extension**. Class order below is also the PASS-4 tie-break order. **The pattern column is normative.**
+
+| # | Class | Definition | Formal pattern | Evidenced |
+| --- | --- | --- | --- | --- |
+| 1 | `pct` | number followed by `%`, separated by at most one space | `NUM SEP %` | 415 |
+| 2 | `cur` | `€`, `$` or `£` followed by a number, separated by at most one space | `[€$£] SEP NUM` | 56 |
+| 3 | `unit` | number followed by a member of the **closed unit set** below, separated by at most one space, unit closed at a word boundary | `NUM SEP UNIT \b` | 335 |
+| 4 | `ratio` | **slash form only** — number `/` number, **where the right operand is not a four-digit year 1900–2099** (which would make it a date). At most one space either side of the slash. **The right operand is plain digits only** — no comma group and no decimal part | `NUM SEP / SEP (?!(?:19\|20)\d{2}(?!\d)) \d+ (?!\d)` | 84 |
+| 5 | `perN` | number followed by `per` and a word | `NUM SEP per \s+ \w+` | 16 |
+| 6 | `thou` | thousands-separated number, e.g. `43,200`, at word boundaries | `\b\d{1,3}(?:,\d{3})+\b` | 116 |
+| 7 | `dec` | decimal number, e.g. `0.99391`, at word boundaries | `\b\d+\.\d+\b` | 147 |
+
+> **`UNIT` is matched longest-first**, so `minutes` is preferred over `min` and `seconds` over `s` wherever both could apply.
+>
+> **The Evidenced column is the active census (§6.4) and sums to 1,169.** It was refreshed at F-IR4C; the C4-era per-class figures it replaced — `thou` 126 and `dec` 181, summing to the superseded 1,213 — are recorded in §6.5 and must not be used operationally.
 
 **Closed unit set — 19 forms, every one evidenced in the edition:**
 
@@ -562,6 +645,35 @@ Start-of-text and end-of-text satisfy conditions 2 and 3 respectively.
 | Class | Treatment |
 | --- | --- |
 | bare integers of two or more digits · three-digit numbers E12 did not remove | **never counted as claims**; triaged per chapter into claim or identifier; confirmed claims join the Tier-1 ledger |
+
+**Tier-2 formal definition — normative.** The phrase *"bare integers of two or more digits"* was not implementation-complete: F-IR3 measured the two defensible readings at **1,516 against 1,795 candidates**. The rule below replaces it.
+
+```text
+(?<![\d.,])\d{2,}(?![\d.,])
+```
+
+**Equivalent predicate.** A token *N* is a Tier-2 candidate when **all four** hold:
+
+1. *N* is a run of **two or more digits**;
+2. the character immediately **before** *N* is not a digit, `.` or `,`;
+3. the character immediately **after** *N* is not a digit, `.` or `,`;
+4. *N* lies in the PASS-2 working text — it survived PASS 0, was not protected in PASS 1, and was not removed by E12.
+
+Start-of-text and end-of-text satisfy conditions 2 and 3 respectively. **The boundary set is `{digit, . , ,}` — it does not contain `-` or `/`**, so a hyphen- or slash-separated construct yields one candidate per digit group.
+
+| Form | Tier-2 result | Governing condition |
+| --- | --- | --- |
+| `2026-03` | **`2026` and `03`** | `-` is in neither boundary set; each group qualifies separately |
+| `CMU/SEI-2000-TR-004` | **`2000` and `004`** | same — `/` and `-` are not boundaries |
+| `2026.` at end of a sentence | **neither tier** | condition 3 fails on `.` |
+| `2026,` | **neither tier** | condition 3 fails on `,` |
+| `2026.10` | **neither tier** | claimed earlier by `dec` as a Tier-1 candidate and protected in PASS 1 |
+| `43,200` | **neither tier** | claimed earlier by `thou`; had it not been, conditions 2 and 3 would fail on the comma |
+| `abc123` | **`123`** | `-`/letters are not boundaries; shape classes rejected it at PASS 1 |
+
+> **Why numeric punctuation bounds a Tier-2 candidate.** A digit run touching a `.` or a `,` is a **fragment of a larger numeric construct**, not a bare integer. Admitting the fragment would put a number into the review population that appears in no source sentence — the same failure class §6.1.1 rejects for E11. Hyphens and slashes are excluded from the boundary set because a hyphen- or slash-separated construct is a *sequence of distinct integers* — an ISO date, a report number — each of which a human should see.
+
+> **Relationship to E11 — this reconciles the §6.1.1 bounded consequence.** E11 and the Tier-2 rule are **two independent gates**, and retention by the first does not imply admission by the second. A year followed by `.` or `,` is **retained by E11** because its right neighbour is numeric punctuation, and is then **rejected by the Tier-2 rule** for exactly the same reason. Such a year therefore reaches **neither tier**. The 51 four-digit years that do reach Tier-2 are precisely those embedded in hyphen or slash constructs — 49 ISO-date and version forms, plus `archive-2024` and `CMU/SEI-2000-TR-004`. **No standalone prose year appears in either tier**, which is the property §6.1.1 asserts; the mechanism is the pair of gates, not E11 alone.
 
 **Code-fence numerics are a separate population.** They are counted separately, reviewed where technically relevant, and are **neither Tier 1 nor Tier 2**.
 
@@ -586,11 +698,17 @@ Start-of-text and end-of-text satisfy conditions 2 and 3 respectively.
 
 It is **not** a count of code blocks, not a count of blocks containing numbers, and not a count of unique literals. The code-fence population is **neither Tier 1 nor Tier 2** and never contributes to either.
 
+**The region set aside by E1 includes the fence delimiter lines**, so an info string such as ` ```text ` is inside the population; no info string in this edition carries a digit, so the figure is unaffected either way. **Every occurrence is individually enumerable** with its Part, path and line under the §6.3.1 output contract — a count alone would not let Level 8 decide where a fenced numeric is technically relevant.
+
 #### 6.2.3 Inline-code candidate population — normative
 
 E2 removes inline code spans on the rationale that they carry identifiers rather than prose claims. That rationale is sound in general but **not universal**: a code span is also used to quote a diagnostic message, and such a message can contain a genuine quantitative claim.
 
 **E2's suppression is therefore measured rather than silent.** Tier-1 grammar is applied to the E2-suppressed text and the result reported as the **inline-code candidate population**. This population is **neither Tier 1 nor Tier 2**, contributes to no census total, and exists so that Level 8 can see what E2 removed and adjudicate it. A confirmed claim found there is verified at Level 8 and recorded in the Numerical Verification Ledger with its origin stated.
+
+**PASS-4 deduplication does NOT apply to this population — normative.** Each of the seven §6.2 classes is applied independently to the suppressed text and **every match is reported, including overlapping matches of different classes**. A span such as `92.0%` therefore contributes **two** rows — one `pct` and one `dec` — where the same span in prose would contribute one.
+
+> **Why the two populations count differently.** PASS 4 exists to decide **tier membership**, which must be exclusive: a prose span is one claim and may be counted once. The inline-code population decides nothing. It is an **observability record of what E2 removed**, and its members never compete for tier membership, never enter a census total and never reach a density figure. Collapsing overlaps here would hide part of what was suppressed, which is the one thing this population exists to prevent. F-IR3 measured the difference at **366 against 273 candidates**; the reported figure is **366**.
 
 #### 6.2.4 Candidate versus confirmed claim — normative
 
@@ -625,9 +743,22 @@ The specification above is executable. Its canonical implementation is **[`tools
 | --- | --- |
 | **Authority** | The **specification governs the implementation.** Where they disagree, §6.1–§6.2 are correct and the implementation is defective |
 | **Inputs** | The 137 chapter files, read from the repository at run time |
-| **Outputs** | Per-Part, per-batch and edition aggregates; `--detail` emits every match with Part, path, line, tier, class and matched text; `--json` emits the same machine-readably |
+| **Outputs** | Governed by the output contract below |
 | **Constraints** | **No accepted or expected total is hard-coded.** Every figure is derived from manuscript content |
 | **Determinism** | Verified: repeated runs are byte-identical, and row order is fixed |
+
+**Output contract — normative.** F-IR3 found that two of the four candidate populations were reported as bare counts and could not be adjudicated without importing the module. **All four populations are now enumerable.**
+
+| Mode | Contract |
+| --- | --- |
+| **default** | **Aggregate counts only** — per-Part and per-batch chapters, Tier-1, Tier-2, code-fence, inline-code and words. No candidate rows |
+| **`--detail`** | **Complete line-oriented enumeration of all four populations**, six tab-separated fields: `Part · path · Lnnn · population · class · text`. `population` is one of `T1`, `T2`, `code-fence`, `inline-code`. `class` is the §6.2 Tier-1 class for `T1` and `inline-code`, `int` for `T2`, and `num` for a code-fence numeric literal. Rows are emitted per chapter in the fixed order `T1`, `T2`, `code-fence`, `inline-code` |
+| **`--json`** | Aggregates under `per_part`, `per_batch` and `chapters`, **plus** a `candidates` array carrying every row of all four populations as `{part, path, line, population, class, text}`. The aggregate keys are unchanged; `candidates` is additive |
+| **`--part N`** | Restricts every mode to one Part |
+
+> **The prose tiers are separable.** `awk -F'\t' '$4=="T1" || $4=="T2"'` over `--detail` reproduces the Tier-1/Tier-2 stream exactly, so the prose match population has a stable digest independent of the two observability populations.
+>
+> **No output file is written.** The tool prints to standard output and caches nothing.
 
 Its existence does not discharge §6.3. **Reflexive validation still applies to every class and every exclusion, in both directions, every time the method changes.**
 
@@ -651,13 +782,25 @@ Produced by the §6.1 pipeline as stated, and **recomputed at Phase F-IR1 by [`t
 | XII | 122 | 265 | 0 | 0 | 66,914 | 1.82 | 6 |
 | **Total** | **1,169** | **1,516** | **310** | **366** | **651,161** | | |
 
-Batch aggregates: **L1** 20 · **L2** 19 · **L3** 302 · **L4** 379 · **L5** 449. Derived ratios on the recomputed census: **L4/L3 = 1.61× · L4/L5 = 1.41× · L4/L1 = 26.9× · L4/L2 = 40.2×**.
+Batch aggregates: **L1** 20 · **L2** 19 · **L3** 302 · **L4** 379 · **L5** 449.
+
+**Batch densities and derived ratios — corrected at F-IR4C.** F-IR3 found that three of the four ratios previously printed here did not follow from this census, and that one of them — `L4/L5 = 1.41×` — was the superseded Phase C4 figure carried forward unchanged. **Rounding convention: densities to three decimal places, ratios to two, each computed from unrounded values and rounded half-up.**
+
+| Batch | Tier-1 | Words | Tier-1 / 1k words |
+| --- | --- | --- | --- |
+| L1 | 20 | 125,017 | **0.160** |
+| L2 | 19 | 177,748 | **0.107** |
+| L3 | 302 | 115,618 | **2.612** |
+| **L4** | 379 | 88,258 | **4.294** |
+| L5 | 449 | 144,520 | **3.107** |
+
+**Derived ratios on the recomputed census: L4/L3 = 1.64× · L4/L5 = 1.38× · L4/L1 = 26.84× · L4/L2 = 40.17×.** These are the **only active ratios**; §6.6 states the same values and the two subsections must not diverge. The C4-era ratios they replace are recorded in §6.5.
 
 **Every Part contains Tier-1 candidates** — the minimum is Part IV at 2, and **no Part has zero**, so the census requirement in §6.7 is enforceable everywhere.
 
 **Superseded by this recomputation.** The Phase C4-era figures — Tier-1 **1,213**, Tier-2 **1,511**, code-fence **186**, and the per-Part values behind them — are recorded in §6.5 and **must not be used operationally**. They were not reproducible from the committed specification; see §6.9.
 
-**Conclusion stability.** Every §6.6 conclusion survives the recomputation unchanged: **Part IX remains the densest Part** (6.34/1k, ahead of Part XI at 4.21); **L4 remains the densest batch**, and **L4/L3 moves 1.60× → 1.61×**, leaving the "materially denser" reading intact; **L1 and L2 remain materially sparser**. The density ranks of Parts I–XII are unchanged except that Parts II and V exchange ranks 10 and 11 at the sparse tail, which carries no allocation consequence.
+**Conclusion stability.** Every §6.6 conclusion survives the recomputation unchanged: **Part IX remains the densest Part** (6.34/1k, ahead of Part XI at 4.21); **L4 remains the densest batch**, and **L4/L3 moves 1.60× → 1.64×**, strengthening rather than weakening the "materially denser" reading; **L1 and L2 remain materially sparser**. The density ranks of Parts I–XII are unchanged except that Parts II and V exchange ranks 10 and 11 at the sparse tail, which carries no allocation consequence.
 
 ### 6.5 Superseded evidence
 
@@ -680,7 +823,7 @@ Restated on the corrected census. **Density is no longer offered as the justific
 | --- | --- |
 | **L4 is the densest batch** | **Supported** — 4.294/1k, ahead of L5 at 3.107 and L3 at 2.612. **L4/L3 = 1.64×**, so L4 is *materially* denser than L3, not comparable to it |
 | **Part IX is the densest Part** | **Supported** — 6.34/1k, ahead of Part XI at 4.21 and Part VIII at 3.52 |
-| **L1 and L2 are materially sparser** | **Supported** — 0.160 and 0.107 per 1k, 27–40× below L4 |
+| **L1 and L2 are materially sparser** | **Supported** — 0.160 and 0.107 per 1k. **L4/L1 = 26.84× · L4/L2 = 40.17×** |
 | **L3 warrants numerical-verification resourcing comparable to L4** | **Supported, but on different grounds.** Density does **not** justify it. The justification is that **L3 is deep tier** — Parts VI–VIII are unbaselined legacy material (§13.3) — and that Part VIII (4.02/1k) and Part VI (3.21/1k) each carry substantial quantitative content in incident-timeline and data-quality chapters where inference validity is the dominant risk |
 
 > **The allocation decision is not attributed to density where density does not support it.** L4 receives the heaviest numerical effort because it is the densest; L3 receives comparable effort because it is the least-verified evidence tier, not because it is equally dense.
@@ -708,6 +851,16 @@ Phase C4 accepted the architecture with **zero Architecture Blockers** and recor
 >
 > **Suggested disposition for a future maintenance pass, not now:** extend E10 to tolerate trailing punctuation and millisecond precision; exclude version strings from `dec`; consider a spelled-out-percentage class; correct the two documentation statements in §6.1 and §6.4.
 
+**Disposition update — recorded at F-IR4C.** The six observations above were made at Phase C4 against the C4-era method and census, and **that record is not rewritten**. Two of them were **subsequently affected by the F-IR1 correction**, which was applied for a different reason and whose effect on them went unrecorded until F-IR3 measured it. The current state is:
+
+| ID | Disposition | Measured on the active census |
+| --- | --- | --- |
+| **C4-1** | **PARTIALLY RESOLVED — remains open, P3, non-blocking** | The **millisecond-fragment half is resolved**: E10's word boundaries (§6.1.2) consume `10:14:02` and leave `.118`, which has no digit before the decimal point and cannot be admitted by `dec`. **0 millisecond fragments remain.** The **version-string half is reduced, not eliminated**: the `dec` word boundary (§6.2.0) removes the letter-adjacent class — `v4.0a` no longer yields `4.0`, which alone accounts for the nine-item Part III movement — but a version number written as a **separate token**, such as `Version 4.0`, `Framework 2.0` or `OAuth 2.0`, still carries no letter adjacency and remains a `dec` candidate. **14 of 147 `dec` candidates = 9.5% of the class, 1.2% of Tier-1.** These are adjudicated at Level 8 as `NOT APPLICABLE` with reason, exactly as NUM-L1-18..23 and NUM-L2-EXC already do |
+| **C4-3** | **RESOLVED** | E10's boundary rule is not defeated by trailing punctuation: `08:42.` and `10:02,` are excluded as `08:42` and `10:02`. **0 clock forms survive PASS 0**, against the 40 recorded at C4 |
+| C4-2 · C4-4 · C4-5 · C4-6 | **Unchanged — carried forward** | Not affected by the F-IR1 or F-IR4C corrections |
+
+> **Neither disposition was produced by Phase C4.** C4 recorded the observations and explicitly declined to repair them. The change is an **unintended consequence of the F-IR1 quantitative-specification correction**, detected by the F-IR3 independent review and recorded here at F-IR4C so the carried-forward register states what is now true. **C4-1 is not closed** — its remaining half is a live, measured, non-blocking observation.
+
 ### 6.9 FE-L1-005 — why the census was not reproducible
 
 Recorded so the correction can be independently checked rather than taken on trust.
@@ -723,6 +876,21 @@ Recorded so the correction can be independently checked rather than taken on tru
 **The decisive evidence.** Phase F-IR1 re-implemented the pipeline with each PASS-0 exclusion independently switchable and searched the configuration space against the five known Part values (I = 18, II = 5, III = 23, IV = 2, V = 4). **No configuration reproduces them.** Single-toggle results for Part III are 14 with the full pipeline and 22 with E5 disabled; the nearest overall configuration leaves five Part-level discrepancies. **The accepted §6.4 census was therefore not derivable from the accepted §6.1/§6.2 text under any interpretation of the documented exclusions**, which is why F-L1 and F-L2 could not reproduce it and why F-L2 judged the finding to strengthen.
 
 **Structural resolution.** Reproducibility is now guaranteed at the **candidate** level (§6.2.4), where a mechanical definition can be exact, and claimhood is decided by adjudication, where judgement belongs. This removes the requirement — impossible at 300–450 candidates per batch — that a reviewer discover the population by hand.
+
+**What F-IR3 found still missing, and what F-IR4C corrected.** The genuinely independent review confirmed the *substance* of the F-IR1 correction — every Part-level field and all 2,685 Tier-1/Tier-2 match rows reproduce exactly — but found that the **committed text still did not determine that population**. An implementation written from §6.1–§6.2 alone returned Tier-1 **1,179**, Tier-2 **1,801** and inline-code **233**, and the accepted figures were reachable only by searching an interpretation space against the published totals. **That is the same defect class FE-L1-005 names, at reduced magnitude**: previously the census was unreachable under any reading; after F-IR1 it was reachable under exactly one reading among several defensible ones, and the text selected none.
+
+| Semantic that existed only in code | Measured effect if read the other way |
+| --- | --- |
+| `thou`/`dec` word-boundary guards (§6.2.0) | Tier-1 1,169 → 1,194 |
+| Single-whitespace separator, `unit` (§6.2.0) | Tier-1 1,169 → 1,231 |
+| `ratio` whitespace around the slash (§6.2.0) | Tier-1 1,169 → 1,154 · inline 366 → 314 |
+| Tier-2 boundary rule (§6.2) | Tier-2 1,516 → 1,795 |
+| Inline-code PASS-4 dedup (§6.2.3) | inline 366 → 273 |
+| E10 boundary semantics (§6.1.2) | Tier-1 1,169 → 1,184 · Tier-2 1,516 → 1,557 |
+| E9 word boundary and separator (§6.1.2) | Tier-2 1,516 → 1,504 |
+| E12 window measurement basis (§6.1.2) | Tier-2 1,516 → 1,517 |
+
+**F-IR4C made every one of these explicit in the plan and changed no census figure.** It also made the code-fence and inline-code populations enumerable, so §6.2.4's rule that *a reviewer must never be required to discover the candidate population by hand* now holds for all four populations rather than two. **FE-L1-005 still cannot close on this record**: F-IR4C is a correction event, and closure requires a fresh independent re-acceptance that implements §6.1–§6.2 from the committed text alone.
 
 ---
 
@@ -1090,14 +1258,14 @@ Immutable record. Each entry is a distinct event.
 | **C3** | **Focused Independent Re-Acceptance** | **Score 89.0/100 · Verdict B · three Architecture Blockers, all in the quantitative census.** **CLOSED:** ARC-C2-1, ARC-C2-3, ARC-C2-4, ARC-C2-6, ARC-C2-7, ARC-C2-8. **PARTIALLY CLOSED:** ARC-C2-2. **REOPENED:** ARC-C2-5, ARC-P1-1. New: **ARC-C3-1** (unit set not reproducible; 24 claims uncounted), **ARC-C3-2** (`ratio` class contaminated by 144 clock times, invalidating a stated conclusion), **ARC-C3-3** (code-fence Tier-2 contradiction), ARC-C3-4 (E12 window unspecified), ARC-C3-5 (theoretical bare-year suppression) |
 | **D3** | **Targeted Quantitative Architecture Correction** | Closed unit set of 19 evidenced forms; colon-ratio class removed and time-of-day excluded in PASS 0; code-fence contradiction resolved; E12 window fixed at **±25** on measured precision; `mult` class removed for want of evidence; every inclusion class validated for contamination as well as suppression; census recomputed to **Tier-1 1,213 / Tier-2 1,511 / code-fence 186**; the density-based justification for L3 resourcing **withdrawn and restated** on evidence-tier grounds. **D3 is a correction event and does not close its own findings** |
 | **C4** | **Final Focused Quantitative Architecture Re-Acceptance** | **Score 95.0/100 · Verdict A — ARCHITECTURE ACCEPTED · Architecture Blockers = 0.** Independent evidence: a classifier implemented **fresh from the committed §6.1/§6.2 text** reproduced **all 36 census figures exactly** — Tier-1 **1,213**, Tier-2 **1,511**, code-fence **186**, words **651,161**, all twelve Part metrics and all seven Tier-1 class totals. Full audits: `ratio` 84/84 genuine, `unit` 335/335 conforming, `perN` 16/16. **CLOSED:** ARC-C3-1, ARC-C3-2, ARC-C3-3, ARC-C3-4, **ARC-P1-1**, **ARC-C2-2**, **ARC-C2-5**. **ACCEPTED-P3:** ARC-C3-5 (zero-instance claim falsification-tested across 30+ quantity nouns). Six non-blocking P3 observations recorded in §6.8 |
-
 | **F-IR1** | **Targeted Quantitative Review-Instrument Remediation** | **Correction event — does not close its own finding.** Triggered by **FE-L1-005**, raised at F-L1 and strengthened at F-L2 when independent enumeration returned 20 genuine claims against an accepted 29 for Parts III–V, matching Parts IV and V exactly while diverging by nine in Part III. A switchable re-implementation established that **no configuration of the ten documented PASS-0 exclusions reproduces the accepted per-Part census**. §6.1.0 fixed E5/E7 precedence and masking discipline; §6.2.1–§6.2.4 fixed occurrence, code-fence, inline-code and candidate-versus-claim semantics; §6.3.1 added the canonical reference implementation `tools/quantitative_census.py`; §6.4 recomputed the census to **Tier-1 1,169 / Tier-2 1,516 / code-fence 310 / inline-code 366**. Every §6.6 conclusion survives. **The amended method is NOT accepted and awaits focused independent re-acceptance** |
-
 | **F-IR1B** | **E11 Quantitative-Specification Clarification** | **Correction event — does not close its own finding.** F-IR2 established that E11's sole specification — *"1900–2099 standing alone"* — was not implementation-complete: a word-boundary reading and a punctuation-aware reading differ by **46 Tier-2 candidates** (1,470 versus 1,516), with **Tier-1 unaffected at 1,169** under both. Independent enumeration showed the 47 distinguishing candidates are **entirely ISO dates and version identifiers** (`2026-08-10`, `2025-01`, `version 2026.10.4`), and that the word-boundary reading **fragments** those tokens — deleting `2026` from `2026.10.4` causes the residue `10.4` to be admitted as a candidate present in no source sentence. §6.1.1 now states E11 as an explicit regex with formal boundary sets, a seventeen-form worked table, interaction rules for E3/E4/E5/E7/E10/E12 and both auxiliary populations, and a measured bounded-consequence note. **No census figure changed and the reference implementation required no modification** — the clarification formalises behaviour it already had. **Still awaiting genuinely independent re-acceptance** |
+| **F-IR3** | **Genuinely Independent Quantitative Instrument Closure Review** | **Verdict B — PARTIALLY VERIFIED · FE-L1-005 REMAINS OPEN · F-L3 BLOCKED. This is a review event, not an acceptance event.** Reviewer independence satisfied: the actor authored neither F-IR1 nor F-IR1B, read §6 before the implementation, and froze results before opening it. **Verified:** the canonical implementation is technically sound and deterministic in all three modes; **all 60 Part-level census fields reproduce exactly**; **all 2,685 Tier-1/Tier-2 match rows reproduce with zero differences**; batch aggregates and densities reproduce; E11 is correct on 28/28 boundary tests and its repository-wide property holds; no accepted total is hard-coded; L1 retrospective coverage **20/20** and L2 **19/19**; manuscript baseline unmutated. **Failed:** the committed specification is **not implementation-complete**. An implementation written from §6.1–§6.2 alone returned Tier-1 **1,179** / Tier-2 **1,801** / inline-code **233**; the accepted figures were reachable only by searching an interpretation space against the published totals. **Eight under-specified decision points each move the census**, jointly spanning Tier-1 1,154–1,231 and Tier-2 1,459–1,795. Also found: stale §6.2 class counts, three incorrect §6.4 ratios, an incorrect §6.1.1 consequence mechanism, and two candidate populations reported only as counts. **Closure table: 25 PASS · 2 PARTIAL · 3 FAIL** against the 30 conditions; closure requires 30/0/0 |
+| **F-IR4C** | **Quantitative Specification Completeness & Traceability Correction** | **Correction event — does not close its own finding and does not self-accept.** Addresses only the F-IR3 defect set. §6.1.2 added: formal definitions for **E9** (word boundary, single-whitespace separator), **E10** (word boundaries, trailing-punctuation and sub-second behaviour) and **E12** (window measured ±25 from the nearest match edge over the PASS-2 working text). §6.2.0 added: the **`NUM` numeric token**, the **single-whitespace separator rule**, and the **word-boundary asymmetry** under which only `thou` and `dec` are boundary-guarded — the rule that makes Part III 14 rather than 23. §6.2 gained a **normative pattern column** and refreshed Evidenced counts (`thou` 126→**116**, `dec` 181→**147**); the **Tier-2 rule** is now the explicit regex `(?<![\d.,])\d{2,}(?![\d.,])` with its relationship to E11 stated. §6.2.3 states that **PASS-4 deduplication does not apply** to the inline-code population. §6.1.1's bounded-consequence **mechanism corrected**: retention by E11 does not imply Tier-2 admission. §6.4 ratios recomputed to **L4/L3 1.64× · L4/L5 1.38× · L4/L1 26.84× · L4/L2 40.17×** and reconciled with §6.6. §6.8 records the **C4-1 partial resolution and C4-3 resolution** as consequences of F-IR1, not of C4. `tools/quantitative_census.py` extended so **all four candidate populations are enumerable** in `--detail` and `--json`. **No census figure changed: 1,169 / 1,516 / 310 / 366 / 651,161, and the Tier-1/Tier-2 match population is byte-identical.** **Awaiting fresh independent re-acceptance (F-IR4)** |
 
 > **The non-quantitative architecture remains ACCEPTED at C4.** Architecture design and independent re-acceptance were completed for it.
 >
-> **The quantitative method (§6.1–§6.4) is CORRECTED BUT UNACCEPTED.** Phase F-IR1 amended it and Phase F-IR1B made E11 explicit; FE-L1-005 remains **CORRECTION APPLIED — AWAITING GENUINELY INDEPENDENT VERIFICATION**. **F-L3 must not be authorised until a re-acceptance performed by an actor other than the author of F-IR1 and F-IR1B confirms the amended instrument.** **Phase E — Governance Remediation Gate — is the next separately authorised lifecycle activity and has NOT started.** Acceptance of the architecture does not authorise manuscript-review execution and does not imply release readiness.
+> **The quantitative method (§6.1–§6.4) is CORRECTED BUT UNACCEPTED.** Phase F-IR1 amended it, F-IR1B made E11 explicit, **F-IR3 independently reviewed it and returned verdict B**, and **F-IR4C completed the specification and made all four candidate populations enumerable**. FE-L1-005 remains **CORRECTION APPLIED — PARTIALLY VERIFIED — AWAITING FRESH INDEPENDENT RE-ACCEPTANCE**. **F-L3 must not be authorised until a re-acceptance performed by an actor who authored none of F-IR1, F-IR1B or F-IR4C confirms the amended instrument.** F-IR3 verified the substantive population — 2,685 match rows, zero differences — so the outstanding question is narrowed to whether the **committed text now determines that population without inference**. **Phase E — Governance Remediation Gate — is the next separately authorised lifecycle activity and has NOT started.** Acceptance of the architecture does not authorise manuscript-review execution and does not imply release readiness.
 
 Where a later phase changed an earlier rule, the later phase governs and only the corrected rule appears as active guidance. Superseded metrics — including the Phase D-era census — are recorded in §6.5 and must not be used operationally.
 

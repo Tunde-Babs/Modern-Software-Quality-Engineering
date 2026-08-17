@@ -7,7 +7,7 @@
 | **Document type** | Review artefact 2 of 4 — **Defects** |
 | **Authority** | [`FIRST_EDITION_REVIEW_PLAN.md`](FIRST_EDITION_REVIEW_PLAN.md) §13.1 |
 | **Lifecycle** | Mutable, Phases F→J |
-| **State** | **F-L1 and F-L2 complete — 12 findings recorded (Parts I–V). Batches L3–L5 and transversals T1–T6 not started** |
+| **State** | **F-L1 and F-L2 complete — 12 findings recorded (Parts I–V). Batches L3–L5 and transversals T1–T6 not started.** FE-L1-005 independently reviewed at **F-IR3** (verdict B) and corrected at **F-IR4C**; it remains **open** and **F-L3 remains blocked**. No new finding ID was raised by either event |
 | **Owner** | Tunde Ajala |
 
 > This is a **governance artefact**, not a manuscript chapter. It carries no chapter-style status.
@@ -228,10 +228,10 @@ Every finding records all of the following. A row missing any mandatory field is
 | **Evidence** | The Part I difference is **fully explained**: three of the accepted Part I Tier-1 matches are the string `4.0`/`1.1` occurring **inside footnote-definition lines** (`chapter-02` line 363, `chapter-03` line 441, `chapter-10` line 519). **PASS-0 exclusion E5 removes lines beginning `[^key]:` in their entirety**, so these three cannot survive a correct E5. My own implementation reproduced 18 only while carrying two defects — a newline-collapsing mask and an E4 link-target pattern that spanned newlines and thereby defeated E5. **Both defects were found by the reflexive validation plan §6.3 mandates, and correcting them moved Part I from 18 to 15.** Code-fence divergence is a separate matter: §6.1 sets fenced content aside as a population but **never defines how its numerics are counted**, so the figure 186 is not derivable from the committed text. |
 | **Consequence** | Level 8's exit criterion — *every confirmed Tier-1 claim recomputed* — cannot be demonstrated complete for any batch whose Tier-1 population cannot be regenerated. **For L1 the impact is nil**: the population is small enough to enumerate exhaustively, and this review verified the **union** of both runs (23 items), a superset of both. Phase C4 recorded that a fresh classifier reproduced *all 36 census figures exactly*; that result did not reproduce here. |
 | **Recommended action** | Before **F-L3** — the first high-density batch — either publish the reference classifier implementation or specify E5 precedence and the code-fence counting rule in §6.1. **No architecture change was made by this task.** |
-| **Status** | **`CORRECTION APPLIED — AWAITING INDEPENDENT VERIFICATION`** (Phase F-IR1, 2026-08-16) |
+| **Status** | **`CORRECTION APPLIED — PARTIALLY VERIFIED — AWAITING FRESH INDEPENDENT RE-ACCEPTANCE`** (Phase F-IR1 2026-08-16 · independently reviewed at F-IR3 · specification completed at F-IR4C 2026-08-17) |
 | **Owner** | Review architecture owner |
 | **Revision trigger** | **Escalates to Class B — Review-Execution Blocker for F-L3, F-L4 and F-L5** if unresolved when those batches are authorised. **It is not a Class-B blocker for L1 or L2 and stopped neither batch.** |
-| **Verification** | `NOT VERIFIED` — **F-IR1 is a correction event and does not close its own finding** |
+| **Verification** | `PARTIALLY VERIFIED` — **Phase F-IR3 (genuinely independent) confirmed the substantive population but not specification completeness; 25 PASS · 2 PARTIAL · 3 FAIL against its 30 closure conditions.** F-IR4C corrected the residual defects and, being a correction event, **does not close this finding** |
 
 #### FE-L1-005 — root cause established at Phase F-IR1
 
@@ -248,6 +248,45 @@ Every finding records all of the following. A row missing any mandatory field is
 **Recomputed census.** Tier-1 **1,169** · Tier-2 **1,516** · code-fence **310** · inline-code **366** · words **651,161** unchanged. **Every §6.6 conclusion survives.**
 
 **Independent verification required.** The amended method is **not accepted**. **F-L3 must not be authorised** until a focused independent re-acceptance implements the corrected specification from its committed text, reproduces the recomputed census, re-tests the Part III discrepancy, and decides whether FE-L1-005 is CLOSED.
+
+#### FE-L1-005 — independent review at Phase F-IR3
+
+**Reviewer independence satisfied.** The actor authored neither F-IR1 nor F-IR1B, read §6 of the plan before the implementation, and froze its results before opening `tools/quantitative_census.py`.
+
+**Verdict: B — PARTIALLY VERIFIED · FE-L1-005 REMAINS OPEN · F-L3 BLOCKED.** Closure table **25 PASS · 2 PARTIAL · 3 FAIL**; closure requires 30/0/0.
+
+| Verified | Evidence |
+| --- | --- |
+| Canonical implementation sound and deterministic | Three runs per mode byte-identical; `--detail` digest independently recomputed to `c84fe3df…66e5` |
+| **All 60 Part-level census fields reproduce exactly** | Tier-1, Tier-2, code-fence, inline-code and words, Parts I–XII |
+| **All 2,685 Tier-1/Tier-2 match rows reproduce with zero differences** | Full tuple comparison on Part, path, line, tier, class and text, with occurrence multiplicity preserved |
+| Batch aggregates and densities reproduce | L1 20 · L2 19 · L3 302 · L4 379 · L5 449 |
+| E11 correct | 28/28 boundary tests; worked table reproduced; fragmentation property holds; 51 surviving years classified exactly as §6.1.1 states |
+| No accepted total hard-coded | Every numeric literal in the tool is a specification constant |
+| Part III resolved · Part IV stable · Part V handled | 14 · 2 · 3, with the inline `47 seconds` surfaced rather than lost |
+| Retrospective coverage | **L1 20/20 · L2 19/19** — every current candidate maps to an existing ledger row |
+| Manuscript baseline unmutated | `ec588eaa…a411` at start and end |
+
+| Failed | Evidence |
+| --- | --- |
+| **Specification not implementation-complete** | An implementation written from §6.1–§6.2 alone returned Tier-1 **1,179** · Tier-2 **1,801** · inline-code **233**. The accepted figures were reachable only by searching an interpretation space against the published totals |
+| **Material semantics existed only in code** | **Eight** under-specified decision points, each moving the census; jointly Tier-1 spans 1,154–1,231 and Tier-2 spans 1,459–1,795. Enumerated with measured effects in plan §6.9 |
+| **Residual documentation defects** | Stale §6.2 class counts summing to the superseded 1,213; three incorrect §6.4 derived ratios, one of them a superseded C4 figure; an incorrect §6.1.1 consequence mechanism; §6.8 C4-1 silently affected by F-IR1 |
+| **Two populations not auditable** | Code-fence (310) and inline-code (366) were reported as bare counts in every output mode, so §6.2.4's *never by hand* rule held for only two of four populations |
+
+#### FE-L1-005 — correction at Phase F-IR4C
+
+**Correction event — does not close this finding and does not self-accept.** Scope limited to the F-IR3 defect set.
+
+**Specification completed.** Plan **§6.1.2** now formalises E9, E10 and E12; **§6.2.0** defines the `NUM` numeric token, the single-whitespace separator rule and the word-boundary asymmetry under which only `thou` and `dec` are boundary-guarded — the rule that makes Part III 14 rather than 23; **§6.2** gained a normative pattern column and the explicit Tier-2 rule `(?<![\d.,])\d{2,}(?![\d.,])`; **§6.2.3** states that PASS-4 deduplication does not apply to the inline-code population; **§6.1.1**'s bounded-consequence mechanism is corrected.
+
+**Documentation corrected.** §6.2 Evidenced counts refreshed to the active census (`thou` 116, `dec` 147, sum 1,169); §6.4 ratios recomputed and reconciled with §6.6; §6.8 records C4-1 as **partially resolved** and C4-3 as **resolved**, both as consequences of F-IR1 rather than of C4.
+
+**Traceability delivered.** `tools/quantitative_census.py` now enumerates **all four candidate populations** in `--detail` and `--json` with Part, path, line, population, class and matched text.
+
+**No census figure changed** — 1,169 / 1,516 / 310 / 366 / 651,161 — and the **Tier-1/Tier-2 match population is byte-identical** (`c84fe3df…66e5`).
+
+**Closure still requires a fresh independent re-acceptance (F-IR4)** by an actor who authored none of F-IR1, F-IR1B or F-IR4C, implementing §6.1–§6.2 from the committed text alone, freezing results before opening the implementation, reproducing all four populations, and comparing match-level populations. **F-L3 remains blocked.**
 
 ### FE-L1-006 — Tier-1 contamination in L1 is an order of magnitude above the accepted edition-wide rate
 

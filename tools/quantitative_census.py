@@ -14,9 +14,34 @@ identical output, and the ordering of every output row is fixed.
 
 Usage:
     python3 tools/quantitative_census.py                 # aggregate report
-    python3 tools/quantitative_census.py --detail        # every match, one per line
+    python3 tools/quantitative_census.py --detail        # every candidate, one per line
     python3 tools/quantitative_census.py --json          # machine-readable
     python3 tools/quantitative_census.py --part 3        # restrict to one Part
+
+Output contract (specification section 6.3.1):
+
+  default   Aggregate counts only: per-Part and per-batch chapters, Tier-1,
+            Tier-2, code-fence, inline-code and words. No candidate rows.
+
+  --detail  Complete, line-oriented enumeration of ALL FOUR candidate
+            populations, six tab-separated fields:
+
+                Part <TAB> path <TAB> Lnnn <TAB> population <TAB> class <TAB> text
+
+            population is one of: T1, T2, code-fence, inline-code.
+            class is the section 6.2 Tier-1 class for T1 and inline-code,
+            "int" for T2, and "num" for code-fence numeric literals.
+            Rows are emitted per chapter in the fixed order
+            T1, T2, code-fence, inline-code; within each population the order
+            is fixed. Selecting only the prose tiers is therefore
+            `awk -F'\\t' '$4=="T1" || $4=="T2"'`.
+
+  --json    Aggregates ("per_part", "per_batch", "chapters") plus a
+            "candidates" array carrying every row of all four populations as
+            {part, path, line, population, class, text}. The aggregate keys are
+            unchanged from earlier revisions; "candidates" is additive.
+
+No output file is written. Nothing is cached.
 """
 
 import argparse
@@ -248,23 +273,38 @@ def classify_chapter(path):
     tier1 = pass1(residue)
     tier2 = pass2_and_3(residue, tier1)
 
-    code_numerics = CODE_NUMERIC.findall(code)
+    # Code-fence numerics (6.2.2). The code stream preserves every line and
+    # character position of the original, so a match offset yields the true
+    # source line. Neither Tier 1 nor Tier 2.
+    code_numerics = [(m.start(), m.group(0)) for m in CODE_NUMERIC.finditer(code)]
 
     # Inline-code candidates: Tier-1 grammar applied to the E2-suppressed
     # population. Neither Tier 1 nor Tier 2; measured so that E2's suppression
-    # is visible rather than silent.
+    # is visible rather than silent. PASS-4 deduplication does NOT apply here
+    # (6.2.3): this population records what E2 removed, and its members do not
+    # compete for prose tier membership.
+    # The inline stream carries one line per source line, so the newline count
+    # before a match is that match's source line.
+    class_order = {c: i for i, (c, _) in enumerate(TIER1_CLASSES)}
     inline_candidates = []
     for cls, pattern in TIER1_CLASSES:
         for m in re.finditer(pattern, inline_code):
-            inline_candidates.append((cls, m.group(0)))
+            line = inline_code.count("\n", 0, m.start()) + 1
+            inline_candidates.append((line, class_order[cls], cls, m.group(0)))
+    inline_candidates.sort(key=lambda t: (t[0], t[1]))
 
     matches = []
     for a, b, cls in tier1:
         line = text.count("\n", 0, a) + 1
-        matches.append({"tier": 1, "class": cls, "line": line, "text": residue[a:b].strip()})
+        matches.append({"pop": "T1", "class": cls, "line": line, "text": residue[a:b].strip()})
     for a, b, tok in tier2:
         line = text.count("\n", 0, a) + 1
-        matches.append({"tier": 2, "class": "int", "line": line, "text": tok})
+        matches.append({"pop": "T2", "class": "int", "line": line, "text": tok})
+    for start, tok in code_numerics:
+        line = code.count("\n", 0, start) + 1
+        matches.append({"pop": "code-fence", "class": "num", "line": line, "text": tok})
+    for line, _, cls, tok in inline_candidates:
+        matches.append({"pop": "inline-code", "class": cls, "line": line, "text": tok})
 
     return {
         "tier1": len(tier1),
@@ -273,7 +313,6 @@ def classify_chapter(path):
         "inline": len(inline_candidates),
         "words": len(text.split()),
         "matches": matches,
-        "inline_detail": inline_candidates,
     }
 
 
@@ -326,10 +365,14 @@ def main():
     per_part, per_batch = aggregate(parts)
 
     if args.json:
+        candidates = [{"part": ROMAN[pnum], "path": c["path"], "line": m["line"],
+                       "population": m["pop"], "class": m["class"], "text": m["text"]}
+                      for pnum in sorted(parts) for c in parts[pnum] for m in c["matches"]]
         json.dump({"per_part": {ROMAN[k]: v for k, v in sorted(per_part.items())},
                    "per_batch": per_batch,
                    "chapters": {c["path"]: {k: c[k] for k in ("tier1", "tier2", "code", "inline", "words")}
-                                for cs in parts.values() for c in cs}},
+                                for cs in parts.values() for c in cs},
+                   "candidates": candidates},
                   sys.stdout, indent=2, sort_keys=True)
         print()
         return
@@ -338,7 +381,7 @@ def main():
         for pnum in sorted(parts):
             for c in parts[pnum]:
                 for m in c["matches"]:
-                    print(f"{ROMAN[pnum]}\t{c['path']}\tL{m['line']}\tT{m['tier']}\t{m['class']}\t{m['text']}")
+                    print(f"{ROMAN[pnum]}\t{c['path']}\tL{m['line']}\t{m['pop']}\t{m['class']}\t{m['text']}")
         return
 
     print(f"{'Part':<6}{'Ch':>4}{'Tier-1':>9}{'Tier-2':>9}{'code':>8}{'inline':>8}{'words':>10}")
