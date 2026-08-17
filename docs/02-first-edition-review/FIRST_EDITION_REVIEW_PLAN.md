@@ -5,7 +5,7 @@
 | **Project** | Modern Software Quality Engineering (MSQE) |
 | **Milestone** | v0.16.0 — First Edition Review |
 | **Document type** | Review Architecture / Method |
-| **Document status** | **TARGETED QUANTITATIVE METHOD CORRECTION APPLIED — AWAITING FOCUSED INDEPENDENT RE-ACCEPTANCE.** Phase C4 accepted this architecture (95.0/100, verdict A, Architecture Blockers = 0) and that acceptance stands as a historical event. **Phase F-IR1 has since amended §6.1–§6.4 to close finding FE-L1-005; the amended quantitative method is NOT yet independently accepted.** All non-quantitative sections are unchanged and remain accepted |
+| **Document status** | **TARGETED QUANTITATIVE METHOD CORRECTION APPLIED — AWAITING FOCUSED INDEPENDENT RE-ACCEPTANCE.** Phase C4 accepted this architecture (95.0/100, verdict A, Architecture Blockers = 0) and that acceptance stands as a historical event. **Phase F-IR1 amended §6.1–§6.4 to close finding FE-L1-005, and Phase F-IR1B made E11 explicit in §6.1.1. The amended quantitative method is NOT independently accepted: the only verification run to date (F-IR2) was performed by the actor who authored the correction and therefore does not satisfy the §11 independence rules.** All non-quantitative sections are unchanged and remain accepted |
 | **Latest stable release** | v0.15.0 — Engineering Leadership & Career Growth Complete |
 | **Review scope** | Parts I–XII — 137 chapters — 651,161 words |
 | **Phase** | Phase C4 complete — architecture accepted; **Phase E Governance Remediation Gate is the next separately authorised activity and has not started** |
@@ -15,7 +15,9 @@
 
 > **Phase C4 accepted this architecture** — Final Focused Quantitative Architecture Re-Acceptance returned **95.0/100, verdict A, Architecture Blockers = 0**. That event is historical and is preserved in §16.
 >
-> **The quantitative method has since been corrected and is not yet re-accepted.** Phase F-L1 and F-L2 established that the §6.4 census could not be reproduced from the committed §6.1/§6.2 text (finding **FE-L1-005**). **Phase F-IR1 amended §6.1–§6.4 and recomputed the census.** Until a focused independent re-acceptance verifies the amended method, **§6.1–§6.4 are corrected but unaccepted**; every other section retains its C4 acceptance.
+> **The quantitative method has since been corrected and is not yet re-accepted.** Phase F-L1 and F-L2 established that the §6.4 census could not be reproduced from the committed §6.1/§6.2 text (finding **FE-L1-005**). **Phase F-IR1 amended §6.1–§6.4 and recomputed the census; Phase F-IR1B replaced E11's "standing alone" wording with the formal definition in §6.1.1.**
+>
+> **No independent re-acceptance has occurred.** A technical verification (F-IR2) reproduced the census exactly and compared match-level populations with zero differences, but it was carried out by the same actor that authored the correction. Under §11 R3 and R5 — which admit no exception — that actor cannot gate its own correction, so **F-IR2 is evidence, not acceptance**. Until a genuinely independent re-acceptance is performed, **§6.1–§6.4 are corrected but unaccepted**; every other section retains its C4 acceptance.
 >
 > **Acceptance is of the review architecture only.** It does **not** authorise manuscript-review execution, does **not** imply release readiness, and does **not** mean the First Edition Review is complete. **No First Edition Review execution has begun. Phase E Governance Remediation has not run.** This document contains method only — no manuscript findings, no verification data, no dispositions.
 
@@ -452,7 +454,7 @@ Classification runs as five ordered passes. The ordering is normative: an indepe
 | E8 | `Chapter N` / `Part N` headings | ATX headings | structural numbering |
 | E9 | Standards designators | `ISO`, `ISO/IEC`, `ISO/IEC/IEEE`, `ISO/TS`, `IEC`, `IEEE`, `RFC`, `BS`, `EN` followed by digits, optional `-nnn` parts, optional `:YYYY` | reference identifiers |
 | **E10** | **Time of day** | `HH:MM` and `HH:MM:SS`, `HH` 00–23, `MM`/`SS` 00–59 | **timestamps are not ratios.** Evaluated **before** E11 so a clock form is never re-read as a bare year |
-| E11 | Bare years | 1900–2099 standing alone | bibliographic and timeline years |
+| E11 | Bare years | A four-digit year **1900–2099** that is **not part of a larger numeric construct**. Formally defined in **§6.1.1**; that definition is normative and this cell is a summary | bibliographic and timeline years |
 
 **PASS 2 — context-dependent identifier exclusion, applied to unprotected tokens only:**
 
@@ -461,6 +463,69 @@ Classification runs as five ordered passes. The ordering is normative: an indepe
 | **E12** | Three-digit numbers **100–599** where a trigger word — `HTTP`, `status`, `response`, `code`, `return`, `returns` — occurs within **25 characters** before or after the match | HTTP status codes are technical identifiers, verified at Levels 4 and 6, not Level 8. **E12 may never remove a token protected in PASS 1.** Without that constraint, genuine latency claims such as `310 ms` in *"Average checkout **response** latency"* are destroyed by the word "response" falling inside the window. A token that E12 does not remove falls to **Tier-2 triage**, where a human decides — so the window errs toward triage rather than deletion. |
 
 **E12 window — chosen empirically, not inherited.** Windows of ±25, ±50, ±75 and ±100 characters were measured against the edition. Precision of true HTTP identifiers among excluded tokens: **±25 → 66%**, ±50 → 55%, ±75 → 54%, ±100 → 51%. **±25 is the smallest window tested and the most precise**; wider windows pull in unrelated numbers through context bleed. Tokens a narrow window misses are not lost — they fall to Tier-2 triage.
+
+#### 6.1.1 E11 — formal definition
+
+The phrase *"standing alone"* previously carried the whole weight of E11 and was not implementation-complete: two defensible readings differed by **46 Tier-2 candidates**. The rule below replaces it. **This definition is normative.**
+
+**Regular expression — normative:**
+
+```text
+(?<![\d.,/-])(?:19\d{2}|20\d{2})(?![\d.,/%-])
+```
+
+**Equivalent predicate.** A token *Y* is excluded by E11 when **all three** hold:
+
+1. *Y* matches `19\d{2}` or `20\d{2}` — the closed range 1900–2099, exactly four digits;
+2. the character immediately **before** *Y* is not a member of the **left-boundary set** `{digit, . , , , / , -}`;
+3. the character immediately **after** *Y* is not a member of the **right-boundary set** `{digit, . , , , / , % , -}`.
+
+Start-of-text and end-of-text satisfy conditions 2 and 3 respectively.
+
+**Boundary sets, and why they differ.** The right set additionally contains `%`. A token such as `2026%` is a **percentage claim** and must reach PASS 1 as a `pct` candidate; without the `%` guard E11 would delete it before it could be classified. No comparable case arises on the left, so `%` is absent there.
+
+**What the boundaries mean.** Numeric punctuation on either side signals that the year is a **component of a larger construct** — an ISO date, a version string, a report identifier — rather than a calendar year used on its own. E11 removes only the standalone case. A year inside a larger construct is **left in the residue and falls to Tier-2 triage**, which is where §6.2 routes ambiguous numerics by design.
+
+> **Why the year is not removed from inside a construct.** Deleting a year mid-token **fragments** the token and causes its remainder to be re-read by later passes. Measured on this edition, the word-boundary reading deletes `2026` from `version 2026.10.4` and the residue `10.4` is then admitted as a new candidate that exists in no source sentence. **Silent reclassification of a fragment is exactly the failure class §6.3 exists to prevent.**
+
+**Worked boundary table — every case is decided by the rule above:**
+
+| Form | E11 excludes? | Governing condition |
+| --- | --- | --- |
+| `2026` | **Yes** | both boundaries clear |
+| `(2026)` | **Yes** | `(` and `)` are in neither boundary set |
+| `2026.` at end of a sentence | **No** | `.` is in the right set, so the year is **retained** — see the bounded-consequence note below |
+| `2026,` | **No** | `,` is in the right set, so the year is **retained** — same note |
+| `2026:` | **Yes** | `:` is in neither set |
+| `2026;` | **Yes** | `;` is in neither set |
+| `2026.10` | No | right character `.` — version construct |
+| `10.2026` | No | left character `.` — version construct |
+| `2026/10` | No | right character `/` — date construct |
+| `10/2026` | No | left character `/` — date construct |
+| `2026-10` | No | right character `-` — ISO date construct |
+| `10-2026` | No | left character `-` — date construct |
+| `v2026` | **Yes** | `v` is in neither set |
+| `build2026` | **Yes** | `d` is in neither set |
+| `2026x` | **Yes** | `x` is in neither set |
+| `x2026` | **Yes** | `x` is in neither set |
+| `2026%` | No | `%` is in the right set, so the token reaches PASS 1 as a `pct` candidate |
+
+> **Known bounded consequence.** A year immediately followed by a full stop or a comma is **retained** rather than excluded, and therefore reaches Tier-2. Lookahead alone cannot distinguish sentence punctuation from decimal punctuation, and narrowing the right set would re-introduce the fragmentation defect described above. **Measured across all 137 chapters this costs nothing**: of the 51 four-digit years reaching Tier-2, **49 are embedded in a numeric construct** (ISO dates, version strings) and the remaining **2 are embedded in alphanumeric identifiers** — `archive-2024` and `CMU/SEI-2000-TR-004` — both of which a human should triage. **No standalone prose year survives E11.** The consequence is recorded because it is a property of the rule, not because it has an observed cost.
+
+**Interaction with other exclusions.**
+
+| With | Behaviour |
+| --- | --- |
+| **E10** | E10 runs **first**, so a clock form is never re-read as a year. Unchanged. |
+| **E3, E4** | A year inside an absolute URL or a link target is already masked before E11 is evaluated; E11 neither sees nor needs it. |
+| **E5, E7** | A year on a footnote-definition line or in a chapter metadata row is removed with the whole line. E11 never runs on that content. |
+| **E12** | E12 operates on three-digit tokens only and cannot interact with a four-digit year. |
+| **Code-fence population** | **E11 does not apply.** Fenced content is set aside by E1 and is counted only as numeric literals under §6.2.2. |
+| **Inline-code population** | **E11 does not apply.** §6.2.3 applies Tier-1 grammar to the E2-suppressed text; PASS-0 exclusions are not re-run over it. |
+
+**Tier interaction.** E11 removes text before PASS 1, so an excluded year enters **neither Tier 1 nor Tier 2**. A year the rule retains is available to both, and in practice reaches Tier 2, because no Tier-1 class matches a bare four-digit integer.
+
+**ARC-C3-5 is unaffected.** The accepted observation that a bare 1900–2099 *quantity* would be suppressed concerns the standalone case, which this clarification does not alter.
 
 ### 6.2 Inclusion pass — two tiers
 
@@ -1028,9 +1093,11 @@ Immutable record. Each entry is a distinct event.
 
 | **F-IR1** | **Targeted Quantitative Review-Instrument Remediation** | **Correction event — does not close its own finding.** Triggered by **FE-L1-005**, raised at F-L1 and strengthened at F-L2 when independent enumeration returned 20 genuine claims against an accepted 29 for Parts III–V, matching Parts IV and V exactly while diverging by nine in Part III. A switchable re-implementation established that **no configuration of the ten documented PASS-0 exclusions reproduces the accepted per-Part census**. §6.1.0 fixed E5/E7 precedence and masking discipline; §6.2.1–§6.2.4 fixed occurrence, code-fence, inline-code and candidate-versus-claim semantics; §6.3.1 added the canonical reference implementation `tools/quantitative_census.py`; §6.4 recomputed the census to **Tier-1 1,169 / Tier-2 1,516 / code-fence 310 / inline-code 366**. Every §6.6 conclusion survives. **The amended method is NOT accepted and awaits focused independent re-acceptance** |
 
+| **F-IR1B** | **E11 Quantitative-Specification Clarification** | **Correction event — does not close its own finding.** F-IR2 established that E11's sole specification — *"1900–2099 standing alone"* — was not implementation-complete: a word-boundary reading and a punctuation-aware reading differ by **46 Tier-2 candidates** (1,470 versus 1,516), with **Tier-1 unaffected at 1,169** under both. Independent enumeration showed the 47 distinguishing candidates are **entirely ISO dates and version identifiers** (`2026-08-10`, `2025-01`, `version 2026.10.4`), and that the word-boundary reading **fragments** those tokens — deleting `2026` from `2026.10.4` causes the residue `10.4` to be admitted as a candidate present in no source sentence. §6.1.1 now states E11 as an explicit regex with formal boundary sets, a seventeen-form worked table, interaction rules for E3/E4/E5/E7/E10/E12 and both auxiliary populations, and a measured bounded-consequence note. **No census figure changed and the reference implementation required no modification** — the clarification formalises behaviour it already had. **Still awaiting genuinely independent re-acceptance** |
+
 > **The non-quantitative architecture remains ACCEPTED at C4.** Architecture design and independent re-acceptance were completed for it.
 >
-> **The quantitative method (§6.1–§6.4) is CORRECTED BUT UNACCEPTED.** Phase F-IR1 amended it to close FE-L1-005; that finding is **CORRECTION APPLIED — AWAITING INDEPENDENT VERIFICATION**, and **F-L3 must not be authorised until a focused independent re-acceptance confirms the amended instrument.** **Phase E — Governance Remediation Gate — is the next separately authorised lifecycle activity and has NOT started.** Acceptance of the architecture does not authorise manuscript-review execution and does not imply release readiness.
+> **The quantitative method (§6.1–§6.4) is CORRECTED BUT UNACCEPTED.** Phase F-IR1 amended it and Phase F-IR1B made E11 explicit; FE-L1-005 remains **CORRECTION APPLIED — AWAITING GENUINELY INDEPENDENT VERIFICATION**. **F-L3 must not be authorised until a re-acceptance performed by an actor other than the author of F-IR1 and F-IR1B confirms the amended instrument.** **Phase E — Governance Remediation Gate — is the next separately authorised lifecycle activity and has NOT started.** Acceptance of the architecture does not authorise manuscript-review execution and does not imply release readiness.
 
 Where a later phase changed an earlier rule, the later phase governs and only the corrected rule appears as active guidance. Superseded metrics — including the Phase D-era census — are recorded in §6.5 and must not be used operationally.
 
