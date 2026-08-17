@@ -514,7 +514,7 @@ Start-of-text and end-of-text satisfy conditions 2 and 3 respectively.
 >
 > **Retention by E11 does not imply admission to Tier-2.** E11 and the Tier-2 rule (§6.2) are independent gates that happen to share a boundary principle. A year such as `2018.` is retained here because its right neighbour is numeric punctuation, and is then **rejected by the Tier-2 rule for exactly the same reason** — so it reaches **neither tier**. F-IR3 established that the earlier wording of this note, which asserted that such years "therefore reach Tier-2", stated a mechanism that does not occur.
 >
-> **Measured across all 137 chapters the consequence costs nothing.** Of the **51** four-digit years that do reach Tier-2, **49 are embedded in a numeric construct** (ISO dates, version strings) and the remaining **2 are embedded in alphanumeric identifiers** — `archive-2024` and `CMU/SEI-2000-TR-004` — both of which a human should triage. Every one is hyphen- or slash-separated, which is why the Tier-2 rule admits it. **No standalone prose year appears in Tier 1 or Tier 2.** The consequence is recorded because it is a property of the rule, not because it has an observed cost.
+> **Measured across all 137 chapters the consequence costs nothing.** Of the **51** four-digit years that do reach Tier-2, **48 are embedded in a numeric construct** (ISO dates, version strings) and the remaining **3 are embedded in alphanumeric identifiers** — `archive-2024`, `fulfilment-2026-02` and `CMU/SEI-2000-TR-004` — all of which a human should triage. Every one is hyphen- or slash-separated, which is why the Tier-2 rule admits it. **No standalone prose year appears in Tier 1 or Tier 2.** The consequence is recorded because it is a property of the rule, not because it has an observed cost.
 
 **Interaction with other exclusions.**
 
@@ -673,7 +673,7 @@ Start-of-text and end-of-text satisfy conditions 2 and 3 respectively. **The bou
 
 > **Why numeric punctuation bounds a Tier-2 candidate.** A digit run touching a `.` or a `,` is a **fragment of a larger numeric construct**, not a bare integer. Admitting the fragment would put a number into the review population that appears in no source sentence — the same failure class §6.1.1 rejects for E11. Hyphens and slashes are excluded from the boundary set because a hyphen- or slash-separated construct is a *sequence of distinct integers* — an ISO date, a report number — each of which a human should see.
 
-> **Relationship to E11 — this reconciles the §6.1.1 bounded consequence.** E11 and the Tier-2 rule are **two independent gates**, and retention by the first does not imply admission by the second. A year followed by `.` or `,` is **retained by E11** because its right neighbour is numeric punctuation, and is then **rejected by the Tier-2 rule** for exactly the same reason. Such a year therefore reaches **neither tier**. The 51 four-digit years that do reach Tier-2 are precisely those embedded in hyphen or slash constructs — 49 ISO-date and version forms, plus `archive-2024` and `CMU/SEI-2000-TR-004`. **No standalone prose year appears in either tier**, which is the property §6.1.1 asserts; the mechanism is the pair of gates, not E11 alone.
+> **Relationship to E11 — this reconciles the §6.1.1 bounded consequence.** E11 and the Tier-2 rule are **two independent gates**, and retention by the first does not imply admission by the second. A year followed by `.` or `,` is **retained by E11** because its right neighbour is numeric punctuation, and is then **rejected by the Tier-2 rule** for exactly the same reason. Such a year therefore reaches **neither tier**. The 51 four-digit years that do reach Tier-2 are precisely those embedded in hyphen or slash constructs — 48 ISO-date and version forms, plus `archive-2024`, `fulfilment-2026-02` and `CMU/SEI-2000-TR-004`. **No standalone prose year appears in either tier**, which is the property §6.1.1 asserts; the mechanism is the pair of gates, not E11 alone.
 
 **Code-fence numerics are a separate population.** They are counted separately, reviewed where technically relevant, and are **neither Tier 1 nor Tier 2**.
 
@@ -769,10 +769,10 @@ Produced by the §6.1 pipeline as stated, and **recomputed at Phase F-IR1 by [`t
 | Part | Tier 1 | Tier 2 | Code-fence | Inline-code | Words | **Tier-1 / 1k words** | Density rank |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | I | 15 | 13 | 2 | 0 | 64,921 | 0.23 | 9 |
-| II | 5 | 16 | 112 | 5 | 60,096 | 0.08 | 11 |
+| II | 5 | 16 | 112 | 5 | 60,096 | 0.08 | 10 |
 | III | 14 | 20 | 0 | 0 | 52,741 | 0.27 | 8 |
 | IV | 2 | 50 | 89 | 0 | 54,811 | 0.04 | 12 |
-| V | 3 | 25 | 0 | 1 | 70,196 | 0.04 | 10 |
+| V | 3 | 25 | 0 | 1 | 70,196 | 0.04 | 11 |
 | VI | 143 | 63 | 20 | 6 | 45,206 | 3.16 | 4 |
 | VII | 53 | 46 | 0 | 13 | 40,305 | 1.31 | 7 |
 | VIII | 106 | 89 | 80 | 35 | 30,107 | 3.52 | 3 |
@@ -800,7 +800,7 @@ Batch aggregates: **L1** 20 · **L2** 19 · **L3** 302 · **L4** 379 · **L5** 4
 
 **Superseded by this recomputation.** The Phase C4-era figures — Tier-1 **1,213**, Tier-2 **1,511**, code-fence **186**, and the per-Part values behind them — are recorded in §6.5 and **must not be used operationally**. They were not reproducible from the committed specification; see §6.9.
 
-**Conclusion stability.** Every §6.6 conclusion survives the recomputation unchanged: **Part IX remains the densest Part** (6.34/1k, ahead of Part XI at 4.21); **L4 remains the densest batch**, and **L4/L3 moves 1.60× → 1.64×**, strengthening rather than weakening the "materially denser" reading; **L1 and L2 remain materially sparser**. The density ranks of Parts I–XII are unchanged except that Parts II and V exchange ranks 10 and 11 at the sparse tail, which carries no allocation consequence.
+**Conclusion stability.** Every §6.6 conclusion survives the recomputation unchanged: **Part IX remains the densest Part** (6.34/1k, ahead of Part XI at 4.21); **L4 remains the densest batch**, and **L4/L3 moves 1.60× → 1.64×**, strengthening rather than weakening the "materially denser" reading; **L1 and L2 remain materially sparser**. The density ranks of Parts I–XII are unchanged except that Parts II and V exchange ranks 10 and 11 at the sparse tail — **Part II is the denser of the two at 0.08/1k and takes rank 10; Part V at 0.04/1k takes rank 11** — which carries no allocation consequence.
 
 ### 6.5 Superseded evidence
 
@@ -824,7 +824,7 @@ Restated on the corrected census. **Density is no longer offered as the justific
 | **L4 is the densest batch** | **Supported** — 4.294/1k, ahead of L5 at 3.107 and L3 at 2.612. **L4/L3 = 1.64×**, so L4 is *materially* denser than L3, not comparable to it |
 | **Part IX is the densest Part** | **Supported** — 6.34/1k, ahead of Part XI at 4.21 and Part VIII at 3.52 |
 | **L1 and L2 are materially sparser** | **Supported** — 0.160 and 0.107 per 1k. **L4/L1 = 26.84× · L4/L2 = 40.17×** |
-| **L3 warrants numerical-verification resourcing comparable to L4** | **Supported, but on different grounds.** Density does **not** justify it. The justification is that **L3 is deep tier** — Parts VI–VIII are unbaselined legacy material (§13.3) — and that Part VIII (4.02/1k) and Part VI (3.21/1k) each carry substantial quantitative content in incident-timeline and data-quality chapters where inference validity is the dominant risk |
+| **L3 warrants numerical-verification resourcing comparable to L4** | **Supported, but on different grounds.** Density does **not** justify it. The justification is that **L3 is deep tier** — Parts VI–VIII are unbaselined legacy material (§13.3) — and that Part VIII (3.52/1k) and Part VI (3.16/1k) each carry substantial quantitative content in incident-timeline and data-quality chapters where inference validity is the dominant risk |
 
 > **The allocation decision is not attributed to density where density does not support it.** L4 receives the heaviest numerical effort because it is the densest; L3 receives comparable effort because it is the least-verified evidence tier, not because it is equally dense.
 
