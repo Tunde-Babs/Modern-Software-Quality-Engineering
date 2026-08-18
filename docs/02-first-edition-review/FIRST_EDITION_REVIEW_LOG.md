@@ -717,6 +717,49 @@ The eight alphanumeric forms and their loci reproduced exactly: `CMU/SEI-2000-TR
 
 ---
 
+## Event FE-EV-010 — Phase F-L3: Longitudinal Batch 3 START
+
+| Field | Value |
+| --- | --- |
+| **Event ID** | `FE-EV-010` |
+| **Date** | 2026-08-18 |
+| **Phase** | F — L3 · Longitudinal Batch 3, **Parts VI–VIII** |
+| **Scope** | Data Quality Engineering · Cloud & DevOps · Observability & Reliability Engineering. **33 chapters · 115,618 words** |
+| **Score / verdict** | START, no verdict |
+| **Baseline digest at START** | `ec588eaa…f150a411` — **matches the F0 baseline** |
+| **Verification tier** | **DEEP** (plan §5.2) |
+| **Accepted L3 quantitative populations** | Tier-1 **302** · Tier-2 **198** · code-fence **100** · inline-code **54** · citations **62** — all reconciled against plan §5.2/§6.4 and the canonical tool **before** adjudication began |
+| **Independence basis** | Plan §11. This is a review event over manuscript the reviewer did not author, using an instrument closed and re-accepted at F-IR4V3. **No manuscript correction is authorised or made.** |
+| **Standing open findings relevant to L3** | **FE-L1-001 / FE-L2-001** (`SYS-LIFECYCLE-DRIFT`) · **FE-L1-003 / FE-L2-004** (`SYS-ORPHAN-FOOTNOTE`) · **FE-L1-004 / FE-L2-005** (`SYS-TEMPLATE-NAMING`) · **FE-L1-006** (`SYS-TIER1-IDENTIFIER`) · **FE-L2-003** (Atlas continuity). **FE-L1-005 is CLOSED** — L3 is the first batch to consume the closed instrument |
+| **Open Class-B Review-Execution Blockers** | **0** |
+| **Scope note — 33, not 38** | The authorisation brief stated 38 chapters and cumulative 94/137. **Plan §5.2 records 33**, the canonical tool reports **33**, Parts VI/VII/VIII hold **11 each**, and the 33 word counts sum to **115,618**, matching §5.2. The repository is self-consistent at 22 + 34 + 33 + 24 + 24 = 137. **The accepted population was not altered**; the batch proceeds on the committed scope of 33 and cumulative coverage of 89/137 |
+
+---
+
+## Event FE-EV-011 — Phase F-L3: Longitudinal Batch 3 COMPLETE
+
+| Field | Value |
+| --- | --- |
+| **Event ID** | `FE-EV-011` |
+| **Date** | 2026-08-18 |
+| **Phase** | F — L3 · Longitudinal Batch 3, **Parts VI–VIII** — COMPLETE |
+| **Scope** | **33 / 33 chapters inspected**, each with a valid six-field coverage record (§7 rows `L3-01`…`L3-33`) |
+| **Score / verdict** | **`UNSCORED`** — plan §7.3 defines no batch-level score. **This batch is evidence-only and no batch score is invented.** Prior Part release scores (VI 96/100, VII 97/100, VIII 96/100) are **Part gate scores, not First Edition scores** |
+| **Baseline digest at START / END** | `ec588eaa…f150a411` / `ec588eaa…f150a411` — **matched both times; zero manuscript mutation** |
+| **Levels executed** | **Longitudinal routing only, per plan §5.3: Levels 1, 2, 3 and 4.** Levels 5–11 and supporting passes 15, 16 and 19 are transversal-owned; L3 recorded **batch-local evidence only** and marked **no transversal complete** |
+| **Candidate populations** | Tier-1 **302** · Tier-2 **198** · code-fence **100** · inline-code **54** — all four reconciled exactly, none hand-discovered |
+| **Tier-1 adjudication** | **302 / 302 adjudicated — 299 CONFIRMED QUANTITATIVE CLAIM · 3 NOT APPLICABLE.** Every explicit arithmetic assertion in the batch (**22 stated computations**) independently recomputed: **0 arithmetic defects, 0 inference defects**, verdicts recorded separately at `NUM-L3-01`…`NUM-L3-08` and `NUM-L3-ADJ` |
+| **Tier-2** | **198 / 198 triaged** — 110 claim-candidates · 88 identifiers. **The T3 transversal was not run and is not claimed** |
+| **Findings** | **5 new — FE-L3-001 … FE-L3-005.** Severity **P1 = 1 · P2 = 0 · P3 = 4**. Blocker classes **A = 0 · B = 0 · C = 5 · D = 0**. **Four join existing systemic groups and carry no separate deduction**; only **FE-L3-003** is a new root cause |
+| **Ledger updates** | Source Verification (`SRC-L3-00`…`03`) · Numerical Verification (`NUM-L3-00`…`ADJ`, 13 rows) · Terminology Register (`TRM-L3-01`…`06`) · Concept Consistency (`CON-L3-01`…`05`) · QA→QE Progression (`PRG-L3-01`…`05`) · Cross-Part Dependency (`DEP-L3-01`…`08`) · Coverage Control (33 rows + accessibility census). **No seventh ledger created** |
+| **Coverage** | **L3 33 / 33.** Cumulative longitudinal **89 / 137**. Transversal axis remains **0 / 137** |
+| **Remaining risks** | (i) **FE-L3-003** — Atlas settlement-identifier collision inside Part VI; escalates to P2 if a third reuse appears or if T5 finds it spans Parts. (ii) `SYS-LIFECYCLE-DRIFT` is now confirmed in Parts II, III–V and VI–VII — **five Parts across three batches**; it remains P1 and unfixed pending Phase H. (iii) Citation claim–source alignment for 57 of L3's 62 definitions is **transversal T2 work and not done**; no primary verification is claimed. (iv) The 44 remaining chapters (L4, L5) are unreviewed |
+| **Non-collapse note** | F-L3 is a review event. It does **not** authorise F-L4, does not complete any transversal, and applies **zero** manuscript corrections |
+
+**Next authorised activity:** **Phase F-L4 — Longitudinal First Edition Review, Parts IX–X.** **F-L4 is NOT STARTED and NOT AUTHORISED by this event.** Authorisation is a separate owner decision. Phase F remains **IN EXECUTION** at 89/137; **v0.16.0 remains planned and unreleased**.
+
+---
+
 ## 3. Manuscript-mutation control (plan §13.4 drift discipline, applied to Phase F)
 
 **Rule.** The 137 chapter blobs recorded in §2.5 constitute the Phase F review-execution baseline. **Manuscript chapters must remain unmodified for the duration of Phase F.**
@@ -751,6 +794,8 @@ git ls-files -s book | awk '$4 ~ /chapters\/chapter-.*\.md$/ {print $4":"$2}' | 
 | `FE-EV-007` | 2026-08-17 | F-IR3 | Genuinely independent quantitative instrument closure review · 2,685 match rows reproduced · specification found not implementation-complete | **B — PARTIALLY VERIFIED** · 25 PASS / 2 PARTIAL / 3 FAIL |
 | `FE-EV-008` | 2026-08-17 | F-IR4C | Quantitative specification completeness and candidate traceability correction · all four populations enumerable · census unchanged | **`UNSCORED`** — correction event |
 | `FE-EV-009` | 2026-08-18 | F-IR4V3 | Independent Condition-35 final closure verification · E11 decomposition re-derived at `43 + 8 = 51` · FE-L1-005 CLOSED · F-IR4 final 40/40 | **A — CONDITION 35 VERIFIED** · 25 PASS / 0 FAIL |
+| `FE-EV-010` | 2026-08-18 | F — L3 | Longitudinal Batch 3, Parts VI–VIII — START · 33 chapters · populations reconciled 302 / 198 / 100 / 54 | START, no verdict |
+| `FE-EV-011` | 2026-08-18 | F — L3 | Longitudinal Batch 3, Parts VI–VIII — COMPLETE · 33/33 chapters · 302/302 Tier-1 adjudicated · 0 arithmetic defects · 5 findings | **`UNSCORED`** |
 
 > **Note on the FE-EV-008 → FE-EV-009 sequence — this is not a lost record.** Three quantitative-instrument events occurred between them — **F-IR4** (fresh independent re-acceptance, 39 PASS · 0 PARTIAL · 1 FAIL), **F-IR4V2** (independent verification establishing that the instrument is intact, that E9 is correct and that the E11 total is 51) and **F-IR4F** (the E11 occurrence-decomposition correction, commit `250cfe7`) — and **none was written to this log at the time it happened.** Their outcomes are recorded in the **plan §16 phase-history table**, and `FE-EV-009` states the chain it closes.
 >
@@ -758,4 +803,4 @@ git ls-files -s book | awk '$4 ~ /chapters\/chapter-.*\.md$/ {print $4":"$2}' | 
 
 ---
 
-**Last Updated:** 2026-08-18 (F-IR4V3)
+**Last Updated:** 2026-08-18 (F-L3)

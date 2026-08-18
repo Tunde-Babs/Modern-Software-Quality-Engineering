@@ -7,14 +7,14 @@
 | **Document type** | Review artefact 2 of 4 — **Defects** |
 | **Authority** | [`FIRST_EDITION_REVIEW_PLAN.md`](FIRST_EDITION_REVIEW_PLAN.md) §13.1 |
 | **Lifecycle** | Mutable, Phases F→J |
-| **State** | **F-L1 and F-L2 complete — 12 findings recorded (Parts I–V). Batches L3–L5 and transversals T1–T6 not started.** FE-L1-005 independently reviewed at **F-IR3** (verdict B), corrected at **F-IR4C** and **F-IR4F**, and **CLOSED at F-IR4V3** on independent verification of Condition 35; **F-L3 is no longer blocked by it**. No new finding ID was raised by any of those events |
+| **State** | **F-L1, F-L2 and F-L3 complete — 17 findings recorded (Parts I–VIII). Batches L4–L5 and transversals T1–T6 not started.** FE-L1-005 independently reviewed at **F-IR3** (verdict B), corrected at **F-IR4C** and **F-IR4F**, and **CLOSED at F-IR4V3** on independent verification of Condition 35; **F-L3 is no longer blocked by it**. No new finding ID was raised by any of those events |
 | **Owner** | Tunde Ajala |
 
 > This is a **governance artefact**, not a manuscript chapter. It carries no chapter-style status.
 
-> **Findings recorded to date: 12 — 7 from F-L1 (Parts I–II) and 5 from F-L2 (Parts III–V).** No transversal has run. Severity distribution: **P0 = 0 · P1 = 2 · P2 = 3 · P3 = 7.** Blocker classes: **A = 0 · B = 0 · C = 12 · D = 0.**
+> **Findings recorded to date: 17 — 7 from F-L1 (Parts I–II), 5 from F-L2 (Parts III–V) and 5 from F-L3 (Parts VI–VIII).** No transversal has run. Severity distribution: **P0 = 0 · P1 = 3 · P2 = 3 · P3 = 11.** Blocker classes: **A = 0 · B = 0 · C = 17 · D = 0.**
 >
-> **Three of the five L2 findings are additional instances of existing systemic groups and carry NO separate deduction** (plan §7.3 systemic root-cause rule). Distinct deducting findings to date: **9**.
+> **Three of the five L2 findings are additional instances of existing systemic groups and carry NO separate deduction** (plan §7.3 systemic root-cause rule). **Four of the five L3 findings likewise join existing systemic groups** — `SYS-LIFECYCLE-DRIFT`, `SYS-ORPHAN-FOOTNOTE`, `SYS-TIER1-IDENTIFIER` and `SYS-TEMPLATE-NAMING` — and carry no separate deduction; only **FE-L3-003** is a new root cause. Distinct deducting findings to date: **10**.
 
 ---
 
@@ -481,6 +481,122 @@ These are **not** manuscript findings and **do not** appear in the register abov
 | **Revision trigger assessment** | FE-L1-004's trigger was *"escalate to P2 if later batches show the edition has no consistent capstone-heading convention"*. **L2 evidence WEAKENS that case**: two of three L2 capstones conform, and 33 of 34 chapters use the template heading. **A consistent convention does exist; the deviations are isolated. Severity is NOT escalated.** |
 | **Verification** | `NOT VERIFIED` |
 
+### FE-L3-001 — Lifecycle drift in the Part VI and Part VII READMEs (systemic with FE-L1-001 and FE-L2-001)
+
+| Field | Value |
+| --- | --- |
+| **Phase / batch** | Phase F · longitudinal **L3** |
+| **Part / path** | VI · `book/part-06-data-quality-engineering/README.md` L7 · VII · `book/part-07-cloud-devops/README.md` L7 |
+| **Review level** | Level 1 |
+| **Defect class** | False current-state claim in an active governance-adjacent artefact |
+| **PRIMARY category** | **8 — Governance integrity** |
+| **Secondary** | 2 — Cross-Part coherence |
+| **Severity** | **P1** — the systemic group's severity, set by its highest instance (FE-L1-001) |
+| **Blocker class** | **C — Final-Gate Blocker** |
+| **Systemic group** | **`SYS-LIFECYCLE-DRIFT`** — joins **FE-L1-001** and **FE-L2-001**. **Scored once at group level; no separate deduction.** |
+| **Finding** | Two Part READMEs assert forward-looking states that the repository has already overtaken. Part VI's Curriculum Status ends *"Part VII work has not begun."* Part VII's Curriculum Status ends *"Part VIII planning has not started."* |
+| **Evidence** | Part VII's own README states *"Part VII — Cloud & DevOps is released as v0.10.0"* with baseline `2da10fd`; Part VIII's states release as **v0.11.0** on 2026-08-12 with baseline `ee20d306b88b`. Both Parts have 11 delivered chapters each. All three recorded baseline SHAs resolve (`git cat-file -t` → `commit` for `6ca58c6`, `2da10fd`, `ee20d306b88b`). |
+| **Consequence** | A reader taking either README as current is told that work already released has not started. Identical mechanism to FE-L1-001 (Part II) and FE-L2-001 (Parts III–V): a status line written at authoring time and never revisited when the next Part shipped. |
+| **Recommended action** | Phase H. Replace the trailing forward-looking sentence with the current state, or remove it and let the lifecycle artefacts carry sequencing. **No manuscript correction made by this task.** |
+| **Status** | `OPEN` · **Owner** Project Founder |
+| **Verification** | `NOT VERIFIED` |
+
+---
+
+### FE-L3-002 — Four unused footnote definitions in Part VII (systemic with FE-L1-003 and FE-L2-004)
+
+| Field | Value |
+| --- | --- |
+| **Phase / batch** | Phase F · longitudinal **L3** |
+| **Part / path** | VII · `chapters/chapter-04-infrastructure-as-code-change-evidence-review-and-drift.md` L291 · `chapters/chapter-11-capstone-cloud-devops-quality-strategy-and-release-evidence-portfolio.md` L395–L397 |
+| **Review level** | Level 4 |
+| **Defect class** | Undefined or unused footnote |
+| **PRIMARY category** | **3 — Evidence / citation integrity** |
+| **Severity** | **P3** |
+| **Blocker class** | **C** |
+| **Systemic group** | **`SYS-ORPHAN-FOOTNOTE`** — joins **FE-L1-003** and **FE-L2-004**. **Scored once at group level; no separate deduction.** |
+| **Finding** | Four footnote definitions are declared but never referenced from the body: `[^git]` (ch04 L291), and `[^nist-cloud]` (L395), `[^oci]` (L396) and `[^dora]` (L397) in the ch11 capstone. |
+| **Evidence** | Reference/definition census across all 33 L3 chapters: definitions **62**, undefined references **0**, unused definitions **4**, all four in Part VII. Each of the four keys occurs exactly once in its chapter, on its definition line, with no `[^key]` reference anywhere in the body. |
+| **Consequence** | The four sources are carried as apparent citations but support no statement; a renderer emits an unreferenced footnote. **Ch11 is the capstone**, where the reader is most likely to follow references. |
+| **Recommended action** | Phase H. Either cite each source at the claim it supports or move it to Further Reading. **No correction made by this task.** |
+| **Status** | `OPEN` · **Owner** Project Founder |
+| **Verification** | `NOT VERIFIED` |
+
+---
+
+### FE-L3-003 — Atlas settlement identifiers denote different settlements in Part VI Chapter 6 and the Part VI capstone
+
+| Field | Value |
+| --- | --- |
+| **Phase / batch** | Phase F · longitudinal **L3** |
+| **Part / path** | VI · `chapters/chapter-06-reconciliation-and-cross-system-consistency.md` L118–L123 · `chapters/chapter-11-capstone-data-quality-strategy-and-evidence-portfolio.md` L91–L104 |
+| **Review level** | Level 4 (internal contradiction test, technique 3) |
+| **Defect class** | Recurring-case identifier reused with different referents and values, without signposting |
+| **PRIMARY category** | **2 — Cross-Part coherence** |
+| **Secondary** | 5 — Pedagogical progression |
+| **Severity** | **P3** |
+| **Blocker class** | **C** |
+| **Related finding** | **FE-L2-003** (Atlas recurring case changes organisational identity between Parts). Same recurring-case control, **distinct root cause** — identifier-namespace reuse *within* a Part rather than identity drift *between* Parts — so this deducts in its own right. |
+| **Finding** | Chapter 6 and the Chapter 11 capstone both stage an Atlas Commerce **30 June close** and both use the `S-9xx` / `R-9xx` settlement and report namespace, but bind the identifiers to different orders and amounts. |
+| **Evidence** | Chapter 6 (L118–L123): `S-901` → order `O-100`, €100.00; `S-902` → `O-101`, €80.00; `S-904` → `O-103`, €50.00 with correction `C-904` −10.00; the €70.00 pending item is **`S-905`** for `O-105`. Capstone (L91–L104): `S-901` → order `O-4101`, €120.00; `S-902` → `O-4102`, €80.00; **`S-904`** → `O-4104`, €70.00 — the pending item, which Chapter 6 calls `S-905`. The capstone's order-level figures are consistent with Chapter 4 (`AC-4101` €120.00, `AC-4102` €80.00, `AC-4103` €49.99); the collision is confined to the settlement namespace. Both chapters are internally arithmetically correct — Chapter 6 recomputes to ledger €305.00 / report €305.00 / matched €280.00, and the capstone to ledger €190.00 / report €200.00 / difference €10.00. |
+| **Consequence** | A learner arriving at the capstone directly from Chapter 6 may reasonably read `S-901` and `S-904` as the same settlements they have just reconciled. `S-904` is the sharpest case: a €50.00 corrected settlement in one chapter and the €70.00 pending item in the other. The defect is ambiguity, not arithmetic. |
+| **Recommended action** | Phase H. Either use a distinct identifier range for the capstone packet or state explicitly that it is an independent scenario reusing the namespace. **No correction made by this task.** |
+| **Status** | `OPEN` · **Owner** Project Founder |
+| **Revision trigger** | Escalate to P2 if a later batch shows the same namespace reused a third time, or if T5 finds the reuse spans Parts. |
+| **Verification** | `NOT VERIFIED` |
+
+---
+
+### FE-L3-004 — One version-string fragment is admitted as a Tier-1 candidate in Part VII (systemic with FE-L1-006)
+
+| Field | Value |
+| --- | --- |
+| **Phase / batch** | Phase F · longitudinal **L3** |
+| **Part / path** | VII · `chapters/chapter-06-deployment-strategies-progressive-delivery-and-release-exposure.md` L176 |
+| **Review level** | Level 8 candidate adjudication |
+| **Defect class** | Identifier counted as a quantitative claim |
+| **PRIMARY category** | **4 — Numerical / analytical integrity** |
+| **Severity** | **P3** |
+| **Blocker class** | **C** |
+| **Systemic group** | **`SYS-TIER1-IDENTIFIER`** — joins **FE-L1-006**. **Scored once at group level; no separate deduction.** |
+| **Finding** | The `dec` class admits `2026.10` from the release identifier *"version `2026.10.4`"*. The fragment is an identifier component, not a quantity, and is adjudicated `NOT APPLICABLE`. |
+| **Evidence** | Full adjudication of the bounded 302-candidate L3 Tier-1 population: **299 confirmed quantitative claims · 3 NOT APPLICABLE**. The three are this version fragment and the two authoring-specification figures `6,000` / `8,000` (capstone word budget, VI ch11 L407). L3 identifier contamination is therefore **1 of 302 = 0.33%**, against L1's rate that produced FE-L1-006 (6 of 23). **The instrument is unchanged and behaves exactly as §6.2 specifies**; this is an adjudication outcome, not an instrument defect. |
+| **Consequence** | Negligible at L3's rate; recorded for group continuity and to keep the candidate-versus-claim distinction auditable per plan §6.2.4. |
+| **Recommended action** | None at manuscript level. Retain as adjudication evidence. |
+| **Status** | `OPEN` · **Owner** Review architecture owner |
+| **Verification** | `NOT VERIFIED` |
+
+---
+
+### FE-L3-005 — Parts VII and VIII introduce a third variant of the misconceptions heading (systemic with FE-L1-004 and FE-L2-005)
+
+| Field | Value |
+| --- | --- |
+| **Phase / batch** | Phase F · longitudinal **L3** |
+| **Part / path** | VII and VIII · all 22 chapters |
+| **Review level** | Level 4 |
+| **Defect class** | Required section present under a non-template heading |
+| **PRIMARY category** | **7 — Editorial consistency** |
+| **Severity** | **P3** |
+| **Blocker class** | **C** |
+| **Systemic group** | **`SYS-TEMPLATE-NAMING`** — joins **FE-L1-004** and **FE-L2-005**. **Scored once at group level; no separate deduction.** |
+| **Finding** | `CHAPTER_TEMPLATE.md` requires **"Common Misconceptions or Common Pitfalls"**. Part VI uses **"Common Misconceptions"** in 11 of 11 chapters — the convention Parts I–V follow. Parts VII and VIII use **"Common Misconceptions and Pitfalls"** in 22 of 22 chapters, a third variant. |
+| **Evidence** | Heading census across all 33 L3 chapters: Part VI 11/11 `Common Misconceptions`; Part VII 11/11 and Part VIII 11/11 `Common Misconceptions and Pitfalls`. Each Part is internally consistent; the divergence is between Parts. Structural variation also recorded, non-defect: `Chapter Purpose` and `QA → QE Transition` appear in VII and VIII (22/22) but not VI, and `Navigation` appears only in VII (11/11). |
+| **Consequence** | Navigation by exact heading fails across the batch boundary. No content is missing — all 15 required template sections are present in 33 of 33 chapters. |
+| **Revision trigger assessment** | **FE-L1-004's trigger — *"escalate to P2 if later batches show the edition has no consistent capstone-heading convention"* — is NOT met by L3.** All three L3 capstones use the template heading `Why This Chapter Matters`, as do all 33 chapters. The trigger remains armed for L4 and L5. |
+| **Status** | `OPEN` · **Owner** Project Founder |
+| **Verification** | `NOT VERIFIED` |
+
+---
+
+## 5A. Standing-finding evidence recorded by F-L3
+
+**FE-L1-005 (review-instrument reproducibility) — CLOSED at F-IR4V3; L3 is the first batch to consume the closed instrument.** The four L3 candidate populations were surfaced mechanically from `tools/quantitative_census.py` and reconciled **exactly** against plan §5.2 and §6.4 before adjudication began: **Tier-1 302 · Tier-2 198 · code-fence 100 · inline-code 54 · words 115,618 · citations 62**. No population was hand-discovered. **The instrument required no change and none was made.**
+
+**FE-L1-002 (Part I chapter status)** — unchanged. All 33 L3 chapters carry `Status: Draft`, conforming to the plan §2.3 model.
+
+**FE-L2-003 (Atlas recurring-case continuity)** — extended by new evidence at L3; see **FE-L3-003**, recorded as a distinct root cause within the same control.
+
 ---
 
 ## 5. Standing-finding evidence recorded by F-L2
@@ -491,4 +607,4 @@ These are **not** manuscript findings and **do not** appear in the register abov
 
 ---
 
-**Last Updated:** 2026-08-16 (F-IR1)
+**Last Updated:** 2026-08-18 (F-L3)
