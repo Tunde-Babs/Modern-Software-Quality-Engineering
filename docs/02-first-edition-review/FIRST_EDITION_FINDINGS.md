@@ -7,7 +7,7 @@
 | **Document type** | Review artefact 2 of 4 — **Defects** |
 | **Authority** | [`FIRST_EDITION_REVIEW_PLAN.md`](FIRST_EDITION_REVIEW_PLAN.md) §13.1 |
 | **Lifecycle** | Mutable, Phases F→J |
-| **State** | **F-L1 and F-L2 complete — 12 findings recorded (Parts I–V). Batches L3–L5 and transversals T1–T6 not started.** FE-L1-005 independently reviewed at **F-IR3** (verdict B) and corrected at **F-IR4C**; it remains **open** and **F-L3 remains blocked**. No new finding ID was raised by either event |
+| **State** | **F-L1 and F-L2 complete — 12 findings recorded (Parts I–V). Batches L3–L5 and transversals T1–T6 not started.** FE-L1-005 independently reviewed at **F-IR3** (verdict B), corrected at **F-IR4C** and **F-IR4F**, and **CLOSED at F-IR4V3** on independent verification of Condition 35; **F-L3 is no longer blocked by it**. No new finding ID was raised by any of those events |
 | **Owner** | Tunde Ajala |
 
 > This is a **governance artefact**, not a manuscript chapter. It carries no chapter-style status.
@@ -228,10 +228,10 @@ Every finding records all of the following. A row missing any mandatory field is
 | **Evidence** | The Part I difference is **fully explained**: three of the accepted Part I Tier-1 matches are the string `4.0`/`1.1` occurring **inside footnote-definition lines** (`chapter-02` line 363, `chapter-03` line 441, `chapter-10` line 519). **PASS-0 exclusion E5 removes lines beginning `[^key]:` in their entirety**, so these three cannot survive a correct E5. My own implementation reproduced 18 only while carrying two defects — a newline-collapsing mask and an E4 link-target pattern that spanned newlines and thereby defeated E5. **Both defects were found by the reflexive validation plan §6.3 mandates, and correcting them moved Part I from 18 to 15.** Code-fence divergence is a separate matter: §6.1 sets fenced content aside as a population but **never defines how its numerics are counted**, so the figure 186 is not derivable from the committed text. |
 | **Consequence** | Level 8's exit criterion — *every confirmed Tier-1 claim recomputed* — cannot be demonstrated complete for any batch whose Tier-1 population cannot be regenerated. **For L1 the impact is nil**: the population is small enough to enumerate exhaustively, and this review verified the **union** of both runs (23 items), a superset of both. Phase C4 recorded that a fresh classifier reproduced *all 36 census figures exactly*; that result did not reproduce here. |
 | **Recommended action** | Before **F-L3** — the first high-density batch — either publish the reference classifier implementation or specify E5 precedence and the code-fence counting rule in §6.1. **No architecture change was made by this task.** |
-| **Status** | **`CORRECTION APPLIED — PARTIALLY VERIFIED — AWAITING FRESH INDEPENDENT RE-ACCEPTANCE`** (Phase F-IR1 2026-08-16 · independently reviewed at F-IR3 · specification completed at F-IR4C 2026-08-17) |
+| **Status** | **`CLOSED`** — closed at **Phase F-IR4V3**, 2026-08-18, verification HEAD `250cfe7`. Prior states preserved below: correction applied at **F-IR1** (2026-08-16) · independently reviewed at **F-IR3** (verdict B) · specification completed at **F-IR4C** (2026-08-17) · E11 decomposition corrected at **F-IR4F** · independently verified and closed at **F-IR4V3** |
 | **Owner** | Review architecture owner |
-| **Revision trigger** | **Escalates to Class B — Review-Execution Blocker for F-L3, F-L4 and F-L5** if unresolved when those batches are authorised. **It is not a Class-B blocker for L1 or L2 and stopped neither batch.** |
-| **Verification** | `PARTIALLY VERIFIED` — **Phase F-IR3 (genuinely independent) confirmed the substantive population but not specification completeness; 25 PASS · 2 PARTIAL · 3 FAIL against its 30 closure conditions.** F-IR4C corrected the residual defects and, being a correction event, **does not close this finding** |
+| **Revision trigger** | **Escalates to Class B — Review-Execution Blocker for F-L3, F-L4 and F-L5** if unresolved when those batches are authorised. **It is not a Class-B blocker for L1 or L2 and stopped neither batch.** **Spent at F-IR4V3:** the finding is CLOSED, so this escalation can no longer trigger and **open Class-B Review-Execution Blockers remain 0** |
+| **Verification** | `VERIFIED` — **Phase F-IR4V3 (independent) returned 25 PASS · 0 FAIL against its Condition-35 closure table, completing Phase F-IR4 at 40 PASS · 0 PARTIAL · 0 FAIL.** Historical: F-IR3 confirmed the substantive population but not specification completeness (**25 PASS · 2 PARTIAL · 3 FAIL** against its 30 conditions); F-IR4C and F-IR4F were correction events and could not close this finding themselves |
 
 #### FE-L1-005 — root cause established at Phase F-IR1
 
@@ -247,7 +247,7 @@ Every finding records all of the following. A row missing any mandatory field is
 
 **Recomputed census.** Tier-1 **1,169** · Tier-2 **1,516** · code-fence **310** · inline-code **366** · words **651,161** unchanged. **Every §6.6 conclusion survives.**
 
-**Independent verification required.** The amended method is **not accepted**. **F-L3 must not be authorised** until a focused independent re-acceptance implements the corrected specification from its committed text, reproduces the recomputed census, re-tests the Part III discrepancy, and decides whether FE-L1-005 is CLOSED.
+**Independent verification required** *(requirement as recorded at F-IR1 — since satisfied; see the F-IR4V3 closure subsection below)*. The amended method is **not accepted**. **F-L3 must not be authorised** until a focused independent re-acceptance implements the corrected specification from its committed text, reproduces the recomputed census, re-tests the Part III discrepancy, and decides whether FE-L1-005 is CLOSED.
 
 #### FE-L1-005 — independent review at Phase F-IR3
 
@@ -286,7 +286,31 @@ Every finding records all of the following. A row missing any mandatory field is
 
 **No census figure changed** — 1,169 / 1,516 / 310 / 366 / 651,161 — and the **Tier-1/Tier-2 match population is byte-identical** (`c84fe3df…66e5`).
 
-**Closure still requires a fresh independent re-acceptance (F-IR4)** by an actor who authored none of F-IR1, F-IR1B or F-IR4C, implementing §6.1–§6.2 from the committed text alone, freezing results before opening the implementation, reproducing all four populations, and comparing match-level populations. **F-L3 remains blocked.**
+**Closure still requires a fresh independent re-acceptance (F-IR4)** by an actor who authored none of F-IR1, F-IR1B or F-IR4C, implementing §6.1–§6.2 from the committed text alone, freezing results before opening the implementation, reproducing all four populations, and comparing match-level populations. **F-L3 remains blocked.** *(Requirement as recorded at F-IR4C — since satisfied: F-IR4 returned 39 PASS · 1 FAIL, F-IR4F corrected the single remaining defect, and F-IR4V3 independently verified it. See the closure subsection below.)*
+
+#### FE-L1-005 — CLOSED at Phase F-IR4V3
+
+**Closure event.** **Phase F-IR4V3 — Independent Condition-35 Final Closure Verification.** **Verification HEAD `250cfe7`** (*fix(first-edition-review): correct final E11 occurrence decomposition*). **Read-only:** the verification made no repository change.
+
+| Closure field | Value |
+| --- | --- |
+| **Active disposition** | **`CLOSED`** |
+| **Closure event** | **F-IR4V3** |
+| **Verification HEAD** | `250cfe7` |
+| **Closure date** | 2026-08-18 |
+| **Closure consequence** | **F-L3 is no longer blocked by FE-L1-005**; the Class-B escalation on this row can no longer trigger |
+
+**Closure basis.** F-IR4V3 independently verified **Condition 35** — the last unresolved condition of Phase F-IR4 — returning **25 PASS · 0 FAIL**. Combined with the standing F-IR4 result on conditions 1–34 and 36–40, **Phase F-IR4 closes at 40 PASS · 0 PARTIAL · 0 FAIL**, and the **targeted quantitative architecture is RE-ACCEPTED**.
+
+**What was independently re-derived.** The reviewer authored no part of F-IR4F and did not rely on its arithmetic. The E11 population was re-derived from the committed manuscript through the committed pipeline and frozen before the active documentation was opened: **51** retained four-digit-year Tier-2 occurrences, decomposing as **43 numeric-construct occurrences across 10 distinct forms** and **8 alphanumeric-identifier occurrences across 8 distinct forms, each occurring exactly once** — `43 + 8 = 51`. All ten numeric multiplicities and all eight alphanumeric forms and loci reproduced exactly. The decomposition was confirmed **invariant** under three independent construct-boundary definitions, so it is not an artifact of the reviewer's classification choice.
+
+**CMU/SEI diagnostic reproduced.** `CMU/SEI-2000-TR-004` appears **6 times** textually; **5** sit on E5 footnote-definition lines that PASS 0 removes in full; **exactly 1** reaches Tier-2. This confirms the diagnosed cause of the superseded `40 + 11` split.
+
+**Governing property confirmed.** Across all 137 chapters, **no standalone prose year appears in Tier 1 or Tier 2** — 0 standalone occurrences of 51.
+
+**Immutability confirmed.** Manuscript digest `ec588eaa…f150a411` unchanged; **137 chapters — 127 `Draft`, 10 `Technical Review Ready`**; `tools/quantitative_census.py`, `QUALITY_GATES.md`, `RELEASE_POLICY.md` and `CHANGELOG.md` byte-identical; the active census remains **1,169 / 1,516 / 310 / 366 / 651,161**; the E11, Tier-2 and E9 normative rules are unchanged.
+
+**Boundary.** Closure of this finding makes **F-L3 technically ready for separate authorisation**. It does **not** authorise F-L3, and **F-L3 has not started**.
 
 ### FE-L1-006 — Tier-1 contamination in L1 is an order of magnitude above the accepted edition-wide rate
 

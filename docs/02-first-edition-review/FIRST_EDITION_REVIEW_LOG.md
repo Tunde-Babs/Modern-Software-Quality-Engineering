@@ -655,6 +655,68 @@ Every Part and batch figure is unchanged. The **Tier-1/Tier-2-only detail digest
 
 ---
 
+## Event FE-EV-009 — Phase F-IR4V3: Independent Condition-35 Final Closure Verification
+
+| Field | Value |
+| --- | --- |
+| **Event ID** | `FE-EV-009` |
+| **Date** | 2026-08-18 |
+| **Phase** | F-IR4V3 — independent closure verification of the last unresolved F-IR4 condition. **Not a manuscript review event** |
+| **Scope** | Condition 35 only — active quantitative documentation consistency for the E11 occurrence decomposition. **READ-ONLY:** the verification made no repository change. No chapter was read for review; no transversal ran |
+| **Score / verdict** | **A — CONDITION 35 INDEPENDENTLY VERIFIED · 25 PASS · 0 FAIL** against its 25-condition closure table |
+| **Verification HEAD** | `250cfe7` — *fix(first-edition-review): correct final E11 occurrence decomposition* |
+| **Trigger** | **FE-L1-005**, via the F-IR4 re-acceptance (39 PASS · 1 FAIL) and the F-IR4F correction |
+| **Reviewer independence** | **Satisfied.** The reviewer authored no part of F-IR4F, did not rely on its arithmetic as evidence, and re-derived the population from the manuscript before opening the active documentation |
+| **Baseline digest at START / END** | `ec588eaa…f150a411` / `ec588eaa…f150a411` — **matched both times; zero manuscript mutation** |
+| **Non-collapse note** | F-IR4V3 is a verification event. It closes FE-L1-005 and completes F-IR4; it is **not** an F-L3 authorisation and must not be collapsed with one |
+
+### 9.1 What was independently re-derived
+
+The E11 population was re-derived from the committed manuscript through the committed pipeline and **frozen before the active documentation was read**.
+
+| Measure | Independently derived | Claim under test | Result |
+| --- | --- | --- | --- |
+| Retained four-digit-year Tier-2 occurrences | **51** | 51 | ✅ |
+| Numeric-construct occurrences | **43** | 43 | ✅ |
+| Alphanumeric-identifier occurrences | **8** | 8 | ✅ |
+| Numeric distinct forms | **10** | 10 | ✅ |
+| Alphanumeric distinct forms | **8**, each ×1 | 8, each ×1 | ✅ |
+
+Numeric multiplicities reproduced exactly: `2026-03` ×17 · `2025-01` ×13 · `2026-08-10` ×4 · `2026-03-01` ×3 · `2024-06-01`, `2025-01-01`, `2026-01-10`, `2026-02-10`, `2026-02-15`, `2026-08-15` ×1 each. `17 + 13 + 4 + 3 + 1 + 1 + 1 + 1 + 1 + 1 = 43`, and **`43 + 8 = 51`**.
+
+The eight alphanumeric forms and their loci reproduced exactly: `CMU/SEI-2000-TR-004` · `v2026-03` · `v2025-01` · `v2026-03-EU` · `v2026-03-US` · `v2026-02-P` · `archive-2024` · `fulfilment-2026-02`.
+
+**The decomposition is invariant** under three independent construct-boundary definitions, so it is not an artifact of the reviewer's classification choice.
+
+### 9.2 Diagnostic and governing property
+
+**CMU/SEI diagnostic reproduced.** `CMU/SEI-2000-TR-004` appears **6 times** textually; **5** sit on E5 footnote-definition lines removed in full by PASS 0; **exactly 1** reaches Tier-2. This confirms the diagnosed cause of the superseded `40 + 11` split.
+
+**Governing property confirmed.** Across all 137 chapters, **no standalone prose year appears in Tier 1 or Tier 2** — 0 standalone occurrences of 51, and 0 standalone bare years among Tier-1 candidates. Every retained year belongs to a larger hyphen- or slash-separated construct.
+
+**Documentation consistency confirmed.** `43 + 8` is the **only operational split**; `49 + 2`, `48 + 3` and `40 + 11` appear solely inside superseded/historical tables. Plan §6.1.1, plan §6.2 and ledger `NUM-IR3-02` all agree with the independently frozen result.
+
+**Normative rules unchanged.** The E11 regex, the Tier-2 regex and the E9 designator rule are byte-identical across F-IR4F; **zero E9 lines were touched**, so F-IR4V2's E9 result carries forward unre-run.
+
+### 9.3 Status after this event
+
+| Item | Value |
+| --- | --- |
+| Condition 35 | **PASS** |
+| Phase F-IR4 | **FINAL — 40 PASS · 0 PARTIAL · 0 FAIL** |
+| FE-L1-005 | **CLOSED** |
+| Targeted quantitative architecture | **A — RE-ACCEPTED** |
+| Architecture, all other sections | Accepted at C4, unchanged |
+| Open Class-B blockers | **0** |
+| L1, L2 | COMPLETE, unchanged, 56/137 · L3–L5 and T1–T6 not started |
+| Manuscript mutations · corrections applied | **0** · **0** |
+| Active census | Tier-1 **1,169** · Tier-2 **1,516** · code-fence **310** · inline-code **366** · words **651,161** — unchanged |
+
+**Next authorised activity:** **Phase F-L3 — Longitudinal First Edition Review, Parts VI–VIII.** **F-L3 is TECHNICALLY READY FOR SEPARATE AUTHORISATION** — it is **NOT STARTED** and **NOT AUTHORISED by this event**. Authorisation is a separate owner decision.
+
+
+---
+
 ## 3. Manuscript-mutation control (plan §13.4 drift discipline, applied to Phase F)
 
 **Rule.** The 137 chapter blobs recorded in §2.5 constitute the Phase F review-execution baseline. **Manuscript chapters must remain unmodified for the duration of Phase F.**
@@ -688,7 +750,8 @@ git ls-files -s book | awk '$4 ~ /chapters\/chapter-.*\.md$/ {print $4":"$2}' | 
 | `FE-EV-006` | 2026-08-16 | F-IR1 | Quantitative review-instrument remediation · census recomputed · FE-L1-005 correction applied | **`UNSCORED`** — correction event |
 | `FE-EV-007` | 2026-08-17 | F-IR3 | Genuinely independent quantitative instrument closure review · 2,685 match rows reproduced · specification found not implementation-complete | **B — PARTIALLY VERIFIED** · 25 PASS / 2 PARTIAL / 3 FAIL |
 | `FE-EV-008` | 2026-08-17 | F-IR4C | Quantitative specification completeness and candidate traceability correction · all four populations enumerable · census unchanged | **`UNSCORED`** — correction event |
+| `FE-EV-009` | 2026-08-18 | F-IR4V3 | Independent Condition-35 final closure verification · E11 decomposition re-derived at `43 + 8 = 51` · FE-L1-005 CLOSED · F-IR4 final 40/40 | **A — CONDITION 35 VERIFIED** · 25 PASS / 0 FAIL |
 
 ---
 
-**Last Updated:** 2026-08-17 (F-IR4C)
+**Last Updated:** 2026-08-18 (F-IR4V3)

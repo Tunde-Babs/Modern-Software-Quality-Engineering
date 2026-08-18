@@ -772,4 +772,19 @@ All fifteen Phase E closure conditions pass. **E-02, E-03, E-04, E-10 and E-15 r
 
 **Status:** Specification completed and candidate traceability delivered; fresh independent re-acceptance required before F-L3
 
-**Last Updated:** 2026-08-17
+---
+
+## 2026-08-18 — Phase F-IR4V3: Independent Condition-35 Final Closure Verification
+
+- **A verification event, read-only, and the closure of the quantitative-instrument workstream.** No tracked file was modified by the verification itself. Recorded as event `FE-EV-009`, at HEAD `250cfe7`. **Independence satisfied:** the reviewer authored no part of F-IR4F and did not rely on its arithmetic as evidence.
+- **The prior chain.** **F-IR4** performed the fresh independent re-acceptance and returned **39 PASS · 0 PARTIAL · 1 FAIL**, the single failure being **Condition 35 — active quantitative documentation consistency**. **F-IR4V2** independently established that the instrument is intact, that **E9 is correct** (removing `\b` alone produces **0 Tier-2 movement**), that the **E11 total is 51**, and that the sole remaining defect was the **active E11 decomposition**. **F-IR4F** then corrected that decomposition.
+- **The decomposition was re-derived, not confirmed.** The E11 population was derived from the committed manuscript through the committed pipeline and **frozen before the active documentation was opened**: **51** retained four-digit-year Tier-2 occurrences, decomposing as **43 numeric-construct occurrences across 10 distinct forms** and **8 alphanumeric-identifier occurrences across 8 distinct forms, each occurring exactly once** — **`43 + 8 = 51`**. All ten numeric multiplicities and all eight alphanumeric forms and loci reproduced exactly, and the split proved **invariant under three independent construct-boundary definitions**, so it is not an artifact of the reviewer's classification choice.
+- **The CMU/SEI diagnostic reproduced**, confirming the diagnosed cause of the superseded `40 + 11` split: `CMU/SEI-2000-TR-004` appears **6 times** textually, **5** sit on E5 footnote-definition lines that PASS 0 removes in full, and **exactly 1** reaches Tier-2. The **governing property holds** — across all 137 chapters **no standalone prose year appears in Tier 1 or Tier 2**.
+- **Documentation is consistent and the rules are untouched.** `43 + 8` is the **only operational split**; `49 + 2`, `48 + 3` and `40 + 11` survive solely inside superseded/historical tables. The **E11 regex, the Tier-2 regex and the E9 designator rule are byte-identical** across F-IR4F, which touched **zero E9 lines**.
+- **Verdict: A — CONDITION 35 INDEPENDENTLY VERIFIED. Closure table 25 PASS · 0 FAIL.** Therefore **Phase F-IR4 is FINAL at 40 PASS · 0 PARTIAL · 0 FAIL**; **FE-L1-005 is CLOSED**; the **targeted quantitative architecture is RE-ACCEPTED (verdict A)**; **open Class-B Review-Execution Blockers = 0**.
+
+**Outcome:** The quantitative review instrument is finished — specified, implemented, enumerable, independently re-accepted and now independently closed. **Manuscript integrity held** — digest `ec588eaa…f150a411` matched at both ends, zero chapters and zero Part READMEs modified, and `tools/quantitative_census.py`, `QUALITY_GATES.md`, `RELEASE_POLICY.md` and `CHANGELOG.md` are byte-identical. The active census is unchanged at **1,169 / 1,516 / 310 / 366 / 651,161**. **`v0.16.0` remains planned and unreleased; `v0.15.0` remains the latest stable release.** **Phase F remains IN EXECUTION at 56 of 137 chapters.**
+
+**Status:** Quantitative instrument remediation CLOSED; F-IR4 final 40/40; FE-L1-005 CLOSED; **F-L3 technically ready for separate authorisation — NOT STARTED and NOT AUTHORISED**
+
+**Last Updated:** 2026-08-18
