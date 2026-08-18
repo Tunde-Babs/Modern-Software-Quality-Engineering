@@ -514,11 +514,55 @@ Start-of-text and end-of-text satisfy conditions 2 and 3 respectively.
 >
 > **Retention by E11 does not imply admission to Tier-2.** E11 and the Tier-2 rule (§6.2) are independent gates that happen to share a boundary principle. A year such as `2018.` is retained here because its right neighbour is numeric punctuation, and is then **rejected by the Tier-2 rule for exactly the same reason** — so it reaches **neither tier**. F-IR3 established that the earlier wording of this note, which asserted that such years "therefore reach Tier-2", stated a mechanism that does not occur.
 >
-> **Measured across all 137 chapters the consequence costs nothing.** Of the **51** four-digit years that do reach Tier-2, **40 are embedded in a numeric construct** (ISO dates, version strings) and the remaining **11 are embedded in alphanumeric identifiers** — all of which a human should triage. **40 + 11 = 51.** Every one is hyphen- or slash-separated, which is why the Tier-2 rule admits it. **No standalone prose year appears in Tier 1 or Tier 2.** The consequence is recorded because it is a property of the rule, not because it has an observed cost.
+> **Measured across all 137 chapters the consequence costs nothing.** Of the **51** four-digit years that do reach Tier-2, **43 are embedded in a numeric construct** (ISO dates, version strings) and the remaining **8 are embedded in alphanumeric identifiers** — all of which a human should triage. **43 + 8 = 51.** Every one is hyphen- or slash-separated, which is why the Tier-2 rule admits it. **No standalone prose year appears in Tier 1 or Tier 2.** The consequence is recorded because it is a property of the rule, not because it has an observed cost.
 >
-> **Counting basis — normative. These are candidate OCCURRENCES, not distinct lexical forms.** The two are different objects and must never be interchanged. The 11 alphanumeric occurrences span **six** distinct forms — `archive-2024`, `fulfilment-2026-02`, `v2026-02-P`, `v2026-03-EU`, `v2026-03-US` and `CMU/SEI-2000-TR-004` — and **do not occur once each**. The 40 numeric occurrences span **seven** distinct ISO-date and version forms. This is the same occurrence basis §6.2.1 fixes for every census figure.
+> **Counting basis — normative. These are Tier-2 candidate OCCURRENCES, not distinct lexical forms and not raw textual occurrences.** The three are different objects and must never be interchanged. A figure on this basis counts only what **survives PASS 0 and Tier-1 removal and is emitted as a Tier-2 candidate**; it never counts a token that E5 or any other exclusion removed before Tier-2 was reached. This is the same occurrence basis §6.2.1 fixes for every census figure.
 >
-> **Superseded decomposition — historical, must not be used operationally.** The split previously stated here (**48 numeric + 3 alphanumeric**) and the split recorded at ledger NUM-IR3-02 (**49 + 2**) are both incorrect: each counted distinct lexical forms against a denominator of occurrences, and each omitted the three `v2026-*` forms entirely. **The total 51 was correct throughout.** Corrected at **F-IR4E** on the independent occurrence-based measurement established at F-IR4. **No census figure changes, the E11 predicate and regular expression are unchanged, and no classifier behaviour changes** — the correction is to the decomposition only.
+> **The 8 alphanumeric occurrences span 8 distinct forms, each occurring exactly once in the Tier-2 population:**
+>
+> | # | Form | Tier-2 occurrences | Locus |
+> | --- | --- | --- | --- |
+> | 1 | `CMU/SEI-2000-TR-004` | 1 | Part XI · `chapter-01-system-design-architecture-as-quality-engineering.md` L370 |
+> | 2 | `v2026-03` | 1 | Part IX · `chapter-07-retrieval-augmented-generation-quality.md` L118 |
+> | 3 | `v2025-01` | 1 | Part IX · `chapter-07-retrieval-augmented-generation-quality.md` L119 |
+> | 4 | `v2026-03-EU` | 1 | Part IX · `chapter-07-retrieval-augmented-generation-quality.md` L120 |
+> | 5 | `v2026-03-US` | 1 | Part IX · `chapter-07-retrieval-augmented-generation-quality.md` L121 |
+> | 6 | `v2026-02-P` | 1 | Part IX · `chapter-07-retrieval-augmented-generation-quality.md` L122 |
+> | 7 | `archive-2024` | 1 | Part IX · `chapter-07-retrieval-augmented-generation-quality.md` L123 |
+> | 8 | `fulfilment-2026-02` | 1 | Part IX · `chapter-07-retrieval-augmented-generation-quality.md` L125 |
+>
+> **8 forms · 8 occurrences.** Because every form occurs exactly once here, forms and occurrences happen to coincide on the alphanumeric side of this edition — a coincidence of the current manuscript, **not** a licence to treat the two as the same object anywhere else.
+>
+> **The 43 numeric occurrences span 10 distinct ISO-date and version forms**, and these do **not** occur once each:
+>
+> | Form | Tier-2 occurrences |
+> | --- | --- |
+> | `2026-03` | 17 |
+> | `2025-01` | 13 |
+> | `2026-08-10` | 4 |
+> | `2026-03-01` | 3 |
+> | `2024-06-01` | 1 |
+> | `2025-01-01` | 1 |
+> | `2026-01-10` | 1 |
+> | `2026-02-10` | 1 |
+> | `2026-02-15` | 1 |
+> | `2026-08-15` | 1 |
+> | **Total** | **43** |
+>
+> `17 + 13 + 4 + 3 + 1 + 1 + 1 + 1 + 1 + 1 = 43`, and `43 + 8 = 51`.
+>
+> **Worked diagnostic — why a textual occurrence is not a Tier-2 occurrence.** `CMU/SEI-2000-TR-004` appears **6 times** in the manuscript text. **5 of those 6 sit on E5 footnote-definition lines**, which PASS 0 removes in their entirety, so they never enter the Tier-2 population at all. **Exactly 1 reaches Tier-2** — the prose reference at Part XI `chapter-01` L370. Counting the raw 6 against a denominator of Tier-2 occurrences is what produced the superseded alphanumeric figure below. **This is a diagnostic about counting, not a classifier rule**: E5 already behaves this way and is unchanged.
+>
+> **Superseded decompositions — historical, must not be used operationally.** Three earlier splits of this same 51 are on record and **all three are wrong**:
+>
+> | Split | Recorded at | Status | Why it was wrong |
+> | --- | --- | --- | --- |
+> | **49 + 2** | F-IR3, ledger NUM-IR3-02 | **SUPERSEDED — non-operational** | Counted distinct lexical forms against a denominator of occurrences; enumerated only `archive-2024` and `CMU/SEI-2000-TR-004`, omitting five further alphanumeric forms |
+> | **48 + 3** | plan §6.1.1, introduced at commit `8fd5899` | **SUPERSEDED — non-operational** | Same form-versus-occurrence conflation; omitted the four `v2026-*` forms and `v2025-01` |
+> | **40 + 11** | F-IR4E, plan §6.1.1 · §6.2 · ledger NUM-IR3-02 | **SUPERSEDED AT F-IR4F — non-operational** | Stated the occurrence basis correctly but did not apply it: the alphanumeric side counted all **6 raw textual** occurrences of `CMU/SEI-2000-TR-004`, of which 5 are E5-removed, and the numeric side was then obtained by subtraction (`51 − 11`) rather than measured. It also omitted `v2026-03` and `v2025-01` from its six-form list |
+> | **43 + 8** | **F-IR4F** | **ACTIVE — the only operational split** | Measured directly on the Tier-2 candidate population emitted by the canonical implementation |
+>
+> **The total 51 was correct throughout**; only the decomposition moved. Corrected at **F-IR4F** on the independent occurrence-based measurement established at **F-IR4V2**. **No census figure changes, the E11 predicate and regular expression are unchanged, the Tier-2 rule is unchanged, and no classifier behaviour changes** — the correction is to the decomposition only. **F-IR4F does not verify itself**; this correction awaits independent condition-35 verification.
 
 **Interaction with other exclusions.**
 
@@ -679,7 +723,7 @@ Start-of-text and end-of-text satisfy conditions 2 and 3 respectively. **The bou
 
 > **Why numeric punctuation bounds a Tier-2 candidate.** A digit run touching a `.` or a `,` is a **fragment of a larger numeric construct**, not a bare integer. Admitting the fragment would put a number into the review population that appears in no source sentence — the same failure class §6.1.1 rejects for E11. Hyphens and slashes are excluded from the boundary set because a hyphen- or slash-separated construct is a *sequence of distinct integers* — an ISO date, a report number — each of which a human should see.
 
-> **Relationship to E11 — this reconciles the §6.1.1 bounded consequence.** E11 and the Tier-2 rule are **two independent gates**, and retention by the first does not imply admission by the second. A year followed by `.` or `,` is **retained by E11** because its right neighbour is numeric punctuation, and is then **rejected by the Tier-2 rule** for exactly the same reason. Such a year therefore reaches **neither tier**. The 51 four-digit years that do reach Tier-2 are precisely those embedded in hyphen or slash constructs — **40 occurrences** in ISO-date and version forms, plus **11 occurrences** across the six alphanumeric identifiers enumerated at §6.1.1 (`archive-2024`, `fulfilment-2026-02`, `v2026-02-P`, `v2026-03-EU`, `v2026-03-US`, `CMU/SEI-2000-TR-004`). **These are occurrences, not distinct forms; 40 + 11 = 51.** **No standalone prose year appears in either tier**, which is the property §6.1.1 asserts; the mechanism is the pair of gates, not E11 alone.
+> **Relationship to E11 — this reconciles the §6.1.1 bounded consequence.** E11 and the Tier-2 rule are **two independent gates**, and retention by the first does not imply admission by the second. A year followed by `.` or `,` is **retained by E11** because its right neighbour is numeric punctuation, and is then **rejected by the Tier-2 rule** for exactly the same reason. Such a year therefore reaches **neither tier**. The 51 four-digit years that do reach Tier-2 are precisely those embedded in hyphen or slash constructs — **43 occurrences** in ISO-date and version forms, plus **8 occurrences** across the eight alphanumeric identifiers enumerated at §6.1.1. **These are Tier-2 candidate occurrences, not distinct lexical forms and not raw textual occurrences; 43 + 8 = 51.** §6.1.1 carries the full decomposition, the per-form multiplicities and the superseded splits; this locus states the totals only and must not restate the basis differently. **Corrected at F-IR4F.** **No standalone prose year appears in either tier**, which is the property §6.1.1 asserts; the mechanism is the pair of gates, not E11 alone.
 
 **Code-fence numerics are a separate population.** They are counted separately, reviewed where technically relevant, and are **neither Tier 1 nor Tier 2**.
 
