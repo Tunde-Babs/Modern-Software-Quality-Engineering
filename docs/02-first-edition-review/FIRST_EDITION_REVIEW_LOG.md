@@ -752,6 +752,10 @@ git ls-files -s book | awk '$4 ~ /chapters\/chapter-.*\.md$/ {print $4":"$2}' | 
 | `FE-EV-008` | 2026-08-17 | F-IR4C | Quantitative specification completeness and candidate traceability correction · all four populations enumerable · census unchanged | **`UNSCORED`** — correction event |
 | `FE-EV-009` | 2026-08-18 | F-IR4V3 | Independent Condition-35 final closure verification · E11 decomposition re-derived at `43 + 8 = 51` · FE-L1-005 CLOSED · F-IR4 final 40/40 | **A — CONDITION 35 VERIFIED** · 25 PASS / 0 FAIL |
 
+> **Note on the FE-EV-008 → FE-EV-009 sequence — this is not a lost record.** Three quantitative-instrument events occurred between them — **F-IR4** (fresh independent re-acceptance, 39 PASS · 0 PARTIAL · 1 FAIL), **F-IR4V2** (independent verification establishing that the instrument is intact, that E9 is correct and that the E11 total is 51) and **F-IR4F** (the E11 occurrence-decomposition correction, commit `250cfe7`) — and **none was written to this log at the time it happened.** Their outcomes are recorded in the **plan §16 phase-history table**, and `FE-EV-009` states the chain it closes.
+>
+> **No standalone `FE-EV` events were created for them retroactively.** This log is **append-only**, and a historical event may not be reconstructed after the fact without its original evidence — reviewer identity, date, baseline digests at start and end, method, and scored verdict. Manufacturing those fields to fill a numbering gap would fabricate review evidence, which plan §11 forbids. **Event IDs are assigned in strict ascending order and never reused**, so the sequence is correct as it stands; the gap is a record of how the events were logged, not of what occurred.
+
 ---
 
 **Last Updated:** 2026-08-18 (F-IR4V3)
