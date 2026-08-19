@@ -7,14 +7,14 @@
 | **Document type** | Review artefact 2 of 4 — **Defects** |
 | **Authority** | [`FIRST_EDITION_REVIEW_PLAN.md`](FIRST_EDITION_REVIEW_PLAN.md) §13.1 |
 | **Lifecycle** | Mutable, Phases F→J |
-| **State** | **Longitudinal axis COMPLETE — F-L1…F-L5 all complete, 137/137 chapters inspected, 22 findings recorded (Parts I–XII). All six transversals T1–T6 NOT started; Phase F is NOT complete.** FE-L1-005 independently reviewed at **F-IR3** (verdict B), corrected at **F-IR4C** and **F-IR4F**, and **CLOSED at F-IR4V3** on independent verification of Condition 35; **F-L3 is no longer blocked by it**. No new finding ID was raised by any of those events |
+| **State** | **Longitudinal axis COMPLETE (137/137). Transversal T3 COMPLETE — the full 1,516-candidate Tier-2 population classified. 23 findings recorded. T1, T2, T4, T5 and T6 NOT started; Phase F is NOT complete.** FE-L1-005 independently reviewed at **F-IR3** (verdict B), corrected at **F-IR4C** and **F-IR4F**, and **CLOSED at F-IR4V3** on independent verification of Condition 35; **F-L3 is no longer blocked by it**. No new finding ID was raised by any of those events |
 | **Owner** | Tunde Ajala |
 
 > This is a **governance artefact**, not a manuscript chapter. It carries no chapter-style status.
 
-> **Findings recorded to date: 22 — 7 from F-L1 (Parts I–II), 5 from F-L2 (Parts III–V), 5 from F-L3 (Parts VI–VIII), 2 from F-L4 (Parts IX–X) and 3 from F-L5 (Parts XI–XII).** No transversal has run. Severity distribution: **P0 = 0 · P1 = 5 · P2 = 3 · P3 = 14.** Blocker classes: **A = 0 · B = 0 · C = 22 · D = 0.**
+> **Findings recorded to date: 23 — 7 from F-L1 (Parts I–II), 5 from F-L2 (Parts III–V), 5 from F-L3 (Parts VI–VIII), 2 from F-L4 (Parts IX–X), 3 from F-L5 (Parts XI–XII) and 1 from F-T3 (edition-wide transversal).** **One transversal (T3) has run; five have not.** Severity distribution: **P0 = 0 · P1 = 5 · P2 = 3 · P3 = 15.** Blocker classes: **A = 0 · B = 0 · C = 23 · D = 0.**
 >
-> **Three of the five L2 findings are additional instances of existing systemic groups and carry NO separate deduction** (plan §7.3 systemic root-cause rule). **Four of the five L3 findings likewise join existing systemic groups** — `SYS-LIFECYCLE-DRIFT`, `SYS-ORPHAN-FOOTNOTE`, `SYS-TIER1-IDENTIFIER` and `SYS-TEMPLATE-NAMING` — and carry no separate deduction; only **FE-L3-003** is a new root cause. **Both F-L4 findings join existing systemic groups** — `SYS-LIFECYCLE-DRIFT` and `SYS-TEMPLATE-NAMING` — and carry no separate deduction; **F-L4 raised no new root cause**. **All three F-L5 findings likewise join existing groups** — `SYS-LIFECYCLE-DRIFT`, `SYS-TEMPLATE-NAMING` and `SYS-TIER1-IDENTIFIER` — and **F-L5 raised no new root cause**. Distinct deducting findings across the whole longitudinal axis: **10**.
+> **Three of the five L2 findings are additional instances of existing systemic groups and carry NO separate deduction** (plan §7.3 systemic root-cause rule). **Four of the five L3 findings likewise join existing systemic groups** — `SYS-LIFECYCLE-DRIFT`, `SYS-ORPHAN-FOOTNOTE`, `SYS-TIER1-IDENTIFIER` and `SYS-TEMPLATE-NAMING` — and carry no separate deduction; only **FE-L3-003** is a new root cause. **Both F-L4 findings join existing systemic groups** — `SYS-LIFECYCLE-DRIFT` and `SYS-TEMPLATE-NAMING` — and carry no separate deduction; **F-L4 raised no new root cause**. **All three F-L5 findings likewise join existing groups** — `SYS-LIFECYCLE-DRIFT`, `SYS-TEMPLATE-NAMING` and `SYS-TIER1-IDENTIFIER` — and **F-L5 raised no new root cause**. Distinct deducting findings across the whole longitudinal axis: **10**. **F-T3 adds one new root cause — FE-T3-001 — which deducts in its own right**, bringing distinct deducting findings to **11**.
 
 ---
 
@@ -723,6 +723,43 @@ These are **not** manuscript findings and **do not** appear in the register abov
 
 **FE-L1-002 (Part I chapter status)** — unchanged. All 24 L5 chapters carry `Status: Draft`, conforming to the plan §2.3 model. **With L5 complete, the status model has now been verified across all 137 chapters: 127 `Draft` and 10 `Technical Review Ready`, matching the F0 baseline exactly.**
 
+### FE-T3-001 — Two written forms of unit and percentage quantities fall outside the Tier-1 class definitions
+
+| Field | Value |
+| --- | --- |
+| **Phase / transversal** | Phase F · transversal **T3** (Level 8) |
+| **Part / path** | Edition-wide — **11 of 12 Parts** (all but Part IV for the unit form) |
+| **Review level** | Level 8 — numerical and analytical integrity |
+| **Defect class** | Specification coverage gap: a quantity-bearing form the Tier-1 grammar does not admit |
+| **PRIMARY category** | **4 — Numerical / analytical integrity** |
+| **Secondary** | 8 — Governance integrity (instrument specification) |
+| **Severity** | **P3** |
+| **Blocker class** | **C — Final-Gate Blocker** |
+| **Systemic group** | **New root cause — does not join `SYS-TIER1-IDENTIFIER`.** That group concerns identifiers *wrongly admitted* to Tier-1; this finding concerns genuine quantities *not admitted*. The two are opposite directions of error and must not be merged or double-deducted |
+| **Finding** | Edition-wide classification of the complete 1,516-candidate Tier-2 population identifies **64 occurrences that are genuine unit- or percentage-bearing quantities**, surfaced as Tier-2 residue rather than Tier-1 candidates. Two written forms are responsible. **(a) Hyphenated units — 57 occurrences.** The `unit` class is `\d[\d,]*(?:\.\d+)?\s?(?:…units…)\b`, whose separator is `\s?` — an optional *single space*. A hyphen does not match, so `90-day`, `48-hour`, `30-minute`, `200-millisecond` and `600-second` are not admitted. **(b) Percentage spelled as a word — 7 occurrences.** The `pct` class requires a literal `%`, so `98 percent`, `95 percent`, `80 percent`, `70 percent`, `20 percent` and `100 percent` are not admitted. |
+| **Evidence** | Derived mechanically from the complete Tier-2 population with **true character offsets**, so each occurrence is bound to its own position. Unit forms used: `day` 20 · `minute` 18 · `second` 14 · `hour` 3 · `millisecond` 2 = **57**. Per Part: XI 19 · VIII 14 · VII 7 · III 5 · X 5 · V 4 · II 3 · IX 2 · XII 2 · I 1 · IV 1 · VI 1 = **64**. **This is not an implementation defect.** `tools/quantitative_census.py` matches its specification exactly; plan §6.2.0 states the single-whitespace separator rule deliberately. The gap is in the **class definition**, not the code. |
+| **Materiality — deliberately assessed, not assumed** | **Low, and no manuscript error results.** The 64 occurrences are overwhelmingly **stated scenario parameters** (a 30-minute observation window, a 48-hour grace period, a 90-day plan), not derived results requiring recomputation. **Every occurrence was nevertheless captured**: Tier-2 is a reviewed population, and all five batches triaged it. The only two that carry verifiable arithmetic were **recomputed by T3 and are correct** — Part X ch10's triage shares (`7 ÷ 12 = 58.3%`, `3 ÷ 12 = 25.0%`, `2 ÷ 12 = 16.7%`, summing to **100.0%** as the text claims, over a reconciling denominator of 12) and Part V's browser shares (`70 + 20 + 8 + 2 = 100`). **No quantitative claim in the edition is unverified as a result of this gap.** |
+| **Secondary observation — not a separate finding** | Part X ch10's three share computations are written as a table with the method in one column and the result in another, with **no `=` on the line**, and both operands sit inside inline-code spans. They therefore reached neither Tier-1 (E2 routes them to the inline-code population) nor the longitudinal batches' `=`-keyed arithmetic sweep. **T3 recomputed them; they are correct.** Recorded here so the pattern is visible to a future instrument revision. |
+| **Consequence** | Tier-1 under-reports unit- and percentage-bearing quantities by up to 64 across the edition — about **5.5%** of the 1,169 Tier-1 population had it admitted them. The census figures remain exactly as specified and reproducible; no published total is wrong. The practical effect is that these quantities receive Tier-2 triage rather than Tier-1 adjudication. |
+| **Recommended action** | **No change to the instrument under this task** — a classifier change requires separate authorisation (T3 §9). For a future instrument revision, widening the `unit` separator to `[\s-]?` and adding a spelled-out `percent` alternative to `pct` would close both forms. **Any such change re-baselines the census and must be independently re-accepted**, exactly as the FE-L1-005 remediation was. |
+| **Status** | `OPEN` · **Owner** Review architecture owner |
+| **Revision trigger** | Escalate to **P2** if a future batch, transversal or correction pass finds that a **decision-bearing derived result** — rather than a stated parameter — was left unverified by this gap. T3 found none. |
+| **Verification** | `NOT VERIFIED` |
+
+---
+
+## 5D. Standing-finding evidence recorded by F-T3
+
+**FE-L1-005 (review-instrument reproducibility) — remains CLOSED; strengthened.** T3 re-derived the complete 1,516-candidate Tier-2 population directly from the committed instrument and reconciled it exactly against plan §5.2 and §6.4 at edition, batch and Part level. **The instrument was neither modified nor re-reviewed**, per the T3 operating mode.
+
+**FE-L1-006 / `SYS-TIER1-IDENTIFIER` — STANDS; escalation trigger NOT met.** Its trigger reads *"reconsider C4-1's acceptance if a later sparse batch shows a comparable local contamination rate."* Tier-1 identifier contamination by batch: **L1 6/23 = 26.09% · L3 1/302 = 0.33% · L4 0/379 = 0.00% · L5 2/449 = 0.45%.** **No later batch approaches L1's rate**, and the edition-wide rate excluding L1 is **3 of 1,130 = 0.27%**. The group is confirmed as a sparse-batch artefact, not an edition-wide defect. **FE-L3-004 and FE-L5-003 both STAND unchanged at P3.**
+
+**ARC-C3-5 (plan §6.2.4 accepted architecture observation) — rationale independently re-verified at edition scale.** Its trigger reads *"if any bare 1900–2099 quantity appears in manuscript text outside a calendar or date context, re-test E11 and narrow it."* A search of all 137 chapters for a bare 1900–2099 number followed by a quantity noun returns **zero instances**, reproducing the rationale recorded when the observation was accepted. **Trigger NOT met; E11 requires no narrowing.**
+
+**FE-L3-003 (Atlas identifier collision) — STANDS at P3; outside T3's scope.** Its trigger is bound to namespace reuse and to **T5**, which has not run. T3 records no new evidence bearing on it.
+
+**Tier-2 behaves as the architecture intends.** Across the edition, **51.1%** of Tier-2 is identifier-class residue (B + C + D) and **43.1%** is bare-integer quantity residue (F). Plan §6.2.4 defines Tier-2 precisely as the bounded residue that makes completeness provable at candidate level while leaving claimhood to review judgement. **The presence of identifiers in Tier-2 is the design working, not a defect, and no instrument change is warranted on that basis.**
+
 ---
 
 ## 5. Standing-finding evidence recorded by F-L2
@@ -733,4 +770,4 @@ These are **not** manuscript findings and **do not** appear in the register abov
 
 ---
 
-**Last Updated:** 2026-08-19 (F-L5)
+**Last Updated:** 2026-08-19 (F-T3)

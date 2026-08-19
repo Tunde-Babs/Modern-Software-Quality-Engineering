@@ -857,6 +857,52 @@ The eight alphanumeric forms and their loci reproduced exactly: `CMU/SEI-2000-TR
 
 ---
 
+## Event FE-EV-016 — Phase F-T3: Tier-2 Quantitative Transversal START
+
+| Field | Value |
+| --- | --- |
+| **Event ID** | `FE-EV-016` |
+| **Date** | 2026-08-19 |
+| **Phase** | F — **T3**, the first transversal to run. Level 8, Tier-2 object |
+| **Scope** | The complete edition-wide **Tier-2 population as one transversal object** — all 137 chapters, all 12 Parts. **Not** a manuscript review event and **not** an instrument review |
+| **Score / verdict** | START, no verdict |
+| **Baseline digest at START** | `ec588eaa…f150a411` — **matches the F0 baseline** |
+| **Tier-2 population** | **1,516** — reconciled against plan §5.2, the verification ledgers and the canonical tool before classification. Batches L1 29 · L2 95 · L3 198 · L4 600 · L5 594 |
+| **Longitudinal evidence available** | Batch-local Tier-2 triage recorded at `NUM-L3-T2`, `NUM-L4-T2`, `NUM-L5-T2`; complete Tier-1 adjudication (1,169/1,169) across L1–L5 |
+| **Standing numerical findings** | FE-L1-005 (CLOSED) · FE-L1-006 / `SYS-TIER1-IDENTIFIER` · FE-L3-004 · FE-L5-003 · ARC-C3-5 (plan §6.2.4) · FE-L3-003 (T5-bound) |
+| **Open Class-B Review-Execution Blockers** | **0** |
+| **Operating constraint** | The instrument is **CLOSED and RE-ACCEPTED**. T3 uses it and does not review, modify or redesign it. **A classifier change requires separate authorisation** |
+
+---
+
+## Event FE-EV-017 — Phase F-T3: Tier-2 Quantitative Transversal COMPLETE
+
+| Field | Value |
+| --- | --- |
+| **Event ID** | `FE-EV-017` |
+| **Date** | 2026-08-19 |
+| **Phase** | F — **T3** COMPLETE (Tier-2 object) |
+| **Scope** | **1,516 / 1,516 candidates classified**, edition-wide, no sampling |
+| **Score / verdict** | **`UNSCORED`** — plan §7.3 defines no transversal score. Evidence-only |
+| **Baseline digest at START / END** | `ec588eaa…f150a411` / `ec588eaa…f150a411` — **matched both times; zero manuscript mutation** |
+| **Classification** | **A** missed Tier-1 claim **64** · **B** date/time/version **150** · **C** alphanumeric identifier **477** · **D** structural reference **147** · **E** calendar/sequence **14** · **F** numeric residue **654** · **G** authoring/metadata **10** · **H** other **0**. **Total 1,516 — reconciles exactly** |
+| **Primary control — missed-claim test** | **64 genuine Tier-1 false negatives found** in two written forms: **hyphenated units (57)** rejected by the `unit` class's single-space separator, and **percentage spelled as a word (7)** rejected by the `pct` class's literal-`%` requirement. Recorded as **FE-T3-001**, a **new root cause** |
+| **Materiality** | **Low; no manuscript error.** The 64 are overwhelmingly stated scenario parameters, and all were captured by Tier-2 triage. The only two carrying verifiable arithmetic were **recomputed by T3 and are correct** — Part X ch10's triage shares summing to 100.0% over a reconciling denominator of 12, and Part V's browser shares summing to 100. **No quantitative claim in the edition is left unverified by this gap** |
+| **Occurrence semantics** | Candidates bound to **true character offsets**, which proved load-bearing: at IV L93 and X L58 the same text `95` denotes a percentile designator at one column and a spelled-out percentage at another. Text-only matching under-counted category A by 2; positional binding corrected 62 → **64**. **No distinct-form / occurrence conflation** — the E11 lesson applied |
+| **Triage reconciliation** | Drift against batch-local triage: **L3 −1 · L4 −65 · L5 −266** claim-candidates reclassified as identifiers. **Expected and by design** — every batch row recorded *"triage only… T3 NOT CHECKED"*, so no batch claimed authority. T3 supplies edition-wide pattern knowledge no single batch had. **Historical rows remain immutable** |
+| **Escalation triggers evaluated** | **ARC-C3-5 — NOT MET**: zero bare 1900–2099 quantities outside a date context across all 137 chapters, independently reproducing the accepted rationale; E11 requires no narrowing. **FE-L1-006 — NOT MET**: contamination L1 26.09% vs L3 0.33%, L4 0.00%, L5 0.45%; **0.27% excluding L1**. **FE-L1-006, FE-L3-004, FE-L5-003 all STAND at P3.** FE-L3-003 is T5-bound and untouched |
+| **Tier-2 behaves as designed** | **51.1%** identifier-class residue, **43.1%** bare-integer quantity residue. Plan §6.2.4 defines Tier-2 as exactly this bounded residue. **No instrument change is warranted on the basis that residue exists** |
+| **Findings** | **1 new — FE-T3-001** (P3, class C, PRIMARY category 4). **A new root cause that deducts in its own right**; it is explicitly **not** merged into `SYS-TIER1-IDENTIFIER`, which is the opposite direction of error |
+| **Ledger updates** | Numerical Verification (`NUM-T3-00`…`08`, 9 rows) · Concept Consistency (`CON-T3-01`…`03`) · Coverage Control (T3 transversal row). **No eighth ledger created** |
+| **Class-B blockers** | **0** |
+| **Coverage** | **T3 Tier-2 object: 1,516 / 1,516 — COMPLETE and machine-reconcilable.** **T3 was authorised for the Tier-2 population only.** Level 8's other sub-population, the 1,169 Tier-1 candidates, was adjudicated in full across L1–L5 longitudinally rather than as one transversal object; whether that discharges Level 8 entirely is an owner decision, not a T3 self-assessment |
+| **Other transversals** | **T1, T2, T4, T5 and T6 remain at 0/137 and are NOT started.** **Phase F remains IN EXECUTION** |
+| **Non-collapse note** | F-T3 is a transversal review event. It does not complete Phase F, authorise any other transversal, change the classifier, or apply any manuscript correction |
+
+**Next authorised activity:** a **further transversal** under plan §5.3, or Phase H triage of the standing findings. **Nothing is started or authorised by this event.** **v0.16.0 remains planned and unreleased.**
+
+---
+
 ## 3. Manuscript-mutation control (plan §13.4 drift discipline, applied to Phase F)
 
 **Rule.** The 137 chapter blobs recorded in §2.5 constitute the Phase F review-execution baseline. **Manuscript chapters must remain unmodified for the duration of Phase F.**
@@ -897,6 +943,8 @@ git ls-files -s book | awk '$4 ~ /chapters\/chapter-.*\.md$/ {print $4":"$2}' | 
 | `FE-EV-013` | 2026-08-18 | F — L4 | Longitudinal Batch 4, Parts IX–X — COMPLETE · 24/24 chapters · 379/379 Tier-1 adjudicated · 42/42 citations censused · 0 arithmetic defects · 2 findings | **`UNSCORED`** |
 | `FE-EV-014` | 2026-08-19 | F — L5 | Longitudinal Batch 5, Parts XI–XII — START · 24 chapters · populations reconciled 449 / 594 / 0 / 0 | START, no verdict |
 | `FE-EV-015` | 2026-08-19 | F — L5 | Longitudinal Batch 5, Parts XI–XII — COMPLETE · 24/24 chapters · 449/449 Tier-1 adjudicated · both zero populations verified · 0 arithmetic defects · 3 findings · **LONGITUDINAL AXIS CLOSED 137/137** | **`UNSCORED`** |
+| `FE-EV-016` | 2026-08-19 | F — T3 | Tier-2 quantitative transversal — START · population 1,516 reconciled edition-wide | START, no verdict |
+| `FE-EV-017` | 2026-08-19 | F — T3 | Tier-2 quantitative transversal — COMPLETE · 1,516/1,516 classified · **64 Tier-1 false negatives found** · ARC-C3-5 and FE-L1-006 triggers not met · 1 new finding | **`UNSCORED`** |
 
 > **Note on the FE-EV-008 → FE-EV-009 sequence — this is not a lost record.** Three quantitative-instrument events occurred between them — **F-IR4** (fresh independent re-acceptance, 39 PASS · 0 PARTIAL · 1 FAIL), **F-IR4V2** (independent verification establishing that the instrument is intact, that E9 is correct and that the E11 total is 51) and **F-IR4F** (the E11 occurrence-decomposition correction, commit `250cfe7`) — and **none was written to this log at the time it happened.** Their outcomes are recorded in the **plan §16 phase-history table**, and `FE-EV-009` states the chain it closes.
 >
@@ -904,4 +952,4 @@ git ls-files -s book | awk '$4 ~ /chapters\/chapter-.*\.md$/ {print $4":"$2}' | 
 
 ---
 
-**Last Updated:** 2026-08-19 (F-L5)
+**Last Updated:** 2026-08-19 (F-T3)
