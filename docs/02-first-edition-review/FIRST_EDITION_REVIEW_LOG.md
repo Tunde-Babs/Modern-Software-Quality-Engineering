@@ -947,6 +947,50 @@ The eight alphanumeric forms and their loci reproduced exactly: `CMU/SEI-2000-TR
 
 ---
 
+## Event FE-EV-020 — Phase F-T2: Citation / Source Integrity Transversal START
+
+| Field | Value |
+| --- | --- |
+| **Event ID** | `FE-EV-020` |
+| **Date** | 2026-08-19 |
+| **Phase** | F — **T2**, the third transversal to run. **Level 7** |
+| **Scope** | All **137 chapters**, Parts I–XII. Evidence-integrity review, not citation-syntax checking |
+| **Score / verdict** | START, no verdict |
+| **Baseline digest at START** | `ec588eaa…f150a411` — **matches the F0 baseline** |
+| **Derived citation population** | **378 footnote definitions · 519 in-body references · 185 distinct keys · 175 distinct definition-line URLs** — derived independently before the standing figure was consulted |
+| **Review method** | Independent census → occurrence/distinct-source separation → source resolution → mechanical URL integrity (HEAD, then GET re-test on every non-200) → primary-source verification by direct fetch and authoritative corroboration → claim-boundary read → cross-Part consistency map → mandatory unsupported-claim sweep |
+| **Open Class-B Review-Execution Blockers** | **0** |
+
+---
+
+## Event FE-EV-021 — Phase F-T2: Citation / Source Integrity Transversal COMPLETE
+
+| Field | Value |
+| --- | --- |
+| **Event ID** | `FE-EV-021` |
+| **Date** | 2026-08-19 |
+| **Phase** | F — **T2** COMPLETE (Level 7) |
+| **Scope** | **137 / 137 chapters assessed** with six-field records (`T2-001`…`T2-137`). No sampling |
+| **Score / verdict** | **`UNSCORED`** — plan §7.3 defines no transversal score. Evidence-only |
+| **Baseline digest at START / END** | `ec588eaa…f150a411` / `ec588eaa…f150a411` — **matched both times; zero manuscript mutation** |
+| **Census** | **378 definitions** — reproduces the standing figure exactly — **519 in-body references**, **185 distinct keys**, **175 distinct definition URLs**, 3 definitions with no URL. **Occurrence and distinct-source denominators kept strictly separate** |
+| **Population-figure discrepancy — explained, not forced** | The recorded *"378 definitions across 210 distinct URLs"* mixes two scopes. **378 is definition-scoped and correct**; **210 is chapter-wide** (744 URL occurrences → 210 distinct, of which **35 never appear in a footnote definition**). The definition-scoped count is **175**. Recorded as **FE-T2-002** |
+| **URL / DOI integrity** | **150 resolve · 24 access-restricted · 1 broken.** Every non-200 was **re-tested with GET**, which mattered: three NIST URLs first showed 404 under HEAD and **all three return 206 under GET**. Reporting them broken would have been a false defect. Access-restricted are **bot protection, not link rot** — `iso.org` alone accounts for 14 URLs and 79 definitions. **Exactly one genuinely dead URL in the edition**: `xunitpatterns.com` |
+| **Primary-source verification** | **Network access was available and was used.** **RFC 9110** fetched directly and matches the citation exactly (*HTTP Semantics*, IETF, June 2022, Fielding/Nottingham/Reschke). **ISO/IEC 25010:2023**, **ISO 9000:2026** and **SWEBOK v4.0** corroborated against authoritative external sources. **Three prior `SECONDARY` records — SRC-L1-01, SRC-L1-03, SRC-L1-05 — are upgraded**, including independent confirmation that ISO 9000:2026 is a real fifth edition, closing L1's suspected-fabrication question at a higher evidence level than L1 could reach |
+| **Claim-to-source verification** | **No NO-SUPPORT case found.** Support is **DIRECT or CONTEXTUAL** throughout. Source quality is appropriate to claim: normative claims rest on primary authorities; practitioner sources are used for explanation or their own tool behaviour, never as neutral evidence of industry-wide superiority. **No overextension or contradictory use** |
+| **Unsupported-claim search (mandatory)** | **Zero genuine instances.** 41 externally verifiable claim triggers swept edition-wide; ten lacked a nearby footnote and **all ten were examined individually** — nine are Atlas fictional scenarios excluded by the control, the tenth a *Key Takeaways* restatement whose claim T2 independently confirmed |
+| **Review-record accuracy control (§19)** | Applied. Prior citation records were re-checked rather than assumed. **No prior citation record was found inaccurate**; three were upgraded. **One review-record defect found** — the 210/175 scope conflation (**FE-T2-002**), the third instance of the two-populations-one-denominator pattern after E11 and FE-L2-003's *"Dele"* |
+| **Findings** | **2 new — FE-T2-001** (citation keys are not stable identifiers: 15 sources under multiple keys, 8 keys over multiple sources) and **FE-T2-002** (population scope conflation). Both **P3, class C**. Materiality is **bibliographic hygiene and traceability, not claim support** |
+| **Standing findings** | **FE-L1-003 / `SYS-ORPHAN-FOOTNOTE` STANDS and is STRENGTHENED** — extent now fixed at Parts II (6), III (2), VII (4). Part XII's four open source-verification controls **remain open**; T2 did not verify them and does not claim to |
+| **Class-B blockers** | **0.** Source verification was possible for the material body of evidence, so the §22 condition does not arise |
+| **Coverage** | **T2: 137 / 137 — COMPLETE**, machine-reconciling to the derived census |
+| **Other transversals** | **T1, T4 and T6 remain at 0 and are NOT started.** **Phase F remains IN EXECUTION** |
+| **Non-collapse note** | F-T2 is a transversal review event. It does not complete Phase F, authorise another transversal, rewrite any prior finding, or correct any citation |
+
+**Next authorised activity:** a further transversal — **T1, T4 or T6** — or Phase H triage. **Nothing is started or authorised by this event.** **v0.16.0 remains planned and unreleased.**
+
+---
+
 ## 3. Manuscript-mutation control (plan §13.4 drift discipline, applied to Phase F)
 
 **Rule.** The 137 chapter blobs recorded in §2.5 constitute the Phase F review-execution baseline. **Manuscript chapters must remain unmodified for the duration of Phase F.**
@@ -991,6 +1035,8 @@ git ls-files -s book | awk '$4 ~ /chapters\/chapter-.*\.md$/ {print $4":"$2}' | 
 | `FE-EV-017` | 2026-08-19 | F — T3 | Tier-2 quantitative transversal — COMPLETE · 1,516/1,516 classified · **64 Tier-1 false negatives found** · ARC-C3-5 and FE-L1-006 triggers not met · 1 new finding | **`UNSCORED`** |
 | `FE-EV-018` | 2026-08-19 | F — T5 | Atlas / recurring-case continuity transversal — START · scope Parts III–XII, 115 chapters | START, no verdict |
 | `FE-EV-019` | 2026-08-19 | F — T5 | Atlas continuity transversal — COMPLETE · 115/115 assessed · **FE-L3-003 trigger NOT MET, collision contained in Part VI** · L19 complete edition-wide · 1 new finding | **`UNSCORED`** |
+| `FE-EV-020` | 2026-08-19 | F — T2 | Citation / source integrity transversal — START · 378 definitions / 519 references derived independently | START, no verdict |
+| `FE-EV-021` | 2026-08-19 | F — T2 | Citation integrity transversal — COMPLETE · 137/137 assessed · **1 dead URL edition-wide · 0 unsupported claims · 3 prior source records upgraded to primary** · 2 new findings | **`UNSCORED`** |
 
 > **Note on the FE-EV-008 → FE-EV-009 sequence — this is not a lost record.** Three quantitative-instrument events occurred between them — **F-IR4** (fresh independent re-acceptance, 39 PASS · 0 PARTIAL · 1 FAIL), **F-IR4V2** (independent verification establishing that the instrument is intact, that E9 is correct and that the E11 total is 51) and **F-IR4F** (the E11 occurrence-decomposition correction, commit `250cfe7`) — and **none was written to this log at the time it happened.** Their outcomes are recorded in the **plan §16 phase-history table**, and `FE-EV-009` states the chain it closes.
 >
@@ -998,4 +1044,4 @@ git ls-files -s book | awk '$4 ~ /chapters\/chapter-.*\.md$/ {print $4":"$2}' | 
 
 ---
 
-**Last Updated:** 2026-08-19 (F-T5)
+**Last Updated:** 2026-08-19 (F-T2)

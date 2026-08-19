@@ -7,14 +7,14 @@
 | **Document type** | Review artefact 2 of 4 — **Defects** |
 | **Authority** | [`FIRST_EDITION_REVIEW_PLAN.md`](FIRST_EDITION_REVIEW_PLAN.md) §13.1 |
 | **Lifecycle** | Mutable, Phases F→J |
-| **State** | **Longitudinal axis COMPLETE (137/137). Transversals T3 and T5 COMPLETE. 24 findings recorded. T1, T2, T4 and T6 NOT started; Phase F is NOT complete.** FE-L1-005 independently reviewed at **F-IR3** (verdict B), corrected at **F-IR4C** and **F-IR4F**, and **CLOSED at F-IR4V3** on independent verification of Condition 35; **F-L3 is no longer blocked by it**. No new finding ID was raised by any of those events |
+| **State** | **Longitudinal axis COMPLETE (137/137). Transversals T2, T3 and T5 COMPLETE. 26 findings recorded. T1, T4 and T6 NOT started; Phase F is NOT complete.** FE-L1-005 independently reviewed at **F-IR3** (verdict B), corrected at **F-IR4C** and **F-IR4F**, and **CLOSED at F-IR4V3** on independent verification of Condition 35; **F-L3 is no longer blocked by it**. No new finding ID was raised by any of those events |
 | **Owner** | Tunde Ajala |
 
 > This is a **governance artefact**, not a manuscript chapter. It carries no chapter-style status.
 
-> **Findings recorded to date: 24 — 7 from F-L1 (Parts I–II), 5 from F-L2 (Parts III–V), 5 from F-L3 (Parts VI–VIII), 2 from F-L4 (Parts IX–X), 3 from F-L5 (Parts XI–XII), 1 from F-T3 and 1 from F-T5.** **Two transversals (T3, T5) have run; four have not.** Severity distribution: **P0 = 0 · P1 = 5 · P2 = 3 · P3 = 16.** Blocker classes: **A = 0 · B = 0 · C = 24 · D = 0.**
+> **Findings recorded to date: 26 — 7 from F-L1 (Parts I–II), 5 from F-L2 (Parts III–V), 5 from F-L3 (Parts VI–VIII), 2 from F-L4 (Parts IX–X), 3 from F-L5 (Parts XI–XII), 1 from F-T3, 1 from F-T5 and 2 from F-T2.** **Three transversals (T2, T3, T5) have run; three have not.** Severity distribution: **P0 = 0 · P1 = 5 · P2 = 3 · P3 = 18.** Blocker classes: **A = 0 · B = 0 · C = 26 · D = 0.**
 >
-> **Three of the five L2 findings are additional instances of existing systemic groups and carry NO separate deduction** (plan §7.3 systemic root-cause rule). **Four of the five L3 findings likewise join existing systemic groups** — `SYS-LIFECYCLE-DRIFT`, `SYS-ORPHAN-FOOTNOTE`, `SYS-TIER1-IDENTIFIER` and `SYS-TEMPLATE-NAMING` — and carry no separate deduction; only **FE-L3-003** is a new root cause. **Both F-L4 findings join existing systemic groups** — `SYS-LIFECYCLE-DRIFT` and `SYS-TEMPLATE-NAMING` — and carry no separate deduction; **F-L4 raised no new root cause**. **All three F-L5 findings likewise join existing groups** — `SYS-LIFECYCLE-DRIFT`, `SYS-TEMPLATE-NAMING` and `SYS-TIER1-IDENTIFIER` — and **F-L5 raised no new root cause**. Distinct deducting findings across the whole longitudinal axis: **10**. **F-T3 adds one new root cause — FE-T3-001 — and F-T5 adds one — FE-T5-001 — each deducting in its own right**, bringing distinct deducting findings to **12**.
+> **Three of the five L2 findings are additional instances of existing systemic groups and carry NO separate deduction** (plan §7.3 systemic root-cause rule). **Four of the five L3 findings likewise join existing systemic groups** — `SYS-LIFECYCLE-DRIFT`, `SYS-ORPHAN-FOOTNOTE`, `SYS-TIER1-IDENTIFIER` and `SYS-TEMPLATE-NAMING` — and carry no separate deduction; only **FE-L3-003** is a new root cause. **Both F-L4 findings join existing systemic groups** — `SYS-LIFECYCLE-DRIFT` and `SYS-TEMPLATE-NAMING` — and carry no separate deduction; **F-L4 raised no new root cause**. **All three F-L5 findings likewise join existing groups** — `SYS-LIFECYCLE-DRIFT`, `SYS-TEMPLATE-NAMING` and `SYS-TIER1-IDENTIFIER` — and **F-L5 raised no new root cause**. Distinct deducting findings across the whole longitudinal axis: **10**. **F-T3 adds one new root cause — FE-T3-001 — F-T5 adds one — FE-T5-001 — and F-T2 adds two — FE-T2-001 and FE-T2-002 — each deducting in its own right**, bringing distinct deducting findings to **14**.
 
 ---
 
@@ -799,6 +799,61 @@ These are **not** manuscript findings and **do not** appear in the register abov
 
 **Case-boundary control (§18) prevented one false contradiction.** The date `2026-08-10` appears in Parts IV (50), V (33) and VI (6) and initially looked like a shared Atlas business date. **It is not.** In Parts IV and V every occurrence is a bibliographic *"Accessed 2026-08-10"* in a footnote definition; only Part VI uses it as an Atlas business day. **Explicit Atlas linkage was required before merging, and it was absent**, so no contradiction was raised.
 
+### FE-T2-001 — Citation keys are not stable identifiers across the edition
+
+| Field | Value |
+| --- | --- |
+| **Phase / transversal** | Phase F · transversal **T2** (Level 7) |
+| **Part / path** | Edition-wide — all 12 Parts |
+| **Review level** | Level 7 — evidence and citation integrity |
+| **Defect class** | Bibliographic inconsistency: one source under many keys, one key over many sources |
+| **PRIMARY category** | **3 — Evidence / citation integrity** |
+| **Severity** | **P3** |
+| **Blocker class** | **C — Final-Gate Blocker** |
+| **Finding** | Footnote keys do not identify sources consistently. **15 distinct sources are cited under more than one key**, and **8 keys each point to more than one source**. Worst instances: **ISO/IEC 25010:2023** is cited as `[^iso-25010]`, `[^iso25010]` and `[^iso25010current]` across **all five batches**; the SRE postmortem page under **four** keys (`google-postmortem`, `google-sre`, `google-sre-postmortem`, `googlepostmortem`); and **`[^dora]` resolves to five different URLs** (`cloud.google.com/architecture/devops`, `cloud.google.com/resources/state-of-devops`, `dora.dev`, `dora.dev/guides/dora-metrics`, `dora.dev/research`) with three different access dates. **`[^parnas]`** denotes Parnas 1972 (*On the Criteria To Be Used in Decomposing Systems into Modules*, CACM) in Part II ch04 and Part XI ch02, but Parnas & Clements 1986 (*A Rational Design Process*, IEEE TSE) in Part XII ch03. |
+| **Evidence** | Independent census of all **378 footnote definitions** across 137 chapters: **185 distinct keys**, **175 distinct definition-line URLs**. Key-to-URL and URL-to-key maps computed mechanically. **One genuinely dead link found in the whole edition** — `https://xunitpatterns.com/` refuses connection on both HTTP and HTTPS from two independent tools; the cited work (Meszaros, *xUnit Test Patterns*, Addison-Wesley, 2007) is durable and unaffected, and that definition is already one of FE-L1-003's six unattached entries. |
+| **Materiality — deliberately bounded** | **Bibliographic hygiene and traceability only; not claim support.** Markdown footnote keys are **chapter-scoped**, so every chapter renders and resolves correctly and **no reader is misdirected**. `[^parnas]` is the sharpest case and even there both papers are **well matched to their claims** — the 1972 modules paper for boundaries in II/XI, the 1986 documentation paper for written records in XII. **No claim is unsupported as a result.** |
+| **Consequence** | Maintenance and audit cost rather than reader-facing error: a global reference audit cannot key on the footnote label, and a future citation update must be applied under several aliases. **Not a rendering defect.** |
+| **Recommended action** | Phase H, low priority. Normalise keys to one stable identifier per source and give `[^parnas]` distinct keys per paper. **T2 made no correction** — §4 forbids citation rewriting. |
+| **Status** | `OPEN` · **Owner** Project Founder |
+| **Revision trigger** | Escalate to **P2** if a citation update is ever applied to one alias and not its siblings, producing divergent metadata for the same source. |
+| **Verification** | `NOT VERIFIED` |
+
+---
+
+### FE-T2-002 — The recorded citation population conflates two different URL scopes
+
+| Field | Value |
+| --- | --- |
+| **Phase / transversal** | Phase F · transversal **T2** (Level 7) |
+| **Part / path** | `FIRST_EDITION_REVIEW_PLAN.md` §4 L7 · `FIRST_EDITION_VERIFICATION_LEDGERS.md` §1 · `FIRST_EDITION_REVIEW_LOG.md` T2 row |
+| **Review level** | Level 7, via the §19 review-record accuracy control |
+| **Defect class** | Population described with two incompatible denominators in one phrase |
+| **PRIMARY category** | **8 — Governance integrity** |
+| **Secondary** | 3 — Evidence / citation integrity |
+| **Severity** | **P3** |
+| **Blocker class** | **C** |
+| **Finding** | All three artefacts state the T2 population as **"378 footnote definitions across 210 distinct URLs"**. The **378 is correct** and reproduces exactly. The **210 is correct only under a different scope**: it is the count of distinct URLs appearing **anywhere in the chapters** — footnote definitions, Further Reading lists and body links combined. The distinct-URL count **for the 378 definitions themselves is 175**. |
+| **Evidence** | Independently derived: definition-line URLs **375 occurrences → 175 distinct**; chapter-wide URLs **744 occurrences → 210 distinct**. Both figures are stable under trailing-punctuation normalisation. **35 of the 210 URLs never appear in any footnote definition.** The phrase *"378 definitions across 210 distinct URLs"* implies the 210 belong to the 378; they do not. |
+| **Materiality** | **Descriptive only — no verification work was misdirected**, because T2 re-derived the population independently as the brief required rather than relying on the stated figure. Recorded because a future reviewer taking 210 as the definition-scoped denominator would compute wrong coverage ratios. |
+| **Consequence** | Same class of defect the E11 remediation corrected and that T5 found in FE-L2-003's persona evidence: **two populations described with one denominator.** Third instance of that pattern in the review record. |
+| **Recommended action** | Phase H. State both figures with their scopes — *"378 footnote definitions over 175 distinct definition URLs; 210 distinct URLs across all chapter content."* **T2 did not amend the plan or ledgers.** |
+| **Status** | `OPEN` · **Owner** Review architecture owner |
+| **Revision trigger** | Escalate to **P2** if any downstream gate or score uses 210 as the definition-scoped denominator. |
+| **Verification** | `NOT VERIFIED` |
+
+---
+
+## 5F. Standing-finding evidence recorded by F-T2
+
+**FE-L1-003 / `SYS-ORPHAN-FOOTNOTE` — STANDS at P3; STRENGTHENED with edition-wide evidence.** T2's census confirms the group's extent precisely: unattached footnote definitions exist in **Parts II (6), III (2) and VII (4)** and nowhere else. T2 adds one detail — the Part II `[^meszaros]` entry is both unattached **and** the edition's only dead URL, so it is the single citation in the manuscript that neither supports a claim nor resolves.
+
+**FE-L1-001 and the source-verification controls carried in Part XII's README — STANDS.** Part XII's README records that its source-verification control **remains OPEN** for Westrum, Strathern, SPACE and Collins/Brown/Newman. T2 did not primary-verify those four and does not claim to have; the control remains open.
+
+**Prior longitudinal citation records — independently re-checked, and three are now UPGRADED.** Per the §19 control, T2 did not assume prior citation evidence was correct. Three records previously held at `SECONDARY` are now corroborated against authoritative external sources: **SRC-L1-01** (ISO/IEC 25010:2023 — the nine characteristics, `usability → interaction capability`, `portability → flexibility`, `safety` added, all confirmed); **SRC-L1-03** (ISO 9000:2026 — confirmed a real fifth edition published May 2026, cancelling ISO 9000:2015, with the shortened title *"Quality management — Fundamentals and vocabulary"*, independently corroborating L1's falsification of the suspected-fabrication hypothesis); **SRC-L1-05** (SWEBOK v4.0 — confirmed IEEE Computer Society, 2024, **18 knowledge areas**). **SRC-L3-01** (Google SRE Workbook) and **SRC-L4-01/02** were re-checked and stand as recorded. **No prior citation record was found to be inaccurate.**
+
+**Unsupported-claim search — zero genuine instances.** Externally verifiable claim triggers were swept across all 137 chapters: 30 named-standard assertions, 6 research/industry statistics, 5 historical claims. Ten carried no footnote marker within ±1 line; **all ten were examined individually and none is a defect** — nine are Atlas fictional scenarios or synthetic records explicitly excluded by the control, and the tenth is a *Key Takeaways* restatement in Part XI ch01 of a claim the chapter body cites and which **T2 has now independently confirmed against ISO/IEC 25010:2023**. A further apparent case — Part XII ch06's *"The survey shows 82% of engineers feel safe raising concerns"* — is a **misconception heading the chapter immediately deconstructs**, not an assertion.
+
 ---
 
 ## 5. Standing-finding evidence recorded by F-L2
@@ -809,4 +864,4 @@ These are **not** manuscript findings and **do not** appear in the register abov
 
 ---
 
-**Last Updated:** 2026-08-19 (F-T5)
+**Last Updated:** 2026-08-19 (F-T2)
