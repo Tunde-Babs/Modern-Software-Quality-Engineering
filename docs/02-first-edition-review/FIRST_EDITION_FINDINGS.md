@@ -7,14 +7,14 @@
 | **Document type** | Review artefact 2 of 4 — **Defects** |
 | **Authority** | [`FIRST_EDITION_REVIEW_PLAN.md`](FIRST_EDITION_REVIEW_PLAN.md) §13.1 |
 | **Lifecycle** | Mutable, Phases F→J |
-| **State** | **Longitudinal axis COMPLETE (137/137). Transversals T2, T3 and T5 COMPLETE. 26 findings recorded. T1, T4 and T6 NOT started; Phase F is NOT complete.** FE-L1-005 independently reviewed at **F-IR3** (verdict B), corrected at **F-IR4C** and **F-IR4F**, and **CLOSED at F-IR4V3** on independent verification of Condition 35; **F-L3 is no longer blocked by it**. No new finding ID was raised by any of those events |
+| **State** | **Longitudinal axis COMPLETE (137/137). Transversals T1, T2, T3, T5 and T6 COMPLETE. 28 findings recorded. T4 NOT STARTED; Phase F remains IN EXECUTION.** FE-L1-005 independently reviewed at **F-IR3** (verdict B), corrected at **F-IR4C** and **F-IR4F**, and **CLOSED at F-IR4V3** on independent verification of Condition 35; **F-L3 is no longer blocked by it**. No new finding ID was raised by any of those events |
 | **Owner** | Tunde Ajala |
 
 > This is a **governance artefact**, not a manuscript chapter. It carries no chapter-style status.
 
-> **Findings recorded to date: 26 — 7 from F-L1 (Parts I–II), 5 from F-L2 (Parts III–V), 5 from F-L3 (Parts VI–VIII), 2 from F-L4 (Parts IX–X), 3 from F-L5 (Parts XI–XII), 1 from F-T3, 1 from F-T5 and 2 from F-T2.** **Three transversals (T2, T3, T5) have run; three have not.** Severity distribution: **P0 = 0 · P1 = 5 · P2 = 3 · P3 = 18.** Blocker classes: **A = 0 · B = 0 · C = 26 · D = 0.**
+> **Findings recorded to date: 28 — 7 from F-L1 (Parts I–II), 5 from F-L2 (Parts III–V), 5 from F-L3 (Parts VI–VIII), 2 from F-L4 (Parts IX–X), 3 from F-L5 (Parts XI–XII), 1 from F-T3, 1 from F-T5, 2 from F-T2 and 2 from F-T6.** **Five transversals (T1, T2, T3, T5, T6) have run; T4 has not. T1 raised no new finding.** Severity distribution: **P0 = 0 · P1 = 6 · P2 = 4 · P3 = 18.** Blocker classes: **A = 0 · B = 0 · C = 28 · D = 0.**
 >
-> **Three of the five L2 findings are additional instances of existing systemic groups and carry NO separate deduction** (plan §7.3 systemic root-cause rule). **Four of the five L3 findings likewise join existing systemic groups** — `SYS-LIFECYCLE-DRIFT`, `SYS-ORPHAN-FOOTNOTE`, `SYS-TIER1-IDENTIFIER` and `SYS-TEMPLATE-NAMING` — and carry no separate deduction; only **FE-L3-003** is a new root cause. **Both F-L4 findings join existing systemic groups** — `SYS-LIFECYCLE-DRIFT` and `SYS-TEMPLATE-NAMING` — and carry no separate deduction; **F-L4 raised no new root cause**. **All three F-L5 findings likewise join existing groups** — `SYS-LIFECYCLE-DRIFT`, `SYS-TEMPLATE-NAMING` and `SYS-TIER1-IDENTIFIER` — and **F-L5 raised no new root cause**. Distinct deducting findings across the whole longitudinal axis: **10**. **F-T3 adds one new root cause — FE-T3-001 — F-T5 adds one — FE-T5-001 — and F-T2 adds two — FE-T2-001 and FE-T2-002 — each deducting in its own right**, bringing distinct deducting findings to **14**.
+> **Three of the five L2 findings are additional instances of existing systemic groups and carry NO separate deduction** (plan §7.3 systemic root-cause rule). **Four of the five L3 findings likewise join existing systemic groups** — `SYS-LIFECYCLE-DRIFT`, `SYS-ORPHAN-FOOTNOTE`, `SYS-TIER1-IDENTIFIER` and `SYS-TEMPLATE-NAMING` — and carry no separate deduction; only **FE-L3-003** is a new root cause. **Both F-L4 findings join existing systemic groups** — `SYS-LIFECYCLE-DRIFT` and `SYS-TEMPLATE-NAMING` — and carry no separate deduction; **F-L4 raised no new root cause**. **All three F-L5 findings likewise join existing groups** — `SYS-LIFECYCLE-DRIFT`, `SYS-TEMPLATE-NAMING` and `SYS-TIER1-IDENTIFIER` — and **F-L5 raised no new root cause**. Distinct deducting findings across the whole longitudinal axis: **10**. **F-T3 adds one new root cause — FE-T3-001 — F-T5 adds one — FE-T5-001 — and F-T2 adds two — FE-T2-001 and FE-T2-002 — each deducting in its own right**, bringing distinct deducting findings to **14**. **F-T6 adds FE-T6-002 as a new root cause; FE-T6-001 joins FE-L2-002's group `SYS-TABLE-DELIMITER` and carries the group's escalation rather than a separate deduction, bringing distinct deducting findings to 15.**
 
 ---
 
@@ -864,4 +864,82 @@ These are **not** manuscript findings and **do not** appear in the register abov
 
 ---
 
-**Last Updated:** 2026-08-19 (F-T2)
+### FE-T6-001 — Nine tables do not render as tables under GFM (systemic with FE-L2-002)
+
+| Field | Value |
+| --- | --- |
+| **Phase / transversal** | Phase F · transversal **T6** (Level 11) |
+| **Part / path** | III ch04 L190 · VIII ch02 L131 · VIII ch10 L81 · IX ch03 L150 · X ch05 L96 · X ch07 L120 · X ch09 L139 · X ch10 L86 · X ch12 L219 |
+| **Review level** | Level 11 — editorial consistency and accessibility |
+| **Defect class** | Malformed table: header/delimiter cell-count mismatch |
+| **PRIMARY category** | **7 — Editorial consistency** |
+| **Secondary** | 1 — Technical correctness (content becomes unreadable) |
+| **Severity** | **P1** — escalated from the group's P2 under plan §7.3 systemic escalation |
+| **Blocker class** | **C — Final-Gate Blocker** |
+| **Systemic group** | **`SYS-TABLE-DELIMITER`** — joins **FE-L2-002**, which remains recorded at **P2 as the Part-level origin** and is **not rewritten**. **Scored once at group level; no double deduction.** |
+| **Finding** | Nine table blocks declare more columns in the header row than in the delimiter row. **Under GFM the block is then not recognised as a table at all** — the GFM spec states *"The header row must match the delimiter row in the number of cells. If not, a table will not be recognized."* Each affected block renders as a run of raw pipe-delimited paragraph text. **Eight of the nine are new**; only III ch04 was previously recorded, as FE-L2-002. |
+| **Evidence** | Corrected cell-count check across **all 1,021 tables in the edition**, comparing header to **delimiter** rather than header to data rows. Widths are `4 vs 3` in eight cases and `8 vs 7` in one (IX ch03). Per Part: **III 1 · VIII 2 · IX 1 · X 5**. The GFM rule was verified against the specification during T6, not assumed. |
+| **Why it went undetected** | **The longitudinal scans regressed.** L2's check compared header to delimiter and correctly caught the Part III instance. The L3, L4 and L5 structural scans compared header to **data rows** — a test that cannot detect this defect, because the data rows agree with the header. Those batches therefore recorded *"0 malformed tables"* for Parts VI–XII while eight instances existed. **This is a defect in the review method, corrected here, not a manuscript regression.** |
+| **Consequence — the reason for escalation** | The collapsed column is, in **eight of nine** cases, the **limitation or boundary column**: *Important limit · Improvement direction · Limit · Reasoned placement · Decision consequence · Limitation · Limitation and consequence · What the result does and does not mean · Interpretation boundary*. The edition's defining discipline is stating what evidence cannot support, and **this defect silently deletes precisely that column** from nine tables in a released product. One affected table (X ch10 L86) is the triage-share table T2 recomputed. **`QUALITY_GATES.md` Gate 2 and Gate 5 — Markdown renders correctly — cannot be evidenced clean for Parts III, VIII, IX or X while this stands.** |
+| **Severity reasoning** | Plan §7.3 permits escalation when a defect is **systemic across Parts**; this is systemic across four. The plan's operational test asks whether documenting the defect is sufficient: it is not, and **it cannot be *validly accepted*** either, because the accepted state would be a published edition containing nine unreadable tables. That is the **P1** bar — *must be corrected before the Final Gate*. **The origin finding FE-L2-002 keeps its P2 record; the group escalates.** |
+| **Recommended action** | Phase H, mechanical and low-risk: add the missing delimiter cell in each of the nine blocks. **T6 made no correction** — §5 forbids repairing tables. |
+| **Status** | `OPEN` · **Owner** Project Founder |
+| **Revision trigger** | Escalate to **P0** if any affected table is found to carry a safety-, security- or compliance-critical limitation that a reader could act on without seeing. T6 assessed the nine and found none in that class. |
+| **Verification** | `NOT VERIFIED` |
+
+---
+
+### FE-T6-002 — The editorial authority is partly empty and internally contradictory
+
+| Field | Value |
+| --- | --- |
+| **Phase / transversal** | Phase F · transversal **T6** (Level 11, via plan §9) |
+| **Part / path** | `docs/01-editorial/` (7 files) · `docs/00-project/EDITORIAL_STYLE_GUIDE.md` · `templates/CHAPTER_TEMPLATE.md` |
+| **Review level** | Level 11, assessed under plan §9 editorial governance treatment |
+| **Defect class** | Empty required file · duplicate authority at a second path · conflicting structural standards |
+| **PRIMARY category** | **8 — Governance integrity** |
+| **Secondary** | 7 — Editorial consistency |
+| **Severity** | **P2** |
+| **Blocker class** | **C** |
+| **Finding** | Three distinct problems in the authority set T6 must measure against. **(a) Seven of the eight files in `docs/01-editorial/` are zero-byte** — `EDITORIAL_STYLE_GUIDE.md`, `WRITING_GUIDELINES.md`, `DIAGRAM_GUIDELINES.md`, `CITATION_STYLE.md`, `GLOSSARY_GUIDELINES.md`, `RESEARCH_GUIDELINES.md`, `REFERENCES.md` — all carrying git's canonical empty-blob SHA `e69de29`. Only `QUALITY_GATES.md` has content. **(b) The populated style guide lives at a different path**, `docs/00-project/EDITORIAL_STYLE_GUIDE.md` (6,659 bytes), so the empty `docs/01-editorial/` copy **shadows it under the same filename** — plan §9's *Class B — duplicate, deprecate* case. **(c) The two populated authorities specify different chapter structures.** |
+| **Evidence — the structural conflict** | The style guide mandates a **16-section** structure: *Introduction · Learning Objectives · Key Concepts · Engineering Principles · Architecture Overview · Practical Examples · Hands-on Laboratory · Common Pitfalls · Best Practices · Summary · Key Takeaways · Review Questions · Practical Exercises · Interview Questions · Further Reading · References*. `CHAPTER_TEMPLATE.md` mandates a different **17-section** structure: *Metadata · Opening Quote · Opening Story · Why This Chapter Matters · Learning Objectives · Main Instructional Sections · Engineering Perspective · Industry Perspective · Common Misconceptions or Common Pitfalls · Summary · Key Takeaways · Review Questions · Interview Questions · Practical Exercise · Further Reading · References · Chapter Checklist*. **Only seven sections are common to both.** The style guide requires *Key Concepts*, *Engineering Principles*, *Architecture Overview*, *Hands-on Laboratory* and *Best Practices*, which **no chapter carries**; the template requires *Metadata*, *Opening Quote*, *Industry Perspective* and *Chapter Checklist*, which **all 137 carry**. |
+| **Consequence** | **The manuscript follows the template consistently and diverges from the style guide systematically.** Under plan §9 — *"manuscript defects are never generated from nonexistent standards"* and *"GOVERNANCE STANDARD ABSENT → Governance Integrity"* — **this is not manuscript drift and generates no category-7 manuscript deduction.** It does mean Level 11 has **two conflicting written standards** and no recorded precedence rule, so *"conforms to the editorial standard"* is currently unanswerable as posed. **Per T6 §7 the conflict is recorded, not resolved by reviewer choice.** |
+| **Relationship to prior dispositions** | The **accessibility** standard gap is already dispositioned — **E-13**, deferred to v1.0.0, with plan §10 governing the four objective checks and naming **Level 11 (via T6)** as the depending level. T6 executed exactly those four checks. **The style-guide/template conflict and the empty-duplicate shadowing are not covered by E-13** and appear to be new. |
+| **Recommended action** | Phase H or a governance task: apply plan §9's disposition classes to all seven empty files (each is A, B, C or D), remove or populate the duplicate `docs/01-editorial/EDITORIAL_STYLE_GUIDE.md`, and **record a precedence rule** stating which of the style guide and the template governs chapter structure. **T6 modified no authority file.** |
+| **Status** | `OPEN` · **Owner** Review architecture owner |
+| **Revision trigger** | Escalate to **P1** if the Final Gate attempts to score Level 11 against *"the editorial standard"* while two conflicting standards remain in force. |
+| **Verification** | `NOT VERIFIED` |
+
+---
+
+## 5H. Standing-finding evidence recorded by F-T6
+
+**FE-L2-002 — STANDS at P2 · STRENGTHENED, and remains the Part-level origin of `SYS-TABLE-DELIMITER`.** T6 confirms the Part III instance is unrepaired and identical to its recorded description, and establishes that its defect class is **systemic across four Parts with nine instances**. **The finding is not rewritten**; the escalation is carried by FE-T6-001.
+
+**FE-L1-004 / `SYS-TEMPLATE-NAMING` — STANDS at P3 · TRIGGER NOT MET, now assessed on complete edition evidence.** The trigger reads *"escalate to P2 if later batches show the edition has no consistent capstone-heading convention."* Capstone census, re-derived and not taken from prior counts: **8 of 11 capstones use the template heading `Why This Chapter Matters`; 2 use `Why This Capstone Matters` (Parts II, III); 1 uses `What This Capstone Is` (Part XII)**. **A dominant convention exists at 8/11, so the trigger is NOT met** — the same judgement reached at L5, now confirmed against the full edition rather than inferred. **Recorded, not assumed: the margin is narrow.** T6 also completes the group's edition-wide picture — the misconceptions heading has **five variants** (`Common Misconceptions and Pitfalls` 82 · `Common Misconceptions` 52 · `Common Mistakes` 1 · `Common Anti-Patterns` 1 · `Common QA Coding Problems` 1), **none matching the template's literal name, yet all 137 chapters carry the section**. Naming varies; **content coverage is complete**.
+
+**`SYS-ORPHAN-FOOTNOTE` — STANDS at P3; extent confirmed exactly.** Edition-wide reconciliation: **378 definitions · 0 undefined references · 12 unused definitions**, distributed Parts **II 6 · III 2 · VII 4** and nowhere else — reproducing FE-L1-003, FE-L2-004 and FE-L3-002 precisely. Footnote **presentation** — placement, key style, ordering, spacing — is **consistent edition-wide**; T6 found no presentation defect beyond the known orphans.
+
+**FE-T2-001 — STANDS at P3.** Key aliasing is a citation-record matter already recorded by T2. T6's independent **presentation** check finds footnote formatting uniform, and adds no new instance.
+
+**`SYS-LIFECYCLE-DRIFT` — STANDS at P1; no duplicate finding created.** Per T6 §24, reader-visible lifecycle wording was inspected only as an editorial surface and the evidence is **linked to the existing systemic finding**, not re-raised.
+
+**Objective accessibility census (plan §10, the four checks E-13 assigns to Level 11 via T6).** **Heading-order integrity: PASS** — exactly one H1 in 137/137 chapters and **0 heading-level jumps**; **0 genuinely empty sections** (all 395 candidate cases are parent headings immediately followed by their own subheading, which is correct nesting). **Descriptive link text: PASS** — **0 non-descriptive link texts** across **1,129 links**, and **0 broken local links** across 385 local links. **Image alt-text: NOT APPLICABLE** — the image population is **zero** across all 137 chapters; recorded with its reason, never as PASS. **Table-header presence: FAIL — 9 of 1,021 tables**, which is FE-T6-001.
+
+**Presentation surfaces found consistent and recorded as such.** **Code fences: 161 opening fences, 100% carry a language label** (`ts` 77 · `text` 58 · `http` 8 · `sql` 7 · `json` 6 · `bash` 3 · `gherkin` 2) — **zero unlabelled**. **Callouts: 136 of 137 chapters** use one of two blockquote forms (`> **MSQE principle` 124 · `> **MSQE educational framing` 12), with two one-off variants — **consistent, not drift**. **Twelve template sections appear in 137/137 chapters**: Metadata, Opening Quote, Learning Objectives, Engineering Perspective, Industry Perspective, Summary, Key Takeaways, Review Questions, Interview Questions, Further Reading, References, Chapter Checklist.
+
+---
+
+## 5G. Existing terminology and concept finding dispositions recorded by F-T1
+
+**FE-L2-003 (Atlas organisational identity) — STANDS at P3.** The T1 conceptual matrix independently confirms that Part III's subscription-service descriptor remains the sole contrary organisational description against Parts IV–VI retailer language. Parts VII–XII introduce no competing descriptor. This remains a bounded T5-owned ambiguity, not a new terminology root cause.
+
+**FE-T3-001 (quantity written-form / semantics mismatch) — STANDS at P3, outside T1 manuscript terminology scope.** The mismatch is in the review instrument class specification, not in conflicting manuscript terminology. T1 records the prose variation as harmless where the quantity is unambiguous and does not duplicate the finding.
+
+**FE-T5-001 (Atlas persona continuity) and FE-T2-001 (citation-key aliases) — STAND at P3.** The former is not professional-role terminology; the latter concerns bibliographic identifiers rather than reader-facing conceptual aliases. Neither is weakened, closed or duplicated by T1.
+
+**Template-heading findings FE-L1-004, FE-L2-005, FE-L3-005, FE-L4-002 and FE-L5-002 — STAND outside T1.** T1 inspected summaries and terminology surfaces only for semantic distortion; heading-form conformity remains T6 work.
+
+**No existing terminology/concept finding was closed, weakened or had a revision trigger met. Class-B review-execution blockers remain 0.**
+
+**Last Updated:** 2026-08-19 (F-T1)

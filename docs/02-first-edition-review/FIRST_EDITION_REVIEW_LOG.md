@@ -991,6 +991,96 @@ The eight alphanumeric forms and their loci reproduced exactly: `CMU/SEI-2000-TR
 
 ---
 
+## Event FE-EV-022 — Phase F-T1: Terminology / Conceptual Consistency Transversal START
+
+| Field | Value |
+| --- | --- |
+| **Event ID** | FE-EV-022 |
+| **Date** | 2026-08-19 |
+| **Phase** | F — **T1**, Levels 5 and 6 |
+| **Scope** | **All 137 chapters**, Parts I–XII. Concept and terminology census, not manuscript correction |
+| **Score / verdict** | START, no verdict |
+| **Baseline digest at START** | ec588eaa…f150a411 — **matches the F0 baseline** |
+| **Standing terminology findings** | **None** assigned to T1 at start. Related records assessed without rewriting: FE-L2-003, FE-T3-001, FE-T5-001, FE-T2-001 and template-heading findings |
+| **Open Class-B Review-Execution Blockers** | **0** |
+
+---
+
+## Event FE-EV-023 — Phase F-T1: Terminology / Conceptual Consistency Transversal COMPLETE
+
+| Field | Value |
+| --- | --- |
+| **Event ID** | FE-EV-023 |
+| **Date** | 2026-08-19 |
+| **Phase** | F — **T1 COMPLETE** (Levels 5 and 6) |
+| **Scope** | **137 / 137 chapters assessed**, each with a six-field record (T1-001 through T1-137). No sampling |
+| **Score / verdict** | **UNSCORED** — plan §7.3 defines no transversal score. Evidence-only |
+| **Baseline digest at START / END** | ec588eaa…f150a411 / ec588eaa…f150a411 — **matched both times; zero manuscript mutation** |
+| **Terminology census / first definition** | All requested families accounted for. Material terms were first-definition traced, semantically compared and ownership-classified; absent requested phrases were recorded as absent rather than inferred |
+| **QA → QE / technical terms** | Coherent. QE remains broader than, not synonymous with, QA, testing or automation; specialist terms preserve stated object, population, context and decision boundaries |
+| **Alias / overload / roles** | Intentional abbreviations and contextual labels only. Broad lexical forms are bounded; titles are expressly non-portable and do not alter decision authority |
+| **Glossary and Part surfaces** | All 137 chapter introduction/condensed surfaces and all 12 relevant Part READMEs inspected; no surface reverses its fuller concept |
+| **Existing findings** | FE-L2-003, FE-T3-001, FE-T5-001, FE-T2-001 and template-heading records **STAND** in their existing ownership; no trigger met |
+| **New finding** | **0** — no genuine terminology/concept root cause |
+| **Class-B blockers** | **0** |
+| **Ledger updates** | Terminology Register (TRM-T1-01…16) · Concept Consistency Matrix (CON-T1-01…14) · Coverage Control (137 rows + T1 axis). No new ledger created |
+| **Coverage** | **T1: 137 / 137 — COMPLETE** |
+| **Other transversals** | **T4 and T6 remain at 0 and are NOT started. Phase F remains IN EXECUTION.** |
+| **Non-collapse note** | F-T1 does not correct the manuscript, complete Phase F, authorise T4/T6 or change release status |
+
+**Next authorised activity:** owner review of the isolated T1 branch, then a separately authorised remaining transversal or Phase H triage. **Nothing is started or authorised by this event.** **v0.16.0 remains planned and unreleased.**
+
+---
+
+## Event FE-EV-024 — Phase F-T6: Editorial / Cross-Part Consistency Transversal START
+
+| Field | Value |
+| --- | --- |
+| **Event ID** | `FE-EV-024` |
+| **Date** | 2026-08-19 |
+| **Phase** | F — **T6**, the fourth transversal to run. **Level 11** |
+| **Scope** | All **137 chapters**, Parts I–XII, reviewed as one editorial and structural object |
+| **Branch** | **`review/phase-f-t6`**, isolated worktree `MSQE-T6`, baseline `33a81ae`. Runs **independently of `review/phase-f-t1`**; no T1 evidence read, consumed or merged |
+| **Score / verdict** | START, no verdict |
+| **Baseline digest at START** | `ec588eaa…f150a411` — **matches the F0 baseline** |
+| **Editorial authority consulted** | `docs/00-project/EDITORIAL_STYLE_GUIDE.md` (6,659 bytes — **the populated authority**) · `templates/CHAPTER_TEMPLATE.md` (5,777 bytes) · `docs/01-editorial/QUALITY_GATES.md` (8,864 bytes) · plan §9 and §10. **The brief's authority list names five `docs/01-editorial/` files: three are zero-byte and two do not exist** (`CITATION_GUIDE.md`, `ACCESSIBILITY_GUIDE.md`) |
+| **Standing editorial findings** | **FE-L1-004 / `SYS-TEMPLATE-NAMING`** (with FE-L2-005, FE-L3-005, FE-L4-002, FE-L5-002) · **FE-L2-002** (malformed table) · **`SYS-ORPHAN-FOOTNOTE`** · **FE-T2-001** · **`SYS-LIFECYCLE-DRIFT`** · **E-13** accessibility standard gap, which plan §10 assigns to **Level 11 via T6** |
+| **Open Class-B Review-Execution Blockers** | **0** |
+
+---
+
+## Event FE-EV-025 — Phase F-T6: Editorial / Cross-Part Consistency Transversal COMPLETE
+
+| Field | Value |
+| --- | --- |
+| **Event ID** | `FE-EV-025` |
+| **Date** | 2026-08-19 |
+| **Phase** | F — **T6** COMPLETE (Level 11) |
+| **Scope** | **137 / 137 chapters assessed** with six-field records (`T6-001`…`T6-137`). No sampling |
+| **Score / verdict** | **`UNSCORED`** — plan §7.3 defines no transversal score. Evidence-only |
+| **Baseline digest at START / END** | `ec588eaa…f150a411` / `ec588eaa…f150a411` — **matched both times; zero manuscript mutation** |
+| **Headline result** | **Nine tables in the edition do not render as tables.** A corrected header-versus-**delimiter** cell-count check over all **1,021** tables finds 9 mismatches — Parts **III 1 · VIII 2 · IX 1 · X 5**. The GFM specification, verified during T6, states *"The header row must match the delimiter row in the number of cells. If not, a table will not be recognized."* **Only one was previously known** (FE-L2-002); **eight are new** |
+| **Why eight went undetected** | **A regression in the review method, not the manuscript.** L2's check correctly compared header to delimiter. The L3, L4 and L5 structural scans compared header to **data** rows — a test that cannot detect this defect — and therefore recorded *"0 malformed tables"* for Parts VI–XII while eight existed. **T6 corrects the check and the record** |
+| **Why it is escalated to P1** | In **eight of nine** cases the collapsing column is the **limitation or boundary** column — *Important limit · Improvement direction · Limit · Reasoned placement · Decision consequence · Limitation · Limitation and consequence · What the result does and does not mean · Interpretation boundary*. The edition's defining discipline is stating what evidence cannot support, and the defect deletes exactly that. It **cannot be validly accepted**, so it clears the P2 bar. **FE-L2-002 keeps its P2 record as the Part-level origin and is not rewritten** |
+| **Editorial authority conflict** | **Recorded, not resolved.** Seven of eight `docs/01-editorial/` files are **zero-byte** (all `e69de29`), including an empty `EDITORIAL_STYLE_GUIDE.md` that **shadows the populated one** at `docs/00-project/`. The two populated authorities specify **different chapter structures** — 16 sections versus 17, with **only seven in common**. The manuscript follows the template consistently. Under plan §9, *"manuscript defects are never generated from nonexistent standards"*, so **this produces no category-7 manuscript deduction** — it is **FE-T6-002**, governance integrity |
+| **FE-L1-004 trigger** | **NOT MET**, re-derived rather than inherited. Capstone headings: **8 of 11** use the template form, 2 use `Why This Capstone Matters`, 1 uses `What This Capstone Is`. A dominant convention exists. **The margin is narrow and the judgement is recorded, not assumed** |
+| **Structure census** | **12 template sections present in 137/137 chapters.** The misconceptions component appears under **five names** yet is present in **every** chapter. Three capstones vary their opening; Part XII ch02/ch07 use `Motivating Scenario` for `Opening Story`; Part I ch01/ch09/ch10 title their exercise `Practical Exercise: <title>` — **all confirmed present, not missing** |
+| **Objective accessibility census (plan §10 / E-13)** | **Heading-order PASS** — 1 H1 in 137/137, **0 jumps**, **0 genuinely empty sections** (all 395 candidates are correct parent→subheading nesting). **Descriptive link text PASS** — 0 non-descriptive of **1,129** links; **0 broken local links** of 385. **Image alt-text NOT APPLICABLE** — image population is **zero**, recorded with reason. **Table-header presence FAIL — 9 of 1,021** |
+| **Presentation surfaces found consistent** | **Code fences**: 161 opening fences, **100% language-labelled**, zero unbalanced. **Callouts**: 136 of 137 chapters use one of two blockquote forms. **Footnote presentation**: uniform; 378 definitions, 0 undefined references, 12 unused confined to Parts II/III/VII |
+| **Findings** | **2 new — FE-T6-001** (P1, joins `SYS-TABLE-DELIMITER` with FE-L2-002) and **FE-T6-002** (P2, new root cause). **No duplicate systemic finding created**: lifecycle-wording evidence is linked to `SYS-LIFECYCLE-DRIFT` rather than re-raised |
+| **Boundaries respected** | **T1 not performed** — label variation recorded as reader-facing surface only, with **no conceptual conclusion**. **T2 not redone** — footnotes assessed for presentation only. **T5 not redone** — no Atlas or case-continuity analysis. **T4 not touched** — exercise *presentation* only, no pedagogical progression |
+| **Class-B blockers** | **0** |
+| **Coverage** | **T6: 137 / 137 — COMPLETE** |
+| **Other transversals** | **T1 and T4 remain at 0 and are NOT started.** **Phase F remains IN EXECUTION** |
+| **Isolation** | Evidence is recorded **only on `review/phase-f-t6`**. Nothing merged, rebased, cherry-picked or pushed to `feature/first-edition-review`. **`CURRENT_SPRINT.md` and `README.md` were deliberately left unmodified** to avoid a predictable conflict with the parallel T1 branch; lifecycle updates belong to owner reconciliation |
+| **Non-collapse note** | F-T6 is a transversal review event. It does not complete Phase F, authorise T1 or T4, rewrite any prior finding, or correct any manuscript content |
+
+**Next authorised activity:** owner reconciliation of the parallel T1 and T6 branches, then **T1 or T4**, or Phase H triage. **Nothing is started or authorised by this event.** **v0.16.0 remains planned and unreleased.**
+
+---
+
+**Reconciliation annotation (not a review event).** T1 and T6 originated independently on parallel worktrees from the same isolated `33a81ae` baseline. T1 retains its existing canonical identifiers; during reconciliation T6 was assigned the next unused canonical identifiers, `FE-EV-024` and `FE-EV-025`. Its reviewer evidence, timestamps, baseline digests, methods and findings are unchanged. The current transversal state is reconciled in the event index and verification ledger.
+
 ## 3. Manuscript-mutation control (plan §13.4 drift discipline, applied to Phase F)
 
 **Rule.** The 137 chapter blobs recorded in §2.5 constitute the Phase F review-execution baseline. **Manuscript chapters must remain unmodified for the duration of Phase F.**
@@ -1038,10 +1128,15 @@ git ls-files -s book | awk '$4 ~ /chapters\/chapter-.*\.md$/ {print $4":"$2}' | 
 | `FE-EV-020` | 2026-08-19 | F — T2 | Citation / source integrity transversal — START · 378 definitions / 519 references derived independently | START, no verdict |
 | `FE-EV-021` | 2026-08-19 | F — T2 | Citation integrity transversal — COMPLETE · 137/137 assessed · **1 dead URL edition-wide · 0 unsupported claims · 3 prior source records upgraded to primary** · 2 new findings | **`UNSCORED`** |
 
+| FE-EV-022 | 2026-08-19 | F — T1 | Terminology / conceptual consistency transversal — START · 137 chapters | START, no verdict |
+| FE-EV-023 | 2026-08-19 | F — T1 | Terminology / conceptual consistency transversal — COMPLETE · 137/137 assessed · terminology/ownership/alias/overload controls complete · **0 new findings** | **UNSCORED** |
+| `FE-EV-024` | 2026-08-19 | F — T6 | Editorial / cross-Part consistency transversal — START · 137 chapters | START, no verdict |
+| `FE-EV-025` | 2026-08-19 | F — T6 | Editorial / cross-Part consistency transversal — COMPLETE · 137/137 assessed · **2 new findings** | **`UNSCORED`** |
+
 > **Note on the FE-EV-008 → FE-EV-009 sequence — this is not a lost record.** Three quantitative-instrument events occurred between them — **F-IR4** (fresh independent re-acceptance, 39 PASS · 0 PARTIAL · 1 FAIL), **F-IR4V2** (independent verification establishing that the instrument is intact, that E9 is correct and that the E11 total is 51) and **F-IR4F** (the E11 occurrence-decomposition correction, commit `250cfe7`) — and **none was written to this log at the time it happened.** Their outcomes are recorded in the **plan §16 phase-history table**, and `FE-EV-009` states the chain it closes.
 >
 > **No standalone `FE-EV` events were created for them retroactively.** This log is **append-only**, and a historical event may not be reconstructed after the fact without its original evidence — reviewer identity, date, baseline digests at start and end, method, and scored verdict. Manufacturing those fields to fill a numbering gap would fabricate review evidence, which plan §11 forbids. **Event IDs are assigned in strict ascending order and never reused**, so the sequence is correct as it stands; the gap is a record of how the events were logged, not of what occurred.
 
 ---
 
-**Last Updated:** 2026-08-19 (F-T2)
+**Last Updated:** 2026-08-19 (F-T1/T6 reconciliation finalisation)
