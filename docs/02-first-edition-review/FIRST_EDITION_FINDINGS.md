@@ -7,14 +7,14 @@
 | **Document type** | Review artefact 2 of 4 — **Defects** |
 | **Authority** | [`FIRST_EDITION_REVIEW_PLAN.md`](FIRST_EDITION_REVIEW_PLAN.md) §13.1 |
 | **Lifecycle** | Mutable, Phases F→J |
-| **State** | **Longitudinal axis COMPLETE (137/137). Transversal T3 COMPLETE — the full 1,516-candidate Tier-2 population classified. 23 findings recorded. T1, T2, T4, T5 and T6 NOT started; Phase F is NOT complete.** FE-L1-005 independently reviewed at **F-IR3** (verdict B), corrected at **F-IR4C** and **F-IR4F**, and **CLOSED at F-IR4V3** on independent verification of Condition 35; **F-L3 is no longer blocked by it**. No new finding ID was raised by any of those events |
+| **State** | **Longitudinal axis COMPLETE (137/137). Transversals T3 and T5 COMPLETE. 24 findings recorded. T1, T2, T4 and T6 NOT started; Phase F is NOT complete.** FE-L1-005 independently reviewed at **F-IR3** (verdict B), corrected at **F-IR4C** and **F-IR4F**, and **CLOSED at F-IR4V3** on independent verification of Condition 35; **F-L3 is no longer blocked by it**. No new finding ID was raised by any of those events |
 | **Owner** | Tunde Ajala |
 
 > This is a **governance artefact**, not a manuscript chapter. It carries no chapter-style status.
 
-> **Findings recorded to date: 23 — 7 from F-L1 (Parts I–II), 5 from F-L2 (Parts III–V), 5 from F-L3 (Parts VI–VIII), 2 from F-L4 (Parts IX–X), 3 from F-L5 (Parts XI–XII) and 1 from F-T3 (edition-wide transversal).** **One transversal (T3) has run; five have not.** Severity distribution: **P0 = 0 · P1 = 5 · P2 = 3 · P3 = 15.** Blocker classes: **A = 0 · B = 0 · C = 23 · D = 0.**
+> **Findings recorded to date: 24 — 7 from F-L1 (Parts I–II), 5 from F-L2 (Parts III–V), 5 from F-L3 (Parts VI–VIII), 2 from F-L4 (Parts IX–X), 3 from F-L5 (Parts XI–XII), 1 from F-T3 and 1 from F-T5.** **Two transversals (T3, T5) have run; four have not.** Severity distribution: **P0 = 0 · P1 = 5 · P2 = 3 · P3 = 16.** Blocker classes: **A = 0 · B = 0 · C = 24 · D = 0.**
 >
-> **Three of the five L2 findings are additional instances of existing systemic groups and carry NO separate deduction** (plan §7.3 systemic root-cause rule). **Four of the five L3 findings likewise join existing systemic groups** — `SYS-LIFECYCLE-DRIFT`, `SYS-ORPHAN-FOOTNOTE`, `SYS-TIER1-IDENTIFIER` and `SYS-TEMPLATE-NAMING` — and carry no separate deduction; only **FE-L3-003** is a new root cause. **Both F-L4 findings join existing systemic groups** — `SYS-LIFECYCLE-DRIFT` and `SYS-TEMPLATE-NAMING` — and carry no separate deduction; **F-L4 raised no new root cause**. **All three F-L5 findings likewise join existing groups** — `SYS-LIFECYCLE-DRIFT`, `SYS-TEMPLATE-NAMING` and `SYS-TIER1-IDENTIFIER` — and **F-L5 raised no new root cause**. Distinct deducting findings across the whole longitudinal axis: **10**. **F-T3 adds one new root cause — FE-T3-001 — which deducts in its own right**, bringing distinct deducting findings to **11**.
+> **Three of the five L2 findings are additional instances of existing systemic groups and carry NO separate deduction** (plan §7.3 systemic root-cause rule). **Four of the five L3 findings likewise join existing systemic groups** — `SYS-LIFECYCLE-DRIFT`, `SYS-ORPHAN-FOOTNOTE`, `SYS-TIER1-IDENTIFIER` and `SYS-TEMPLATE-NAMING` — and carry no separate deduction; only **FE-L3-003** is a new root cause. **Both F-L4 findings join existing systemic groups** — `SYS-LIFECYCLE-DRIFT` and `SYS-TEMPLATE-NAMING` — and carry no separate deduction; **F-L4 raised no new root cause**. **All three F-L5 findings likewise join existing groups** — `SYS-LIFECYCLE-DRIFT`, `SYS-TEMPLATE-NAMING` and `SYS-TIER1-IDENTIFIER` — and **F-L5 raised no new root cause**. Distinct deducting findings across the whole longitudinal axis: **10**. **F-T3 adds one new root cause — FE-T3-001 — and F-T5 adds one — FE-T5-001 — each deducting in its own right**, bringing distinct deducting findings to **12**.
 
 ---
 
@@ -760,6 +760,45 @@ These are **not** manuscript findings and **do not** appear in the register abov
 
 **Tier-2 behaves as the architecture intends.** Across the edition, **51.1%** of Tier-2 is identifier-class residue (B + C + D) and **43.1%** is bare-integer quantity residue (F). Plan §6.2.4 defines Tier-2 precisely as the bounded residue that makes completeness provable at candidate level while leaving claimhood to review judgement. **The presence of identifiers in Tier-2 is the design working, not a defect, and no instrument change is warranted on that basis.**
 
+### FE-T5-001 — The recurring case has almost no persona continuity, and FE-L2-003's persona evidence records a persona that does not exist
+
+| Field | Value |
+| --- | --- |
+| **Phase / transversal** | Phase F · transversal **T5** (Levels 15 and 19) |
+| **Part / path** | Edition-wide across T5 scope — Parts III–XII, 115 chapters |
+| **Review level** | Level 15 — recurring-case continuity |
+| **Defect class** | Recurring-case element declared as continuity but not delivered; and an error in recorded review evidence |
+| **PRIMARY category** | **2 — Cross-Part coherence** |
+| **Secondary** | 8 — Governance integrity (accuracy of a recorded finding) |
+| **Severity** | **P3** |
+| **Blocker class** | **C — Final-Gate Blocker** |
+| **Related finding** | **FE-L2-003** (Atlas recurring case changes organisational identity between Parts). **Same recurring-case control, distinct root cause** — FE-L2-003 concerns *organisational identity*, this concerns *persona continuity* and the accuracy of the evidence recorded for it. Linked, **not merged; no double deduction** |
+| **Finding** | Two related results. **(a) Persona continuity is effectively absent.** Across all 115 T5-scoped chapters the Atlas case supports only **five named personas** — Priya, Marcus, Nadia, Ravi and a false positive — and **only one, Nadia, appears in more than one Part**. Personas occur in just **3 of the 10 scoped Parts** (III, V, IX). **(b) FE-L2-003's persona evidence is wrong in one particular.** It records that *"Dele spans IV and V"*. **No persona named Dele exists anywhere in the manuscript**: a word-boundary search returns **0 standalone occurrences**, and every apparent hit is a substring of `Delegated`, `Delete`, `Deletion` or `Deleting`. |
+| **Evidence** | Word-boundary census over all 115 scoped chapters. **Priya** — Part III only, 7 mentions (ch01, ch05, ch12). **Marcus** — Part III only, 2 (ch02). **Nadia** — Part III ch09 **and** Part V ch05, 2 mentions — **the only cross-Part persona in the edition**. **Ravi** — Part V only, 1 (ch06). **"Chen"** was also examined and is **not a persona**: it is the citation author *Chen, Tsong Yueh* on the metamorphic-testing footnote in Part IX ch06. **`grep -cow "Dele"` returns 0 across every scoped chapter.** |
+| **Consequence** | The Atlas case is a strong **systems, service and vocabulary** continuity vehicle — checkout, fulfilment, payment provider and catalogue recur across 8–10 Parts — but it is **not a people continuity vehicle**, and the review record currently overstates that it is. A reader following personas across Parts finds a thread that does not exist. The FE-L2-003 error is a defect in a governance artefact, not in the manuscript. |
+| **Recommended action** | Phase H, two distinct actions. **(i)** Correct FE-L2-003's persona sentence to remove `Dele` and record the true picture — Nadia is the only cross-Part persona. **(ii)** Decide whether persona continuity is *intended* for the edition. If it is not, say so explicitly in the plan's recurring-case description, exactly as Parts I–II's Atlas absence is already declared legitimate; if it is, the gap is a manuscript matter for a later pass. **Do not rewrite FE-L2-003 in place without authorisation** — this task records the corrected evidence and does not alter the prior finding. |
+| **Status** | `OPEN` · **Owner** Project Founder |
+| **Revision trigger** | Escalate to **P2** if a Phase H decision establishes that cross-Part persona continuity **was** an accepted requirement of the recurring-case design, since the gap would then be an undelivered declared feature rather than an unstated absence. |
+| **Verification** | `NOT VERIFIED` |
+
+---
+
+## 5E. Standing-finding evidence recorded by F-T5
+
+**FE-L3-003 (Atlas settlement-identifier collision) — STANDS at P3. ESCALATION TRIGGER NOT MET; both limbs independently tested and both fail.** The trigger reads *"escalate to P2 if a later batch shows the same namespace reused a third time, or if T5 finds the reuse spans Parts."*
+
+*Limb 1 — third reuse.* The `S-9xx` / `R-9xx` / `O-1xx` / `C-904` namespace occurs in **exactly two Part VI chapters** — ch06 (53 occurrences) and ch11 (28). **No third chapter uses it.**
+
+*Limb 2 — spans Parts.* An identifier census across all 115 T5-scoped chapters shows the `S-*` family (39 occurrences) and `O-*` family (23) are **confined entirely to Part VI** and appear in **no other Part**. Two families superficially appeared to span Parts and **both were excluded on semantics, per the §8 rule against inferring meaning from prefix**: `R-4821` in Part V is a **renewal order** in a browser-diagnostics example, semantically and numerically distinct from Part VI's `R-901`–`R-999` **revenue-report entries**; and the apparent `C-*` overlap in Part XI was an artefact of the search pattern capturing the `-01` suffix of `ARCH-SYNC-01`, not a real family.
+
+**Conclusion: outcome A — the collision remains contained within Part VI.** FE-L3-003 is **unmodified**. Its trigger has now been tested at L4, L5 and T5 and never met; **T5 was its last remaining route to escalation**, so the trigger is now **spent** unless a Phase H correction reopens the namespace.
+
+**FE-L2-003 (Atlas organisational identity) — STANDS at P3; core claim confirmed edition-wide and bounded, persona evidence corrected at FE-T5-001.** T5 extends the descriptor census from three Parts to ten. Part III is the sole outlier at *"a fictional **subscription service**"*; Parts IV, V and VI agree on *"a fictional **retailer** / **online retailer**"*; and **Parts VII–XII introduce no competing organisational descriptor at all**, using Atlas purely as an operating context. **The identity divergence therefore does not widen across the edition — it is confined to Part III against Parts IV–VI**, which bounds the Phase H remedy to a single sentence in one Part. The finding is **neither strengthened nor weakened on its primary claim.**
+
+**Level 19 edition-wide technical-contradiction pass — no contradiction found.** Recurring normative Atlas subjects were compared pairwise across Parts III–XII: checkout architecture and behaviour, payment-provider ownership and callback limits, refund eligibility, fulfilment semantics, settlement ownership, and reliability targets. Every pair holds under the same stated conditions, and where treatment differs the differentiating lens is stated in the text. The **99.9% / 99.95%** reliability figures shared by Parts VIII and XI are **compatible, not conflicting**: VIII uses 99.9% as checkout's stated *objective* while XI uses it as checkout's *component-availability input* to a synthetic composition model.
+
+**Case-boundary control (§18) prevented one false contradiction.** The date `2026-08-10` appears in Parts IV (50), V (33) and VI (6) and initially looked like a shared Atlas business date. **It is not.** In Parts IV and V every occurrence is a bibliographic *"Accessed 2026-08-10"* in a footnote definition; only Part VI uses it as an Atlas business day. **Explicit Atlas linkage was required before merging, and it was absent**, so no contradiction was raised.
+
 ---
 
 ## 5. Standing-finding evidence recorded by F-L2
@@ -770,4 +809,4 @@ These are **not** manuscript findings and **do not** appear in the register abov
 
 ---
 
-**Last Updated:** 2026-08-19 (F-T3)
+**Last Updated:** 2026-08-19 (F-T5)

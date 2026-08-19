@@ -903,6 +903,50 @@ The eight alphanumeric forms and their loci reproduced exactly: `CMU/SEI-2000-TR
 
 ---
 
+## Event FE-EV-018 — Phase F-T5: Atlas / Recurring-Case Continuity Transversal START
+
+| Field | Value |
+| --- | --- |
+| **Event ID** | `FE-EV-018` |
+| **Date** | 2026-08-19 |
+| **Phase** | F — **T5**, the second transversal to run. **Levels 15 and 19** |
+| **Scope** | **Parts III–XII, 115 chapters** — derived from plan §5.3 and §4 L15 before review, not assumed. **Parts I–II are legitimately outside the Atlas case** and are excluded by the committed architecture, not by reviewer choice |
+| **Score / verdict** | START, no verdict |
+| **Baseline digest at START** | `ec588eaa…f150a411` — **matches the F0 baseline** |
+| **Standing Atlas findings** | **FE-L3-003** (settlement-identifier collision within Part VI, P3) and **FE-L2-003** (organisational identity differs between Parts, P3) |
+| **FE-L3-003 escalation trigger** | *"Escalate to P2 if a later batch shows the same namespace reused a third time, or if T5 finds the reuse spans Parts."* **T5 is the last remaining route by which this trigger can fire** |
+| **Open Class-B Review-Execution Blockers** | **0** |
+
+---
+
+## Event FE-EV-019 — Phase F-T5: Atlas / Recurring-Case Continuity Transversal COMPLETE
+
+| Field | Value |
+| --- | --- |
+| **Event ID** | `FE-EV-019` |
+| **Date** | 2026-08-19 |
+| **Phase** | F — **T5** COMPLETE (Levels 15 and 19) |
+| **Scope** | **115 / 115 scoped chapters assessed**, each with a six-field record (`T5-001`…`T5-115`). No sampling |
+| **Score / verdict** | **`UNSCORED`** — plan §7.3 defines no transversal score. Evidence-only |
+| **Baseline digest at START / END** | `ec588eaa…f150a411` / `ec588eaa…f150a411` — **matched both times; zero manuscript mutation** |
+| **Atlas presence census** | **Present in 115 / 115 scoped chapters** — 930 `Atlas` mentions, 302 as `Atlas Commerce`. Heaviest in XI (226) and XII (190) |
+| **FE-L3-003 escalation — the mandatory control** | **TRIGGER NOT MET. Outcome A: the collision remains contained within Part VI.** Both limbs independently tested and both fail. *Third reuse:* the namespace occurs in **exactly two** Part VI chapters, ch06 and ch11. *Spans Parts:* `S-*` (39) and `O-*` (23) appear in **no other Part**. Two apparently cross-Part families were excluded **on semantics, not prefix** — `R-4821` (Part V) is a renewal order in a browser-diagnostics example, distinct from Part VI's `R-9xx` revenue-report entries; the `C-*` overlap in Part XI was a search artefact capturing the `-01` suffix of `ARCH-SYNC-01`. **FE-L3-003 is unmodified at P3, and its trigger is now spent** — T5 was its last route |
+| **FE-L2-003 disposition** | **STANDS at P3; core claim confirmed and bounded.** The descriptor census now covers all ten scoped Parts: **III alone** says *"subscription service"*; **IV, V, VI** agree on *"retailer / online retailer"*; **VII–XII introduce no organisational descriptor at all**. The divergence **does not widen**, so the Phase H remedy is one sentence in one Part |
+| **New finding** | **FE-T5-001** (P3, class C, PRIMARY category 2). **Persona continuity is effectively absent** — 5 named personas across 115 chapters, in 3 of 10 Parts, with only **Nadia** appearing in more than one Part. **FE-L2-003's persona evidence records a persona that does not exist**: *Dele* has **0 standalone occurrences**, every apparent hit being a substring of `Delegated`/`Delete`/`Deletion`. *Chen* is the citation author Chen, Tsong Yueh, not a persona. **FE-L2-003 was not rewritten**; the corrected evidence is recorded separately |
+| **L19 edition-wide contradiction pass** | **No contradiction found.** Recurring normative Atlas subjects compared pairwise **across Parts** — checkout architecture, payment-provider ownership and callback limits, settlement ownership, refund eligibility, fulfilment semantics, reliability targets. **This completes L19 at edition scope**, which the five batch-local passes could not |
+| **Case-boundary control (§18)** | **Prevented one false contradiction.** `2026-08-10` appears in Parts IV (50), V (33) and VI (6) and looked like a shared Atlas business date. In IV and V **every occurrence is a bibliographic *Accessed* date** in a footnote definition; only VI uses it as a business day. Explicit Atlas linkage was required before merging and was absent |
+| **Continuity results** | **Systems/services — strong**: `checkout`, `fulfilment`, `payment provider` each span 8 Parts, `catalogue` 10. **Currency — coherent**: EUR is the case currency; GBP appears only where FX conversion is the teaching point (VI ch10, recomputed at `NUM-L3-07`); no USD. **Region/timezone — Part-local by design.** **Chronology — deliberately independent per Part**, not forced into one timeline. **Personas — effectively absent** (FE-T5-001) |
+| **Findings** | **1 new — FE-T5-001.** Severity P3. Blockers **A 0 · B 0 · C 1 · D 0** |
+| **Ledger updates** | Concept Consistency (`CON-T5-01`…`05`) · Cross-Part Dependency (`DEP-T5-01`…`05`, superseding `DEP-L5-09`) · Coverage Control (115 rows + T5 axis). **No new ledger created** |
+| **Class-B blockers** | **0** |
+| **Coverage** | **T5: 115 / 115 — COMPLETE**, reconciling exactly to the committed scope |
+| **Other transversals** | **T1, T2, T4 and T6 remain at 0 and are NOT started.** **Phase F remains IN EXECUTION** |
+| **Non-collapse note** | F-T5 is a transversal review event. It does not complete Phase F, authorise another transversal, rewrite any prior finding, or apply any manuscript correction |
+
+**Next authorised activity:** a further transversal — **T1, T2, T4 or T6** — or Phase H triage. **Nothing is started or authorised by this event.** **v0.16.0 remains planned and unreleased.**
+
+---
+
 ## 3. Manuscript-mutation control (plan §13.4 drift discipline, applied to Phase F)
 
 **Rule.** The 137 chapter blobs recorded in §2.5 constitute the Phase F review-execution baseline. **Manuscript chapters must remain unmodified for the duration of Phase F.**
@@ -945,6 +989,8 @@ git ls-files -s book | awk '$4 ~ /chapters\/chapter-.*\.md$/ {print $4":"$2}' | 
 | `FE-EV-015` | 2026-08-19 | F — L5 | Longitudinal Batch 5, Parts XI–XII — COMPLETE · 24/24 chapters · 449/449 Tier-1 adjudicated · both zero populations verified · 0 arithmetic defects · 3 findings · **LONGITUDINAL AXIS CLOSED 137/137** | **`UNSCORED`** |
 | `FE-EV-016` | 2026-08-19 | F — T3 | Tier-2 quantitative transversal — START · population 1,516 reconciled edition-wide | START, no verdict |
 | `FE-EV-017` | 2026-08-19 | F — T3 | Tier-2 quantitative transversal — COMPLETE · 1,516/1,516 classified · **64 Tier-1 false negatives found** · ARC-C3-5 and FE-L1-006 triggers not met · 1 new finding | **`UNSCORED`** |
+| `FE-EV-018` | 2026-08-19 | F — T5 | Atlas / recurring-case continuity transversal — START · scope Parts III–XII, 115 chapters | START, no verdict |
+| `FE-EV-019` | 2026-08-19 | F — T5 | Atlas continuity transversal — COMPLETE · 115/115 assessed · **FE-L3-003 trigger NOT MET, collision contained in Part VI** · L19 complete edition-wide · 1 new finding | **`UNSCORED`** |
 
 > **Note on the FE-EV-008 → FE-EV-009 sequence — this is not a lost record.** Three quantitative-instrument events occurred between them — **F-IR4** (fresh independent re-acceptance, 39 PASS · 0 PARTIAL · 1 FAIL), **F-IR4V2** (independent verification establishing that the instrument is intact, that E9 is correct and that the E11 total is 51) and **F-IR4F** (the E11 occurrence-decomposition correction, commit `250cfe7`) — and **none was written to this log at the time it happened.** Their outcomes are recorded in the **plan §16 phase-history table**, and `FE-EV-009` states the chain it closes.
 >
@@ -952,4 +998,4 @@ git ls-files -s book | awk '$4 ~ /chapters\/chapter-.*\.md$/ {print $4":"$2}' | 
 
 ---
 
-**Last Updated:** 2026-08-19 (F-T3)
+**Last Updated:** 2026-08-19 (F-T5)
