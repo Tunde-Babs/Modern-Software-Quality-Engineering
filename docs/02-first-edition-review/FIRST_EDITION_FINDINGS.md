@@ -7,14 +7,14 @@
 | **Document type** | Review artefact 2 of 4 — **Defects** |
 | **Authority** | [`FIRST_EDITION_REVIEW_PLAN.md`](FIRST_EDITION_REVIEW_PLAN.md) §13.1 |
 | **Lifecycle** | Mutable, Phases F→J |
-| **State** | **F-L1, F-L2, F-L3 and F-L4 complete — 19 findings recorded (Parts I–X). Batch L5 and transversals T1–T6 not started.** FE-L1-005 independently reviewed at **F-IR3** (verdict B), corrected at **F-IR4C** and **F-IR4F**, and **CLOSED at F-IR4V3** on independent verification of Condition 35; **F-L3 is no longer blocked by it**. No new finding ID was raised by any of those events |
+| **State** | **Longitudinal axis COMPLETE — F-L1…F-L5 all complete, 137/137 chapters inspected, 22 findings recorded (Parts I–XII). All six transversals T1–T6 NOT started; Phase F is NOT complete.** FE-L1-005 independently reviewed at **F-IR3** (verdict B), corrected at **F-IR4C** and **F-IR4F**, and **CLOSED at F-IR4V3** on independent verification of Condition 35; **F-L3 is no longer blocked by it**. No new finding ID was raised by any of those events |
 | **Owner** | Tunde Ajala |
 
 > This is a **governance artefact**, not a manuscript chapter. It carries no chapter-style status.
 
-> **Findings recorded to date: 19 — 7 from F-L1 (Parts I–II), 5 from F-L2 (Parts III–V), 5 from F-L3 (Parts VI–VIII) and 2 from F-L4 (Parts IX–X).** No transversal has run. Severity distribution: **P0 = 0 · P1 = 4 · P2 = 3 · P3 = 12.** Blocker classes: **A = 0 · B = 0 · C = 19 · D = 0.**
+> **Findings recorded to date: 22 — 7 from F-L1 (Parts I–II), 5 from F-L2 (Parts III–V), 5 from F-L3 (Parts VI–VIII), 2 from F-L4 (Parts IX–X) and 3 from F-L5 (Parts XI–XII).** No transversal has run. Severity distribution: **P0 = 0 · P1 = 5 · P2 = 3 · P3 = 14.** Blocker classes: **A = 0 · B = 0 · C = 22 · D = 0.**
 >
-> **Three of the five L2 findings are additional instances of existing systemic groups and carry NO separate deduction** (plan §7.3 systemic root-cause rule). **Four of the five L3 findings likewise join existing systemic groups** — `SYS-LIFECYCLE-DRIFT`, `SYS-ORPHAN-FOOTNOTE`, `SYS-TIER1-IDENTIFIER` and `SYS-TEMPLATE-NAMING` — and carry no separate deduction; only **FE-L3-003** is a new root cause. **Both F-L4 findings join existing systemic groups** — `SYS-LIFECYCLE-DRIFT` and `SYS-TEMPLATE-NAMING` — and carry no separate deduction; **F-L4 raised no new root cause**. Distinct deducting findings to date: **10**.
+> **Three of the five L2 findings are additional instances of existing systemic groups and carry NO separate deduction** (plan §7.3 systemic root-cause rule). **Four of the five L3 findings likewise join existing systemic groups** — `SYS-LIFECYCLE-DRIFT`, `SYS-ORPHAN-FOOTNOTE`, `SYS-TIER1-IDENTIFIER` and `SYS-TEMPLATE-NAMING` — and carry no separate deduction; only **FE-L3-003** is a new root cause. **Both F-L4 findings join existing systemic groups** — `SYS-LIFECYCLE-DRIFT` and `SYS-TEMPLATE-NAMING` — and carry no separate deduction; **F-L4 raised no new root cause**. **All three F-L5 findings likewise join existing groups** — `SYS-LIFECYCLE-DRIFT`, `SYS-TEMPLATE-NAMING` and `SYS-TIER1-IDENTIFIER` — and **F-L5 raised no new root cause**. Distinct deducting findings across the whole longitudinal axis: **10**.
 
 ---
 
@@ -651,6 +651,78 @@ These are **not** manuscript findings and **do not** appear in the register abov
 
 **FE-L1-002 (Part I chapter status)** — unchanged. All 24 L4 chapters carry `Status: Draft`, conforming to the plan §2.3 model.
 
+### FE-L5-001 — Lifecycle drift in the Part XI and Part XII READMEs (systemic with FE-L1-001, FE-L2-001, FE-L3-001 and FE-L4-001)
+
+| Field | Value |
+| --- | --- |
+| **Phase / batch** | Phase F · longitudinal **L5** |
+| **Part / path** | XI · `book/part-11-system-design-architecture/README.md` L545 · XII · `book/part-12-engineering-leadership/README.md` L33, L768, L771 |
+| **Review level** | Level 1 |
+| **Defect class** | False current-state claim in an active governance-adjacent artefact |
+| **PRIMARY category** | **8 — Governance integrity** |
+| **Secondary** | 2 — Cross-Part coherence |
+| **Severity** | **P1** — the systemic group's severity, set by its highest instance (FE-L1-001) |
+| **Blocker class** | **C — Final-Gate Blocker** |
+| **Systemic group** | **`SYS-LIFECYCLE-DRIFT`** — joins **FE-L1-001**, **FE-L2-001**, **FE-L3-001** and **FE-L4-001**. **Scored once at group level; no separate deduction.** |
+| **Finding** | Four statements assert that the First Edition Review has not begun. Part XI L545: *"`v0.16.0 — First Edition Review` is the next planned milestone, which has **not started**."* Part XII L33: *"the project moves to **v0.16.0 — First Edition Review**, which has not started."* Part XII L768: *"**`v0.16.0 — First Edition Review`** is the next planned milestone and has **not started**."* Part XII L771: *"The next planned milestone is **`v0.16.0 — First Edition Review`**, which has **not started** and requires a separately authorized task."* |
+| **Evidence** | At the time of this batch the First Edition Review had completed Phase F0 and longitudinal batches L1–L4 with **113 of 137 chapters inspected**, and this batch reviews Parts XI and XII themselves. The claim is contradicted by 113 recorded coverage rows in `FIRST_EDITION_VERIFICATION_LEDGERS.md` and by thirteen recorded review events in `FIRST_EDITION_REVIEW_LOG.md`. |
+| **Consequence** | Same mechanism as the four prior instances. This is the **highest instance count in a single batch (four)** and repeats the Part X variant: the stale claim concerns the review process that is reviewing the Part. |
+| **Systemic escalation assessment** | With L5 complete, the group's edition-wide extent is now fully measurable for the first time: `SYS-LIFECYCLE-DRIFT` is confirmed in **Parts II, III, IV, V, VI, VII, IX, X, XI and XII — 10 of 12 Parts**, across **all five longitudinal batches**. Only Parts I and VIII are unaffected. It is already **P1**; **P0 is not warranted** — no claim is unsafe, corrupt or structurally invalid. **Severity is unchanged and no prior finding is rewritten.** The extent is recorded so Phase H can size the remedy correctly: a single sweep of all twelve Part READMEs closes the entire group. |
+| **Recommended action** | Phase H. **No manuscript correction made by this task.** |
+| **Status** | `OPEN` · **Owner** Project Founder |
+| **Verification** | `NOT VERIFIED` |
+
+---
+
+### FE-L5-002 — Part XII substitutes three required template sections (systemic with FE-L1-004, FE-L2-005, FE-L3-005 and FE-L4-002)
+
+| Field | Value |
+| --- | --- |
+| **Phase / batch** | Phase F · longitudinal **L5** |
+| **Part / path** | XII · `chapters/chapter-02-…` · `chapters/chapter-07-…` · `chapters/chapter-12-capstone-…` · plus XI and XII, all 24 chapters |
+| **Review level** | Level 4 |
+| **Defect class** | Required section present under a non-template heading; **and, in one case, replaced by a section of different function** |
+| **PRIMARY category** | **7 — Editorial consistency** |
+| **Severity** | **P3** |
+| **Blocker class** | **C** |
+| **Systemic group** | **`SYS-TEMPLATE-NAMING`** — joins **FE-L1-004**, **FE-L2-005**, **FE-L3-005** and **FE-L4-002**. **Scored once at group level; no separate deduction.** |
+| **Finding** | Three distinct deviations. **(a)** Parts XI and XII use `Common Misconceptions and Pitfalls` in 24/24 chapters, against the template's `Common Misconceptions or Common Pitfalls`. **(b)** Part XII ch02 and ch07 replace `Opening Story` with **`Motivating Scenario`** — a pure rename: the section occupies the same slot between `Opening Quote` and `Why This Chapter Matters`, and its content is an illustrative Atlas scenario. **(c)** Part XII ch12 — **the final chapter of the edition** — has **no `Why This Chapter Matters` section at all**, substituting **`What This Capstone Is`**. |
+| **Evidence** | Required-section census across all 24 L5 chapters: 21/24 carry all 15 required sections; the three exceptions are listed above. Deviation **(c)** is qualitatively different from every prior instance in this group: `What This Capstone Is` states **scope** (*"This capstone asks one question…"*) where the template requires **motivation**, so this is a function substitution rather than a rename. **It is the only chapter in all 137 with no `Why This…` section**; edition-wide the heading census is 134 `Why This Chapter Matters`, 2 `Why This Capstone Matters`, 1 absent. |
+| **Consequence** | For (a) and (b), navigation by exact heading fails and no content is missing. For (c), the edition's closing chapter omits a required motivational section; the Opening Quote and Opening Story partly carry that load, so documenting is sufficient and the severity stays **P3**. |
+| **FE-L1-004 revision-trigger assessment — edition scope, assessable for the first time** | The trigger reads *"escalate to P2 if later batches show the edition has no consistent capstone-heading convention."* With the longitudinal axis closed, all 11 capstones are now measurable: **8 use `Why This Chapter Matters`, 2 use `Why This Capstone Matters` (Parts II, III), 1 has none (Part XII)**. **Assessment: NOT met on a strict reading** — a dominant convention exists at 8/11 (73%). **The margin is narrow and the judgement is recorded rather than assumed:** three forms across eleven capstones, and an edition-wide misconceptions split of Parts I–VI versus VII–XII in which **neither** form matches the template. **No severity was changed unilaterally.** A reviewer could reasonably read the trigger as met; that decision belongs to the owner at Phase H or T6. |
+| **Status** | `OPEN` · **Owner** Project Founder |
+| **Verification** | `NOT VERIFIED` |
+
+---
+
+### FE-L5-003 — Two version-string fragments admitted as Tier-1 candidates in Part XI (systemic with FE-L1-006 and FE-L3-004)
+
+| Field | Value |
+| --- | --- |
+| **Phase / batch** | Phase F · longitudinal **L5** |
+| **Part / path** | XI · `chapters/chapter-08-contracts-compatibility-and-change-impact.md` L212 and L300 |
+| **Review level** | Level 8 candidate adjudication |
+| **Defect class** | Identifier counted as a quantitative claim |
+| **PRIMARY category** | **4 — Numerical / analytical integrity** |
+| **Severity** | **P3** |
+| **Blocker class** | **C** |
+| **Systemic group** | **`SYS-TIER1-IDENTIFIER`** — joins **FE-L1-006** and **FE-L3-004**. **Scored once at group level; no separate deduction.** |
+| **Finding** | The `dec` class admits `2.0` twice, both from the release identifier **`Semantic Versioning 2.0.0`** — once in prose (L212) and once in a Further Reading link text (L300). Both are adjudicated `NOT APPLICABLE`. |
+| **Evidence** | Full adjudication of the bounded 449-candidate population: **447 CONFIRMED · 2 NOT APPLICABLE**, contamination **2/449 = 0.45%**. `Semantic Versioning 2.0.0` appears on three lines; the third (L306) is an E5 footnote definition and correctly never reaches Tier-1. Leakage checks confirm the instrument is behaving as specified: **0 DOI prefixes** (`10.1109`, `10.1145` are on E5 lines) and **0 chapter `Version 0.1.0` metadata values** (E7 removes metadata rows) reach Tier-1. |
+| **Consequence** | Negligible at this rate; recorded for group continuity and to keep the candidate-versus-claim distinction auditable per plan §6.2.4. **The instrument is unchanged and behaves exactly as §6.2 specifies** — this is an adjudication outcome, not an instrument defect. |
+| **Status** | `OPEN` · **Owner** Review architecture owner |
+| **Verification** | `NOT VERIFIED` |
+
+---
+
+## 5C. Standing-finding evidence recorded by F-L5
+
+**FE-L3-003 (Atlas settlement-identifier collision) — escalation trigger tested a second time and NOT met; finding unchanged at P3.** A search of all 24 L5 chapters for Part VI's `S-9xx`, `R-9xx` and `O-1xx` namespaces returns **zero occurrences**; Parts XI–XII use the separate `ARCH-*` and `LEAD-*` families. **The trigger has now been tested in both L4 and L5 and not met in either. With the longitudinal axis closed, no further longitudinal batch remains to fire it** — only transversal **T5** could still do so. FE-L3-003 remains **P3** and is not modified.
+
+**`SYS-ORPHAN-FOOTNOTE` — no L5 instance.** Reference/definition reconciliation across all 24 chapters: **39 definitions, 0 undefined references, 0 unused definitions.** The group's confirmed extent is therefore Parts II, III and VII only.
+
+**FE-L1-002 (Part I chapter status)** — unchanged. All 24 L5 chapters carry `Status: Draft`, conforming to the plan §2.3 model. **With L5 complete, the status model has now been verified across all 137 chapters: 127 `Draft` and 10 `Technical Review Ready`, matching the F0 baseline exactly.**
+
 ---
 
 ## 5. Standing-finding evidence recorded by F-L2
@@ -661,4 +733,4 @@ These are **not** manuscript findings and **do not** appear in the register abov
 
 ---
 
-**Last Updated:** 2026-08-18 (F-L4)
+**Last Updated:** 2026-08-19 (F-L5)

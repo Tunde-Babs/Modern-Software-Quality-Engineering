@@ -808,6 +808,55 @@ The eight alphanumeric forms and their loci reproduced exactly: `CMU/SEI-2000-TR
 
 ---
 
+## Event FE-EV-014 — Phase F-L5: Longitudinal Batch 5 START
+
+| Field | Value |
+| --- | --- |
+| **Event ID** | `FE-EV-014` |
+| **Date** | 2026-08-19 |
+| **Phase** | F — L5 · Longitudinal Batch 5, **Parts XI–XII** — the final longitudinal batch |
+| **Scope** | System Design & Architecture · Engineering Leadership & Career Growth. **24 chapters · 144,520 words** |
+| **Score / verdict** | START, no verdict |
+| **Baseline digest at START** | `ec588eaa…f150a411` — **matches the F0 baseline** |
+| **Verification tier** | **Standard** (plan §5.2). Parts XI–XII are the edition's only **controlled-freeze baselines** (§13.3), recorded post-gate with explicit freeze semantics. **Verification of Parts XI–XII is not weakened**; sampling latitude was available but the Tier-1 and citation populations were enumerated in full regardless |
+| **Accepted L5 populations** | Tier-1 **449** · Tier-2 **594** · code-fence **0** · inline-code **0** · citations **39** · words **144,520** — every value reconciled against plan §5.2/§6.4 and the canonical tool **before** adjudication. **The brief matched the plan in every respect** |
+| **Controlled-freeze baselines** | XI `7067ebb54cba199a9215363188171d2e4966ed15` · XII `839391e136ac00c757dded170ba8ed94a58ff41d` — both resolve, both match plan §13.3 |
+| **Standing findings relevant to L5** | `SYS-LIFECYCLE-DRIFT` (FE-L1-001, FE-L2-001, FE-L3-001, FE-L4-001) · `SYS-TEMPLATE-NAMING` (FE-L1-004, FE-L2-005, FE-L3-005, FE-L4-002) · `SYS-ORPHAN-FOOTNOTE` · `SYS-TIER1-IDENTIFIER` (FE-L1-006, FE-L3-004) · **FE-L3-003**, whose escalation trigger receives its final longitudinal test · **FE-L1-004**, whose capstone-heading trigger becomes assessable at edition scope for the first time |
+| **Open Class-B Review-Execution Blockers** | **0** |
+
+---
+
+## Event FE-EV-015 — Phase F-L5: Longitudinal Batch 5 COMPLETE · LONGITUDINAL AXIS CLOSED
+
+| Field | Value |
+| --- | --- |
+| **Event ID** | `FE-EV-015` |
+| **Date** | 2026-08-19 |
+| **Phase** | F — L5 · Longitudinal Batch 5, **Parts XI–XII** — COMPLETE |
+| **Scope** | **24 / 24 chapters inspected**, each with a valid six-field coverage record (§7 rows `L5-01`…`L5-24`) |
+| **Score / verdict** | **`UNSCORED`** — plan §7.3 defines no batch-level score. **Evidence-only; no batch score invented.** Prior Part gate scores (XI 96/100, XII 97/100) are Part gate scores, **not** First Edition scores |
+| **Baseline digest at START / END** | `ec588eaa…f150a411` / `ec588eaa…f150a411` — **matched both times; zero manuscript mutation** |
+| **Levels executed** | **Longitudinal routing only, per plan §5.3: Levels 1, 2, 3 and 4.** Levels 5–11 and passes 15, 16 and 19 are transversal-owned; L5 recorded **batch-local evidence only** and marked no transversal complete |
+| **Candidate populations** | Tier-1 **449** · Tier-2 **594** · code-fence **0** · inline-code **0** — all four reconciled exactly, none hand-discovered |
+| **Tier-1 adjudication** | **449 / 449 adjudicated — 447 CONFIRMED QUANTITATIVE CLAIM · 2 NOT APPLICABLE.** **55 figures independently recomputed** (16 explicit `=` assertions expanded to their component values): **0 arithmetic defects, 0 inference defects.** Verdicts recorded separately at `NUM-L5-01`…`NUM-L5-09` and `NUM-L5-ADJ` |
+| **Zero populations verified, not assumed** | **code-fence = 0**: five fenced blocks exist and were enumerated individually — all `text` conceptual arrow-diagrams containing **zero digits**. **inline-code = 0**: 235 inline spans exist, only two carry a digit (HTTP `201`), and the Tier-1 grammar over the E2 stream returns 0 matches. **Both zeros are genuine, not absences of the construct** |
+| **Richest quantitative content in the edition** | L5 carries the edition's most demanding reasoning: a six-hop independent-failure probability with an explicitly quantified rounding discipline, a two-sample standard-error comparison, a queueing accumulate-and-drain model, and a **correctly constructed Simpson's paradox** whose sub-totals reconcile and whose mix adjustment reverses the aggregate direction. All reproduced exactly |
+| **Tier-2** | **594 / 594 triaged** — 528 claim-candidates · 66 identifiers. **T3 not run and not claimed** |
+| **Citations** | **39 / 39 reconciled and enumerated** (XI 30, XII 9). **0 undefined references, 0 unused definitions.** Recorded `SECONDARY`/`METADATA`; **no primary verification claimed and no URL fetched** |
+| **Findings** | **3 new — FE-L5-001, FE-L5-002, FE-L5-003.** Severity **P1 = 1 · P3 = 2**. Blockers **A = 0 · B = 0 · C = 3 · D = 0**. **All three join existing systemic groups; L5 raised no new root cause** |
+| **FE-L3-003 escalation** | **Trigger tested and NOT met, for the second and final time.** Part VI's `S-9xx`/`R-9xx`/`O-1xx` namespace returns **0 occurrences** in all 24 chapters; XI–XII use `ARCH-*` and `LEAD-*`. **With the longitudinal axis closed, only T5 can still fire this trigger.** FE-L3-003 remains **P3**, unmodified |
+| **FE-L1-004 trigger — first edition-scope assessment** | All 11 capstones now measurable: **8 use `Why This Chapter Matters`, 2 use `Why This Capstone Matters`, 1 has none**. **Assessed NOT met on a strict reading** (dominant convention at 8/11) — but the margin is narrow, the judgement is recorded rather than assumed, and **no severity was changed unilaterally**. The decision belongs to the owner at Phase H or T6 |
+| **Ledger updates** | Source (`SRC-L5-00`…`02`) · Numerical (`NUM-L5-00`…`ADJ`, 14 rows) · Terminology (`TRM-L5-01`…`07`) · Concept (`CON-L5-01`…`05`) · QA→QE (`PRG-L5-01`…`05`) · Dependency (`DEP-L5-01`…`09`) · Coverage (24 rows; accessibility census closed edition-wide). **No seventh ledger created** |
+| **Coverage** | **L5 24 / 24. LONGITUDINAL AXIS COMPLETE — 137 / 137.** Transversal axis remains **0 / 137** |
+| **Longitudinal-axis status** | **CLOSED.** Every chapter in the edition has been read once with a valid six-field record. Across all five batches: **1,169 Tier-1 candidates adjudicated — 20 + 19 + 302 + 379 + 449, reconciling exactly with the edition-wide Tier-1 census — with 0 arithmetic defects, 0 inference defects, 0 Class-B blockers and 0 manuscript mutations.** |
+| **Phase F status** | **NOT COMPLETE.** Plan §5.4 requires **137/137 on both axes**. All six transversals — T1, T2, T3, T4, T5, T6 — stand at **0** and none was completed by any batch |
+| **Remaining risks** | (i) `SYS-LIFECYCLE-DRIFT` is confirmed in **10 of 12 Parts** across all five batches and remains **P1**, unfixed pending Phase H. (ii) `SYS-TEMPLATE-NAMING` now spans all twelve Parts with two competing conventions, neither matching the template, plus one absent required section in the edition's final chapter. (iii) **No citation in any batch is primary-verified** — per-claim alignment is T2 work covering all 378 edition citations. (iv) **All six transversals are unstarted**, so no cross-Part contradiction, terminology or concept census yet exists |
+| **Non-collapse note** | F-L5 closes the longitudinal axis only. It does **not** complete Phase F, authorise any transversal, or apply any manuscript correction |
+
+**Next authorised activity:** the **first transversal review** defined by plan §5.3. **No transversal is started or authorised by this event.** Selection and authorisation are a separate owner decision. Phase F remains **IN EXECUTION**; **v0.16.0 remains planned and unreleased**.
+
+---
+
 ## 3. Manuscript-mutation control (plan §13.4 drift discipline, applied to Phase F)
 
 **Rule.** The 137 chapter blobs recorded in §2.5 constitute the Phase F review-execution baseline. **Manuscript chapters must remain unmodified for the duration of Phase F.**
@@ -846,6 +895,8 @@ git ls-files -s book | awk '$4 ~ /chapters\/chapter-.*\.md$/ {print $4":"$2}' | 
 | `FE-EV-011` | 2026-08-18 | F — L3 | Longitudinal Batch 3, Parts VI–VIII — COMPLETE · 33/33 chapters · 302/302 Tier-1 adjudicated · 0 arithmetic defects · 5 findings | **`UNSCORED`** |
 | `FE-EV-012` | 2026-08-18 | F — L4 | Longitudinal Batch 4, Parts IX–X — START · 24 chapters · populations reconciled 379 / 600 / 7 / 306 · §13.3 census applied | START, no verdict |
 | `FE-EV-013` | 2026-08-18 | F — L4 | Longitudinal Batch 4, Parts IX–X — COMPLETE · 24/24 chapters · 379/379 Tier-1 adjudicated · 42/42 citations censused · 0 arithmetic defects · 2 findings | **`UNSCORED`** |
+| `FE-EV-014` | 2026-08-19 | F — L5 | Longitudinal Batch 5, Parts XI–XII — START · 24 chapters · populations reconciled 449 / 594 / 0 / 0 | START, no verdict |
+| `FE-EV-015` | 2026-08-19 | F — L5 | Longitudinal Batch 5, Parts XI–XII — COMPLETE · 24/24 chapters · 449/449 Tier-1 adjudicated · both zero populations verified · 0 arithmetic defects · 3 findings · **LONGITUDINAL AXIS CLOSED 137/137** | **`UNSCORED`** |
 
 > **Note on the FE-EV-008 → FE-EV-009 sequence — this is not a lost record.** Three quantitative-instrument events occurred between them — **F-IR4** (fresh independent re-acceptance, 39 PASS · 0 PARTIAL · 1 FAIL), **F-IR4V2** (independent verification establishing that the instrument is intact, that E9 is correct and that the E11 total is 51) and **F-IR4F** (the E11 occurrence-decomposition correction, commit `250cfe7`) — and **none was written to this log at the time it happened.** Their outcomes are recorded in the **plan §16 phase-history table**, and `FE-EV-009` states the chain it closes.
 >
@@ -853,4 +904,4 @@ git ls-files -s book | awk '$4 ~ /chapters\/chapter-.*\.md$/ {print $4":"$2}' | 
 
 ---
 
-**Last Updated:** 2026-08-18 (F-L4)
+**Last Updated:** 2026-08-19 (F-L5)
