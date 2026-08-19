@@ -760,6 +760,54 @@ The eight alphanumeric forms and their loci reproduced exactly: `CMU/SEI-2000-TR
 
 ---
 
+## Event FE-EV-012 — Phase F-L4: Longitudinal Batch 4 START
+
+| Field | Value |
+| --- | --- |
+| **Event ID** | `FE-EV-012` |
+| **Date** | 2026-08-18 |
+| **Phase** | F — L4 · Longitudinal Batch 4, **Parts IX–X** |
+| **Scope** | AI Quality Engineering · Performance & Security Engineering. **24 chapters · 88,258 words** |
+| **Score / verdict** | START, no verdict |
+| **Baseline digest at START** | `ec588eaa…f150a411` — **matches the F0 baseline** |
+| **Verification tier** | **Standard, elevated (§13.3).** The elevation was read before inspection: §13.3 requires Parts IX–X to receive **census rather than sampling for Tier-1 quantitative claims and citations**, because their baselines record what was drafted rather than what a controlled freeze reviewed. **No sampling latitude was taken on either population** |
+| **Accepted L4 populations** | Tier-1 **379** · Tier-2 **600** · code-fence **7** · inline-code **306** · citations **42** · words **88,258** — every value reconciled against plan §5.2/§6.4 and the canonical tool **before** adjudication began. **The brief's figures matched the plan in every respect** |
+| **Recorded baselines** | IX `4df2b8d2409cfa0fc474cad8e1bbdbe652eb9dd5` · X `3f7391b5fd939a5dd973d25386811031f3448180` — both resolve, both match plan §13.3 |
+| **Standing findings relevant to L4** | `SYS-LIFECYCLE-DRIFT` (FE-L1-001, FE-L2-001, FE-L3-001) · `SYS-TEMPLATE-NAMING` (FE-L1-004, FE-L2-005, FE-L3-005) · `SYS-ORPHAN-FOOTNOTE` (FE-L1-003, FE-L2-004, FE-L3-002) · `SYS-TIER1-IDENTIFIER` (FE-L1-006, FE-L3-004) · **FE-L3-003**, whose escalation trigger is tested by this batch |
+| **Open Class-B Review-Execution Blockers** | **0** |
+
+---
+
+## Event FE-EV-013 — Phase F-L4: Longitudinal Batch 4 COMPLETE
+
+| Field | Value |
+| --- | --- |
+| **Event ID** | `FE-EV-013` |
+| **Date** | 2026-08-18 |
+| **Phase** | F — L4 · Longitudinal Batch 4, **Parts IX–X** — COMPLETE |
+| **Scope** | **24 / 24 chapters inspected**, each with a valid six-field coverage record (§7 rows `L4-01`…`L4-24`) |
+| **Score / verdict** | **`UNSCORED`** — plan §7.3 defines no batch-level score. **Evidence-only; no batch score invented.** Prior Part gate scores (IX 97/100, X 97/100) are Part gate scores, **not** First Edition scores |
+| **Baseline digest at START / END** | `ec588eaa…f150a411` / `ec588eaa…f150a411` — **matched both times; zero manuscript mutation** |
+| **Levels executed** | **Longitudinal routing only, per plan §5.3: Levels 1, 2, 3 and 4.** Levels 5–11 and supporting passes 15, 16 and 19 are transversal-owned; L4 recorded **batch-local evidence only** and marked no transversal complete |
+| **Candidate populations** | Tier-1 **379** · Tier-2 **600** · code-fence **7** · inline-code **306** — all four reconciled exactly, none hand-discovered |
+| **Tier-1 adjudication** | **379 / 379 adjudicated under §13.3 census — 379 CONFIRMED QUANTITATIVE CLAIM · 0 NOT APPLICABLE.** **64 figures independently recomputed** (53 explicit `=` assertions plus 11 derived values recovered during review): **0 arithmetic defects, 0 inference defects.** Verdicts recorded separately at `NUM-L4-01`…`NUM-L4-08` and `NUM-L4-ADJ` |
+| **Strongest control observed** | Part X's throughput accounting states two invariants — `offered = rejected + accepted` and `accepted = completed + timed out + pending` — which **hold exactly in both scenarios**, closing the measurement vocabulary by arithmetic rather than prose alone |
+| **Tier-2** | **600 / 600 triaged** — 364 claim-candidates · 236 identifiers. **T3 not run and not claimed** |
+| **Citations** | **42 / 42 censused** per §13.3 across 17 sources — NIST (AI RMF, CSF 2.0, SSDF, SP 800-63-4), OWASP (Top 10, API Top 10, ASVS), ISO/IEC 25010:2023, RFC 2330, RFC 9700, W3C, Google SRE, DORA, and peer-reviewed AI-evaluation literature. **0 undefined references, 0 unused definitions.** Recorded `SECONDARY`/`METADATA`; **no primary verification claimed and no URL fetched** |
+| **Findings** | **2 new — FE-L4-001, FE-L4-002.** Severity **P1 = 1 · P3 = 1**. Blockers **A = 0 · B = 0 · C = 2 · D = 0**. **Both join existing systemic groups and carry no separate deduction; L4 raised no new root cause** |
+| **Clean results worth recording** | **0 orphaned footnotes** · **0 identifier contamination in Tier-1 (first batch at 0.00%)** · **0 broken links** · **0 structural defects** · **0 arithmetic defects** · **no companion-asset misstatement** |
+| **FE-L3-003 escalation** | **Trigger tested and NOT met.** Part VI's `S-9xx`/`R-9xx`/`O-1xx` namespace returns **0 occurrences** across all 24 L4 chapters; Parts IX–X use separate identifier families. **FE-L3-003 remains P3 and was not modified** |
+| **AI/LLM claim review** | **No material obsolescence found.** Part IX contains **zero vendor, model or version names** — no GPT/Claude/Gemini/Llama, no OpenAI/Anthropic, no `temperature`/`top_p`/`max_tokens` — honouring its declared tool-neutrality exactly. The four absolute-sounding statements are **durable epistemic or architectural claims**, not version-sensitive capability claims. **No claim was flagged merely because a newer model exists** |
+| **Security/performance review** | Part X's security material is **defensive throughout**; ch07 L135 explicitly excludes bypass demonstration, live-target discovery and payload construction. Performance claims are consistently scoped to stated windows and populations, and ch12 explicitly denies that an arithmetic gap constitutes usable headroom. **No worked example is generalised into a universal recommendation** |
+| **Ledger updates** | Source Verification (`SRC-L4-00`…`02`) · Numerical Verification (`NUM-L4-00`…`ADJ`, 13 rows) · Terminology Register (`TRM-L4-01`…`06`) · Concept Consistency (`CON-L4-01`…`05`) · QA→QE Progression (`PRG-L4-01`…`05`) · Cross-Part Dependency (`DEP-L4-01`…`08`) · Coverage Control (24 rows + accessibility census). **No seventh ledger created** |
+| **Coverage** | **L4 24 / 24.** Cumulative longitudinal **113 / 137**. Transversal axis remains **0 / 137** |
+| **Remaining risks** | (i) `SYS-LIFECYCLE-DRIFT` now spans **eight Parts across four consecutive batches** and remains **P1** and unfixed pending Phase H. (ii) `SYS-TEMPLATE-NAMING` has produced **two competing conventions**, neither matching the template; FE-L1-004's capstone trigger is still not met but remains armed for L5. (iii) Citation claim–source alignment is `SECONDARY` throughout — **no L4 citation is primary-verified**, and per-claim T2 alignment is outstanding. (iv) **24 chapters (L5, Parts XI–XII) remain unreviewed** and all six transversals stand at 0/137 |
+| **Non-collapse note** | F-L4 is a review event. It does **not** authorise F-L5, completes no transversal, and applies **zero** manuscript corrections |
+
+**Next authorised activity:** **Phase F-L5 — Longitudinal First Edition Review, Parts XI–XII.** **F-L5 is NOT STARTED and NOT AUTHORISED by this event.** Phase F remains **IN EXECUTION** at 113/137; **v0.16.0 remains planned and unreleased**.
+
+---
+
 ## 3. Manuscript-mutation control (plan §13.4 drift discipline, applied to Phase F)
 
 **Rule.** The 137 chapter blobs recorded in §2.5 constitute the Phase F review-execution baseline. **Manuscript chapters must remain unmodified for the duration of Phase F.**
@@ -796,6 +844,8 @@ git ls-files -s book | awk '$4 ~ /chapters\/chapter-.*\.md$/ {print $4":"$2}' | 
 | `FE-EV-009` | 2026-08-18 | F-IR4V3 | Independent Condition-35 final closure verification · E11 decomposition re-derived at `43 + 8 = 51` · FE-L1-005 CLOSED · F-IR4 final 40/40 | **A — CONDITION 35 VERIFIED** · 25 PASS / 0 FAIL |
 | `FE-EV-010` | 2026-08-18 | F — L3 | Longitudinal Batch 3, Parts VI–VIII — START · 33 chapters · populations reconciled 302 / 198 / 100 / 54 | START, no verdict |
 | `FE-EV-011` | 2026-08-18 | F — L3 | Longitudinal Batch 3, Parts VI–VIII — COMPLETE · 33/33 chapters · 302/302 Tier-1 adjudicated · 0 arithmetic defects · 5 findings | **`UNSCORED`** |
+| `FE-EV-012` | 2026-08-18 | F — L4 | Longitudinal Batch 4, Parts IX–X — START · 24 chapters · populations reconciled 379 / 600 / 7 / 306 · §13.3 census applied | START, no verdict |
+| `FE-EV-013` | 2026-08-18 | F — L4 | Longitudinal Batch 4, Parts IX–X — COMPLETE · 24/24 chapters · 379/379 Tier-1 adjudicated · 42/42 citations censused · 0 arithmetic defects · 2 findings | **`UNSCORED`** |
 
 > **Note on the FE-EV-008 → FE-EV-009 sequence — this is not a lost record.** Three quantitative-instrument events occurred between them — **F-IR4** (fresh independent re-acceptance, 39 PASS · 0 PARTIAL · 1 FAIL), **F-IR4V2** (independent verification establishing that the instrument is intact, that E9 is correct and that the E11 total is 51) and **F-IR4F** (the E11 occurrence-decomposition correction, commit `250cfe7`) — and **none was written to this log at the time it happened.** Their outcomes are recorded in the **plan §16 phase-history table**, and `FE-EV-009` states the chain it closes.
 >
@@ -803,4 +853,4 @@ git ls-files -s book | awk '$4 ~ /chapters\/chapter-.*\.md$/ {print $4":"$2}' | 
 
 ---
 
-**Last Updated:** 2026-08-18 (F-L3)
+**Last Updated:** 2026-08-18 (F-L4)
