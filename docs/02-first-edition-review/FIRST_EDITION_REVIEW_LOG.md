@@ -1081,6 +1081,48 @@ The eight alphanumeric forms and their loci reproduced exactly: `CMU/SEI-2000-TR
 
 **Reconciliation annotation (not a review event).** T1 and T6 originated independently on parallel worktrees from the same isolated `33a81ae` baseline. T1 retains its existing canonical identifiers; during reconciliation T6 was assigned the next unused canonical identifiers, `FE-EV-024` and `FE-EV-025`. Its reviewer evidence, timestamps, baseline digests, methods and findings are unchanged. The current transversal state is reconciled in the event index and verification ledger.
 
+---
+
+## Event FE-EV-026 — Phase F-T4: QA → QE Progression / Professional Applicability / Exercise Progression START
+
+| Field | Value |
+| --- | --- |
+| **Event ID** | `FE-EV-026` |
+| **Date** | 2026-08-21 |
+| **Phase** | F — **T4**, final remaining transversal. **Levels 9, 10 and 16** |
+| **Scope** | All **137 chapters**, Parts I–XII: **19 capability dimensions × 12 Parts = 228 cells**; professional-artifact census; every exercise prompt |
+| **Score / verdict** | START, no verdict |
+| **Branch / HEAD** | `feature/first-edition-review` at `41d53da` |
+| **Baseline digest at START** | `ec588eaa1e61bd0f0fa8706f5cc3dd470b7caa67314df6f77f858425f150a411` — **matches the F0 baseline** |
+| **Standing findings / blockers** | **28** findings at start; T1 0 new findings; T6 2 new findings (`FE-T6-001` P1/C and `FE-T6-002` P2/C); **open Class-B Review-Execution Blockers: 0** |
+| **Independence** | Plan §11 R1 preserved: this event reviews the committed T4 axis and neither redoes T1/T2/T3/T5/T6 nor authorises Phase H, Phase-F closure, a release activity or a manuscript correction. Existing findings are evaluated for relationship before any new ID is allocated. |
+| **Artefacts affected** | none at START |
+| **Non-collapse note** | T4 is a distinct review measurement. Its START event must not be collapsed with any earlier transversal, the T1/T6 reconciliation, Phase H, or a future Phase-F consolidation/closure event. |
+
+---
+
+## Event FE-EV-027 — Phase F-T4: QA → QE Progression / Professional Applicability / Exercise Progression COMPLETE
+
+| Field | Value |
+| --- | --- |
+| **Event ID** | `FE-EV-027` |
+| **Date** | 2026-08-21 |
+| **Phase** | F — **T4 COMPLETE** (Levels 9, 10 and 16) |
+| **Scope** | **137 / 137 chapters** with valid six-field records (`T4-001`…`T4-137`). **228 / 228** progression cells; **137** professional practical-task artefacts; **1,724** assessed prompts (940 review · 647 interview · 137 practical) |
+| **Score / verdict** | **`UNSCORED`** — plan §7.3 defines no transversal score. Evidence-only. |
+| **Baseline digest at START / END** | `ec588eaa1e61bd0f0fa8706f5cc3dd470b7caa67314df6f77f858425f150a411` / `ec588eaa1e61bd0f0fa8706f5cc3dd470b7caa67314df6f77f858425f150a411` — **matched; zero manuscript mutation** |
+| **Level 9 result** | All 19 capability dimensions traced across all twelve Parts. Prerequisites resolve without circularity; no unexplained difficulty jump, abandoned required capability or artificial QA/QE dichotomy found. |
+| **Level 10 result** | Every chapter practical task is classified; the eleven Part II–XII capstones form a cumulative toolkit-to-decision-brief portfolio. No conflicting, non-accumulating, untaught or unusable professional artefact found. |
+| **Level 16 result** | Every prompt received a cognitive-ladder classification and both required tests. **1,723 pass; 1 copy-adjacent-prose failure**. No untaught-capability failure. |
+| **New finding** | **FE-T4-001** — P3 / Class C: I ch09 Review Question 2 requests the framework's stated purpose, which the chapter already states verbatim. It is a new pedagogical root cause; it does not duplicate T6's structural/editorial findings. |
+| **Existing-finding relationships** | `FE-T6-001` and `FE-T6-002` stand unchanged; their scope is recorded as cross-axis context only. No existing finding was reclassified, closed or duplicated. |
+| **Findings / blockers** | **1 new** — P0 = 0 · P1 = 0 · P2 = 0 · P3 = 1. **Open Class-B Review-Execution Blockers: 0.** Cumulative register: **29** findings. |
+| **Ledger updates** | QA → QE Progression Matrix (`PRG-T4-01`…`08` plus 228 cells) · Cross-Part Dependency Matrix / L10 artefact census (`ART-T4-01`…`13`) · Coverage Control (137 T4 rows + T4 axis) |
+| **Coverage** | **T4: 137 / 137 — COMPLETE**; all three mapped levels have a valid six-field inspection record. |
+| **Other transversals** | T1, T2, T3, T5 and T6 remain complete and preserved. T1 remains 137/137 with 0 new findings; T6 remains 137/137 with 2 new findings. |
+| **Phase-F state** | All longitudinal batches and all six transversals are complete, but **Phase F remains IN EXECUTION**. This event does not perform Phase-F consolidation/closure, Phase H or release administration. |
+| **Non-collapse note** | T4 completion does not correct the manuscript, close Phase F, authorise Phase H or change release status. A separate authorised consolidation/closure task is the exact next lifecycle action. |
+
 ## 3. Manuscript-mutation control (plan §13.4 drift discipline, applied to Phase F)
 
 **Rule.** The 137 chapter blobs recorded in §2.5 constitute the Phase F review-execution baseline. **Manuscript chapters must remain unmodified for the duration of Phase F.**
@@ -1132,6 +1174,8 @@ git ls-files -s book | awk '$4 ~ /chapters\/chapter-.*\.md$/ {print $4":"$2}' | 
 | FE-EV-023 | 2026-08-19 | F — T1 | Terminology / conceptual consistency transversal — COMPLETE · 137/137 assessed · terminology/ownership/alias/overload controls complete · **0 new findings** | **UNSCORED** |
 | `FE-EV-024` | 2026-08-19 | F — T6 | Editorial / cross-Part consistency transversal — START · 137 chapters | START, no verdict |
 | `FE-EV-025` | 2026-08-19 | F — T6 | Editorial / cross-Part consistency transversal — COMPLETE · 137/137 assessed · **2 new findings** | **`UNSCORED`** |
+| `FE-EV-026` | 2026-08-21 | F — T4 | QA → QE progression / professional applicability / exercise progression transversal — START · 137 chapters · 228 capability cells · artefact and exercise census | START, no verdict |
+| `FE-EV-027` | 2026-08-21 | F — T4 | QA → QE progression / professional applicability / exercise progression transversal — COMPLETE · 137/137 assessed · **1 new finding** | **`UNSCORED`** |
 
 > **Note on the FE-EV-008 → FE-EV-009 sequence — this is not a lost record.** Three quantitative-instrument events occurred between them — **F-IR4** (fresh independent re-acceptance, 39 PASS · 0 PARTIAL · 1 FAIL), **F-IR4V2** (independent verification establishing that the instrument is intact, that E9 is correct and that the E11 total is 51) and **F-IR4F** (the E11 occurrence-decomposition correction, commit `250cfe7`) — and **none was written to this log at the time it happened.** Their outcomes are recorded in the **plan §16 phase-history table**, and `FE-EV-009` states the chain it closes.
 >
@@ -1139,4 +1183,4 @@ git ls-files -s book | awk '$4 ~ /chapters\/chapter-.*\.md$/ {print $4":"$2}' | 
 
 ---
 
-**Last Updated:** 2026-08-19 (F-T1/T6 reconciliation finalisation)
+**Last Updated:** 2026-08-21 (F-T4)

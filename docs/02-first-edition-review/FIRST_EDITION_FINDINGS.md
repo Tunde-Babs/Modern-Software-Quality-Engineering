@@ -7,14 +7,14 @@
 | **Document type** | Review artefact 2 of 4 — **Defects** |
 | **Authority** | [`FIRST_EDITION_REVIEW_PLAN.md`](FIRST_EDITION_REVIEW_PLAN.md) §13.1 |
 | **Lifecycle** | Mutable, Phases F→J |
-| **State** | **Longitudinal axis COMPLETE (137/137). Transversals T1, T2, T3, T5 and T6 COMPLETE. 28 findings recorded. T4 NOT STARTED; Phase F remains IN EXECUTION.** FE-L1-005 independently reviewed at **F-IR3** (verdict B), corrected at **F-IR4C** and **F-IR4F**, and **CLOSED at F-IR4V3** on independent verification of Condition 35; **F-L3 is no longer blocked by it**. No new finding ID was raised by any of those events |
+| **State** | **Longitudinal axis COMPLETE (137/137). All six transversals COMPLETE. 29 findings recorded. T4 COMPLETE (137/137); Phase F remains IN EXECUTION pending separate consolidation/closure.** FE-L1-005 independently reviewed at **F-IR3** (verdict B), corrected at **F-IR4C** and **F-IR4F**, and **CLOSED at F-IR4V3** on independent verification of Condition 35; **F-L3 is no longer blocked by it**. No new finding ID was raised by any of those events |
 | **Owner** | Tunde Ajala |
 
 > This is a **governance artefact**, not a manuscript chapter. It carries no chapter-style status.
 
-> **Findings recorded to date: 28 — 7 from F-L1 (Parts I–II), 5 from F-L2 (Parts III–V), 5 from F-L3 (Parts VI–VIII), 2 from F-L4 (Parts IX–X), 3 from F-L5 (Parts XI–XII), 1 from F-T3, 1 from F-T5, 2 from F-T2 and 2 from F-T6.** **Five transversals (T1, T2, T3, T5, T6) have run; T4 has not. T1 raised no new finding.** Severity distribution: **P0 = 0 · P1 = 6 · P2 = 4 · P3 = 18.** Blocker classes: **A = 0 · B = 0 · C = 28 · D = 0.**
+> **Findings recorded to date: 29 — 7 from F-L1 (Parts I–II), 5 from F-L2 (Parts III–V), 5 from F-L3 (Parts VI–VIII), 2 from F-L4 (Parts IX–X), 3 from F-L5 (Parts XI–XII), 1 from F-T3, 1 from F-T5, 2 from F-T2, 2 from F-T6 and 1 from F-T4.** **All six transversals have run; T1 raised no new finding.** Severity distribution: **P0 = 0 · P1 = 6 · P2 = 4 · P3 = 19.** Blocker classes: **A = 0 · B = 0 · C = 29 · D = 0.**
 >
-> **Three of the five L2 findings are additional instances of existing systemic groups and carry NO separate deduction** (plan §7.3 systemic root-cause rule). **Four of the five L3 findings likewise join existing systemic groups** — `SYS-LIFECYCLE-DRIFT`, `SYS-ORPHAN-FOOTNOTE`, `SYS-TIER1-IDENTIFIER` and `SYS-TEMPLATE-NAMING` — and carry no separate deduction; only **FE-L3-003** is a new root cause. **Both F-L4 findings join existing systemic groups** — `SYS-LIFECYCLE-DRIFT` and `SYS-TEMPLATE-NAMING` — and carry no separate deduction; **F-L4 raised no new root cause**. **All three F-L5 findings likewise join existing groups** — `SYS-LIFECYCLE-DRIFT`, `SYS-TEMPLATE-NAMING` and `SYS-TIER1-IDENTIFIER` — and **F-L5 raised no new root cause**. Distinct deducting findings across the whole longitudinal axis: **10**. **F-T3 adds one new root cause — FE-T3-001 — F-T5 adds one — FE-T5-001 — and F-T2 adds two — FE-T2-001 and FE-T2-002 — each deducting in its own right**, bringing distinct deducting findings to **14**. **F-T6 adds FE-T6-002 as a new root cause; FE-T6-001 joins FE-L2-002's group `SYS-TABLE-DELIMITER` and carries the group's escalation rather than a separate deduction, bringing distinct deducting findings to 15.**
+> **Three of the five L2 findings are additional instances of existing systemic groups and carry NO separate deduction** (plan §7.3 systemic root-cause rule). **Four of the five L3 findings likewise join existing systemic groups** — `SYS-LIFECYCLE-DRIFT`, `SYS-ORPHAN-FOOTNOTE`, `SYS-TIER1-IDENTIFIER` and `SYS-TEMPLATE-NAMING` — and carry no separate deduction; only **FE-L3-003** is a new root cause. **Both F-L4 findings join existing systemic groups** — `SYS-LIFECYCLE-DRIFT` and `SYS-TEMPLATE-NAMING` — and carry no separate deduction; **F-L4 raised no new root cause**. **All three F-L5 findings likewise join existing groups** — `SYS-LIFECYCLE-DRIFT`, `SYS-TEMPLATE-NAMING` and `SYS-TIER1-IDENTIFIER` — and **F-L5 raised no new root cause**. Distinct deducting findings across the whole longitudinal axis: **10**. **F-T3 adds one new root cause — FE-T3-001 — F-T5 adds one — FE-T5-001 — and F-T2 adds two — FE-T2-001 and FE-T2-002 — each deducting in its own right**, bringing distinct deducting findings to **14**. **F-T6 adds FE-T6-002 as a new root cause; FE-T6-001 joins FE-L2-002's group `SYS-TABLE-DELIMITER` and carries the group's escalation rather than a separate deduction, bringing distinct deducting findings to 15. F-T4 adds FE-T4-001 as a distinct pedagogical root cause, bringing the total to 16.**
 
 ---
 
@@ -123,7 +123,7 @@ Every finding records all of the following. A row missing any mandatory field is
 
 ## 3. Manuscript findings register
 
-**7 findings, all from F-L1 (Parts I–II).** Recorded, classified and evidenced only — **no manuscript content was corrected.** Corrections are Phase H.
+**The following initial subsection records the 7 F-L1 findings (Parts I–II).** Later batch and transversal findings follow in their recorded chronology. All findings are recorded, classified and evidenced only — **no manuscript content was corrected.** Corrections are Phase H.
 
 ### FE-L1-001 — Part II README states the v0.5.0 tag and GitHub Release are still pending
 
@@ -942,4 +942,27 @@ These are **not** manuscript findings and **do not** appear in the register abov
 
 **No existing terminology/concept finding was closed, weakened or had a revision trigger met. Class-B review-execution blockers remain 0.**
 
-**Last Updated:** 2026-08-19 (F-T1)
+## 5I. F-T4 finding and standing-finding evidence
+
+### FE-T4-001 — One review question can be answered by restating the chapter's stated purpose
+
+| Field | Value |
+| --- | --- |
+| **Phase / transversal** | Phase F · transversal **T4** (Level 16) |
+| **Part / path** | I · `book/part-01-foundations/chapters/chapter-09-the-modern-software-quality-engineering-framework.md` L44 and L436 |
+| **Review level** | Level 16 — exercise progression |
+| **Defect class** | Copy-adjacent-prose assessment prompt |
+| **PRIMARY category** | **5 — Pedagogical progression** |
+| **Severity** | **P3** |
+| **Blocker class** | **C — Final-Gate Blocker** |
+| **Systemic group** | New root cause — no existing finding covers assessment prompts that reproduce their answer in the same chapter. |
+| **Finding** | Review Question 2 asks: **"What is the stated purpose of the MSQE Educational Framework?"** The chapter has already supplied the direct answer: **"It used a shared map of engineering domains to identify missing capabilities and their relationships. That is the purpose of the framework in this chapter."** The prompt therefore fails Level 16's copy-adjacent-prose test. |
+| **Evidence** | Full T4 exercise census: **1,724** prompts across 137 chapters. The 71 initially recall-shaped review/interview candidates received contextual review; **1,723** require a distinction, reason, example, application, boundary choice or decision. This is the sole prompt whose requested answer is stated directly as the requested proposition. Ledger: `PRG-T4-05` and `T4-009`. |
+| **Consequence** | The question confirms retrieval of a sentence rather than requiring the reader to explain the framework's use or apply it to a quality problem. It is confined to one review question and does not leave a capability untaught. |
+| **Recommended action** | Phase H, if authorised: replace the retrieval wording with a bounded application or comparison prompt, for example asking how the framework identifies a capability gap in a stated scenario. **T4 made no manuscript change.** |
+| **Status** | `OPEN` · **Owner** Project Founder |
+| **Verification** | `NOT VERIFIED` |
+
+**T4 relationships to standing findings.** The Level 10 artefact census independently sees the nine malformed-table locations as reader-facing output defects but creates **no duplicate** of `FE-T6-001`; those tables are not treated as evidence that the artefacts fail to accumulate. The non-existent/contradictory editorial authority remains `FE-T6-002`'s governance root cause and is not reclassified by T4. No existing finding changed severity, blocker class or scope. **Open Class-B Review-Execution Blockers: 0.**
+
+**Last Updated:** 2026-08-21 (F-T4)
