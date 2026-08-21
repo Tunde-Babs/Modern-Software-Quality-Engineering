@@ -1144,6 +1144,26 @@ The eight alphanumeric forms and their loci reproduced exactly: `CMU/SEI-2000-TR
 | **Artefacts affected** | `FIRST_EDITION_FINDINGS.md`, this append-only log, current-state lifecycle surfaces and the dated Development Log. The review plan's active status row only was refreshed; method, quantitative tool, quality-gate authority, release policy and release metadata were not changed. |
 | **Non-collapse note** | This is neither a Phase G consolidated independent review nor Phase H correction, Phase I closure verification, Phase J Final Gate, Phase K baseline, or release administration. **Phase H has not started.** |
 
+---
+
+## Event FE-EV-029 — Phase H: Remediation Architecture and Execution Plan
+
+| Field | Value |
+| --- | --- |
+| **Event ID** | `FE-EV-029` |
+| **Date** | 2026-08-21 |
+| **Phase** | **H — planning / batching / governance only; correction execution NOT STARTED** |
+| **Scope** | Converted the Phase-F closure backlog for all **28 open** findings into root-cause allocation, seven correction waves, dependency controls, worktree design, verification architecture, baseline/mutation rules and finding-closure rules. |
+| **Score / verdict** | **`UNSCORED`** — architecture planning is neither a correction nor a review verdict. |
+| **Branch / HEAD** | `feature/first-edition-review` at pre-flight `56458ba` |
+| **Baseline digest at START / END** | `ec588eaa1e61bd0f0fa8706f5cc3dd470b7caa67314df6f77f858425f150a411` / `ec588eaa1e61bd0f0fa8706f5cc3dd470b7caa67314df6f77f858425f150a411` — **matched; zero manuscript mutation** |
+| **Planning result** | Seven waves: H1 authority foundation; H2 GFM tables; H3 lifecycle READMEs; H4 status/template work; H5 citation/footnote/Atlas hygiene; H6 quantitative specialist route; H7 bounded pedagogy cleanup. All 28 open IDs are allocated exactly once. |
+| **First-wave design** | **C — H1 authority, H2 tables and H3 lifecycle drift in parallel** after a separately authorised H-START record. H1 precedes only template work; H2 and H3 do not overlap its authority files or each other. |
+| **Decision / specialist controls** | Part-I status, Atlas persona intent and quantitative disposition are owner-decision-gated. Any quantitative rule/tool change is separately authorised and requires fresh independent re-acceptance; it is not folded into ordinary Phase-H editing. |
+| **Lifecycle state** | **Phase-H remediation architecture is COMPLETE and authorised for separate first-wave execution authorisation. Phase-H correction execution has NOT STARTED.** |
+| **Artefacts affected** | `FIRST_EDITION_FINDINGS.md`, this append-only log, current-state lifecycle surfaces and the dated Development Log. No manuscript, Part README, authority file, quantitative tool, quality-gate authority, release policy, CHANGELOG, tag, branch or release metadata changed. |
+| **Non-collapse note** | This planning event is not a Phase-H START/correction event and does not close, accept, defer, verify or alter any finding. It does not authorise Phase I, Phase J, Phase K, Phase L or release administration. |
+
 ## 3. Manuscript-mutation control (plan §13.4 drift discipline, applied to Phase F)
 
 **Rule.** The 137 chapter blobs recorded in §2.5 constitute the Phase F review-execution baseline. **Manuscript chapters must remain unmodified for the duration of Phase F.**
@@ -1198,6 +1218,7 @@ git ls-files -s book | awk '$4 ~ /chapters\/chapter-.*\.md$/ {print $4":"$2}' | 
 | `FE-EV-026` | 2026-08-21 | F — T4 | QA → QE progression / professional applicability / exercise progression transversal — START · 137 chapters · 228 capability cells · artefact and exercise census | START, no verdict |
 | `FE-EV-027` | 2026-08-21 | F — T4 | QA → QE progression / professional applicability / exercise progression transversal — COMPLETE · 137/137 assessed · **1 new finding** | **`UNSCORED`** |
 | `FE-EV-028` | 2026-08-21 | F — closure | Consolidation and closure · all longitudinal and transversal axes complete · 29 findings reconciled · Phase-H backlog defined | **`UNSCORED`** — **Phase F COMPLETE** |
+| `FE-EV-029` | 2026-08-21 | H — planning | Remediation architecture / waves / worktree and verification design · **no correction started** | **`UNSCORED`** |
 
 > **Note on the FE-EV-008 → FE-EV-009 sequence — this is not a lost record.** Three quantitative-instrument events occurred between them — **F-IR4** (fresh independent re-acceptance, 39 PASS · 0 PARTIAL · 1 FAIL), **F-IR4V2** (independent verification establishing that the instrument is intact, that E9 is correct and that the E11 total is 51) and **F-IR4F** (the E11 occurrence-decomposition correction, commit `250cfe7`) — and **none was written to this log at the time it happened.** Their outcomes are recorded in the **plan §16 phase-history table**, and `FE-EV-009` states the chain it closes.
 >
@@ -1205,4 +1226,4 @@ git ls-files -s book | awk '$4 ~ /chapters\/chapter-.*\.md$/ {print $4":"$2}' | 
 
 ---
 
-**Last Updated:** 2026-08-21 (Phase-F consolidation and closure)
+**Last Updated:** 2026-08-21 (Phase-H remediation architecture; correction execution not started)

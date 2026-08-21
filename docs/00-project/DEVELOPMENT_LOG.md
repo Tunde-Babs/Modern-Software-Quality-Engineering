@@ -804,3 +804,18 @@ All fifteen Phase E closure conditions pass. **E-02, E-03, E-04, E-10 and E-15 r
 **Status:** Phase F closed; Phase H not started
 
 **Last Updated:** 2026-08-21
+
+---
+
+## 2026-08-21 — Phase H Remediation Architecture and Execution Plan
+
+- **Planning / batching / governance only.** Phase F closure's immutable 29-ID register (28 open Class-C findings; P0 = 0 · P1 = 6 · P2 = 4 · P3 = 19; open Class-B blockers = 0) was converted into an execution architecture without correcting, closing, accepting, deferring or verifying a finding.
+- Defined seven waves and the dependency controls: H1 authority foundation; H2 nine GFM table repairs; H3 lifecycle README drift; H4 Part-I status/README and template consistency; H5 citation, footnote and Atlas hygiene; H6 a separately authorised quantitative specialist route; and H7 the bounded T4 pedagogy item. The selected first wave is **C — H1, H2 and H3 in parallel** after a separate H-START record.
+- Recorded isolated-worktree, verification, baseline and finding-closure rules in `FIRST_EDITION_FINDINGS.md` §7 and append-only event `FE-EV-029`. The frozen pre-remediation reference remains commit `56458ba` and manuscript digest `ec588eaa1e61bd0f0fa8706f5cc3dd470b7caa67314df6f77f858425f150a411`.
+- **No Phase-H correction execution started.** No chapter, Part README, authority file, quantitative tool, quality-gate authority, release policy, CHANGELOG, tag, branch or release metadata changed. Phase I, Phase J, Phase K and Phase L remain unauthorised.
+
+**Outcome:** **A — PHASE-H REMEDIATION ARCHITECTURE COMPLETE; READY FOR FIRST CORRECTION WAVE SEPARATE AUTHORISATION.**
+
+**Status:** Phase-H architecture complete; correction execution not started
+
+**Last Updated:** 2026-08-21

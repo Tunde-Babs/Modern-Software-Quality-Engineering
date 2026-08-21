@@ -7,7 +7,7 @@
 | **Document type** | Review artefact 2 of 4 — **Defects** |
 | **Authority** | [`FIRST_EDITION_REVIEW_PLAN.md`](FIRST_EDITION_REVIEW_PLAN.md) §13.1 |
 | **Lifecycle** | Mutable, Phases F→J |
-| **State** | **Phase F COMPLETE — First Edition Review execution COMPLETE.** Longitudinal axis 137/137 and all six transversals are complete; **29 findings are recorded (28 open · 1 closed and independently verified)**. The Phase-H remediation backlog is defined in §6, but **Phase H has not started and requires separate authorisation**. FE-L1-005 was independently closed at **F-IR4V3**; no new finding ID was raised by that correction/verification chain. |
+| **State** | **Phase F COMPLETE — First Edition Review execution COMPLETE.** Longitudinal axis 137/137 and all six transversals are complete; **29 findings are recorded (28 open · 1 closed and independently verified)**. **Phase-H remediation architecture is COMPLETE and authorised for separate first-wave execution authorisation; Phase-H correction execution has not started.** FE-L1-005 was independently closed at **F-IR4V3**; no new finding ID was raised by that correction/verification chain. |
 | **Owner** | Tunde Ajala |
 
 > This is a **governance artefact**, not a manuscript chapter. It carries no chapter-style status.
@@ -1034,3 +1034,124 @@ Every backlog item has a target, invariant, required review level, independence 
 Phase F closure criteria are satisfied: all authorised axes are complete; all findings are recorded and reconciled; no unrecorded Class-B Review-Execution Blocker exists; the manuscript baseline is unchanged; review evidence is internally consistent for scope and counts; and the ordered, dependency-aware Phase-H backlog is defined. **This does not mean the edition is clean, corrected, release-ready or at Phase H.** It means the review-execution stage is complete and its correction handoff is ready for separate authorisation.
 
 **Last Updated:** 2026-08-21 (Phase-F consolidation and closure)
+
+---
+
+## 7. Phase-H remediation architecture and execution plan
+
+### 7.1 Authorisation boundary and planning baseline
+
+This section is the **authorised execution architecture** for the 28 open findings. It authorises planning, batching, dependency control and future worktree design only. **It is not a Phase-H START event, performs no correction, changes no finding status, and does not authorise release administration.** The immutable pre-remediation reference is the Phase-F manifest digest `ec588eaa1e61bd0f0fa8706f5cc3dd470b7caa67314df6f77f858425f150a411` at closure commit `56458ba`.
+
+The first correction task must begin from a clean, committed **H0 planning baseline** containing this architecture. It must append a distinct Phase-H START event before any correction, record its actual branch/HEAD and manifest digest, and create correction branches from that recorded start commit. The Phase-F digest remains immutable reference evidence; after an authorised manuscript correction it is no longer an expected equality target.
+
+`FE-L1-005` remains closed and independently verified at F-IR4V3; it is intentionally excluded from the following 28-ID open-finding allocation.
+
+### 7.2 Complete root-cause allocation
+
+| Execution group | Finding IDs | Correction kind | Gate before execution |
+| --- | --- | --- | --- |
+| H1 — authority foundation | FE-T6-002 | Governance / authority | Owner selects the disposition of empty/shadow files and records chapter-structure precedence |
+| H2 — GFM tables | FE-L2-002 · FE-T6-001 | Mechanical manuscript rendering | None; may run alongside H1 |
+| H3 — lifecycle drift | FE-L1-001 · FE-L2-001 · FE-L3-001 · FE-L4-001 · FE-L5-001 | Part README lifecycle correction | Phase-H START provides the canonical current-state snapshot |
+| H4 — status and structure | FE-L1-002 · FE-L1-007 · FE-L1-004 · FE-L2-005 · FE-L3-005 · FE-L4-002 · FE-L5-002 | Owner-decision-gated metadata, README and heading work | H1 precedence decision and Part-I status decision |
+| H5 — citations and Atlas hygiene | FE-L1-003 · FE-L2-004 · FE-L3-002 · FE-L2-003 · FE-L3-003 · FE-T5-001 · FE-T2-001 · FE-T2-002 | Targeted manuscript and review-record correction | Persona intent decision for any new persona content; otherwise independent targeted checks |
+| H6 — quantitative specialist route | FE-L1-006 · FE-L3-004 · FE-L5-003 · FE-T3-001 | Acceptance/deferment decision or instrument change | Separate specialist authorisation before any plan/tool mutation |
+| H7 — final pedagogical cleanup | FE-T4-001 | One bounded exercise rewrite | None; schedule after H4 if that wave touches Part I chapter surfaces |
+
+This allocation covers all **28 open** finding IDs exactly once. It preserves the five systemic groups and all ten open standalone root causes from §6.
+
+### 7.3 Dependency map
+
+```text
+H0 planning baseline → separate Phase-H START / H-START commit
+                         ├── H1 authority foundation ───────────────┐
+                         ├── H2 GFM tables (parallel) ──────────────┼── integration baseline
+                         └── H3 lifecycle READMEs (parallel) ───────┘
+                                      │
+H1 precedence decision ──────────────┴── H4 status / README / template work
+owner status decision ───────────────────┘
+owner persona-intent decision ───────────┐
+                                         ├── H5 citation / Atlas hygiene
+H4 integrated chapter baseline ──────────┘
+H4 integrated Part-I baseline ─────────────── H7 bounded exercise rewrite
+separate specialist authorisation ─────────── H6 quantitative route
+```
+
+H1 is a prerequisite only for template normalisation. H2 and H3 have no semantic dependency on H1 and are deliberately concurrent. H4 and H7 are sequenced to avoid overlapping Part-I chapter changes. H5 is one controlled workstream because citation aliases, footnotes and Atlas material can overlap in Parts II–VII. H6 is not an ordinary editorial workstream.
+
+### 7.4 Correction waves
+
+| Wave | Included groups / IDs | Affected population | Manuscript change | Dependency / worktree posture | Correction owner type | Expected verification and closure criterion |
+| --- | --- | --- | --- | --- | --- |
+| **H1 — Governance / Authority Foundation** | FE-T6-002; owner-decision packets for FE-L1-002, FE-T5-001 and H6 disposition | Seven empty editorial files, duplicate style-guide path, populated style guide and template | No | First wave; independent of H2/H3 | Review-architecture owner + Project Founder | Targeted independent Level-11 governance review; exactly one recorded structural authority, no shadow authority treated as binding, and all empty files dispositioned |
+| **H2 — High-impact Mechanical Corrections** | `SYS-TABLE-DELIMITER`: FE-L2-002, FE-T6-001 | Nine tables: III ch04; VIII ch02/ch10; IX ch03; X ch05/ch07/ch09/ch10/ch12 | Yes — nine delimiter rows only | Parallel with H1/H3; isolated chapter allow-list | Technical editor / Project Founder | Author structural self-check, then independent GFM rendering of all nine plus complete table header-to-delimiter census returning zero malformed tables |
+| **H3 — Systemic Lifecycle / README Corrections** | `SYS-LIFECYCLE-DRIFT`: five findings | Ten Part READMEs: II–VII and IX–XII | No chapter change; README changes only | Parallel with H1/H2 after H-START snapshot | Project Founder | Owner Lifecycle State Consistency Sweep across all twelve Part READMEs; every release/next-Part claim agrees with tags, releases and current lifecycle state |
+| **H4 — Editorial / Structural Consistency** | FE-L1-002, FE-L1-007, `SYS-TEMPLATE-NAMING` five findings | Part-I statuses/README and selected headings across Parts I–XII, determined by H1 authority decision | Potentially yes | Starts after H1 and owner status decision; after H2/H3 integration to avoid collisions | Project Founder with editorial owner decision | Full Level-1/4 status census plus Level-11 heading/capstone census; all changed statuses are authoritative and all required navigation components remain present |
+| **H5 — Citation / Footnote / Atlas Hygiene** | `SYS-ORPHAN-FOOTNOTE`; FE-L2-003, FE-L3-003, FE-T5-001, FE-T2-001, FE-T2-002 | Targeted chapters in Parts II, III, VI and VII; affected citation definitions; review-record population statements | Yes, except record-only denominator correction | Starts from integrated H4 baseline; persona expansion is owner-decision-blocked | Citation/editorial owner + Project Founder | Full unused-footnote census and affected URL checks; targeted T5/L15/L19 Atlas review; citation-key/denominator census independently re-derived |
+| **H6 — Quantitative / Specialist Corrections** | `SYS-TIER1-IDENTIFIER`; FE-T3-001 | No default manuscript scope; potential plan/tool changes only | Not in ordinary Phase H | **SPECIALIST-REACCEPTANCE-REQUIRED**; separate authorisation and dedicated baseline | Review-architecture specialist | Either documented P3 `ACCEPTED` / `DEFERRED` disposition with no instrument change, or fresh full census, candidate diff and independent re-acceptance before closure |
+| **H7 — Final P3 Cleanup** | FE-T4-001 | Part I ch09 Review Question 2 | Yes — one question | Starts after H4 if H4 touches the same Part-I chapter population | Pedagogical editor / Project Founder | Independent Level-16 contextual review: no copy-adjacent answer and no untaught-capability demand |
+
+### 7.5 First-wave decision
+
+**Selected first wave: C — authority + tables + lifecycle drift in parallel.**
+
+H1 resolves the authority conflict required before any template-normalisation decision. H2 should begin concurrently because all nine changes are high-impact, low-effort, GFM-mechanical and do not depend on authority wording. H3 is README-local and can begin concurrently once the Phase-H START record establishes the exact current lifecycle statement; it does not overlap H1 or H2 targets. This provides early progress on every P1 root cause without conflating authority policy, chapter rendering or lifecycle prose.
+
+### 7.6 Proposed isolated worktrees
+
+All correction worktrees are designs only. `H0` means the owner-approved commit containing this architecture; `H-START` means the clean, separately authorised Phase-H START commit created later. Correction worktrees must not write shared lifecycle artefacts; a single integration worktree owns finding status, review-log updates and current-state surfaces after evidence is independently verified.
+
+| Proposed branch | Purpose / allowed files | Forbidden files | Baseline and merge order | Verification actor |
+| --- | --- | --- | --- | --- |
+| `review/phase-h-h1-governance` | H1: specified authority files and a bounded authority-decision record | `book/**`, Part READMEs, quantitative tool, release metadata, shared Findings/Review Log | H-START; merge first into integration | Independent Level-11/governance reviewer |
+| `review/phase-h-h2-gfm-tables` | H2: only the nine named chapter files | All other chapters, all READMEs, authority/tool/release files, shared lifecycle artefacts | H-START; rebase onto merged H1 before integration if necessary | Different reviewer runs GFM and full table census |
+| `review/phase-h-h3-lifecycle` | H3: only Part READMEs II–VII and IX–XII | Chapters, Part-I README, authority/tool/release files, shared lifecycle artefacts | H-START; merge after H1, alongside H2 | Owner sweep plus independent spot-check of each affected README |
+| `review/phase-h-h4-editorial-structure` | H4: Part-I status files/README and authority-approved heading targets | Quantitative tool, release metadata, shared lifecycle artefacts | Integrated H1/H2/H3 baseline and recorded owner decision | Independent Level-1/4 and Level-11 reviewer |
+| `review/phase-h-h5-citation-atlas` | H5: approved citation, footnote and Atlas target files; planned review-record corrections | Unrelated chapters, Part READMEs, authority/tool/release files, shared lifecycle artefacts | Integrated H4 baseline; one worktree avoids cross-file citation conflicts | Independent citation and targeted Atlas reviewer |
+| `review/phase-h-h6-quantitative` | H6 only after specialist authorisation: plan/tool and generated review evidence | Chapters and all release surfaces unless separately authorised | Separate clean baseline after H5; no creation by default | Fresh independent re-acceptance reviewer |
+| `review/phase-h-h7-pedagogy` | H7: Part-I ch09 only | Every other chapter, all READMEs, authority/tool/release files, shared lifecycle artefacts | Integrated H4 baseline | Independent Level-16 reviewer |
+| `review/phase-h-integration` | Applies verified finding dispositions, event records, manifest/change inventories and current-state updates | Direct manuscript remediation except conflict resolution explicitly reviewed | Receives verified wave commits in stated order | Integration owner; never the sole closure verifier |
+
+### 7.7 Verification architecture
+
+| Group | Verification class | Required evidence |
+| --- | --- | --- |
+| H1 authority | **TARGETED INDEPENDENT VERIFICATION** | Precedence rule, empty/shadow disposition, template/style-guide consistency and no invented manuscript requirement |
+| H2 tables | **FULL POPULATION RECHECK** | All nine rendered targets plus edition-wide table header/delimiter census |
+| H3 lifecycle | **FULL POPULATION RECHECK** | All twelve Part READMEs checked against repository release and lifecycle facts |
+| H4 status/template | **FULL POPULATION RECHECK** | 137-status census and full heading/capstone component census against the chosen standard |
+| H5 footnote/citation/Atlas | **FULL POPULATION RECHECK** for footnotes and citation denominators; **TARGETED INDEPENDENT VERIFICATION** for Atlas | Census outputs, changed-source checks and targeted continuity/identifier/persona review |
+| H6 quantitative | **SPECIALIST RE-ACCEPTANCE** | Fresh deterministic census, candidate-level comparison, changed-baseline record and independent re-acceptance |
+| H7 exercise | **TARGETED INDEPENDENT VERIFICATION** | Contextual copy-adjacent-prose and untaught-capability assessment |
+
+Author self-check establishes that the permitted diff matches the correction record. It is never sufficient to close a P1/P2 finding or a systemic group. Phase I and Phase J retain their plan-defined independence obligations.
+
+### 7.8 Baseline and mutation strategy
+
+1. **Pre-remediation reference:** retain `ec588eaa…f150a411` and commit `56458ba` as immutable Phase-F evidence.
+2. **H0 planning baseline:** owner commits this planning record; every future execution command begins from that clean commit.
+3. **H-START baseline:** the separately authorised first correction wave records branch, HEAD, pre-wave manifest digest, Part-README inventory, allowed-file list and finding-to-file map before editing.
+4. **Per-wave record:** capture start commit, exact target inventory, `git diff --name-only`, changed-file inventory, post-wave manifest digest and the mapping from every changed file to its finding(s).
+5. **Verification baseline:** reviewers compare against the wave's recorded pre/post commit and expected mutation inventory. A changed manuscript digest after H2/H4/H5/H7 is expected; unexplained changed files are not.
+6. **Integration baseline:** after each verified merge, record the new manifest as the next-wave reference without overwriting the immutable Phase-F baseline.
+
+### 7.9 Finding-closure model
+
+`OPEN`, `ACCEPTED`, `DEFERRED`, `CLOSED` and verification states remain the register's only statuses. **“Correction applied” is evidence text, not a new finding status:** the finding remains `OPEN` and `NOT VERIFIED` until the required independent check completes.
+
+| Finding type | Permitted disposition and closure rule |
+| --- | --- |
+| P1 systemic groups (`SYS-TABLE-DELIMITER`, `SYS-LIFECYCLE-DRIFT`) | All in-scope manifestations corrected, full required population rechecked independently, then every member may be marked `CLOSED` / `VERIFIED`. No P1 acceptance-by-convenience route. |
+| P2 authority/status groups | Correct and independently verify, or record a valid plan §7.1 acceptance with owner, rationale, accepted consequence and revision trigger. Acceptance is not closure and remains visible to later gates. |
+| P3 correction groups | Correct and independently verify for `CLOSED`; otherwise a written conscious `ACCEPTED` or `DEFERRED` disposition is required. `WONTFIX` is not a register status and must be expressed as a documented acceptance or deferral. |
+| Quantitative P3 groups | `ACCEPTED` / `DEFERRED` without mutation, or correction followed by specialist independent re-acceptance. Never close from a correction author's own census. |
+| Systemic groups | No member closes merely because one instance is repaired; group closure requires all recorded manifestations and the group-level verification result. |
+
+### 7.10 Phase-H exit and post-remediation sequence
+
+Phase H completes only when all authorised wave corrections are executed; P1 findings are resolved; P2 findings are corrected or formally dispositioned under the governing model; every P3 is explicitly `CLOSED`, `ACCEPTED` or `DEFERRED`; open Class-B blockers remain zero; required verification is complete; review artefacts and per-wave baselines are reconciled; and no unexplained mutation or regression remains. This is an **unscored** correction completion, not a final gate.
+
+The required sequence after Phase H is: **Phase I independent closure verification → Phase J Final First Edition Quality Gate → Phase K controlled whole-edition baseline → Phase L release administration only if the preceding gates authorise it.** Phase H itself does not create a release branch or tag, promote `CHANGELOG.md`, publish v0.16.0, or declare release readiness.
+
+**Last Updated:** 2026-08-21 (Phase-H remediation architecture; correction execution not started)
