@@ -788,3 +788,19 @@ All fifteen Phase E closure conditions pass. **E-02, E-03, E-04, E-10 and E-15 r
 **Status:** Quantitative instrument remediation CLOSED; F-IR4 final 40/40; FE-L1-005 CLOSED; **F-L3 technically ready for separate authorisation — NOT STARTED and NOT AUTHORISED**
 
 **Last Updated:** 2026-08-18
+
+---
+
+## 2026-08-21 — Phase F Consolidation and Closure
+
+- **Phase F — First Edition Review execution is COMPLETE.** The longitudinal axis is complete at **137/137** chapters across F-L1–F-L5. All six transversals completed their authorised scopes: T1 **137/137**, T2 **137/137**, T3's **1,516/1,516** Tier-2 population (with Tier-1 **1,169/1,169** adjudicated longitudinally), T4 **137/137** for Levels 9, 10 and 16, T5 **115/115** Atlas-scoped chapters, and T6 **137/137**.
+- Consolidated the immutable 29-ID finding register without altering any historical finding. Final severity distribution is **P0 = 0 · P1 = 6 · P2 = 4 · P3 = 19**; total blocker distribution is **A = 0 · B = 0 · C = 29 · D = 0**. `FE-L1-005` remains **CLOSED / VERIFIED**; the remaining **28** findings are open Class-C Final-Gate blockers. **Open Class-B Review-Execution Blockers: 0.**
+- Reconciled five systemic root-cause groups — lifecycle drift, table delimiters, template naming, orphan footnotes and Tier-1 identifiers — and ten open standalone roots. The historical `SYS-UNUSED-FOOTNOTE` label is recorded as an alias of canonical `SYS-ORPHAN-FOOTNOTE`; no finding ID, severity, provenance or historical evidence was rewritten.
+- Defined the ordered Phase-H remediation backlog and its verification/parallelisation controls in `docs/02-first-edition-review/FIRST_EDITION_FINDINGS.md` §6. `FE-T6-002` authority resolution precedes template normalisation. `FE-T6-001` is the high-impact, low-effort lead manuscript workstream and may proceed in parallel with that authority work. Quantitative-instrument changes remain separately authorised work requiring independent re-acceptance.
+- Re-verified the frozen 137-chapter manifest digest at closure: `ec588eaa1e61bd0f0fa8706f5cc3dd470b7caa67314df6f77f858425f150a411`. No manuscript chapter or Part README changed; no finding was corrected; no release metadata, tag, branch or release was created.
+
+**Outcome:** **A — PHASE F COMPLETE; FIRST EDITION REVIEW EXECUTION COMPLETE; READY FOR PHASE H REMEDIATION SEPARATE AUTHORISATION.** Phase H has **not** started. `v0.16.0` remains planned and unreleased; v0.15.0 remains the latest stable release.
+
+**Status:** Phase F closed; Phase H not started
+
+**Last Updated:** 2026-08-21

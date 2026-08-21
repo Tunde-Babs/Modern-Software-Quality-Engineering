@@ -7,12 +7,12 @@
 | **Document type** | Review artefact 2 of 4 — **Defects** |
 | **Authority** | [`FIRST_EDITION_REVIEW_PLAN.md`](FIRST_EDITION_REVIEW_PLAN.md) §13.1 |
 | **Lifecycle** | Mutable, Phases F→J |
-| **State** | **Longitudinal axis COMPLETE (137/137). All six transversals COMPLETE. 29 findings recorded. T4 COMPLETE (137/137); Phase F remains IN EXECUTION pending separate consolidation/closure.** FE-L1-005 independently reviewed at **F-IR3** (verdict B), corrected at **F-IR4C** and **F-IR4F**, and **CLOSED at F-IR4V3** on independent verification of Condition 35; **F-L3 is no longer blocked by it**. No new finding ID was raised by any of those events |
+| **State** | **Phase F COMPLETE — First Edition Review execution COMPLETE.** Longitudinal axis 137/137 and all six transversals are complete; **29 findings are recorded (28 open · 1 closed and independently verified)**. The Phase-H remediation backlog is defined in §6, but **Phase H has not started and requires separate authorisation**. FE-L1-005 was independently closed at **F-IR4V3**; no new finding ID was raised by that correction/verification chain. |
 | **Owner** | Tunde Ajala |
 
 > This is a **governance artefact**, not a manuscript chapter. It carries no chapter-style status.
 
-> **Findings recorded to date: 29 — 7 from F-L1 (Parts I–II), 5 from F-L2 (Parts III–V), 5 from F-L3 (Parts VI–VIII), 2 from F-L4 (Parts IX–X), 3 from F-L5 (Parts XI–XII), 1 from F-T3, 1 from F-T5, 2 from F-T2, 2 from F-T6 and 1 from F-T4.** **All six transversals have run; T1 raised no new finding.** Severity distribution: **P0 = 0 · P1 = 6 · P2 = 4 · P3 = 19.** Blocker classes: **A = 0 · B = 0 · C = 29 · D = 0.**
+> **Findings recorded to date: 29 — 7 from F-L1 (Parts I–II), 5 from F-L2 (Parts III–V), 5 from F-L3 (Parts VI–VIII), 2 from F-L4 (Parts IX–X), 3 from F-L5 (Parts XI–XII), 1 from F-T3, 1 from F-T5, 2 from F-T2, 2 from F-T6 and 1 from F-T4.** **All six transversals have run; T1 raised no new finding.** Severity distribution: **P0 = 0 · P1 = 6 · P2 = 4 · P3 = 19.** Blocker classes: **A = 0 · B = 0 · C = 29 · D = 0.** **Open blocker counts: A = 0 · B = 0 · C = 28 · D = 0; FE-L1-005 is the one closed Class-C record.**
 >
 > **Three of the five L2 findings are additional instances of existing systemic groups and carry NO separate deduction** (plan §7.3 systemic root-cause rule). **Four of the five L3 findings likewise join existing systemic groups** — `SYS-LIFECYCLE-DRIFT`, `SYS-ORPHAN-FOOTNOTE`, `SYS-TIER1-IDENTIFIER` and `SYS-TEMPLATE-NAMING` — and carry no separate deduction; only **FE-L3-003** is a new root cause. **Both F-L4 findings join existing systemic groups** — `SYS-LIFECYCLE-DRIFT` and `SYS-TEMPLATE-NAMING` — and carry no separate deduction; **F-L4 raised no new root cause**. **All three F-L5 findings likewise join existing groups** — `SYS-LIFECYCLE-DRIFT`, `SYS-TEMPLATE-NAMING` and `SYS-TIER1-IDENTIFIER` — and **F-L5 raised no new root cause**. Distinct deducting findings across the whole longitudinal axis: **10**. **F-T3 adds one new root cause — FE-T3-001 — F-T5 adds one — FE-T5-001 — and F-T2 adds two — FE-T2-001 and FE-T2-002 — each deducting in its own right**, bringing distinct deducting findings to **14**. **F-T6 adds FE-T6-002 as a new root cause; FE-T6-001 joins FE-L2-002's group `SYS-TABLE-DELIMITER` and carries the group's escalation rather than a separate deduction, bringing distinct deducting findings to 15. F-T4 adds FE-T4-001 as a distinct pedagogical root cause, bringing the total to 16.**
 
@@ -965,4 +965,72 @@ These are **not** manuscript findings and **do not** appear in the register abov
 
 **T4 relationships to standing findings.** The Level 10 artefact census independently sees the nine malformed-table locations as reader-facing output defects but creates **no duplicate** of `FE-T6-001`; those tables are not treated as evidence that the artefacts fail to accumulate. The non-existent/contradictory editorial authority remains `FE-T6-002`'s governance root cause and is not reclassified by T4. No existing finding changed severity, blocker class or scope. **Open Class-B Review-Execution Blockers: 0.**
 
-**Last Updated:** 2026-08-21 (F-T4)
+---
+
+## 6. Phase F closure consolidation and Phase-H handoff
+
+### 6.1 Closure basis and final reconciliation
+
+**Phase F is COMPLETE; First Edition Review execution is COMPLETE.** The five longitudinal batches cover **137/137** chapters, and all six transversals have completed their authorised scope: T1 137/137, T2 137/137, T3's authorised 1,516-candidate Tier-2 object, T4 137/137 (Levels 9, 10 and 16), T5 115/115 Atlas-scoped chapters, and T6 137/137. The 1,169 Tier-1 candidates were adjudicated across L1–L5, so the complete Level-8 population is evidenced without treating T3 as a self-declared substitute for longitudinal work.
+
+All **29 immutable finding IDs** were reconciled. There are **16 deducting root causes**: five systemic groups and eleven standalone roots. `FE-L1-005` is **CLOSED / VERIFIED** and is not in the remediation backlog; the remaining **28 records are OPEN** and map to **15 Phase-H backlog groups**. No ID is deleted, renumbered, weakened or double-deducted. No Class-A, Class-B or Class-D record exists. The 28 open records are Class C — Final-Gate blockers, which constrain Phase J rather than Phase-F review execution.
+
+### 6.2 Systemic groups — canonical reconciliation
+
+| Canonical group | Scope and root cause | Member findings | Current severity / priority | Phase-H verification |
+| --- | --- | --- | --- | --- |
+| `SYS-LIFECYCLE-DRIFT` | Ten Part READMEs retain authoring-time release or next-Part claims after repository state advanced; Parts I and VIII are unaffected. | FE-L1-001 · FE-L2-001 · FE-L3-001 · FE-L4-001 · FE-L5-001 | P1 / Class C — correct before Final Gate | Lifecycle State Consistency Sweep across all twelve Part READMEs against tags, releases and current lifecycle state |
+| `SYS-TABLE-DELIMITER` | Header/delimiter cell-count mismatch leaves nine GFM tables unrendered across Parts III, VIII, IX and X. | FE-L2-002 · FE-T6-001 | P1 / Class C — high impact, low effort | GFM-render check and full header-to-delimiter census: zero malformed tables |
+| `SYS-TEMPLATE-NAMING` | Required navigation components are present but use variants rather than a resolved canonical heading convention. | FE-L1-004 · FE-L2-005 · FE-L3-005 · FE-L4-002 · FE-L5-002 | P3 / Class C — authority-dependent | Resolve standard precedence, then census headings and capstone conventions against that decision |
+| `SYS-ORPHAN-FOOTNOTE` | Twelve footnote definitions in Parts II, III and VII have no in-body marker. `SYS-UNUSED-FOOTNOTE` in FE-L2-004 is a historical alias; **`SYS-ORPHAN-FOOTNOTE` is canonical** for this closure record. | FE-L1-003 · FE-L2-004 · FE-L3-002 | P3 / Class C | Footnote reconciliation: zero unused definitions, zero undefined references, and URL check for every retained definition |
+| `SYS-TIER1-IDENTIFIER` | Version/identifier fragments are admitted as Tier-1 candidates although adjudicated not-applicable; this is distinct from omitted genuine quantities. | FE-L1-006 · FE-L3-004 · FE-L5-003 | P3 / Class C — owner acceptance or separately authorised instrument work | Re-derive candidate/adjudication evidence after the decision; do not merge with FE-T3-001 |
+
+### 6.3 Standalone-root reconciliation
+
+| Root cause / classification | Finding IDs | Consolidated disposition |
+| --- | --- | --- |
+| Chapter-status model conflict | FE-L1-002 | P2/Class C; owner must choose an existing status or extend the authoritative model before any Part-I status edit. |
+| Quantitative-instrument reproducibility | FE-L1-005 | P2/Class C; **CLOSED and independently VERIFIED** at F-IR4V3. No Phase-H action. |
+| Part-I README lacks delivered/review-state evidence | FE-L1-007 | P3/Class C; correct after the Part-I status/review-state decision. |
+| Atlas organisational identity | FE-L2-003 | P3/Class C; standalone from persona and namespace concerns. |
+| Atlas settlement namespace reuse | FE-L3-003 | P3/Class C; standalone from organisational identity. |
+| Unadmitted hyphenated-unit and word-percent forms | FE-T3-001 | P3/Class C; separately authorised instrument change only, because it re-baselines the census. |
+| Atlas persona-continuity expectation | FE-T5-001 | P3/Class C; owner decision first, then correct recorded evidence and, only if intended, manuscript continuity. |
+| Citation-key instability | FE-T2-001 | P3/Class C; citation-maintenance root cause. |
+| Citation URL-scope conflation | FE-T2-002 | P3/Class C; review-record population-description root cause. |
+| Editorial authority conflict/empty shadow | FE-T6-002 | P2/Class C; governance prerequisite for dependent editorial normalisation. |
+| Copy-adjacent exercise prompt | FE-T4-001 | P3/Class C; standalone pedagogical root cause. |
+
+### 6.4 Ordered Phase-H remediation backlog
+
+Backlog labels below are planning handles, not finding IDs. They preserve the finding ownership and do not authorise a correction.
+
+| Priority | Root cause / finding group | Affected files / Parts | Severity | Estimated correction scope | Dependency / execution class | Verification requirement |
+| --- | --- | --- | --- | --- | --- |
+| 1 | Editorial authority — FE-T6-002 | Seven empty `docs/01-editorial/` files; `docs/00-project/EDITORIAL_STYLE_GUIDE.md`; `templates/CHAPTER_TEMPLATE.md` | P2/C | Authority disposition, duplicate resolution and one recorded precedence rule | **SEQUENTIAL** governance prerequisite | Independent Level-11 governance review confirms no empty/shadow authority is treated as binding and exactly one chapter-structure authority governs |
+| 2 | GFM tables — `SYS-TABLE-DELIMITER` | III ch04; VIII ch02/ch10; IX ch03; X ch05/ch07/ch09/ch10/ch12 | P1/C | Nine delimiter-row cells | **PARALLEL-SAFE** with priority 1; leads the manuscript-correction workstream | GFM rendering plus edition-wide header/delimiter census: 0 malformed of the re-censused table population |
+| 3 | Lifecycle drift — `SYS-LIFECYCLE-DRIFT` | Part READMEs II–VII and IX–XII | P1/C | Correct/remove stale lifecycle statements across ten isolated READMEs | **PARALLEL-SAFE** by README after one canonical current-state snapshot | Owner Lifecycle State Consistency Sweep across all twelve Part READMEs; no false release or next-Part claim |
+| 4 | Part-I chapter-status model — FE-L1-002 | Ten Part-I chapters; potentially `QUALITY_GATES.md` | P2/C | Owner decision, then ten metadata edits or an authority-model amendment | **DEPENDENCY-BLOCKED** on owner decision | Level-1/4 status census: each status is in the chosen authoritative model and supported by recorded review evidence |
+| 5 | Part-I README evidence — FE-L1-007 | `book/part-01-foundations/README.md` | P3/C | Retitle delivered chapters and record accurate review-state evidence, if any | **SEQUENTIAL** after priority 4's decision | Part-I README agrees with chapter status and repository history; no invented review event |
+| 6 | Template naming — `SYS-TEMPLATE-NAMING` | Canonical authority selected at priority 1; affected chapter headings across Parts I–XII | P3/C | Apply the selected convention or record explicit exceptions | **DEPENDENCY-BLOCKED** on priority 1 | Level-11 heading census and capstone convention check; all required components remain present |
+| 7 | Orphan footnotes — `SYS-ORPHAN-FOOTNOTE` | Part II ch10/ch11; III ch12; VII ch04/ch11 | P3/C | Attach, move, remove or replace 12 unattached definitions; handle the retained dead URL | **PARALLEL-SAFE** | Footnote and URL reconciliation: zero unused definitions / undefined references; retained links resolve or are validly dispositioned |
+| 8 | Atlas organisational identity — FE-L2-003 | Atlas surfaces in Parts III–VI | P3/C | One bounded signpost reconciling subscription-service and retailer descriptions | **PARALLEL-SAFE** with other distinct Atlas files | T5/L15 targeted continuity check confirms a reader can reconcile all descriptors |
+| 9 | Atlas settlement namespace — FE-L3-003 | Part VI ch06 and ch11 capstone | P3/C | Rename one identifier range or explicitly mark the capstone scenario independent | **PARALLEL-SAFE** with priority 8 | Targeted L4/L19 check: identifiers have one stated referent per scenario |
+| 10 | Atlas persona continuity — FE-T5-001 | FE-L2-003 evidence and, only if owner requires it, affected Atlas chapters / recurring-case description | P3/C | Owner decision before any manuscript expansion; correct the non-existent `Dele` evidence regardless | **DEPENDENCY-BLOCKED** on owner intent decision | Independent T5 check verifies the record states actual persona continuity and any declared requirement is met |
+| 11 | Citation-key stability — FE-T2-001 | Citation definitions across affected chapters; source register surfaces | P3/C | Normalise aliases for 15 sources and split overloaded keys | **SEQUENTIAL** with priority 12 where shared citation records are touched | Citation census: one key per source, no key maps to unrelated sources; source metadata retained |
+| 12 | Citation URL scope — FE-T2-002 | Review-plan Level-7 description; review ledger and log T2 population statements | P3/C | State 378 / 175 definition-scope and 210 chapter-wide URL scope separately | **SEQUENTIAL** with priority 11 | Independent citation census reproduces both denominators and confirms every statement names its scope |
+| 13 | Tier-1 identifier admission — `SYS-TIER1-IDENTIFIER` | No manuscript target by default; quantitative review records if owner accepts | P3/C | Conscious owner acceptance/no-change, or revisit only under separately authorised instrument work | **DEPENDENCY-BLOCKED** on priority 14's instrument decision | Re-derive candidate/adjudication record; closure only with a documented P3 acceptance or independently verified instrument outcome |
+| 14 | Missed quantity written forms — FE-T3-001 | `FIRST_EDITION_REVIEW_PLAN.md` §§6.1–6.4 and `tools/quantitative_census.py` | P3/C | Classifier/specification change and complete census rebaseline | **DEPENDENCY-BLOCKED** — separate specialist authorisation, never folded into ordinary editorial correction | Fresh census, full candidate comparison and independent re-acceptance; closure only if the changed instrument is independently verified |
+| 15 | Copy-adjacent exercise — FE-T4-001 | Part I ch09 review question 2 | P3/C | One bounded question rewrite | **PARALLEL-SAFE** | Independent Level-16 contextual assessment: no copy-adjacent answer and no untaught capability requirement |
+
+### 6.5 Parallelisation and closure controls
+
+The authority decision (priority 1) is the only prerequisite for template-normalisation work (priority 6). It does **not** block the GFM table repair, which should lead the manuscript-correction workstream because it is both high-impact and mechanical; priorities 1 and 2 can proceed in parallel under separate ownership. Lifecycle drift, orphan-footnote repair, the bounded Atlas corrections, and the exercise rewrite are parallel-safe where they do not share a file. Citation-key normalisation and URL-scope correction require one sequenced citation workstream. The Part-I status/evidence work is owner-decision-gated. Both quantitative groups remain outside ordinary Phase-H editing until separately authorised and independently re-accepted.
+
+Every backlog item has a target, invariant, required review level, independence expectation, re-run requirement and closure rule in §6.4. **Phase H is unscored; no correction author may score or independently close their own work.** A finding closes only after the stated invariant is met and the required independent verification is recorded at Phase I or an authorised equivalent closure review.
+
+### 6.6 Phase-F closure decision
+
+Phase F closure criteria are satisfied: all authorised axes are complete; all findings are recorded and reconciled; no unrecorded Class-B Review-Execution Blocker exists; the manuscript baseline is unchanged; review evidence is internally consistent for scope and counts; and the ordered, dependency-aware Phase-H backlog is defined. **This does not mean the edition is clean, corrected, release-ready or at Phase H.** It means the review-execution stage is complete and its correction handoff is ready for separate authorisation.
+
+**Last Updated:** 2026-08-21 (Phase-F consolidation and closure)

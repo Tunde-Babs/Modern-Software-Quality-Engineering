@@ -1123,6 +1123,27 @@ The eight alphanumeric forms and their loci reproduced exactly: `CMU/SEI-2000-TR
 | **Phase-F state** | All longitudinal batches and all six transversals are complete, but **Phase F remains IN EXECUTION**. This event does not perform Phase-F consolidation/closure, Phase H or release administration. |
 | **Non-collapse note** | T4 completion does not correct the manuscript, close Phase F, authorise Phase H or change release status. A separate authorised consolidation/closure task is the exact next lifecycle action. |
 
+---
+
+## Event FE-EV-028 — Phase F: Consolidation and Closure
+
+| Field | Value |
+| --- | --- |
+| **Event ID** | `FE-EV-028` |
+| **Date** | 2026-08-21 |
+| **Phase** | **F — consolidation and closure** |
+| **Scope** | Consolidated the complete F-L1–F-L5 and F-T1–F-T6 evidence, all **29** finding IDs, systemic/root-cause relationships, final blocker state, Phase-H remediation dependencies and verification requirements. No manuscript or Part README was reviewed anew or corrected. |
+| **Score / verdict** | **`UNSCORED`** — Phase-F review execution has no edition score or release verdict. |
+| **Branch / HEAD** | `feature/first-edition-review` at pre-flight `f2778a7` |
+| **Baseline digest at START / END** | `ec588eaa1e61bd0f0fa8706f5cc3dd470b7caa67314df6f77f858425f150a411` / `ec588eaa1e61bd0f0fa8706f5cc3dd470b7caa67314df6f77f858425f150a411` — **matched; zero manuscript mutation** |
+| **Axis completion** | Longitudinal **137/137** (L1–L5); T1 **137/137**; T2 **137/137**; T3's authorised **1,516/1,516 Tier-2** object, with Tier-1 **1,169/1,169** adjudicated longitudinally; T4 **137/137**; T5 **115/115** scoped Atlas chapters; T6 **137/137**. All authorised axes are complete. |
+| **Finding reconciliation** | **29** immutable IDs reconciled to **16 deducting root causes**: five systemic groups and eleven standalone roots. `FE-L1-005` remains **CLOSED / VERIFIED**; **28** records remain open and are mapped to **15** Phase-H backlog groups. The canonical orphan-footnote group is `SYS-ORPHAN-FOOTNOTE`; `SYS-UNUSED-FOOTNOTE` is retained as the historical F-L2 alias. No finding ID, severity or historical provenance was rewritten. |
+| **Final severity / blocker distribution** | P0 = **0** · P1 = **6** · P2 = **4** · P3 = **19**. Total blocker classes: A = **0** · B = **0** · C = **29** · D = **0**. Open blocker classes: A = **0** · B = **0** · C = **28** · D = **0**. |
+| **Phase-H handoff** | Ordered backlog and verification rules recorded in `FIRST_EDITION_FINDINGS.md` §6. `FE-T6-002` authority resolution is a prerequisite for template normalisation; `FE-T6-001` is the high-impact, low-effort lead manuscript workstream and may run in parallel with that authority work. Quantitative-instrument changes remain separately authorised and independently re-accepted work. |
+| **Closure decision** | **A — PHASE F COMPLETE; FIRST EDITION REVIEW EXECUTION COMPLETE; READY FOR PHASE H REMEDIATION SEPARATE AUTHORISATION.** Class-C Final-Gate blockers remain and are not represented as cleared. |
+| **Artefacts affected** | `FIRST_EDITION_FINDINGS.md`, this append-only log, current-state lifecycle surfaces and the dated Development Log. The review plan's active status row only was refreshed; method, quantitative tool, quality-gate authority, release policy and release metadata were not changed. |
+| **Non-collapse note** | This is neither a Phase G consolidated independent review nor Phase H correction, Phase I closure verification, Phase J Final Gate, Phase K baseline, or release administration. **Phase H has not started.** |
+
 ## 3. Manuscript-mutation control (plan §13.4 drift discipline, applied to Phase F)
 
 **Rule.** The 137 chapter blobs recorded in §2.5 constitute the Phase F review-execution baseline. **Manuscript chapters must remain unmodified for the duration of Phase F.**
@@ -1176,6 +1197,7 @@ git ls-files -s book | awk '$4 ~ /chapters\/chapter-.*\.md$/ {print $4":"$2}' | 
 | `FE-EV-025` | 2026-08-19 | F — T6 | Editorial / cross-Part consistency transversal — COMPLETE · 137/137 assessed · **2 new findings** | **`UNSCORED`** |
 | `FE-EV-026` | 2026-08-21 | F — T4 | QA → QE progression / professional applicability / exercise progression transversal — START · 137 chapters · 228 capability cells · artefact and exercise census | START, no verdict |
 | `FE-EV-027` | 2026-08-21 | F — T4 | QA → QE progression / professional applicability / exercise progression transversal — COMPLETE · 137/137 assessed · **1 new finding** | **`UNSCORED`** |
+| `FE-EV-028` | 2026-08-21 | F — closure | Consolidation and closure · all longitudinal and transversal axes complete · 29 findings reconciled · Phase-H backlog defined | **`UNSCORED`** — **Phase F COMPLETE** |
 
 > **Note on the FE-EV-008 → FE-EV-009 sequence — this is not a lost record.** Three quantitative-instrument events occurred between them — **F-IR4** (fresh independent re-acceptance, 39 PASS · 0 PARTIAL · 1 FAIL), **F-IR4V2** (independent verification establishing that the instrument is intact, that E9 is correct and that the E11 total is 51) and **F-IR4F** (the E11 occurrence-decomposition correction, commit `250cfe7`) — and **none was written to this log at the time it happened.** Their outcomes are recorded in the **plan §16 phase-history table**, and `FE-EV-009` states the chain it closes.
 >
@@ -1183,4 +1205,4 @@ git ls-files -s book | awk '$4 ~ /chapters\/chapter-.*\.md$/ {print $4":"$2}' | 
 
 ---
 
-**Last Updated:** 2026-08-21 (F-T4)
+**Last Updated:** 2026-08-21 (Phase-F consolidation and closure)
