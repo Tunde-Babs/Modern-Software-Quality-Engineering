@@ -94,7 +94,7 @@ Headroom is useful only with a declared constraint. “Thirty percent CPU headro
 Queues can make invisible waiting visible, but they can mislead when boundaries are unclear. A queue depth may include work waiting for a consumer, work assigned but not complete, delayed retries, scheduled messages, or dead-lettered messages. Define the queue population before using depth as evidence. The same discipline applies to connection pools, thread pools, database waiting, and client-side retry buffers.
 
 | Hypothesis | Evidence consistent with it | Evidence that could weaken it | Decision consequence |
-| --- | --- | --- |
+| --- | --- | --- | --- |
 | Payment dependency constrains completion | Dependency p95 rises; payment queue grows; completions fall below arrivals | Dependency recovers while queue growth continues | Compare fallback/routing and dependency profiles; bound retry behaviour |
 | Cache misses increase backing-store work | Hit rate falls while database reads and request time rise | Cache-hit slice has same tail, or database timing stays stable | Review cache population, key scope, invalidation, authorization boundary |
 | Retry policy amplifies queue work | Attempts or queued work grow faster than logical journeys | Retries remain bounded and growth tracks only new arrivals | Review retry classification, terminal state, and backoff assumptions |

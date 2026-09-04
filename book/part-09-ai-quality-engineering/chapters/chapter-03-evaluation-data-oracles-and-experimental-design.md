@@ -148,7 +148,7 @@ The aggregate is mathematically correct but decision-poor. It gives 95% of the d
 Atlas is preparing a Support Assistant release while changing the Refund Risk threshold. The learner receives the following inventory and assigns each case to a purpose; one case can be represented in more than one set, but its role and visibility must remain explicit.
 
 | Case class | Development | Hidden release regression | Safety | Subgroup | Adjudication | Production sampling | Reasoned placement |
-| --- | --- | --- | --- | --- | --- | --- |
+| --- | --- | --- | --- | --- | --- | --- | --- |
 | Frequent standard return | Yes | Yes | No | Optional | No | Yes | Measures ordinary task quality without becoming the whole release claim. |
 | Long-tail category exception | Yes | Yes | Yes | Optional | Yes | Yes | Consequence justifies protected regression coverage. |
 | Ambiguous policy/order conflict | Yes | No until resolved | Yes | No | Yes | Later, if authorised | Human/domain judgement establishes the acceptable boundary. |

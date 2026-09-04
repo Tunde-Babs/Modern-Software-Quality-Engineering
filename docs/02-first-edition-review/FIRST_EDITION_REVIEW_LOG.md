@@ -1204,6 +1204,51 @@ The eight alphanumeric forms and their loci reproduced exactly: `CMU/SEI-2000-TR
 | **Artefacts affected by recording** | `FIRST_EDITION_FINDINGS.md`, this append-only log, the review plan's current-state row and `CURRENT_SPRINT.md`. No verified H1 authority content, manuscript, Part README, template, table, citation, quantitative instrument, quality gate, release policy or release metadata is altered by this recording. |
 | **Non-collapse note** | H1-V is the targeted independent closure of H1 only. It does not rewrite or collapse the H1 correction event (`FE-EV-030`), complete Phase H, begin H2–H7, perform Phase I, or imply release readiness. |
 
+---
+
+## Event FE-EV-032 — Phase H2: GFM Table Delimiter Remediation
+
+| Field | Value |
+| --- | --- |
+| **Event ID** | `FE-EV-032` |
+| **Date** | 2026-09-04 |
+| **Phase** | **H2 — correction applied; awaiting independent verification** |
+| **Scope** | Corrected only `FE-T6-001` / `SYS-TABLE-DELIMITER`, including its Part-level origin `FE-L2-002`: the nine recorded GFM header/delimiter width mismatches across Parts III, VIII, IX and X. |
+| **Score / verdict** | **`UNSCORED`** — correction event; no independent verification or finding closure occurred. |
+| **Branch / HEAD at START** | `feature/first-edition-review` at clean pre-flight `9a4f297`; `git diff --check` clean. H1 was complete, FE-T6-002 was closed/verified, and H2 had not started. |
+| **Pre-remediation reference** | Phase-F chapter manifest `ec588eaa1e61bd0f0fa8706f5cc3dd470b7caa67314df6f77f858425f150a411`, retained as immutable reference. Because the H2 start worktree was clean and no chapter had changed since Phase F, the pre-correction working-tree manifest matched it. |
+| **Pre-correction full-population census** | **137 chapters · 1,021 tables · 6,355 body rows · 9 header/delimiter mismatches · 0 ragged body rows · 0 malformed delimiter rows · 0 orphan delimiter rows · 0 blank-line splits.** The nine were independently re-derived before editing: III ch04 L190; VIII ch02 L131; VIII ch10 L81; IX ch03 L150; X ch05 L96; X ch07 L120; X ch09 L139; X ch10 L86; X ch12 L219. Widths were eight `4 vs 3` and one `8 vs 7`. No additional genuine instance was found. |
+| **Correction applied** | Added one missing `---` delimiter cell to each of the nine confirmed rows. Exactly nine chapter files changed, with one delimiter-line replacement in each. Header text, table body content, row order, column meaning, limitation/boundary content, surrounding prose, citations and chapter structure are unchanged. |
+| **Post-correction full-population census** | Author rerun of the identical census: **137 chapters · 1,021 tables · 6,355 body rows · 0 header/delimiter mismatches · 0 ragged body rows · 0 malformed delimiter rows · 0 orphan delimiter rows · 0 blank-line splits.** Same malformed-table class remaining: **0**. |
+| **Mutation record** | Working-tree chapter-manifest digest `eb1d5c08e8748f75811f981332dce1fc32a1f2ac60ba1cba8fc26b550ad45ede`; changed chapters **9**; changed Part READMEs **0**. Chapter files: Part III ch04; Part VIII ch02/ch10; Part IX ch03; Part X ch05/ch07/ch09/ch10/ch12. Review recording affects `FIRST_EDITION_FINDINGS.md`, this log, the plan's current-state row and `CURRENT_SPRINT.md`. |
+| **Finding disposition** | `FE-T6-001` and `FE-L2-002` remain **OPEN — CORRECTION APPLIED — AWAITING INDEPENDENT VERIFICATION**. Group severity **P1**, origin severity **P2**, Class C, T6/L2 provenance and `SYS-TABLE-DELIMITER` grouping are preserved. |
+| **Immutability / scope control** | No other manuscript file, Part README, editorial authority, template, citation, quantitative instrument, `QUALITY_GATES.md`, `RELEASE_POLICY.md`, `CHANGELOG.md`, release metadata, tag or branch changed. H3–H7 were not started. |
+| **Next required action** | Independent H2-V reviewer reruns a same-or-stronger edition-wide GFM table census, verifies the nine rendered targets and delimiter-only diff, confirms semantic preservation, and only then may close FE-T6-001, FE-L2-002 and `SYS-TABLE-DELIMITER`. |
+| **Non-collapse note** | This is H2 correction only. It is not H2-V, H3–H7, Phase I, Phase J, Phase K, Phase L, release administration or a release-readiness decision. |
+
+---
+
+## Event FE-EV-033 — Phase H2-V: Independent GFM Table Closure Verification
+
+| Field | Value |
+| --- | --- |
+| **Event ID** | `FE-EV-033` |
+| **Date** | 2026-09-04 |
+| **Phase** | **H2-V — independent verification and systemic closure** |
+| **Scope** | Independently verified the uncommitted H2 correction recorded by `FE-EV-032` for `FE-T6-001`, origin finding `FE-L2-002` and `SYS-TABLE-DELIMITER`. The closure-recording step modified review/lifecycle records only. |
+| **Score / verdict** | **A — H2 INDEPENDENTLY VERIFIED · 30 PASS · 0 FAIL.** `FE-T6-001`, `FE-L2-002` and `SYS-TABLE-DELIMITER` may be and are **VERIFIED / CLOSED**. This targeted verification is unscored at edition level. |
+| **Independence** | The H2-V reviewer did not author or materially participate in the H2 correction. The H2-R recording actor records the supplied independent result and does not repeat or replace the verification. |
+| **Branch / verification baseline** | `feature/first-edition-review` at `9a4f297`, with the intentional unstaged H2 target: **13 paths — 9 repaired chapters and 4 review/lifecycle artefacts; 0 staged; 0 untracked; `git diff --check` clean**. |
+| **Original-population result** | **PASS.** Independently reproduced nine malformed tables: Parts III 1 · VIII 2 · IX 1 · X 5; eight at header/body width 4 versus delimiter width 3, and one at width 8 versus 7. |
+| **Nine-target / diff result** | **PASS.** All nine tables were directly inspected. Each chapter diff replaces one delimiter line with one delimiter line containing exactly one additional cell. Header and body text, row order, technical semantics, citations and surrounding prose are unchanged; no over-broad replacement survives. |
+| **Full-population result** | **PASS.** **137 chapters · 1,021 tables · 6,355 body rows · 0 header/delimiter mismatches · 0 ragged body rows · 0 malformed delimiter rows · 0 orphan delimiter rows · 0 blank-line splits.** No additional genuine instance remains. |
+| **Manifest result** | **PASS.** Verified post-H2 working-tree chapter manifest `eb1d5c08e8748f75811f981332dce1fc32a1f2ac60ba1cba8fc26b550ad45ede`. Its expected difference from frozen Phase-F reference `ec588eaa1e61bd0f0fa8706f5cc3dd470b7caa67314df6f77f858425f150a411` consists only of the nine authorised H2 delimiter corrections. |
+| **Finding disposition** | `FE-T6-001` **CLOSED / VERIFIED** at preserved P1/Class C/T6 provenance. `FE-L2-002` **CLOSED / VERIFIED** at preserved P2/Class C/L2 provenance. `SYS-TABLE-DELIMITER` **CLOSED / VERIFIED** with both members and their historical origin/systemic relationship preserved. The register remains 29 findings, now **25 open · 4 closed and independently verified**; open Class C = 25 and open Class B = 0. |
+| **Boundary result** | **PASS.** Part README, editorial authority, template-heading, lifecycle-drift, unrelated citation, quantitative-tool, `QUALITY_GATES.md`, `RELEASE_POLICY.md`, `CHANGELOG.md` and release-metadata changes are all zero. H1 remains complete; FE-T6-002 remains closed/verified; H3–H7 remain unstarted. |
+| **Lifecycle state** | **H2 COMPLETE — VERIFIED / CLOSED.** Phase H remains incomplete. H3 requires separate authorisation; Phase I, Phase J, Phase K, Phase L and release administration remain unauthorised. `v0.16.0` is not declared release-ready and remains unreleased. |
+| **Artefacts affected by H2-R recording** | `FIRST_EDITION_FINDINGS.md`, this append-only log, the review plan's active lifecycle wording and `CURRENT_SPRINT.md`. The nine verified H2 chapter files remain byte-for-byte unchanged during H2-R. |
+| **Non-collapse note** | H2-V is the independent closure of H2 only. It does not rewrite or collapse the H2 correction event (`FE-EV-032`), complete Phase H, start H3–H7, perform a later phase, or imply release readiness. |
+
 ## 3. Manuscript-mutation control (plan §13.4 drift discipline, applied to Phase F)
 
 **Rule.** The 137 chapter blobs recorded in §2.5 constitute the Phase F review-execution baseline. **Manuscript chapters must remain unmodified for the duration of Phase F.**
@@ -1261,6 +1306,8 @@ git ls-files -s book | awk '$4 ~ /chapters\/chapter-.*\.md$/ {print $4":"$2}' | 
 | `FE-EV-029` | 2026-08-21 | H — planning | Remediation architecture / waves / worktree and verification design · **no correction started** | **`UNSCORED`** |
 | `FE-EV-030` | 2026-08-21 | H1 — authority | Editorial authority resolution · correction applied to FE-T6-002 · **awaiting independent verification** | **`UNSCORED`** |
 | `FE-EV-031` | 2026-09-04 | H1-V — authority | Independent editorial-authority closure verification · FE-T6-002 **VERIFIED / CLOSED** · H2–H7 not started | **`UNSCORED` — A** |
+| `FE-EV-032` | 2026-09-04 | H2 — GFM tables | Nine delimiter rows corrected · full-population author census 1,021 tables / 0 mismatches · FE-T6-001 and FE-L2-002 awaiting independent verification | **`UNSCORED`** |
+| `FE-EV-033` | 2026-09-04 | H2-V — GFM tables | Independent closure verification · 30 PASS / 0 FAIL · nine repairs verified · 1,021-table census clean · FE-T6-001 / FE-L2-002 / SYS-TABLE-DELIMITER **CLOSED** | **A — VERIFIED** |
 
 > **Note on the FE-EV-008 → FE-EV-009 sequence — this is not a lost record.** Three quantitative-instrument events occurred between them — **F-IR4** (fresh independent re-acceptance, 39 PASS · 0 PARTIAL · 1 FAIL), **F-IR4V2** (independent verification establishing that the instrument is intact, that E9 is correct and that the E11 total is 51) and **F-IR4F** (the E11 occurrence-decomposition correction, commit `250cfe7`) — and **none was written to this log at the time it happened.** Their outcomes are recorded in the **plan §16 phase-history table**, and `FE-EV-009` states the chain it closes.
 >
@@ -1268,4 +1315,4 @@ git ls-files -s book | awk '$4 ~ /chapters\/chapter-.*\.md$/ {print $4":"$2}' | 
 
 ---
 
-**Last Updated:** 2026-09-04 (H1-V independently verified and closed FE-T6-002; H2–H7 not started)
+**Last Updated:** 2026-09-04 (H2-V independently verified and closed FE-T6-001, FE-L2-002 and SYS-TABLE-DELIMITER; H3–H7 not started)

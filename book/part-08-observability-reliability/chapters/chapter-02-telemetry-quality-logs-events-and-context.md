@@ -129,7 +129,7 @@ The evidence gap is specific: the system lacks a correlated publication acknowle
 Use a review that makes quality risks visible rather than treating them as incidental logging defects.
 
 | Review dimension | Question | Atlas finding | Improvement direction |
-| --- | --- | --- |
+| --- | --- | --- | --- |
 | Meaning | Does the name describe a bounded state? | `checkout.completed` is broader than the local condition. | Rename or document the local transition. |
 | Correlation | Can the evidence follow the workflow? | `request_id` and `order_id` are separated; consumer evidence is absent. | Carry safe workflow context across boundaries. |
 | Time | Can ordering be interpreted? | Clocks and event/ingestion times are unspecified. | Record consistent occurrence semantics and known time limits. |

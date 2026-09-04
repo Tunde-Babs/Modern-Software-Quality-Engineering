@@ -188,7 +188,7 @@ They are not three mandatory labels for every feature. A negative condition may 
 The following is an **MSQE educational selection model**, not a standard or universal mapping. Start from the condition or risk, choose a reasoning tool that makes the relevant distinction visible, define the expected evidence, and state the limitation.
 
 | Problem characteristic | Useful reasoning approach | Expected evidence | Important limit |
-|---|---|---|
+|---|---|---|---|
 | A rule divides values into meaningful classes. | Equivalence partitioning. | Representative values show the selected treatment of each class. | Similarity assumptions may be wrong. |
 | Treatment changes at a threshold or time. | Boundary value analysis. | Evidence near the rule change. | A boundary may depend on hidden clocks, state, or configuration. |
 | Several conditions determine an outcome. | Decision table. | Rules and missing combinations become visible. | The table may omit a relevant condition. |

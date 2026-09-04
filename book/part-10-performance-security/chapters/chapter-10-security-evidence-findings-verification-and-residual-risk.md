@@ -84,7 +84,7 @@ The unused-component report is recorded as rejected for the current configuratio
 The following is an **illustrative, synthetic sample** used only to show how to calculate and communicate verification outcomes. A review considers 12 scanner-reported items within one Atlas build, configuration, route set, and test window. Seven are verified for their stated boundaries, three are rejected for the current evidenced configuration, and two remain unresolved because a necessary synthetic dependency condition is not available.
 
 | Calculation | Method | Result | What the result does and does not mean |
-| --- | --- | --- |
+| --- | --- | --- | --- |
 | Verified share | `7 ÷ 12 × 100` | `58.3%` | Seven reports were verified in this bounded sample; it does not measure all issues in the product. |
 | Rejected share | `3 ÷ 12 × 100` | `25.0%` | Three reports did not apply to the current evidenced boundary; they may become relevant after change. |
 | Unresolved share | `2 ÷ 12 × 100` | `16.7%` | Two reports need further evidence; they are not automatically false positives or confirmed issues. |

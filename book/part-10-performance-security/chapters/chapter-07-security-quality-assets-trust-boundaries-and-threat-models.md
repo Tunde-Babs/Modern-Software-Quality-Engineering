@@ -118,7 +118,7 @@ Trust changes when the system accepts an identity, interprets a role, resolves o
 Use verbs that a defensive verification can answer. “Is the API secure?” cannot be completed. “For the synthetic customer-to-order boundary, is a request for a different customer's order denied and is no order data returned?” is observable. “For the support-refund boundary, is the stated role denied the action and is state unchanged?” is observable. “For the payment-timeout boundary, is an unknown state bounded and routed to reconciliation rather than silently repeated?” is observable.
 
 | Asset/actor/boundary | Bounded quality claim | Evidence method | Limitation |
-| --- | --- | --- |
+| --- | --- | --- | --- |
 | Customer, other customer's order, order API | Ownership is enforced for stated route/resource/action | Synthetic allow/deny matrix and returned-data observation | Other routes and state variants remain outside scope |
 | Support operator, refund action, support API | Support role cannot initiate refund in stated state | Synthetic role/action/state verification and state record | Does not cover all support roles or API versions |
 | Service account, fulfilment event, queue consumer | Valid event provenance is required for stated transition | Synthetic event and resulting state observation | Does not prove every event source or retry path |

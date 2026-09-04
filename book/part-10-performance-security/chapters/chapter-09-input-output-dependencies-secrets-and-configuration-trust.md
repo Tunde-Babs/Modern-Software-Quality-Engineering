@@ -137,7 +137,7 @@ A trust review is most valuable when it is revisited. New input fields, output c
 The following is an **illustrative, synthetic review**. Atlas search receives a structured filter, resolves inventory through a partner, stores a non-sensitive result in a cache, and displays a bounded result to the authenticated customer. The review traces four questions rather than looking for a generic security label.
 
 | Boundary | Claim | Evidence | Limitation and consequence |
-| --- | --- | --- |
+| --- | --- | --- | --- |
 | Filter to search API | Defined filter categories and values are accepted or rejected according to contract | Synthetic valid/invalid contract cases and response classification | Does not cover every business combination; new filter field triggers review |
 | Partner response to result model | External inventory data is handled as untrusted input to the receiver's contract | Synthetic response categories, bounded timeout, output/result record | Does not establish partner production behavior; dependency version change triggers review |
 | Result model to cache | Only stated non-sensitive, authorization-appropriate response is cached under correct scope | Cache-key/scope record and role/ownership observation | Does not prove all invalidation paths; cache policy change triggers review |

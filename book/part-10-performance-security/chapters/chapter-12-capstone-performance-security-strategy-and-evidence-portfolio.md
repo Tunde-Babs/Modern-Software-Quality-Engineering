@@ -217,7 +217,7 @@ Do not merge these populations merely because they occur in the same release. Th
 Calculation integrity does not establish a release result, but calculation error can invalidate every later discussion. Recalculate the supplied values from their stated population and unit.
 
 | Calculation | Method | Result | Interpretation boundary |
-| --- | --- | --- |
+| --- | --- | --- | --- |
 | Candidate p95 change | `1,380 ms − 940 ms` | `+440 ms` | A tail difference in the synthetic checkout population; not a root-cause conclusion |
 | Candidate timeout change | `0.9% − 0.3%` | `+0.6 percentage points` | Increased timeout classification for accepted checkout requests; not a count of all user failures |
 | Implied in-flight successful-completion work | `29.73 successful completions/s × 1.6 s` | `47.568`, shown as 47.6 requests | A Little's Law consistency check for the matching successful-completion boundary |

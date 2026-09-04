@@ -79,7 +79,7 @@ Atlas Commerce runs the following fictional synthetic experiment.
 The selected observations are:
 
 | Time | Observation | Direct support | Limit |
-| --- | --- | --- |
+| --- | --- | --- | --- |
 | 00:00–00:05 | Dependency delay active | The selected synthetic fault is active | Does not represent all real provider failures |
 | 00:02 | Retry rate rises, circuit opens | Containment logic responds in the selected environment | Does not show customer acceptability |
 | 00:05 | Delay removed, error rate returns to baseline | The immediate injected condition ended | Does not show delayed-work completion |
