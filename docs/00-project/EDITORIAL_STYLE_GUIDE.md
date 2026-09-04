@@ -22,6 +22,16 @@ This guide applies to all current and future publications within the MSQE ecosys
 
 ---
 
+# Authority Scope and Precedence
+
+This file is the canonical editorial authority for MSQE writing, formatting, visual, and instructional guidance. [`docs/01-editorial/QUALITY_GATES.md`](../01-editorial/QUALITY_GATES.md) is the separate authority for lifecycle and release-quality gates; it does not define chapter structure.
+
+For current handbook chapter structure, [`templates/CHAPTER_TEMPLATE.md`](../../templates/CHAPTER_TEMPLATE.md) is the sole authoritative source for required metadata, headings, conditional sections, and checklist components. Where the template and this guide's historical chapter-structure reference differ, **the template takes precedence for chapter structure**. This guide continues to govern editorial principles and quality expectations that do not prescribe a chapter component.
+
+No other file under `docs/01-editorial/` is an editorial-content authority unless it contains maintained guidance and is explicitly named by a governing plan, gate, or this guide.
+
+---
+
 # Editorial Vision
 
 Every piece of MSQE content should demonstrate:
@@ -176,7 +186,7 @@ Avoid mixing equivalent terms unless context requires it.
 
 # Chapter Structure
 
-Every chapter should follow the standard MSQE structure.
+The following 16-item list is retained as a historical editorial reference. It is **not** a required chapter-heading checklist and does not add requirements beyond `templates/CHAPTER_TEMPLATE.md`; the template is the current structural authority.
 
 1. Introduction
 2. Learning Objectives

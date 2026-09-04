@@ -1164,6 +1164,46 @@ The eight alphanumeric forms and their loci reproduced exactly: `CMU/SEI-2000-TR
 | **Artefacts affected** | `FIRST_EDITION_FINDINGS.md`, this append-only log, current-state lifecycle surfaces and the dated Development Log. No manuscript, Part README, authority file, quantitative tool, quality-gate authority, release policy, CHANGELOG, tag, branch or release metadata changed. |
 | **Non-collapse note** | This planning event is not a Phase-H START/correction event and does not close, accept, defer, verify or alter any finding. It does not authorise Phase I, Phase J, Phase K, Phase L or release administration. |
 
+---
+
+## Event FE-EV-030 — Phase H1: Editorial Authority Resolution
+
+| Field | Value |
+| --- | --- |
+| **Event ID** | `FE-EV-030` |
+| **Date** | 2026-08-21 |
+| **Phase** | **H1 — correction applied; awaiting independent verification** |
+| **Scope** | Resolved only `FE-T6-002`'s authority conflict: seven empty `docs/01-editorial/` placeholders, the same-name style-guide shadow, and structural-precedence ambiguity between the populated style guide and `CHAPTER_TEMPLATE.md`. |
+| **Score / verdict** | **`UNSCORED`** — correction event; no independent verification or finding closure occurred. |
+| **Branch / HEAD at START** | `feature/first-edition-review` at clean pre-flight `7788fd7` |
+| **Baseline digest at START / END** | `ec588eaa1e61bd0f0fa8706f5cc3dd470b7caa67314df6f77f858425f150a411` / `ec588eaa1e61bd0f0fa8706f5cc3dd470b7caa67314df6f77f858425f150a411` — **matched; zero chapter mutation** |
+| **Correction applied** | Removed the seven confirmed empty placeholders. The populated `docs/00-project/EDITORIAL_STYLE_GUIDE.md` is now the canonical editorial guide; `docs/01-editorial/QUALITY_GATES.md` retains gate-only scope; `templates/CHAPTER_TEMPLATE.md` is the sole current authority for chapter structure. The guide's 16-item list is historical reference, not a required checklist. |
+| **Finding disposition** | `FE-T6-002` remains **OPEN — CORRECTION APPLIED — AWAITING INDEPENDENT VERIFICATION**. No severity, blocker class, finding count, closure, acceptance, deferral, or historical evidence changed. |
+| **Verification required** | An independent Level-11 governance reviewer must confirm no empty/shadow editorial authority remains active, exactly one structural authority governs, the template dependency is clear, and no H2–H7 scope leaked into the diff. |
+| **Out-of-scope control** | No manuscript chapter, Part README, template heading, table, lifecycle text, citation, quantitative instrument, quality gate, release policy, CHANGELOG, tag, branch, or release metadata changed. |
+| **Non-collapse note** | This is H1 only. It is not H2–H7, Phase I, Phase J, Phase K, Phase L, release administration, or independent verification. |
+
+---
+
+## Event FE-EV-031 — Phase H1-V: Independent Editorial Authority Closure Verification
+
+| Field | Value |
+| --- | --- |
+| **Event ID** | `FE-EV-031` |
+| **Date** | 2026-09-04 |
+| **Phase** | **H1-V — independent verification and targeted closure** |
+| **Scope** | Independently verified the H1 correction recorded by `FE-EV-030` against `FE-T6-002`'s Level-11 governance closure criteria. The verification was read-only; this event records the completed result. |
+| **Score / verdict** | **`UNSCORED` — A — VERIFIED / CLOSED.** Phase-H correction verification is not an edition score or release verdict. |
+| **Independence** | H1-V was performed independently of H1 correction authorship. The integration recording changes governance records only and does not alter the verified correction content. |
+| **Branch / verification baseline** | `feature/first-edition-review` at `7788fd7`, with the intentionally dirty, pre-recording **11-path H1 diff** preserved as the verification target. A clean working tree was neither required nor assumed. |
+| **Authority-chain result** | **PASS.** All seven deletion targets were canonical zero-byte blobs at the baseline and are absent after correction. `docs/01-editorial/QUALITY_GATES.md` is the sole populated file remaining in that directory. `docs/00-project/EDITORIAL_STYLE_GUIDE.md` explicitly defines the canonical editorial scope, separates gate authority, and designates `templates/CHAPTER_TEMPLATE.md` as the sole current chapter-structure authority; the 16-item style-guide list is explicitly historical and non-normative. |
+| **Protected-surface result** | **PASS.** `templates/CHAPTER_TEMPLATE.md`, `docs/01-editorial/QUALITY_GATES.md`, `docs/00-project/RELEASE_POLICY.md` and `CHANGELOG.md` are unchanged. The chapter manifest digest remains `ec588eaa1e61bd0f0fa8706f5cc3dd470b7caa67314df6f77f858425f150a411`; no chapter or Part README mutation occurred. |
+| **Scope-isolation result** | **PASS.** The pre-recording diff contained exactly the H1 authority targets and H1 governance records described by `FE-EV-030`; no H2 table, H3 lifecycle README, H4 template/status, H5 citation/Atlas, H6 quantitative, or H7 pedagogy correction was present. |
+| **Finding disposition** | `FE-T6-002` is **CLOSED / VERIFIED**. Historical severity remains P2 and blocker class C; the immutable register remains 29 findings, now **27 open · 2 closed and independently verified**, with open Class C = 27 and open Class B = 0. |
+| **Lifecycle state** | H1 is complete. **H2–H7 have not started.** Phase H remains in execution and incomplete; Phase I, Phase J, Phase K, Phase L and release administration remain unauthorised. `v0.16.0` remains unreleased. |
+| **Artefacts affected by recording** | `FIRST_EDITION_FINDINGS.md`, this append-only log, the review plan's current-state row and `CURRENT_SPRINT.md`. No verified H1 authority content, manuscript, Part README, template, table, citation, quantitative instrument, quality gate, release policy or release metadata is altered by this recording. |
+| **Non-collapse note** | H1-V is the targeted independent closure of H1 only. It does not rewrite or collapse the H1 correction event (`FE-EV-030`), complete Phase H, begin H2–H7, perform Phase I, or imply release readiness. |
+
 ## 3. Manuscript-mutation control (plan §13.4 drift discipline, applied to Phase F)
 
 **Rule.** The 137 chapter blobs recorded in §2.5 constitute the Phase F review-execution baseline. **Manuscript chapters must remain unmodified for the duration of Phase F.**
@@ -1219,6 +1259,8 @@ git ls-files -s book | awk '$4 ~ /chapters\/chapter-.*\.md$/ {print $4":"$2}' | 
 | `FE-EV-027` | 2026-08-21 | F — T4 | QA → QE progression / professional applicability / exercise progression transversal — COMPLETE · 137/137 assessed · **1 new finding** | **`UNSCORED`** |
 | `FE-EV-028` | 2026-08-21 | F — closure | Consolidation and closure · all longitudinal and transversal axes complete · 29 findings reconciled · Phase-H backlog defined | **`UNSCORED`** — **Phase F COMPLETE** |
 | `FE-EV-029` | 2026-08-21 | H — planning | Remediation architecture / waves / worktree and verification design · **no correction started** | **`UNSCORED`** |
+| `FE-EV-030` | 2026-08-21 | H1 — authority | Editorial authority resolution · correction applied to FE-T6-002 · **awaiting independent verification** | **`UNSCORED`** |
+| `FE-EV-031` | 2026-09-04 | H1-V — authority | Independent editorial-authority closure verification · FE-T6-002 **VERIFIED / CLOSED** · H2–H7 not started | **`UNSCORED` — A** |
 
 > **Note on the FE-EV-008 → FE-EV-009 sequence — this is not a lost record.** Three quantitative-instrument events occurred between them — **F-IR4** (fresh independent re-acceptance, 39 PASS · 0 PARTIAL · 1 FAIL), **F-IR4V2** (independent verification establishing that the instrument is intact, that E9 is correct and that the E11 total is 51) and **F-IR4F** (the E11 occurrence-decomposition correction, commit `250cfe7`) — and **none was written to this log at the time it happened.** Their outcomes are recorded in the **plan §16 phase-history table**, and `FE-EV-009` states the chain it closes.
 >
@@ -1226,4 +1268,4 @@ git ls-files -s book | awk '$4 ~ /chapters\/chapter-.*\.md$/ {print $4":"$2}' | 
 
 ---
 
-**Last Updated:** 2026-08-21 (Phase-H remediation architecture; correction execution not started)
+**Last Updated:** 2026-09-04 (H1-V independently verified and closed FE-T6-002; H2–H7 not started)
