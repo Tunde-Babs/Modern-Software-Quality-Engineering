@@ -4,7 +4,7 @@
 
 ## Curriculum Status
 
-**Curriculum complete. Chapters 1–11 are manuscript-complete and remain Draft.** Part VI was released as **v0.9.0 — Data Quality Engineering Complete** after its Final Part VI Quality Gate passed at **96/100** with no manuscript P0, P1, or P2 findings. The manuscript baseline is `6ca58c6`; Quality Gates v1.1 applied to the release and confirms that the Atlas Commerce Data Pipeline companion and Labs 1–3 are recommended Pass 2 enrichment, not release requirements. No companion code, laboratories, diagrams, case studies, website work, or CI/CD implementation has been created. Part VII work has not begun.
+**Curriculum complete. Chapters 1–11 are manuscript-complete and remain Draft.** Part VI was released as **v0.9.0 — Data Quality Engineering Complete** after its Final Part VI Quality Gate passed at **96/100** with no manuscript P0, P1, or P2 findings. The manuscript baseline is `6ca58c6`; Quality Gates v1.1 applied to the release and confirms that the Atlas Commerce Data Pipeline companion and Labs 1–3 are recommended Pass 2 enrichment, not release requirements. No companion code, laboratories, diagrams, case studies, website work, or CI/CD implementation has been created.
 
 ---
 

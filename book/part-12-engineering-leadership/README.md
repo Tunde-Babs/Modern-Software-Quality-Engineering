@@ -30,7 +30,7 @@ Part XII's 97/100 is unrelated to Part XI's 97/100 architecture-review score; th
 
 This document is the verified curriculum architecture. It defines the intended manuscript, its learning progression, scope boundaries, professional artefacts, source strategy, and Pass 2 classification, and it is authoritative for manuscript production. Pass 1 is complete and all twelve chapters were produced under it. Every Part XII chapter carries `Status: Draft` under manuscript-status governance and retains it until governance authorizes another status.
 
-Part XII is the final planned handbook part and is the latest released handbook part, as **v0.15.0**; Part XI — System Design & Architecture remains released as **v0.14.0**. With Part XII released, the project moves to **v0.16.0 — First Edition Review**, which has not started.
+Part XII is the final planned handbook part and is the latest released handbook part, as **v0.15.0**; Part XI — System Design & Architecture remains released as **v0.14.0**. **v0.16.0 — First Edition Review** is the active, unreleased milestone; Phase F review execution is complete and Phase H targeted remediation is in progress.
 
 ---
 
@@ -733,7 +733,7 @@ The independent architecture review assesses this plan against these 24 categori
 
 ## Definition of Done for Planned Part XII Manuscript Work
 
-Part XII may advance from architecture planning to Pass 1 only after a focused independent architecture-closure review verifies the corrections applied to this document. **That condition is now satisfied** — the closure review returned 97/100, verdict A, with all P1 and P2 findings closed — so Pass 1 may be authorized as a separate task. A future manuscript release may be considered only when:
+Part XII may advance from architecture planning to Pass 1 only after a focused independent architecture-closure review verifies the corrections applied to this document. **That condition was satisfied** — the closure review returned 97/100, verdict A, with all P1 and P2 findings closed — and Pass 1 was subsequently authorized and completed. A future manuscript release may be considered only when:
 
 1. all 12 chapters are drafted using the approved template and retain `Status: Draft` until governance authorizes another status;
 2. every chapter includes a labelled illustrative scenario, worked reasoning, practical artefact, source-backed or explicitly MSQE-original claims, limitations, and cross-part handoff;
@@ -765,10 +765,10 @@ Part XII may advance from architecture planning to Pass 1 only after a focused i
 - **Source-control movement:** Two sources were **upgraded from metadata-only to primary full-text verified** during Batch A — Parnas & Clements and Edmondson — each against an institutionally hosted copy rather than the publisher's version of record. **The source-verification control remains OPEN** for Westrum, Strathern, SPACE, and Collins/Brown/Newman, none of which Batch A used substantively.
 - **Practical assets:** None exist (0). No companion implementation, laboratory, diagram, worksheet, simulator, dataset, case study, website asset, CI/CD configuration, or infrastructure. All proposed standalone assets are recommended Pass 2 enrichment only; **Pass 2 has not started**.
 - **Release state:** **v0.15.0 — Engineering Leadership & Career Growth Complete** is **released** as of 2026-08-15; the CHANGELOG carries a released `[0.15.0]` entry and annotated tag `v0.15.0` exists at `c599811d94ca87f9b3994ae213a34593d4733cc5`. **v0.15.0 is the latest stable release**, superseding **v0.14.0 — System Design & Architecture Complete**.
-- **Part XIII:** not started. **`v0.16.0 — First Edition Review`** is the next planned milestone and has **not started**.
+- **Part XIII:** not started. **`v0.16.0 — First Edition Review`** is the active, unreleased milestone; Phase F review execution is complete and Phase H targeted remediation is in progress.
 - **Controlled manuscript baseline:** `839391e136ac00c757dded170ba8ed94a58ff41d`. This commit contains the exact manuscript reviewed by the Final Quality Gate — twelve chapters, all `Status: Draft`, 66,914 raw words. The **manuscript is frozen at this baseline**; all twelve chapter blobs are identical to their Final-Gate-reviewed state.
 - **Release-administration state:** **Complete.** Feature-to-`develop` integration merged via pull request #37, `release/v0.15.0` was validated and merged to `main` via pull request #38, annotated tag `v0.15.0` was created, and the GitHub Release was published on 2026-08-15. `origin/main` and `origin/develop` are reconciled at `c599811d94ca87f9b3994ae213a34593d4733cc5`. **No further Part XII release administration is pending.**
-- **Next authorized action:** None for Part XII — its lifecycle is closed. The next planned milestone is **`v0.16.0 — First Edition Review`**, which has **not started** and requires a separately authorized task. Do not create Part XII Pass 2 assets or begin Part XIII automatically. The quality controls recorded below remain **open and are not closed by this record**: six sources remain metadata- or abstract-verified only, DORA terminology remains time-sensitive, and Part XI's ISO purchased-copy control remains open.
+- **Next authorized action:** None for Part XII — its lifecycle is closed. The active project milestone is **`v0.16.0 — First Edition Review`**; phase-specific work requires separate authorization, and the milestone is not release-ready. Do not create Part XII Pass 2 assets or begin Part XIII automatically. The quality controls recorded below remain **open and are not closed by this record**: six sources remain metadata- or abstract-verified only, DORA terminology remains time-sensitive, and Part XI's ISO purchased-copy control remains open.
 
 ### Non-blocking observations carried forward
 

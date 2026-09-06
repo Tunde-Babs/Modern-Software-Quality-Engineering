@@ -4,7 +4,7 @@
 
 ## Curriculum Status
 
-**Part VII — Cloud & DevOps is released as v0.10.0 — Cloud & DevOps Complete.** The Part VII curriculum and Chapters 1–11 manuscript are complete. Accelerated Pass 1, consolidated independent review, light normalization, and the Final Part VII Quality Gate are complete. The final gate assessed Part VII at **97/100**, with no P0, P1, P2, or P3 findings within the approved manuscript scope. Chapters 1–11 remain `Status: Draft`. The reviewed manuscript baseline is `2da10fd`; the release PR was merged to `main`, the annotated `v0.10.0` tag was created, and the GitHub Release was published. Quality Gates v1.1 applies: no standalone practical asset is required for this manuscript release, and Part VIII planning has not started.
+**Part VII — Cloud & DevOps is released as v0.10.0 — Cloud & DevOps Complete.** The Part VII curriculum and Chapters 1–11 manuscript are complete. Accelerated Pass 1, consolidated independent review, light normalization, and the Final Part VII Quality Gate are complete. The final gate assessed Part VII at **97/100**, with no P0, P1, P2, or P3 findings within the approved manuscript scope. Chapters 1–11 remain `Status: Draft`. The reviewed manuscript baseline is `2da10fd`; the release PR was merged to `main`, the annotated `v0.10.0` tag was created, and the GitHub Release was published. Quality Gates v1.1 applies: no standalone practical asset is required for this manuscript release.
 
 No Part VII laboratory, companion implementation, standalone diagram, case-study file, CI/CD configuration, cloud resource, or website asset has been created. The Atlas Commerce Local Delivery Simulator, Labs 1–3, and any diagrams remain recommended Pass 2 enrichment.
 

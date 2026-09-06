@@ -1249,6 +1249,105 @@ The eight alphanumeric forms and their loci reproduced exactly: `CMU/SEI-2000-TR
 | **Artefacts affected by H2-R recording** | `FIRST_EDITION_FINDINGS.md`, this append-only log, the review plan's active lifecycle wording and `CURRENT_SPRINT.md`. The nine verified H2 chapter files remain byte-for-byte unchanged during H2-R. |
 | **Non-collapse note** | H2-V is the independent closure of H2 only. It does not rewrite or collapse the H2 correction event (`FE-EV-032`), complete Phase H, start H3–H7, perform a later phase, or imply release readiness. |
 
+---
+
+## Event FE-EV-034 — Phase H3: Lifecycle-State Drift Remediation
+
+| Field | Value |
+| --- | --- |
+| **Event ID** | `FE-EV-034` |
+| **Date** | 2026-09-04 |
+| **Phase** | **H3 — correction applied; awaiting independent verification** |
+| **Scope** | Corrected only `SYS-LIFECYCLE-DRIFT`: five findings across ten Part READMEs — `FE-L1-001` (II), `FE-L2-001` (III–V), `FE-L3-001` (VI–VII), `FE-L4-001` (IX–X) and `FE-L5-001` (XI–XII). Parts I and VIII were confirmed unaffected. |
+| **Score / verdict** | **`UNSCORED`** — correction event. No H3 finding or systemic group is verified or closed by its author. |
+| **Branch / HEAD at START** | `feature/first-edition-review` at clean pre-flight `ccdb5a1`; local/remote divergence `0 0`; 0 staged; 0 untracked; `git diff --check` clean. |
+| **Authority reconstructed** | Annotated tags and released CHANGELOG entries establish Parts II–XII as released through v0.15.0; root `README.md` and `CURRENT_SPRINT.md` agree. v0.15.0 remains the latest stable release. v0.16.0 — First Edition Review is the active, unreleased milestone; Phase F is complete and Phase H targeted remediation is in progress. This state does not imply release readiness. |
+| **Frozen defect population** | **Five findings · ten affected Part READMEs · 16 cited current-state locations.** The population was frozen before editing from the canonical findings register and verification ledger. An edition-wide scan of all twelve Part READMEs found no additional genuine same-class instance. |
+| **Correction applied** | Replaced false candidate/pending release claims with the existing released states for v0.5.0–v0.13.0; removed superseded next-Part-not-started claims; replaced false “First Edition Review has not started” wording with the active, unreleased v0.16.0 / Phase-H state. Only the cited lifecycle declarations changed. |
+| **Content preservation** | Historical review scores, chapter Draft status, controlled baselines, Part scope, technical and learning content, asset boundaries, links and citations are unchanged. No unrelated README normalisation was performed. |
+| **README regression result** | Owner Lifecycle State Consistency Sweep rerun across all twelve Part READMEs: all ten recorded files now agree with canonical tag/release/milestone evidence; zero known release, next-Part or First Edition Review lifecycle contradictions remain. Legitimate statements about unstarted Pass 2, Part XIII and practical assets remain intact. |
+| **README mutation record** | Twelve-README manifest at START `885684cf6b17fe0f14e1683716d373d97bda10f729a0afa2f9a6d54be8af9353`; after correction `f4ae0c2489e96c7ebd1285f3ac9567203eb1abb1698c33b01951a83d5dd4b44c`. Exactly ten READMEs changed; Parts I and VIII retain blobs `3425a78667d5cbfd72e9feace56564d6dbfd7e77` and `82614837a469ff802d7fea920099091e3b313b3c`. |
+| **Chapter / protected-surface control** | Post-H2 chapter manifest remains `eb1d5c08e8748f75811f981332dce1fc32a1f2ac60ba1cba8fc26b550ad45ede`. No chapter, H1 authority surface, H2 table, template, quantitative tool, `QUALITY_GATES.md`, `RELEASE_POLICY.md`, `CHANGELOG.md`, release metadata, tag or branch changed. |
+| **Finding disposition** | `FE-L1-001`, `FE-L2-001`, `FE-L3-001`, `FE-L4-001`, `FE-L5-001` and `SYS-LIFECYCLE-DRIFT` remain **OPEN — CORRECTION APPLIED — AWAITING INDEPENDENT VERIFICATION** at preserved P1/Class C and original L1–L5 provenance. |
+| **Lifecycle state** | H1 and H2 remain complete, independently verified and closed. H3 correction is complete but unverified. **H4–H7 have not started.** Phase H remains incomplete; v0.16.0 remains unreleased and is not declared release-ready. |
+| **Artefacts affected** | Ten confirmed Part READMEs plus `FIRST_EDITION_FINDINGS.md`, this append-only log, the review plan's active lifecycle wording and `CURRENT_SPRINT.md`. |
+| **Next required action** | A fresh independent H3-V reviewer must rerun the Lifecycle State Consistency Sweep across all twelve Part READMEs, compare every corrected declaration with canonical evidence, confirm unaffected surfaces, and only then may close the five findings and `SYS-LIFECYCLE-DRIFT`. |
+| **Non-collapse note** | This is H3 correction only. It is not H3-V, H4–H7, Phase I, Phase J, Phase K, Phase L, release administration or a release-readiness decision. |
+
+---
+
+## Event FE-EV-035 — Phase H3-F1: Residual Lifecycle-State Drift Correction
+
+| Field | Value |
+| --- | --- |
+| **Event ID** | `FE-EV-035` |
+| **Date** | 2026-09-04 |
+| **Phase** | **H3-F1 — residual correction applied; awaiting independent re-verification** |
+| **Scope** | Corrected only the three residual `SYS-LIFECYCLE-DRIFT` assertions identified by independent H3-V: `book/part-05-automation-engineering/README.md`, `book/part-11-system-design-architecture/README.md` and `book/part-12-engineering-leadership/README.md`. The accepted original H3 changes in all ten affected Part READMEs remain intact. |
+| **Score / verdict** | **`UNSCORED`** — correction event. The supplied independent H3-V result was **35 PASS · 1 FAIL, Decision B — H3 partially verified; H3 findings remain open**. This event records that result but does not fabricate a separate retrospective verification event. |
+| **Branch / HEAD at START** | `feature/first-edition-review` at `ccdb5a1`; the independently reviewed H3 state was intentionally dirty at exactly 14 unstaged paths (ten Part READMEs and four review/lifecycle records), with 0 staged, 0 untracked, local/remote divergence `0 0`, and `git diff --check` clean. |
+| **Incoming independent evidence** | H3-V accepted all **16 original H3 corrections** and failed only the control requiring zero additional genuine same-class lifecycle-state instances. It reproduced exactly three residual current-state assertions: Part V described an obsolete current sprint; Part XI said completed Pass 1 was “under way”; Part XII said completed Pass 1 might still be authorised. |
+| **Correction applied** | Part V now identifies v0.16.0 First Edition Review with Phase F complete and Phase H remediation in progress; Part XI records Pass 1 complete; Part XII records that Pass 1 was authorised and completed. No release-readiness claim is created. |
+| **Content preservation** | The 16 independently accepted original H3 corrections are preserved. Historical scores, chapter Draft status, controlled baselines, technical scope, asset boundaries, links, citations, deferred Pass 2 work, Part XIII state and legitimate future-work statements are unchanged. |
+| **README regression result** | A fresh owner Lifecycle State Consistency Sweep covered all twelve Part READMEs. H3 now represents **19 corrected same-class locations** — the accepted original 16 plus these three residuals — with zero additional genuine lifecycle-state contradiction. Parts I and VIII remain unaffected. |
+| **README mutation record** | Twelve-README manifest before H3-F1 `f4ae0c2489e96c7ebd1285f3ac9567203eb1abb1698c33b01951a83d5dd4b44c`; after H3-F1 `6e1a2f55251e318824806d7c349cc79a950e5a5d701be8979c4b4d0636ceca7e`. Parts I and VIII retain blobs `3425a78667d5cbfd72e9feace56564d6dbfd7e77` and `82614837a469ff802d7fea920099091e3b313b3c`. |
+| **Chapter / protected-surface control** | Post-H2 chapter manifest remains `eb1d5c08e8748f75811f981332dce1fc32a1f2ac60ba1cba8fc26b550ad45ede`. No chapter, H1 authority surface, H2 table, template, quantitative tool, `QUALITY_GATES.md`, `RELEASE_POLICY.md`, `CHANGELOG.md`, release metadata, tag or branch changed. |
+| **Finding disposition** | `FE-L1-001`, `FE-L2-001`, `FE-L3-001`, `FE-L4-001`, `FE-L5-001` and `SYS-LIFECYCLE-DRIFT` remain **OPEN — CORRECTION APPLIED — AWAITING INDEPENDENT RE-VERIFICATION AT H3-V2**, with preserved P1/Class C, finding IDs, severity, provenance and systemic membership. |
+| **Lifecycle state** | H1 and H2 remain complete, independently verified and closed. H3 remains incomplete pending H3-V2. **H4–H7 have not started.** Phase H remains incomplete; v0.16.0 remains unreleased and is not declared release-ready. |
+| **Artefacts affected** | The three residual-bearing Part READMEs plus `FIRST_EDITION_FINDINGS.md`, this append-only log, the review plan's active lifecycle wording and `CURRENT_SPRINT.md`; all were already members of the accepted 14-path H3 working diff. |
+| **Next required action** | A fresh independent H3-V2 reviewer must sweep all twelve Part READMEs, verify all 19 corrected same-class locations against canonical lifecycle evidence, confirm zero residual contradiction and unaffected surfaces, and only then may close the five findings and `SYS-LIFECYCLE-DRIFT`. |
+| **Non-collapse note** | This is the H3-F1 follow-up correction only. It does not rewrite `FE-EV-034`, independently verify or close H3, start H4–H7, perform Phase I/J/K/L, conduct release administration, or declare release readiness. |
+
+---
+
+## Event FE-EV-036 — Phase H3-F2: Root README Lifecycle Consistency Follow-Up
+
+| Field | Value |
+| --- | --- |
+| **Event ID** | `FE-EV-036` |
+| **Date** | 2026-09-06 |
+| **Phase** | **H3-F2 — narrow root README correction applied; awaiting fresh independent re-verification** |
+| **Scope** | Six mutable current-state assertions in root `README.md`, frozen before editing at L21, L23, L81, L282, L329 and L330, plus the four existing First Edition review/lifecycle records. No Part README correction was repeated or rewritten. |
+| **Score / verdict** | **`UNSCORED`** — correction event. The supplied H3-V2 handoff result is **39 PASS · 1 FAIL, Decision B — H3 partially verified; H3 findings remain open**. This event records that supplied result; it does not rerun H3-V2 or invent a separate retrospective verification event. |
+| **Branch / HEAD at START** | `feature/first-edition-review` at `ccdb5a1`; intentional H3/H3-F1 diff of 14 unstaged paths, 0 staged, 0 untracked; `git diff --check` clean. |
+| **Incoming verification evidence** | The supplied H3-V2 result accepted all 19 existing Part README corrections, all twelve Part READMEs within H3, all fourteen existing modified paths and H2 non-regression. Its additional mandatory lifecycle-consistency control failed because root README claims that Phase H correction execution had not started contradicted the canonical H1/H2/H3 state. Verification made no repository change. |
+| **Authority / frozen population** | All six assertions describe current project state, not dated historical events. `CURRENT_SPRINT.md`, the findings register, review log and review plan establish H1/H2 complete and closed with H3 remediation active. `RELEASE_POLICY.md` requires root README/current-sprint agreement and preservation of historical records. The independently located population exactly matches the six authorised root README assertions. |
+| **Correction applied** | Replaced only those six assertions with Phase H remediation active; H1/H2 complete, independently verified and closed; H3 awaiting fresh independent H3-V3 after H3-F2; H4–H7 not started; v0.16.0 not release-ready. Existing Phase F completion, v0.16.0 unreleased state and v0.15.0 latest-stable state remain intact. |
+| **Content preservation** | Root README project description, manuscript architecture, chapter counts, release history, roadmap, technical content, historical review scores, links, badges and formatting are preserved. `FE-EV-033`, `FE-EV-034`, `FE-EV-035` and their historical H2/H3/H3-V/H3-F1 evidence are unchanged. |
+| **Part README preservation** | All twelve Part READMEs are byte-identical to the incoming H3-F1 state; all 19 accepted corrections remain intact. Twelve-README manifest remains `6e1a2f55251e318824806d7c349cc79a950e5a5d701be8979c4b4d0636ceca7e`. Parts I and VIII remain untouched; the H4 finding `FE-L1-007` remains open and outside this correction. |
+| **Chapter / protected-surface control** | All 137 chapters retain post-H2 manifest `eb1d5c08e8748f75811f981332dce1fc32a1f2ac60ba1cba8fc26b550ad45ede`. No chapter, H2 table repair, editorial authority, template, quantitative tool, `QUALITY_GATES.md`, `RELEASE_POLICY.md`, `CHANGELOG.md`, release metadata, tag or H4–H7 finding is modified. |
+| **Finding disposition** | `FE-L1-001`, `FE-L2-001`, `FE-L3-001`, `FE-L4-001`, `FE-L5-001` and `SYS-LIFECYCLE-DRIFT` remain **OPEN — FOLLOW-UP CORRECTION APPLIED — AWAITING FRESH INDEPENDENT RE-VERIFICATION AT H3-V3**; verification remains **NOT VERIFIED**. P1/Class C, original L1–L5 provenance and systemic membership are preserved. |
+| **Lifecycle state** | H1/H2 remain complete, independently verified and closed. H3 remediation/re-verification remains in progress. H4–H7 have not started. Phase H is incomplete; v0.16.0 remains active, unreleased and not release-ready; v0.15.0 remains latest stable. |
+| **Artefacts affected / handoff** | H3-F2 changes only root `README.md`, `FIRST_EDITION_FINDINGS.md`, this log, the review plan's active lifecycle wording and `CURRENT_SPRINT.md`. The combined correction package remains **15 unstaged paths**, with no staging, commit or push; review and commit are reserved to the user. |
+| **Next required action** | Fresh independent **H3-V3**, read-only: verify the six root assertions, preserve/recheck all 19 accepted Part README corrections across all twelve Parts, rerun the policy-required lifecycle sweep and H2/protected-surface controls. Only after a passing independent result may a separate H3-R task record closure. |
+| **Non-collapse note** | H3-F2 is a correction and recording task, not independent verification or closure. It does not perform H3-V3/H3-R, begin H4–H7, perform Phase I/J/K/L, or authorise release administration. |
+
+---
+
+## Event FE-EV-037 — Phase H3-R: Recording of H3-V3 Independent Lifecycle Closure
+
+| Field | Value |
+| --- | --- |
+| **Event ID** | `FE-EV-037` |
+| **Date** | 2026-09-06 |
+| **Phase** | **H3-R — closure recording of authoritative independent H3-V3 acceptance** |
+| **Scope** | Record closure of `SYS-LIFECYCLE-DRIFT` and its five original L1–L5 members after independent verification of the H3/H3-F1/H3-F2 correction package. No additional remediation or verification is performed. |
+| **Score / verdict** | **A — H3-V3 INDEPENDENTLY VERIFIED · 40 PASS · 0 FAIL. SYS-LIFECYCLE-DRIFT AND ALL FIVE MEMBER FINDINGS MAY PROCEED TO CLOSURE.** This is the authoritative result supplied for H3-R recording; H3-R is unscored at edition level. |
+| **Recording / independence boundary** | The recording actor records the supplied independent H3-V3 acceptance and does not rerun, replace or claim to have performed that verification. Participation in H3-F2 correction is not presented as independent acceptance. |
+| **Branch / HEAD at START** | `feature/first-edition-review` at `ccdb5a1`; intentional verified H3 package of **15 unstaged paths**: ten Part READMEs, root README and four review/lifecycle artefacts; 0 staged, 0 untracked; `git diff --check` clean. |
+| **Part README result supplied by H3-V3** | **PASS.** All twelve Part READMEs valid within H3; all 19 H3/H3-F1 corrected locations preserved. Parts I and VIII remain untouched; their non-H3 findings are not closed by this event. |
+| **Root README / lifecycle result supplied by H3-V3** | **PASS.** All six H3-F2 root README corrections verified; no stale lifecycle contradiction remains within the required sweep. |
+| **Package / regression result supplied by H3-V3** | **PASS.** All fifteen modified paths authorised; H2 and protected boundaries preserved; repository unchanged by the verifier. |
+| **Systemic closure** | `SYS-LIFECYCLE-DRIFT` is **VERIFIED / CLOSED** at preserved **P1 / Class C**, retaining its original root-cause history and five-member grouping. |
+| **Member closures** | `FE-L1-001` **VERIFIED / CLOSED**; `FE-L2-001` **VERIFIED / CLOSED**; `FE-L3-001` **VERIFIED / CLOSED**; `FE-L4-001` **VERIFIED / CLOSED**; `FE-L5-001` **VERIFIED / CLOSED**. Original L1–L5 provenance, severity, Class C, affected Parts, evidence and correction history are retained. |
+| **History preservation** | All prior event bodies remain unchanged, including H2 closure `FE-EV-033`, original H3 correction `FE-EV-034`, H3-V/H3-F1 history `FE-EV-035`, and H3-V2/H3-F2 history `FE-EV-036`. This one new canonical event records H3-V3 acceptance and H3-R closure without collapsing earlier results. |
+| **Manifest / correction preservation** | Twelve-Part-README manifest remains `6e1a2f55251e318824806d7c349cc79a950e5a5d701be8979c4b4d0636ceca7e`; all 137 chapters retain post-H2 manifest `eb1d5c08e8748f75811f981332dce1fc32a1f2ac60ba1cba8fc26b550ad45ede`. No Part README or chapter changes during H3-R. Root README changes only advance current H3/H4 closure sequencing; the six verified corrections' lifecycle meaning and all other content are preserved. |
+| **Finding count** | **29 immutable findings: 20 open · 9 closed and independently verified.** The systemic group is not counted as an additional finding. Open Class C = 20; open Class B = 0. |
+| **Lifecycle state** | **H1/H2 remain COMPLETE / VERIFIED / CLOSED. H3 is COMPLETE / INDEPENDENTLY VERIFIED / CLOSED. H4 is the NEXT AUTHORISED REMEDIATION GROUP, NOT STARTED. H5–H7 have not started.** No H4–H7 work was performed. Phase H remains incomplete; v0.16.0 remains active, unreleased and not release-ready; v0.15.0 remains latest stable. |
+| **Artefacts affected by H3-R** | Current closure/status fields and lifecycle wording in `FIRST_EDITION_FINDINGS.md`, this log, `FIRST_EDITION_REVIEW_PLAN.md`, `CURRENT_SPRINT.md` and root `README.md`. No chapter, Part README, authority, template, quantitative tool, quality-gate policy, release policy, CHANGELOG, release metadata, tag, H2 table, H4–H7 finding or unrelated citation changed. |
+| **Repository handoff** | Complete H3 package left **UNSTAGED**, ready for user review, commit and push. H3-R stages, commits and pushes nothing, and performs no merge, tag, reset, restore, stash or rebase. |
+| **Non-collapse / next action** | This closes H3 only. The next repository action is user review and commit/push of the H3 package. H4 is next in remediation sequence but is not begun here. Phase I/J/K/L, release administration and release readiness are not conferred by this event. |
+
 ## 3. Manuscript-mutation control (plan §13.4 drift discipline, applied to Phase F)
 
 **Rule.** The 137 chapter blobs recorded in §2.5 constitute the Phase F review-execution baseline. **Manuscript chapters must remain unmodified for the duration of Phase F.**
@@ -1308,6 +1407,10 @@ git ls-files -s book | awk '$4 ~ /chapters\/chapter-.*\.md$/ {print $4":"$2}' | 
 | `FE-EV-031` | 2026-09-04 | H1-V — authority | Independent editorial-authority closure verification · FE-T6-002 **VERIFIED / CLOSED** · H2–H7 not started | **`UNSCORED` — A** |
 | `FE-EV-032` | 2026-09-04 | H2 — GFM tables | Nine delimiter rows corrected · full-population author census 1,021 tables / 0 mismatches · FE-T6-001 and FE-L2-002 awaiting independent verification | **`UNSCORED`** |
 | `FE-EV-033` | 2026-09-04 | H2-V — GFM tables | Independent closure verification · 30 PASS / 0 FAIL · nine repairs verified · 1,021-table census clean · FE-T6-001 / FE-L2-002 / SYS-TABLE-DELIMITER **CLOSED** | **A — VERIFIED** |
+| `FE-EV-034` | 2026-09-04 | H3 — lifecycle drift | Five findings · ten Part READMEs corrected · lifecycle sweep clean · awaiting independent verification | **`UNSCORED`** |
+| `FE-EV-035` | 2026-09-04 | H3-F1 — lifecycle drift | H3-V 35 PASS / 1 FAIL recorded · three residual assertions corrected · 19 total locations · awaiting independent H3-V2 | **`UNSCORED`** |
+| `FE-EV-036` | 2026-09-06 | H3-F2 — root README lifecycle | Supplied H3-V2 39 PASS / 1 FAIL, Decision B recorded · six root assertions corrected · awaiting fresh independent H3-V3 | **`UNSCORED`** |
+| `FE-EV-037` | 2026-09-06 | H3-R — lifecycle closure | H3-V3 40 PASS / 0 FAIL recorded · SYS-LIFECYCLE-DRIFT and five members VERIFIED / CLOSED · H4 next, not started | **A — VERIFIED** |
 
 > **Note on the FE-EV-008 → FE-EV-009 sequence — this is not a lost record.** Three quantitative-instrument events occurred between them — **F-IR4** (fresh independent re-acceptance, 39 PASS · 0 PARTIAL · 1 FAIL), **F-IR4V2** (independent verification establishing that the instrument is intact, that E9 is correct and that the E11 total is 51) and **F-IR4F** (the E11 occurrence-decomposition correction, commit `250cfe7`) — and **none was written to this log at the time it happened.** Their outcomes are recorded in the **plan §16 phase-history table**, and `FE-EV-009` states the chain it closes.
 >
@@ -1315,4 +1418,4 @@ git ls-files -s book | awk '$4 ~ /chapters\/chapter-.*\.md$/ {print $4":"$2}' | 
 
 ---
 
-**Last Updated:** 2026-09-04 (H2-V independently verified and closed FE-T6-001, FE-L2-002 and SYS-TABLE-DELIMITER; H3–H7 not started)
+**Last Updated:** 2026-09-06 (H3-R recorded H3-V3 40 PASS · 0 FAIL, Decision A; SYS-LIFECYCLE-DRIFT and five members VERIFIED / CLOSED; H4 next, not started; H5–H7 not started)

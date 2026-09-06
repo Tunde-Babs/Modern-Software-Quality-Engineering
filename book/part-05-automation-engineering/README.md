@@ -4,7 +4,7 @@
 
 ## Curriculum Status
 
-**Curriculum complete. Delivery 1 (Chapters 1–4), Delivery 2 (Chapters 5–8), Delivery 3 (Chapters 9–12), and the Final Part V Quality Gate each closed at 98/100 with no P0, P1, or P2 findings. All Chapters 1–12 remain Draft.** Part V manuscript drafting and its comprehensive normalization pass are complete at committed baseline `64a3c9f`. Release preparation is active for the planned **v0.8.0 — Automation Engineering Complete** release. Companion implementation, Lab 1, Lab 2, diagrams, case studies, CI configuration, and other Pass 2 learning assets remain deferred. Website work remains separate, Part VI has not started, and Part V is not approved, published, or released.
+**Curriculum complete. Delivery 1 (Chapters 1–4), Delivery 2 (Chapters 5–8), Delivery 3 (Chapters 9–12), and the Final Part V Quality Gate each closed at 98/100 with no P0, P1, or P2 findings. All Chapters 1–12 remain Draft.** Part V manuscript drafting and its comprehensive normalization pass are complete at committed baseline `64a3c9f`. Part V is released as **v0.8.0 — Automation Engineering Complete**. Companion implementation, Lab 1, Lab 2, diagrams, case studies, CI configuration, and other Pass 2 learning assets remain deferred. Website work remains separate.
 
 ---
 
@@ -442,7 +442,7 @@ These are educational capability descriptions, not certification, job-title, or 
 
 Part V must not modify `website/` while the separate website-foundation worktree is active. Manuscripts and any separately authorized code should use predictable locations—`book/part-05-automation-engineering/chapters/`, a future `labs/` directory only if approved, and a future `code/part-05-automation-engineering/` companion only if approved—so the website can discover content later without duplicated source text.
 
-`CURRENT_SPRINT.md` is a shared repository coordination record and could misrepresent concurrent website and content tracks if either worktree updates it independently. Its current entry records the Part V Delivery 3 content track and notes the separate website foundation worktree. A release or project coordinator should use one minimal, explicit multi-track entry when both tracks agree on later wording.
+`CURRENT_SPRINT.md` is the shared repository coordination record. Its current entry records **v0.16.0 — First Edition Review**, with Phase F complete and Phase H remediation in progress. Updates to shared lifecycle state should remain minimal and explicit so concurrent work cannot create contradictory claims.
 
 ---
 
@@ -460,6 +460,6 @@ Part V must not modify `website/` while the separate website-foundation worktree
 
 ## Curriculum Approval Record
 
-Delivery 1, Delivery 2, Delivery 3, and the Final Part V Quality Gate closed at 98/100 with no P0, P1, or P2 findings. All Chapters 1–12 remain Draft. Part V manuscript drafting and normalization are complete at committed baseline `64a3c9f`; release preparation is active for planned **v0.8.0 — Automation Engineering Complete**.
+Delivery 1, Delivery 2, Delivery 3, and the Final Part V Quality Gate closed at 98/100 with no P0, P1, or P2 findings. All Chapters 1–12 remain Draft. Part V manuscript drafting and normalization are complete at committed baseline `64a3c9f`; Part V is released as **v0.8.0 — Automation Engineering Complete**.
 
 The Quality Automation System companion, Lab 1, and Lab 2 are **recommended Pass 2 after the manuscript gate**, not prerequisites for it. Do not begin companion implementation or Part VI automatically.
