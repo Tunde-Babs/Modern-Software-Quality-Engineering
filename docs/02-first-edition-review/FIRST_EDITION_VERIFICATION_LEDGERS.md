@@ -7,7 +7,7 @@
 | **Document type** | Review artefact 3 of 4 — **Evidence** |
 | **Authority** | [`FIRST_EDITION_REVIEW_PLAN.md`](FIRST_EDITION_REVIEW_PLAN.md) §13.1, §13.2 |
 | **Lifecycle** | Populated Phase F |
-| **State** | **Longitudinal axis COMPLETE (137/137). All six transversals COMPLETE; T4 is 137/137 for Levels 9, 10 and 16. Phase F remains IN EXECUTION pending separate consolidation/closure.** |
+| **State** | **Current state at FTR-1R: Phase F COMPLETE (FE-EV-028); longitudinal axis 137/137 and all six transversals complete, including T4 at 137/137 for Levels 9, 10 and 16. H1/H2/H3 CLOSED / VERIFIED; 20 findings open and 9 closed/verified. FTR-1 COMPLETE / INDEPENDENTLY VERIFIED / ACCEPTED at FTR-1V2, recorded in FE-EV-039. FTR-2 next / NOT STARTED; LR-1/LR-2 and FE-1/FE-2/FE-3 NOT STARTED; Learning-Ready RC NOT YET ASSESSED. Historical verification rows below retain their point-in-time evidence; no new verification is claimed.** |
 | **Owner** | Tunde Ajala |
 
 > This is a **governance artefact**, not a manuscript chapter. It carries no chapter-style status.

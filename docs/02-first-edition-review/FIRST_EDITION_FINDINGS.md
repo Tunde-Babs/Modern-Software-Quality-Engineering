@@ -7,12 +7,12 @@
 | **Document type** | Review artefact 2 of 4 — **Defects** |
 | **Authority** | [`FIRST_EDITION_REVIEW_PLAN.md`](FIRST_EDITION_REVIEW_PLAN.md) §13.1 |
 | **Lifecycle** | Mutable, Phases F→J |
-| **State** | **Phase F COMPLETE — First Edition Review execution COMPLETE.** Longitudinal axis 137/137 and all six transversals are complete; **29 findings are recorded (20 open · 9 closed and independently verified)**. **Phase-H remediation architecture is COMPLETE; H1 authority correction is independently VERIFIED and CLOSED at H1-V; H2 GFM table remediation is independently VERIFIED and CLOSED at H2-V; independent H3-V returned 35 PASS · 1 FAIL; the supplied H3-V2 result is 39 PASS · 1 FAIL, Decision B; H3-F2 root README follow-up correction is independently verified at H3-V3 (40 PASS · 0 FAIL, Decision A); H3 and its five member findings with SYS-LIFECYCLE-DRIFT are COMPLETE / VERIFIED / CLOSED. H4 is the next authorised remediation group; H4–H7 have not started.** FE-L1-005 was independently closed at **F-IR4V3**, FE-T6-002 at **H1-V**, FE-T6-001 with FE-L2-002 at **H2-V**, and FE-L1-001, FE-L2-001, FE-L3-001, FE-L4-001 and FE-L5-001 at **H3-V3**; none of those correction/verification chains raised a new finding ID. |
+| **State** | **Phase F COMPLETE — First Edition Review execution COMPLETE.** Longitudinal axis 137/137 and all six transversals are complete; **29 findings are recorded (20 open · 9 closed and independently verified)**. **Phase-H remediation architecture is COMPLETE; H1 authority correction is independently VERIFIED and CLOSED at H1-V; H2 GFM table remediation is independently VERIFIED and CLOSED at H2-V; independent H3-V returned 35 PASS · 1 FAIL; the supplied H3-V2 result is 39 PASS · 1 FAIL, Decision B; H3-F2 root README follow-up correction is independently verified at H3-V3 (40 PASS · 0 FAIL, Decision A); H3 and its five member findings with SYS-LIFECYCLE-DRIFT are COMPLETE / VERIFIED / CLOSED. FTR-1 governance correction is applied, awaiting fresh independent FTR-1V verification; H4–H7 remain the historical remediation architecture and have not started.** FE-L1-005 was independently closed at **F-IR4V3**, FE-T6-002 at **H1-V**, FE-T6-001 with FE-L2-002 at **H2-V**, and FE-L1-001, FE-L2-001, FE-L3-001, FE-L4-001 and FE-L5-001 at **H3-V3**; none of those correction/verification chains raised a new finding ID. |
 | **Owner** | Tunde Ajala |
 
 > This is a **governance artefact**, not a manuscript chapter. It carries no chapter-style status.
 
-> **Findings recorded to date: 29 — 7 from F-L1 (Parts I–II), 5 from F-L2 (Parts III–V), 5 from F-L3 (Parts VI–VIII), 2 from F-L4 (Parts IX–X), 3 from F-L5 (Parts XI–XII), 1 from F-T3, 1 from F-T5, 2 from F-T2, 2 from F-T6 and 1 from F-T4.** **All six transversals have run; T1 raised no new finding.** Severity distribution: **P0 = 0 · P1 = 6 · P2 = 4 · P3 = 19.** Blocker classes: **A = 0 · B = 0 · C = 29 · D = 0.** **Open blocker counts: A = 0 · B = 0 · C = 25 · D = 0; FE-L1-005, FE-L2-002, FE-T6-001 and FE-T6-002 are the four closed Class-C records.**
+> **Findings recorded to date: 29 — 7 from F-L1 (Parts I–II), 5 from F-L2 (Parts III–V), 5 from F-L3 (Parts VI–VIII), 2 from F-L4 (Parts IX–X), 3 from F-L5 (Parts XI–XII), 1 from F-T3, 1 from F-T5, 2 from F-T2, 2 from F-T6 and 1 from F-T4.** **All six transversals have run; T1 raised no new finding.** Severity distribution: **P0 = 0 · P1 = 6 · P2 = 4 · P3 = 19.** Blocker classes: **A = 0 · B = 0 · C = 29 · D = 0.** **Current derived open blocker counts at FTR-1: A = 0 · B = 0 · C = 20 · D = 0; nine Class-C records are CLOSED / VERIFIED: FE-L1-005, FE-T6-002, FE-L2-002, FE-T6-001, FE-L1-001, FE-L2-001, FE-L3-001, FE-L4-001 and FE-L5-001.** The former 25-open / 4-closed summary described the pre-H3-closure state; dated point-in-time evidence remains unchanged.
 >
 > **Three of the five L2 findings are additional instances of existing systemic groups and carry NO separate deduction** (plan §7.3 systemic root-cause rule). **Four of the five L3 findings likewise join existing systemic groups** — `SYS-LIFECYCLE-DRIFT`, `SYS-ORPHAN-FOOTNOTE`, `SYS-TIER1-IDENTIFIER` and `SYS-TEMPLATE-NAMING` — and carry no separate deduction; only **FE-L3-003** is a new root cause. **Both F-L4 findings join existing systemic groups** — `SYS-LIFECYCLE-DRIFT` and `SYS-TEMPLATE-NAMING` — and carry no separate deduction; **F-L4 raised no new root cause**. **All three F-L5 findings likewise join existing groups** — `SYS-LIFECYCLE-DRIFT`, `SYS-TEMPLATE-NAMING` and `SYS-TIER1-IDENTIFIER` — and **F-L5 raised no new root cause**. Distinct deducting findings across the whole longitudinal axis: **10**. **F-T3 adds one new root cause — FE-T3-001 — F-T5 adds one — FE-T5-001 — and F-T2 adds two — FE-T2-001 and FE-T2-002 — each deducting in its own right**, bringing distinct deducting findings to **14**. **F-T6 adds FE-T6-002 as a new root cause; FE-T6-001 joins FE-L2-002's group `SYS-TABLE-DELIMITER` and carries the group's escalation rather than a separate deduction, bringing distinct deducting findings to 15. F-T4 adds FE-T4-001 as a distinct pedagogical root cause, bringing the total to 16.**
 
@@ -987,6 +987,8 @@ These are **not** manuscript findings and **do not** appear in the register abov
 
 ### 6.1 Closure basis and final reconciliation
 
+> **Historical Phase-F closure snapshot.** Counts below describe FE-EV-028; the current derived count and execution allocation are in §8.
+
 **Phase F is COMPLETE; First Edition Review execution is COMPLETE.** The five longitudinal batches cover **137/137** chapters, and all six transversals have completed their authorised scope: T1 137/137, T2 137/137, T3's authorised 1,516-candidate Tier-2 object, T4 137/137 (Levels 9, 10 and 16), T5 115/115 Atlas-scoped chapters, and T6 137/137. The 1,169 Tier-1 candidates were adjudicated across L1–L5, so the complete Level-8 population is evidenced without treating T3 as a self-declared substitute for longitudinal work.
 
 All **29 immutable finding IDs** were reconciled. There are **16 deducting root causes**: five systemic groups and eleven standalone roots. `FE-L1-005` is **CLOSED / VERIFIED** and is not in the remediation backlog; the remaining **28 records are OPEN** and map to **15 Phase-H backlog groups**. No ID is deleted, renumbered, weakened or double-deducted. No Class-A, Class-B or Class-D record exists. The 28 open records are Class C — Final-Gate blockers, which constrain Phase J rather than Phase-F review execution.
@@ -1056,6 +1058,8 @@ Phase F closure criteria are satisfied: all authorised axes are complete; all fi
 ## 7. Phase-H remediation architecture and execution plan
 
 ### 7.1 Authorisation boundary and planning baseline
+
+> **Historical H0 planning architecture.** The original 28-ID allocation and H4–H7 architecture below are preserved. Current remaining work is overlaid in §8; FTR-1 does not start a remediation wave.
 
 This section is the **authorised execution architecture** for the 28 open findings. It authorises planning, batching, dependency control and future worktree design only. **It is not a Phase-H START event, performs no correction, changes no finding status, and does not authorise release administration.** The immutable pre-remediation reference is the Phase-F manifest digest `ec588eaa1e61bd0f0fa8706f5cc3dd470b7caa67314df6f77f858425f150a411` at closure commit `56458ba`.
 
@@ -1171,3 +1175,49 @@ Phase H completes only when all authorised wave corrections are executed; P1 fin
 The required sequence after Phase H is: **Phase I independent closure verification → Phase J Final First Edition Quality Gate → Phase K controlled whole-edition baseline → Phase L release administration only if the preceding gates authorise it.** Phase H itself does not create a release branch or tag, promote `CHANGELOG.md`, publish v0.16.0, or declare release readiness.
 
 **Last Updated:** 2026-09-06 (H3-R recorded H3-V3 40 PASS · 0 FAIL, Decision A; five findings and SYS-LIFECYCLE-DRIFT VERIFIED / CLOSED; 20 open findings remain; H4 next, not started; H5–H7 not started)
+
+## 8. Learning-Ready Fast-Track execution overlay
+
+**FTR-1 GOVERNANCE CORRECTION APPLIED — AWAITING FRESH INDEPENDENT FTR-1V VERIFICATION.** This section is the current execution overlay, subject to that independent verification and separate remediation authorisation. It performs no finding correction, acceptance, deferral, closure or independent verification. **29 canonical findings remain: 20 OPEN / NOT VERIFIED; 9 CLOSED / VERIFIED.** H1/H2/H3 remain closed; H4–H7 and all overlay packages remain not started.
+
+### 8.1 Dispositions and preservation
+
+| Execution disposition | Meaning | Control |
+| --- | --- | --- |
+| **LR-BLOCKER** | Must be CLOSED / VERIFIED before Learning-Ready PASS | Cannot be accepted away at the intermediate gate; unmet learner-facing gate conditions block irrespective of severity |
+| **FE-REQUIRED** | Remains governed work for the First Edition route | Must satisfy the existing correction/acceptance rules and blocker-class boundary; the package label grants no automatic intermediate deferral or final waiver |
+| **DEFER-CANDIDATE** | Eligible to remain outstanding at the intermediate Learning-Ready stage, subject to explicit residual review | Does not mean ignored, accepted forever, closed, verified or removed from final publication governance |
+
+These are **execution-layer dispositions**, separate from severity, defect class, blocker class, systemic grouping, closure status and verification status. Historical classification is never mutated merely because a finding receives one. In particular, DEFER-CANDIDATE does not change a record to `DEFERRED` or `ACCEPTED`. Any such lifecycle decision still requires the established owner record. P2 acceptance retains named owner, rationale, accepted consequence and revision trigger; P3 retains conscious documented acceptance. Final blocker handling remains governed by Plan §7 and §13, not by an intermediate label.
+
+The conservative initial allocation below reserves LR-1/LR-2 for learning blockers and retains the other work as FE-REQUIRED. A later, explicitly recorded owner proposal may identify a DEFER-CANDIDATE only with evidence of tolerable learning impact, owner, rationale, final destination and revision trigger, followed by independent Learning-Ready assessment. No such decision is fabricated in FTR-1. The residual inventory must include **every outstanding finding**, even if its disposition remains FE-REQUIRED; any unmet learning criterion blocks PASS. No label alone establishes learner safety or suitability.
+
+### 8.2 Canonical current 20-finding allocation
+
+| Package | Historical origin | Finding IDs | Execution disposition | Dependency / verification retained |
+| --- | --- | --- | --- | --- |
+| **LR-1** | H4 | FE-L1-002 · FE-L1-007 | LR-BLOCKER | Decision A before status remediation; full 137-status census and Part-I maturity/navigation review |
+| **LR-2** | H5 | FE-L2-003 · FE-L3-003 · FE-T5-001 | LR-BLOCKER | Verified integrated LR-1 baseline; Decision B before persona remediation; independent T5/L15/L19 identity, namespace and persona/evidence review |
+| **FE-1** | H4 and H7 | FE-L1-004 · FE-L2-005 · FE-L3-005 · FE-L4-002 · FE-L5-002 · FE-T4-001 | FE-REQUIRED | H1 authority preserved; LR-1 integrated before overlapping Part-I work; full heading/component census and independent Level-16 contextual exercise review |
+| **FE-2** | H5 | FE-L1-003 · FE-L2-004 · FE-L3-002 · FE-T2-001 · FE-T2-002 | FE-REQUIRED | Integrated relevant H4/FE-1 and LR-2 changes; full footnote/key/denominator recheck and changed-source checks; historical evidence corrected by explicit new record |
+| **FE-3** | H6 | FE-L1-006 · FE-L3-004 · FE-L5-003 · FE-T3-001 | FE-REQUIRED | Owner quantitative disposition; separate specialist authorisation before any instrument mutation; clean integrated citation baseline and fresh independent re-acceptance if changed |
+
+**Allocation invariant: 2 + 3 + 6 + 5 + 4 = 20; each currently open finding appears exactly once in this table.** Systemic roots are not extra finding IDs. H4–H7 remain the historical remediation architecture in §7; their origin allocations, dependency rationale, closure standards and specialist boundary are preserved. The overlay splits their execution, not their findings or scoring roots. Plan §18 governs the narrower learning-first sequence and conflict checks.
+
+**Historical versus current counts.** §6.1 records the Phase-F closure snapshot (28 open / 1 closed); §7 records the corresponding 28-ID H0 planning allocation. Those counts remain point-in-time history, not the current backlog. The pre-H3 state was 25 open / 4 closed. The current count is derived from the individual records after the H3-V3/H3-R closures recorded in FE-EV-037: **20 open / 9 closed and independently verified**. Original finding records and historical correction narratives are unchanged by FTR-1.
+
+### 8.3 Required owner decisions before dependent remediation
+
+| Decision | Evidence and recommendation | Required owner record | State |
+| --- | --- | --- | --- |
+| **A — Part I chapter status** | FE-L1-002 and Plan §2.3/§14 distinguish legitimate historical origin from current model conformance. Ten Part-I chapters carry `Technical Review Ready`; the other 127 carry `Draft`. H1 settled structural authority, not Part-I maturity. The fast-track analysis recommends considering **Draft**, consistent with those 127 chapters; this is not an owner decision. | Project Founder must choose and justify the supported status against Git/review history, Part-I README, Quality Gates, template and later-Part conventions. Record decision, date, evidence and exact scope before editing; any model extension requires explicit governance change and independent review. | **OWNER DECISION REQUIRED — no Draft assignment authorised or made** |
+| **B — Atlas persona intent** | Plan supporting Level 15 lists personas as an inspection dimension; that alone does not establish an accepted requirement for continuous recurring personas. FE-T5-001 explicitly requires the intent decision; H1/FE-EV-029 did not resolve it. The inspected governance and Part curriculum evidence does not establish that acceptance. | Project Founder must determine whether continuous recurring personas were an accepted curriculum requirement, citing the accepted design/decision evidence or explicitly recording the remaining uncertainty and prospective curriculum decision. Preserve the false `Dele` evidence issue for separately authorised correction regardless of the intent outcome. | **OWNER DECISION REQUIRED — no requirement redefined, no persona evidence corrected** |
+
+Do not redefine persona intent merely to simplify FE-T5-001 closure. If accepted continuity was required, preserve the finding's escalation trigger and the delivery obligation; any evidence-based future reclassification is separately recorded, never smuggled into this overlay. Decision A and B do not themselves close findings. FE-3 also retains the pre-existing H6 quantitative owner-decision/specialist controls.
+
+### 8.4 Non-finding observations retained
+
+- `book/README.md` uses unexplained construction symbols for all Parts. Retain for later navigation/maturity handling; this record grants no Learning-Ready exemption if the ambiguity remains material.
+- `LICENSE` is empty (0 bytes). Retain as a **final-publication concern** for separately authorised publication governance handling; no licence is selected or legal disposition made here.
+
+These are observations, not newly allocated FE findings in this bounded governance task. Neither is remediated, accepted away or silently waived by FTR-1. Future authorised gate review must handle their actual impact under existing governance.

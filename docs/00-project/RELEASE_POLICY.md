@@ -413,3 +413,9 @@ Future enhancements may include:
 **Document Version:** 1.1
 
 **Last Updated:** August 2026
+
+# Learning-Ready Intermediate State
+
+**FTR-1 amendment — COMPLETE / INDEPENDENTLY VERIFIED / ACCEPTED at FTR-1V2, recorded in FE-EV-039.** [LEARNING-READY RC](../01-editorial/QUALITY_GATES.md#additional-intermediate-gate--learning-ready-rc) is an additional governed study-readiness state. Despite the RC suffix, it is distinct from the Release Candidate release type and release-branch workflow above: it does not declare the manuscript publication-complete or authorise release administration, distribution, tagging or publication.
+
+The standing Quality Gates authority owns its PASS/BLOCKED criteria; [Review Plan §18](../02-first-edition-review/FIRST_EDITION_REVIEW_PLAN.md#18-learning-ready-fast-track-operating-model) owns the independent review and separate freeze procedure. The existing release checklist, required-asset controls and final publication obligations are unchanged. **v0.16.0 = First Edition Review milestone; v1.0.0 = formal First Edition publication.** A Learning-Ready PASS substitutes for none of Phase I/J/K/L and cannot silently permit unresolved final blockers.

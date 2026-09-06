@@ -253,3 +253,23 @@ Future versions may introduce:
 **Document Version:** 1.1
 
 **Last Updated:** August 2026
+
+# Additional Intermediate Gate — LEARNING-READY RC
+
+**FTR-1 governance foundation COMPLETE / INDEPENDENTLY VERIFIED / ACCEPTED at FTR-1V2, recorded in FE-EV-039.** Learning-Ready RC itself is **NOT YET ASSESSED**. It adds an intermediate study gate; all existing Part and First Edition publication requirements remain in force.
+
+LEARNING-READY RC permits productive professional study of the manuscript before publication-only remediation is complete. It is an edition-level readiness label, not a chapter status or the release-candidate stage in the release workflow.
+
+The gate result is **PASS** only when independent evidence establishes every condition below; otherwise it is **BLOCKED**, with unmet conditions and owners recorded:
+
+- All LR-BLOCKER findings are **CLOSED / VERIFIED** under the existing finding lifecycle.
+- No unresolved material learner-facing P0/P1 defect, materially false technical claim, materially misleading engineering guidance, or broken teaching example required for learning remains.
+- Curriculum navigation and prerequisites are usable.
+- Required learning assets are available or their limitations are explicitly stated. Disclosure cannot excuse a broken required teaching example or an unmet learning outcome; those block PASS. Required-asset publication obligations and the anti-bypass safeguard above remain intact.
+- Material source limitations are visible, and edition, chapter and Part maturity information is accurate.
+- A fresh independent Learning-Ready review has assessed the actual manuscript and learning evidence, not only a manifest or automated output.
+- The reviewed Learning-Ready baseline is frozen, with explicit scope and blob identities, and an explicit residual-finding inventory records every outstanding finding and its learning impact, accountable owner, rationale, destination and revision trigger.
+
+Execution dispositions and review/baseline procedure are defined in [Review Plan §18](../02-first-edition-review/FIRST_EDITION_REVIEW_PLAN.md#18-learning-ready-fast-track-operating-model); the canonical allocation and owner decisions are in [Findings §8](../02-first-edition-review/FIRST_EDITION_FINDINGS.md#8-learning-ready-fast-track-execution-overlay).
+
+PASS is **not Phase J approval, Phase K baseline approval, First Edition publication approval or a v1.0.0 release**. It neither completes nor waives Phase I/J/K/L, changes CLOSED / VERIFIED, accepts findings by implication, alters severity/classification, nor removes final blockers. Every residual remains governed at its original final-gate/publication boundary. **v0.16.0 remains the First Edition Review milestone; v1.0.0 remains formal First Edition publication.** FTR-1 grants no Learning-Ready PASS and creates no baseline or release.
