@@ -1413,6 +1413,8 @@ git ls-files -s book | awk '$4 ~ /chapters\/chapter-.*\.md$/ {print $4":"$2}' | 
 | `FE-EV-037` | 2026-09-06 | H3-R — lifecycle closure | H3-V3 40 PASS / 0 FAIL recorded · SYS-LIFECYCLE-DRIFT and five members VERIFIED / CLOSED · H4 next, not started | **A — VERIFIED** |
 | `FE-EV-038` | 2026-09-06 | H — FTR-1 bounded governance correction authorship | Additional Learning-Ready gate, execution overlay for 20 outstanding findings, owner-decision requirements, root agent instructions and bounded current-state reconciliation; no finding closure, Learning-Ready PASS, FTR-2 start or remediation start | **UNSCORED — FTR-1 GOVERNANCE CORRECTION APPLIED; AWAITING FRESH INDEPENDENT FTR-1V VERIFICATION** |
 | `FE-EV-039` | 2026-09-06 | H — FTR-1R governance acceptance recording | FTR-1V 59 PASS / 1 FAIL, Decision B; FTR-1F1 single index-row correction; FTR-1V2 33 PASS / 0 FAIL, Decision A; governance foundation accepted, no finding closure or Learning-Ready PASS; FTR-2 and LR/FE work not started | **UNSCORED recording — FTR-1 COMPLETE / INDEPENDENTLY VERIFIED / ACCEPTED** |
+| `FE-EV-040` | 2026-09-06 | H — FTR-2 deterministic foundation authorship | Read-only checker, isolated tests and usage documentation; bounded current-state reconciliation; awaiting fresh independent FTR-2V | **UNSCORED — IMPLEMENTATION IN PROGRESS / AWAITING INDEPENDENT VERIFICATION** |
+| `FE-EV-041` | 2026-09-07 | H — FTR-2R/C acceptance recording | Supplied FTR-2V 40 PASS / 0 FAIL, Decision A; 30/30 independent tests; exact seven-file package accepted for checkpoint and push; no remediation or gate approval | **UNSCORED recording — FTR-2 COMPLETE / INDEPENDENTLY VERIFIED / ACCEPTED** |
 
 > **Note on the FE-EV-008 → FE-EV-009 sequence — this is not a lost record.** Three quantitative-instrument events occurred between them — **F-IR4** (fresh independent re-acceptance, 39 PASS · 0 PARTIAL · 1 FAIL), **F-IR4V2** (independent verification establishing that the instrument is intact, that E9 is correct and that the E11 total is 51) and **F-IR4F** (the E11 occurrence-decomposition correction, commit `250cfe7`) — and **none was written to this log at the time it happened.** Their outcomes are recorded in the **plan §16 phase-history table**, and `FE-EV-009` states the chain it closes.
 >
@@ -1470,3 +1472,78 @@ git ls-files -s book | awk '$4 ~ /chapters\/chapter-.*\.md$/ {print $4":"$2}' | 
 | **Protected manifests** | All 137 chapters retain digest `eb1d5c08e8748f75811f981332dce1fc32a1f2ac60ba1cba8fc26b550ad45ede`; all twelve Part READMEs retain digest `6e1a2f55251e318824806d7c349cc79a950e5a5d701be8979c4b4d0636ceca7e`. Chapters, Part READMEs, templates, quantitative specification/tooling, CHANGELOG, book/README.md, LICENSE, release artefacts and Git tags remain unchanged. |
 | **Release / Git boundary** | v0.16.0 ACTIVE / UNRELEASED / NOT RELEASE-READY; v0.15.0 remains latest stable locally. The complete accepted governance package is left unstaged at 202e5e3 for user review, commit and push. FTR-1R performs no stage, commit, push, merge, tag, reset, restore, stash or rebase. |
 | **Non-collapse / next action** | Preserve FTR-1 → FTR-1V (59/1, B) → FTR-1F1 → FTR-1V2 (33/0, A) → FTR-1R as distinct acts. Next repository action: user review, commit and push of the accepted governance foundation. FTR-2 requires separate authorisation afterward. No FTR-2 implementation, LR/FE remediation, Phase I/J/K/L or release administration is performed or authorised by this recording. |
+
+
+## Event FE-EV-040 — Phase H / FTR-2: Deterministic Gate Foundation Implementation Authorship
+
+| Field | Value |
+| --- | --- |
+| **Event ID** | `FE-EV-040` |
+| **Date** | 2026-09-06 |
+| **Phase** | H — FTR-2 deterministic tooling implementation authorship; no finding remediation |
+| **Scope** | New read-only Python checker and isolated unittest fixtures; usage documentation in Plan §18.5; minimum current-state reconciliation across root README, sprint, Plan and ledger header |
+| **Score / verdict** | **UNSCORED — FTR-2 IMPLEMENTATION IN PROGRESS / AWAITING INDEPENDENT VERIFICATION.** Author implementation and mechanical validation do not establish FTR-2 acceptance. |
+| **Independence** | This Codex session is the implementation author. No FTR-2V, semantic acceptance, finding closure or gate decision is performed. Fresh independent verification of the exact dirty package is required under Plan §11/§18.4. |
+| **Authorisation / pre-flight** | User-authorised FTR-2 implementation only. Clean `feature/ftr-2-deterministic-gate`, HEAD `fd55eff667ca2e0dd7b63f34360aa1ef711f1e91`, exact requested baseline; origin tracking divergence `0 0`; `git diff --check` clean. Existing MSQE-T1 and MSQE-T6 worktrees were inventoried and not used or changed. |
+| **Frozen exact allow-list** | `tools/first_edition_gate.py`; `tests/test_first_edition_gate.py`; `README.md`; `CURRENT_SPRINT.md`; `docs/02-first-edition-review/FIRST_EDITION_REVIEW_PLAN.md`; `docs/02-first-edition-review/FIRST_EDITION_REVIEW_LOG.md`; `docs/02-first-edition-review/FIRST_EDITION_VERIFICATION_LEDGERS.md` |
+| **Artefacts affected** | Plan: current FTR-2 state and tooling usage only; Ledgers: current-state header only, no historical verification row changed; Log: one new event body and matching index row. Findings remain byte-identical. |
+| **Event requirement / allocation** | Plan §13.1 and Review Log §1 require a distinct unscored authorship record, consistent with FE-EV-038. Pre-edit canonical headings/index rows were unique FE-EV-001–039; maximum 039 was derived. Exactly one new ID, FE-EV-040, is allocated and its body/index row added together. Prior event bodies and index rows are preserved. |
+| **Implemented foundation** | Four explicit profiles; text/JSON output; exits 0/1/2/3; controlled chapter/Part-README manifests across HEAD/index/working tree; canonical event body/index integrity; finding lifecycle census; exact open-finding allocation; explicit batch path scope; unstaged/staged diff hygiene. The checker has no network dependency and performs no repository write or repair. |
+| **Evidence limitations** | Learning-Ready expanded candidate/freeze/residual-evidence validation and full Phase K 141-object baseline/drift validation are explicitly NOT IMPLEMENTED in this foundation; their profiles report INCOMPLETE, exit 3. Existing 137/12 manifests are not either later baseline. All profiles retain the accepted FTR-2 population/census references; later baseline evolution requires separate authorisation and independent review. |
+| **Author test evidence** | Thirty isolated standard-library unittest tests pass, including every requested negative class, valid cases, staged/unstaged/untracked/rename scope, index-versus-working-tree manifest drift, Git diff hygiene, exception handling and exit precedence. Negative mutations occur only in memory or temporary repositories. These are author checks, not independent verification. |
+| **Final author validation** | Complete 30-test suite PASS. Configured `batch`: 8 PASS, exit 0; `baseline`: 7 PASS, exit 0; `learning-ready` and `first-edition`: each 7 PASS / 1 INCOMPLETE, exit 3 for explicitly unimplemented later-baseline validation. Bare `batch` returns 3 for missing scope evidence. All four JSON outputs parse and reproduce byte-for-byte on repeated runs. Event bodies/index rows reconcile uniquely at FE-EV-001–040. Exact scope is five modified tracked files plus two new files, all unstaged; all 298 other tracked files are byte-identical to pre-flight. Removing only this event/index pair reproduces the entire incoming log byte-for-byte; ledger history and Plan §§1–17 are unchanged. HEAD and all refs are unchanged; `git diff --check` and cached hygiene pass. These are implementation-author checks only: IMPLEMENTATION READY FOR INDEPENDENT REVIEW, not FTR-2 VERIFIED / ACCEPTED. |
+| **Protected populations before / after** | 137 chapters: `eb1d5c08e8748f75811f981332dce1fc32a1f2ac60ba1cba8fc26b550ad45ede`; twelve Part READMEs: `6e1a2f55251e318824806d7c349cc79a950e5a5d701be8979c4b4d0636ceca7e`. SHA-256 over newline-terminated, path-sorted `path:Git-blob-SHA` records. No controlled manuscript or Part-README blob is intentionally changed. |
+| **Finding invariant / downstream state** | FTR-1 remains COMPLETE / INDEPENDENTLY VERIFIED / ACCEPTED at FE-EV-039. All 29 canonical findings retain their states, verification, severity, classes and systemic provenance: 20 OPEN / NOT VERIFIED; nine CLOSED / VERIFIED. LR-1/LR-2 and FE-1/FE-2/FE-3 remain NOT STARTED; package counts 2/3/6/5/4. Learning-Ready RC remains NOT YET ASSESSED. H4–H7, owner decisions and quantitative specialist boundaries are preserved. |
+| **Release / repository boundary** | No chapter, Part README, template, quantitative specification/tool, finding record, CHANGELOG, handbook README, LICENSE, release artefact or tag is changed. v0.16.0 remains unreleased; v0.15.0 remains latest stable. Leave all seven paths unstaged; no commit, push, merge, tag or release operation. |
+| **Non-collapse / next action** | This is distinct from FTR-1 acceptance, FTR-2V, LR/FE remediation and Phase I/J/K/L. After author validation, the implementation is ready for separately authorised fresh independent FTR-2V on the entire dirty package before checkpointing. No downstream execution follows from this record. |
+
+### FTR-2 authorship blob inventory
+
+These are actual pre-edit HEAD blobs and post-edit working-file blobs for the frozen package. The log's final blob must be captured externally by the independent reviewer to avoid self-reference; this table does not create a candidate freeze or record an acceptance baseline. The immutable pre-flight commit identifies the complete initial population. The 137 chapter and twelve Part-README blobs are preserved at that commit, with aggregate identities above.
+
+| Path | Pre-edit HEAD blob | Post-edit working-file blob |
+| --- | --- | --- |
+| `CURRENT_SPRINT.md` | `5bfc31a968591f703622daa2f107924eef3373f2` | `98a32e6ec4d1c17aa5eee0a522acb660c5cecdaa` |
+| `README.md` | `77b6796510bb4411d9dce9e4056c742bf65db3f9` | `9fb9dece22ce115f15dd5d258f666d6b740f6507` |
+| `docs/02-first-edition-review/FIRST_EDITION_REVIEW_LOG.md` | `2ca7f7534153f1969bd43583bf9b4212a74d537a` | Not embedded: this event/index pair changes its own containing blob |
+| `docs/02-first-edition-review/FIRST_EDITION_REVIEW_PLAN.md` | `6e95f58e68d10fc61274ebf69aecb071daf6483f` | `014833c7d807232da77256e4188d188b5f2816f5` |
+| `docs/02-first-edition-review/FIRST_EDITION_VERIFICATION_LEDGERS.md` | `c892740377f7746ca01276eca0f251c5269b2331` | `07539d94b239bb66b95ffc527c91c28f75c06877` |
+| `tests/test_first_edition_gate.py` | `NEW FILE` | `9cfcf7d28788006ae996dac13070a8f57a5d2eb3` |
+| `tools/first_edition_gate.py` | `NEW FILE` | `fdebf2e8e4f51b32bee340b953635b7819e63ea7` |
+
+
+## Event FE-EV-041 — Phase H / FTR-2R/C: Deterministic Gate Acceptance Recording and Checkpoint Authorisation
+
+| Field | Value |
+| --- | --- |
+| **Event ID** | `FE-EV-041` |
+| **Date** | 2026-09-07 |
+| **Phase** | H — narrow FTR-2 closure recording and controlled checkpoint |
+| **Scope** | Record supplied independent acceptance of the exact seven-file FTR-2 package; reconcile five current-state governance surfaces; authorise explicit-path staging, commit and non-force push. No implementation/test change or finding remediation. |
+| **Score / verdict** | **UNSCORED recording — FTR-2 COMPLETE / INDEPENDENTLY VERIFIED / ACCEPTED.** Supplied FTR-2V: **40 PASS / 0 FAIL, Decision A**. Independent automated tests: **30 PASS / 0 FAIL / 0 ERROR**. These are the supplied review results, not a new edition score or gate result. |
+| **Evidence source / independence** | The user supplied the authoritative FTR-2V acceptance and seven verified working-file Git blob IDs in the FTR-2R/C request. This actor is the FTR-2 implementation author and records that independent result; it does not claim to have performed or replaced FTR-2V. Mechanical reruns in this task remain author/recording checks. |
+| **Pre-flight / identity freeze** | Clean index on `feature/ftr-2-deterministic-gate`, HEAD `fd55eff667ca2e0dd7b63f34360aa1ef711f1e91`; exactly five modified tracked files and two untracked files, nothing staged; origin tracking divergence `0 0`; diff hygiene clean. All seven current working-file blobs matched the supplied FTR-2V identities before any closure edit, as listed below. |
+| **Frozen exact checkpoint paths** | `tools/first_edition_gate.py`; `tests/test_first_edition_gate.py`; `README.md`; `CURRENT_SPRINT.md`; `docs/02-first-edition-review/FIRST_EDITION_REVIEW_PLAN.md`; `docs/02-first-edition-review/FIRST_EDITION_REVIEW_LOG.md`; `docs/02-first-edition-review/FIRST_EDITION_VERIFICATION_LEDGERS.md` |
+| **Artefacts affected** | Plan: current acceptance/next-action paragraph only, usage and method preserved; Ledgers: current-state header only; Log: this new event and matching index row. Root README and sprint reconcile current acceptance/next activity. Findings remain untouched. |
+| **Canonical event requirement** | Plan §13.1 and Review Log §1 require distinct traceable acceptance recording. The incoming canonical bodies were uniquely FE-EV-001–040; the maximum was derived from headings. Exactly one new ID, FE-EV-041, is allocated with its matching index row. FE-EV-040 and every prior body/index row remain unchanged. |
+| **Accepted profile behaviour** | `batch` with the frozen seven-path allow-list: exit 0; `baseline`: exit 0; `learning-ready`: exit 3 / INCOMPLETE; `first-edition`: exit 3 / INCOMPLETE. Later candidate/freeze and Phase K evidence validators remain intentionally incomplete. Acceptance does not convert those results to PASS. |
+| **Deterministic / semantic boundary** | **AUTOMATION PROVES INVARIANTS. INDEPENDENT REVIEW PROVES MEANING.** EXIT 0 DOES NOT CONSTITUTE SEMANTIC ACCEPTANCE, LEARNING-READY APPROVAL, FIRST EDITION APPROVAL, OR RELEASE APPROVAL. No checker or test semantics are changed in this task. |
+| **Finding / allocation preservation** | 29 canonical findings: 20 OPEN / NOT VERIFIED; nine CLOSED / VERIFIED. LR-1 = 2, LR-2 = 3, FE-1 = 6, FE-2 = 5, FE-3 = 4. No severity, defect class, blocker class, disposition, status, verification or systemic-provenance mutation; no finding closure. |
+| **Current lifecycle** | FTR-1 and FTR-2 COMPLETE / INDEPENDENTLY VERIFIED / ACCEPTED. LR-1 NEXT LEARNING-READY REMEDIATION BATCH / NOT STARTED; LR-2 and FE-1/FE-2/FE-3 NOT STARTED; Learning-Ready RC NOT YET ASSESSED. H4–H7 and unresolved owner/specialist decisions remain preserved. v0.16.0 ACTIVE / UNRELEASED / NOT RELEASE-READY; v0.15.0 latest stable locally. |
+| **Protected identities** | 137 chapters: `eb1d5c08e8748f75811f981332dce1fc32a1f2ac60ba1cba8fc26b550ad45ede`; twelve Part READMEs: `6e1a2f55251e318824806d7c349cc79a950e5a5d701be8979c4b4d0636ceca7e`. No manuscript, Part README, template, quantitative specification/tool, Findings, CHANGELOG, handbook README, LICENSE, release artefact or tag mutation is authorised. No Learning-Ready or Phase K baseline is created. |
+| **Checkpoint authorisation** | Following closure validation, stage exactly the seven paths, verify staged scope and hygiene, commit with `review: add deterministic first edition gate`, then push `origin feature/ftr-2-deterministic-gate` without force. Record actual commit/push/clean-state results in the task report after execution; this event does not pre-claim their success or embed its own commit SHA. |
+| **Non-collapse / next action** | Distinct from FE-EV-040 implementation authorship, supplied FTR-2V, LR/FE remediation and Phase I/J/K/L. After successful checkpoint, ready for separately authorised integration into `feature/first-edition-review`; no merge, LR-1 start or release operation in this task. |
+
+### FTR-2V verified incoming package identities
+
+These are the supplied independent-review working-file Git blob IDs, all reproduced before closure recording. The two code/test blobs remain unchanged; only the five expressly authorised governance files receive closure recording. This inventory is not a new gate baseline.
+
+| Path | Verified incoming Git blob |
+| --- | --- |
+| `tools/first_edition_gate.py` | `fdebf2e8e4f51b32bee340b953635b7819e63ea7` |
+| `tests/test_first_edition_gate.py` | `9cfcf7d28788006ae996dac13070a8f57a5d2eb3` |
+| `README.md` | `9fb9dece22ce115f15dd5d258f666d6b740f6507` |
+| `CURRENT_SPRINT.md` | `98a32e6ec4d1c17aa5eee0a522acb660c5cecdaa` |
+| `docs/02-first-edition-review/FIRST_EDITION_REVIEW_PLAN.md` | `014833c7d807232da77256e4188d188b5f2816f5` |
+| `docs/02-first-edition-review/FIRST_EDITION_REVIEW_LOG.md` | `a0e668927e082f7482fc4d783e23eb65f623a3ee` |
+| `docs/02-first-edition-review/FIRST_EDITION_VERIFICATION_LEDGERS.md` | `07539d94b239bb66b95ffc527c91c28f75c06877` |

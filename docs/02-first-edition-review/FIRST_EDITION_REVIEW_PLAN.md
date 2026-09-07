@@ -1343,7 +1343,7 @@ Activities described here for phases and batches **not yet executed** — L3–L
 
 ## 18. Learning-Ready Fast-Track operating model
 
-**FTR-1 COMPLETE / INDEPENDENTLY VERIFIED / ACCEPTED**, recorded at **FE-EV-039**. This bounded, unscored governance amendment was independently accepted through the supplied FTR-1V **59 PASS · 1 FAIL, Decision B** → FTR-1F1 **single event-index traceability correction** → FTR-1V2 **33 PASS · 0 FAIL, Decision A** chain; prior architecture acceptance did not substitute for that review. FTR-1R records the supplied independent acceptance and performs no new verification. **FTR-2: NEXT FAST-TRACK FOUNDATION TASK / NOT STARTED. LR-1/LR-2 and FE-1/FE-2/FE-3: NOT STARTED. Learning-Ready RC: NOT YET ASSESSED.** Subsequent foundation work and remediation still require separate authorisation. No execution is authorised here.
+**FTR-1 COMPLETE / INDEPENDENTLY VERIFIED / ACCEPTED**, recorded at **FE-EV-039**. This bounded, unscored governance amendment was independently accepted through the supplied FTR-1V **59 PASS · 1 FAIL, Decision B** → FTR-1F1 **single event-index traceability correction** → FTR-1V2 **33 PASS · 0 FAIL, Decision A** chain; prior architecture acceptance did not substitute for that review. FTR-1R records the supplied independent acceptance and performs no new verification. **FTR-2: COMPLETE / INDEPENDENTLY VERIFIED / ACCEPTED (FE-EV-041), from supplied FTR-2V 40 PASS / 0 FAIL, Decision A; independent tests 30 PASS / 0 FAIL / 0 ERROR. LR-1: NEXT LEARNING-READY REMEDIATION BATCH / NOT STARTED. LR-2 and FE-1/FE-2/FE-3: NOT STARTED. Learning-Ready RC: NOT YET ASSESSED.** FTR-2R/C records supplied independent acceptance of the exact seven-file FTR-2 package on `feature/ftr-2-deterministic-gate`, based on `fd55eff667ca2e0dd7b63f34360aa1ef711f1e91`, and is authorised to checkpoint and push it. FE-EV-040 remains unchanged authorship history. The learning-ready and first-edition profiles retain exit 3 / INCOMPLETE; tool acceptance grants no Learning-Ready or edition gate approval. Integration and downstream remediation require separate authorisation; v0.16.0 remains ACTIVE / UNRELEASED / NOT RELEASE-READY and v0.15.0 remains latest stable locally.
 
 The pending-verification statements retained in Findings §8 describe its FTR-1 authorship checkpoint and are superseded **only for governance acceptance** by FE-EV-039. The Findings file is preserved unchanged during FTR-1R: every finding state, disposition, allocation, owner-decision requirement and historical H4–H7 mapping remains binding.
 
@@ -1370,3 +1370,58 @@ The Learning-Ready freeze never substitutes for the **141-object Phase K baselin
 ### 18.4 Validation and authorship boundary
 
 **AUTOMATION PROVES INVARIANTS. INDEPENDENT REVIEW PROVES MEANING.** Deterministic checks establish identity, coverage, counts and structural consistency; they cannot prove technical truth, learning suitability, claim/source alignment or semantic closure. Correction authors cannot independently verify their own corrections, and automated PASS cannot substitute for independent semantic review. Finding lifecycle, severity, blocker class, verification state and fast-track disposition remain separate. No accepted or deferred finding becomes CLOSED / VERIFIED through the Learning-Ready gate.
+
+### 18.5 FTR-2 deterministic tooling usage
+
+`tools/first_edition_gate.py` is the local, read-only Python standard-library foundation for structural author checks and independent-review preparation. Python 3.9+ and local Git are required; there is no network dependency, repository write, automatic repair, staging or release action. Paths resolve from the repository containing the tool, independent of the invocation directory.
+
+| Profile | Implemented checks and boundary |
+| --- | --- |
+| `baseline` | FTR-2 chapter and Part-README populations/blobs; event structure; finding lifecycle census; fast-track allocation; unstaged and staged diff hygiene |
+| `batch` | All baseline checks plus changed-path comparison with an explicit frozen allow-list; missing allow-list returns INCOMPLETE |
+| `learning-ready` | All baseline checks; explicitly INCOMPLETE for the unimplemented expanded candidate/freeze inventory and residual-evidence validation under §18.3 |
+| `first-edition` | All baseline checks; explicitly INCOMPLETE for the unimplemented complete 141-object Phase K baseline/drift validation under §13.4 |
+
+These profiles share the same implemented foundation; they do not simulate later evidence checks. The latter two currently return **3**, even when every implemented check passes. No semantic assessment or gate decision is performed. **EXIT 0 DOES NOT CONSTITUTE SEMANTIC ACCEPTANCE, LEARNING-READY APPROVAL, FIRST EDITION APPROVAL, OR RELEASE APPROVAL.**
+
+Examples (use `python3` if `python` does not select Python 3.9+):
+
+```sh
+python tools/first_edition_gate.py --profile baseline
+python tools/first_edition_gate.py --profile baseline --format json
+python tools/first_edition_gate.py --profile learning-ready
+python tools/first_edition_gate.py --profile first-edition
+python -B -m unittest discover -s tests -p 'test_first_edition_gate.py' -v
+```
+
+The exact FTR-2 author-validation configuration freezes seven paths:
+
+```sh
+python tools/first_edition_gate.py --profile batch \
+  --allow-path tools/first_edition_gate.py \
+  --allow-path tests/test_first_edition_gate.py \
+  --allow-path README.md \
+  --allow-path CURRENT_SPRINT.md \
+  --allow-path docs/02-first-edition-review/FIRST_EDITION_REVIEW_PLAN.md \
+  --allow-path docs/02-first-edition-review/FIRST_EDITION_REVIEW_LOG.md \
+  --allow-path docs/02-first-edition-review/FIRST_EDITION_VERIFICATION_LEDGERS.md
+```
+
+`--allow-path` is repeatable and accepts exact repository-relative files only: no absolute paths, parent traversal, directory prefixes or glob exemptions. Unstaged tracked changes, staged changes and non-ignored untracked files are compared separately and combined; both endpoints of renames are checked. Extra allowed paths need not be changed. The checker cannot establish that an allow-list was authorised: reviewers must compare it to the frozen task scope. An allow-list never exempts a path from other invariants. Supply the same optional scope arguments on other profiles to add the scope check.
+
+Both text (default) and JSON identify the profile, checks, per-check status, expected/observed values, diagnostics, overall deterministic result, exit code and disclaimer. JSON keys are sorted, check order is fixed, and no timestamp is generated. Save output outside the repository when using batch checks so an output file does not become an unexpected untracked path.
+
+| Exit | Meaning |
+| --- | --- |
+| 0 | Implemented deterministic checks passed |
+| 1 | Deterministic invariant failure / gate blocker |
+| 2 | Invocation or configuration error, including unexpected exceptions |
+| 3 | Required deterministic evidence incomplete |
+
+For mixed results, ERROR (2) takes precedence over FAIL (1), then INCOMPLETE (3), then PASS (0); every check remains visible. Missing canonical files/sections are incomplete evidence; malformed records are failures, while unreadable files, ambiguous sections and Git execution errors are errors. No failure is repaired automatically.
+
+**Identity method.** Each manifest is SHA-256 of UTF-8, newline-terminated, path-sorted `path:Git-blob-SHA` records. HEAD and index blobs are read from Git; working-tree bytes are hashed with read-only `git hash-object --no-filters --stdin`. The working inventory also includes on-disk untracked/ignored chapter and Part-README candidates. All three layers are compared to the accepted FTR-2 references: 137 chapters, `eb1d5c08e8748f75811f981332dce1fc32a1f2ac60ba1cba8fc26b550ad45ede`; twelve Part READMEs, `6e1a2f55251e318824806d7c349cc79a950e5a5d701be8979c4b4d0636ceca7e`. This preserves the accepted index algorithm while also detecting unstaged mutation. Controlled symlinks and unresolved index conflicts are rejected. These references are neither a Learning-Ready freeze nor the Phase K baseline.
+
+**Record parsing.** Canonical event headings and the Event index table are checked for valid IDs, uniqueness, equal sets and a continuous ascending body sequence from 001; the maximum is derived, never fixed at 039. Each Event ID field must agree with its heading. Finding records are the `### FE-…` sections, not systemic roots, historical summaries or allocation references. Their Status/Verification fields must be valid and unique; CLOSED requires VERIFIED, and OPEN cannot be VERIFIED. The FTR-2 snapshot requires 29 records (20 OPEN / NOT VERIFIED; nine CLOSED / VERIFIED) and the §8.2 allocation requires LR-1/LR-2/FE-1/FE-2/FE-3 counts 2/3/6/5/4, with every open ID allocated exactly once. These are structural checks, not evidence that closure or allocation is substantively correct.
+
+**Independent-review use and limitations.** Freeze the exact dirty package and authorised path inventory, inspect this implementation independently, rerun the fixtures and applicable profiles, and re-derive primary evidence required by §11. Author tests are unscored and close nothing. This version is pinned to the FTR-2 foundation identities and census: later authorised manuscript correction or finding disposition will intentionally fail these references until separately authorised baseline evolution is implemented and independently reviewed. It does not validate Markdown generally, historical event immutability across commits, committed batch changes, ignored files outside the controlled populations, submodule contents, mode-only manifest changes, technical truth, source support, learning suitability, owner approvals, systemic closure, quantitative semantics or complete final-gate coverage. It does not take an atomic repository snapshot; run on a stable worktree. No baseline acceptance can be inferred from matching hashes or package names.
