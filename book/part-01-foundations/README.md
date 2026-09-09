@@ -10,6 +10,16 @@ This part provides the conceptual foundation for every subsequent section of the
 
 ---
 
+## Current Manuscript and Learning State
+
+All ten chapter manuscripts are present, with the supporting learning assets linked below. **Chapters 1–10 are Draft** under the [canonical chapter lifecycle](../../docs/01-editorial/QUALITY_GATES.md). Draft means authored material remains subject to review and correction; it does not establish completion of the chapter's technical, editorial, educational, practical or publication gates. Use the chapters and exercises for provisional study, with the recorded findings and source limitations in view.
+
+**Historical Part evidence:** Part I was released as **v0.4.0 — Foundations Complete on 2026-08-08**. The [v0.4.0 CHANGELOG entry](../../CHANGELOG.md#040--foundations-complete--2026-08-08) and [Development Log](../../docs/00-project/DEVELOPMENT_LOG.md#2026-08-08) record the **Final Part I Quality Gate Review: 92/100 — Excellent**. This is historical Part-level evidence; it does not establish a later canonical chapter stage or current edition readiness.
+
+**Current correction state:** LR-1 is **COMPLETE / INDEPENDENTLY VERIFIED / CLOSED**, recording the supplied **LR-1V: 36 PASS / 0 FAIL, Decision A**; [FE-L1-002 and FE-L1-007](../../docs/02-first-edition-review/FIRST_EDITION_FINDINGS.md) are **CLOSED / VERIFIED**. Authorship remains recorded in FE-EV-042 and closure in [FE-EV-043](../../docs/02-first-edition-review/FIRST_EDITION_REVIEW_LOG.md). **Learning-Ready RC is NOT YET ASSESSED; Learning-Ready status has not been granted.** This correction grants no publication readiness.
+
+---
+
 ## Purpose
 
 To develop a modern engineering mindset where quality is viewed as a property engineered into software systems rather than an activity performed after development.
@@ -29,7 +39,7 @@ Upon completion of this part, readers will be able to:
 
 ---
 
-## Planned Chapters
+## Chapters
 
 1. [What Is Modern Software Quality Engineering?](chapters/chapter-01-what-is-modern-software-quality-engineering.md)
 2. [The Evolution from QA to Quality Engineering](chapters/chapter-02-the-evolution-from-qa-to-quality-engineering.md)
@@ -48,6 +58,8 @@ Upon completion of this part, readers will be able to:
 
 ### Full Foundation Path
 
+**Recommended entry point:** begin with [Chapter 1](chapters/chapter-01-what-is-modern-software-quality-engineering.md), then follow the numbered chapter sequence. Work through each chapter’s review questions, practical exercise and learner checklist alongside the linked worksheets.
+
 Read Chapters 1–6 in sequence, then complete [Lab 1: From Testing a Feature to Engineering Quality](labs/lab-01-from-testing-a-feature-to-engineering-quality.md). Continue through Chapters 7–10, use the chapter-linked worksheets as you progress, and complete the three case studies after Chapters 6, 7, and 10 respectively:
 
 1. [Case Study 1: Quality Beyond Test Execution](case-studies/case-study-01-quality-beyond-test-execution.md)
@@ -55,6 +67,8 @@ Read Chapters 1–6 in sequence, then complete [Lab 1: From Testing a Feature to
 3. [Case Study 3: From Senior QA Engineer to Quality Engineer](case-studies/case-study-03-qa-to-quality-engineering-transition.md)
 
 ### Experienced Practitioner Path
+
+This selective path assumes equivalent familiarity with the skipped chapters; consult each chapter’s prerequisite row and return to earlier topics as needed.
 
 Start with [Chapter 2](chapters/chapter-02-the-evolution-from-qa-to-quality-engineering.md) to frame the professional transition, [Chapter 3](chapters/chapter-03-understanding-software-quality.md) to make quality claims explicit, and Chapters [6](chapters/chapter-06-systems-thinking-for-quality-engineers.md)–[10](chapters/chapter-10-the-future-of-quality-engineering.md) to connect systems, culture, capability, and career development. Use the [QA to QE Transition Framework](../../docs/00-project/QA_TO_QE_TRANSITION_FRAMEWORK.md), the [Competency Self-Assessment](exercises/worksheet-quality-engineer-competency-self-assessment.md), and [Case Study 3](case-studies/case-study-03-qa-to-quality-engineering-transition.md) to create a context-specific plan; return to Chapters 4 and 5 for lifecycle and feedback practices.
 
@@ -108,7 +122,7 @@ Domain 1 — Foundations
 
 ## Prerequisites
 
-None.
+None for entry at Chapter 1. Later chapters list earlier chapters as prerequisites; the full foundation sequence above satisfies that progression.
 
 ---
 

@@ -22,12 +22,12 @@ def events(ids=('001', '002')):
             + '\n'.join('| `FE-EV-' + i + '` | 2026-09-06 |' for i in ids) + '\n')
 
 
-def findings():
+def findings(open_count=18):
     text = ''
     for i in range(1, 30):
-        status, verification = ('OPEN', 'NOT VERIFIED') if i <= 20 else ('CLOSED', 'VERIFIED')
+        status, verification = ('OPEN', 'NOT VERIFIED') if i <= open_count else ('CLOSED', 'VERIFIED')
         text += ('### FE-G-%03d — Example\n| **Status** | `%s` |\n| **Verification** | `%s` |\n' % (i, status, verification))
-    text += '### 8.2 Canonical current 20-finding allocation\n| Package | Historical origin | Finding IDs | Execution disposition | Dependency / verification retained |\n| --- | --- | --- | --- | --- |\n'
+    text += '### 8.2 Canonical current 18-finding allocation\n| Package | Historical origin | Finding IDs | Execution disposition | Dependency / verification retained |\n| --- | --- | --- | --- | --- |\n'
     cursor = 1
     for package, count in gate.PACKAGES.items():
         ids = ' · '.join('FE-G-%03d' % i for i in range(cursor, cursor+count))
@@ -78,7 +78,16 @@ class IntegrityTests(unittest.TestCase):
     def test_findings_and_allocation_pass(self):
         records, result = gate.finding_checks(findings())
         self.assertEqual(result['status'], 'PASS', result)
-        self.assertEqual(gate.allocation_check(findings(), records)['status'], 'PASS')
+        self.assertEqual(result['observed'], {'total': 29, 'distribution': {
+            'OPEN / NOT VERIFIED': 18, 'CLOSED / VERIFIED': 11}})
+        allocation = gate.allocation_check(findings(), records)
+        self.assertEqual(allocation['status'], 'PASS', allocation)
+        self.assertEqual(allocation['observed'], {'packages': {
+            'LR-1': 0, 'LR-2': 3, 'FE-1': 6, 'FE-2': 5, 'FE-3': 4},
+            'total': 18, 'open_count': 18})
+
+    def test_preclosure_finding_census_rejected(self):
+        self.assertFails(gate.finding_checks(findings(open_count=20))[1], 'census')
 
     def test_finding_count_mismatch(self):
         text = findings().replace('### FE-G-029', '### Removed')
@@ -112,6 +121,17 @@ class IntegrityTests(unittest.TestCase):
     def test_closed_finding_allocated(self):
         self.assertFails(self.allocation('FE-G-002', 'FE-G-029'), 'Non-open')
 
+    def test_closed_finding_in_completed_package(self):
+        self.assertFails(self.allocation('**LR-1** | H |  |',
+                                         '**LR-1** | H | FE-G-029 |'), 'Non-open')
+
+    def test_empty_and_malformed_outstanding_allocation(self):
+        ids = 'FE-G-001 · FE-G-002 · FE-G-003'
+        self.assertFails(self.allocation(ids, ''), 'FE-G-001 observed 0')
+        for replacement in [ids + ' · ', ' · ' + ids, '—']:
+            with self.subTest(replacement=replacement):
+                self.assertFails(self.allocation(ids, replacement), 'Unknown/malformed')
+
     def test_unknown_finding_allocated(self):
         self.assertFails(self.allocation('FE-G-002', 'FE-G-099'), 'Unknown')
 
@@ -127,6 +147,21 @@ class IntegrityTests(unittest.TestCase):
                 self.assertEqual(gate.manifest_check(name, {'index': records}, 2, expected)['status'], 'PASS')
                 self.assertFails(gate.manifest_check(name, {'index': records}, 2, '0'*64))
                 self.assertFails(gate.manifest_check(name, {'index': records}, 3, expected))
+
+    def test_baseline_evolution_preserves_all_layer_checks(self):
+        old = {'book/a.md': 'a'*40}
+        accepted = {'book/a.md': 'b'*40}
+        layers = {'HEAD': old, 'index': old, 'working_tree': accepted}
+        result = gate.manifest_check('chapter_manifest', layers, 1, gate.digest(accepted))
+        self.assertFails(result, 'HEAD population/blob identity mismatch')
+        self.assertIn('index population/blob identity mismatch', result['message'])
+        self.assertNotIn('working_tree population/blob identity mismatch', result['message'])
+        for layer in layers:
+            with self.subTest(layer=layer):
+                drift = {name: accepted for name in layers}
+                drift[layer] = old
+                self.assertFails(gate.manifest_check('chapter_manifest', drift, 1,
+                                                     gate.digest(accepted)), layer + ' population/blob identity mismatch')
 
     def test_protected_scope(self):
         self.assertEqual(gate.scope_check(['tools/a.py'], ['tools/a.py'])['status'], 'PASS')

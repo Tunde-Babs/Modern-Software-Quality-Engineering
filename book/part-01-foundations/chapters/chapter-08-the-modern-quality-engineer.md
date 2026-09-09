@@ -11,7 +11,7 @@
 | Prerequisites | Chapters 1–7 |
 | Estimated study time | 125 minutes, plus the practical exercise |
 | Version | 0.1.0 |
-| Status | Technical Review Ready |
+| Status | Draft |
 
 ## Opening Quote
 

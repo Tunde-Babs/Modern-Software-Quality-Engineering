@@ -11,7 +11,7 @@
 | Prerequisites | Chapter 1 — What Is Modern Software Quality Engineering? |
 | Estimated study time | 95 minutes, plus the practical exercise |
 | Version | 0.1.0 |
-| Status | Technical Review Ready |
+| Status | Draft |
 
 ## Opening Quote
 

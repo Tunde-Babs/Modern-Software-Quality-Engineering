@@ -11,7 +11,7 @@
 | Prerequisites | None |
 | Estimated study time | 90 minutes, plus the practical exercise |
 | Version | 0.1.0 |
-| Status | Technical Review Ready |
+| Status | Draft |
 
 ## Opening Quote
 
