@@ -7,7 +7,7 @@
 | **Document type** | Review artefact 3 of 4 — **Evidence** |
 | **Authority** | [`FIRST_EDITION_REVIEW_PLAN.md`](FIRST_EDITION_REVIEW_PLAN.md) §13.1, §13.2 |
 | **Lifecycle** | Populated Phase F |
-| **State** | **Current state at LR-1R closure preparation: Phase F COMPLETE (FE-EV-028); longitudinal axis 137/137 and all six transversals complete, including T4 at 137/137 for Levels 9, 10 and 16. H1/H2/H3 CLOSED / VERIFIED; 18 findings open and 11 closed/verified. FTR-1 COMPLETE / INDEPENDENTLY VERIFIED / ACCEPTED at FTR-1V2, recorded in FE-EV-039. FTR-2 COMPLETE / INDEPENDENTLY VERIFIED / ACCEPTED (FE-EV-041), recording supplied FTR-2V 40 PASS / 0 FAIL, Decision A, and 30 PASS / 0 FAIL / 0 ERROR independent tests; LR-1 COMPLETE / INDEPENDENTLY VERIFIED / CLOSED (supplied LR-1V 36 PASS / 0 FAIL, Decision A; FE-EV-043); owner Decision A assigns Draft to all ten Part-I chapters; FE-L1-002 and FE-L1-007 are CLOSED / VERIFIED; LR-2 NEXT LEARNING-READY REMEDIATION BATCH / NOT STARTED; FE-1/FE-2/FE-3 NOT STARTED; Learning-Ready RC NOT YET ASSESSED. Historical verification rows below retain their point-in-time evidence; LR-1R records supplied independent evidence and approved baseline evolution; fresh narrow LR-1CV must verify the closure delta before checkpointing. No new independent review is performed by this recording actor.** |
+| **State** | Phase F COMPLETE; 137/137 longitudinal and all six transversals complete. H1/H2/H3 CLOSED / VERIFIED; FTR-1/FTR-2 accepted. **LR-2 COMPLETE / INDEPENDENTLY VERIFIED / CLOSED**, on supplied independent LR-2V2 **25 PASS / 0 FAIL, Decision A**, recorded by LR-2R at **FE-EV-046**. Exactly FE-L2-003, FE-L3-003 and FE-T5-001 are CLOSED / VERIFIED. **Baseline evolution APPROVED and applied.** Current census: **29 total; 15 OPEN / NOT VERIFIED; 14 CLOSED / VERIFIED**; outstanding allocation **0/0/6/5/4 = 15**. LR-1 remains COMPLETE / INDEPENDENTLY VERIFIED / CLOSED. **Learning-Ready RC NOT YET ASSESSED.** The 17-path package remains unstaged, uncommitted and unpushed at HEAD `f149c2fd4a3f926ce83b0bb57ef9a3ae0de5bb08`. Next action: fresh narrow **LR-2CV** on the nine-file closure delta and final package before checkpointing; Learning-Ready Gate preparation/assessment follows closure verification and separately authorised checkpoint/integration. This task records supplied acceptance; it performs no new independent verification or Learning-Ready assessment. Historical ledger rows retain their point-in-time evidence. |
 | **Owner** | Tunde Ajala |
 
 > This is a **governance artefact**, not a manuscript chapter. It carries no chapter-style status.
@@ -1477,3 +1477,18 @@ Census across all 137 chapters, reported as a **distinct subsection** of the Edi
 ---
 
 **Last Updated:** 2026-08-21 (F-T4 transversal review)
+
+
+## LR-2 correction-author evidence note — historical pre-closure evidence
+
+**Current evidence at LR-2F1 (FE-EV-045):** the [discovery-based persona inventory](LR2_ATLAS_CONTINUITY_INVENTORY.md#lr-2f1-discovery-based-persona-inventory) reproduces **18 confirmed Atlas personas / 31 mentions / Parts III, IV, V, VI**. **Dev, Nadia and Mina** recur across Parts with compatible roles. Maya in Part I and Mina in Part II have no established Atlas affiliation; name reuse alone is insufficient. Dele is absent; Chen is a citation author.
+
+Supplied independent **LR-2V 28 PASS / 4 FAIL, Decision B — PARTIALLY VERIFIED; CORRECTION REQUIRED** supported FE-L2-003/FE-L3-003 semantics but found the persona census incomplete. FE-EV-045 explicitly supersedes FE-EV-044’s inaccurate restricted census and sole-cross-Part claim while retaining FE-EV-044 and all earlier finding/verification rows unchanged. Historical DEP-L2-04/CON-T5-02 errors also remain superseded. The historical cross-Part curriculum issue is **NON-BLOCKING** per LR-2V.
+
+F1 changes only governance/evidence; all manuscript and Part README bytes remain identical to the LR-2V candidate. All three LR-2 findings remain **OPEN / NOT VERIFIED**. LR-2 is **CORRECTION UPDATED AFTER LR-2V / AWAITING FRESH INDEPENDENT LR-2V2**. This author reproduction is not a new independent T5 verification row, closure or acceptance. Learning-Ready RC remains **NOT YET ASSESSED**.
+
+## LR-2V2 supplied acceptance and LR-2R closure record
+
+**LR-2 COMPLETE / INDEPENDENTLY VERIFIED / CLOSED**, on supplied independent LR-2V2 **25 PASS / 0 FAIL, Decision A**, recorded by LR-2R at **FE-EV-046**. Exactly FE-L2-003, FE-L3-003 and FE-T5-001 are CLOSED / VERIFIED. **Baseline evolution APPROVED and applied.** Current census: **29 total; 15 OPEN / NOT VERIFIED; 14 CLOSED / VERIFIED**; outstanding allocation **0/0/6/5/4 = 15**. LR-1 remains COMPLETE / INDEPENDENTLY VERIFIED / CLOSED. **Learning-Ready RC NOT YET ASSESSED.** The 17-path package remains unstaged, uncommitted and unpushed at HEAD `f149c2fd4a3f926ce83b0bb57ef9a3ae0de5bb08`. Next action: fresh narrow **LR-2CV** on the nine-file closure delta and final package before checkpointing; Learning-Ready Gate preparation/assessment follows closure verification and separately authorised checkpoint/integration. This task records supplied acceptance; it performs no new independent verification or Learning-Ready assessment.
+
+This is additive recording of supplied independent acceptance, not a new T5 review by the recording actor. Preserve FE-EV-044 history and FE-EV-045 corrective supersession, including 18 personas / 31 mentions and Dev/Nadia/Mina continuity.

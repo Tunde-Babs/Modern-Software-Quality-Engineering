@@ -19,7 +19,7 @@
 
 ## Opening Story
 
-The following illustrative scenario concerns Atlas Commerce, a fictional subscription service. A team has changed its renewal workflow so that customers can update their payment method during a short grace period. On the release morning, the dashboard is reassuring: 1,842 automated checks have passed, no new defects are open, and the deployment pipeline is green.
+The following illustrative scenario concerns Atlas Commerce, a fictional online retailer that operates a subscription service. This Part focuses on that service: later references to Atlas as a subscription service, retailer, or commerce platform concern the same organisation and its systems. A team has changed its renewal workflow so that customers can update their payment method during a short grace period. On the release morning, the dashboard is reassuring: 1,842 automated checks have passed, no new defects are open, and the deployment pipeline is green.
 
 The release manager asks whether the change is safe to enable for every customer. Priya, the senior QA Engineer, asks a different question: *what do those results actually tell us about the decision?*
 

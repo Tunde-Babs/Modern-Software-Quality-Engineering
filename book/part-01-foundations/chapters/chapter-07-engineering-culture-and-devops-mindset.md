@@ -19,7 +19,7 @@
 
 ## Opening Story
 
-The following illustrative scenario compares two product teams with similar technical capabilities. Both teams maintain a subscription service. Both use source control, automated checks, a deployment pipeline, monitoring, and a managed cloud platform. Each receives the same request: add a self-service option for customers to change their billing date.
+The following illustrative scenario compares two product teams with similar technical capabilities. Team Atlas and Team Beacon belong to this introductory comparison, which is separate from the Atlas Commerce case introduced in Part III. Both teams maintain a subscription service. Both use source control, automated checks, a deployment pipeline, monitoring, and a managed cloud platform. Each receives the same request: add a self-service option for customers to change their billing date.
 
 Team Atlas divides the work by function. Product writes the requirement, development implements it, QA receives a build late in the iteration, and operations is notified shortly before release. QA finds that changing a billing date can create a duplicate invoice when a scheduled collection job is already running. The defect is logged, but the team is under pressure to meet a campaign date. The release manager asks whether QA can “sign off with the known issue,” while development argues that the job is an Operations concern. The issue is deferred. After release, some customers receive duplicate invoices. The incident review focuses on why QA did not prevent it.
 

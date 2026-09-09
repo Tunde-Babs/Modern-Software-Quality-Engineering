@@ -378,7 +378,7 @@ For a reusable, facilitated version with a Quality Engineering Improvement Plan,
 
 ### Scenario
 
-Atlas Learning provides an online learning platform. Over the last quarter it has experienced intermittent assessment-submission failures, slow page loads during enrolment peaks, and occasional discrepancies between teacher dashboards and exported reports. Its leadership has asked whether it should invest first in more UI automation, infrastructure capacity, or data controls.
+Atlas Learning is a fictional online learning organisation in this separate introductory scenario, distinct from Atlas Commerce introduced in Part III. It provides an online learning platform. Over the last quarter it has experienced intermittent assessment-submission failures, slow page loads during enrolment peaks, and occasional discrepancies between teacher dashboards and exported reports. Its leadership has asked whether it should invest first in more UI automation, infrastructure capacity, or data controls.
 
 ### Instructions
 

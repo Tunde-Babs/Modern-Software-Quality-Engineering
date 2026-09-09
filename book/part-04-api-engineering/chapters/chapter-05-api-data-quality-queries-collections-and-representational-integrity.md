@@ -84,7 +84,7 @@ Consider this fictional order representation:
   "status": "accepted",
   "total": { "value": 1250, "currency": "GBP" },
   "lastUpdatedAt": "2026-08-10T09:30:00Z",
-  "customerId": "cus-44"
+  "customerId": "cust-042"
 }
 ~~~
 

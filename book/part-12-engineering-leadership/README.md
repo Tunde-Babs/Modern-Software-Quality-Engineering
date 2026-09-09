@@ -284,7 +284,7 @@ Part XII discusses careers, and careers are where instructional material most of
 
 ## Atlas Commerce Organisational Baseline
 
-Part XII continues **Atlas Commerce**, the fictional commerce platform used since Part I, but shifts the lens from the system to the organisation around it. It is an educational baseline, not a claim about a real company or a recommended operating model.
+Part XII continues **Atlas Commerce**, the fictional commerce platform used since Part III, but shifts the lens from the system to the organisation around it. It is an educational baseline, not a claim about a real company or a recommended operating model.
 
 | Area | Stable teaching baseline |
 | --- | --- |

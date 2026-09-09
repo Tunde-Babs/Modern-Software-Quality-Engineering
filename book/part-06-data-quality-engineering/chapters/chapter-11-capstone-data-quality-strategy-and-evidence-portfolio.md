@@ -84,6 +84,8 @@ The scenario contains these deliberately mixed conditions:
 
 The following packet is intentionally small, fictional, and incomplete. It is not a hidden answer key. It gives the learner enough evidence to make bounded claims and enough uncertainty to practise stating what cannot yet be concluded.
 
+**Dataset continuity.** The order, refund, settlement, and report records in this packet form a separate synthetic dataset from the worked datasets in Chapters 4–6 of this Part, within the same Atlas Commerce organisation. Reused labels such as `S-901`, `S-904`, `R-901`, and `RF-7002` identify different records here, not later states of the earlier records; the `O-410x` orders are not renamed `AC-410x` orders. The packet reuses those chapters’ reasoning patterns. Product `P-440` does continue the product and consumer-meaning scenario from Chapter 8.
+
 **Decision context.** The 30 June legal-entity close uses `Europe/Berlin`; its event-time cutoff is `2026-06-30T21:59:59Z`. Finance needs a provisional revenue decision, Support needs a safe refund response, Operations needs a fulfilment status, and Product needs a marketplace-rollout decision.
 
 | Identifier and evidence | Observation | Why it matters |
