@@ -19,8 +19,8 @@ MEANINGS = {0: 'implemented deterministic checks passed',
             3: 'required deterministic evidence incomplete'}
 PROFILES = ('batch', 'learning-ready', 'first-edition', 'baseline')
 REVIEW = 'docs/02-first-edition-review/'
-CHAPTER_DIGEST = '7e252ff0c38d4d1d1e4b7af1cdc9a664f934a8b4e60cad0c0c7b08406010dd22'
-PART_DIGEST = '6b80e69f00bf06497d8fe7a8432ff6a9af8672861abf2332ebdb5bcedc6a5907'
+CHAPTER_DIGEST = '176539f62ef89a7d0fbc99ddb98d20b852eff18103d67dda4aab4b93f4d17f02'
+PART_DIGEST = 'eafd4ba0fc55275cf8bcd9094a225e408ab22d43e019d76319ce1897b1c11451'
 PACKAGES = {'LR-1': 0, 'LR-2': 0, 'FE-1': 6, 'FE-2': 5, 'FE-3': 4}
 FINDING_ID = r'FE-(?:L[1-5]|T[1-6]|G|J)-[0-9]{3}'
 EVENT_ID = r'FE-EV-(?:[0-9]{3}|[1-9][0-9]{3,})'

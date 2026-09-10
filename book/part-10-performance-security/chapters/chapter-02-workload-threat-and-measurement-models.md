@@ -296,13 +296,13 @@ Create a **Workload, Threat, and Measurement Assumptions Register** for Atlas ch
 ## Further Reading
 
 - [NIST Cybersecurity Framework 2.0](https://www.nist.gov/publications/nist-cybersecurity-framework-csf-20)
-- [OWASP API Security Top 10](https://owasp.org/API-Security/editions/2023/en/0x03-introduction/)
+- [OWASP API Security Top 10](https://github.com/OWASP/API-Security/blob/master/editions/2023/en/0x03-introduction.md)
 - Neil J. Gunther, *Analyzing Computer System Performance with Perl::PDQ* (for queueing-model concepts)
 
 ## References
 
 [^nist-csf]: National Institute of Standards and Technology. [NIST Cybersecurity Framework (CSF) 2.0](https://www.nist.gov/publications/nist-cybersecurity-framework-csf-20). 2024. Accessed 2026-08-12.
-[^owasp-api]: OWASP Foundation. [OWASP API Security Top 10 — 2023](https://owasp.org/API-Security/editions/2023/en/0x03-introduction/). 2023. Accessed 2026-08-12.
+[^owasp-api]: OWASP Foundation. [OWASP API Security Top 10 — 2023](https://github.com/OWASP/API-Security/blob/master/editions/2023/en/0x03-introduction.md). 2023. Accessed 2026-08-12.
 
 ## Chapter Checklist
 

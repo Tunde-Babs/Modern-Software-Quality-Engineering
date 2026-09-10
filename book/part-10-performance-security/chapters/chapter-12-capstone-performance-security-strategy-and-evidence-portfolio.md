@@ -490,7 +490,7 @@ Complete the **Performance & Security Decision Brief** for the Atlas packet. Sel
 - [ISO/IEC 25010:2023 product-quality model](https://www.iso.org/standard/78176.html)
 - [NIST Cybersecurity Framework 2.0](https://www.nist.gov/publications/nist-cybersecurity-framework-csf-20)
 - [NIST Secure Software Development Framework](https://csrc.nist.gov/pubs/sp/800/218/final)
-- [OWASP Application Security Verification Standard](https://owasp.org/www-project-application-security-verification-standard/)
+- [OWASP Application Security Verification Standard](https://github.com/OWASP/ASVS)
 
 ## References
 

@@ -324,12 +324,12 @@ Create a **Security Finding and Remediation Verification Record** for the Atlas 
 ## Further Reading
 
 - [NIST Secure Software Development Framework](https://csrc.nist.gov/pubs/sp/800/218/final)
-- [OWASP Application Security Verification Standard](https://owasp.org/www-project-application-security-verification-standard/)
+- [OWASP Application Security Verification Standard](https://github.com/OWASP/ASVS)
 
 ## References
 
 [^nist-ssdf]: National Institute of Standards and Technology. [Secure Software Development Framework](https://csrc.nist.gov/pubs/sp/800/218/final). SP 800-218, 2022. Accessed 2026-08-12.
-[^owasp-asvs]: OWASP Foundation. [Application Security Verification Standard](https://owasp.org/www-project-application-security-verification-standard/). Accessed 2026-08-12.
+[^owasp-asvs]: OWASP Foundation. [Application Security Verification Standard](https://github.com/OWASP/ASVS). Accessed 2026-08-12.
 
 ## Chapter Checklist
 

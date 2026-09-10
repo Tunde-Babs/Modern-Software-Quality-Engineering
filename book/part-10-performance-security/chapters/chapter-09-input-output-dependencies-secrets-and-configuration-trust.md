@@ -265,13 +265,13 @@ Create an **Input, Output, and Dependency Trust Review** for Atlas catalogue sea
 
 - [NIST Secure Software Development Framework](https://csrc.nist.gov/pubs/sp/800/218/final)
 - [OWASP Top 10](https://owasp.org/Top10/)
-- [OWASP API Security Top 10](https://owasp.org/API-Security/editions/2023/en/0x03-introduction/)
+- [OWASP API Security Top 10](https://github.com/OWASP/API-Security/blob/master/editions/2023/en/0x03-introduction.md)
 
 ## References
 
 [^nist-ssdf]: National Institute of Standards and Technology. [Secure Software Development Framework](https://csrc.nist.gov/pubs/sp/800/218/final). SP 800-218, 2022. Accessed 2026-08-12.
 [^owasp-top10]: OWASP Foundation. [OWASP Top 10](https://owasp.org/Top10/). 2025. Accessed 2026-08-12.
-[^owasp-api]: OWASP Foundation. [OWASP API Security Top 10 — 2023](https://owasp.org/API-Security/editions/2023/en/0x03-introduction/). 2023. Accessed 2026-08-12.
+[^owasp-api]: OWASP Foundation. [OWASP API Security Top 10 — 2023](https://github.com/OWASP/API-Security/blob/master/editions/2023/en/0x03-introduction.md). 2023. Accessed 2026-08-12.
 
 ## Chapter Checklist
 

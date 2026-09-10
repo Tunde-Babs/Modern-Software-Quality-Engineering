@@ -375,7 +375,7 @@ POST /v1/orders/{orderId}/refund
 [^rfc9110]: Fielding, R., Nottingham, M., and J. Reschke, eds. [RFC 9110 — HTTP Semantics](https://www.rfc-editor.org/rfc/rfc9110.html). IETF, June 2022. Accessed 2026-08-10.
 [^rfc6750]: Jones, M., and D. Hardt. [RFC 6750 — The OAuth 2.0 Authorization Framework: Bearer Token Usage](https://www.rfc-editor.org/rfc/rfc6750.html). IETF, October 2012. Accessed 2026-08-10.
 [^rfc9457]: Nottingham, M., Wilde, E., and S. Dalal. [RFC 9457 — Problem Details for HTTP APIs](https://www.rfc-editor.org/rfc/rfc9457.html). IETF, July 2023. Accessed 2026-08-10.
-[^owasp-api1]: OWASP Foundation. [API1:2023 — Broken Object Level Authorization](https://owasp.org/API-Security/editions/2023/en/0xa1-broken-object-level-authorization/). Accessed 2026-08-10.
+[^owasp-api1]: OWASP Foundation. [API1:2023 — Broken Object Level Authorization](https://github.com/OWASP/API-Security/blob/master/editions/2023/en/0xa1-broken-object-level-authorization.md). Accessed 2026-08-10.
 [^nist-63b]: National Institute of Standards and Technology. [SP 800-63B — Digital Identity Guidelines: Authentication and Authenticator Management](https://pages.nist.gov/800-63-4/sp800-63b.html). Accessed 2026-08-10.
 
 ## Chapter Checklist

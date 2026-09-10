@@ -1421,6 +1421,7 @@ git ls-files -s book | awk '$4 ~ /chapters\/chapter-.*\.md$/ {print $4":"$2}' | 
 | `FE-EV-045` | 2026-09-09 | H — LR-2F1 bounded persona-evidence correction | Supplied LR-2V 28 PASS / 4 FAIL, Decision B; 18 Atlas personas / 31 mentions / Parts III–VI; Dev/Nadia/Mina cross Parts; FE-EV-044 persona evidence superseded; no manuscript delta or closure | **UNSCORED — CORRECTION UPDATED AFTER LR-2V / AWAITING FRESH INDEPENDENT LR-2V2** |
 | `FE-EV-046` | 2026-09-09 | H — LR-2R closure and baseline-evolution preparation | Supplied LR-2V2 25 PASS / 0 FAIL, Decision A; three findings CLOSED / VERIFIED; approved manifests applied; 15 open / 14 closed; LR-2CV required before checkpoint | **LR-2 COMPLETE / INDEPENDENTLY VERIFIED / CLOSED; Learning-Ready NOT YET ASSESSED** |
 | `FE-EV-047` | 2026-09-10 | H — LR-RC1R declaration preparation | Supplied independent LRG-1 PASS 12/12; exact residual 10 safe / 5 early correction / 0 blocking; frozen content preserved; checkpoint NOT YET CREATED | **UNSCORED recording — DECLARATION PREPARED / AWAITING INDEPENDENT DECLARATION VERIFICATION** |
+| `FE-EV-048` | 2026-09-10 | H — WEB-5BR closure preparation | Supplied WEB-5BV2 21/0/0 Decision A; license and confirmed external references closed; approved final baseline expectations applied | **UNSCORED preparation — STOPPED FOR CHECKPOINT-LAYER ADJUDICATION; WEB-5BCV REQUIRED** |
 
 > **Note on the FE-EV-008 → FE-EV-009 sequence — this is not a lost record.** Three quantitative-instrument events occurred between them — **F-IR4** (fresh independent re-acceptance, 39 PASS · 0 PARTIAL · 1 FAIL), **F-IR4V2** (independent verification establishing that the instrument is intact, that E9 is correct and that the E11 total is 51) and **F-IR4F** (the E11 occurrence-decomposition correction, commit `250cfe7`) — and **none was written to this log at the time it happened.** Their outcomes are recorded in the **plan §16 phase-history table**, and `FE-EV-009` states the chain it closes.
 >
@@ -1761,3 +1762,25 @@ The 19 exact paths below are the complete batch allow-list relative to HEAD. Nin
 | **Preparation validation** | 35 tests PASS / 0 FAIL / 0 ERROR; baseline 7 PASS / 0 FAIL, exit 0; Learning-Ready diagnostic 7 PASS / 1 INCOMPLETE / 0 FAIL, exit 3; diff hygiene PASS. Exact residual mapping 15 unique / 10-5-0 / FE 6-5-4; lifecycle 29/15/14; events 47/47; both manifests unchanged at all three layers; historical log and canonical finding bodies preserved; exact ten-path scope. These are author checks, not independent declaration verification |
 | **Mutation / next action** | Package UNSTAGED / UNCOMMITTED / UNPUSHED. Fresh independent LR-RC declaration verification required before separately authorized checkpointing. No tag, release, v1.0.0, First Edition completion or publication-readiness claim; FE-1/FE-2/FE-3 not started |
 | **Non-collapse note** | Preserve FE-EV-001–046 byte-for-byte. Original LRG-1 independent assessment, LRG-1E evidence recovery, this recording/preparation, future independent declaration verification and any checkpoint are distinct acts |
+
+
+## Event FE-EV-048 — WEB-5BR Launch-Blocker Closure and Baseline-Evolution Preparation
+
+| Field | Value |
+| --- | --- |
+| **Event ID** | `FE-EV-048` |
+| **Date** | 2026-09-10 |
+| **Phase** | H — unscored closure/baseline recording; no edition-stage advancement |
+| **Scope** | Authenticated 35-path WEB-5BV2 candidate; 16 URL substitutions / 11 files; no further manuscript edits |
+| **Score / verdict** | **UNSCORED preparation**. Supplied independent WEB-5BV2: **21 PASS / 0 FAIL / 0 INCOMPLETE, Decision A**; license and all confirmed external-reference blockers CLOSED / INDEPENDENTLY VERIFIED; final baseline evolution APPROVED |
+| **Independence** | Records the supplied fresh independent result and fingerprint; this closure author does not claim WEB-5BV2 authorship or independent closure verification |
+| **Candidate identity** | Base HEAD c2401d4a8a9164d71bfb160508df89957ecf5aec; incoming package SHA-256 39f234bf009109e4ca162a44bf94651805cafb8a22b6aedb07dce304753a3976; 35/35 raw hashes and exact paths authenticated |
+| **License closure** | Copyright © 2026 Babatunde Ajala; original educational content CC BY 4.0; original software/tooling Apache-2.0; third-party rights retained; standard texts unchanged |
+| **Reference closure** | Original five plus subsequent xUnit HTTPS blocker closed independently; HTTP-only authoritative legacy xUnit site retained; 170 VALID / 19 REDIRECT / 0 BROKEN / 24 UNVERIFIED, 213 URLs / 63 domains / 747 occurrences from accepted current inventory |
+| **Approved final identities** | 137 chapters / 176539f62ef89a7d0fbc99ddb98d20b852eff18103d67dda4aab4b93f4d17f02; 12 Part READMEs / eafd4ba0fc55275cf8bcd9094a225e408ab22d43e019d76319ce1897b1c11451; freshly reproduced before updating only the two constants |
+| **Checker / tests** | Algorithm, all three manifest layers, scope/lifecycle checks, exit semantics and all existing negative tests preserved; existing baseline-evolution regression rejects stale HEAD/index or any stale layer |
+| **Layer limitation** | Working tree matches evolved constants; HEAD/index retain old identities. Baseline remains 5 PASS / 2 FAIL, exit 1. STOP for independent adjudication; no manufactured PASS or checkpoint |
+| **Artefacts affected** | Review Plan current expected-baseline note; this sole new event/index row; current sprint and website state; blocker report and directly coupled deterministic evidence |
+| **Evidence** | [WEB-5BR report](../../website/WEB5_BLOCKER_RESOLUTION_REPORT.md) and [acceptance](../../website/evidence/web5/br-acceptance.json); author validation is not independent acceptance |
+| **Deployment / next action** | WEB-5 DEPLOYMENT NOT STARTED; project launch not live; indexing disabled; no tag/release/checkpoint. UNSTAGED / UNCOMMITTED / UNPUSHED. Fresh narrow WEB-5BCV must adjudicate closure and checkpoint layers |
+| **Non-collapse** | Preserve WEB-5B original five authorship, WEB-5BV Decision B/xUnit discovery, WEB-5BF1 two corrections, WEB-5BV2 Decision A, this WEB-5BR preparation and future WEB-5BCV/checkpoint as distinct acts. FE-EV-001–047 event bodies and index entries unchanged |

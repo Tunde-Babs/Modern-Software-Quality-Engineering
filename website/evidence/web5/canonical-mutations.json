@@ -1,0 +1,122 @@
+[
+  {
+    "path": "book/part-04-api-engineering/README.md",
+    "beforeBlob": "be9ac29a2e0d14f87ce33870840157f5b89e785b",
+    "afterBlob": "24e9ad7b7dc28f0a8f391e83f3d2d2c9d4d2071d",
+    "substitutions": [
+      {
+        "old": "https://owasp.org/www-project-api-security/",
+        "new": "https://github.com/OWASP/API-Security",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "path": "book/part-04-api-engineering/chapters/chapter-06-identity-at-the-boundary-authentication-authorization-and-safe-behaviour.md",
+    "beforeBlob": "3150773cb1d7dcb12d414b80c4bd21f95b8e8614",
+    "afterBlob": "23e59a67d919d4b4464571290c345010c1ea45b6",
+    "substitutions": [
+      {
+        "old": "https://owasp.org/API-Security/editions/2023/en/0xa1-broken-object-level-authorization/",
+        "new": "https://github.com/OWASP/API-Security/blob/master/editions/2023/en/0xa1-broken-object-level-authorization.md",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "path": "book/part-04-api-engineering/chapters/chapter-10-capstone-api-quality-strategy-and-evidence-portfolio.md",
+    "beforeBlob": "9725be7fc1b04565f42d2054e9d263f772b32de9",
+    "afterBlob": "afbcbd7326e6e57e28a702351adfb1f41689dd8f",
+    "substitutions": [
+      {
+        "old": "https://owasp.org/www-project-api-security/",
+        "new": "https://github.com/OWASP/API-Security",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "path": "book/part-07-cloud-devops/README.md",
+    "beforeBlob": "de562bb12f6e87ed9d15701f0a22abe0ef28ee2b",
+    "afterBlob": "5ef31709c622244798b058071c1f191e43d0a32f",
+    "substitutions": [
+      {
+        "old": "https://openssf.org/best-practices/",
+        "new": "https://best.openssf.org/",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "path": "book/part-07-cloud-devops/chapters/chapter-04-infrastructure-as-code-change-evidence-review-and-drift.md",
+    "beforeBlob": "b5789ea73776831f62e5d40646e9134981a65573",
+    "afterBlob": "673e84a0c6a4661ace5cb1477c8362f2fcbce9c8",
+    "substitutions": [
+      {
+        "old": "https://openssf.org/best-practices/",
+        "new": "https://best.openssf.org/",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "path": "book/part-10-performance-security/chapters/chapter-02-workload-threat-and-measurement-models.md",
+    "beforeBlob": "3b609546c25283f1417036c1ca3c8d12421ec784",
+    "afterBlob": "3c56d42c3e0e7d482d19af105d1c238af0789eac",
+    "substitutions": [
+      {
+        "old": "https://owasp.org/API-Security/editions/2023/en/0x03-introduction/",
+        "new": "https://github.com/OWASP/API-Security/blob/master/editions/2023/en/0x03-introduction.md",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "path": "book/part-10-performance-security/chapters/chapter-08-authentication-authorization-sessions-and-api-boundaries.md",
+    "beforeBlob": "a1e18ed2b14cc847fa90315ed748073aaf0dbbac",
+    "afterBlob": "6e228153c6764230da544bb5be394b305c6b0797",
+    "substitutions": [
+      {
+        "old": "https://owasp.org/www-project-application-security-verification-standard/",
+        "new": "https://github.com/OWASP/ASVS",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "path": "book/part-10-performance-security/chapters/chapter-09-input-output-dependencies-secrets-and-configuration-trust.md",
+    "beforeBlob": "4d9af001836e014b5ef9a767fc9657a303879c9c",
+    "afterBlob": "458ab6f91ddbf40200727af5bafe462d525064a6",
+    "substitutions": [
+      {
+        "old": "https://owasp.org/API-Security/editions/2023/en/0x03-introduction/",
+        "new": "https://github.com/OWASP/API-Security/blob/master/editions/2023/en/0x03-introduction.md",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "path": "book/part-10-performance-security/chapters/chapter-10-security-evidence-findings-verification-and-residual-risk.md",
+    "beforeBlob": "d47b638b5916a1cfd72a0269346c4373b15f6b81",
+    "afterBlob": "6516d14d40b78828a00761f26b9d49c790b7774d",
+    "substitutions": [
+      {
+        "old": "https://owasp.org/www-project-application-security-verification-standard/",
+        "new": "https://github.com/OWASP/ASVS",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "path": "book/part-10-performance-security/chapters/chapter-12-capstone-performance-security-strategy-and-evidence-portfolio.md",
+    "beforeBlob": "ecb5d156c16af5c5113e0db7a2c2364b048e7dc9",
+    "afterBlob": "a53b841a7bc9b3bb86219b097f2aa7cf5f3245f0",
+    "substitutions": [
+      {
+        "old": "https://owasp.org/www-project-application-security-verification-standard/",
+        "new": "https://github.com/OWASP/ASVS",
+        "count": 1
+      }
+    ]
+  }
+]

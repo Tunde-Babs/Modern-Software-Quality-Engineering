@@ -1,0 +1,76 @@
+Modern Software Quality Engineering (MSQE) — licensing scope
+
+Copyright © 2026 Babatunde Ajala
+
+Original MSQE educational content is licensed under Creative Commons
+Attribution 4.0 International (CC-BY-4.0); see LICENSE-CONTENT.
+Original MSQE software and tooling is licensed under the Apache License,
+Version 2.0 (Apache-2.0); see the full standard text in LICENSE-CODE.
+These are licenses for different portions, not a choice of either license
+for the entire repository. This file identifies scope; it adds no restrictions
+to either standard license.
+
+SCOPE RULES (apply to original material only)
+
+1. Educational and documentary content — CC-BY-4.0
+   Original prose, learning instructions, exercises, worksheets, case studies,
+   reference annotations, diagrams and teaching slides in book/, diagrams/,
+   labs/, references/, research/ and slides/ are educational content.
+   Original Markdown documentation throughout the repository is also covered,
+   including root README.md, docs/ (handbook guidance and project/review
+   documentation), templates/, code/**/README.md, code/**/docs/*.md and
+   website/*.md. Documentary plain-text records, including the controlled
+   manifest in docs/, follow this rule. Templates are content, not programs.
+   Original diagram source (including Mermaid), pseudocode, illustrative
+   non-executable examples and original visual assets follow this rule.
+
+2. Software and tooling — Apache-2.0
+   Executable source and test code, scripts, build/dependency configuration,
+   lockfiles, machine-readable test fixtures and automation data are software,
+   wherever located. This includes code/ source, tests, fixtures and project
+   configuration; tools/; tests/; website/ source, scripts, tests and build
+   configuration; and repository configuration such as .gitignore.
+   Machine-readable website/evidence/ validation records follow this rule.
+   Source comments and API docstrings remain part of the software.
+
+3. Mixed files and generated views
+   In Markdown and teaching documents, original executable code examples
+   (including shell commands, configuration and code fences containing actual
+   software) are Apache-2.0; surrounding prose, pseudocode, illustrative
+   output and Mermaid diagrams are CC-BY-4.0. A fenced block alone does not
+   make prose or a diagram software.
+   In website Astro/HTML/JavaScript files, original learner-facing prose is
+   CC-BY-4.0; markup, styles, logic and embedded scripts are Apache-2.0.
+   Thus website/src/pages/license.astro has educational/legal guidance copy
+   under CC-BY-4.0 and its implementation under Apache-2.0. This also applies
+   to learner-facing copy in other website components and pages.
+   Rendered handbook/resource pages retain these source-level distinctions:
+   displaying code in the handbook does not relicense it as CC-BY-4.0.
+   Original website/public/favicon.svg and favicon.ico artwork is CC-BY-4.0;
+   the software in website/public/ is Apache-2.0.
+   Generated HTML and search assets preserve the respective rights in their
+   underlying content, software and dependencies; generation is not relicensing.
+
+THIRD-PARTY BOUNDARY
+
+These grants apply only to original MSQE material for which Babatunde Ajala
+holds copyright. They do not relicense third-party citations, standards,
+quoted material, trademarks, external works, screenshots, code, assets,
+dependencies or separately licensed material. Those retain their respective
+rights and license terms, including any notices accompanying them. A citation
+or link is not a grant of rights in the cited work. Standard license texts
+are reproduced or referenced as their official terms, not MSQE-authored content.
+No trademark rights are granted by this scope statement.
+
+PRACTICAL EDUCATIONAL ATTRIBUTION
+
+Modern Software Quality Engineering (MSQE) by Babatunde Ajala,
+licensed under CC BY 4.0.
+
+Include the source link (https://msqe.dev/ or the specific material's URL),
+the license link (https://creativecommons.org/licenses/by/4.0/), the supplied
+copyright notice and any other required notices; indicate modifications.
+This example is guidance, not an additional license condition. The standard
+license controls the applicable attribution requirements.
+
+For software redistribution, retain applicable notices and follow LICENSE-CODE.

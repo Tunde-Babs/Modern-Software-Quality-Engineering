@@ -1,0 +1,194 @@
+{
+  "baseline": "c2401d4a8a9164d71bfb160508df89957ecf5aec",
+  "checkedAt": "2026-09-10T15:00:09.945Z",
+  "rows": [
+    {
+      "url": "https://openssf.org/best-practices/",
+      "domain": "openssf.org",
+      "occurrences": [
+        {
+          "page": "/handbook/part-07/chapter-04-infrastructure-as-code-change-evidence-review-and-drift/",
+          "label": "OpenSSF Best Practices"
+        }
+      ],
+      "classification": "BROKEN",
+      "status": 404,
+      "finalUrl": "https://openssf.org/best-practices/",
+      "elapsedMs": 734,
+      "sources": [
+        {
+          "path": "book/part-07-cloud-devops/README.md",
+          "line": 308,
+          "context": "- **Security-sensitive delivery boundaries:** [NIST SP 800-218, Secure Software Development Framework](https://csrc.nist.gov/pubs/sp/800/218/final) and [OpenSSF best-practice resources](https://openssf.org/best-practices/) may inform a narrow supply-chain or credential-boundary claim. Security control design remains Part X."
+        },
+        {
+          "path": "book/part-07-cloud-devops/chapters/chapter-04-infrastructure-as-code-change-evidence-review-and-drift.md",
+          "line": 287,
+          "context": "- [OpenSSF Best Practices](https://openssf.org/best-practices/)"
+        }
+      ],
+      "replacement": "https://best.openssf.org/",
+      "disposition": "A"
+    },
+    {
+      "url": "https://owasp.org/API-Security/editions/2023/en/0x03-introduction/",
+      "domain": "owasp.org",
+      "occurrences": [
+        {
+          "page": "/handbook/part-10/chapter-02-workload-threat-and-measurement-models/",
+          "label": "OWASP API Security Top 10"
+        },
+        {
+          "page": "/handbook/part-10/chapter-02-workload-threat-and-measurement-models/",
+          "label": "OWASP API Security Top 10 \u2014 2023"
+        },
+        {
+          "page": "/handbook/part-10/chapter-09-input-output-dependencies-secrets-and-configuration-trust/",
+          "label": "OWASP API Security Top 10"
+        },
+        {
+          "page": "/handbook/part-10/chapter-09-input-output-dependencies-secrets-and-configuration-trust/",
+          "label": "OWASP API Security Top 10 \u2014 2023"
+        }
+      ],
+      "classification": "BROKEN",
+      "status": 404,
+      "finalUrl": "https://owasp.org/API-Security/editions/2023/en/0x03-introduction",
+      "elapsedMs": 332,
+      "sources": [
+        {
+          "path": "book/part-10-performance-security/chapters/chapter-02-workload-threat-and-measurement-models.md",
+          "line": 299,
+          "context": "- [OWASP API Security Top 10](https://owasp.org/API-Security/editions/2023/en/0x03-introduction/)"
+        },
+        {
+          "path": "book/part-10-performance-security/chapters/chapter-02-workload-threat-and-measurement-models.md",
+          "line": 305,
+          "context": "[^owasp-api]: OWASP Foundation. [OWASP API Security Top 10 \u2014 2023](https://owasp.org/API-Security/editions/2023/en/0x03-introduction/). 2023. Accessed 2026-08-12."
+        },
+        {
+          "path": "book/part-10-performance-security/chapters/chapter-09-input-output-dependencies-secrets-and-configuration-trust.md",
+          "line": 268,
+          "context": "- [OWASP API Security Top 10](https://owasp.org/API-Security/editions/2023/en/0x03-introduction/)"
+        },
+        {
+          "path": "book/part-10-performance-security/chapters/chapter-09-input-output-dependencies-secrets-and-configuration-trust.md",
+          "line": 274,
+          "context": "[^owasp-api]: OWASP Foundation. [OWASP API Security Top 10 \u2014 2023](https://owasp.org/API-Security/editions/2023/en/0x03-introduction/). 2023. Accessed 2026-08-12."
+        }
+      ],
+      "replacement": "https://github.com/OWASP/API-Security/blob/master/editions/2023/en/0x03-introduction.md",
+      "disposition": "A"
+    },
+    {
+      "url": "https://owasp.org/API-Security/editions/2023/en/0xa1-broken-object-level-authorization/",
+      "domain": "owasp.org",
+      "occurrences": [
+        {
+          "page": "/handbook/part-04/chapter-06-identity-at-the-boundary-authentication-authorization-and-safe-behaviour/",
+          "label": "API1:2023 \u2014 Broken Object Level Authorization"
+        }
+      ],
+      "classification": "BROKEN",
+      "status": 404,
+      "finalUrl": "https://owasp.org/API-Security/editions/2023/en/0xa1-broken-object-level-authorization",
+      "elapsedMs": 367,
+      "sources": [
+        {
+          "path": "book/part-04-api-engineering/chapters/chapter-06-identity-at-the-boundary-authentication-authorization-and-safe-behaviour.md",
+          "line": 378,
+          "context": "[^owasp-api1]: OWASP Foundation. [API1:2023 \u2014 Broken Object Level Authorization](https://owasp.org/API-Security/editions/2023/en/0xa1-broken-object-level-authorization/). Accessed 2026-08-10."
+        }
+      ],
+      "replacement": "https://github.com/OWASP/API-Security/blob/master/editions/2023/en/0xa1-broken-object-level-authorization.md",
+      "disposition": "A"
+    },
+    {
+      "url": "https://owasp.org/www-project-api-security/",
+      "domain": "owasp.org",
+      "occurrences": [
+        {
+          "page": "/handbook/part-04/chapter-10-capstone-api-quality-strategy-and-evidence-portfolio/",
+          "label": "OWASP API Security Project"
+        }
+      ],
+      "classification": "BROKEN",
+      "status": 404,
+      "finalUrl": "https://owasp.org/www-project-api-security",
+      "elapsedMs": 348,
+      "sources": [
+        {
+          "path": "book/part-04-api-engineering/README.md",
+          "line": 348,
+          "context": "- OWASP Foundation, [OWASP API Security Project](https://owasp.org/www-project-api-security/), as security-awareness guidance rather than a complete security-testing method;"
+        },
+        {
+          "path": "book/part-04-api-engineering/chapters/chapter-10-capstone-api-quality-strategy-and-evidence-portfolio.md",
+          "line": 393,
+          "context": "[^owasp-api]: OWASP Foundation. [OWASP API Security Project](https://owasp.org/www-project-api-security/). Accessed 2026-08-10."
+        }
+      ],
+      "replacement": "https://github.com/OWASP/API-Security",
+      "disposition": "A"
+    },
+    {
+      "url": "https://owasp.org/www-project-application-security-verification-standard/",
+      "domain": "owasp.org",
+      "occurrences": [
+        {
+          "page": "/handbook/part-10/chapter-08-authentication-authorization-sessions-and-api-boundaries/",
+          "label": "OWASP Application Security Verification Standard"
+        },
+        {
+          "page": "/handbook/part-10/chapter-08-authentication-authorization-sessions-and-api-boundaries/",
+          "label": "Application Security Verification Standard"
+        },
+        {
+          "page": "/handbook/part-10/chapter-10-security-evidence-findings-verification-and-residual-risk/",
+          "label": "OWASP Application Security Verification Standard"
+        },
+        {
+          "page": "/handbook/part-10/chapter-10-security-evidence-findings-verification-and-residual-risk/",
+          "label": "Application Security Verification Standard"
+        },
+        {
+          "page": "/handbook/part-10/chapter-12-capstone-performance-security-strategy-and-evidence-portfolio/",
+          "label": "OWASP Application Security Verification Standard"
+        }
+      ],
+      "classification": "BROKEN",
+      "status": 404,
+      "finalUrl": "https://owasp.org/www-project-application-security-verification-standard",
+      "elapsedMs": 332,
+      "sources": [
+        {
+          "path": "book/part-10-performance-security/chapters/chapter-08-authentication-authorization-sessions-and-api-boundaries.md",
+          "line": 311,
+          "context": "- [OWASP Application Security Verification Standard](https://owasp.org/www-project-application-security-verification-standard/)"
+        },
+        {
+          "path": "book/part-10-performance-security/chapters/chapter-08-authentication-authorization-sessions-and-api-boundaries.md",
+          "line": 317,
+          "context": "[^owasp-asvs]: OWASP Foundation. [Application Security Verification Standard](https://owasp.org/www-project-application-security-verification-standard/). Accessed 2026-08-12."
+        },
+        {
+          "path": "book/part-10-performance-security/chapters/chapter-10-security-evidence-findings-verification-and-residual-risk.md",
+          "line": 327,
+          "context": "- [OWASP Application Security Verification Standard](https://owasp.org/www-project-application-security-verification-standard/)"
+        },
+        {
+          "path": "book/part-10-performance-security/chapters/chapter-10-security-evidence-findings-verification-and-residual-risk.md",
+          "line": 332,
+          "context": "[^owasp-asvs]: OWASP Foundation. [Application Security Verification Standard](https://owasp.org/www-project-application-security-verification-standard/). Accessed 2026-08-12."
+        },
+        {
+          "path": "book/part-10-performance-security/chapters/chapter-12-capstone-performance-security-strategy-and-evidence-portfolio.md",
+          "line": 493,
+          "context": "- [OWASP Application Security Verification Standard](https://owasp.org/www-project-application-security-verification-standard/)"
+        }
+      ],
+      "replacement": "https://github.com/OWASP/ASVS",
+      "disposition": "A"
+    }
+  ]
+}

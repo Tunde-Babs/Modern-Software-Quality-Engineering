@@ -1,0 +1,1443 @@
+{
+  "authorEvidenceOnly": true,
+  "incomingMatches": 35,
+  "incomingPackageSha256": "39f234bf009109e4ca162a44bf94651805cafb8a22b6aedb07dce304753a3976",
+  "closureDelta": [
+    "CURRENT_SPRINT.md",
+    "docs/02-first-edition-review/FIRST_EDITION_REVIEW_LOG.md",
+    "docs/02-first-edition-review/FIRST_EDITION_REVIEW_PLAN.md",
+    "tools/first_edition_gate.py",
+    "website/PRODUCTION_READINESS.md",
+    "website/README.md",
+    "website/WEB5_BLOCKER_RESOLUTION_REPORT.md",
+    "website/evidence/web5/br-acceptance.json",
+    "website/evidence/web5/br-baseline.json",
+    "website/evidence/web5/br-source-hashes.json",
+    "website/evidence/web5/br-validation.json",
+    "website/tests/preservation.ts"
+  ],
+  "completeCandidatePaths": [
+    "CURRENT_SPRINT.md",
+    "LICENSE",
+    "LICENSE-CODE",
+    "LICENSE-CONTENT",
+    "README.md",
+    "book/part-02-programming/chapters/chapter-11-testing-quality-engineering-utilities.md",
+    "book/part-04-api-engineering/README.md",
+    "book/part-04-api-engineering/chapters/chapter-06-identity-at-the-boundary-authentication-authorization-and-safe-behaviour.md",
+    "book/part-04-api-engineering/chapters/chapter-10-capstone-api-quality-strategy-and-evidence-portfolio.md",
+    "book/part-07-cloud-devops/README.md",
+    "book/part-07-cloud-devops/chapters/chapter-04-infrastructure-as-code-change-evidence-review-and-drift.md",
+    "book/part-10-performance-security/chapters/chapter-02-workload-threat-and-measurement-models.md",
+    "book/part-10-performance-security/chapters/chapter-08-authentication-authorization-sessions-and-api-boundaries.md",
+    "book/part-10-performance-security/chapters/chapter-09-input-output-dependencies-secrets-and-configuration-trust.md",
+    "book/part-10-performance-security/chapters/chapter-10-security-evidence-findings-verification-and-residual-risk.md",
+    "book/part-10-performance-security/chapters/chapter-12-capstone-performance-security-strategy-and-evidence-portfolio.md",
+    "docs/02-first-edition-review/FIRST_EDITION_REVIEW_LOG.md",
+    "docs/02-first-edition-review/FIRST_EDITION_REVIEW_PLAN.md",
+    "tools/first_edition_gate.py",
+    "website/PRODUCTION_READINESS.md",
+    "website/README.md",
+    "website/WEB5_BLOCKER_RESOLUTION_REPORT.md",
+    "website/evidence/web5/allowed-paths.json",
+    "website/evidence/web5/baseline-after.json",
+    "website/evidence/web5/baseline-before.json",
+    "website/evidence/web5/baseline-f1.json",
+    "website/evidence/web5/br-acceptance.json",
+    "website/evidence/web5/br-baseline.json",
+    "website/evidence/web5/br-source-hashes.json",
+    "website/evidence/web5/br-validation.json",
+    "website/evidence/web5/canonical-mutations.json",
+    "website/evidence/web5/external-links-after.json",
+    "website/evidence/web5/external-links-f1.json",
+    "website/evidence/web5/f1-canonical-mutations.json",
+    "website/evidence/web5/f1-continuity.json",
+    "website/evidence/web5/f1-validation.json",
+    "website/evidence/web5/frozen-links.json",
+    "website/evidence/web5/license-file-hashes.json",
+    "website/src/layouts/Base.astro",
+    "website/src/pages/license.astro",
+    "website/src/pages/sitemap.xml.ts",
+    "website/tests/build-smoke.ts",
+    "website/tests/preservation.ts",
+    "website/tests/web5-licenses.test.ts"
+  ],
+  "protectedTrackedFiles": 332,
+  "unauthorizedMismatches": 0,
+  "canonicalFiles": 11,
+  "urlSubstitutions": 16,
+  "checkerDiff": "Only CHAPTER_DIGEST and PART_DIGEST assignments",
+  "msqeTests": {
+    "pass": 35,
+    "fail": 0,
+    "error": 0,
+    "unchanged": true,
+    "staleLayerRegression": "test_baseline_evolution_preserves_all_layer_checks"
+  },
+  "websiteTests": {
+    "pass": 39,
+    "fail": 0
+  },
+  "commands": [
+    {
+      "command": "npm --prefix website ci",
+      "exitCode": 0,
+      "logSha256": "9e0ea35c4a73d2d9f6a669f54c50cba979630a3202ccc2219c6ee0e8b9aded38"
+    },
+    {
+      "command": "npm --prefix website run check",
+      "exitCode": 0,
+      "logSha256": "5af683e739e9a067a37c87a717731cbd402d0ab76222b011fc56b0751efe1603"
+    },
+    {
+      "command": "npm --prefix website run build",
+      "exitCode": 0,
+      "logSha256": "d5d325a960c8378a6987ad894d11b71db62c811e32e66e5e38c0678413b2dc36"
+    },
+    {
+      "command": "npm --prefix website run verify",
+      "exitCode": 0,
+      "logSha256": "07772bfd9b97358ef3f95ee159e99c3d52fed9a43f577d256e1c7a7cf2c16839"
+    }
+  ],
+  "baseline": {
+    "pass": 5,
+    "fail": 2,
+    "exitCode": 1,
+    "workingTreeMatches": true,
+    "headAndIndexOld": true,
+    "disposition": "STOP for independent checkpoint-layer adjudication; no weakened controls"
+  },
+  "build": {
+    "pages": 262,
+    "chapters": 137,
+    "parts": 12,
+    "resources": 105,
+    "resourceDocuments": 103,
+    "resourceCollections": 2,
+    "learningPaths": 1,
+    "sitemapUrls": 260,
+    "internalLinks": 13587,
+    "brokenDestinations": 0,
+    "distBytes": 11610192,
+    "largestPages": [
+      {
+        "path": "handbook/part-11/chapter-12-capstone-system-design-architecture-quality-strategy-and-evidence-portfolio/index.html",
+        "bytes": 100328
+      },
+      {
+        "path": "handbook/part-01/chapter-10-the-future-of-quality-engineering/index.html",
+        "bytes": 83818
+      },
+      {
+        "path": "handbook/part-12/chapter-12-capstone-quality-leadership-and-career-strategy-portfolio/index.html",
+        "bytes": 82214
+      },
+      {
+        "path": "handbook/part-02/chapter-12-capstone-quality-engineering-toolkit/index.html",
+        "bytes": 80276
+      },
+      {
+        "path": "handbook/part-01/chapter-09-the-modern-software-quality-engineering-framework/index.html",
+        "bytes": 77299
+      }
+    ],
+    "assets": [
+      {
+        "path": "pagefind/wasm.en.pagefind",
+        "bytes": 72740
+      },
+      {
+        "path": "pagefind/wasm.unknown.pagefind",
+        "bytes": 68199
+      },
+      {
+        "path": "pagefind/index/en_5df3a50.pf_index",
+        "bytes": 52443
+      },
+      {
+        "path": "pagefind/pagefind.js",
+        "bytes": 45555
+      },
+      {
+        "path": "pagefind/pagefind-worker.js",
+        "bytes": 41255
+      },
+      {
+        "path": "pagefind/index/en_282edc1.pf_index",
+        "bytes": 40555
+      },
+      {
+        "path": "pagefind/index/en_d022c5b.pf_index",
+        "bytes": 37734
+      },
+      {
+        "path": "pagefind/index/en_a58943d.pf_index",
+        "bytes": 37685
+      },
+      {
+        "path": "pagefind/index/en_956e5dd.pf_index",
+        "bytes": 36267
+      },
+      {
+        "path": "pagefind/index/en_3715139.pf_index",
+        "bytes": 36232
+      },
+      {
+        "path": "pagefind/index/en_77eb5de.pf_index",
+        "bytes": 35680
+      },
+      {
+        "path": "pagefind/index/en_b16fe60.pf_index",
+        "bytes": 35082
+      },
+      {
+        "path": "pagefind/index/en_88e0af1.pf_index",
+        "bytes": 34544
+      },
+      {
+        "path": "pagefind/index/en_adde6fa.pf_index",
+        "bytes": 34520
+      },
+      {
+        "path": "pagefind/index/en_b973dba.pf_index",
+        "bytes": 34385
+      },
+      {
+        "path": "pagefind/index/en_a777ce8.pf_index",
+        "bytes": 34315
+      },
+      {
+        "path": "pagefind/index/en_b39569f.pf_index",
+        "bytes": 34070
+      },
+      {
+        "path": "pagefind/index/en_e684495.pf_index",
+        "bytes": 33884
+      },
+      {
+        "path": "pagefind/index/en_9931b98.pf_index",
+        "bytes": 33788
+      },
+      {
+        "path": "pagefind/index/en_146061c.pf_index",
+        "bytes": 33510
+      },
+      {
+        "path": "pagefind/index/en_f282148.pf_index",
+        "bytes": 33455
+      },
+      {
+        "path": "pagefind/index/en_a8cd815.pf_index",
+        "bytes": 33292
+      },
+      {
+        "path": "pagefind/index/en_216a862.pf_index",
+        "bytes": 33264
+      },
+      {
+        "path": "pagefind/index/en_ff239c4.pf_index",
+        "bytes": 33235
+      },
+      {
+        "path": "pagefind/index/en_b03dc1e.pf_index",
+        "bytes": 33166
+      },
+      {
+        "path": "pagefind/index/en_dca5468.pf_index",
+        "bytes": 33133
+      },
+      {
+        "path": "pagefind/index/en_2566709.pf_index",
+        "bytes": 33044
+      },
+      {
+        "path": "pagefind/index/en_78411e4.pf_index",
+        "bytes": 33035
+      },
+      {
+        "path": "pagefind/index/en_26c6a86.pf_index",
+        "bytes": 32957
+      },
+      {
+        "path": "pagefind/index/en_551cd9f.pf_index",
+        "bytes": 32885
+      },
+      {
+        "path": "pagefind/index/en_2ca66d3.pf_index",
+        "bytes": 32875
+      },
+      {
+        "path": "pagefind/index/en_d67e398.pf_index",
+        "bytes": 32815
+      },
+      {
+        "path": "pagefind/index/en_63e822f.pf_index",
+        "bytes": 32721
+      },
+      {
+        "path": "pagefind/index/en_4cbef89.pf_index",
+        "bytes": 32414
+      },
+      {
+        "path": "pagefind/index/en_b469633.pf_index",
+        "bytes": 32334
+      },
+      {
+        "path": "pagefind/index/en_8673d3f.pf_index",
+        "bytes": 32204
+      },
+      {
+        "path": "pagefind/index/en_65252b7.pf_index",
+        "bytes": 32156
+      },
+      {
+        "path": "pagefind/index/en_3b9b462.pf_index",
+        "bytes": 32125
+      },
+      {
+        "path": "pagefind/index/en_bbc56da.pf_index",
+        "bytes": 32121
+      },
+      {
+        "path": "pagefind/index/en_3cd69ba.pf_index",
+        "bytes": 31833
+      },
+      {
+        "path": "pagefind/index/en_33adbcc.pf_index",
+        "bytes": 31687
+      },
+      {
+        "path": "pagefind/index/en_8c53188.pf_index",
+        "bytes": 31526
+      },
+      {
+        "path": "pagefind/index/en_7faf7ba.pf_index",
+        "bytes": 31501
+      },
+      {
+        "path": "pagefind/index/en_fccfd9b.pf_index",
+        "bytes": 31464
+      },
+      {
+        "path": "pagefind/index/en_c0d22a6.pf_index",
+        "bytes": 31376
+      },
+      {
+        "path": "pagefind/index/en_d6aefe1.pf_index",
+        "bytes": 31336
+      },
+      {
+        "path": "pagefind/index/en_5555c77.pf_index",
+        "bytes": 30474
+      },
+      {
+        "path": "sitemap.xml",
+        "bytes": 29790
+      },
+      {
+        "path": "pagefind/index/en_232d8f8.pf_index",
+        "bytes": 29094
+      },
+      {
+        "path": "pagefind/index/en_49a4696.pf_index",
+        "bytes": 28449
+      },
+      {
+        "path": "pagefind/fragment/en_ba44440.pf_fragment",
+        "bytes": 23673
+      },
+      {
+        "path": "pagefind/fragment/en_43f29aa.pf_fragment",
+        "bytes": 19768
+      },
+      {
+        "path": "pagefind/fragment/en_949a5ee.pf_fragment",
+        "bytes": 19666
+      },
+      {
+        "path": "pagefind/fragment/en_1ceeac5.pf_fragment",
+        "bytes": 18507
+      },
+      {
+        "path": "pagefind/fragment/en_a4b9a54.pf_fragment",
+        "bytes": 18464
+      },
+      {
+        "path": "pagefind/fragment/en_50e4726.pf_fragment",
+        "bytes": 17687
+      },
+      {
+        "path": "pagefind/fragment/en_dd63e97.pf_fragment",
+        "bytes": 17332
+      },
+      {
+        "path": "pagefind/fragment/en_6925f3e.pf_fragment",
+        "bytes": 17104
+      },
+      {
+        "path": "pagefind/fragment/en_d1c8b23.pf_fragment",
+        "bytes": 17079
+      },
+      {
+        "path": "pagefind/fragment/en_fbfeb83.pf_fragment",
+        "bytes": 16977
+      },
+      {
+        "path": "pagefind/fragment/en_c56da2a.pf_fragment",
+        "bytes": 16803
+      },
+      {
+        "path": "pagefind/fragment/en_4b27938.pf_fragment",
+        "bytes": 16728
+      },
+      {
+        "path": "pagefind/fragment/en_ef7ba37.pf_fragment",
+        "bytes": 16413
+      },
+      {
+        "path": "pagefind/fragment/en_d091323.pf_fragment",
+        "bytes": 16317
+      },
+      {
+        "path": "pagefind/fragment/en_6f7b265.pf_fragment",
+        "bytes": 16143
+      },
+      {
+        "path": "pagefind/fragment/en_b39d9e9.pf_fragment",
+        "bytes": 15695
+      },
+      {
+        "path": "pagefind/fragment/en_4b7226b.pf_fragment",
+        "bytes": 15602
+      },
+      {
+        "path": "pagefind/fragment/en_abfe95a.pf_fragment",
+        "bytes": 15396
+      },
+      {
+        "path": "pagefind/fragment/en_4726aee.pf_fragment",
+        "bytes": 15365
+      },
+      {
+        "path": "pagefind/fragment/en_e7e5df7.pf_fragment",
+        "bytes": 15286
+      },
+      {
+        "path": "pagefind/fragment/en_73458cf.pf_fragment",
+        "bytes": 15284
+      },
+      {
+        "path": "pagefind/fragment/en_49b7d63.pf_fragment",
+        "bytes": 15250
+      },
+      {
+        "path": "pagefind/fragment/en_ca99434.pf_fragment",
+        "bytes": 14980
+      },
+      {
+        "path": "pagefind/fragment/en_c3c6514.pf_fragment",
+        "bytes": 14905
+      },
+      {
+        "path": "pagefind/fragment/en_d517162.pf_fragment",
+        "bytes": 14904
+      },
+      {
+        "path": "pagefind/fragment/en_446b444.pf_fragment",
+        "bytes": 14834
+      },
+      {
+        "path": "pagefind/fragment/en_d924df3.pf_fragment",
+        "bytes": 14764
+      },
+      {
+        "path": "pagefind/fragment/en_ffcaf7b.pf_fragment",
+        "bytes": 14665
+      },
+      {
+        "path": "pagefind/fragment/en_54ab1e4.pf_fragment",
+        "bytes": 14575
+      },
+      {
+        "path": "pagefind/fragment/en_6eda3a7.pf_fragment",
+        "bytes": 14410
+      },
+      {
+        "path": "pagefind/fragment/en_88ee141.pf_fragment",
+        "bytes": 14399
+      },
+      {
+        "path": "pagefind/fragment/en_c37dc3f.pf_fragment",
+        "bytes": 14385
+      },
+      {
+        "path": "pagefind/fragment/en_2a74191.pf_fragment",
+        "bytes": 14322
+      },
+      {
+        "path": "pagefind/fragment/en_89b9ad4.pf_fragment",
+        "bytes": 14321
+      },
+      {
+        "path": "pagefind/fragment/en_3939f70.pf_fragment",
+        "bytes": 14262
+      },
+      {
+        "path": "pagefind/fragment/en_d0edda9.pf_fragment",
+        "bytes": 14156
+      },
+      {
+        "path": "pagefind/fragment/en_2a2695f.pf_fragment",
+        "bytes": 14105
+      },
+      {
+        "path": "pagefind/fragment/en_b117fa1.pf_fragment",
+        "bytes": 14045
+      },
+      {
+        "path": "pagefind/fragment/en_bb9c50c.pf_fragment",
+        "bytes": 13974
+      },
+      {
+        "path": "pagefind/fragment/en_15261df.pf_fragment",
+        "bytes": 13653
+      },
+      {
+        "path": "pagefind/fragment/en_3cd7f82.pf_fragment",
+        "bytes": 13470
+      },
+      {
+        "path": "pagefind/fragment/en_61643f1.pf_fragment",
+        "bytes": 13439
+      },
+      {
+        "path": "pagefind/fragment/en_4c4b29c.pf_fragment",
+        "bytes": 13376
+      },
+      {
+        "path": "pagefind/fragment/en_78589ee.pf_fragment",
+        "bytes": 13319
+      },
+      {
+        "path": "pagefind/fragment/en_20299dd.pf_fragment",
+        "bytes": 13168
+      },
+      {
+        "path": "pagefind/fragment/en_37194fb.pf_fragment",
+        "bytes": 13108
+      },
+      {
+        "path": "pagefind/fragment/en_95817ee.pf_fragment",
+        "bytes": 13096
+      },
+      {
+        "path": "pagefind/fragment/en_673acd9.pf_fragment",
+        "bytes": 13060
+      },
+      {
+        "path": "pagefind/index/en_dddd8df.pf_index",
+        "bytes": 13057
+      },
+      {
+        "path": "pagefind/fragment/en_eaa0eda.pf_fragment",
+        "bytes": 13027
+      },
+      {
+        "path": "pagefind/fragment/en_f2377a2.pf_fragment",
+        "bytes": 12910
+      },
+      {
+        "path": "pagefind/fragment/en_73a9367.pf_fragment",
+        "bytes": 12888
+      },
+      {
+        "path": "pagefind/fragment/en_62dcf9d.pf_fragment",
+        "bytes": 12783
+      },
+      {
+        "path": "pagefind/fragment/en_8453699.pf_fragment",
+        "bytes": 12748
+      },
+      {
+        "path": "pagefind/fragment/en_d22e216.pf_fragment",
+        "bytes": 12742
+      },
+      {
+        "path": "pagefind/fragment/en_f263b02.pf_fragment",
+        "bytes": 12724
+      },
+      {
+        "path": "pagefind/fragment/en_7d8bc17.pf_fragment",
+        "bytes": 12579
+      },
+      {
+        "path": "pagefind/fragment/en_c6e9c97.pf_fragment",
+        "bytes": 12558
+      },
+      {
+        "path": "pagefind/fragment/en_c02ce86.pf_fragment",
+        "bytes": 12547
+      },
+      {
+        "path": "pagefind/fragment/en_ca90ab5.pf_fragment",
+        "bytes": 12496
+      },
+      {
+        "path": "pagefind/fragment/en_88f6b53.pf_fragment",
+        "bytes": 12474
+      },
+      {
+        "path": "pagefind/fragment/en_21dea5c.pf_fragment",
+        "bytes": 12455
+      },
+      {
+        "path": "pagefind/fragment/en_219ace2.pf_fragment",
+        "bytes": 12193
+      },
+      {
+        "path": "pagefind/fragment/en_19b3be6.pf_fragment",
+        "bytes": 12175
+      },
+      {
+        "path": "pagefind/fragment/en_5d54f28.pf_fragment",
+        "bytes": 12105
+      },
+      {
+        "path": "pagefind/fragment/en_e061b96.pf_fragment",
+        "bytes": 12056
+      },
+      {
+        "path": "pagefind/fragment/en_7b856f7.pf_fragment",
+        "bytes": 12018
+      },
+      {
+        "path": "pagefind/fragment/en_40f7cc8.pf_fragment",
+        "bytes": 12014
+      },
+      {
+        "path": "pagefind/fragment/en_15644ff.pf_fragment",
+        "bytes": 11985
+      },
+      {
+        "path": "pagefind/fragment/en_c2f027f.pf_fragment",
+        "bytes": 11926
+      },
+      {
+        "path": "pagefind/fragment/en_4a31e36.pf_fragment",
+        "bytes": 11862
+      },
+      {
+        "path": "pagefind/fragment/en_8c2f5f8.pf_fragment",
+        "bytes": 11632
+      },
+      {
+        "path": "pagefind/fragment/en_9c91c74.pf_fragment",
+        "bytes": 11526
+      },
+      {
+        "path": "pagefind/fragment/en_a4bcceb.pf_fragment",
+        "bytes": 11338
+      },
+      {
+        "path": "pagefind/fragment/en_cf90acb.pf_fragment",
+        "bytes": 11226
+      },
+      {
+        "path": "pagefind/fragment/en_668b74d.pf_fragment",
+        "bytes": 11225
+      },
+      {
+        "path": "pagefind/fragment/en_a7aa2a6.pf_fragment",
+        "bytes": 11170
+      },
+      {
+        "path": "pagefind/fragment/en_94a2943.pf_fragment",
+        "bytes": 11077
+      },
+      {
+        "path": "pagefind/fragment/en_8d128a4.pf_fragment",
+        "bytes": 11057
+      },
+      {
+        "path": "pagefind/fragment/en_ec2a6a2.pf_fragment",
+        "bytes": 10941
+      },
+      {
+        "path": "pagefind/fragment/en_61a06fb.pf_fragment",
+        "bytes": 10917
+      },
+      {
+        "path": "pagefind/fragment/en_25d752d.pf_fragment",
+        "bytes": 10858
+      },
+      {
+        "path": "pagefind/fragment/en_3430f54.pf_fragment",
+        "bytes": 10819
+      },
+      {
+        "path": "pagefind/fragment/en_76f8f44.pf_fragment",
+        "bytes": 10814
+      },
+      {
+        "path": "pagefind/fragment/en_261b4cc.pf_fragment",
+        "bytes": 10722
+      },
+      {
+        "path": "pagefind/fragment/en_98cb7fd.pf_fragment",
+        "bytes": 10683
+      },
+      {
+        "path": "pagefind/fragment/en_115912d.pf_fragment",
+        "bytes": 10578
+      },
+      {
+        "path": "pagefind/fragment/en_a9fe4c9.pf_fragment",
+        "bytes": 10572
+      },
+      {
+        "path": "pagefind/fragment/en_3b6b2e2.pf_fragment",
+        "bytes": 10528
+      },
+      {
+        "path": "pagefind/fragment/en_e0db16b.pf_fragment",
+        "bytes": 10474
+      },
+      {
+        "path": "pagefind/fragment/en_b3e5eea.pf_fragment",
+        "bytes": 10386
+      },
+      {
+        "path": "pagefind/fragment/en_2d13ddc.pf_fragment",
+        "bytes": 10327
+      },
+      {
+        "path": "pagefind/fragment/en_592f4f8.pf_fragment",
+        "bytes": 10197
+      },
+      {
+        "path": "pagefind/fragment/en_62dcc2a.pf_fragment",
+        "bytes": 10189
+      },
+      {
+        "path": "pagefind/fragment/en_6652a32.pf_fragment",
+        "bytes": 10166
+      },
+      {
+        "path": "pagefind/fragment/en_d9b5879.pf_fragment",
+        "bytes": 10120
+      },
+      {
+        "path": "pagefind/fragment/en_f328656.pf_fragment",
+        "bytes": 9936
+      },
+      {
+        "path": "pagefind/fragment/en_127c648.pf_fragment",
+        "bytes": 9925
+      },
+      {
+        "path": "pagefind/fragment/en_c884398.pf_fragment",
+        "bytes": 9902
+      },
+      {
+        "path": "pagefind/fragment/en_9523bb8.pf_fragment",
+        "bytes": 9886
+      },
+      {
+        "path": "pagefind/fragment/en_b854586.pf_fragment",
+        "bytes": 9856
+      },
+      {
+        "path": "pagefind/fragment/en_a65ba23.pf_fragment",
+        "bytes": 9755
+      },
+      {
+        "path": "pagefind/fragment/en_c3f7acb.pf_fragment",
+        "bytes": 9667
+      },
+      {
+        "path": "pagefind/fragment/en_418bfd2.pf_fragment",
+        "bytes": 9579
+      },
+      {
+        "path": "pagefind/fragment/en_53fae0f.pf_fragment",
+        "bytes": 9389
+      },
+      {
+        "path": "pagefind/fragment/en_1abe8e5.pf_fragment",
+        "bytes": 9384
+      },
+      {
+        "path": "pagefind/fragment/en_f8911a4.pf_fragment",
+        "bytes": 9124
+      },
+      {
+        "path": "pagefind/fragment/en_4dd2a0a.pf_fragment",
+        "bytes": 9081
+      },
+      {
+        "path": "pagefind/fragment/en_9fdaefa.pf_fragment",
+        "bytes": 9077
+      },
+      {
+        "path": "pagefind/fragment/en_bdc3ce9.pf_fragment",
+        "bytes": 9027
+      },
+      {
+        "path": "pagefind/fragment/en_1bf74f9.pf_fragment",
+        "bytes": 8938
+      },
+      {
+        "path": "pagefind/fragment/en_6e37878.pf_fragment",
+        "bytes": 8836
+      },
+      {
+        "path": "pagefind/fragment/en_b991d41.pf_fragment",
+        "bytes": 8674
+      },
+      {
+        "path": "pagefind/fragment/en_77778f8.pf_fragment",
+        "bytes": 8645
+      },
+      {
+        "path": "pagefind/fragment/en_15f15d3.pf_fragment",
+        "bytes": 8621
+      },
+      {
+        "path": "pagefind/fragment/en_132dc1a.pf_fragment",
+        "bytes": 8598
+      },
+      {
+        "path": "pagefind/fragment/en_23e9b9c.pf_fragment",
+        "bytes": 8595
+      },
+      {
+        "path": "pagefind/fragment/en_959cfad.pf_fragment",
+        "bytes": 8549
+      },
+      {
+        "path": "pagefind/fragment/en_3f92fc1.pf_fragment",
+        "bytes": 8548
+      },
+      {
+        "path": "_astro/Base.BtmdYSN5.css",
+        "bytes": 8274
+      },
+      {
+        "path": "pagefind/fragment/en_661738a.pf_fragment",
+        "bytes": 7993
+      },
+      {
+        "path": "pagefind/fragment/en_cbde358.pf_fragment",
+        "bytes": 7926
+      },
+      {
+        "path": "pagefind/fragment/en_78a7195.pf_fragment",
+        "bytes": 7739
+      },
+      {
+        "path": "pagefind/fragment/en_39f34c8.pf_fragment",
+        "bytes": 7731
+      },
+      {
+        "path": "pagefind/fragment/en_77b9535.pf_fragment",
+        "bytes": 7639
+      },
+      {
+        "path": "pagefind/fragment/en_ce3757c.pf_fragment",
+        "bytes": 7608
+      },
+      {
+        "path": "pagefind/fragment/en_42e538e.pf_fragment",
+        "bytes": 7605
+      },
+      {
+        "path": "pagefind/fragment/en_873d4c6.pf_fragment",
+        "bytes": 7586
+      },
+      {
+        "path": "pagefind/fragment/en_7553368.pf_fragment",
+        "bytes": 7441
+      },
+      {
+        "path": "pagefind/fragment/en_c1103db.pf_fragment",
+        "bytes": 7265
+      },
+      {
+        "path": "pagefind/fragment/en_f7453ac.pf_fragment",
+        "bytes": 7026
+      },
+      {
+        "path": "pagefind/fragment/en_7ef2f6e.pf_fragment",
+        "bytes": 6993
+      },
+      {
+        "path": "pagefind/fragment/en_c9fed05.pf_fragment",
+        "bytes": 6965
+      },
+      {
+        "path": "pagefind/fragment/en_dba43a4.pf_fragment",
+        "bytes": 6778
+      },
+      {
+        "path": "pagefind/fragment/en_a34bf2e.pf_fragment",
+        "bytes": 6408
+      },
+      {
+        "path": "pagefind/fragment/en_ac1239f.pf_fragment",
+        "bytes": 6392
+      },
+      {
+        "path": "pagefind/fragment/en_7dddf89.pf_fragment",
+        "bytes": 6368
+      },
+      {
+        "path": "pagefind/fragment/en_ed3166b.pf_fragment",
+        "bytes": 5902
+      },
+      {
+        "path": "pagefind/fragment/en_c95776c.pf_fragment",
+        "bytes": 5617
+      },
+      {
+        "path": "pagefind/fragment/en_2a7933c.pf_fragment",
+        "bytes": 5614
+      },
+      {
+        "path": "pagefind/fragment/en_a944cc5.pf_fragment",
+        "bytes": 5534
+      },
+      {
+        "path": "pagefind/fragment/en_69574e2.pf_fragment",
+        "bytes": 5437
+      },
+      {
+        "path": "pagefind/fragment/en_a8ba89e.pf_fragment",
+        "bytes": 4996
+      },
+      {
+        "path": "pagefind/pagefind.en_11658cadb1.pf_meta",
+        "bytes": 2763
+      },
+      {
+        "path": "search.js",
+        "bytes": 2628
+      },
+      {
+        "path": "pagefind/fragment/en_ef60207.pf_fragment",
+        "bytes": 2503
+      },
+      {
+        "path": "pagefind/fragment/en_cb1fe8c.pf_fragment",
+        "bytes": 2382
+      },
+      {
+        "path": "pagefind/fragment/en_26b7ebd.pf_fragment",
+        "bytes": 2263
+      },
+      {
+        "path": "pagefind/fragment/en_5d1469d.pf_fragment",
+        "bytes": 2168
+      },
+      {
+        "path": "pagefind/fragment/en_3c7e431.pf_fragment",
+        "bytes": 2068
+      },
+      {
+        "path": "pagefind/fragment/en_31d434a.pf_fragment",
+        "bytes": 2042
+      },
+      {
+        "path": "pagefind/fragment/en_4f29ac9.pf_fragment",
+        "bytes": 2027
+      },
+      {
+        "path": "pagefind/fragment/en_96d3302.pf_fragment",
+        "bytes": 2013
+      },
+      {
+        "path": "pagefind/fragment/en_fcb0c05.pf_fragment",
+        "bytes": 1963
+      },
+      {
+        "path": "pagefind/fragment/en_9d49ddb.pf_fragment",
+        "bytes": 1937
+      },
+      {
+        "path": "pagefind/fragment/en_c8be9df.pf_fragment",
+        "bytes": 1921
+      },
+      {
+        "path": "pagefind/fragment/en_f78e503.pf_fragment",
+        "bytes": 1839
+      },
+      {
+        "path": "pagefind/fragment/en_523b81b.pf_fragment",
+        "bytes": 1830
+      },
+      {
+        "path": "pagefind/fragment/en_83422f2.pf_fragment",
+        "bytes": 1830
+      },
+      {
+        "path": "pagefind/fragment/en_571f74c.pf_fragment",
+        "bytes": 1791
+      },
+      {
+        "path": "pagefind/fragment/en_7134cc4.pf_fragment",
+        "bytes": 1783
+      },
+      {
+        "path": "pagefind/fragment/en_fff214f.pf_fragment",
+        "bytes": 1765
+      },
+      {
+        "path": "pagefind/fragment/en_80b665b.pf_fragment",
+        "bytes": 1748
+      },
+      {
+        "path": "pagefind/fragment/en_d6f4f84.pf_fragment",
+        "bytes": 1700
+      },
+      {
+        "path": "pagefind/fragment/en_688a75e.pf_fragment",
+        "bytes": 1670
+      },
+      {
+        "path": "pagefind/fragment/en_a03316d.pf_fragment",
+        "bytes": 1666
+      },
+      {
+        "path": "pagefind/fragment/en_72a6c27.pf_fragment",
+        "bytes": 1656
+      },
+      {
+        "path": "pagefind/fragment/en_bfd62bf.pf_fragment",
+        "bytes": 1651
+      },
+      {
+        "path": "pagefind/fragment/en_3873482.pf_fragment",
+        "bytes": 1628
+      },
+      {
+        "path": "pagefind/fragment/en_cb592df.pf_fragment",
+        "bytes": 1619
+      },
+      {
+        "path": "pagefind/fragment/en_8bc3c33.pf_fragment",
+        "bytes": 1596
+      },
+      {
+        "path": "pagefind/fragment/en_24f31c7.pf_fragment",
+        "bytes": 1556
+      },
+      {
+        "path": "pagefind/fragment/en_8f6b5a4.pf_fragment",
+        "bytes": 1456
+      },
+      {
+        "path": "pagefind/fragment/en_b01b4b8.pf_fragment",
+        "bytes": 1420
+      },
+      {
+        "path": "pagefind/fragment/en_f7cf397.pf_fragment",
+        "bytes": 1288
+      },
+      {
+        "path": "pagefind/fragment/en_44ffa29.pf_fragment",
+        "bytes": 1217
+      },
+      {
+        "path": "pagefind/fragment/en_9ff8fba.pf_fragment",
+        "bytes": 1217
+      },
+      {
+        "path": "pagefind/fragment/en_8f49b6c.pf_fragment",
+        "bytes": 1186
+      },
+      {
+        "path": "pagefind/fragment/en_7538f24.pf_fragment",
+        "bytes": 1172
+      },
+      {
+        "path": "pagefind/fragment/en_50e838b.pf_fragment",
+        "bytes": 1155
+      },
+      {
+        "path": "favicon.ico",
+        "bytes": 1150
+      },
+      {
+        "path": "pagefind/fragment/en_b4fe596.pf_fragment",
+        "bytes": 1135
+      },
+      {
+        "path": "pagefind/fragment/en_3b6c425.pf_fragment",
+        "bytes": 1127
+      },
+      {
+        "path": "pagefind/fragment/en_a1872f7.pf_fragment",
+        "bytes": 1113
+      },
+      {
+        "path": "pagefind/fragment/en_d6b9f75.pf_fragment",
+        "bytes": 1094
+      },
+      {
+        "path": "pagefind/fragment/en_f6fbba7.pf_fragment",
+        "bytes": 1074
+      },
+      {
+        "path": "pagefind/fragment/en_45344b9.pf_fragment",
+        "bytes": 1067
+      },
+      {
+        "path": "pagefind/fragment/en_559fcda.pf_fragment",
+        "bytes": 1043
+      },
+      {
+        "path": "pagefind/fragment/en_c2c8feb.pf_fragment",
+        "bytes": 1002
+      },
+      {
+        "path": "pagefind/fragment/en_ba92703.pf_fragment",
+        "bytes": 994
+      },
+      {
+        "path": "pagefind/fragment/en_90fd61c.pf_fragment",
+        "bytes": 990
+      },
+      {
+        "path": "pagefind/fragment/en_c759f28.pf_fragment",
+        "bytes": 975
+      },
+      {
+        "path": "pagefind/fragment/en_593764a.pf_fragment",
+        "bytes": 961
+      },
+      {
+        "path": "pagefind/fragment/en_e6e1815.pf_fragment",
+        "bytes": 952
+      },
+      {
+        "path": "pagefind/fragment/en_bd28e47.pf_fragment",
+        "bytes": 949
+      },
+      {
+        "path": "pagefind/fragment/en_caec66a.pf_fragment",
+        "bytes": 940
+      },
+      {
+        "path": "pagefind/fragment/en_6af2fce.pf_fragment",
+        "bytes": 918
+      },
+      {
+        "path": "pagefind/fragment/en_c9ce943.pf_fragment",
+        "bytes": 906
+      },
+      {
+        "path": "pagefind/fragment/en_23cef18.pf_fragment",
+        "bytes": 891
+      },
+      {
+        "path": "pagefind/fragment/en_3e164fb.pf_fragment",
+        "bytes": 889
+      },
+      {
+        "path": "pagefind/fragment/en_cfe0542.pf_fragment",
+        "bytes": 887
+      },
+      {
+        "path": "pagefind/fragment/en_76fb81e.pf_fragment",
+        "bytes": 877
+      },
+      {
+        "path": "pagefind/fragment/en_c41da01.pf_fragment",
+        "bytes": 877
+      },
+      {
+        "path": "pagefind/fragment/en_9e71f95.pf_fragment",
+        "bytes": 872
+      },
+      {
+        "path": "pagefind/fragment/en_1085ba5.pf_fragment",
+        "bytes": 869
+      },
+      {
+        "path": "pagefind/fragment/en_3e3e485.pf_fragment",
+        "bytes": 866
+      },
+      {
+        "path": "pagefind/fragment/en_83fba41.pf_fragment",
+        "bytes": 862
+      },
+      {
+        "path": "pagefind/fragment/en_3d9b137.pf_fragment",
+        "bytes": 842
+      },
+      {
+        "path": "pagefind/fragment/en_7c92a2d.pf_fragment",
+        "bytes": 839
+      },
+      {
+        "path": "pagefind/fragment/en_4dc4c37.pf_fragment",
+        "bytes": 838
+      },
+      {
+        "path": "pagefind/fragment/en_4721975.pf_fragment",
+        "bytes": 820
+      },
+      {
+        "path": "pagefind/fragment/en_06e4b87.pf_fragment",
+        "bytes": 819
+      },
+      {
+        "path": "pagefind/fragment/en_a0ac42c.pf_fragment",
+        "bytes": 797
+      },
+      {
+        "path": "pagefind/fragment/en_3614a92.pf_fragment",
+        "bytes": 796
+      },
+      {
+        "path": "pagefind/fragment/en_2c277de.pf_fragment",
+        "bytes": 783
+      },
+      {
+        "path": "pagefind/fragment/en_3073891.pf_fragment",
+        "bytes": 781
+      },
+      {
+        "path": "pagefind/fragment/en_53d2e8c.pf_fragment",
+        "bytes": 775
+      },
+      {
+        "path": "pagefind/fragment/en_2cb215a.pf_fragment",
+        "bytes": 772
+      },
+      {
+        "path": "pagefind/fragment/en_4336d59.pf_fragment",
+        "bytes": 755
+      },
+      {
+        "path": "pagefind/fragment/en_af2d5b1.pf_fragment",
+        "bytes": 749
+      },
+      {
+        "path": "pagefind/fragment/en_90ff276.pf_fragment",
+        "bytes": 743
+      },
+      {
+        "path": "pagefind/fragment/en_d3f1b17.pf_fragment",
+        "bytes": 697
+      },
+      {
+        "path": "pagefind/fragment/en_7252c63.pf_fragment",
+        "bytes": 657
+      },
+      {
+        "path": "pagefind/fragment/en_bd1277a.pf_fragment",
+        "bytes": 653
+      },
+      {
+        "path": "pagefind/fragment/en_bdb2b34.pf_fragment",
+        "bytes": 651
+      },
+      {
+        "path": "pagefind/fragment/en_5860af9.pf_fragment",
+        "bytes": 597
+      },
+      {
+        "path": "pagefind/fragment/en_9381632.pf_fragment",
+        "bytes": 565
+      },
+      {
+        "path": "pagefind/fragment/en_ca1ae67.pf_fragment",
+        "bytes": 559
+      },
+      {
+        "path": "pagefind/fragment/en_b73ab8b.pf_fragment",
+        "bytes": 557
+      },
+      {
+        "path": "pagefind/fragment/en_843ee88.pf_fragment",
+        "bytes": 552
+      },
+      {
+        "path": "pagefind/fragment/en_7c29978.pf_fragment",
+        "bytes": 536
+      },
+      {
+        "path": "pagefind/fragment/en_983c14e.pf_fragment",
+        "bytes": 533
+      },
+      {
+        "path": "pagefind/fragment/en_d8f79b4.pf_fragment",
+        "bytes": 532
+      },
+      {
+        "path": "pagefind/fragment/en_da6bfe2.pf_fragment",
+        "bytes": 531
+      },
+      {
+        "path": "pagefind/fragment/en_7c6d1ff.pf_fragment",
+        "bytes": 520
+      },
+      {
+        "path": "pagefind/fragment/en_2090294.pf_fragment",
+        "bytes": 511
+      },
+      {
+        "path": "pagefind/fragment/en_d132bb8.pf_fragment",
+        "bytes": 498
+      },
+      {
+        "path": "pagefind/fragment/en_77eede9.pf_fragment",
+        "bytes": 496
+      },
+      {
+        "path": "pagefind/fragment/en_387b7d6.pf_fragment",
+        "bytes": 486
+      },
+      {
+        "path": "pagefind/fragment/en_46a8abb.pf_fragment",
+        "bytes": 470
+      },
+      {
+        "path": "pagefind/fragment/en_b9726f5.pf_fragment",
+        "bytes": 469
+      },
+      {
+        "path": "pagefind/fragment/en_1e53124.pf_fragment",
+        "bytes": 464
+      },
+      {
+        "path": "pagefind/fragment/en_febdcd4.pf_fragment",
+        "bytes": 449
+      },
+      {
+        "path": "pagefind/fragment/en_3be469d.pf_fragment",
+        "bytes": 440
+      },
+      {
+        "path": "pagefind/fragment/en_5b6d6ed.pf_fragment",
+        "bytes": 430
+      },
+      {
+        "path": "pagefind/fragment/en_b38637a.pf_fragment",
+        "bytes": 415
+      },
+      {
+        "path": "pagefind/fragment/en_1bc48f9.pf_fragment",
+        "bytes": 400
+      },
+      {
+        "path": "pagefind/fragment/en_1e5b7d8.pf_fragment",
+        "bytes": 395
+      },
+      {
+        "path": "pagefind/fragment/en_4d757d0.pf_fragment",
+        "bytes": 393
+      },
+      {
+        "path": "pagefind/fragment/en_7f3664e.pf_fragment",
+        "bytes": 390
+      },
+      {
+        "path": "pagefind/fragment/en_775d15d.pf_fragment",
+        "bytes": 353
+      },
+      {
+        "path": "pagefind/fragment/en_7eadfd7.pf_fragment",
+        "bytes": 343
+      },
+      {
+        "path": "pagefind/fragment/en_8693ff6.pf_fragment",
+        "bytes": 338
+      },
+      {
+        "path": "pagefind/fragment/en_b546405.pf_fragment",
+        "bytes": 333
+      },
+      {
+        "path": "pagefind/fragment/en_bae588c.pf_fragment",
+        "bytes": 310
+      },
+      {
+        "path": "pagefind/fragment/en_51699c2.pf_fragment",
+        "bytes": 307
+      },
+      {
+        "path": "pagefind/fragment/en_d0d0e97.pf_fragment",
+        "bytes": 305
+      },
+      {
+        "path": "pagefind/fragment/en_9939649.pf_fragment",
+        "bytes": 301
+      },
+      {
+        "path": "pagefind/fragment/en_f2cf447.pf_fragment",
+        "bytes": 300
+      },
+      {
+        "path": "pagefind/fragment/en_5ef3ab8.pf_fragment",
+        "bytes": 297
+      },
+      {
+        "path": "pagefind/fragment/en_6e789a8.pf_fragment",
+        "bytes": 297
+      },
+      {
+        "path": "pagefind/fragment/en_8cfa43a.pf_fragment",
+        "bytes": 296
+      },
+      {
+        "path": "pagefind/fragment/en_99fee37.pf_fragment",
+        "bytes": 293
+      },
+      {
+        "path": "favicon.svg",
+        "bytes": 194
+      },
+      {
+        "path": "pagefind/pagefind-entry.json",
+        "bytes": 173
+      },
+      {
+        "path": "robots.txt",
+        "bytes": 64
+      }
+    ]
+  },
+  "sourceAuthentication": {
+    "base": "c2401d4a8a9164d71bfb160508df89957ecf5aec",
+    "files": 276,
+    "manifestSha256": "aecdad3ed906a4221b108237bdd82eabe682128f6c75dd9d055208cfb744ce52",
+    "groups": {
+      "book": 162,
+      "labs": 1,
+      "code": 90,
+      "diagrams": 11,
+      "docs/02-first-edition-review": 7,
+      "tools": 2,
+      "tests": 1,
+      "CHANGELOG.md": 1,
+      "LICENSE": 1
+    },
+    "authorizedCanonicalFiles": 11,
+    "authorizedUrlSubstitutions": 16,
+    "unauthorizedModifications": 0
+  },
+  "externalLinks": {
+    "source": "WEB-5BV2 independently accepted inventory; reused without network reprobe",
+    "urls": 213,
+    "domains": 63,
+    "occurrences": 747,
+    "VALID": 170,
+    "REDIRECT": 19,
+    "BROKEN": 0,
+    "UNVERIFIED": 24,
+    "limitation": "UNVERIFIED / NOT ESTABLISHED BROKEN"
+  },
+  "finalFingerprintPath": "/private/tmp/msqe-web5br-closure/candidate-fingerprint.txt"
+}

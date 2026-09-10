@@ -338,9 +338,18 @@ Rather than documenting individual tools, this project seeks to define the endur
 
 # Author
 
-**Tunde Ajala**
+**Babatunde Ajala**
 
 Founder, Modern Software Quality Engineering (MSQE)
+
+---
+
+# Licensing
+
+Copyright © 2026 Babatunde Ajala. Original educational content is licensed under
+[CC BY 4.0](LICENSE-CONTENT); original software/tooling under
+[Apache-2.0](LICENSE-CODE). See [LICENSE](LICENSE) for scopes, attribution and
+third-party exclusions.
 
 ---
 

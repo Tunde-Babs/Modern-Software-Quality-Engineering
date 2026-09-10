@@ -345,7 +345,7 @@ Chapter manuscripts should use primary standards and specifications for protocol
 - JSON Schema, [Specification](https://json-schema.org/specification);
 - GraphQL Foundation, [GraphQL Specification](https://spec.graphql.org/), when a contrast with HTTP resource-oriented interfaces adds learning value;
 - AsyncAPI Initiative, [AsyncAPI Specification v3.1.0](https://www.asyncapi.com/docs/reference/specification/v3.1.0), for event and asynchronous interface descriptions;
-- OWASP Foundation, [OWASP API Security Project](https://owasp.org/www-project-api-security/), as security-awareness guidance rather than a complete security-testing method;
+- OWASP Foundation, [OWASP API Security Project](https://github.com/OWASP/API-Security), as security-awareness guidance rather than a complete security-testing method;
 - ISO/IEC, [ISO/IEC 25010:2023 — Product quality model](https://www.iso.org/standard/78176.html), with product-quality characteristics kept distinct from engineering capabilities such as testability and observability;
 - ISO/IEC/IEEE, [ISO/IEC/IEEE 29119-2:2021 — Test processes](https://www.iso.org/standard/79428.html); and
 - IEEE Computer Society, [SWEBOK Guide v4.0a](https://ieeecs-media.computer.org/media/education/swebok/swebok-v4.pdf).

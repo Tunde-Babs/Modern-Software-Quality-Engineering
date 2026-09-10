@@ -1448,3 +1448,27 @@ FE-EV-045 records historical correction authorship only. Supplied LR-2V2 subsequ
 **LRG-1 Learning-Ready Gate PASS — 12 PASS / 0 FAIL, Decision A**, recorded from the supplied independent assessment in **FE-EV-047**. **Learning-Ready RC: DECLARATION PREPARED — AWAITING INDEPENDENT DECLARATION VERIFICATION**. Designation: **LEARNING-READY — CONTROLLED RC**; this is an unverified declaration-preparation package, not a completed declaration checkpoint. Content baseline: `5c7359a3a07530dc26457208e8092d8ebcc3f469`; declaration checkpoint commit: **NOT YET CREATED**. LR-1/LR-2 remain COMPLETE / INDEPENDENTLY VERIFIED / CLOSED. Census: **29 total; 15 OPEN / NOT VERIFIED; 14 CLOSED / VERIFIED**. Outstanding allocation: **LR-1=0, LR-2=0, FE-1=6, FE-2=5, FE-3=4**. LRG-1 residual disposition: **10 SAFE TO DEFER / 5 EARLY CORRECTION RECOMMENDED / NON-BLOCKING / 0 LR BLOCKING**. First Edition remains **IN PROGRESS**; FE-1/FE-2/FE-3 **NOT STARTED**; v0.16.0 remains unreleased. Next: fresh independent LR-RC declaration verification before separately authorized checkpointing. Package: **UNSTAGED / UNCOMMITTED / UNPUSHED**.
 
 The [frozen 306-object content inventory](LRG1_CONTENT_BASELINE_MANIFEST.txt) identifies the assessed commit, including governance/navigation and delivered learning assets. The [declaration record](LEARNING_READY_RC_DECLARATION.md) explicitly lists the governance-only delta and new evidence files outside that content baseline. No manuscript or Part README changes are permitted. This is freeze/declaration recording preparation under §18.3; its author cannot independently verify the package. No standing gate criterion, finding lifecycle, quantitative method, Phase J/K boundary, or FTR-2 validator is changed.
+
+
+### 18.8 WEB-5BR approved controlled-manifest evolution (2026-09-10)
+
+Supplied independent WEB-5BV2: 21 PASS / 0 FAIL / 0 INCOMPLETE, Decision A;
+35-path candidate SHA-256 `39f234bf009109e4ca162a44bf94651805cafb8a22b6aedb07dce304753a3976`.
+This is the authority for current expected identities, superseding the current
+constant references in §18.4 without rewriting their historical acceptance.
+Exactly 16 approved URL substitutions in 11 canonical files preserve all other
+manuscript bytes. License and confirmed external-reference blockers are CLOSED /
+INDEPENDENTLY VERIFIED; the 24 unverified URLs are not established broken.
+
+WEB-5BR reproduces and applies 137 chapters / `176539f62ef89a7d0fbc99ddb98d20b852eff18103d67dda4aab4b93f4d17f02` and
+12 Part READMEs / `eafd4ba0fc55275cf8bcd9094a225e408ab22d43e019d76319ce1897b1c11451`. Algorithm, population counts,
+HEAD/index/working-tree checks, lifecycle/scope controls and exit semantics remain
+unchanged. HEAD/index retain the old accepted identities until an authorized
+checkpoint; the working tree matches the new constants. The baseline profile
+therefore remains FAIL (5 PASS / 2 FAIL, exit 1); no layer is exempted.
+
+Record this authorized evolution at FE-EV-048. Fresh narrow WEB-5BCV must adjudicate
+the closure delta and checkpoint-layer limitation before any separately authorized
+checkpoint. Historical Part, Phase-F and Learning-Ready declaration manifests remain
+immutable; this expectation update does not rewrite or self-reaccept them. No
+First Edition completion, publication, deployment, release or tag is implied.

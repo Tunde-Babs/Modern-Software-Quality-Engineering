@@ -1,0 +1,124 @@
+{
+  "checks": [
+    {
+      "expected": {
+        "count": 137,
+        "digest": "7e252ff0c38d4d1d1e4b7af1cdc9a664f934a8b4e60cad0c0c7b08406010dd22"
+      },
+      "message": "Implemented invariant satisfied.",
+      "name": "chapter_manifest",
+      "observed": {
+        "HEAD": {
+          "count": 137,
+          "digest": "7e252ff0c38d4d1d1e4b7af1cdc9a664f934a8b4e60cad0c0c7b08406010dd22"
+        },
+        "index": {
+          "count": 137,
+          "digest": "7e252ff0c38d4d1d1e4b7af1cdc9a664f934a8b4e60cad0c0c7b08406010dd22"
+        },
+        "working_tree": {
+          "count": 137,
+          "digest": "7e252ff0c38d4d1d1e4b7af1cdc9a664f934a8b4e60cad0c0c7b08406010dd22"
+        }
+      },
+      "status": "PASS"
+    },
+    {
+      "expected": {
+        "count": 12,
+        "digest": "6b80e69f00bf06497d8fe7a8432ff6a9af8672861abf2332ebdb5bcedc6a5907"
+      },
+      "message": "Implemented invariant satisfied.",
+      "name": "part_readme_manifest",
+      "observed": {
+        "HEAD": {
+          "count": 12,
+          "digest": "6b80e69f00bf06497d8fe7a8432ff6a9af8672861abf2332ebdb5bcedc6a5907"
+        },
+        "index": {
+          "count": 12,
+          "digest": "6b80e69f00bf06497d8fe7a8432ff6a9af8672861abf2332ebdb5bcedc6a5907"
+        },
+        "working_tree": {
+          "count": 12,
+          "digest": "6b80e69f00bf06497d8fe7a8432ff6a9af8672861abf2332ebdb5bcedc6a5907"
+        }
+      },
+      "status": "PASS"
+    },
+    {
+      "expected": "Unique equal body/index sets, continuous ascending IDs",
+      "message": "Implemented invariant satisfied.",
+      "name": "event_integrity",
+      "observed": {
+        "body_count": 47,
+        "index_count": 47,
+        "maximum_id": "FE-EV-047"
+      },
+      "status": "PASS"
+    },
+    {
+      "expected": {
+        "distribution": {
+          "CLOSED / VERIFIED": 14,
+          "OPEN / NOT VERIFIED": 15
+        },
+        "total": 29
+      },
+      "message": "Implemented invariant satisfied.",
+      "name": "finding_lifecycle",
+      "observed": {
+        "distribution": {
+          "CLOSED / VERIFIED": 14,
+          "OPEN / NOT VERIFIED": 15
+        },
+        "total": 29
+      },
+      "status": "PASS"
+    },
+    {
+      "expected": {
+        "FE-1": 6,
+        "FE-2": 5,
+        "FE-3": 4,
+        "LR-1": 0,
+        "LR-2": 0
+      },
+      "message": "Implemented invariant satisfied.",
+      "name": "fast_track_allocation",
+      "observed": {
+        "open_count": 15,
+        "packages": {
+          "FE-1": 6,
+          "FE-2": 5,
+          "FE-3": 4,
+          "LR-1": 0,
+          "LR-2": 0
+        },
+        "total": 15
+      },
+      "status": "PASS"
+    },
+    {
+      "expected": null,
+      "message": "Implemented invariant satisfied.",
+      "name": "diff_hygiene",
+      "observed": null,
+      "status": "PASS"
+    },
+    {
+      "expected": null,
+      "message": "Implemented invariant satisfied.",
+      "name": "diff_cached_hygiene",
+      "observed": null,
+      "status": "PASS"
+    }
+  ],
+  "exit_code": 0,
+  "exit_code_meaning": "implemented deterministic checks passed",
+  "overall_deterministic_result": "PASS",
+  "profile": "baseline",
+  "semantic_acceptance_disclaimer": "EXIT 0 DOES NOT CONSTITUTE SEMANTIC ACCEPTANCE, LEARNING-READY APPROVAL, FIRST EDITION APPROVAL, OR RELEASE APPROVAL.",
+  "tool": "first_edition_gate",
+  "version": "1.0.0"
+}

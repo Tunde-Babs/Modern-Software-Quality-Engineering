@@ -1,5 +1,27 @@
 # Current Sprint
 
+## Active website closure preparation — WEB-5BR
+
+WEB-4 remains integrated/accepted. WEB-5BV2 independently verified the final
+35-path blocker-resolution candidate: 21 PASS / 0 FAIL / 0 INCOMPLETE, Decision A.
+License blocker, original five reference blockers and the subsequent xUnit HTTPS
+blocker are CLOSED / INDEPENDENTLY VERIFIED (16 URL substitutions / 11 files).
+The 24 remaining mechanically unverified references are UNVERIFIED / NOT
+ESTABLISHED BROKEN. Baseline evolution is independently approved and applied in
+WEB-5BR to the final post-F1 digests. The unchanged all-layer gate still requires
+matching HEAD/index identities; closure preparation is stopped for independent
+checkpoint-layer adjudication, not reported as gate PASS.
+
+WEB-5 DEPLOYMENT: NOT STARTED. msqe.dev is NOT yet live under this project launch;
+this is the task's deployment-state record, not a live infrastructure audit.
+Production indexing remains disabled; no release/tag, checkpoint or deployment
+has occurred. MSQE v0.16.0 / LEARNING-READY — CONTROLLED RC remains distinct from
+First Edition completion. Next: fresh narrow independent WEB-5BCV, including the
+checkpoint-layer limitation. No checkpoint is authorized in WEB-5BR.
+
+The retained sprint/declaration record below is historical context; this section
+states the active website task without advancing edition review.
+
 ---
 
 ## Milestone

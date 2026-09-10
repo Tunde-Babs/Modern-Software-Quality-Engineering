@@ -409,7 +409,7 @@ Identify one test that would become fragile after a safe refactor because it ass
 
 - Node.js. [Test runner](https://nodejs.org/api/test.html) and [Assert](https://nodejs.org/api/assert.html) documentation.
 - TypeScript. [Handbook](https://www.typescriptlang.org/docs/handbook/intro.html) and [TSConfig reference](https://www.typescriptlang.org/tsconfig/).
-- Gerard Meszaros. [xUnit Test Patterns](https://xunitpatterns.com/).
+- Gerard Meszaros. [xUnit Test Patterns](http://xunitpatterns.com/).
 - Michael Feathers. [Working Effectively with Legacy Code](https://www.oreilly.com/library/view/working-effectively-with/0131177052/).
 - Google Testing Blog. [Test Smarter](https://testing.googleblog.com/) — practitioner perspectives to evaluate alongside your local context.
 
@@ -421,7 +421,7 @@ Identify one test that would become fragile after a safe refactor because it ass
 
 [^typescript]: Microsoft. [TypeScript Documentation](https://www.typescriptlang.org/docs/). Accessed 2026-08-09.
 
-[^meszaros]: Gerard Meszaros. [xUnit Test Patterns](https://xunitpatterns.com/). Addison-Wesley, 2007. Accessed 2026-08-09.
+[^meszaros]: Gerard Meszaros. [xUnit Test Patterns](http://xunitpatterns.com/). Addison-Wesley, 2007. Accessed 2026-08-09.
 
 [^feathers]: Michael Feathers. [Working Effectively with Legacy Code](https://www.oreilly.com/library/view/working-effectively-with/0131177052/). Prentice Hall, 2004. Accessed 2026-08-09.
 

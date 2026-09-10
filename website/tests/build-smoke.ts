@@ -16,8 +16,8 @@ const searchEntry = JSON.parse(readFileSync(resolve(dist, 'pagefind/pagefind-ent
 assert.equal(searchEntry.languages.en.page_count, 258, 'Every intended search document indexed');
 for (const asset of ['pagefind/pagefind.js', 'pagefind/wasm.en.pagefind', 'search.js', 'favicon.svg']) assert.ok(files.includes(resolve(dist, asset)), `Missing public asset ${asset}`);
 assert.match(readFileSync(resolve(dist, 'robots.txt'), 'utf8'), /Disallow: \//);
-assert.equal(pages.length, registry.size + resourceCollections.length + learningPaths.length + 6, 'All registered and standalone public pages');
-assert.equal(pages.length, 261);
+assert.equal(pages.length, registry.size + resourceCollections.length + learningPaths.length + 7, 'All registered and standalone public pages');
+assert.equal(pages.length, 262);
 const urls = new Map(pages.map(path => ['/' + path.slice(dist.length + 1).replace(/index\.html$/, ''), load(readFileSync(path, 'utf8'))]));
 const titles = new Set<string>();
 let internalLinks = 0;

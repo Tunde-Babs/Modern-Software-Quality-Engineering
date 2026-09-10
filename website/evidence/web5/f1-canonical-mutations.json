@@ -1,0 +1,14 @@
+[
+  {
+    "path": "book/part-02-programming/chapters/chapter-11-testing-quality-engineering-utilities.md",
+    "beforeBlob": "20a3d8ee426fb1da1dfb31d88b7c15dc1adab215",
+    "afterBlob": "ed8f6dfa137f7e0b6310eac4b3400d0600afe102",
+    "substitutions": [
+      {
+        "old": "https://xunitpatterns.com/",
+        "new": "http://xunitpatterns.com/",
+        "count": 2
+      }
+    ]
+  }
+]

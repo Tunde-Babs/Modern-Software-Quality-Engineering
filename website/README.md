@@ -77,4 +77,33 @@ search and 404. Preview builds remain noindex by default.
 
 See [PRODUCTION_READINESS.md](PRODUCTION_READINESS.md) for the indexing switch,
 Cloudflare output settings and local browser/external-link validation commands.
-LICENSE DECISION REQUIRED BEFORE WEB-5 PRODUCTION LAUNCH.
+## Licensing — WEB-5B
+
+Copyright © 2026 Babatunde Ajala. Original learning content is CC BY 4.0;
+original software/tooling is Apache-2.0. See [root scope](../LICENSE),
+[content terms](../LICENSE-CONTENT), [software terms](../LICENSE-CODE) and
+`/license/` for learner attribution and third-party exclusions.
+
+WEB-5B adds one non-search licensing page (262 HTML pages, 260 sitemap URLs).
+
+## Active closure state — WEB-5BR
+
+WEB-4 remains integrated/accepted. WEB-5BV2 independently verified the final
+35-path blocker-resolution candidate: 21 PASS / 0 FAIL / 0 INCOMPLETE, Decision A.
+License blocker, original five reference blockers and the subsequent xUnit HTTPS
+blocker are CLOSED / INDEPENDENTLY VERIFIED (16 URL substitutions / 11 files).
+The 24 remaining mechanically unverified references are UNVERIFIED / NOT
+ESTABLISHED BROKEN. Baseline evolution is independently approved and applied in
+WEB-5BR to the final post-F1 digests. The unchanged all-layer gate still requires
+matching HEAD/index identities; closure preparation is stopped for independent
+checkpoint-layer adjudication, not reported as gate PASS.
+
+WEB-5 DEPLOYMENT: NOT STARTED. msqe.dev is NOT yet live under this project launch;
+this is the task's deployment-state record, not a live infrastructure audit.
+Production indexing remains disabled; no release/tag, checkpoint or deployment
+has occurred. MSQE v0.16.0 / LEARNING-READY — CONTROLLED RC remains distinct from
+First Edition completion. Next: fresh narrow independent WEB-5BCV, including the
+checkpoint-layer limitation. No checkpoint is authorized in WEB-5BR.
+
+See [WEB5_BLOCKER_RESOLUTION_REPORT.md](WEB5_BLOCKER_RESOLUTION_REPORT.md) for
+the preserved B → BV → BF1 → BV2 → BR evidence chain.

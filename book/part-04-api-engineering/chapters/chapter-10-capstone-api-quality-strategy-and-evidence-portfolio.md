@@ -390,7 +390,7 @@ The capstone synthesizes, rather than replaces, the focused methods in the prece
 [^asyncapi]: AsyncAPI Initiative. [AsyncAPI Specification v3.1.0](https://www.asyncapi.com/docs/reference/specification/v3.1.0). Accessed 2026-08-10.
 [^cloudevents]: CloudEvents. [CloudEvents Specification](https://cloudevents.io/). Accessed 2026-08-10.
 [^iso25010]: International Organization for Standardization. [ISO/IEC 25010:2023 — Systems and software engineering — Systems and software Quality Requirements and Evaluation (SQuaRE) — Product quality model](https://www.iso.org/standard/78176.html). ISO, 2023. Accessed 2026-08-10.
-[^owasp-api]: OWASP Foundation. [OWASP API Security Project](https://owasp.org/www-project-api-security/). Accessed 2026-08-10.
+[^owasp-api]: OWASP Foundation. [OWASP API Security Project](https://github.com/OWASP/API-Security). Accessed 2026-08-10.
 [^google-postmortem]: Google. [Postmortem Culture: Learning from Failure](https://sre.google/workbook/postmortem-culture/). *The Site Reliability Workbook*. Accessed 2026-08-10.
 
 ## Chapter Checklist

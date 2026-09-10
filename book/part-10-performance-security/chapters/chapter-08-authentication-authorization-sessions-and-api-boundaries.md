@@ -308,13 +308,13 @@ Create an **Identity and Access-Control Evidence Matrix** for Atlas browse, orde
 ## Further Reading
 
 - [NIST SP 800-63-4 Digital Identity Guidelines](https://www.nist.gov/publications/nist-sp-800-63-4-digital-identity-guidelines)
-- [OWASP Application Security Verification Standard](https://owasp.org/www-project-application-security-verification-standard/)
+- [OWASP Application Security Verification Standard](https://github.com/OWASP/ASVS)
 - [RFC 9700: OAuth 2.0 Security Best Current Practice](https://datatracker.ietf.org/doc/html/rfc9700)
 
 ## References
 
 [^nist-800-63]: National Institute of Standards and Technology. [NIST SP 800-63-4: Digital Identity Guidelines](https://www.nist.gov/publications/nist-sp-800-63-4-digital-identity-guidelines). 2025. Accessed 2026-08-12.
-[^owasp-asvs]: OWASP Foundation. [Application Security Verification Standard](https://owasp.org/www-project-application-security-verification-standard/). Accessed 2026-08-12.
+[^owasp-asvs]: OWASP Foundation. [Application Security Verification Standard](https://github.com/OWASP/ASVS). Accessed 2026-08-12.
 [^rfc-9700]: Lodderstedt, T., et al. [Best Current Practice for OAuth 2.0 Security](https://datatracker.ietf.org/doc/html/rfc9700). RFC 9700, 2025. Accessed 2026-08-12.
 
 ## Chapter Checklist

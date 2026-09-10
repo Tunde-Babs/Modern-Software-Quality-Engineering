@@ -284,7 +284,7 @@ Use a synthetic change description. Do not write or execute IaC, provider config
 
 - [Git documentation](https://git-scm.com/docs)
 - [NIST SP 800-218: Secure Software Development Framework](https://csrc.nist.gov/pubs/sp/800/218/final)
-- [OpenSSF Best Practices](https://openssf.org/best-practices/)
+- [OpenSSF Best Practices](https://best.openssf.org/)
 
 ## References
 
