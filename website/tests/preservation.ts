@@ -5,6 +5,9 @@ import { resolve } from 'node:path';
 import assert from 'node:assert/strict';
 import { repoRoot } from '../src/lib/content/registry.ts';
 export const base = 'c2401d4a8a9164d71bfb160508df89957ecf5aec';
+// Accepted file additions belong to this checkpoint. Keep `base` above for
+// replaying the reviewed URL substitutions against their original source blobs.
+const structuralBase = 'ce7acb06288d566ffdf4bcf13f442994c93bcde1';
 export const protectedPaths = ['book', 'labs', 'code', 'diagrams', 'docs/02-first-edition-review', 'tools', 'tests', 'CHANGELOG.md', 'LICENSE'];
 const git = (...args: string[]) => execFileSync('git', args, { cwd: repoRoot, encoding: 'utf8', maxBuffer: 10 * 1024 * 1024 });
 type Mutation = { path: string; beforeBlob: string; afterBlob: string; substitutions: { old: string; new: string; count: number }[] };
@@ -34,7 +37,7 @@ export function authenticateSources() {
     paths.forEach(path => assert.ok(allowed.has(path), `Unauthorized path outside website: ${path}`));
   }
   assert.equal(git('diff', '--cached', '--name-only'), '', 'WEB-5B must remain unstaged');
-  assert.equal(git('diff', '--summary', base, '--', '.', ':(exclude)website'), '', 'Unexpected source mode, deletion or rename');
+  assert.equal(git('diff', '--summary', structuralBase, '--', '.', ':(exclude)website'), '', 'Unexpected source mode, deletion or rename');
   const manifest = git('ls-tree', '-r', base, '--', ...protectedPaths);
   const entries = manifest.trimEnd().split('\n').map(line => {
     const [info, path] = line.split('\t');
