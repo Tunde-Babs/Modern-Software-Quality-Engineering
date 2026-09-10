@@ -1420,6 +1420,7 @@ git ls-files -s book | awk '$4 ~ /chapters\/chapter-.*\.md$/ {print $4":"$2}' | 
 | `FE-EV-044` | 2026-09-09 | H — LR-2 Atlas continuity correction authorship | Owner continuity decision applied; FE-L2-003/FE-L3-003/FE-T5-001 corrected, all OPEN / NOT VERIFIED; exact 15-path scope and reproducible pre/post evidence; independent LR-2V required | **UNSCORED — CORRECTION COMPLETE / AWAITING FRESH INDEPENDENT LR-2V** |
 | `FE-EV-045` | 2026-09-09 | H — LR-2F1 bounded persona-evidence correction | Supplied LR-2V 28 PASS / 4 FAIL, Decision B; 18 Atlas personas / 31 mentions / Parts III–VI; Dev/Nadia/Mina cross Parts; FE-EV-044 persona evidence superseded; no manuscript delta or closure | **UNSCORED — CORRECTION UPDATED AFTER LR-2V / AWAITING FRESH INDEPENDENT LR-2V2** |
 | `FE-EV-046` | 2026-09-09 | H — LR-2R closure and baseline-evolution preparation | Supplied LR-2V2 25 PASS / 0 FAIL, Decision A; three findings CLOSED / VERIFIED; approved manifests applied; 15 open / 14 closed; LR-2CV required before checkpoint | **LR-2 COMPLETE / INDEPENDENTLY VERIFIED / CLOSED; Learning-Ready NOT YET ASSESSED** |
+| `FE-EV-047` | 2026-09-10 | H — LR-RC1R declaration preparation | Supplied independent LRG-1 PASS 12/12; exact residual 10 safe / 5 early correction / 0 blocking; frozen content preserved; checkpoint NOT YET CREATED | **UNSCORED recording — DECLARATION PREPARED / AWAITING INDEPENDENT DECLARATION VERIFICATION** |
 
 > **Note on the FE-EV-008 → FE-EV-009 sequence — this is not a lost record.** Three quantitative-instrument events occurred between them — **F-IR4** (fresh independent re-acceptance, 39 PASS · 0 PARTIAL · 1 FAIL), **F-IR4V2** (independent verification establishing that the instrument is intact, that E9 is correct and that the E11 total is 51) and **F-IR4F** (the E11 occurrence-decomposition correction, commit `250cfe7`) — and **none was written to this log at the time it happened.** Their outcomes are recorded in the **plan §16 phase-history table**, and `FE-EV-009` states the chain it closes.
 >
@@ -1736,3 +1737,27 @@ The 19 exact paths below are the complete batch allow-list relative to HEAD. Nin
 | **Validation** | **35 PASS / 0 FAIL / 0 ERROR** in the full deterministic suite; diff hygiene and clean index pass. Baseline: **5 PASS / 2 FAIL, exit 1**. Exact 17-path batch: **6 PASS / 2 FAIL, exit 1**. Only chapter/Part-README manifests fail, exclusively at HEAD/index because those layers retain LR-1 identities; working-tree counts and digests match evolved constants. No unrelated invariant fails. These profile executions are FAIL, not PASS. |
 | **Mutation / next action** | UNSTAGED / UNCOMMITTED / UNPUSHED. Fresh narrow LR-2CV must verify the closure delta and final package before separately authorised checkpoint/integration. Learning-Ready Gate preparation/assessment follows; none performed here. No release, tag, merge or integration is claimed. |
 | **Non-collapse** | Preserve LR-2 authorship, LR-2V Decision B, LR-2F1, supplied LR-2V2 Decision A, this closure preparation, future LR-2CV and any checkpoint as separate acts. |
+
+## Event FE-EV-047 — Learning-Ready Gate PASS and Controlled LR-RC Declaration Preparation
+
+| Field | Value |
+| --- | --- |
+| **Event ID** | `FE-EV-047` |
+| **Date** | 2026-09-10 |
+| **Phase** | H — governance recording / LR-RC1R declaration preparation; no new semantic assessment |
+| **Scope** | Exact ten-path declaration package in [declaration §8](LEARNING_READY_RC_DECLARATION.md#8-frozen-declaration-package-and-protected-boundary); no chapter or Part README delta |
+| **Score / verdict** | **UNSCORED preparation**. Supplied independent LRG-1: **12 PASS / 0 FAIL, Decision A — LEARNING-READY GATE PASS; CANDIDATE ELIGIBLE FOR CONTROLLED LR-RC DECLARATION** |
+| **Independence** | Records the original 2026-09-09 independent LRG-1 assessment and authoritative LRG-1E mapping supplied in LR-RC1R; no repeat assessment, reclassification or author self-verification of the declaration |
+| **Five LR blocker closures** | FE-L1-002, FE-L1-007, FE-L2-003, FE-L3-003, FE-T5-001 remain CLOSED / VERIFIED; LR-1/LR-2 COMPLETE / INDEPENDENTLY VERIFIED / CLOSED |
+| **Residual evidence** | 15 unique residuals: **10 SAFE TO DEFER / 5 EARLY CORRECTION RECOMMENDED / NON-BLOCKING / 0 LR BLOCKING**. Exact rationale table persisted in declaration §4. All remain P3 / Class C / OPEN / NOT VERIFIED; FE-1=6, FE-2=5, FE-3=4 |
+| **Observation** | LRG-CANDIDATE-01 remains NON-BLOCKING; active stale LR-2 workflow summaries reconciled, historical evidence clearly distinguished and preserved. No canonical finding allocated; correction awaits independent declaration verification |
+| **Content baseline** | `5c7359a3a07530dc26457208e8092d8ebcc3f469` — permanently distinct from declaration checkpoint commit **NOT YET CREATED** |
+| **Chapter manifest** | 137 / `7e252ff0c38d4d1d1e4b7af1cdc9a664f934a8b4e60cad0c0c7b08406010dd22` |
+| **Part README manifest** | 12 / `6b80e69f00bf06497d8fe7a8432ff6a9af8672861abf2332ebdb5bcedc6a5907` |
+| **Expanded baseline manifest** | 306 assessed tracked objects / `b3811eb514345384d6b1bf4a8894a8f7e38a3e6e605fbb6857e0f261e3f1ac0e`; permanent path/blob inventory linked from declaration §2; explicit governance delta in §8 |
+| **Current status** | **LEARNING-READY — CONTROLLED RC** designation; **DECLARATION PREPARED — AWAITING INDEPENDENT DECLARATION VERIFICATION**. First Edition IN PROGRESS; 137/137 authored chapters, metadata Draft; 15 remaining findings; zero LR blockers |
+| **Artefacts affected** | Review Plan current state/boundary; Findings current state and residual-evidence link; Verification Ledgers supplied-result record; Review Log sole new event/index row; current README/sprint/gate/inventory summaries; declaration and content manifest |
+| **Deterministic boundary** | Preflight 35 tests PASS; baseline 7 PASS, exit 0. Learning-Ready profile remains intentionally INCOMPLETE: evidence validator NOT IMPLEMENTED in FTR-2. Checker/tests unchanged. Independent review proves meaning; automation proves invariants |
+| **Preparation validation** | 35 tests PASS / 0 FAIL / 0 ERROR; baseline 7 PASS / 0 FAIL, exit 0; Learning-Ready diagnostic 7 PASS / 1 INCOMPLETE / 0 FAIL, exit 3; diff hygiene PASS. Exact residual mapping 15 unique / 10-5-0 / FE 6-5-4; lifecycle 29/15/14; events 47/47; both manifests unchanged at all three layers; historical log and canonical finding bodies preserved; exact ten-path scope. These are author checks, not independent declaration verification |
+| **Mutation / next action** | Package UNSTAGED / UNCOMMITTED / UNPUSHED. Fresh independent LR-RC declaration verification required before separately authorized checkpointing. No tag, release, v1.0.0, First Edition completion or publication-readiness claim; FE-1/FE-2/FE-3 not started |
+| **Non-collapse note** | Preserve FE-EV-001–046 byte-for-byte. Original LRG-1 independent assessment, LRG-1E evidence recovery, this recording/preparation, future independent declaration verification and any checkpoint are distinct acts |
