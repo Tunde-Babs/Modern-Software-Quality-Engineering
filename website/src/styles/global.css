@@ -595,3 +595,11 @@ main {
     break-inside:avoid;
   }
 }
+
+.handbook-navigation { margin:1.5rem 0; border:1px solid var(--line); padding:.75rem 1rem; }
+.handbook-navigation summary { cursor:pointer; font-weight:650; }
+.handbook-navigation a { display:inline-block; padding:.35rem 0; }
+.handbook-navigation [aria-current="page"] { font-weight:750; text-decoration-thickness:.15em; }
+.handbook-navigation ol { padding-left:1.5rem; }
+.prose, .breadcrumb, .chapter-pagination, .curriculum { overflow-wrap:anywhere; }
+@media print { .handbook-navigation { display:none; } }

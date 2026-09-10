@@ -1,15 +1,20 @@
 import assert from 'node:assert/strict';
-import { readFileSync, readdirSync, mkdirSync, writeFileSync } from 'node:fs';
+import { readFileSync, readdirSync, mkdirSync, writeFileSync, statSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { load } from 'cheerio';
-import { loadDocuments } from '../src/lib/content/loader.ts';
+import { registry, chapterSources, resourceEntries, partSources } from '../src/lib/content/registry.ts';
+import { loadDocuments, loadParts, metadataCensus } from '../src/lib/content/loader.ts';
 import { authenticateSources } from './preservation.ts';
+import { readCanonical } from '../src/lib/content/registry.ts';
+import { assertReferencePreservation } from './reference-preservation.ts';
 const dist = resolve('dist');
 const walk = (dir: string): string[] => readdirSync(dir, { withFileTypes: true }).flatMap(entry => entry.isDirectory() ? walk(resolve(dir, entry.name)) : [resolve(dir, entry.name)]);
 const files = walk(dist);
 const pages = files.filter(path => path.endsWith('.html'));
-assert.equal(pages.length, 5, 'Expected home, two indexes, chapter, and diagram only');
+assert.equal(pages.length, registry.size + 4, 'Every registry route plus home, two indexes, and 404');
+assert.equal(pages.length, 247);
 const urls = new Map(pages.map(path => ['/' + path.slice(dist.length + 1).replace(/index\.html$/, ''), load(readFileSync(path, 'utf8'))]));
+const titles = new Set<string>();
 let internalLinks = 0;
 for (const [route, $] of urls) {
   assert.equal($('h1').length, 1, route);
@@ -20,10 +25,16 @@ for (const [route, $] of urls) {
   assert.equal($('meta[name="robots"]').attr('content'), 'noindex, nofollow');
   assert.equal($('link[rel="canonical"]').attr('href'), `https://msqe.dev${route}`);
   assert.ok($('title').text().endsWith(' | MSQE'));
+  assert.ok(!titles.has($('title').text()), `Duplicate title: ${route}`);
+  titles.add($('title').text());
   assert.ok($('meta[name="description"]').attr('content'));
   assert.equal($('meta[property="og:url"]').attr('content'), `https://msqe.dev${route}`);
   assert.equal($('script,iframe,form').length, 0, 'No executable content, collection forms or third-party browser dependencies');
   assert.equal($('[tabindex]').filter((_, el) => Number($(el).attr('tabindex')) > 0).length, 0);
+  assert.equal($('th:not([scope="col"])').length, 0, route);
+  assert.equal($('.table-scroll[tabindex="0"][role="region"][aria-label]').length, $('table').length, route);
+  assert.equal($('pre[tabindex="0"][aria-label]').length, $('pre').length, route);
+  assert.equal($('.skip-link').attr('href'), '#main-content');
   const ids = $('[id]').map((_, el) => $(el).attr('id')!).get();
   assert.equal(ids.length, new Set(ids).size, route);
   $('[aria-labelledby],[aria-describedby]').each((_, el) => {
@@ -45,16 +56,39 @@ for (const [route, $] of urls) {
     internalLinks++;
   });
 }
+const references = [];
 for (const document of loadDocuments()) {
   const $ = urls.get(document.route)!;
+  if (document.source.endsWith('.md')) references.push(assertReferencePreservation(document.source, readCanonical(document.source), $('article.prose').html()!));
   assert.equal($('[data-pagefind-body]').length, 1);
   assert.equal($('nav[aria-label="Table of contents"]').length, 1);
   assert.equal($('nav[aria-label="Breadcrumb"] [aria-current="page"]').length, 1);
 }
+for (const entry of registry.values()) assert.ok(urls.has(entry.route), `Missing route ${entry.route}`);
+for (const [index, source] of chapterSources.entries()) {
+  const $ = urls.get(registry.get(source)!.route)!;
+  for (const [rel, offset] of [['prev', -1], ['next', 1]] as const) {
+    const expected = chapterSources[index + offset];
+    assert.equal($(`nav[aria-label="Chapter navigation"] a[rel="${rel}"]`).attr('href'), expected ? registry.get(expected)!.route : undefined);
+  }
+  assert.equal($('nav[aria-label="Handbook navigation"] [aria-current="page"]').attr('href'), registry.get(source)!.route);
+}
+for (const part of loadParts()) {
+  const $ = urls.get(part.route)!;
+  assert.deepEqual($('.curriculum a').map((_, a) => $(a).attr('href')).get(), part.chapters.map(doc => doc.route));
+  assert.ok(urls.get('/handbook/')!(`a[href="${part.route}"]`).length);
+}
+const sitemap = load(readFileSync(resolve(dist, 'sitemap.xml'), 'utf8'), { xml: true });
+assert.deepEqual(sitemap('loc').map((_, el) => sitemap(el).text()).get().sort(), [...urls.keys()].filter(route => route !== '/404.html').map(route => `https://msqe.dev${route}`).sort());
 assert.ok(!files.some(path => /\.(?:md|ts|py)$/.test(path)), 'No canonical sources or governance files in output');
 const issues = loadDocuments().flatMap(doc => doc.issues);
 mkdirSync('artifacts', { recursive: true });
+writeFileSync('artifacts/reference-census.json', JSON.stringify({ canonical: references.reduce((sum, row) => sum + row.canonical, 0), rendered: references.reduce((sum, row) => sum + row.rendered, 0), rows: references }, null, 2) + '\n');
 writeFileSync('artifacts/link-report.json', JSON.stringify({ unresolvedOccurrences: issues.length, unresolvedTargets: new Set(issues.map(issue => issue.target)).size, issues }, null, 2) + '\n');
+writeFileSync('artifacts/metadata-census.json', JSON.stringify(metadataCensus(), null, 2) + '\n');
+writeFileSync('artifacts/route-census.json', JSON.stringify([...registry.values()], null, 2) + '\n');
+const sizes = files.map(path => ({ path: path.slice(dist.length + 1), bytes: statSync(path).size })).sort((a, b) => b.bytes - a.bytes);
+writeFileSync('artifacts/build-census.json', JSON.stringify({ pages: pages.length, chapters: chapterSources.length, parts: partSources.length, resources: resourceEntries.length, internalLinks, brokenDestinations: 0, distBytes: sizes.reduce((n, file) => n + file.bytes, 0), largestPages: sizes.filter(file => file.path.endsWith('.html')).slice(0, 5), assets: sizes.filter(file => !file.path.endsWith('.html')) }, null, 2) + '\n');
 writeFileSync('artifacts/source-preservation.json', JSON.stringify(authenticateSources(), null, 2) + '\n');
 console.log(`BUILD SMOKE PASS: ${pages.length} static pages; ${internalLinks} internal links and fragments checked; no scripts or broken public links.`);
 console.log(`LINK REPORT: ${issues.length} explicitly reported occurrences / ${new Set(issues.map(issue => issue.target)).size} deferred source targets. See artifacts/link-report.json.`);

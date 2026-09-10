@@ -11,12 +11,12 @@ const documents = loadDocuments();
 const chapter = documents.find(doc => doc.source === chapterSource)!;
 const diagram = documents.find(doc => doc.source === diagramSource)!;
 
-test('discovers 137 canonical chapters across 12 Parts; selects exactly two source files', () => {
+test('discovers 137 canonical chapters across 12 Parts; publishes every chapter and delivered resource', () => {
   const all = discoverChapters();
   assert.equal(all.length, 137);
   assert.equal(new Set(all.map(path => path.split('/')[1])).size, 12);
   assert.ok(all.includes(chapterSource));
-  assert.equal(registry.size, 2);
+  assert.equal([...registry.values()].filter(e => e.kind === 'chapter').length, 137);
 });
 test('extracts all eight metadata fields from the original table', () => {
   assert.deepEqual(chapter.metadata, {
@@ -85,15 +85,15 @@ test('footnotes, backlinks and TOC all target real unique IDs', () => {
 test('source-relative links resolve from the chapter directory and rewrite to resource routes', () => {
   assert.deepEqual(resolveSourceLink(chapterSource, '../../../diagrams/chapter-01-quality-engineering-model.md'), { source: diagramSource, hash: '' });
   assert.ok(chapter.html.includes('href="/resources/quality-system-model/"'));
-  assert.equal(chapter.issues.length, 4);
-  assert.equal(new Set(chapter.issues.map(issue => issue.target)).size, 3);
-  assert.equal(load(chapter.html)('.unavailable-link').length, 4);
+  assert.equal(chapter.issues.length, 0);
+  assert.equal(new Set(chapter.issues.map(issue => issue.target)).size, 0);
+  assert.equal(load(chapter.html)('.unavailable-link').length, 0);
   assert.ok(!/href="[^\"]*(?:\.md|\/book\/|\/chapters\/)/.test(chapter.html));
 });
 test('unreviewed links, missing targets, fragments, unsafe URLs and boundaries fail clearly', () => {
   const anchors = new Map([[chapterSource, new Set(['section-metadata'])]]);
   const check = (href: string) => transformLinks(prepare(chapterSource, `# Example\n\n[Link](${href})`, 'diagram').tree, chapterSource, anchors);
-  for (const href of ['javascript:alert%281%29','data:text/html,test','//evil.example','../missing.md','../../../../LICENSE','chapter-03-understanding-software-quality.md','#missing','https://user:pass@example.com']) assert.throws(() => check(href));
+  for (const href of ['javascript:alert%281%29','data:text/html,test','//evil.example','../missing.md','../../../../LICENSE','../../README.md','#missing','https://user:pass@example.com']) assert.throws(() => check(href));
   const doc = prepare(chapterSource, '# Example\n\n[Metadata](#metadata)', 'diagram');
   transformLinks(doc.tree, chapterSource, anchors);
   assert.ok(serialize(doc.tree).includes('href="#section-metadata"'));
@@ -125,8 +125,8 @@ test('table headers and overflow regions are accessible, code remains selectable
 test('previous/next respects discovery order without skipping omitted chapters', () => {
   const neighbours = chapterNeighbours(chapterSource);
   assert.equal(neighbours.previous, null);
-  assert.equal(neighbours.next?.available, null);
-  assert.ok(neighbours.next?.label.startsWith('chapter 02'));
+  assert.equal(neighbours.next?.available?.source, discoverChapters()[1]);
+  assert.ok(neighbours.next?.label.startsWith('Chapter 2'));
   const nextSource = discoverChapters()[1];
   const expanded = new Map(registry).set(nextSource, { source: nextSource, route: chapterRoute(nextSource), kind: 'chapter' });
   assert.equal(chapterNeighbours(chapterSource, discoverChapters(), expanded).next?.available?.route, chapterRoute(nextSource));

@@ -1,0 +1,14 @@
+---
+import { loadParts } from '../lib/content/loader';
+interface Props { source: string }
+const { source } = Astro.props;
+const parts = loadParts();
+const current = parts.find(part => part.chapters.some(doc => doc.source === source));
+---
+<nav class="handbook-navigation" aria-label="Handbook navigation" data-pagefind-ignore>
+  <details><summary>Browse the handbook{current ? ` · Part ${current.number}` : ''}</summary>
+    <ol>{parts.map(part => <li><a href={part.route}>{part.title}</a>
+      {part === current && <ol>{part.chapters.map(doc => <li><a href={doc.route} aria-current={doc.source === source ? 'page' : undefined}>{doc.title}</a></li>)}</ol>}
+    </li>)}</ol>
+  </details>
+</nav>

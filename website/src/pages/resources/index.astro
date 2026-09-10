@@ -2,11 +2,12 @@
 import Base from '../../layouts/Base.astro';
 import { loadDocuments } from '../../lib/content/loader';
 const resources = loadDocuments().filter(doc => doc.kind !== 'chapter');
+const groups = [{ kind: 'lab', title: 'Labs' }, { kind: 'case-study', title: 'Case studies' }, { kind: 'exercise', title: 'Worksheets and workshops' }, { kind: 'diagram', title: 'Diagrams' }, { kind: 'code', title: 'Code examples' }];
 ---
-<Base title="Resources" description="Study the existing MSQE Quality System Model with its source and textual interpretation.">
-  <div class="page index-page"><p class="eyebrow">Supporting your study</p><h1>Resources</h1>
-    <p class="subtitle">Explore the model behind Chapter 1.</p>
-    <p>This preview includes one existing teaching resource. Its source status and learning context are preserved.</p>
-    <ul class="curriculum">{resources.map(doc => <li><a href={doc.route}>{doc.title}</a><p>Diagram source, learning objectives, and textual interpretation.</p></li>)}</ul>
+<Base title="Resources" description="Delivered MSQE labs, case studies, worksheets, diagrams, and TypeScript learning projects.">
+  <div class="page index-page" data-pagefind-body><p class="eyebrow">Supporting your study</p><h1>Resources</h1>
+    <p class="subtitle">Available now</p><p>Part I activities and diagrams, plus five Part II code projects. Code project pages include their delivered source, tests, fixtures, and configuration as readable text.</p>
+    {groups.map(group => <section><h2>{group.title}</h2><ul class="curriculum">{resources.filter(doc => doc.kind === group.kind && (doc.kind !== 'code' || doc.source.endsWith('/README.md'))).map(doc => <li><a href={doc.route}>{doc.title}</a></li>)}</ul></section>)}
+    <section><h2>Planned / not yet published</h2><p>Additional companion assets for Parts III–XII are not published here. Worked examples and practical exercises delivered inside chapters remain available in the handbook.</p><a href="/handbook/">Browse the handbook</a></section>
   </div>
 </Base>

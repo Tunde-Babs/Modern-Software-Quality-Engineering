@@ -1,17 +1,19 @@
 ---
 import Base from '../../layouts/Base.astro';
 import Readiness from '../../components/Readiness.astro';
-import { loadDocuments } from '../../lib/content/loader';
-const chapters = loadDocuments().filter(doc => doc.kind === 'chapter');
+import { loadParts } from '../../lib/content/loader';
+const parts = loadParts();
 ---
-<Base title="Handbook" description="Begin the MSQE curriculum with Part I: Foundations of Modern Software Quality Engineering.">
-  <div class="page index-page">
+<Base title="Handbook" description="Explore all 137 chapters across the 12 Parts of Modern Software Quality Engineering.">
+  <div class="page index-page" data-pagefind-body>
     <p class="eyebrow">Read · Reason · Apply</p><h1>Handbook</h1>
-    <p class="subtitle">Foundations for engineering reliable systems.</p>
-    <p>This preview includes one chapter from the 137-chapter, 12-part curriculum. Additional chapters and Part indexes are not yet available here.</p>
+    <p class="subtitle">137 chapters · 12 Parts</p>
+    <p>Progress from foundations and programming through testing, data, cloud, AI, architecture, and engineering leadership.</p>
     <Readiness />
-    <section aria-labelledby="part-one"><p class="eyebrow">Part I</p><h2 id="part-one">Foundations of Modern Software Quality Engineering</h2>
-      <ol class="curriculum">{chapters.map(doc => <li><a href={doc.route}>{doc.title}</a><p>{doc.metadata?.['Estimated study time']}</p></li>)}</ol>
-    </section>
+    <ol class="curriculum">{parts.map(part => <li>
+      <h2><a href={part.route}>{part.title}</a></h2><p>{part.description}</p>
+      <p>{part.chapters.length} chapters · Manuscript status: Draft</p>
+      <a href={part.chapters[0].route}>Start Part {part.number}</a>
+    </li>)}</ol>
   </div>
 </Base>

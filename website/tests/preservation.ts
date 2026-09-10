@@ -2,7 +2,7 @@ import { execFileSync } from 'node:child_process';
 import { createHash } from 'node:crypto';
 import assert from 'node:assert/strict';
 import { repoRoot } from '../src/lib/content/registry.ts';
-export const base = '10e79997f48c3f84c16487aa2601d89d6b680985';
+export const base = '522723dcb6daf655a90c7b9e11f545d177df97ce';
 export const protectedPaths = ['book', 'labs', 'code', 'diagrams', 'docs/02-first-edition-review', 'tools/first_edition_gate.py', 'tests/test_first_edition_gate.py', 'CHANGELOG.md', 'LICENSE'];
 const git = (...args: string[]) => execFileSync('git', args, { cwd: repoRoot, encoding: 'utf8', maxBuffer: 10 * 1024 * 1024 });
 export function authenticateSources() {

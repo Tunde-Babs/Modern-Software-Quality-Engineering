@@ -1,8 +1,9 @@
 ---
 import Reading from '../../layouts/Reading.astro';
-import { loadDocuments } from '../../lib/content/loader';
+import Part from '../../layouts/Part.astro';
+import { loadDocuments, loadParts } from '../../lib/content/loader';
 export function getStaticPaths() {
-  return loadDocuments().filter(doc => doc.kind === 'chapter').map(document => ({ params: { slug: document.route.replace('/handbook/', '').replace(/\/$/, '') }, props: { document } }));
+  return [...loadParts().map(part => ({ params: { slug: part.route.replace('/handbook/', '').replace(/\/$/, '') }, props: { part, document: undefined } })), ...loadDocuments().filter(doc => doc.kind === 'chapter').map(document => ({ params: { slug: document.route.replace('/handbook/', '').replace(/\/$/, '') }, props: { document, part: undefined } }))];
 }
 ---
-<Reading document={Astro.props.document} />
+{Astro.props.part ? <Part part={Astro.props.part} /> : Astro.props.document && <Reading document={Astro.props.document} />}

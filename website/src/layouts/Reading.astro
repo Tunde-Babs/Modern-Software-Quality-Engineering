@@ -1,4 +1,6 @@
 ---
+import HandbookNavigation from '../components/HandbookNavigation.astro';
+import { loadDocuments, loadParts } from '../lib/content/loader';
 import Base from './Base.astro';
 import Readiness from '../components/Readiness.astro';
 import Contents from '../components/Contents.astro';
@@ -7,27 +9,34 @@ import type { Document } from '../lib/content/loader';
 interface Props { document: Document }
 const { document: doc } = Astro.props;
 const neighbours = doc.kind === 'chapter' ? chapterNeighbours(doc.source) : null;
+const part = loadParts().find(part => part.chapters.some(chapter => chapter.source === doc.source));
+const projectSource = doc.kind === 'code' ? doc.source.split('/').slice(0, 3).join('/') + '/README.md' : null;
+const projectFiles = projectSource === doc.source ? loadDocuments().filter(item => item.kind === 'code' && item.source.startsWith(doc.source.replace('README.md', '')) && item.source !== doc.source) : [];
+const project = projectSource ? loadDocuments().find(item => item.source === projectSource) : null;
 const section = doc.kind === 'chapter' ? 'Handbook' : 'Resources';
 const sectionRoute = doc.kind === 'chapter' ? '/handbook/' : '/resources/';
 ---
-<Base title={doc.title} description={doc.kind === 'chapter' ? 'Learn how quality is engineered across software, delivery, and operations. Part I, Chapter 1 of the MSQE handbook.' : 'The MSQE Quality System Model: canonical diagram source and accessible textual interpretation.'}>
+<Base title={doc.title} description={doc.metadata ? `${doc.metadata.Part}. ${doc.title}. Study time: ${doc.metadata['Estimated study time']}.` : doc.title}>
   <div class="page reading-page">
     <nav class="breadcrumb" aria-label="Breadcrumb" data-pagefind-ignore>
-      <ol><li><a href="/">MSQE</a></li><li><a href={sectionRoute}>{section}</a></li><li aria-current="page">{doc.metadata ? `Part I · Chapter ${doc.metadata.Chapter}` : 'Quality System Model'}</li></ol>
+      <ol><li><a href="/">MSQE</a></li><li><a href={sectionRoute}>{section}</a></li>{part && <li><a href={part.route}>Part {part.number}</a></li>}<li aria-current="page">{doc.metadata ? `Chapter ${doc.metadata.Chapter}` : doc.title}</li></ol>
     </nav>
     <Readiness />
+    {part && <HandbookNavigation source={doc.source} />}
+    {project && project.source !== doc.source && <p><a href={project.route}>Back to {project.title}</a></p>}
     <div class="reading-grid">
       <div class="reading-column">
         {doc.metadata && <div class="chapter-summary" aria-label="Chapter at a glance" data-pagefind-ignore>
-          <p class="eyebrow">Part I · Foundations</p>
+          <p class="eyebrow">{doc.metadata.Part}</p>
           <p>{doc.metadata['Estimated study time']}<br />Manuscript status: {doc.metadata.Status} · Source version: {doc.metadata.Version}</p>
         </div>}
-        {doc.mermaid && <aside class="diagram-note" data-pagefind-ignore><strong>Diagram reading options</strong><p>This preview displays the original Mermaid source. The full textual interpretation follows it. Graphical rendering is not yet available.</p></aside>}
+        {doc.mermaid && <aside class="diagram-note" data-pagefind-ignore><strong>Diagram reading options</strong><p>This preview displays the original Mermaid source. Read it alongside the surrounding explanation. Graphical rendering is not yet available.</p></aside>}
         <article class="prose" data-pagefind-body set:html={doc.html} />
+        {projectFiles.length > 0 && <section><h2 id="project-files">Project files</h2><ul>{projectFiles.map(file => <li><a href={file.route}>{file.source.replace(doc.source.replace('README.md', ''), '')}</a></li>)}</ul></section>}
         {neighbours && <nav class="chapter-pagination" aria-label="Chapter navigation" data-pagefind-ignore>
           {(['previous', 'next'] as const).map(direction => {
             const item = neighbours[direction];
-            return item ? <div><span class="eyebrow">{direction}</span>{item.available ? <a href={item.available.route}>{item.label}</a> : <p>{item.label}<small>Not available in this preview</small></p>}</div> : <div><span class="eyebrow">{direction}</span><p>Beginning of handbook</p></div>;
+            return item ? <div><span class="eyebrow">{direction}</span>{item.available ? <a rel={direction === 'previous' ? 'prev' : 'next'} href={item.available.route}>{item.label}</a> : <p>{item.label}<small>Not available in this preview</small></p>}</div> : <div><span class="eyebrow">{direction}</span><p>{direction === 'previous' ? 'Beginning of handbook' : 'End of handbook'}</p></div>;
           })}
         </nav>}
       </div>

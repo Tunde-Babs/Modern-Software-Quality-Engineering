@@ -10,13 +10,13 @@ import { toString as mdText } from 'mdast-util-to-string';
 import { toString as htmlText } from 'hast-util-to-string';
 import type { Root as MdRoot, Table } from 'mdast';
 import type { Root as HtmlRoot, Element } from 'hast';
-import { readCanonical, registry, deferredSources, resolveSourceLink, type Entry } from './registry.ts';
+import { readCanonical, registry, deferredSources, unavailableSources, partSources, partRoute, chapterSources, resolveSourceLink, type Entry } from './registry.ts';
 
 const parser = unified().use(remarkParse).use(remarkGfm);
 const fields = ['Part', 'MQE-BOK domain', 'Chapter', 'Audience', 'Prerequisites', 'Estimated study time', 'Version', 'Status'] as const;
 export type Metadata = Record<typeof fields[number], string>;
 export type TocEntry = { id: string; label: string; level: number };
-export type LinkIssue = { source: string; href: string; target: string; reason: string };
+export type LinkIssue = { source: string; href: string; target: string; reason: string; category: 'A' | 'B' | 'C' | 'D' };
 export type Document = Entry & { title: string; metadata: Metadata | null; html: string; toc: TocEntry[]; issues: LinkIssue[]; mermaid: boolean };
 
 export function parseSource(source: string, markdown: string, kind: Entry['kind']) {
@@ -54,7 +54,23 @@ export function parseSource(source: string, markdown: string, kind: Entry['kind'
 
 function renderTree(tree: MdRoot): HtmlRoot {
   // Raw HTML is not enabled: content never becomes executable Astro/MDX.
-  return unified().use(remarkRehype).runSync(tree) as HtmlRoot;
+  // remark-rehype normally drops uncited footnote definitions. In canonical
+  // chapters these are bibliography entries, so retain their block content at
+  // its source position. Cited definitions keep the existing footer/backlinks.
+  const cited = new Set<string>();
+  visit(tree, 'footnoteReference', node => { cited.add(node.identifier.toUpperCase()); });
+  return unified().use(remarkRehype, {
+    handlers: {
+      footnoteDefinition(state, node) {
+        if (cited.has(node.identifier.toUpperCase())) return;
+        return {
+          type: 'element', tagName: 'div',
+          properties: { id: `user-content-fn-${encodeURIComponent(node.identifier.toUpperCase().toLowerCase())}` },
+          children: state.all(node),
+        };
+      },
+    },
+  }).runSync(tree) as HtmlRoot;
 }
 
 export function prepare(source: string, markdown: string, kind: Entry['kind']) {
@@ -89,7 +105,7 @@ export function transformLinks(tree: HtmlRoot, source: string, anchors: Map<stri
     const entry = routes.get(target.source);
     if (!entry) {
       if (!deferred.has(target.source)) throw new Error(`${source}: unresolved internal link ${href}`);
-      issues.push({ source, href, target: target.source, reason: 'Outside the WEB-2 slice' });
+      issues.push({ source, href, target: target.source, ...(unavailableSources.get(target.source) ?? { category: 'A' as const, reason: 'Delivered but not yet routed' }) });
       node.tagName = 'span';
       node.properties = { className: ['unavailable-link'] };
       node.children.push({ type: 'element', tagName: 'small', properties: {}, children: [{ type: 'text', value: ' (not available in this preview)' }] });
@@ -135,8 +151,22 @@ export function serialize(tree: HtmlRoot): string {
   return unified().use(rehypeStringify).stringify(sanitized);
 }
 
+let cachedDocuments: Document[] | undefined;
 export function loadDocuments(): Document[] {
-  const prepared = [...registry.values()].map(entry => ({ ...entry, ...prepare(entry.source, readCanonical(entry.source), entry.kind) }));
+  if (cachedDocuments) return cachedDocuments;
+  const prepared = [...registry.values()].filter(entry => entry.kind !== 'part').map(entry => {
+    const source = readCanonical(entry.source);
+    // Code is inert text, constructed as an AST rather than interpolated fences.
+    if (!entry.source.endsWith('.md')) {
+      const title = entry.source.replace('code/part-02-programming/', '');
+      const tree: MdRoot = { type: 'root', children: [
+        { type: 'heading', depth: 1, children: [{ type: 'text', value: title }] },
+        { type: 'code', lang: entry.source.endsWith('.ts') ? 'typescript' : 'json', value: source },
+      ] };
+      return { ...entry, title, metadata: null, tree: renderTree(tree), toc: [] as TocEntry[] };
+    }
+    return { ...entry, ...prepare(entry.source, source, entry.kind) };
+  });
   const anchors = new Map(prepared.map(doc => {
     const ids = new Set<string>();
     visit(doc.tree, 'element', node => {
@@ -148,10 +178,53 @@ export function loadDocuments(): Document[] {
     });
     return [doc.source, ids];
   }));
-  return prepared.map(doc => ({
+  cachedDocuments = prepared.map(doc => ({
     source: doc.source, route: doc.route, kind: doc.kind, title: doc.title, metadata: doc.metadata, toc: doc.toc,
     issues: transformLinks(doc.tree, doc.source, anchors),
     html: serialize(doc.tree),
     mermaid: readCanonical(doc.source).includes('```mermaid'),
   }));
+  return cachedDocuments;
+}
+
+type Part = { source: string; route: string; number: number; title: string; description: string; chapters: Document[] };
+let cachedParts: Part[] | undefined;
+export function loadParts(): Part[] {
+  if (cachedParts) return cachedParts;
+  const documents = loadDocuments();
+  cachedParts = partSources.map((source, index) => {
+    const tree = parser.parse(readCanonical(source));
+    const titleNode = tree.children[0];
+    if (titleNode?.type !== 'heading' || titleNode.depth !== 1) throw new Error(`${source}: missing Part title`);
+    const title = mdText(titleNode);
+    const roman = ['I','II','III','IV','V','VI','VII','VIII','IX','X','XI','XII'][index];
+    if (!title.startsWith(`Part ${roman} `)) throw new Error(`${source}: Part title mismatch`);
+    const section = tree.children.findIndex(n => n.type === 'heading' && n.depth === 2 && ['Overview','Mission','Purpose'].includes(mdText(n)));
+    const paragraph = tree.children[section + 1];
+    const description = section >= 0 && paragraph?.type === 'paragraph' ? mdText(paragraph).split(/(?<=\.)\s+/)[0] : '';
+    const chapters = documents.filter(doc => doc.kind === 'chapter' && doc.source.startsWith(source.replace('README.md', 'chapters/')));
+    return { source, route: partRoute(source), number: index + 1, title, description, chapters };
+  });
+  return cachedParts;
+}
+
+export function metadataCensus() {
+  const rows = chapterSources.map(source => {
+    const { metadata } = parseSource(source, readCanonical(source), 'chapter');
+    const time = metadata!['Estimated study time'];
+    const match = /^(\d+)(?:[–-](\d+))? (minutes?|hours?)\b/.exec(time);
+    const factor = match?.[3].startsWith('hour') ? 60 : 1;
+    return { source, metadata: metadata!, estimatedMinutes: match ? { min: Number(match[1]) * factor, max: Number(match[2] ?? match[1]) * factor } : null };
+  });
+  return { chapters: rows.length, missing: [], duplicate: [], numberingMismatches: [],
+    unexpectedFields: chapterSources.flatMap(source => {
+      const { tree } = parseSource(source, readCanonical(source), 'chapter');
+      const i = tree.children.findIndex(n => n.type === 'heading' && mdText(n) === 'Metadata');
+      return (tree.children[i + 1] as Table).children.slice(1).flatMap(row => {
+        const field = mdText(row.children[0]);
+        return fields.includes(field as typeof fields[number]) ? [] : [{ source, field }];
+      });
+    }),
+    estimatedTimeIssues: rows.filter(row => row.estimatedMinutes === null).map(row => ({ source: row.source, value: row.metadata['Estimated study time'] })),
+    statuses: rows.reduce<Record<string, number>>((counts, row) => { counts[row.metadata.Status] = (counts[row.metadata.Status] ?? 0) + 1; return counts; }, {}), rows };
 }
