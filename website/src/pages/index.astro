@@ -1,0 +1,20 @@
+---
+import Base from '../layouts/Base.astro';
+import Readiness from '../components/Readiness.astro';
+import { chapterRoute, chapterSource } from '../lib/content/registry';
+---
+<Base title="Modern Software Quality Engineering" description="Engineering Reliable Software, Data, Cloud & AI Systems. Read the MSQE handbook and explore its learning resources.">
+  <div class="page entry">
+    <p class="eyebrow">The MSQE handbook</p>
+    <h1>Modern Software<br />Quality Engineering</h1>
+    <p class="subtitle">Engineering Reliable Software, Data, Cloud &amp; AI Systems</p>
+    <div class="entry-actions"><a class="button" href={chapterRoute(chapterSource)}>Start Learning <span aria-hidden="true">→</span></a><a href="/handbook/">Explore Handbook</a></div>
+    <Readiness />
+    <section class="entry-reading" aria-labelledby="begin-heading">
+      <p class="eyebrow">Begin with the foundations</p>
+      <h2 id="begin-heading"><a href={chapterRoute(chapterSource)}>What Is Modern Software Quality Engineering?</a></h2>
+      <p>Part I · Chapter 1 · 90 minutes, plus the practical exercise</p>
+      <p>Explore quality as a system property, from stakeholder needs to production evidence and continuous learning.</p>
+    </section>
+  </div>
+</Base>

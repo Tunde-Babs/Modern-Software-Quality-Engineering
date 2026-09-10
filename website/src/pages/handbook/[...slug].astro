@@ -1,0 +1,8 @@
+---
+import Reading from '../../layouts/Reading.astro';
+import { loadDocuments } from '../../lib/content/loader';
+export function getStaticPaths() {
+  return loadDocuments().filter(doc => doc.kind === 'chapter').map(document => ({ params: { slug: document.route.replace('/handbook/', '').replace(/\/$/, '') }, props: { document } }));
+}
+---
+<Reading document={Astro.props.document} />

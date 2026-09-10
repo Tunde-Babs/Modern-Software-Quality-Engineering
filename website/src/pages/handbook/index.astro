@@ -1,0 +1,17 @@
+---
+import Base from '../../layouts/Base.astro';
+import Readiness from '../../components/Readiness.astro';
+import { loadDocuments } from '../../lib/content/loader';
+const chapters = loadDocuments().filter(doc => doc.kind === 'chapter');
+---
+<Base title="Handbook" description="Begin the MSQE curriculum with Part I: Foundations of Modern Software Quality Engineering.">
+  <div class="page index-page">
+    <p class="eyebrow">Read · Reason · Apply</p><h1>Handbook</h1>
+    <p class="subtitle">Foundations for engineering reliable systems.</p>
+    <p>This preview includes one chapter from the 137-chapter, 12-part curriculum. Additional chapters and Part indexes are not yet available here.</p>
+    <Readiness />
+    <section aria-labelledby="part-one"><p class="eyebrow">Part I</p><h2 id="part-one">Foundations of Modern Software Quality Engineering</h2>
+      <ol class="curriculum">{chapters.map(doc => <li><a href={doc.route}>{doc.title}</a><p>{doc.metadata?.['Estimated study time']}</p></li>)}</ol>
+    </section>
+  </div>
+</Base>

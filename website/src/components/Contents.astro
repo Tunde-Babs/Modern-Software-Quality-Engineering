@@ -1,0 +1,13 @@
+---
+import type { TocEntry } from '../lib/content/loader';
+interface Props { toc: TocEntry[] }
+const { toc } = Astro.props;
+---
+<aside class="contents" data-pagefind-ignore>
+  <details open>
+    <summary>On this page</summary>
+    <nav aria-label="Table of contents">
+      <ol>{toc.map(item => <li class:list={{ nested: item.level > 2 }}><a href={`#${item.id}`}>{item.label}</a></li>)}</ol>
+    </nav>
+  </details>
+</aside>

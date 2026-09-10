@@ -1,0 +1,12 @@
+---
+import Base from '../../layouts/Base.astro';
+import { loadDocuments } from '../../lib/content/loader';
+const resources = loadDocuments().filter(doc => doc.kind !== 'chapter');
+---
+<Base title="Resources" description="Study the existing MSQE Quality System Model with its source and textual interpretation.">
+  <div class="page index-page"><p class="eyebrow">Supporting your study</p><h1>Resources</h1>
+    <p class="subtitle">Explore the model behind Chapter 1.</p>
+    <p>This preview includes one existing teaching resource. Its source status and learning context are preserved.</p>
+    <ul class="curriculum">{resources.map(doc => <li><a href={doc.route}>{doc.title}</a><p>Diagram source, learning objectives, and textual interpretation.</p></li>)}</ul>
+  </div>
+</Base>

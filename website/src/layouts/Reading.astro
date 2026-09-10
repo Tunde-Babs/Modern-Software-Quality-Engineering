@@ -1,0 +1,37 @@
+---
+import Base from './Base.astro';
+import Readiness from '../components/Readiness.astro';
+import Contents from '../components/Contents.astro';
+import { chapterNeighbours } from '../lib/content/registry';
+import type { Document } from '../lib/content/loader';
+interface Props { document: Document }
+const { document: doc } = Astro.props;
+const neighbours = doc.kind === 'chapter' ? chapterNeighbours(doc.source) : null;
+const section = doc.kind === 'chapter' ? 'Handbook' : 'Resources';
+const sectionRoute = doc.kind === 'chapter' ? '/handbook/' : '/resources/';
+---
+<Base title={doc.title} description={doc.kind === 'chapter' ? 'Learn how quality is engineered across software, delivery, and operations. Part I, Chapter 1 of the MSQE handbook.' : 'The MSQE Quality System Model: canonical diagram source and accessible textual interpretation.'}>
+  <div class="page reading-page">
+    <nav class="breadcrumb" aria-label="Breadcrumb" data-pagefind-ignore>
+      <ol><li><a href="/">MSQE</a></li><li><a href={sectionRoute}>{section}</a></li><li aria-current="page">{doc.metadata ? `Part I · Chapter ${doc.metadata.Chapter}` : 'Quality System Model'}</li></ol>
+    </nav>
+    <Readiness />
+    <div class="reading-grid">
+      <div class="reading-column">
+        {doc.metadata && <div class="chapter-summary" aria-label="Chapter at a glance" data-pagefind-ignore>
+          <p class="eyebrow">Part I · Foundations</p>
+          <p>{doc.metadata['Estimated study time']}<br />Manuscript status: {doc.metadata.Status} · Source version: {doc.metadata.Version}</p>
+        </div>}
+        {doc.mermaid && <aside class="diagram-note" data-pagefind-ignore><strong>Diagram reading options</strong><p>This preview displays the original Mermaid source. The full textual interpretation follows it. Graphical rendering is not yet available.</p></aside>}
+        <article class="prose" data-pagefind-body set:html={doc.html} />
+        {neighbours && <nav class="chapter-pagination" aria-label="Chapter navigation" data-pagefind-ignore>
+          {(['previous', 'next'] as const).map(direction => {
+            const item = neighbours[direction];
+            return item ? <div><span class="eyebrow">{direction}</span>{item.available ? <a href={item.available.route}>{item.label}</a> : <p>{item.label}<small>Not available in this preview</small></p>}</div> : <div><span class="eyebrow">{direction}</span><p>Beginning of handbook</p></div>;
+          })}
+        </nav>}
+      </div>
+      <Contents toc={doc.toc} />
+    </div>
+  </div>
+</Base>

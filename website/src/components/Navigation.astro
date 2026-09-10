@@ -1,0 +1,16 @@
+---
+const path = Astro.url.pathname;
+const items = [
+  { label: 'Handbook', href: '/handbook/' },
+  { label: 'Paths' },
+  { label: 'Resources', href: '/resources/' },
+  { label: 'About' },
+  { label: 'Search' },
+];
+---
+<nav aria-label="Primary" id="primary-navigation">
+  <ul>{items.map(item => <li>{item.href
+    ? <a href={item.href} aria-current={path === item.href ? 'page' : path.startsWith(item.href) ? 'location' : undefined}>{item.label}</a>
+    : <span class="nav-unavailable" aria-disabled="true">{item.label}<span class="sr-only"> — not available in this preview</span></span>}
+  </li>)}</ul>
+</nav>
