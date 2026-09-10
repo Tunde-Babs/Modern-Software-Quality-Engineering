@@ -71,8 +71,18 @@ export function discoverResources(): Entry[] {
     const slug = source.replace('code/part-02-programming/', '').replace(/README\.md$/, '').replaceAll('.', '-').replace(/\/$/, '').replace(/([a-z])([A-Z])/g, '$1-$2').toLowerCase();
     entries.push({ source, kind: 'code', route: `/resources/code/part-02/${slug}/` });
   }
+  for (const source of companionSources) entries.push({ source, kind: 'code', route: `/resources/code/part-02/${source.replace('code/part-02-programming/', '').replace(/\.md$/, '')}/` });
   return entries;
 }
+// Reviewed teaching fixtures only; never traverse arbitrary repository docs.
+export const companionSources = [
+  ...['change-plan', 'expected-commit-plan', 'pull-request-description', 'review-comments'].map(name => `code/part-02-programming/delivery-04-collaborative-tested-utilities/docs/${name}.md`),
+  ...['implementation-plan', 'limitations-and-residual-risk', 'proposed-commit-plan', 'pull-request-description', 'validation-evidence'].map(name => `code/part-02-programming/capstone-quality-engineering-toolkit/docs/${name}.md`),
+];
+export const resourceCollections = [
+  { source: 'code/part-02-programming/capstone-quality-engineering-toolkit/docs', route: '/resources/code/part-02/capstone-quality-engineering-toolkit/docs/', title: 'Toolkit planning and review artifacts' },
+  { source: 'code/part-02-programming/delivery-04-collaborative-tested-utilities/test', route: '/resources/code/part-02/delivery-04-collaborative-tested-utilities/test/', title: 'Collaborative utilities tests' },
+];
 export const resourceEntries = discoverResources();
 export const registry = createRegistry([
   ...chapterSources.map(source => ({ source, route: chapterRoute(source), kind: 'chapter' as const })),
@@ -81,7 +91,6 @@ export const registry = createRegistry([
 ]);
 export const unavailableSources = new Map<string, { category: 'A' | 'B' | 'C' | 'D'; reason: string }>([
   ['docs/00-project/QA_TO_QE_TRANSITION_FRAMEWORK.md', { category: 'C', reason: 'Project framework is outside the learner publication boundary' }],
-  ...['delivery-04-collaborative-tested-utilities/docs/pull-request-description.md', 'delivery-04-collaborative-tested-utilities/docs/review-comments.md', 'delivery-04-collaborative-tested-utilities/docs/change-plan.md', 'delivery-04-collaborative-tested-utilities/docs/expected-commit-plan.md', 'capstone-quality-engineering-toolkit/docs/limitations-and-residual-risk.md', 'capstone-quality-engineering-toolkit/docs', 'delivery-04-collaborative-tested-utilities/test'].map(path => [`code/part-02-programming/${path}`, { category: 'A' as const, reason: 'Delivered companion material; not yet routed' }] as const),
 ]);
 export const deferredSources = new Set(unavailableSources.keys());
 
@@ -100,6 +109,11 @@ export function resolveSourceLink(source: string, href: string): { source: strin
   const hash = hashAt < 0 ? '' : decodeURIComponent(href.slice(hashAt + 1));
   const target = path ? relative(repoRoot, resolve(repoRoot, dirname(source), decodeURIComponent(path))).split(sep).join('/') : source;
   if (target.startsWith('../') || target === '..') throw new Error(`Source escapes repository: ${href}`);
+  if (resourceCollections.some(collection => collection.source === target)) {
+    const actual = realpathSync(resolve(repoRoot, target));
+    if (!actual.startsWith(realpathSync(repoRoot) + sep)) throw new Error(`Source escapes repository: ${href}`);
+    return { source: target, hash };
+  }
   // Explicit omissions must still exist. No arbitrary docs or missing paths are accepted.
   if (unavailableSources.has(target)) {
     const actual = realpathSync(resolve(repoRoot, target));

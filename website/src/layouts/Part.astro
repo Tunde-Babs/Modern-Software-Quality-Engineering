@@ -8,7 +8,7 @@ const parts = loadParts();
 ---
 <Base title={part.title} description={part.description || part.title}>
   <div class="page index-page" data-pagefind-body>
-    <nav aria-label="Breadcrumb" data-pagefind-ignore><a href="/handbook/">Handbook</a></nav>
+    <nav class="breadcrumb" aria-label="Breadcrumb" data-pagefind-ignore><ol><li><a href="/">MSQE</a></li><li><a href="/handbook/">Handbook</a></li><li aria-current="page">Part {part.number}</li></ol></nav>
     <h1>{part.title}</h1><p>{part.description}</p><Readiness />
     <h2>Chapters</h2>
     <ol class="curriculum">{part.chapters.map(doc => <li>

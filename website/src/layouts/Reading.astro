@@ -13,10 +13,11 @@ const part = loadParts().find(part => part.chapters.some(chapter => chapter.sour
 const projectSource = doc.kind === 'code' ? doc.source.split('/').slice(0, 3).join('/') + '/README.md' : null;
 const projectFiles = projectSource === doc.source ? loadDocuments().filter(item => item.kind === 'code' && item.source.startsWith(doc.source.replace('README.md', '')) && item.source !== doc.source) : [];
 const project = projectSource ? loadDocuments().find(item => item.source === projectSource) : null;
+const supportingChapters = doc.kind !== 'chapter' ? loadDocuments().filter(item => item.kind === 'chapter' && item.html.includes(`href="${doc.route}`)) : [];
 const section = doc.kind === 'chapter' ? 'Handbook' : 'Resources';
 const sectionRoute = doc.kind === 'chapter' ? '/handbook/' : '/resources/';
 ---
-<Base title={doc.title} description={doc.metadata ? `${doc.metadata.Part}. ${doc.title}. Study time: ${doc.metadata['Estimated study time']}.` : doc.title}>
+<Base title={doc.title} description={doc.metadata ? `${doc.metadata.Part}. ${doc.title}. Study time: ${doc.metadata['Estimated study time']}.` : `${doc.title}: an MSQE ${doc.kind} learning resource. Read the artifact and its supporting project or chapter.`}>
   <div class="page reading-page">
     <nav class="breadcrumb" aria-label="Breadcrumb" data-pagefind-ignore>
       <ol><li><a href="/">MSQE</a></li><li><a href={sectionRoute}>{section}</a></li>{part && <li><a href={part.route}>Part {part.number}</a></li>}<li aria-current="page">{doc.metadata ? `Chapter ${doc.metadata.Chapter}` : doc.title}</li></ol>
@@ -24,13 +25,14 @@ const sectionRoute = doc.kind === 'chapter' ? '/handbook/' : '/resources/';
     <Readiness />
     {part && <HandbookNavigation source={doc.source} />}
     {project && project.source !== doc.source && <p><a href={project.route}>Back to {project.title}</a></p>}
+    {doc.kind !== 'chapter' && <aside class="resource-context" aria-label="Using this resource" data-pagefind-ignore><p><strong>Resource type:</strong> {doc.kind}. {doc.kind === 'code' ? 'Read this teaching artifact alongside its project overview; follow the project instructions to use it locally.' : 'Read the instructions and surrounding explanation, then use this resource with its supporting chapter.'}</p>{supportingChapters.length > 0 && <p>Referenced by: {supportingChapters.map((chapter, index) => <Fragment>{index > 0 && ' · '}<a href={chapter.route}>{chapter.title}</a></Fragment>)}</p>}</aside>}
     <div class="reading-grid">
       <div class="reading-column">
         {doc.metadata && <div class="chapter-summary" aria-label="Chapter at a glance" data-pagefind-ignore>
           <p class="eyebrow">{doc.metadata.Part}</p>
           <p>{doc.metadata['Estimated study time']}<br />Manuscript status: {doc.metadata.Status} · Source version: {doc.metadata.Version}</p>
         </div>}
-        {doc.mermaid && <aside class="diagram-note" data-pagefind-ignore><strong>Diagram reading options</strong><p>This preview displays the original Mermaid source. Read it alongside the surrounding explanation. Graphical rendering is not yet available.</p></aside>}
+        {doc.mermaid && <aside class="diagram-note" data-pagefind-ignore><strong>Diagram reading options</strong><p>This page displays the original Mermaid source. Read it alongside the surrounding explanation. Graphical rendering is not yet available.</p></aside>}
         <article class="prose" data-pagefind-body set:html={doc.html} />
         {projectFiles.length > 0 && <section><h2 id="project-files">Project files</h2><ul>{projectFiles.map(file => <li><a href={file.route}>{file.source.replace(doc.source.replace('README.md', ''), '')}</a></li>)}</ul></section>}
         {neighbours && <nav class="chapter-pagination" aria-label="Chapter navigation" data-pagefind-ignore>

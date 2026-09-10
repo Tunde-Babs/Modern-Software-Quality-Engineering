@@ -10,9 +10,11 @@
     "dev": "ASTRO_TELEMETRY_DISABLED=1 astro dev",
     "check": "ASTRO_TELEMETRY_DISABLED=1 astro check && tsc --noEmit",
     "test": "node --import tsx --test tests/*.test.ts",
-    "build": "ASTRO_TELEMETRY_DISABLED=1 astro build",
+    "build": "ASTRO_TELEMETRY_DISABLED=1 astro build && pagefind --site dist && node scripts/prune-search.mjs",
     "verify": "npm run check && npm test && npm run build && node --import tsx tests/build-smoke.ts",
-    "preview": "ASTRO_TELEMETRY_DISABLED=1 astro preview"
+    "preview": "ASTRO_TELEMETRY_DISABLED=1 astro preview",
+    "links": "node --import tsx scripts/external-links.ts",
+    "test:browser": "playwright test"
   },
   "dependencies": {
     "astro": "7.3.2",
@@ -29,10 +31,13 @@
   },
   "devDependencies": {
     "@astrojs/check": "0.9.10",
+    "@axe-core/playwright": "4.13.0",
+    "@playwright/test": "1.63.0",
     "@types/hast": "3.0.5",
     "@types/mdast": "4.0.4",
     "@types/node": "22.20.2",
     "cheerio": "1.2.0",
+    "pagefind": "1.5.2",
     "tsx": "4.23.13",
     "typescript": "6.0.3"
   }

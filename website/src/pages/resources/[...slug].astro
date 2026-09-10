@@ -1,8 +1,23 @@
 ---
 import Reading from '../../layouts/Reading.astro';
 import { loadDocuments } from '../../lib/content/loader';
+import { resourceCollections } from '../../lib/content/registry';
+import Base from '../../layouts/Base.astro';
 export function getStaticPaths() {
-  return loadDocuments().filter(doc => doc.kind !== 'chapter').map(document => ({ params: { slug: document.route.replace('/resources/', '').replace(/\/$/, '') }, props: { document } }));
+  return [
+    ...loadDocuments().filter(doc => doc.kind !== 'chapter').map(document => ({ params: { slug: document.route.replace('/resources/', '').replace(/\/$/, '') }, props: { document, collection: null } })),
+    ...resourceCollections.map(collection => ({ params: { slug: collection.route.replace('/resources/', '').replace(/\/$/, '') }, props: { document: null, collection } })),
+  ];
 }
+const { document, collection } = Astro.props;
+const files = collection ? loadDocuments().filter(doc => doc.source.startsWith(collection.source + '/')) : [];
+const project = collection ? loadDocuments().find(doc => doc.source === collection.source.split('/').slice(0, 3).join('/') + '/README.md') : null;
 ---
-<Reading document={Astro.props.document} />
+{document ? <Reading document={document} /> : collection && <Base title={collection.title} description={`Read ${collection.title.toLowerCase()} with the associated Part II teaching project.`}>
+  <div class="page index-page" data-pagefind-body>
+    <nav class="breadcrumb" aria-label="Breadcrumb" data-pagefind-ignore><ol><li><a href="/">MSQE</a></li><li><a href="/resources/">Resources</a></li><li aria-current="page">{collection.title}</li></ol></nav>
+    <h1>{collection.title}</h1><p>Teaching artifacts from the Part II project. Read them alongside the project instructions.</p>
+    {project && <p><a href={project.route}>Back to {project.title}</a></p>}
+    <ul class="curriculum">{files.map(file => <li><a href={file.route}>{file.title}</a></li>)}</ul>
+  </div>
+</Base>}

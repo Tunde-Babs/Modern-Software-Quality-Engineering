@@ -4,6 +4,7 @@ import { status } from '../lib/status';
 import '../styles/global.css';
 interface Props { title: string; description: string }
 const { title, description } = Astro.props;
+const indexable = import.meta.env.MSQE_INDEXING === 'production' && !['/404/', '/404.html', '/search/'].includes(Astro.url.pathname);
 const canonical = new URL(Astro.url.pathname === '/404/' ? '/404.html' : Astro.url.pathname, Astro.site);
 ---
 <!doctype html>
@@ -19,7 +20,8 @@ const canonical = new URL(Astro.url.pathname === '/404/' ? '/404.html' : Astro.u
     <meta property="og:url" content={canonical} />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Modern Software Quality Engineering" />
-    <meta name="robots" content="noindex, nofollow" />
+    <meta name="robots" content={indexable ? 'index, follow' : 'noindex, nofollow'} />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
   </head>
   <body>
     <a class="skip-link" href="#main-content">Skip to content</a>
@@ -28,7 +30,7 @@ const canonical = new URL(Astro.url.pathname === '/404/' ? '/404.html' : Astro.u
         <a class="identity" href="/" aria-label="MSQE home">MSQE<span>Engineering handbook</span></a>
         <Navigation />
       </div>
-      <div class="preview-label">Local portal preview · 137 chapters · 12 Parts</div>
+      <div class="preview-label">MSQE v0.16.0 · Learning-Ready · 137 chapters · 12 Parts</div>
     </header>
     <main id="main-content" tabindex="-1"><slot /></main>
     <footer class="site-footer" data-pagefind-ignore>

@@ -1,0 +1,18 @@
+---
+import Base from '../layouts/Base.astro';
+---
+<Base title="Search the handbook" description="Search MSQE chapters, Parts and learning resources by keyword.">
+  <div class="page index-page" data-pagefind-ignore="all">
+    <h1>Search the handbook</h1><p>Find chapters and resources by keyword. Try “Playwright”, “data quality”, or “observability”.</p>
+    <form id="search-form" role="search">
+      <label for="search-query">Search MSQE</label>
+      <div class="search-controls"><input id="search-query" type="search" autocomplete="off" aria-describedby="search-help" /><button type="submit">Search</button></div>
+      <p id="search-help">Enter one or more words. Use quotation marks for an exact phrase.</p>
+    </form>
+    <p id="search-status" role="status" aria-live="polite" aria-atomic="true">Enter a term to search the handbook.</p>
+    <ol id="search-results" class="curriculum" aria-label="Search results"></ol>
+    <button id="search-more" type="button" hidden>Show more results</button>
+    <noscript><p>Search requires JavaScript. You can still <a href="/handbook/">browse every Part and chapter</a>.</p></noscript>
+  </div>
+  <script is:inline type="module" src="/search.js"></script>
+</Base>

@@ -10,7 +10,7 @@ import { toString as mdText } from 'mdast-util-to-string';
 import { toString as htmlText } from 'hast-util-to-string';
 import type { Root as MdRoot, Table } from 'mdast';
 import type { Root as HtmlRoot, Element } from 'hast';
-import { readCanonical, registry, deferredSources, unavailableSources, partSources, partRoute, chapterSources, resolveSourceLink, type Entry } from './registry.ts';
+import { readCanonical, registry, resourceCollections, deferredSources, unavailableSources, partSources, partRoute, chapterSources, resolveSourceLink, type Entry } from './registry.ts';
 
 const parser = unified().use(remarkParse).use(remarkGfm);
 const fields = ['Part', 'MQE-BOK domain', 'Chapter', 'Audience', 'Prerequisites', 'Estimated study time', 'Version', 'Status'] as const;
@@ -102,7 +102,7 @@ export function transformLinks(tree: HtmlRoot, source: string, anchors: Map<stri
       return;
     }
     const target = resolveSourceLink(source, href);
-    const entry = routes.get(target.source);
+    const entry = routes.get(target.source) ?? resourceCollections.find(collection => collection.source === target.source);
     if (!entry) {
       if (!deferred.has(target.source)) throw new Error(`${source}: unresolved internal link ${href}`);
       issues.push({ source, href, target: target.source, ...(unavailableSources.get(target.source) ?? { category: 'A' as const, reason: 'Delivered but not yet routed' }) });
@@ -123,8 +123,18 @@ export function transformLinks(tree: HtmlRoot, source: string, anchors: Map<stri
 }
 
 function accessibleBlocks(tree: HtmlRoot) {
+  // Retain canonical navigation visually, but keep it out of search snippets.
+  let navigation = false;
+  for (const node of tree.children) {
+    if (node.type !== 'element') continue;
+    if (/^h[12]$/.test(node.tagName)) navigation = htmlText(node).trim() === 'Chapter Navigation';
+    if (navigation) node.properties.dataPagefindIgnore = true;
+  }
   let tableNumber = 0;
   visit(tree, 'element', (node, index, parent) => {
+    if (node.tagName === 'input' && node.properties.type === 'checkbox' && parent) {
+      node.properties.ariaLabel = htmlText(parent).trim();
+    }
     if (node.tagName === 'th') node.properties.scope = 'col';
     if (node.tagName === 'table' && parent && index !== undefined) {
       const label = `Table ${++tableNumber}: ${htmlText(node.children.find(child => child.type === 'element' && child.tagName === 'thead') ?? node)}`;

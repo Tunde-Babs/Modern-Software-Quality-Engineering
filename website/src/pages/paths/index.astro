@@ -1,0 +1,11 @@
+---
+import Base from '../../layouts/Base.astro';
+import { learningPaths } from '../../lib/paths';
+---
+<Base title="Learning paths" description="Begin MSQE with a guided sequence through the existing handbook.">
+  <div class="page index-page" data-pagefind-body><h1>Learning paths</h1>
+    <p>Follow a focused sequence through the handbook. Each step opens the original chapter.</p>
+    <ul class="curriculum">{learningPaths.map(path => <li><a href={path.route}>{path.title}</a><p>{path.purpose} {path.chapters.length} chapters.</p></li>)}</ul>
+    <p>For other topics, <a href="/handbook/">explore the twelve Parts</a> and check each chapter’s prerequisites.</p>
+  </div>
+</Base>

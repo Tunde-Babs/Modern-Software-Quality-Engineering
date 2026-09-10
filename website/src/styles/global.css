@@ -39,7 +39,7 @@ a,summary {
   -webkit-tap-highlight-color:transparent;
 }
 
-a:focus-visible,summary:focus-visible,[tabindex]:focus-visible {
+:focus-visible {
   outline:3px solid #a33d00;
   outline-offset:4px;
 }
@@ -602,4 +602,12 @@ main {
 .handbook-navigation [aria-current="page"] { font-weight:750; text-decoration-thickness:.15em; }
 .handbook-navigation ol { padding-left:1.5rem; }
 .prose, .breadcrumb, .chapter-pagination, .curriculum { overflow-wrap:anywhere; }
+.resource-context { max-width:90ch; overflow-wrap:anywhere; }
+.search-controls { display:flex; flex-wrap:wrap; gap:.75rem; margin-top:.5rem; }
+.search-controls input { flex:1; min-width:0; width:100%; border:1px solid var(--muted); border-radius:var(--radius); padding:.65rem; font:inherit; }
+button { font:inherit; min-height:2.75rem; padding:.55rem 1rem; color:white; background:var(--accent); border:2px solid var(--accent); border-radius:var(--radius); cursor:pointer; }
+button[hidden] { display:none; }
+button:disabled { cursor:wait; }
+#search-form label { font-weight:650; }
+#search-results small { display:block; overflow-wrap:anywhere; color:var(--muted); }
 @media print { .handbook-navigation { display:none; } }

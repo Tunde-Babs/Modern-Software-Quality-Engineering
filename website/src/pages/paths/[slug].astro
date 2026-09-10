@@ -1,0 +1,17 @@
+---
+import Base from '../../layouts/Base.astro';
+import Readiness from '../../components/Readiness.astro';
+import { learningPaths } from '../../lib/paths';
+export function getStaticPaths() { return learningPaths.map(path => ({ params: { slug: path.slug }, props: { path } })); }
+const { path } = Astro.props;
+---
+<Base title={path.title} description={path.purpose}>
+  <div class="page index-page" data-pagefind-body>
+    <nav class="breadcrumb" aria-label="Breadcrumb" data-pagefind-ignore><ol><li><a href="/">MSQE</a></li><li><a href="/paths/">Learning paths</a></li><li aria-current="page">{path.title}</li></ol></nav>
+    <h1>{path.title}</h1><p>{path.purpose}</p><p><strong>For:</strong> {path.audience}</p>
+    <p><strong>Scope:</strong> {path.chapters.length} chapters. Study estimates appear at each step; allow extra time for exercises.</p>
+    <p>{path.evidence}</p><Readiness />
+    <h2>Study sequence</h2><ol class="curriculum">{path.chapters.map((chapter, index) => <li><a href={chapter.route}>{index + 1}. {chapter.title}</a><p>{chapter.metadata?.['Estimated study time']}</p></li>)}</ol>
+    <p><a href="/handbook/part-02/">Continue to Part II: Programming</a></p>
+  </div>
+</Base>

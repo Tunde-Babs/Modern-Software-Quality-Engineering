@@ -1,11 +1,11 @@
-# MSQE local handbook portal — WEB-3
+# MSQE local handbook portal — WEB-4
 
 The existing Astro static portal now reads all 137 canonical chapters directly
-from `../book`, generates 12 Part indexes, and publishes 94 delivered resource
-pages. Manuscript bodies are not copied into this directory.
+from `../book`, generates 12 Part indexes, and publishes 103 delivered resource
+documents plus two collection indexes. Manuscript bodies are not copied into this directory.
 
 This is a local preview. Every HTML page retains `noindex, nofollow`; nothing in
-WEB-3 deploys the site or configures hosting, DNS, or production workflows.
+WEB-4 deploys the site or configures hosting, DNS, or production workflows.
 
 ## Validation
 
@@ -20,7 +20,7 @@ PYTHONDONTWRITEBYTECODE=1 python3 -m unittest discover -s tests -p test_first_ed
 PYTHONDONTWRITEBYTECODE=1 python3 tools/first_edition_gate.py --profile baseline
 ```
 
-`verify` runs type checks, 20 website tests, the static build, and whole-output
+`verify` runs type checks, 37 website tests, the static build, and whole-output
 link, accessibility-structure, SEO, route, and source-preservation checks.
 It writes reproducible evidence to ignored `website/artifacts/`:
 
@@ -30,7 +30,7 @@ It writes reproducible evidence to ignored `website/artifacts/`:
 - `build-census.json`: page, link, size, and asset measurements.
 - `source-preservation.json`: exact protected Git blob authentication.
 
-See [WEB3_IMPLEMENTATION_REPORT.md](WEB3_IMPLEMENTATION_REPORT.md) for the current
+See [WEB4_IMPLEMENTATION_REPORT.md](WEB4_IMPLEMENTATION_REPORT.md) for the current
 implementation results. [IMPLEMENTATION_REPORT.md](IMPLEMENTATION_REPORT.md)
 remains the historical WEB-2 implementation record.
 
@@ -56,7 +56,8 @@ the dev server after changing canonical sources in a separately authorized task.
 The resource boundary includes Part I labs, case studies, and exercises; the
 11 delivered diagrams; and five Part II code projects. Code README pages link
 to inert text views of delivered source, tests, fixtures, and configuration.
-Dependency trees, generated builds, lockfiles, hidden files, code-project `docs`,
+Nine explicitly reviewed code-project `docs` teaching artifacts are included.
+Dependency trees, generated builds, lockfiles, hidden files, unreviewed `docs`,
 and repository governance are excluded. `labs/README.md` and `code/README.md`
 are empty placeholders and are not published. New resource roots or kinds
 require an explicit adapter change and review.
@@ -68,7 +69,12 @@ fail the build; they are never silently treated as planned. Directory links to
 registered code projects resolve to the project's README-derived public page.
 
 Mermaid remains selectable source with surrounding canonical explanation.
-Graphical rendering, Pagefind, curated paths, and broader accessibility review
-remain WEB-4. There is no runtime Mermaid or other browser JavaScript dependency.
-A static sitemap includes all 246 navigable pages; the separate 404 is excluded.
-Production indexing and publication remain WEB-5. Reuse terms remain unresolved.
+Graphical rendering remains explicitly deferred; there is no runtime Mermaid.
+Pagefind indexes the static output after every build; only `/search/` loads search
+JavaScript, and only a submitted query loads the Pagefind engine. One foundations
+path references Part I in canonical order. The sitemap includes 259 URLs, excluding
+search and 404. Preview builds remain noindex by default.
+
+See [PRODUCTION_READINESS.md](PRODUCTION_READINESS.md) for the indexing switch,
+Cloudflare output settings and local browser/external-link validation commands.
+LICENSE DECISION REQUIRED BEFORE WEB-5 PRODUCTION LAUNCH.

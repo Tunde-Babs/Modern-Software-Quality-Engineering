@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import { load } from 'cheerio';
 import { visit } from 'unist-util-visit';
 import { toString } from 'mdast-util-to-string';
-import { chapterSources, partSources, registry, resourceEntries, chapterNeighbours, readCanonical, discoverChapters, resolveSourceLink, unavailableSources } from '../src/lib/content/registry.ts';
+import { chapterSources, partSources, registry, resourceEntries, chapterNeighbours, readCanonical, discoverChapters, resolveSourceLink, unavailableSources, companionSources } from '../src/lib/content/registry.ts';
 import { loadDocuments, loadParts, metadataCensus, parseSource } from '../src/lib/content/loader.ts';
 const documents = loadDocuments();
 test('complete deterministic chapter and Part route contract', () => {
@@ -35,13 +35,13 @@ test('all 136 sequential transitions, within and across Parts, are reciprocal', 
   assert.equal(chapterNeighbours(chapterSources.at(-1)!).next, null);
 });
 test('resource discovery excludes dependencies, generated output and governance', () => {
-  assert.equal(resourceEntries.length, 94);
+  assert.equal(resourceEntries.length, 103);
   assert.equal(resourceEntries.filter(e => e.kind === 'code' && e.source.endsWith('README.md')).length, 5);
   assert.equal(resourceEntries.filter(e => e.kind === 'diagram').length, 11);
   assert.equal(resourceEntries.filter(e => e.kind === 'lab').length, 1);
   assert.equal(resourceEntries.filter(e => e.kind === 'case-study').length, 3);
   assert.equal(resourceEntries.filter(e => e.kind === 'exercise').length, 8);
-  assert.ok(resourceEntries.every(e => !/(node_modules|\.build|\/docs\/|package-lock|gitignore)/.test(e.source)));
+  assert.ok(resourceEntries.every(e => !/(node_modules|\.build|package-lock|gitignore)/.test(e.source) && (!e.source.includes('/docs/') || companionSources.includes(e.source))));
 });
 test('full corpus preserves headings, code and inline code without executing code assets', () => {
   for (const doc of documents) {
