@@ -1,0 +1,468 @@
+{
+  "task": "WEB-5D",
+  "evidenceKind": "Author preparation/testing; fresh independent WEB-5DV required",
+  "recordedUtc": "2026-09-10T21:19:29.469431+00:00",
+  "base": "10f1582ab3658ce77c0af500f220c95e31abb09d",
+  "branch": "feature/web-5-production-deployment",
+  "preflight": {
+    "head": "10f1582ab3658ce77c0af500f220c95e31abb09d",
+    "workingTreeClean": true,
+    "indexClean": true,
+    "liveOriginBranchHash": "10f1582ab3658ce77c0af500f220c95e31abb09d",
+    "trackingAheadBehind": [
+      0,
+      0
+    ],
+    "websiteTests": {
+      "pass": 39,
+      "fail": 0
+    },
+    "msqeTests": {
+      "pass": 35,
+      "fail": 0,
+      "error": 0
+    },
+    "baselineGate": {
+      "pass": 7,
+      "fail": 0,
+      "exit": 0
+    }
+  },
+  "toolchain": {
+    "node": "24.20.0",
+    "npm": "11.19.0",
+    "astro": "7.3.2",
+    "pagefind": "1.5.2",
+    "lockfileVersion": 3
+  },
+  "changedPaths": [
+    "website/PRODUCTION_READINESS.md",
+    "website/PRODUCTION_DEPLOYMENT_RUNBOOK.md",
+    "website/PRODUCTION_ACCEPTANCE_CHECKLIST.md",
+    "website/WEB5D_PRODUCTION_PREPARATION_REPORT.md",
+    "website/evidence/web5d/verification.json",
+    "website/package.json",
+    "website/playwright.production.config.ts",
+    "website/public/_headers",
+    "website/scripts/check-toolchain.mjs",
+    "website/tests/build-smoke.ts",
+    "website/tests/header-server.mjs",
+    "website/tests/production-browser/production.spec.ts",
+    "website/tests/production-output.ts"
+  ],
+  "sourcePreservation": {
+    "base": "10f1582ab3658ce77c0af500f220c95e31abb09d",
+    "nonWebsiteTrackedBlobsCompared": 310,
+    "mismatches": [],
+    "indexClean": true,
+    "branch": "feature/web-5-production-deployment",
+    "head": "10f1582ab3658ce77c0af500f220c95e31abb09d"
+  },
+  "baselineCensus": {
+    "pages": 262,
+    "chapters": 137,
+    "parts": 12,
+    "resources": 105,
+    "resourceDocuments": 103,
+    "resourceCollections": 2,
+    "learningPaths": 1,
+    "sitemapUrls": 260,
+    "internalLinks": 13587,
+    "brokenDestinations": 0,
+    "distBytes": 11610192,
+    "jsBytes": 89438,
+    "cssBytes": 8274,
+    "pagefindBytes": 3529487
+  },
+  "previewCensus": {
+    "mode": "preview",
+    "indexedPages": 258,
+    "jsBytes": 89438,
+    "cssBytes": 8274,
+    "pagefindBytes": 3529487,
+    "pages": 262,
+    "chapters": 137,
+    "parts": 12,
+    "resources": 105,
+    "resourceDocuments": 103,
+    "resourceCollections": 2,
+    "learningPaths": 1,
+    "sitemapUrls": 260,
+    "internalLinks": 13587,
+    "brokenDestinations": 0,
+    "distBytes": 11610709
+  },
+  "productionCensus": {
+    "mode": "production",
+    "indexedPages": 258,
+    "jsBytes": 89438,
+    "cssBytes": 8274,
+    "pagefindBytes": 3529487,
+    "pages": 262,
+    "chapters": 137,
+    "parts": 12,
+    "resources": 105,
+    "resourceDocuments": 103,
+    "resourceCollections": 2,
+    "learningPaths": 1,
+    "sitemapUrls": 260,
+    "internalLinks": 13587,
+    "brokenDestinations": 0,
+    "distBytes": 11609685
+  },
+  "completeInternalLinksIncludingNoscript": 13588,
+  "pagefindIndexAndFragmentBytes": 3298802,
+  "separateOutputParser": {
+    "method": "Separate Python standard-library HTML/XML parse; does not import Astro registry or TypeScript smoke validator",
+    "pages": 262,
+    "internalLinksAndFragments": 13588,
+    "assetReferences": 525,
+    "brokenGeneratedDestinations": [],
+    "thirdPartyAssetReferences": [],
+    "sitemapUrls": 260,
+    "baselineFileDelta": {
+      "added": [
+        "_headers"
+      ],
+      "removed": [],
+      "modifiedCount": 261,
+      "modifiedNonHtml": [
+        "robots.txt"
+      ]
+    },
+    "pagefindByteIdenticalToBaseline": true,
+    "linkCountExplanation": "Python and final ten-check output suite include the search noscript fallback; original smoke default DOM excludes it. No extra absolute apex link was present."
+  },
+  "finalTests": {
+    "preview": {
+      "existingPass": 39,
+      "outputPass": 10,
+      "fail": 0,
+      "exit": 0
+    },
+    "production": {
+      "existingPass": 39,
+      "outputPass": 10,
+      "fail": 0,
+      "exit": 0
+    },
+    "browser": {
+      "pass": 2,
+      "fail": 0,
+      "exit": 0
+    },
+    "msqe": {
+      "pass": 35,
+      "fail": 0,
+      "error": 0,
+      "exit": 0
+    },
+    "baseline": {
+      "pass": 7,
+      "fail": 0,
+      "exit": 0
+    }
+  },
+  "search": {
+    "evidence": [
+      {
+        "query": "Playwright",
+        "status": "12 results. Showing 10.",
+        "titles": [
+          "Chapter 5 \u2014 Browser Automation as an Engineering System",
+          "Chapter 7 \u2014 Parallelism, Isolation, and Environment Strategy",
+          "Chapter 4 \u2014 Deterministic Automation: State, Synchronization, Dependencies, and Flakiness",
+          "Chapter 9 \u2014 Continuous Feedback: CI-Oriented Execution and Test Selection",
+          "Chapter 2 \u2014 Automation System Architecture and Feedback Design",
+          "Chapter 6 \u2014 Composing UI, API, Component, and Service Automation",
+          "Chapter 8 \u2014 Diagnostics, Reporting, and Failure Investigation",
+          "Chapter 3 \u2014 Reusable Automation Design: Abstractions, Fixtures, and Test Data",
+          "Chapter 11 \u2014 Specialized Automation Evidence: Visual, Accessibility, Cross-Browser, and Mobile",
+          "Chapter 10 \u2014 Sustainable Automation: Maintenance, Debt, Governance, and Scaling"
+        ],
+        "hrefs": [
+          "/handbook/part-05/chapter-05-browser-automation-as-an-engineering-system/",
+          "/handbook/part-05/chapter-07-parallelism-isolation-and-environment-strategy/",
+          "/handbook/part-05/chapter-04-deterministic-automation-state-synchronization-dependencies-and-flakiness/",
+          "/handbook/part-05/chapter-09-continuous-feedback-ci-oriented-execution-and-test-selection/",
+          "/handbook/part-05/chapter-02-automation-system-architecture-and-feedback-design/",
+          "/handbook/part-05/chapter-06-composing-ui-api-component-and-service-automation/",
+          "/handbook/part-05/chapter-08-diagnostics-reporting-and-failure-investigation/",
+          "/handbook/part-05/chapter-03-reusable-automation-design-abstractions-fixtures-and-test-data/",
+          "/handbook/part-05/chapter-11-specialized-automation-evidence-visual-accessibility-cross-browser-and-mobile/",
+          "/handbook/part-05/chapter-10-sustainable-automation-maintenance-debt-governance-and-scaling/"
+        ]
+      },
+      {
+        "query": "API testing",
+        "status": "101 results. Showing 10.",
+        "titles": [
+          "Chapter 1 \u2014 API Quality Engineering: Boundaries, Outcomes, and Evidence",
+          "Chapter 9 \u2014 Service, API, and Distributed-System Testing Strategy",
+          "Chapter 6 \u2014 Composing UI, API, Component, and Service Automation",
+          "Chapter 10 \u2014 Capstone: API Quality Strategy and Evidence Portfolio",
+          "Chapter 6 \u2014 Identity at the API Boundary: Authentication, Authorization, and Safe Behaviour",
+          "Chapter 8 \u2014 API Reliability, Diagnostics, and Performance Evidence",
+          "Chapter 2 \u2014 Interface Semantics: HTTP, Representations, and API Styles",
+          "Chapter 4 \u2014 Stateful API Behaviour: Validation, Errors, Idempotency, and Concurrency",
+          "Chapter 7 \u2014 Dependent and Asynchronous APIs: Events, Webhooks, Third Parties, and Controlled Evidence",
+          "Chapter 9 \u2014 Sustaining API Quality: Change Impact, Regression, and Production Learning"
+        ],
+        "hrefs": [
+          "/handbook/part-04/chapter-01-api-quality-engineering-boundaries-outcomes-and-evidence/",
+          "/handbook/part-03/chapter-09-service-api-and-distributed-system-testing-strategy/",
+          "/handbook/part-05/chapter-06-composing-ui-api-component-and-service-automation/",
+          "/handbook/part-04/chapter-10-capstone-api-quality-strategy-and-evidence-portfolio/",
+          "/handbook/part-04/chapter-06-identity-at-the-boundary-authentication-authorization-and-safe-behaviour/",
+          "/handbook/part-04/chapter-08-api-reliability-diagnostics-and-performance-evidence/",
+          "/handbook/part-04/chapter-02-interface-semantics-http-representations-and-api-styles/",
+          "/handbook/part-04/chapter-04-stateful-api-behaviour-validation-errors-idempotency-and-concurrency/",
+          "/handbook/part-04/chapter-07-dependent-and-asynchronous-apis-events-webhooks-third-parties-and-controlled-evidence/",
+          "/handbook/part-04/chapter-09-sustaining-api-quality-change-impact-regression-and-production-learning/"
+        ]
+      },
+      {
+        "query": "data quality",
+        "status": "171 results. Showing 10.",
+        "titles": [
+          "Chapter 8 \u2014 Functional, Quality-Attribute, and Data-Oriented Evidence",
+          "Chapter 1 \u2014 Data Quality Engineering: Evidence, Meaning, and Risk",
+          "Chapter 2 \u2014 Data Representations, Models, and Contextual Quality Dimensions",
+          "Chapter 11 \u2014 Capstone: Data Quality Strategy and Evidence Portfolio",
+          "Chapter 5 \u2014 API Data Quality: Queries, Collections, and Representational Integrity",
+          "Chapter 3 \u2014 Query-Based Data Evidence, Integrity, and Relationships",
+          "Chapter 8 \u2014 Data Contracts, Lineage, Provenance, and Ownership",
+          "Chapter 3 \u2014 Quality Data: Structures, JSON, and Transformations",
+          "Chapter 10 \u2014 Production Data Learning, Change, and Sustainability",
+          "Chapter 3 \u2014 Evaluation Data, Oracles, and Experimental Design"
+        ],
+        "hrefs": [
+          "/handbook/part-03/chapter-08-functional-quality-attribute-and-data-oriented-evidence/",
+          "/handbook/part-06/chapter-01-data-quality-engineering-evidence-meaning-and-risk/",
+          "/handbook/part-06/chapter-02-data-representations-models-and-contextual-quality-dimensions/",
+          "/handbook/part-06/chapter-11-capstone-data-quality-strategy-and-evidence-portfolio/",
+          "/handbook/part-04/chapter-05-api-data-quality-queries-collections-and-representational-integrity/",
+          "/handbook/part-06/chapter-03-query-based-data-evidence-integrity-and-relationships/",
+          "/handbook/part-06/chapter-08-data-contracts-lineage-provenance-and-ownership/",
+          "/handbook/part-02/chapter-03-quality-data-structures-json-and-transformations/",
+          "/handbook/part-06/chapter-10-production-data-learning-change-and-sustainability/",
+          "/handbook/part-09/chapter-03-evaluation-data-oracles-and-experimental-design/"
+        ]
+      },
+      {
+        "query": "observability",
+        "status": "180 results. Showing 10.",
+        "titles": [
+          "Chapter 5 \u2014 Designing Observable Systems for Quality Engineering",
+          "Chapter 1 \u2014 Observability & Reliability Engineering: Evidence, Behaviour, and Boundaries",
+          "Chapter 11 \u2014 Capstone: Observability & Reliability Strategy and Evidence Portfolio",
+          "Part VIII \u2014 Observability & Reliability Engineering",
+          "Chapter 7 \u2014 Architecture for Testability, Observability, Operability, and Recovery",
+          "delivery-04-collaborative-tested-utilities/src/qualitySummary.ts",
+          "delivery-03-reliable-quality-utilities/src/summary.ts",
+          "delivery-03-reliable-quality-utilities/src/scriptedOperations.ts",
+          "Chapter 8 \u2014 Debugging Quality Engineering Code",
+          "Chapter 3 \u2014 Requirements Analysis, Specifications, and Testability"
+        ],
+        "hrefs": [
+          "/handbook/part-08/chapter-05-designing-observable-systems-for-quality-engineering/",
+          "/handbook/part-08/chapter-01-observability-reliability-engineering-evidence-behaviour-and-boundaries/",
+          "/handbook/part-08/chapter-11-capstone-observability-reliability-strategy-and-evidence-portfolio/",
+          "/handbook/part-08/",
+          "/handbook/part-11/chapter-07-architecture-for-testability-observability-operability-and-recovery/",
+          "/resources/code/part-02/delivery-04-collaborative-tested-utilities/src/quality-summary-ts/",
+          "/resources/code/part-02/delivery-03-reliable-quality-utilities/src/summary-ts/",
+          "/resources/code/part-02/delivery-03-reliable-quality-utilities/src/scripted-operations-ts/",
+          "/handbook/part-02/chapter-08-debugging-quality-engineering-code/",
+          "/handbook/part-03/chapter-03-requirements-analysis-specifications-and-testability/"
+        ]
+      },
+      {
+        "query": "AI quality",
+        "status": "79 results. Showing 10.",
+        "titles": [
+          "Chapter 1 \u2014 AI Quality Engineering: Behaviour, Evidence, and Boundaries",
+          "Chapter 2 \u2014 AI System Architecture and Failure Boundaries",
+          "Part IX \u2014 AI Quality Engineering",
+          "Chapter 12 \u2014 Capstone: AI Quality Strategy and Evaluation Portfolio",
+          "Chapter 11 \u2014 AI Regression, Production Learning, and Change",
+          "Chapter 9 \u2014 Tool-Using and Agentic AI Systems",
+          "Chapter 5 \u2014 Generative AI Evaluation: Rubrics, Factuality, and Instruction Following",
+          "Chapter 10 \u2014 The Future of Quality Engineering",
+          "Quality Engineer Competency Model",
+          "Chapter 9 \u2014 The Modern Software Quality Engineering Framework"
+        ],
+        "hrefs": [
+          "/handbook/part-09/chapter-01-ai-quality-engineering-behaviour-evidence-and-boundaries/",
+          "/handbook/part-09/chapter-02-ai-system-architecture-and-failure-boundaries/",
+          "/handbook/part-09/",
+          "/handbook/part-09/chapter-12-capstone-ai-quality-strategy-and-evaluation-portfolio/",
+          "/handbook/part-09/chapter-11-ai-regression-production-learning-and-change/",
+          "/handbook/part-09/chapter-09-tool-using-and-agentic-ai-systems/",
+          "/handbook/part-09/chapter-05-generative-ai-evaluation-rubrics-factuality-and-instruction-following/",
+          "/handbook/part-01/chapter-10-the-future-of-quality-engineering/",
+          "/resources/diagrams/chapter-08-quality-engineer-competency-model/",
+          "/handbook/part-01/chapter-09-the-modern-software-quality-engineering-framework/"
+        ]
+      },
+      {
+        "query": "metamorphic testing",
+        "status": "5 results. Showing 5.",
+        "titles": [
+          "Chapter 6 \u2014 Robustness, Metamorphic Testing, and Adversarial Inputs",
+          "Chapter 12 \u2014 Capstone: AI Quality Strategy and Evaluation Portfolio",
+          "Part IX \u2014 AI Quality Engineering",
+          "Chapter 11 \u2014 AI Regression, Production Learning, and Change",
+          "Chapter 3 \u2014 Evaluation Data, Oracles, and Experimental Design"
+        ],
+        "hrefs": [
+          "/handbook/part-09/chapter-06-robustness-metamorphic-testing-and-adversarial-inputs/",
+          "/handbook/part-09/chapter-12-capstone-ai-quality-strategy-and-evaluation-portfolio/",
+          "/handbook/part-09/",
+          "/handbook/part-09/chapter-11-ai-regression-production-learning-and-change/",
+          "/handbook/part-09/chapter-03-evaluation-data-oracles-and-experimental-design/"
+        ]
+      },
+      {
+        "query": "security",
+        "status": "93 results. Showing 10.",
+        "titles": [
+          "Chapter 10 \u2014 Security Evidence: Findings, Verification, and Residual Risk",
+          "Chapter 1 \u2014 Performance & Security Engineering: Boundaries, Evidence, and Decisions",
+          "Chapter 12 \u2014 Capstone: Performance & Security Strategy and Evidence Portfolio",
+          "Part X \u2014 Performance & Security Engineering",
+          "Chapter 7 \u2014 Security Quality: Assets, Trust Boundaries, and Threat Models",
+          "Chapter 11 \u2014 Integrated Architecture Decisions: Scale, Security, Reliability, and Residual Risk",
+          "Chapter 11 \u2014 Performance\u2013Security Trade-offs, Regression, and Decision Readiness",
+          "Chapter 6 \u2014 Identity at the API Boundary: Authentication, Authorization, and Safe Behaviour",
+          "Handbook",
+          "Chapter 8 \u2014 Functional, Quality-Attribute, and Data-Oriented Evidence"
+        ],
+        "hrefs": [
+          "/handbook/part-10/chapter-10-security-evidence-findings-verification-and-residual-risk/",
+          "/handbook/part-10/chapter-01-performance-security-engineering-boundaries-evidence-and-decisions/",
+          "/handbook/part-10/chapter-12-capstone-performance-security-strategy-and-evidence-portfolio/",
+          "/handbook/part-10/",
+          "/handbook/part-10/chapter-07-security-quality-assets-trust-boundaries-and-threat-models/",
+          "/handbook/part-11/chapter-11-integrated-architecture-decisions-scale-security-reliability-and-residual-risk/",
+          "/handbook/part-10/chapter-11-performance-security-trade-offs-regression-and-decision-readiness/",
+          "/handbook/part-04/chapter-06-identity-at-the-boundary-authentication-authorization-and-safe-behaviour/",
+          "/handbook/",
+          "/handbook/part-03/chapter-08-functional-quality-attribute-and-data-oriented-evidence/"
+        ]
+      },
+      {
+        "query": "performance",
+        "status": "111 results. Showing 10.",
+        "titles": [
+          "Chapter 11 \u2014 Performance\u2013Security Trade-offs, Regression, and Decision Readiness",
+          "Part X \u2014 Performance & Security Engineering",
+          "Chapter 1 \u2014 Performance & Security Engineering: Boundaries, Evidence, and Decisions",
+          "Chapter 12 \u2014 Capstone: Performance & Security Strategy and Evidence Portfolio",
+          "Chapter 8 \u2014 API Reliability, Diagnostics, and Performance Evidence",
+          "Chapter 6 \u2014 Performance Regression and Production-Evidence Handoff",
+          "Chapter 4 \u2014 Performance Experiments: Load, Stress, Variability, and Validity",
+          "Chapter 3 \u2014 Latency, Throughput, Concurrency, and Performance Evidence",
+          "Handbook",
+          "Chapter 8 \u2014 Functional, Quality-Attribute, and Data-Oriented Evidence"
+        ],
+        "hrefs": [
+          "/handbook/part-10/chapter-11-performance-security-trade-offs-regression-and-decision-readiness/",
+          "/handbook/part-10/",
+          "/handbook/part-10/chapter-01-performance-security-engineering-boundaries-evidence-and-decisions/",
+          "/handbook/part-10/chapter-12-capstone-performance-security-strategy-and-evidence-portfolio/",
+          "/handbook/part-04/chapter-08-api-reliability-diagnostics-and-performance-evidence/",
+          "/handbook/part-10/chapter-06-performance-regression-and-production-evidence-handoff/",
+          "/handbook/part-10/chapter-04-performance-experiments-load-stress-variability-and-validity/",
+          "/handbook/part-10/chapter-03-latency-throughput-concurrency-and-performance-evidence/",
+          "/handbook/",
+          "/handbook/part-03/chapter-08-functional-quality-attribute-and-data-oriented-evidence/"
+        ]
+      },
+      {
+        "query": "quality engineering",
+        "status": "209 results. Showing 10.",
+        "titles": [
+          "Chapter 1 \u2014 Engineering Leadership as Quality Engineering",
+          "Chapter 8 \u2014 The Modern Quality Engineer",
+          "Chapter 10 \u2014 The Future of Quality Engineering",
+          "QA to Quality Engineering Transition Journey",
+          "Modern Software Quality Engineering Framework",
+          "Quality Engineer Competency Model",
+          "Case Study 3: From Senior QA Engineer to Quality Engineer",
+          "Chapter 9 \u2014 The Modern Software Quality Engineering Framework",
+          "Chapter 2 \u2014 The Evolution from QA to Quality Engineering",
+          "Chapter 1 \u2014 What Is Modern Software Quality Engineering?"
+        ],
+        "hrefs": [
+          "/handbook/part-12/chapter-01-engineering-leadership-as-quality-engineering/",
+          "/handbook/part-01/chapter-08-the-modern-quality-engineer/",
+          "/handbook/part-01/chapter-10-the-future-of-quality-engineering/",
+          "/resources/diagrams/qa-to-qe-transition-journey/",
+          "/resources/diagrams/chapter-09-msqe-framework/",
+          "/resources/diagrams/chapter-08-quality-engineer-competency-model/",
+          "/resources/part-01/case-studies/case-study-03-qa-to-quality-engineering-transition/",
+          "/handbook/part-01/chapter-09-the-modern-software-quality-engineering-framework/",
+          "/handbook/part-01/chapter-02-the-evolution-from-qa-to-quality-engineering/",
+          "/handbook/part-01/chapter-01-what-is-modern-software-quality-engineering/"
+        ]
+      }
+    ],
+    "thirdPartyRequests": [],
+    "errors": [],
+    "violations": []
+  },
+  "secretAudit": {
+    "trackedFilesScanned": 376,
+    "credentialSignatureHits": [],
+    "method": "Targeted credential/private-key signatures; values are not recorded. This is not proof against every possible secret format."
+  },
+  "productionArtifact": {
+    "path": "website/dist",
+    "savedCopy": "website/artifacts/web5d/production-dist",
+    "fileCount": 579,
+    "manifestDigestAlgorithm": "SHA256 of UTF-8 sorted compact JSON mapping relative paths to SHA256 file bytes",
+    "manifestSha256": "b41994d63b29f3b91b3fd98a3b915fde51b6112011447ab5d33580ea46d5f3f1"
+  },
+  "logSha256": {
+    "website/artifacts/web5d/baseline-tests.log": "7cfd13014b57082fa01222612ea29efe5a63125aa3a8baa61d2708ee9cfa4bac",
+    "website/artifacts/web5d/preview.log": "4d69ce5911d2a6925921901bdf625329a6ef3434fc177b7eb5fcb62481ee761f",
+    "website/artifacts/web5d/exact-pages-build.log": "8e9d604a371e0ce1d4e24a4e9badfc08831edd04aaa227ca95f5d36180309b1e",
+    "website/artifacts/web5d/production.log": "2a93d66f07345efcba9884c02dccd4cee865c7c6b9db5d81de43e2504f08cb4f",
+    "website/artifacts/web5d/msqe.log": "3624449840f1f5c19f25e4755ebf4ce91397bee082041f820126de319a9e7cc6",
+    "website/artifacts/web5d/baseline-gate.log": "df78e5ba7abffe0e095198ad80624e36ea022d7fb575d485817dcfcf5c09184f"
+  },
+  "candidateFileSha256ExcludingThisEvidence": {
+    "website/PRODUCTION_READINESS.md": "6f2fe6e651bae2ca1c6753962b15b2a33a5985bc22ff23f6f04064453267a6b6",
+    "website/PRODUCTION_DEPLOYMENT_RUNBOOK.md": "de21d9ed4ed78f6629395655f10bc4ae0a9990acd403f28f5b8c20bef917bc05",
+    "website/PRODUCTION_ACCEPTANCE_CHECKLIST.md": "ed5d78f408c5e32e4762876771c3bc35e615c47d59989b252c598eed9901a025",
+    "website/WEB5D_PRODUCTION_PREPARATION_REPORT.md": "f1121d5bddf49789a0e5e9a07ae7718d03ca625f3505d240395518fd0062ebc8",
+    "website/package.json": "bb493f124efbf9927c4f17244828f09331f2167841243eee787bd35a6e996bc3",
+    "website/playwright.production.config.ts": "385ee39d593b422234cb9069ba7a3fc2564ca9476f21d13f365b46d06a5bd71e",
+    "website/public/_headers": "ad9747f8d578d631497a9f1dff1ce803bd9c52e069b2ac206440d50064dc210a",
+    "website/scripts/check-toolchain.mjs": "45ee13a6b5dc745ea0fef4c4ae268b9ad8c74b8a1566a9758fa26779d0479910",
+    "website/tests/build-smoke.ts": "1241b275f3bb9d4769b2768fad9c27aa1b22900d17333d8214bf290a02ad9199",
+    "website/tests/header-server.mjs": "e227c200c6541c96c2f26f9cbb6b915bb2b6fc4de7eab1a1ecdf10379063820a",
+    "website/tests/production-browser/production.spec.ts": "bb6f512a2e84c375ca57128cf47242ca2c548d929c8e1fefa2e56e490947e3e1",
+    "website/tests/production-output.ts": "6bf9aaee0eea668cc4d76541ff9d476bb6b1ed6cbd938fc826cff5506171cb53"
+  },
+  "externalReferences": {
+    "confirmedMateriallyBroken": 0,
+    "mechanicallyUnverifiedNotEstablishedBroken": 24,
+    "state": "preserved; not re-audited"
+  },
+  "limitations": [
+    "Local author tests are not independent acceptance",
+    "Cloudflare v3 toolchain availability, header parser and edge execution require live validation",
+    "Local HTTP fixture does not validate TLS, HSTS enforcement, DNS or redirects",
+    "Provider scripts/logging and live cross-browser behavior not inspected",
+    "No previous live deployment or rollback target assumed"
+  ],
+  "mutationState": {
+    "staged": false,
+    "committed": false,
+    "pushed": false,
+    "deployed": false,
+    "cloudflareOrDnsModified": false
+  }
+}
