@@ -102,3 +102,70 @@ agree and record a fallback (for example, keep the domain unlaunched or serve an
 authorized noindex maintenance deployment). If the first build fails before
 cutover, leave DNS/domain unchanged. If failure occurs after cutover, execute
 that agreed fallback; do not invent a previous deployment or delete the project.
+
+
+## INITIAL WEB-5L LIVE RESULT — SUPERSEDED (2026-09-14)
+
+Historical intermediate evidence only. The infrastructure-access limitations and
+27/0/5 Decision C below were resolved by the final authenticated result following
+this section; they are not the current production or acceptance state.
+
+The preceding WEB-5D text is the **PRE-LAUNCH PLAN / point-in-time evidence**;
+its unexecuted labels and unchecked boxes are preserved. Actual public activation
+was **2026-09-11**, distinct from this record date. The live portal is publicly
+available at <https://msqe.dev> as **MSQE v0.16.0 — LEARNING-READY — CONTROLLED RC**.
+See [the canonical WEB-5L record](LIVE_LAUNCH_ACCEPTANCE.md) for the itemized
+**INITIAL LIVE RESULT: 27 PASS / 0 FAIL / 5 INCOMPLETE — Decision C (SUPERSEDED)** and evidence provenance.
+
+The reported actual production branch is `feature/first-edition-review`, source
+`7028166b223322afc97af05d6ad6dfecef09dc8f`; the earlier proposed branch is historical.
+The reported successful command is unchanged, with `NODE_VERSION=24.20.0`,
+`SKIP_DEPENDENCY_INSTALL=1` and production-only `MSQE_INDEXING=production`.
+Local Node 24.20.0/npm 11.19.0 validation passed. The supplied Node 22.16.0 guard
+rejection, corrected environment and intentional first noindex deployment are
+recorded as launch history, pending authenticated Cloudflare corroboration.
+
+Fresh live checks demonstrate apex HTTPS, www 301 with path/query preservation,
+RC identity, representative navigation, Playwright search (12 results / 10 initially),
+licensing, custom HTTP 404, assets, apex headers, public indexing with search/404
+exclusions, and 260 unique apex sitemap locations. Actual robots.txt is `Allow: /`
+with `Disallow: /search/`, permitting public crawling. Local preview/production
+verification passed 49/49 each; production browser 2/2; MSQE 35/35; baseline 7/7.
+
+Cloudflare deployed identity/build logs, remote toolchain and dashboard domain
+Active/SSL/Pages associations remain **INCOMPLETE** because private dashboard
+access was rejected by automatic approval review pending explicit authorization.
+Public behavior is not substituted for that infrastructure evidence. Broader
+unchecked pre-launch items are not implicitly passed by these narrower live checks.
+First Edition remains **IN PROGRESS**, 15 findings OPEN / NOT VERIFIED and 14
+CLOSED / VERIFIED; FE-1=6, FE-2=5, FE-3=4 outstanding; v1.0.0 NOT YET RELEASED.
+
+
+## FINAL WEB-5L LIVE ACCEPTANCE
+
+**32 PASS / 0 FAIL / 0 INCOMPLETE — Decision A.**
+**MSQE v0.16.0 — LEARNING-READY — CONTROLLED RC: PUBLICLY LAUNCHED / ACCEPTED.**
+**Production evidence: AUTHENTICATED.** Public site: <https://msqe.dev>.
+Actual first public activation: **2026-09-11**; durable acceptance record:
+**2026-09-14**. The [canonical launch record](LIVE_LAUNCH_ACCEPTANCE.md) contains
+Cloudflare's exact production source/deployment identity, successful build and
+Node 24.20.0/npm 11.19.0 guard evidence, required production variables, and apex/www
+Pages **Active / SSL enabled** states. The earlier 27/0/5 Decision C is preserved
+above as superseded evidence, not an outstanding infrastructure gap.
+
+WEB-5LV independently accepted the live production evidence. Its overall record
+review was **31 PASS / 3 FAIL / 0 INCOMPLETE, Decision B**: preview preservation,
+production preservation and current-status reconciliation required correction.
+WEB-5LF1 addresses those bounded record/test defects; fresh independent **WEB-5LV2**
+is required before accepting the corrected repository package. The public deployment
+itself was not rejected. No redeployment or infrastructure change is required.
+
+**First Edition: IN PROGRESS. v1.0.0: NOT YET RELEASED.** Findings remain
+**29 total; 15 OPEN / NOT VERIFIED; 14 CLOSED / VERIFIED**. Outstanding allocation:
+**LR-1=0; LR-2=0; FE-1=6; FE-2=5; FE-3=4**. No finding closes through WEB-5LF1.
+
+The original pre-launch plan/checklist and operational deployment/rollback guidance
+remain usable and preserved. Broader unperformed checklist items remain historical
+unchecked items; they are not all marked PASS and do not invalidate the formal
+32-control WEB-5L acceptance. The final result applies only to the controls actually
+demonstrated in WEB-5L/WEB-5LV and their recorded scope.

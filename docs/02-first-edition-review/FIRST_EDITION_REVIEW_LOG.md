@@ -1422,6 +1422,7 @@ git ls-files -s book | awk '$4 ~ /chapters\/chapter-.*\.md$/ {print $4":"$2}' | 
 | `FE-EV-046` | 2026-09-09 | H — LR-2R closure and baseline-evolution preparation | Supplied LR-2V2 25 PASS / 0 FAIL, Decision A; three findings CLOSED / VERIFIED; approved manifests applied; 15 open / 14 closed; LR-2CV required before checkpoint | **LR-2 COMPLETE / INDEPENDENTLY VERIFIED / CLOSED; Learning-Ready NOT YET ASSESSED** |
 | `FE-EV-047` | 2026-09-10 | H — LR-RC1R declaration preparation | Supplied independent LRG-1 PASS 12/12; exact residual 10 safe / 5 early correction / 0 blocking; frozen content preserved; checkpoint NOT YET CREATED | **UNSCORED recording — DECLARATION PREPARED / AWAITING INDEPENDENT DECLARATION VERIFICATION** |
 | `FE-EV-048` | 2026-09-10 | H — WEB-5BR closure preparation | Supplied WEB-5BV2 21/0/0 Decision A; license and confirmed external references closed; approved final baseline expectations applied | **UNSCORED preparation — STOPPED FOR CHECKPOINT-LAYER ADJUDICATION; WEB-5BCV REQUIRED** |
+| `FE-EV-049` | 2026-09-14 | H — WEB-5L public launch acceptance recording | Public launch 2026-09-11; msqe.dev Controlled RC; source 7028166b223322afc97af05d6ad6dfecef09dc8f; 27 PASS / 0 FAIL / 5 INCOMPLETE | **UNSCORED — LIVE EVIDENCE RECORDED; INFRASTRUCTURE ACCEPTANCE INCOMPLETE; First Edition IN PROGRESS** |
 
 > **Note on the FE-EV-008 → FE-EV-009 sequence — this is not a lost record.** Three quantitative-instrument events occurred between them — **F-IR4** (fresh independent re-acceptance, 39 PASS · 0 PARTIAL · 1 FAIL), **F-IR4V2** (independent verification establishing that the instrument is intact, that E9 is correct and that the E11 total is 51) and **F-IR4F** (the E11 occurrence-decomposition correction, commit `250cfe7`) — and **none was written to this log at the time it happened.** Their outcomes are recorded in the **plan §16 phase-history table**, and `FE-EV-009` states the chain it closes.
 >
@@ -1784,3 +1785,39 @@ The 19 exact paths below are the complete batch allow-list relative to HEAD. Nin
 | **Evidence** | [WEB-5BR report](../../website/WEB5_BLOCKER_RESOLUTION_REPORT.md) and [acceptance](../../website/evidence/web5/br-acceptance.json); author validation is not independent acceptance |
 | **Deployment / next action** | WEB-5 DEPLOYMENT NOT STARTED; project launch not live; indexing disabled; no tag/release/checkpoint. UNSTAGED / UNCOMMITTED / UNPUSHED. Fresh narrow WEB-5BCV must adjudicate closure and checkpoint layers |
 | **Non-collapse** | Preserve WEB-5B original five authorship, WEB-5BV Decision B/xUnit discovery, WEB-5BF1 two corrections, WEB-5BV2 Decision A, this WEB-5BR preparation and future WEB-5BCV/checkpoint as distinct acts. FE-EV-001–047 event bodies and index entries unchanged |
+
+
+---
+
+## Event FE-EV-049 — WEB-5L Public Learning-Ready Launch Acceptance
+
+| Field | Value |
+| --- | --- |
+| **Event ID** | `FE-EV-049` |
+| **Date** | 2026-09-14 — durable acceptance-record authorship; actual public launch 2026-09-11 |
+| **Phase** | H — operational public-launch evidence recording; no finding remediation |
+| **Scope** | MSQE v0.16.0 — LEARNING-READY — CONTROLLED RC at https://msqe.dev; repository production source 7028166b223322afc97af05d6ad6dfecef09dc8f; production branch reported as feature/first-edition-review |
+| **Score / verdict** | **UNSCORED — 27 PASS / 0 FAIL / 5 INCOMPLETE; full live acceptance withheld pending authenticated Cloudflare evidence** |
+| **Independence** | Codex re-derived public HTTP/browser facts and repository invariants in WEB-5L. Supplied 2026-09-11 infrastructure history is labeled separately. No correction authored, finding closed, semantic re-acceptance or new Learning-Ready/First Edition gate awarded. |
+| **Artefacts affected** | This Events artefact only among the four review artefacts; website launch record and three production documents, README and current sprint updated additively |
+| **Non-collapse note** | Distinct from FE-EV-047 declaration preparation, FE-EV-048 launch-blocker preparation, WEB-5D preparation and the actual 2026-09-11 activation; none is rewritten or replaced |
+
+Canonical evidence: [WEB-5L live launch record](../../website/LIVE_LAUNCH_ACCEPTANCE.md).
+Public apex HTTPS, www permanent redirect with path/query preservation, homepage,
+representative handbook/paths/resources, 12-result Playwright search, licensing,
+HTTP 404, indexing exclusions, 260-URL sitemap and prepared apex headers were
+freshly observed. Local preview and production suites each passed 49/49; production
+browser 2/2; MSQE regression 35/35; deterministic baseline 7/7, exit 0.
+
+Authenticated Cloudflare deployed commit/build logs, remote Node environment and
+apex/www dashboard Active/SSL/Pages associations remain unavailable because
+automatic approval review rejected private dashboard access pending explicit user
+authorization. Reported successful Node 24.20.0 build, initial Node 22.16.0 guard
+rejection, protected noindex deployment and later indexing activation are recorded
+with provenance; no deployment ID is inferred. No infrastructure setting changed.
+
+**PUBLIC LEARNING-READY CONTROLLED RC; First Edition remains IN PROGRESS.**
+29 canonical findings remain **15 OPEN / NOT VERIFIED; 14 CLOSED / VERIFIED**;
+LR-1=0, LR-2=0, FE-1=6, FE-2=5, FE-3=4 outstanding. v1.0.0 NOT YET RELEASED.
+No canonical content, chapter/Part manifest, finding lifecycle or deterministic
+baseline constant changed. Historical event bodies/index rows remain byte-identical.

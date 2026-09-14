@@ -1,5 +1,22 @@
 # Current Sprint
 
+
+> **Current public availability — WEB-5L, recorded 2026-09-14:**
+> **MSQE v0.16.0 — LEARNING-READY — CONTROLLED RC** is **PUBLICLY AVAILABLE AT
+> <https://msqe.dev>**. Actual first public launch: **2026-09-11**.
+> [Live acceptance evidence](website/LIVE_LAUNCH_ACCEPTANCE.md): **32 PASS / 0 FAIL /
+> 0 INCOMPLETE — Decision A**. **PUBLICLY LAUNCHED / ACCEPTED; production evidence
+> AUTHENTICATED.** WEB-5LV accepted the live deployment evidence; the bounded
+> WEB-5LF1 test/status correction awaits fresh independent WEB-5LV2.
+> Historical intermediate result: **27 PASS / 0 FAIL / 5 INCOMPLETE, Decision C**,
+> superseded by the authenticated final result; preserved in the launch record.
+> **First Edition: IN PROGRESS. v1.0.0: NOT YET RELEASED.** Canonical findings:
+> **29 total; 15 OPEN / NOT VERIFIED; 14 CLOSED / VERIFIED**. Outstanding:
+> **LR-1=0, LR-2=0, FE-1=6, FE-2=5, FE-3=4**. No finding closes through WEB-5L.
+> Public availability is distinct from release/tag administration and supersedes
+> earlier pre-launch availability assumptions only; historical review and declaration
+> records below retain their original evidence and do not imply new gate approval.
+
 ## Active website closure preparation — WEB-5BR
 
 WEB-4 remains integrated/accepted. WEB-5BV2 independently verified the final

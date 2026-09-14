@@ -14,7 +14,16 @@ type Mutation = { path: string; beforeBlob: string; afterBlob: string; substitut
 const evidence = (name: string) => JSON.parse(readFileSync(resolve(repoRoot, 'website/evidence/web5', name), 'utf8'));
 const mutations: Mutation[] = [...evidence('canonical-mutations.json'), ...evidence('f1-canonical-mutations.json')];
 const licenses: Record<string, string> = evidence('license-file-hashes.json');
-const closureSources: Record<string, string> = evidence('br-source-hashes.json');
+const closureSources: Record<string, string> = {
+  ...evidence('br-source-hashes.json'),
+  // WEB-5LF1: exact WEB-5LV-accepted FE-EV-049 body/index addition;
+  // removing those additions reproduces the accepted FE-EV-001–048 bytes.
+  'docs/02-first-edition-review/FIRST_EDITION_REVIEW_LOG.md': 'b45af8d74845b06b637371d388f5311abd48e6c4d5e26212a9bcd4c4ef5b2595',
+  // Explicitly authorized WEB-5LF1 status identities. Removing only the
+  // reviewed WEB-5L status block from each file reproduces HEAD exactly.
+  'README.md': '0b8d00e5b4616e936bbd012d8ff1c91bbd1c2021674d38ce384634fbdeb13f40',
+  'CURRENT_SPRINT.md': '8c04c95e045fee7cc12dd1368ba59975a4ad92d681dfe14ded9c76cffe7f0bf6',
+};
 export function assertAuthorizedSource(path: string, original: string, actual: string) {
   if (closureSources[path]) {
     assert.equal(createHash('sha256').update(actual).digest('hex'), closureSources[path], `Authorized closure bytes: ${path}`);
