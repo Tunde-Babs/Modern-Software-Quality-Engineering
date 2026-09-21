@@ -143,7 +143,7 @@ Testing and operational evidence reinforce each other here. A controlled test ca
 
 ## Industry Perspective
 
-Google’s SRE literature treats postmortems and their follow-up actions as a way to learn from significant incidents.[^google-postmortem] It is practitioner guidance. The experiment model in this chapter is an MSQE teaching framework intended to make safety, evidence, and limitation explicit; it is not a certification programme or a mandate to run production experiments.
+Google’s SRE literature treats postmortems and their follow-up actions as a way to learn from significant incidents.[^sre-book-postmortem] It is practitioner guidance. The experiment model in this chapter is an MSQE teaching framework intended to make safety, evidence, and limitation explicit; it is not a certification programme or a mandate to run production experiments.
 
 ## Common Misconceptions or Common Pitfalls
 
@@ -204,7 +204,7 @@ Create a **Recovery and Reliability Learning Review** for the Atlas experiment. 
 
 ## References
 
-[^google-postmortem]: Lunney, John, and Sue Lueder. [Postmortem Culture: Learning from Failure](https://sre.google/sre-book/postmortem-culture/). *Site Reliability Engineering*. Google. Accessed 2026-08-12.
+[^sre-book-postmortem]: Lunney, John, and Sue Lueder. [Postmortem Culture: Learning from Failure](https://sre.google/sre-book/postmortem-culture/). *Site Reliability Engineering*. Google. Accessed 2026-08-12.
 
 ## Chapter Checklist
 

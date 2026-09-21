@@ -241,7 +241,7 @@ TypeScript's stated purpose is static type checking for JavaScript programs: it 
 
 Those language capabilities matter to Quality Engineering because automation and tooling operate at uncertain boundaries: configuration can be absent, a service can return unexpected data, and an environment can behave differently from the one assumed by a local check. Static feedback is valuable, but a mature engineering practice combines it with clear runtime behaviour, review, test evidence, and proportionate operational safeguards.
 
-The Software Engineering Body of Knowledge treats software construction, configuration management, and engineering management as connected professional concerns rather than isolated coding activities.[^swebok] MSQE applies that principle to Quality Engineering assets: a test, utility, or report processor may be small, but if teams rely on it, its design and maintenance affect the wider delivery system.
+The Software Engineering Body of Knowledge treats software construction, configuration management, and engineering management as connected professional concerns rather than isolated coding activities.[^swebok-v4-topics] MSQE applies that principle to Quality Engineering assets: a test, utility, or report processor may be small, but if teams rely on it, its design and maintenance affect the wider delivery system.
 
 ## Common Misconceptions or Common Pitfalls
 
@@ -352,7 +352,7 @@ Use the companion [`inheritedAccountRecoveryCheck.ts`](../../../code/part-02-pro
 
 [^typescript-everyday-types]: TypeScript. [Everyday Types](https://www.typescriptlang.org/docs/handbook/2/everyday-types.html). Accessed 2026-08-08.
 
-[^swebok]: IEEE Computer Society. [Software Engineering Body of Knowledge topics](https://www.computer.org/education/bodies-of-knowledge/software-engineering/topics). Accessed 2026-08-08.
+[^swebok-v4-topics]: IEEE Computer Society. [Software Engineering Body of Knowledge topics](https://www.computer.org/education/bodies-of-knowledge/software-engineering/topics). Accessed 2026-08-08.
 
 ## Chapter Checklist
 

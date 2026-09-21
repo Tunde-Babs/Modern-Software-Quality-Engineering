@@ -393,7 +393,7 @@ TypeScript’s module documentation explains that a module has its own scope and
 
 The TypeScript module reference also explains why Node.js-oriented TypeScript projects often use `.js` in relative import specifiers even when their source files are `.ts`: the emitted program is resolved by the runtime, while TypeScript resolves the source appropriately during compilation.[^typescript-module-reference] The companion uses this convention so its compiled examples run as ECMAScript modules. It is an implementation detail of this teaching project, not a requirement for every TypeScript codebase.
 
-Established software-design literature has long treated modularity, information hiding, and dependency direction as ways to reduce the cost of understanding and changing systems.[^parnas] The enduring lesson for Quality Engineering is proportionate rather than ceremonial: make the boundary clear enough for the risk, expected reuse, and likely change.
+Established software-design literature has long treated modularity, information hiding, and dependency direction as ways to reduce the cost of understanding and changing systems.[^parnas-modules-1972] The enduring lesson for Quality Engineering is proportionate rather than ceremonial: make the boundary clear enough for the risk, expected reuse, and likely change.
 
 ## Common Misconceptions or Common Pitfalls
 
@@ -529,7 +529,7 @@ async function processQualityFile(): Promise<void> {
 
 [^typescript-module-reference]: TypeScript. [Modules — Reference](https://www.typescriptlang.org/docs/handbook/modules/reference.html). Accessed 2026-08-08.
 
-[^parnas]: Parnas, David L. [On the Criteria To Be Used in Decomposing Systems into Modules](https://doi.org/10.1145/361598.361623). *Communications of the ACM*, 15(12), 1972. Accessed 2026-08-08.
+[^parnas-modules-1972]: Parnas, David L. [On the Criteria To Be Used in Decomposing Systems into Modules](https://doi.org/10.1145/361598.361623). *Communications of the ACM*, 15(12), 1972. Accessed 2026-08-08.
 
 ## Chapter Checklist
 

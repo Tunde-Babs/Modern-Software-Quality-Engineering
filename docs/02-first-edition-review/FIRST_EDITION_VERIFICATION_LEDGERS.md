@@ -1,5 +1,20 @@
 # First Edition Verification Ledgers
 
+> **Current FE-2R closure preparation — 2026-09-21:** FE-2 **COMPLETE / INDEPENDENTLY VERIFIED / CLOSED** (FE-EV-053); closure package **AWAITING FRESH NARROW FE-2CV BEFORE CHECKPOINT**.
+> Supplied independent **FE-2V: 42 PASS / 0 FAIL / 0 INCOMPLETE, Decision A**, accepted correction package `2f5cc5c78e1b658982f5a179dd7dffb7831333caa195b1462a6a167a52425244`. FE-2R records that acceptance; it does not perform semantic verification.
+> Exactly five FE-2 findings are now **CLOSED / VERIFIED**. FE-1 remains **COMPLETE / CLOSED / VERIFIED**. Census: **29 total; 4 OPEN / NOT VERIFIED; 25 CLOSED / VERIFIED**. Outstanding allocation: **LR-1=0, LR-2=0, FE-1=0, FE-2=0, FE-3=4**.
+> **FE-3: NOT STARTED. First Edition: IN PROGRESS. v1.0.0: NOT YET RELEASED.** **MSQE v0.16.0 — LEARNING-READY — CONTROLLED RC** remains **PUBLICLY LIVE AT https://msqe.dev**.
+> All FE-2V-accepted manuscript/asset bytes remain frozen. Only approved accepted identities/counts and directly coupled closure expectations evolve; HEAD/index retain the prior accepted chapter identity until a separately authorized checkpoint. Those expected layer failures are not waived.
+> This statement supersedes earlier current-activity/census summaries while preserving their historical evidence. It establishes no new Learning-Ready freeze and changes no deployed baseline. Next: fresh narrow **FE-2CV**; **UNSTAGED / UNCOMMITTED / UNPUSHED**. No checkpoint, push or deployment.
+
+
+> **Current FE-2 correction authorship — 2026-09-21:** FE-2 **CORRECTION COMPLETE / AWAITING FRESH INDEPENDENT FE-2V** (FE-EV-052). This is unscored author evidence, not independent verification or closure.
+> FE-1 remains **COMPLETE / CLOSED / DEPLOYED** at the supplied integrated base `c2175c2e3ae111acfa615bbda19ea8ba53fea201`. All five FE-2 findings remain **OPEN / NOT VERIFIED**; FE-3 remains **NOT STARTED**.
+> Census: **29 total; 9 OPEN / NOT VERIFIED; 20 CLOSED / VERIFIED**. Outstanding allocation: **LR-1=0, LR-2=0, FE-1=0, FE-2=5, FE-3=4**. **First Edition: IN PROGRESS. v1.0.0: NOT YET RELEASED.**
+> Public: **MSQE v0.16.0 — LEARNING-READY — CONTROLLED RC — LIVE AT https://msqe.dev**. This unpublished candidate does not alter the public deployment or establish a new readiness freeze; affected-scope independent review and later authorized baseline evolution remain required.
+> This current statement supersedes earlier preparation/status summaries below only as current activity. Their historical evidence remains intact. Candidate: **UNSTAGED / UNCOMMITTED / UNPUSHED**; HEAD/index unchanged. Next: fresh independent **FE-2V**; no closure, checkpoint or deployment is authorized here.
+
+
 > **Current FE-1R closure preparation — 2026-09-21:** FE-1 **COMPLETE / INDEPENDENTLY VERIFIED / CLOSED** (FE-EV-051); closure package **AWAITING FRESH NARROW FE-1CV BEFORE CHECKPOINT**.
 > Supplied independent **FE-1V: 37 PASS / 0 FAIL / 0 INCOMPLETE, Decision A**, accepted correction package `8876eb47adfc6fa18152b340c804419edb00ed47f05fb42b56b89f42d170f91b`. FE-1R records that acceptance; it did not perform FE-1V.
 > Exactly six FE-1 findings are **CLOSED / VERIFIED**. Census: **29 total; 9 OPEN / NOT VERIFIED; 20 CLOSED / VERIFIED**. Outstanding allocation: **LR-1=0, LR-2=0, FE-1=0, FE-2=5, FE-3=4**.
@@ -1509,3 +1524,59 @@ This is additive recording of supplied independent acceptance, not a new T5 revi
 **LRG-1 Learning-Ready Gate PASS — 12 PASS / 0 FAIL, Decision A**, recorded from the supplied independent assessment in **FE-EV-047**. **Learning-Ready RC: DECLARATION PREPARED — AWAITING INDEPENDENT DECLARATION VERIFICATION**. Designation: **LEARNING-READY — CONTROLLED RC**; this is an unverified declaration-preparation package, not a completed declaration checkpoint. Content baseline: `5c7359a3a07530dc26457208e8092d8ebcc3f469`; declaration checkpoint commit: **NOT YET CREATED**. LR-1/LR-2 remain COMPLETE / INDEPENDENTLY VERIFIED / CLOSED. Census: **29 total; 15 OPEN / NOT VERIFIED; 14 CLOSED / VERIFIED**. Outstanding allocation: **LR-1=0, LR-2=0, FE-1=6, FE-2=5, FE-3=4**. LRG-1 residual disposition: **10 SAFE TO DEFER / 5 EARLY CORRECTION RECOMMENDED / NON-BLOCKING / 0 LR BLOCKING**. First Edition remains **IN PROGRESS**; FE-1/FE-2/FE-3 **NOT STARTED**; v0.16.0 remains unreleased. Next: fresh independent LR-RC declaration verification before separately authorized checkpointing. Package: **UNSTAGED / UNCOMMITTED / UNPUSHED**.
 
 [Assessment identity, twelve-control result, exact residual mapping and frozen content inventory](LEARNING_READY_RC_DECLARATION.md) are recorded from the supplied LRG-1/LRG-1E evidence. This actor prepares governance records and does not rerun LRG-1, reclassify residuals, or independently verify its own declaration package.
+
+---
+
+### FE-2 scoped citation population — author evidence, 2026-09-21
+
+The operative measurement distinguishes **definition occurrences**, **distinct definition URLs**, and **distinct chapter-wide URLs**. A source identity is not a URL count. At incoming commit `c2175c2e3ae111acfa615bbda19ea8ba53fea201`, the independently reproducible raw census is **378 definitions; 519 body markers; 185 keys; 375 definition-URL occurrences / 175 distinct definition URLs; 744 chapter-wide URL occurrences / 210 distinct chapter URLs**. The chapter-only URL set difference is **35**; three definitions have no URL.
+
+The FE-2 candidate chapter manifest is **137 / `3a56e89be75d9bfbe63a01a938fa44d6f7067814fc8029af33ace8b5a85b6102`** (author identity only; not an accepted-baseline replacement). Its census is **371 definitions; 524 body markers; 173 keys; 368 definition-URL occurrences / 172 distinct definition URLs; 739 chapter-wide URL occurrences / 210 distinct chapter URLs**. Chapter-only URL set difference: **38**. **Unused definitions: 0. Undefined references: 0.** Seven definitions moved to complete Further Reading entries; five supported attachments added five body markers. Five duplicate Further Reading/definition URL occurrences were consolidated; no distinct chapter URL was lost. The three URL-less works remain formal citations.
+
+Extraction scope: the 137 tracked `book/part-*/chapters/chapter-*.md` files, sorted by path. Definitions match `^\[\^([^\]]+)\]:`; body markers are `[^key]` occurrences outside definition lines. URL extraction matches HTTP(S) tokens up to whitespace, angle brackets, closing square bracket, double quote or backtick, stripping only trailing `.,;:)`. URLs are case/transport/path-sensitive; no redirect, slash, fragment or HTTP/HTTPS coalescing occurs. Count occurrences separately from set cardinalities; chapter-only URLs are `set(chapter URLs) − set(definition URLs)`. Use a denominator of 172 only for the candidate's distinct definition-URL coverage; 210 is the all-content URL scope, never that denominator. These are descriptive author facts, not a score or source-verification PASS.
+
+This explicitly supersedes the ambiguous population phrase in **Review Plan §4 Level 7**, **Verification Ledgers §1 population statement**, **Review Log FE-EV-001 §2.4 footnote row**, and **Review Log transversal T2 model row** for operational use. Their original point-in-time text and T2 results remain immutable. The existing ledger scope note/SRC-T2-00 and T2 event discrepancy explanation remain valid historical evidence. Do not replace every 210 with 175, substitute candidate counts into historical records, or change any quantitative classifier, threshold or FE-3 method. FE-T2-002 remains **OPEN / NOT VERIFIED** pending FE-2V.
+
+### FE-2 source-identity and disposition record — unscored author evidence
+
+Source identity precedes the twelve orphan dispositions; final paired-key normalization precedes the scoped census. Exact per-chapter substitutions, full incoming definition bodies, pre/post manifests and protected-boundary evidence are frozen outside the repository in `/tmp/msqe-fe2`. The 48 changed chapters contain only citation-token changes, five marker additions and seven full-attribution Further Reading consolidations; all headings, instructional prose, metadata, objectives, numeric examples and practical assets are preserved.
+
+| Bibliographic family | Canonical key / identity decision |
+| --- | --- |
+| ISO/IEC 25010:2023; ISO/IEC 25030 | iso-25010; iso-25030 — exact cited editions/locators, unchanged metadata |
+| SRE SLO; monitoring; cascading failures; overload | sre-slo; sre-monitoring; sre-cascading-failures; sre-overload — exact named chapters |
+| SRE postmortems | sre-book-postmortem / sre-workbook-postmortem — distinct books/chapters; Workbook primary text explicitly refers to the first book |
+| OWASP threat modeling | owasp-threat-modeling — same named cheat sheet |
+| TypeScript | typescript-docs / typescript-handbook — documentation hub versus named Handbook |
+| ISTQB CTFL; AWS retries | istqb-ctfl; aws-idempotency — same fixed syllabus / named Builders Library article |
+| JSON Schema | json-schema-specification / json-schema-validation — specification index versus 2020-12 validation vocabulary |
+| DORA | dora-program / dora-research / dora-metrics / dora-capabilities / dora-state-of-devops — separate cited documents/entry points; no metrics-policy modernization |
+| W3C Trace Context | w3c-trace-context — same cited specification |
+| SWEBOK | swebok-v4-topics / swebok-v4-0a — preserve v4.0 topics representation separately from explicitly v4.0a PDF; no edition equivalence inferred |
+| Parnas | parnas-modules-1972 / parnas-clements-design-1986 — distinct title/year/authorship/DOI; institutional full-text limitation retained verbatim |
+| OWASP API | owasp-api-project / owasp-api-top10-2023 — project versus versioned 2023 introduction |
+| RFC8259 | rfc8259 — extensionless and .html locators identify the same numbered RFC, editor T. Bray, December 2017; permitted locator aliases |
+
+Fresh primary-source research on 2026-09-21 inspected the cited Git/Pro Git, GitHub Docs and Google Engineering Practices passages before attachment, and RFC Editor, SRE Book/Workbook, DORA/Google Cloud, TypeScript, JSON Schema and OWASP pages before ambiguous-key separation. The actual [IEEE PDF](https://ieeecs-media.computer.org/media/education/swebok/swebok-v4.pdf) identifies v4.0a; direct IEEE topics-page retrieval returned 403, while the official indexed title identifies V4.0 Topics. This limited evidence supports keeping the representations distinct, not a claim of full-text retrieval or a metadata upgrade. Historical access dates and verification limitations remain unchanged. Exact URL aliases with unchanged title/edition and the Parnas DOI distinction are repository-supported; no new claim interpretation was required. Sources moved to Further Reading are supplementary, not newly claimed support for a synthetic capstone.
+
+After reconciliation, no URL group uses multiple keys; the only multi-URL key is the documented RFC8259 representation alias. All seven moved reference bodies remain complete; all retained formal definition bodies are unchanged apart from their keys. No new source, URL or unsupported assertion was introduced. This is **author evidence**, not independent source verification or lifecycle closure. FE-2V must freshly authenticate claim support, identities, rendering and the exact package fingerprint.
+
+---
+
+### FE-2R accepted-baseline evolution — 2026-09-21
+
+Supplied independent **FE-2V: 42 PASS / 0 FAIL / 0 INCOMPLETE, Decision A** is the semantic acceptance authority for exact package `2f5cc5c78e1b658982f5a179dd7dffb7831333caa195b1462a6a167a52425244`. FE-2R records that acceptance, closes exactly FE-L1-003 / FE-L2-004 / FE-L3-002 / FE-T2-001 / FE-T2-002 and evolves only directly coupled deterministic expectations. It performs no new semantic review. All 48 accepted changed chapters and all other manuscript/assets remain byte-frozen.
+
+| Approved expectation | Previous | Independently reproduced accepted value |
+| --- | --- | --- |
+| 137-chapter identity | `beea2f46a8a2ce9d3a7e6dc033dee510484a015a0ef2164a7bd6e2480f981822` | `3a56e89be75d9bfbe63a01a938fa44d6f7067814fc8029af33ace8b5a85b6102` |
+| 12 Part README identity | `eafd4ba0fc55275cf8bcd9094a225e408ab22d43e019d76319ce1897b1c11451` | Unchanged |
+| Reference fixtures II-11 / III-12 / VII-11 | 5 / 5 / 3 formal definitions | 3 / 3 / 0; complete moved bodies preserved in Further Reading |
+| Corpus formal / rendered / uncited | 378 / 378 / 12 | 371 / 371 / 0 |
+| Complete-DOM links including noscript | 13,589 | 13,599; five accepted citation/backlink pairs; zero broken destinations |
+| Finding census | 9 OPEN / 20 CLOSED | 4 OPEN / 25 CLOSED; total 29 |
+| Outstanding allocation LR-1/LR-2/FE-1/FE-2/FE-3 | 0/0/0/5/4 | 0/0/0/0/4 |
+
+A new exact FE-2 source transition authenticates each incoming `c2175c2e3ae111acfa615bbda19ea8ba53fea201` blob through the unchanged WEB-5→FE-1 chain and checks its exact new SHA-256. It retains the independently accepted FE-2V SHA for each of the 54 correction-package paths, distinguishing 48 unchanged semantic outputs from six closure-updated governance/status outputs; the two directly coupled Python gate/test files receive separate closure-only identities. Historical FE-1/WEB-5 fixtures stay immutable. No exclusion, loose identity, suppressed assertion, manifest algorithm or protected-path removal is introduced.
+
+The current baseline operates on HEAD/index/working-tree independently. Here HEAD/index still contain the previous chapter manifest while the working tree matches the new accepted constant; this expected pre-checkpoint layer mismatch is not waived. A disposable staged/committed model must reproduce eventual all-layer PASS; the real repository stays unstaged/uncommitted/unpushed. Fresh narrow **FE-2CV** must authenticate the closure-only delta and final package before checkpoint. First Edition remains IN PROGRESS; FE-3 remains NOT STARTED with four outstanding; public v0.16.0 Learning-Ready Controlled RC remains live. No new readiness freeze, release or deployment occurs.

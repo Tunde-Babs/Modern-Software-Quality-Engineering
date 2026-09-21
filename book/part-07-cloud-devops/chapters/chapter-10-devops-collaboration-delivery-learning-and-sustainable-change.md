@@ -96,7 +96,7 @@ Do not create a debt register merely to count items. Prioritize the conditions t
 
 Teams may measure deployment frequency, change lead time, failed changes, recovery time, queue delay, gate reliability, retry rate, or time to identify a release state. Measures can reveal a constraint or assess an improvement hypothesis. They can also create harmful incentives when used as universal targets or individual performance scores.
 
-DORA research examines technical, process, and cultural capabilities in relation to delivery and organisational outcomes.[^dora] It should be treated as empirical context, not a claim that any one metric causes quality or that four measures form a universal Quality Engineering score. A team should compare its own conditions over time, understand how a measure is defined, and ask whether it represents the decision it is being used to improve.
+DORA research examines technical, process, and cultural capabilities in relation to delivery and organisational outcomes.[^dora-capabilities] It should be treated as empirical context, not a claim that any one metric causes quality or that four measures form a universal Quality Engineering score. A team should compare its own conditions over time, understand how a measure is defined, and ask whether it represents the decision it is being used to improve.
 
 For Atlas Commerce, a useful learning question is not “did we reduce recovery time?” alone. It is “did adding a safe effective-configuration identity let the release owner distinguish a stale promotion from a dependency failure before customer exposure expanded?” That connects a measure or observation to a concrete delivery capability.
 
@@ -193,7 +193,7 @@ Quality Engineers contribute by connecting learning to evidence quality. They ca
 
 ## Industry Perspective
 
-DORA research emphasizes that technical, process, and cultural capabilities interact; its findings should not be used to reduce DevOps to throughput metrics or a prescribed organisational chart.[^dora] The [DORA State of DevOps research](https://cloud.google.com/resources/state-of-devops) and official product documentation can provide context for a specific claim, but local evidence should drive the improvement decision.
+DORA research emphasizes that technical, process, and cultural capabilities interact; its findings should not be used to reduce DevOps to throughput metrics or a prescribed organisational chart.[^dora-capabilities] The [DORA State of DevOps research](https://cloud.google.com/resources/state-of-devops) and official product documentation can provide context for a specific claim, but local evidence should drive the improvement decision.
 
 ## Common Misconceptions or Common Pitfalls
 
@@ -262,7 +262,7 @@ Use synthetic release information only. Do not implement a workflow, metric dash
 
 ## References
 
-[^dora]: Google Cloud. [DevOps capabilities](https://cloud.google.com/architecture/devops). Accessed 2026-08-11.
+[^dora-capabilities]: Google Cloud. [DevOps capabilities](https://cloud.google.com/architecture/devops). Accessed 2026-08-11.
 
 ## Chapter Checklist
 

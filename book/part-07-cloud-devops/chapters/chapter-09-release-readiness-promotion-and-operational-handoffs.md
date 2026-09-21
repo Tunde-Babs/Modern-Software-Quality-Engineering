@@ -194,7 +194,7 @@ Quality Engineers turn ambiguous status into bounded claims and help recipients 
 
 ## Industry Perspective
 
-DORA research discusses delivery and organisational capabilities, including documentation and feedback, as context for improving technology delivery.[^dora] It does not define a universal release checklist or release-approval hierarchy. The structured brief in this chapter is original MSQE educational framing, designed to make local decisions challengeable.
+DORA research discusses delivery and organisational capabilities, including documentation and feedback, as context for improving technology delivery.[^dora-capabilities] It does not define a universal release checklist or release-approval hierarchy. The structured brief in this chapter is original MSQE educational framing, designed to make local decisions challengeable.
 
 ## Common Misconceptions or Common Pitfalls
 
@@ -263,7 +263,7 @@ Use fictional records only. Do not create a formal approval workflow, release ti
 
 ## References
 
-[^dora]: Google Cloud. [DevOps capabilities](https://cloud.google.com/architecture/devops). Accessed 2026-08-11.
+[^dora-capabilities]: Google Cloud. [DevOps capabilities](https://cloud.google.com/architecture/devops). Accessed 2026-08-11.
 
 ## Chapter Checklist
 

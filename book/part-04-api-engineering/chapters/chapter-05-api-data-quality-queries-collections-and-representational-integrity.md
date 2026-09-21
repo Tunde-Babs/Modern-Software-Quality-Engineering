@@ -103,7 +103,7 @@ The Quality Engineer should name the intended representation claim. “The order
 
 ## Validity, Correctness, and Fitness for Use
 
-JSON Schema validation asserts constraints on the structure of JSON instance data.[^json-schema] OpenAPI can describe HTTP operations, parameters, responses, and reusable schemas.[^openapi] These mechanisms can make valuable structural expectations explicit. They do not establish that data is correct for its domain or fit for a consumer's decision.
+JSON Schema validation asserts constraints on the structure of JSON instance data.[^json-schema-validation] OpenAPI can describe HTTP operations, parameters, responses, and reusable schemas.[^openapi] These mechanisms can make valuable structural expectations explicit. They do not establish that data is correct for its domain or fit for a consumer's decision.
 
 For example, a response can validate while being wrong in several ways:
 
@@ -312,7 +312,7 @@ The right improvement depends on the consequence. A search result may tolerate a
 
 ## Industry Perspective
 
-OpenAPI defines a language-agnostic description format for HTTP APIs, including operation parameters, responses, and schemas.[^openapi] JSON Schema provides vocabularies for structural constraints on JSON instances.[^json-schema] RFC 9110 defines HTTP request and representation semantics.[^rfc9110] These specifications can make interface expectations explicit, but none proves that a collection contains the correct population, that an aggregate has the intended business meaning, or that a view is fresh enough for a consumer decision.
+OpenAPI defines a language-agnostic description format for HTTP APIs, including operation parameters, responses, and schemas.[^openapi] JSON Schema provides vocabularies for structural constraints on JSON instances.[^json-schema-validation] RFC 9110 defines HTTP request and representation semantics.[^rfc9110] These specifications can make interface expectations explicit, but none proves that a collection contains the correct population, that an aggregate has the intended business meaning, or that a view is fresh enough for a consumer decision.
 
 The data-quality evidence prompt in this chapter is MSQE educational framing. It is not a data-governance standard, a reconciliation method, or a promise that an API can expose every provenance detail.
 
@@ -419,7 +419,7 @@ Atlas documents `status=active` as including `accepted` and `pending_review`. A 
 ## References
 
 [^openapi]: OpenAPI Initiative. [OpenAPI Specification](https://spec.openapis.org/oas/latest.html). Accessed 2026-08-10.
-[^json-schema]: JSON Schema. [JSON Schema Validation: A Vocabulary for Structural Validation of JSON](https://json-schema.org/draft/2020-12/json-schema-validation). Draft 2020-12. Accessed 2026-08-10.
+[^json-schema-validation]: JSON Schema. [JSON Schema Validation: A Vocabulary for Structural Validation of JSON](https://json-schema.org/draft/2020-12/json-schema-validation). Draft 2020-12. Accessed 2026-08-10.
 [^rfc9110]: Fielding, R., Nottingham, M., and J. Reschke, eds. [RFC 9110 — HTTP Semantics](https://www.rfc-editor.org/rfc/rfc9110.html). IETF, June 2022. Accessed 2026-08-10.
 
 ## Chapter Checklist

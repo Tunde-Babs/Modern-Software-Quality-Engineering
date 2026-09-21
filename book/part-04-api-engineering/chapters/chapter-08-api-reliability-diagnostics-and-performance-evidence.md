@@ -29,7 +29,7 @@ Chapter 7 established that dependent and asynchronous work extends an API outcom
 
 An API is reliable at its boundary when it provides useful outcomes, predictable and safe failure, appropriate timing, and enough evidence to investigate material problems. These qualities are related but not interchangeable: an API can be fast but semantically wrong, available but unusable, or apparently recovered while creating duplicate work.
 
-ISO/IEC 25010 identifies **reliability** and **performance efficiency** as product quality characteristics.[^iso25010] It does not classify observability, correlation, logging, tracing, or testability that way. This chapter treats those as **engineering capabilities** for observing and investigating API behaviour, rather than proof that the interface is reliable.
+ISO/IEC 25010 identifies **reliability** and **performance efficiency** as product quality characteristics.[^iso-25010] It does not classify observability, correlation, logging, tracing, or testability that way. This chapter treats those as **engineering capabilities** for observing and investigating API behaviour, rather than proof that the interface is reliable.
 
 This is not a load-testing, capacity-planning, observability-platform, or SRE-operations guide. It develops the preceding judgement: what expectation to clarify, condition to represent, and limitation to state.
 
@@ -70,7 +70,7 @@ This chapter uses **reliability evidence** to mean observations that bear on suc
 
 **Availability** concerns whether a service or function can be used when needed under an agreed definition. **Reliability** also asks whether that available behaviour is correct, predictable, and recoverable for its intended use. A generic error returned immediately may make an endpoint technically available while failing its consumer purpose.
 
-State the boundary being considered: connection acceptance, authenticated response, completed order, accurate processing state, or safe recovery. Each needs different evidence. Google’s SRE guidance likewise connects monitoring to user-visible service behaviour.[^google-monitoring] It is practitioner guidance, not an MSQE requirement.
+State the boundary being considered: connection acceptance, authenticated response, completed order, accurate processing state, or safe recovery. Each needs different evidence. Google’s SRE guidance likewise connects monitoring to user-visible service behaviour.[^sre-monitoring] It is practitioner guidance, not an MSQE requirement.
 
 ## Performance Evidence in Context
 
@@ -256,9 +256,9 @@ The progression is not a rejection of existing test skill. A Quality Engineer st
 
 ## Industry Perspective
 
-Industry guidance provides useful vocabulary but should not replace contextual engineering judgement. ISO/IEC 25010 provides a formal product-quality model in which reliability and performance efficiency are distinct characteristics.[^iso25010] RFC 9110 defines HTTP semantics that help an API state what a response means, including the distinction between a completed response and accepted processing.[^rfc9110] RFC 6585 specifies `429 Too Many Requests` for an HTTP rate-limit condition.[^rfc6585]
+Industry guidance provides useful vocabulary but should not replace contextual engineering judgement. ISO/IEC 25010 provides a formal product-quality model in which reliability and performance efficiency are distinct characteristics.[^iso-25010] RFC 9110 defines HTTP semantics that help an API state what a response means, including the distinction between a completed response and accepted processing.[^rfc9110] RFC 6585 specifies `429 Too Many Requests` for an HTTP rate-limit condition.[^rfc6585]
 
-Google’s SRE literature explains monitoring and service-level thinking from an operational perspective, while OpenTelemetry describes common observability signal concepts. Those sources are valuable background for diagnostic and measurement vocabulary.[^google-monitoring][^opentelemetry] They are not universal latency targets, mandated technology choices, or evidence that an individual API has met its product-specific quality expectations. MSQE uses them here to support a narrower educational principle: quality claims need an observable condition, an interpretable result, and an honest limitation.
+Google’s SRE literature explains monitoring and service-level thinking from an operational perspective, while OpenTelemetry describes common observability signal concepts. Those sources are valuable background for diagnostic and measurement vocabulary.[^sre-monitoring][^opentelemetry] They are not universal latency targets, mandated technology choices, or evidence that an individual API has met its product-specific quality expectations. MSQE uses them here to support a narrower educational principle: quality claims need an observable condition, an interpretable result, and an honest limitation.
 
 ## Common Misconceptions or Common Pitfalls
 
@@ -362,10 +362,10 @@ Atlas Commerce exposes an authenticated order-submission API. Under normal opera
 
 ## References
 
-[^iso25010]: International Organization for Standardization. [ISO/IEC 25010:2023 — Systems and software engineering — Systems and software Quality Requirements and Evaluation (SQuaRE) — Product quality model](https://www.iso.org/standard/78176.html). ISO, 2023. Accessed 2026-08-10.
+[^iso-25010]: International Organization for Standardization. [ISO/IEC 25010:2023 — Systems and software engineering — Systems and software Quality Requirements and Evaluation (SQuaRE) — Product quality model](https://www.iso.org/standard/78176.html). ISO, 2023. Accessed 2026-08-10.
 [^rfc9110]: Fielding, R., Nottingham, M., and J. Reschke, eds. [RFC 9110 — HTTP Semantics](https://www.rfc-editor.org/rfc/rfc9110.html). IETF, June 2022. Accessed 2026-08-10.
 [^rfc6585]: Nottingham, M., and R. Fielding. [RFC 6585 — Additional HTTP Status Codes](https://www.rfc-editor.org/rfc/rfc6585.html). IETF, April 2012. Accessed 2026-08-10.
-[^google-monitoring]: Beyer, B., Jones, C., Petoff, J., and N. Murphy, eds. [Monitoring Distributed Systems](https://sre.google/sre-book/monitoring-distributed-systems/). *Site Reliability Engineering*. Google, 2016. Accessed 2026-08-10.
+[^sre-monitoring]: Beyer, B., Jones, C., Petoff, J., and N. Murphy, eds. [Monitoring Distributed Systems](https://sre.google/sre-book/monitoring-distributed-systems/). *Site Reliability Engineering*. Google, 2016. Accessed 2026-08-10.
 [^opentelemetry]: OpenTelemetry. [Observability Primer](https://opentelemetry.io/docs/concepts/observability-primer/). Accessed 2026-08-10.
 
 ## Chapter Checklist

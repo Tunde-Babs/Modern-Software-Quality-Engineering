@@ -1,5 +1,20 @@
 <p align="center">
 
+> **Current FE-2R closure preparation — 2026-09-21:** FE-2 **COMPLETE / INDEPENDENTLY VERIFIED / CLOSED** (FE-EV-053); closure package **AWAITING FRESH NARROW FE-2CV BEFORE CHECKPOINT**.
+> Supplied independent **FE-2V: 42 PASS / 0 FAIL / 0 INCOMPLETE, Decision A**, accepted correction package `2f5cc5c78e1b658982f5a179dd7dffb7831333caa195b1462a6a167a52425244`. FE-2R records that acceptance; it does not perform semantic verification.
+> Exactly five FE-2 findings are now **CLOSED / VERIFIED**. FE-1 remains **COMPLETE / CLOSED / VERIFIED**. Census: **29 total; 4 OPEN / NOT VERIFIED; 25 CLOSED / VERIFIED**. Outstanding allocation: **LR-1=0, LR-2=0, FE-1=0, FE-2=0, FE-3=4**.
+> **FE-3: NOT STARTED. First Edition: IN PROGRESS. v1.0.0: NOT YET RELEASED.** **MSQE v0.16.0 — LEARNING-READY — CONTROLLED RC** remains **PUBLICLY LIVE AT https://msqe.dev**.
+> All FE-2V-accepted manuscript/asset bytes remain frozen. Only approved accepted identities/counts and directly coupled closure expectations evolve; HEAD/index retain the prior accepted chapter identity until a separately authorized checkpoint. Those expected layer failures are not waived.
+> This statement supersedes earlier current-activity/census summaries while preserving their historical evidence. It establishes no new Learning-Ready freeze and changes no deployed baseline. Next: fresh narrow **FE-2CV**; **UNSTAGED / UNCOMMITTED / UNPUSHED**. No checkpoint, push or deployment.
+
+
+> **Current FE-2 correction authorship — 2026-09-21:** FE-2 **CORRECTION COMPLETE / AWAITING FRESH INDEPENDENT FE-2V** (FE-EV-052). This is unscored author evidence, not independent verification or closure.
+> FE-1 remains **COMPLETE / CLOSED / DEPLOYED** at the supplied integrated base `c2175c2e3ae111acfa615bbda19ea8ba53fea201`. All five FE-2 findings remain **OPEN / NOT VERIFIED**; FE-3 remains **NOT STARTED**.
+> Census: **29 total; 9 OPEN / NOT VERIFIED; 20 CLOSED / VERIFIED**. Outstanding allocation: **LR-1=0, LR-2=0, FE-1=0, FE-2=5, FE-3=4**. **First Edition: IN PROGRESS. v1.0.0: NOT YET RELEASED.**
+> Public: **MSQE v0.16.0 — LEARNING-READY — CONTROLLED RC — LIVE AT https://msqe.dev**. This unpublished candidate does not alter the public deployment or establish a new readiness freeze; affected-scope independent review and later authorized baseline evolution remain required.
+> This current statement supersedes earlier preparation/status summaries below only as current activity. Their historical evidence remains intact. Candidate: **UNSTAGED / UNCOMMITTED / UNPUSHED**; HEAD/index unchanged. Next: fresh independent **FE-2V**; no closure, checkpoint or deployment is authorized here.
+
+
 > **Current FE-1R closure preparation — 2026-09-21:** FE-1 **COMPLETE / INDEPENDENTLY VERIFIED / CLOSED** (FE-EV-051); closure package **AWAITING FRESH NARROW FE-1CV BEFORE CHECKPOINT**.
 > Supplied independent **FE-1V: 37 PASS / 0 FAIL / 0 INCOMPLETE, Decision A**, accepted correction package `8876eb47adfc6fa18152b340c804419edb00ed47f05fb42b56b89f42d170f91b`. FE-1R records that acceptance; it did not perform FE-1V.
 > Exactly six FE-1 findings are **CLOSED / VERIFIED**. Census: **29 total; 9 OPEN / NOT VERIFIED; 20 CLOSED / VERIFIED**. Outstanding allocation: **LR-1=0, LR-2=0, FE-1=0, FE-2=5, FE-3=4**.

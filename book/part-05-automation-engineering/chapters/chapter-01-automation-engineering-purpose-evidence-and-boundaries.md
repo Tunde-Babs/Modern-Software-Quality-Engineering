@@ -179,7 +179,7 @@ The same run may serve more than one consumer, but it should not force every rea
 
 ## Automation Testability
 
-**Automation testability** is the set of properties that make selected automated evidence feasible, repeatable, and interpretable. It is an engineering capability, not an additional top-level product-quality characteristic in ISO/IEC 25010.[^iso25010] It often depends on collaboration with developers, product colleagues, platform owners, and specialists.
+**Automation testability** is the set of properties that make selected automated evidence feasible, repeatable, and interpretable. It is an engineering capability, not an additional top-level product-quality characteristic in ISO/IEC 25010.[^iso-25010] It often depends on collaboration with developers, product colleagues, platform owners, and specialists.
 
 | Testability property | What it enables | Caution |
 |---|---|---|
@@ -258,7 +258,7 @@ This is why automation investment should be reviewed like other engineering inve
 
 ## Industry Perspective
 
-ISO/IEC/IEEE 29119-2 describes testing processes in a broader lifecycle context, while ISO/IEC 25010 provides a product-quality model.[^iso-29119-2][^iso25010] Neither standard prescribes an automation percentage, a particular tool, or the MSQE automation-value prompt in this chapter. The prompt is explicitly MSQE educational framing.
+ISO/IEC/IEEE 29119-2 describes testing processes in a broader lifecycle context, while ISO/IEC 25010 provides a product-quality model.[^iso-29119-2][^iso-25010] Neither standard prescribes an automation percentage, a particular tool, or the MSQE automation-value prompt in this chapter. The prompt is explicitly MSQE educational framing.
 
 Large-scale engineering experience also illustrates why flaky feedback deserves active management. Google describes flakiness as a passing and failing result with the same code and identifies causes that include concurrency, nondeterministic behaviour, third-party code, and infrastructure.[^google-flaky] Its mitigation examples do not make reruns a repair: unreliable feedback still creates delay and can cause teams to ignore real failures. The same principle applies to a smaller team: a green result must remain interpretable enough to support action.
 
@@ -376,7 +376,7 @@ Automation Engineering treats automated feedback as a designed system. It begins
 
 ## References
 
-[^iso25010]: International Organization for Standardization and International Electrotechnical Commission. [ISO/IEC 25010:2023 — Systems and software engineering — Systems and software Quality Requirements and Evaluation (SQuaRE) — Product quality model](https://www.iso.org/standard/78176.html). Published 2023. Accessed 2026-08-10.
+[^iso-25010]: International Organization for Standardization and International Electrotechnical Commission. [ISO/IEC 25010:2023 — Systems and software engineering — Systems and software Quality Requirements and Evaluation (SQuaRE) — Product quality model](https://www.iso.org/standard/78176.html). Published 2023. Accessed 2026-08-10.
 [^iso-29119-2]: ISO/IEC/IEEE. [ISO/IEC/IEEE 29119-2:2021 — Software and systems engineering — Software testing — Part 2: Test processes](https://www.iso.org/standard/79428.html). Published 2021. Accessed 2026-08-10.
 [^google-flaky]: Micco, John. [Flaky Tests at Google and How We Mitigate Them](https://testing.googleblog.com/2016/05/flaky-tests-at-google-and-how-we.html). Google Testing Blog, May 27, 2016. Accessed 2026-08-10.
 

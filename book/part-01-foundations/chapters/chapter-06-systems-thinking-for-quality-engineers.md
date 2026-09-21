@@ -169,7 +169,7 @@ Feedback loops connect to Chapter 5's timing practices. The systems concern is w
 
 ## Failure Propagation
 
-Distributed systems experience partial failures: one dependency may be slow, unavailable, or inconsistent while others continue to operate. **Failure propagation** occurs when the effect of one condition spreads through dependencies, shared resources, control logic, or human response. A **cascading failure** is a propagating failure that grows as affected parts increase the likelihood that other parts will fail. Google SRE describes how overload, retries, timeouts, and depleted resources can create this self-amplifying pattern.[^srecascading]
+Distributed systems experience partial failures: one dependency may be slow, unavailable, or inconsistent while others continue to operate. **Failure propagation** occurs when the effect of one condition spreads through dependencies, shared resources, control logic, or human response. A **cascading failure** is a propagating failure that grows as affected parts increase the likelihood that other parts will fail. Google SRE describes how overload, retries, timeouts, and depleted resources can create this self-amplifying pattern.[^sre-cascading-failures]
 
 Several terms help teams reason about propagation:
 
@@ -207,7 +207,7 @@ Use measures to guide inquiry, not as incentives that displace the intended outc
 
 ## Quality Attributes as System Concerns
 
-Chapter 3 introduces the distinction between quality models and the engineering capabilities that help a team achieve them. Systems thinking makes the distinction operational. ISO/IEC 25010:2023 identifies **performance efficiency**, **reliability**, **security**, and **maintainability** among its product-quality characteristics. The standard provides a reference model for specifying, measuring, and evaluating product quality; it does not make any one characteristic a proxy for the rest.[^iso25010]
+Chapter 3 introduces the distinction between quality models and the engineering capabilities that help a team achieve them. Systems thinking makes the distinction operational. ISO/IEC 25010:2023 identifies **performance efficiency**, **reliability**, **security**, and **maintainability** among its product-quality characteristics. The standard provides a reference model for specifying, measuring, and evaluating product quality; it does not make any one characteristic a proxy for the rest.[^iso-25010]
 
 These characteristics are system concerns because they frequently cross components and organisational boundaries:
 
@@ -296,7 +296,7 @@ The answer is not always another service, queue, dashboard, or automated test. S
 
 During an incident, the immediate priority is to limit customer harm and restore an acceptable service. A timeline should include customer impact, changes, dependencies, configuration, alerts, capacity, human decisions, mitigations, and recovery—not only one service's exception.
 
-After stabilisation, **blameless incident analysis** examines how people, system conditions, information, and controls contributed without searching for an individual to blame. It does not remove accountability: actions still need an owner and verification. Google SRE documents postmortems as a way to understand contributing causes and establish preventive actions rather than punish individuals.[^googlepostmortem]
+After stabilisation, **blameless incident analysis** examines how people, system conditions, information, and controls contributed without searching for an individual to blame. It does not remove accountability: actions still need an owner and verification. Google SRE documents postmortems as a way to understand contributing causes and establish preventive actions rather than punish individuals.[^sre-workbook-postmortem]
 
 An evidence-led review should ask:
 
@@ -344,9 +344,9 @@ The result may include focused component checks, a contract scenario, a controll
 
 Systems thinking is a long-established engineering perspective. INCOSE describes attention to how parts interact within a whole and with surrounding systems, especially where complexity and feedback matter.[^incose] The SEBoK similarly treats boundaries, interfaces, emergence, and feedback as core concepts.[^sebok]
 
-ISO/IEC 25010:2023 provides a product-quality model that can be used to specify, measure, and evaluate quality across a lifecycle.[^iso25010] ISO/IEC/IEEE 12207:2026 provides a framework for software life-cycle processes and permits iterative and concurrent application of those processes.[^iso12207] Neither standard prescribes the Quality System Map. In MSQE, the map is a teaching aid that helps a team apply system-level reasoning to its own context.
+ISO/IEC 25010:2023 provides a product-quality model that can be used to specify, measure, and evaluate quality across a lifecycle.[^iso-25010] ISO/IEC/IEEE 12207:2026 provides a framework for software life-cycle processes and permits iterative and concurrent application of those processes.[^iso12207] Neither standard prescribes the Quality System Map. In MSQE, the map is a teaching aid that helps a team apply system-level reasoning to its own context.
 
-Public reliability guidance provides concrete examples of this reasoning. Google SRE explains how retries, deadlines, overload, and shared capacity can produce cascading failures.[^srecascading] AWS guidance explains why retries need explicit idempotency and load-management considerations.[^awsretries] Microsoft documents failure-isolation patterns that contain the effect of a malfunctioning or overloaded component.[^microsoftbulkhead] These sources illustrate principles, not a mandatory platform choice: understand interactions, set appropriate limits, make failure behaviour observable, and contain harm.
+Public reliability guidance provides concrete examples of this reasoning. Google SRE explains how retries, deadlines, overload, and shared capacity can produce cascading failures.[^sre-cascading-failures] AWS guidance explains why retries need explicit idempotency and load-management considerations.[^awsretries] Microsoft documents failure-isolation patterns that contain the effect of a malfunctioning or overloaded component.[^microsoftbulkhead] These sources illustrate principles, not a mandatory platform choice: understand interactions, set appropriate limits, make failure behaviour observable, and contain harm.
 
 High-consequence systems may need more specialist assurance than low-risk internal workflows.
 
@@ -480,9 +480,9 @@ Use the [Quality System Map Worksheet](../exercises/worksheet-quality-system-map
 
 [^incose]: International Council on Systems Engineering. [Systems Engineering Guidebook](https://www.incose.org/docs/default-source/default-document-library/systems-engineering-guidebook---isbn-9780692091807bb88028572db67488e78ff000036190a.pdf?sfvrsn=365365c7_0). Accessed 2026-08-08.
 
-[^iso25010]: International Organization for Standardization and International Electrotechnical Commission. [ISO/IEC 25010:2023 — Systems and software engineering — Systems and software Quality Requirements and Evaluation (SQuaRE) — Product quality model](https://www.iso.org/standard/78176.html). Published 2023. Accessed 2026-08-08.
+[^iso-25010]: International Organization for Standardization and International Electrotechnical Commission. [ISO/IEC 25010:2023 — Systems and software engineering — Systems and software Quality Requirements and Evaluation (SQuaRE) — Product quality model](https://www.iso.org/standard/78176.html). Published 2023. Accessed 2026-08-08.
 
-[^srecascading]: Google. [Addressing Cascading Failures](https://sre.google/sre-book/addressing-cascading-failures/). In *Site Reliability Engineering*. Accessed 2026-08-08.
+[^sre-cascading-failures]: Google. [Addressing Cascading Failures](https://sre.google/sre-book/addressing-cascading-failures/). In *Site Reliability Engineering*. Accessed 2026-08-08.
 
 [^awsretries]: Amazon Web Services. [Timeouts, retries, and backoff with jitter](https://aws.amazon.com/builders-library/timeouts-retries-and-backoff-with-jitter/). In *The Amazon Builders' Library*. Accessed 2026-08-08.
 
@@ -490,7 +490,7 @@ Use the [Quality System Map Worksheet](../exercises/worksheet-quality-system-map
 
 [^iso29119]: International Organization for Standardization, International Electrotechnical Commission, and IEEE. [ISO/IEC/IEEE 29119-1:2022 — Software and systems engineering — Software testing — Part 1: General concepts](https://www.iso.org/standard/81291.html). Published 2022. Accessed 2026-08-08.
 
-[^googlepostmortem]: Google. [Postmortem Culture: Learning from Failure](https://sre.google/workbook/postmortem-culture/). In *The Site Reliability Workbook*. Accessed 2026-08-08.
+[^sre-workbook-postmortem]: Google. [Postmortem Culture: Learning from Failure](https://sre.google/workbook/postmortem-culture/). In *The Site Reliability Workbook*. Accessed 2026-08-08.
 
 [^iso12207]: International Organization for Standardization, International Electrotechnical Commission, and IEEE. [ISO/IEC/IEEE 12207:2026 — Systems and software engineering — Software life cycle processes](https://www.iso.org/standard/90219.html). Published April 2026. Accessed 2026-08-08.
 

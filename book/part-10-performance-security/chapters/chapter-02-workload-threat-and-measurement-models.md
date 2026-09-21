@@ -245,7 +245,7 @@ Version a workload-and-threat assumption register alongside the change or eviden
 
 ## Industry Perspective
 
-NIST's Cybersecurity Framework frames cybersecurity risk management as outcomes and context, rather than a fixed catalogue of technical tests.[^nist-csf] OWASP's application and API materials are influential practitioner guidance; they support coverage questions but are not a universal risk analysis or legal obligation.[^owasp-api] Part X uses those sources to inform bounded verification, not to turn a workload or threat model into compliance training.
+NIST's Cybersecurity Framework frames cybersecurity risk management as outcomes and context, rather than a fixed catalogue of technical tests.[^nist-csf] OWASP's application and API materials are influential practitioner guidance; they support coverage questions but are not a universal risk analysis or legal obligation.[^owasp-api-top10-2023] Part X uses those sources to inform bounded verification, not to turn a workload or threat model into compliance training.
 
 ## Common Misconceptions or Common Pitfalls
 
@@ -302,7 +302,7 @@ Create a **Workload, Threat, and Measurement Assumptions Register** for Atlas ch
 ## References
 
 [^nist-csf]: National Institute of Standards and Technology. [NIST Cybersecurity Framework (CSF) 2.0](https://www.nist.gov/publications/nist-cybersecurity-framework-csf-20). 2024. Accessed 2026-08-12.
-[^owasp-api]: OWASP Foundation. [OWASP API Security Top 10 — 2023](https://github.com/OWASP/API-Security/blob/master/editions/2023/en/0x03-introduction.md). 2023. Accessed 2026-08-12.
+[^owasp-api-top10-2023]: OWASP Foundation. [OWASP API Security Top 10 — 2023](https://github.com/OWASP/API-Security/blob/master/editions/2023/en/0x03-introduction.md). 2023. Accessed 2026-08-12.
 
 ## Chapter Checklist
 

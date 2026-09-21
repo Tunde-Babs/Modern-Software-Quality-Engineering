@@ -174,7 +174,7 @@ Quality Engineers can use test design to examine metric behaviour. For example, 
 
 ## Industry Perspective
 
-The Prometheus documentation describes counters, gauges, histograms, and summaries in an official implementation context.[^prometheus-types] Google’s SRE literature discusses latency, traffic, errors, and saturation as useful service-monitoring perspectives.[^google-monitoring] Both support conceptual learning. Neither provides a universal target, denominator, dashboard layout, or complete reliability model.
+The Prometheus documentation describes counters, gauges, histograms, and summaries in an official implementation context.[^prometheus-types] Google’s SRE literature discusses latency, traffic, errors, and saturation as useful service-monitoring perspectives.[^sre-monitoring] Both support conceptual learning. Neither provides a universal target, denominator, dashboard layout, or complete reliability model.
 
 ## Common Misconceptions or Common Pitfalls
 
@@ -238,7 +238,7 @@ Create a **Metric Interpretation Record** for the Atlas Commerce distribution. C
 
 [^prometheus-types]: Prometheus Authors. [Metric types](https://prometheus.io/docs/concepts/metric_types/). Accessed 2026-08-12.
 
-[^google-monitoring]: Beyer, Betsy, et al. [Monitoring Distributed Systems](https://sre.google/sre-book/monitoring-distributed-systems/). *Site Reliability Engineering*. Google. Accessed 2026-08-12.
+[^sre-monitoring]: Beyer, Betsy, et al. [Monitoring Distributed Systems](https://sre.google/sre-book/monitoring-distributed-systems/). *Site Reliability Engineering*. Google. Accessed 2026-08-12.
 
 ## Chapter Checklist
 

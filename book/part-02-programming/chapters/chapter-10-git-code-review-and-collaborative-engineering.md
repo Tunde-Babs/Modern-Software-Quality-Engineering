@@ -73,7 +73,7 @@ The flow is therefore conceptual rather than ceremonial:
 working files → proposed staged snapshot → commit → branch history → review → integration
 ```
 
-The [Pro Git explanation of recording changes](https://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository) makes an important distinction: a file can be modified in the working tree and separately have earlier content staged. Staging is not merely “files waiting to be committed.” It selects the content of the next snapshot. If a file changes after staging, inspect and stage the intended version again; do not assume the working copy and the proposed commit are identical.
+The [Pro Git explanation of recording changes](https://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository) makes an important distinction: a file can be modified in the working tree and separately have earlier content staged. Staging is not merely “files waiting to be committed.” It selects the content of the next snapshot. If a file changes after staging, inspect and stage the intended version again; do not assume the working copy and the proposed commit are identical.[^pro-git]
 
 ### Inspect content, not only filenames
 
@@ -148,7 +148,7 @@ After synchronisation, compare the branch with the intended target, read the com
 
 ### Merge and rebase describe different history choices
 
-Both merge and rebase can bring branch work together conceptually, but they produce different histories. A **merge** combines branch histories and may create a merge commit. A **rebase** replays a branch's commits onto a new base, changing the identities of those commits. The [official `git rebase` documentation](https://git-scm.com/docs/git-rebase) describes it as reapplying commits on top of another base.
+Both merge and rebase can bring branch work together conceptually, but they produce different histories. A **merge** combines branch histories and may create a merge commit. A **rebase** replays a branch's commits onto a new base, changing the identities of those commits. The [official `git rebase` documentation](https://git-scm.com/docs/git-rebase) describes it as reapplying commits on top of another base.[^git-rebase]
 
 Neither is universally superior. A team may use merge commits to preserve the visible integration topology, squash changes to present one coherent final decision, or rebase private work before review to reduce divergence. The safe rule is social as well as technical: understand the repository's conventions before rewriting history that other people may have based work on. For shared history, prefer reviewable, recoverable actions over clever recovery commands.
 
@@ -230,7 +230,7 @@ Use a deliberate response cycle:
 4. Update source, tests, documentation, or validation when the concern changes the proposed behaviour or evidence.
 5. State any remaining disagreement or risk clearly and seek the appropriate owner when the decision exceeds the review's scope.
 
-Constructive disagreement is possible. For example, an author may explain that a timeout message intentionally omits raw dependency text while retaining a controlled error category and elapsed time. A reviewer may then ask for a test that proves the omission. The conversation moves from assertion to evidence. The [Google Engineering Practices review guides](https://google.github.io/eng-practices/review/) provide additional role-specific guidance for code authors and reviewers.
+Constructive disagreement is possible. For example, an author may explain that a timeout message intentionally omits raw dependency text while retaining a controlled error category and elapsed time. A reviewer may then ask for a test that proves the omission. The conversation moves from assertion to evidence. The [Google Engineering Practices review guides](https://google.github.io/eng-practices/review/) provide additional role-specific guidance for code authors and reviewers.[^google-review]
 
 The companion's [fictional review comments and responses](../../../code/part-02-programming/delivery-04-collaborative-tested-utilities/docs/review-comments.md) illustrate this pattern. They are examples, not a script and not evidence of a real review.
 
@@ -263,7 +263,7 @@ Experienced QA Engineers already use much of this reasoning in a different form:
 
 ## Industry Perspective
 
-Git's staged snapshot model and branch history are documented in the open [Pro Git book](https://git-scm.com/book/en/v2). Hosted pull-request systems add review and discussion around branch comparison; [GitHub's pull-request documentation](https://docs.github.com/en/pull-requests/reference/pull-requests) is one implementation example. These sources describe tools and platform concepts. MSQE does not prescribe a host, branching model, merge policy, or commit-message format; teams should adopt conventions that improve their own traceability, reviewability, and recovery.
+Git's staged snapshot model and branch history are documented in the open [Pro Git book](https://git-scm.com/book/en/v2). Hosted pull-request systems add review and discussion around branch comparison; [GitHub's pull-request documentation](https://docs.github.com/en/pull-requests/reference/pull-requests) is one implementation example.[^github-pr] These sources describe tools and platform concepts. MSQE does not prescribe a host, branching model, merge policy, or commit-message format; teams should adopt conventions that improve their own traceability, reviewability, and recovery.
 
 ## Common Misconceptions or Common Pitfalls
 

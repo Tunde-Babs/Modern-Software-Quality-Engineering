@@ -231,7 +231,7 @@ Quality Engineers can improve the system by asking whether each material gate ha
 
 ## Industry Perspective
 
-DORA research treats continuous delivery, cloud infrastructure, and related technical capabilities as areas of empirical investigation.[^dora] The research does not authorize a universal pipeline design or prove that one local stage causes a desired outcome. Use it to ask whether a delivery capability improves feedback and learning in context, not to convert metric thresholds into release gates.
+DORA research treats continuous delivery, cloud infrastructure, and related technical capabilities as areas of empirical investigation.[^dora-capabilities] The research does not authorize a universal pipeline design or prove that one local stage causes a desired outcome. Use it to ask whether a delivery capability improves feedback and learning in context, not to convert metric thresholds into release gates.
 
 Git's version-control concepts support traceable input and review records.[^git] CI/CD product documentation can explain a concrete retry, approval, or artifact mechanism, but it should be cited as product-specific and never presented as the general delivery model.
 
@@ -304,7 +304,7 @@ Do not configure a CI/CD product, runner, workflow file, or deployment pipeline.
 
 ## References
 
-[^dora]: Google Cloud. [DevOps capabilities](https://cloud.google.com/architecture/devops). Accessed 2026-08-11.
+[^dora-capabilities]: Google Cloud. [DevOps capabilities](https://cloud.google.com/architecture/devops). Accessed 2026-08-11.
 [^git]: Git. [Git documentation](https://git-scm.com/docs). Accessed 2026-08-11.
 
 ## Chapter Checklist

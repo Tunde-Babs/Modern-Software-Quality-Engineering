@@ -204,7 +204,7 @@ The answer is rarely “test everything through the interface” or “move ever
 
 ## Industry Perspective
 
-ISO/IEC/IEEE 29119-2 provides generic test-process terminology applicable across lifecycle models.[^iso-29119-2] The ISTQB Foundation Level syllabus provides commonly used test-level vocabulary.[^istqb-ctfl] The SWEBOK Guide places testing alongside broader software-engineering concerns such as architecture, construction, configuration management, and operations.[^swebok]
+ISO/IEC/IEEE 29119-2 provides generic test-process terminology applicable across lifecycle models.[^iso-29119-2] The ISTQB Foundation Level syllabus provides commonly used test-level vocabulary.[^istqb-ctfl] The SWEBOK Guide places testing alongside broader software-engineering concerns such as architecture, construction, configuration management, and operations.[^swebok-v4-0a]
 
 These sources are useful references, not a prescription that every organisation use the same level names, team boundaries, test counts, or workflow. The boundary-mapping model in this chapter is MSQE educational framing that connects a risk to the most useful available evidence boundary and its limitations.
 
@@ -304,7 +304,7 @@ Quality Engineers choose boundaries deliberately. They map a risk to an evidence
 
 [^iso-29119-2]: ISO/IEC/IEEE. [ISO/IEC/IEEE 29119-2:2021 — Software and systems engineering — Software testing — Part 2: Test processes](https://www.iso.org/standard/79428.html). 2021.
 [^istqb-ctfl]: International Software Testing Qualifications Board. [Certified Tester Foundation Level Syllabus v4.0.1](https://istqb.org/wp-content/uploads/2024/11/ISTQB_CTFL_Syllabus_v4.0.1.pdf). Accessed 2026-08-09.
-[^swebok]: IEEE Computer Society. [*Guide to the Software Engineering Body of Knowledge (SWEBOK Guide) v4.0a*](https://ieeecs-media.computer.org/media/education/swebok/swebok-v4.pdf). 2026.
+[^swebok-v4-0a]: IEEE Computer Society. [*Guide to the Software Engineering Body of Knowledge (SWEBOK Guide) v4.0a*](https://ieeecs-media.computer.org/media/education/swebok/swebok-v4.pdf). 2026.
 
 ## Chapter Checklist
 

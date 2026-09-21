@@ -267,7 +267,7 @@ Versioning protects decision integrity. Store the comparison record with the cha
 
 ## Industry Perspective
 
-DORA research emphasizes that delivery performance measures are contextual and should support improvement rather than simplistic ranking.[^dora] The same principle applies at a smaller scale: a delta supports engineering learning only with its system and decision context.
+DORA research emphasizes that delivery performance measures are contextual and should support improvement rather than simplistic ranking.[^dora-program] The same principle applies at a smaller scale: a delta supports engineering learning only with its system and decision context.
 
 ## Common Misconceptions or Common Pitfalls
 
@@ -322,7 +322,7 @@ Create a **Performance Regression Decision Record** for the synthetic search com
 
 ## References
 
-[^dora]: Google Cloud. [DORA research program](https://dora.dev/). Accessed 2026-08-12.
+[^dora-program]: Google Cloud. [DORA research program](https://dora.dev/). Accessed 2026-08-12.
 
 ## Chapter Checklist
 

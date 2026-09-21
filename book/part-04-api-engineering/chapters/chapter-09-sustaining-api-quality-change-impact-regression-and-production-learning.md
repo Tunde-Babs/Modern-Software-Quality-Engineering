@@ -99,7 +99,7 @@ Treat a known consumer as evidence of a particular dependency, not proof that th
 
 A contract change can be structural, semantic, or both. Adding an optional field may be structurally compatible for a tolerant parser yet semantically disruptive if an older consumer assumes a closed set of values. Replacing a problem type, changing an absent value to a default, or changing a `202 Accepted` workflow to immediate completion alters consumer reasoning even when the JSON remains valid.
 
-For a proposed change, ask what changed structurally, what changed in meaning, which consumer assumption relies on the former behaviour, and what evidence can challenge compatibility. An interface description, schema comparison, and selected consumer observation can each help. None alone establishes universal compatibility. OpenAPI and JSON Schema describe valuable interface constraints, but they do not fully specify business semantics or every consumer's tolerance.[^openapi][^json-schema]
+For a proposed change, ask what changed structurally, what changed in meaning, which consumer assumption relies on the former behaviour, and what evidence can challenge compatibility. An interface description, schema comparison, and selected consumer observation can each help. None alone establishes universal compatibility. OpenAPI and JSON Schema describe valuable interface constraints, but they do not fully specify business semantics or every consumer's tolerance.[^openapi][^json-schema-specification]
 
 ### Stateful and Side-Effect Change
 
@@ -179,7 +179,7 @@ An **escaped defect** is a material problem discovered after the evidence availa
 
 The first task is to establish facts: what interaction occurred, which consumer or customer outcome was affected, which representation or state was observed, when it happened, and what evidence is available. Then distinguish facts from hypotheses about causes. A provider status may have been undocumented; the system may have lacked a safe operation identity; a compatibility assumption may have been unrepresented; a test environment may have omitted the workload or consumer context that mattered.
 
-**Blameless learning** examines contributing technical and delivery conditions without making an individual person the explanation for a system outcome. It does not remove accountability for decisions; it makes improvement possible by asking what made the outcome likely, hard to see, or difficult to recover. Google SRE's postmortem guidance similarly treats blamelessness as a condition for learning from failure rather than an avoidance of responsibility.[^google-postmortem]
+**Blameless learning** examines contributing technical and delivery conditions without making an individual person the explanation for a system outcome. It does not remove accountability for decisions; it makes improvement possible by asking what made the outcome likely, hard to see, or difficult to recover. Google SRE's postmortem guidance similarly treats blamelessness as a condition for learning from failure rather than an avoidance of responsibility.[^sre-workbook-postmortem]
 
 | Production observation | Questions that improve API strategy |
 |---|---|
@@ -237,7 +237,7 @@ Sustainable API quality needs explicit ownership of assumptions. Teams benefit f
 
 ## Industry Perspective
 
-OpenAPI and JSON Schema support interface description and structural validation, while RFC 9110 defines HTTP semantics; none defines every semantic, compatibility, or release decision.[^openapi][^json-schema][^rfc9110] ISO/IEC 25010 provides a product-quality model, not a regression-suite prescription.[^iso25010] Google SRE's postmortem guidance illustrates blameless learning as practitioner guidance, not a universal incident process.[^google-postmortem]
+OpenAPI and JSON Schema support interface description and structural validation, while RFC 9110 defines HTTP semantics; none defines every semantic, compatibility, or release decision.[^openapi][^json-schema-specification][^rfc9110] ISO/IEC 25010 provides a product-quality model, not a regression-suite prescription.[^iso-25010] Google SRE's postmortem guidance illustrates blameless learning as practitioner guidance, not a universal incident process.[^sre-workbook-postmortem]
 
 ## Common Misconceptions or Common Pitfalls
 
@@ -326,10 +326,10 @@ Atlas plans to: add `deliveryPreference` to selected order responses; move async
 ## References
 
 [^openapi]: OpenAPI Initiative. [OpenAPI Specification](https://spec.openapis.org/oas/latest.html). Accessed 2026-08-10.
-[^json-schema]: JSON Schema. [Specification](https://json-schema.org/specification). Accessed 2026-08-10.
+[^json-schema-specification]: JSON Schema. [Specification](https://json-schema.org/specification). Accessed 2026-08-10.
 [^rfc9110]: Fielding, R., Nottingham, M., and J. Reschke, eds. [RFC 9110 — HTTP Semantics](https://www.rfc-editor.org/rfc/rfc9110.html). IETF, June 2022. Accessed 2026-08-10.
-[^iso25010]: International Organization for Standardization. [ISO/IEC 25010:2023 — Systems and software engineering — Systems and software Quality Requirements and Evaluation (SQuaRE) — Product quality model](https://www.iso.org/standard/78176.html). ISO, 2023. Accessed 2026-08-10.
-[^google-postmortem]: Google. [Postmortem Culture: Learning from Failure](https://sre.google/workbook/postmortem-culture/). *The Site Reliability Workbook*. Accessed 2026-08-10.
+[^iso-25010]: International Organization for Standardization. [ISO/IEC 25010:2023 — Systems and software engineering — Systems and software Quality Requirements and Evaluation (SQuaRE) — Product quality model](https://www.iso.org/standard/78176.html). ISO, 2023. Accessed 2026-08-10.
+[^sre-workbook-postmortem]: Google. [Postmortem Culture: Learning from Failure](https://sre.google/workbook/postmortem-culture/). *The Site Reliability Workbook*. Accessed 2026-08-10.
 
 ## Chapter Checklist
 

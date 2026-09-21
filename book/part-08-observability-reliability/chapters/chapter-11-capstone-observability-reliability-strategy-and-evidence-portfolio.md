@@ -130,7 +130,7 @@ The global average remains under 500 ms, and the EU-West card HTTP 5xx response 
 | 13:12:08.630 | `fulfilment.publish`, event | Attempt 2 locally accepted | No trace span for queue consumer |
 | 13:14–13:20 | `fulfilment.consume` | Not found for trace `4bf9…` | Consumer instrumentation was changed at 13:05 and sampled at a different rate |
 
-The root begins at `13:12:04.100` and the payment span ends at `13:12:04.360`, so its stated duration is 260 ms. The payment event at `13:12:04.391` in the log packet is an application event emitted after the span ended; it is not the span-end timestamp. The publisher trace events and publisher log records similarly represent separate instrumentation points. The W3C Trace Context concept can support continuity where it is propagated, but it does not provide a complete tracing specification or guarantee coverage.[^w3c-trace] In this packet, the missing consumer span is an evidence gap, not proof that the consumer never ran.
+The root begins at `13:12:04.100` and the payment span ends at `13:12:04.360`, so its stated duration is 260 ms. The payment event at `13:12:04.391` in the log packet is an application event emitted after the span ended; it is not the span-end timestamp. The publisher trace events and publisher log records similarly represent separate instrumentation points. The W3C Trace Context concept can support continuity where it is propagated, but it does not provide a complete tracing specification or guarantee coverage.[^w3c-trace-context] In this packet, the missing consumer span is an evidence gap, not proof that the consumer never ran.
 
 ### 5. Alert history and dependency state
 
@@ -244,7 +244,7 @@ Instrumentation improvements should follow from a named gap. In this case, safe 
 
 ## Industry Perspective
 
-The SRE literature offers practical guidance for service-level objectives and alerting, while OpenTelemetry and W3C Trace Context provide signal and propagation concepts.[^google-slo][^google-alerting][^otel-signals][^w3c-trace] This capstone applies them as transferable evidence practices. It does not require an SRE organisational model, a particular vendor, or a production observability deployment.
+The SRE literature offers practical guidance for service-level objectives and alerting, while OpenTelemetry and W3C Trace Context provide signal and propagation concepts.[^google-slo][^google-alerting][^otel-signals][^w3c-trace-context] This capstone applies them as transferable evidence practices. It does not require an SRE organisational model, a particular vendor, or a production observability deployment.
 
 ## Common Misconceptions or Common Pitfalls
 
@@ -309,7 +309,7 @@ Produce the complete **Observability & Reliability Strategy and Evidence Portfol
 
 [^otel-signals]: OpenTelemetry. [Signals](https://opentelemetry.io/docs/concepts/signals/). Accessed 2026-08-12.
 
-[^w3c-trace]: W3C. [Trace Context](https://www.w3.org/TR/trace-context/). Accessed 2026-08-12.
+[^w3c-trace-context]: W3C. [Trace Context](https://www.w3.org/TR/trace-context/). Accessed 2026-08-12.
 
 [^google-slo]: Beyer, Betsy, et al. [Implementing SLOs](https://sre.google/workbook/implementing-slos/). *The Site Reliability Workbook*. Google. Accessed 2026-08-12.
 

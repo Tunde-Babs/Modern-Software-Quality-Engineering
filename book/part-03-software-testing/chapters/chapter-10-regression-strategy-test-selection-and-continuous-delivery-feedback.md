@@ -169,7 +169,7 @@ The work is collaborative. Developers understand changed implementation and arch
 
 ## Industry Perspective
 
-ISO/IEC/IEEE 29119-2 provides generic test-process context across lifecycle models.[^iso-29119-2] The SWEBOK Guide provides broader context for testing, configuration management, and maintenance.[^swebok] Google's testing literature describes the importance of timely, reliable feedback and the cost of flaky signals.[^google-flaky]
+ISO/IEC/IEEE 29119-2 provides generic test-process context across lifecycle models.[^iso-29119-2] The SWEBOK Guide provides broader context for testing, configuration management, and maintenance.[^swebok-v4-0a] Google's testing literature describes the importance of timely, reliable feedback and the cost of flaky signals.[^google-flaky]
 
 These references do not prescribe a CI/CD platform, execution order, test selection algorithm, or release policy. The feedback stages and selection approach in this chapter are MSQE educational framing for connecting change risk to useful, timely evidence.
 
@@ -268,7 +268,7 @@ Quality Engineers treat feedback as a decision system. They select early focused
 ## References
 
 [^iso-29119-2]: ISO/IEC/IEEE. [ISO/IEC/IEEE 29119-2:2021 — Software and systems engineering — Software testing — Part 2: Test processes](https://www.iso.org/standard/79428.html). 2021.
-[^swebok]: IEEE Computer Society. [*Guide to the Software Engineering Body of Knowledge (SWEBOK Guide) v4.0a*](https://ieeecs-media.computer.org/media/education/swebok/swebok-v4.pdf). 2026.
+[^swebok-v4-0a]: IEEE Computer Society. [*Guide to the Software Engineering Body of Knowledge (SWEBOK Guide) v4.0a*](https://ieeecs-media.computer.org/media/education/swebok/swebok-v4.pdf). 2026.
 [^google-flaky]: Google Testing Blog. [*Flaky Tests at Google and How We Mitigate Them*](https://testing.googleblog.com/2016/05/flaky-tests-at-google-and-how-we.html). 2016.
 
 ## Chapter Checklist

@@ -111,7 +111,7 @@ Evidence should ask whether each selected representation lets a consumer make th
 
 Separate structural and semantic contract assumptions. The `deliveryPreference` field has a shape, allowed values, absence/default behaviour, and business consequence. The new provider status has a representation and a transition meaning. The cursor has a syntax and a traversal contract. A problem representation can be structurally valid yet misleading about a pending or unknown outcome.
 
-The portfolio should identify known consumers, likely unknown consumers, the particular compatibility assumption being challenged, and a proportionate evidence source. An OpenAPI description or JSON Schema can help compare structural constraints, but neither establishes all consumer parsing or semantic behaviour.[^openapi][^json-schema]
+The portfolio should identify known consumers, likely unknown consumers, the particular compatibility assumption being challenged, and a proportionate evidence source. An OpenAPI description or JSON Schema can help compare structural constraints, but neither establishes all consumer parsing or semantic behaviour.[^openapi][^json-schema-specification]
 
 | Contract assumption | Selected evidence question | Limitation |
 |---|---|---|
@@ -136,7 +136,7 @@ For example, a support agent needs a search result that respects the selected te
 
 Identity and access evidence follows the chain: **identity and context → resource → action → expected permission → observation and side effect**. Atlas must distinguish a customer viewing their own order, a support agent searching within their authorized tenant and purpose, a partner receiving its contracted representation, and an unauthenticated or insufficiently scoped caller.
 
-The new support scope introduces an explicit change question: which orders and fields can a support agent find, inspect, or act upon; which cross-tenant or ownership paths must remain denied; and what does an error reveal? Evidence should include the returned representation and absence of an unauthorized side effect where relevant. It must not become a claim of comprehensive security assurance. OWASP API Security guidance is useful for security awareness, but this capstone remains a bounded API-quality exercise.[^owasp-api]
+The new support scope introduces an explicit change question: which orders and fields can a support agent find, inspect, or act upon; which cross-tenant or ownership paths must remain denied; and what does an error reveal? Evidence should include the returned representation and absence of an unauthorized side effect where relevant. It must not become a claim of comprehensive security assurance. OWASP API Security guidance is useful for security awareness, but this capstone remains a bounded API-quality exercise.[^owasp-api-project]
 
 ## Capstone Stage 8 — Design Dependency and Asynchronous Evidence
 
@@ -152,7 +152,7 @@ Reliability evidence for Atlas should be tied to its selected customer and opera
 
 Define diagnostic evidence that permits safe reconstruction: request ID for an attempt, correlation or operation identity for the broader order flow, timestamps, outcome classification, selected dependency attribution, and appropriate access to internal records. Keep the public error contract separate from internal details. No public response should expose provider credentials, secrets, private upstream payloads, tenant details, or raw stack traces simply to make diagnosis convenient.
 
-Performance evidence needs an operating condition. For the selected search or order-acceptance operation, record the workload, data, concurrency, dependency assumption, measurement boundary, result, and limitation. An average response time or one fast request is not a release claim. Neither is a test-environment result a production availability guarantee. ISO/IEC 25010 provides product-quality framing for reliability and performance efficiency; correlation, logs, traces, and testability are engineering capabilities that help produce and interpret evidence.[^iso25010]
+Performance evidence needs an operating condition. For the selected search or order-acceptance operation, record the workload, data, concurrency, dependency assumption, measurement boundary, result, and limitation. An average response time or one fast request is not a release claim. Neither is a test-environment result a production availability guarantee. ISO/IEC 25010 provides product-quality framing for reliability and performance efficiency; correlation, logs, traces, and testability are engineering capabilities that help produce and interpret evidence.[^iso-25010]
 
 ## Capstone Stage 10 — Define Regression and Change Evidence
 
@@ -164,7 +164,7 @@ For Atlas, examples may include representative consumer compatibility evidence f
 
 Use the prior duplicate-fulfilment incident as a fictional escaped API defect. Start with facts: a client timed out, the payment provider completed work, the retry reached Atlas, and fulfilment occurred twice. State hypotheses separately: perhaps the operation identity was not retained across boundaries, the event consumer did not deduplicate the logical intent, or support lacked timely reconciliation evidence. Identify contributing conditions and gaps rather than naming a person as the cause.
 
-The strategy improvement might be a clarified pending/unknown contract state, stable operation identity, idempotency or deduplication rule, controlled timeout observation, selected live compatibility evidence, safer diagnostic correlation, support reconciliation procedure, or revised regression question. The action needs to state which assumption it now challenges and which future production signal should trigger review. Google SRE's postmortem material is a useful adjacent source for this systems-focused learning approach; it is not a prescribed incident process.[^google-postmortem]
+The strategy improvement might be a clarified pending/unknown contract state, stable operation identity, idempotency or deduplication rule, controlled timeout observation, selected live compatibility evidence, safer diagnostic correlation, support reconciliation procedure, or revised regression question. The action needs to state which assumption it now challenges and which future production signal should trigger review. Google SRE's postmortem material is a useful adjacent source for this systems-focused learning approach; it is not a prescribed incident process.[^sre-workbook-postmortem]
 
 ## Capstone Stage 12 — Produce the API Quality Decision Brief
 
@@ -275,7 +275,7 @@ The Quality Engineer contributes a connected argument. They need not design an e
 
 ## Industry Perspective
 
-The sources used throughout Part IV support specific portions of the portfolio. RFC 9110 defines HTTP semantics, not business completion or release policy.[^rfc9110] OpenAPI and JSON Schema support interface description and structural validation, not complete consumer compatibility.[^openapi][^json-schema] AsyncAPI and CloudEvents help describe event-driven interfaces, not delivery or processing guarantees.[^asyncapi][^cloudevents] ISO/IEC 25010 provides a product-quality model, while postmortem guidance illustrates practitioner learning from failure.[^iso25010][^google-postmortem]
+The sources used throughout Part IV support specific portions of the portfolio. RFC 9110 defines HTTP semantics, not business completion or release policy.[^rfc9110] OpenAPI and JSON Schema support interface description and structural validation, not complete consumer compatibility.[^openapi][^json-schema-specification] AsyncAPI and CloudEvents help describe event-driven interfaces, not delivery or processing guarantees.[^asyncapi][^cloudevents] ISO/IEC 25010 provides a product-quality model, while postmortem guidance illustrates practitioner learning from failure.[^iso-25010][^sre-workbook-postmortem]
 
 The integrated matrix and decision brief are MSQE educational framing. They combine these sources with context-specific engineering judgement; they are not standards, certification criteria, or a universal delivery process.
 
@@ -386,12 +386,12 @@ The capstone synthesizes, rather than replaces, the focused methods in the prece
 
 [^rfc9110]: Fielding, R., Nottingham, M., and J. Reschke, eds. [RFC 9110 — HTTP Semantics](https://www.rfc-editor.org/rfc/rfc9110.html). IETF, June 2022. Accessed 2026-08-10.
 [^openapi]: OpenAPI Initiative. [OpenAPI Specification](https://spec.openapis.org/oas/latest.html). Accessed 2026-08-10.
-[^json-schema]: JSON Schema. [Specification](https://json-schema.org/specification). Accessed 2026-08-10.
+[^json-schema-specification]: JSON Schema. [Specification](https://json-schema.org/specification). Accessed 2026-08-10.
 [^asyncapi]: AsyncAPI Initiative. [AsyncAPI Specification v3.1.0](https://www.asyncapi.com/docs/reference/specification/v3.1.0). Accessed 2026-08-10.
 [^cloudevents]: CloudEvents. [CloudEvents Specification](https://cloudevents.io/). Accessed 2026-08-10.
-[^iso25010]: International Organization for Standardization. [ISO/IEC 25010:2023 — Systems and software engineering — Systems and software Quality Requirements and Evaluation (SQuaRE) — Product quality model](https://www.iso.org/standard/78176.html). ISO, 2023. Accessed 2026-08-10.
-[^owasp-api]: OWASP Foundation. [OWASP API Security Project](https://github.com/OWASP/API-Security). Accessed 2026-08-10.
-[^google-postmortem]: Google. [Postmortem Culture: Learning from Failure](https://sre.google/workbook/postmortem-culture/). *The Site Reliability Workbook*. Accessed 2026-08-10.
+[^iso-25010]: International Organization for Standardization. [ISO/IEC 25010:2023 — Systems and software engineering — Systems and software Quality Requirements and Evaluation (SQuaRE) — Product quality model](https://www.iso.org/standard/78176.html). ISO, 2023. Accessed 2026-08-10.
+[^owasp-api-project]: OWASP Foundation. [OWASP API Security Project](https://github.com/OWASP/API-Security). Accessed 2026-08-10.
+[^sre-workbook-postmortem]: Google. [Postmortem Culture: Learning from Failure](https://sre.google/workbook/postmortem-culture/). *The Site Reliability Workbook*. Accessed 2026-08-10.
 
 ## Chapter Checklist
 

@@ -186,7 +186,7 @@ Leaders and experienced engineers influence this directly. They can ask for diss
 
 **Blameless learning** is an evidence-led approach to examining an undesirable outcome by asking how system conditions, information, decisions, and controls made it possible. It assumes that people acted in good faith with the information available at the time, then seeks improvements that reduce recurrence or limit impact.
 
-This approach is especially valuable after incidents, but it applies to escaped defects, failed experiments, delayed releases, and recurring support problems. The review should establish customer impact, a timeline, relevant technical and organisational conditions, the response, and corrective actions with owners. Google SRE describes blameless postmortems as a cultural practice that supports learning while assigning official ownership to action items so that accountability leads to action.[^googlepostmortem]
+This approach is especially valuable after incidents, but it applies to escaped defects, failed experiments, delayed releases, and recurring support problems. The review should establish customer impact, a timeline, relevant technical and organisational conditions, the response, and corrective actions with owners. Google SRE describes blameless postmortems as a cultural practice that supports learning while assigning official ownership to action items so that accountability leads to action.[^sre-workbook-postmortem]
 
 Blameless learning does not mean “no accountability.” Negligence, deliberate misconduct, policy violations, or persistent refusal to follow agreed safety controls can require formal management or governance action. These matters should be handled fairly and separately from a technical learning review. Conflating them causes two failures: people hide evidence because they expect punishment, and serious conduct issues are obscured by being treated as ordinary system failures.
 
@@ -267,7 +267,7 @@ This concern is often associated with **Goodhart's law**, the warning that an ob
 | Deployment frequency | Teams may split or relabel changes to improve a number without improving flow or recovery. | Can the service change safely, recover quickly, and meet customer needs? |
 | Escaped defects | Teams may argue about classification instead of learning from the conditions that allowed harm. | What evidence could have prevented, detected, or contained the outcome earlier? |
 
-DORA guidance recommends interpreting delivery measures at the application or service level and using them to improve the delivery system rather than as targets for unrelated teams to compete against.[^dora] The cultural implication is simple: publish the purpose and limitations of a metric, pair it with qualitative evidence, and review the behaviour it is encouraging.
+DORA guidance recommends interpreting delivery measures at the application or service level and using them to improve the delivery system rather than as targets for unrelated teams to compete against.[^dora-research] The cultural implication is simple: publish the purpose and limitations of a metric, pair it with qualitative evidence, and review the behaviour it is encouraging.
 
 ## The Modern Quality Engineer as a Cultural Contributor
 
@@ -300,9 +300,9 @@ The intervention is cultural and technical at once. Better collaboration changes
 
 Public engineering guidance supports the underlying principles without requiring a team to adopt a vendor-specific organisation. Microsoft recommends a DevOps culture based on shared ownership, accountability, continuous improvement, clear roles, and collaboration across specialisations.[^microsoftdevops] Its guidance explicitly distinguishes shared workload responsibility from the need for defined decision-making authority.
 
-Google SRE's published postmortem practices connect blameless language with learning, preventive action, and ownership of follow-up work.[^googlepostmortem] The point is not to copy a particular incident process. It is to preserve enough psychological safety for people to provide evidence, while making corrective work visible and accountable.
+Google SRE's published postmortem practices connect blameless language with learning, preventive action, and ownership of follow-up work.[^sre-workbook-postmortem] The point is not to copy a particular incident process. It is to preserve enough psychological safety for people to provide evidence, while making corrective work visible and accountable.
 
-DORA research and guidance connect technical delivery capabilities with organisational and cultural outcomes, while cautioning teams to interpret measures in service context.[^dora] These sources support an MSQE conclusion: culture is not a substitute for engineering controls, and engineering controls are not independent of culture. Teams need both to deliver, operate, and improve software responsibly.
+DORA research and guidance connect technical delivery capabilities with organisational and cultural outcomes, while cautioning teams to interpret measures in service context.[^dora-research] These sources support an MSQE conclusion: culture is not a substitute for engineering controls, and engineering controls are not independent of culture. Teams need both to deliver, operate, and improve software responsibly.
 
 ## Common Misconceptions or Common Pitfalls
 
@@ -443,11 +443,11 @@ The Quality Culture Flywheel is an original MSQE teaching model that connects sh
 
 [^edmondson]: Edmondson, A. C. [Psychological Safety and Learning Behavior in Work Teams](https://doi.org/10.2307/2666999). *Administrative Science Quarterly*, 44(2), 1999. Accessed 2026-08-08.
 
-[^googlepostmortem]: Google. [Postmortem Culture: Learning from Failure](https://sre.google/workbook/postmortem-culture/). In *The Site Reliability Workbook*. Accessed 2026-08-08.
+[^sre-workbook-postmortem]: Google. [Postmortem Culture: Learning from Failure](https://sre.google/workbook/postmortem-culture/). In *The Site Reliability Workbook*. Accessed 2026-08-08.
 
 [^goodhart]: Goodhart, C. A. E. *Problems of Monetary Management: The U.K. Experience*. In *Papers in Monetary Economics*, Reserve Bank of Australia, 1975. Bibliographic record: [Reserve Bank of Australia](https://www.rba.gov.au/publications/rdp/1990/9013/conference-volumes.html). Accessed 2026-08-08.
 
-[^dora]: DORA. [Research and reports](https://dora.dev/research/). Accessed 2026-08-08.
+[^dora-research]: DORA. [Research and reports](https://dora.dev/research/). Accessed 2026-08-08.
 
 ## Chapter Checklist
 

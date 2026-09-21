@@ -176,7 +176,7 @@ This is not a requirement for one person to own all service architecture. It is 
 
 ## Industry Perspective
 
-ISO/IEC/IEEE 29119-2 provides generic test-process context for testing activities across lifecycle models.[^iso-29119-2] The ISTQB Foundation Level syllabus supplies commonly used terminology for testing levels, test techniques, and testing activities.[^istqb-ctfl] The SWEBOK Guide places interfaces, architecture, construction, and testing in a broader engineering context.[^swebok] The Amazon Builders' Library offers a concrete practitioner account of making retries safe through idempotent API semantics.[^aws-idempotent]
+ISO/IEC/IEEE 29119-2 provides generic test-process context for testing activities across lifecycle models.[^iso-29119-2] The ISTQB Foundation Level syllabus supplies commonly used terminology for testing levels, test techniques, and testing activities.[^istqb-ctfl] The SWEBOK Guide places interfaces, architecture, construction, and testing in a broader engineering context.[^swebok-v4-0a] The Amazon Builders' Library offers a concrete practitioner account of making retries safe through idempotent API semantics.[^aws-idempotency]
 
 The Amazon source describes one organisation's practice; it does not make AWS tooling or architecture a requirement. None of these sources prescribes a REST style, an API tool, a contract-testing framework, or one distributed-system strategy. The service-evidence model in this chapter is MSQE educational framing for selecting proportionate evidence across interaction boundaries.
 
@@ -277,8 +277,8 @@ Quality Engineers choose contract, integration, controlled-dependency, and broad
 
 [^iso-29119-2]: ISO/IEC/IEEE. [ISO/IEC/IEEE 29119-2:2021 — Software and systems engineering — Software testing — Part 2: Test processes](https://www.iso.org/standard/79428.html). 2021.
 [^istqb-ctfl]: International Software Testing Qualifications Board. [Certified Tester Foundation Level Syllabus v4.0.1](https://istqb.org/wp-content/uploads/2024/11/ISTQB_CTFL_Syllabus_v4.0.1.pdf). Accessed 2026-08-09.
-[^swebok]: IEEE Computer Society. [*Guide to the Software Engineering Body of Knowledge (SWEBOK Guide) v4.0a*](https://ieeecs-media.computer.org/media/education/swebok/swebok-v4.pdf). 2026.
-[^aws-idempotent]: Amazon Web Services. [*Making retries safe with idempotent APIs*](https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/). *Amazon Builders' Library*. Accessed 2026-08-09.
+[^swebok-v4-0a]: IEEE Computer Society. [*Guide to the Software Engineering Body of Knowledge (SWEBOK Guide) v4.0a*](https://ieeecs-media.computer.org/media/education/swebok/swebok-v4.pdf). 2026.
+[^aws-idempotency]: Amazon Web Services. [*Making retries safe with idempotent APIs*](https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/). *Amazon Builders' Library*. Accessed 2026-08-09.
 
 ## Chapter Checklist
 

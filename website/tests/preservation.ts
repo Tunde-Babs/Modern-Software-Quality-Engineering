@@ -45,13 +45,32 @@ assert.equal(createHash('sha256').update(transitionBytes).digest('hex'), '9cabc1
 const transition: { sourceBase: string; sources: Record<string, SourceTransition>; preserved: Record<string, string> } = JSON.parse(transitionBytes.toString('utf8'));
 assert.equal(transition.sourceBase, '1cf371e1be74cf58ceff0940573a51dd20d717f5');
 const transitionedHashes = Object.fromEntries(Object.entries(transition.sources).map(([path, entry]) => [path, entry.sha256]));
-export function assertAuthorizedSource(path: string, original: string, actual: string) {
+function assertFe1Source(path: string, original: string, actual: string) {
   const accepted = transition.sources[path];
   if (!accepted) return assertWeb5Source(path, original, actual);
   const incoming = git('show', `${transition.sourceBase}:${path}`);
   assert.equal(git('rev-parse', `${transition.sourceBase}:${path}`).trim(), accepted.baselineBlob, `FE-1 incoming blob: ${path}`);
   assertWeb5Source(path, original, incoming);
   assert.equal(createHash('sha256').update(actual).digest('hex'), accepted.sha256, `FE-1 exact candidate bytes: ${path}`);
+}
+// FE-2V accepted the semantic correction; FE-2R closure-only bytes await FE-2CV.
+// Authenticate incoming bytes through WEB-5 and FE-1 before accepting exact FE-2 bytes.
+type Fe2SourceTransition = { baselineBlob: string; fe2vSha256: string | null; sha256: string; kind: string };
+const fe2Bytes = readFileSync(resolve(repoRoot, 'website/evidence/fe2/source-transition.json'));
+assert.equal(createHash('sha256').update(fe2Bytes).digest('hex'), '8c5c3c844cdae81d6e14dff6758321c2bf3a981f8503aa5749d0efe70df021e5', 'Frozen FE-2 source-transition fixture');
+const fe2: { sourceBase: string; acceptedCorrectionPackageSha256: string; sources: Record<string, Fe2SourceTransition> } = JSON.parse(fe2Bytes.toString('utf8'));
+assert.equal(fe2.sourceBase, 'c2175c2e3ae111acfa615bbda19ea8ba53fea201');
+assert.equal(fe2.acceptedCorrectionPackageSha256, '2f5cc5c78e1b658982f5a179dd7dffb7831333caa195b1462a6a167a52425244');
+const fe2AcceptedManifest = Object.keys(fe2.sources).filter(path => fe2.sources[path].fe2vSha256 !== null).sort().map(path => `${path}:${fe2.sources[path].fe2vSha256}\n`).join('');
+assert.equal(createHash('sha256').update(fe2AcceptedManifest).digest('hex'), fe2.acceptedCorrectionPackageSha256, 'Exact FE-2V accepted package');
+const fe2Hashes = Object.fromEntries(Object.entries(fe2.sources).map(([path, entry]) => [path, entry.sha256]));
+export function assertAuthorizedSource(path: string, original: string, actual: string) {
+  const accepted = fe2.sources[path];
+  if (!accepted) return assertFe1Source(path, original, actual);
+  const incoming = git('show', `${fe2.sourceBase}:${path}`);
+  assert.equal(git('rev-parse', `${fe2.sourceBase}:${path}`).trim(), accepted.baselineBlob, `FE-2 incoming blob: ${path}`);
+  assertFe1Source(path, original, incoming);
+  assert.equal(createHash('sha256').update(actual).digest('hex'), accepted.sha256, `FE-2 exact candidate bytes: ${path}`);
 }
 export function authenticateSources() {
   // WEB-5B's explicit URL-only authorization is checked as a transformation of
@@ -82,10 +101,10 @@ export function authenticateSources() {
       assert.equal(transition.sources[entry.path]?.baselineBlob ?? git('hash-object', entry.path).trim(), change.afterBlob);
     } else if (!closureSources[entry.path] && !transition.sources[entry.path]) assert.equal(git('hash-object', entry.path).trim(), entry.blob);
   }
-  for (const [path, expected] of Object.entries({ ...licenses, ...closureSources, ...transitionedHashes, ...transition.preserved })) {
+  for (const [path, expected] of Object.entries({ ...licenses, ...closureSources, ...transitionedHashes, ...transition.preserved, ...fe2Hashes })) {
     const file = resolve(repoRoot, path);
     assert.ok(lstatSync(file).isFile() && !lstatSync(file).isSymbolicLink());
     assert.equal(createHash('sha256').update(readFileSync(file)).digest('hex'), expected, `Reviewed licensing bytes: ${path}`);
   }
-  return { base, files: entries.length, manifestSha256: createHash('sha256').update(manifest).digest('hex'), groups: Object.fromEntries(protectedPaths.map(path => [path, entries.filter(entry => entry.path === path || entry.path.startsWith(path + '/')).length])), authorizedCanonicalFiles: mutations.length, authorizedUrlSubstitutions: mutations.reduce((sum, item) => sum + item.substitutions.reduce((n, change) => n + change.count, 0), 0), acceptedFe1Chapters: Object.keys(transition.sources).filter(path => path.startsWith('book/')).length, exactTransitionSources: Object.keys(transition.sources).length, unauthorizedModifications: 0 };
+  return { base, files: entries.length, manifestSha256: createHash('sha256').update(manifest).digest('hex'), groups: Object.fromEntries(protectedPaths.map(path => [path, entries.filter(entry => entry.path === path || entry.path.startsWith(path + '/')).length])), authorizedCanonicalFiles: mutations.length, authorizedUrlSubstitutions: mutations.reduce((sum, item) => sum + item.substitutions.reduce((n, change) => n + change.count, 0), 0), acceptedFe1Chapters: Object.keys(transition.sources).filter(path => path.startsWith('book/')).length, exactTransitionSources: Object.keys(transition.sources).length, acceptedFe2Chapters: Object.keys(fe2.sources).filter(path => path.startsWith('book/')).length, exactFe2TransitionSources: Object.keys(fe2.sources).length, unauthorizedModifications: 0 };
 }

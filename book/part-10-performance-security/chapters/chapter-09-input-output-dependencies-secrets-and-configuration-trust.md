@@ -213,7 +213,7 @@ Use a trust review to connect a data flow to its receiving assumptions, evidence
 
 ## Industry Perspective
 
-The OWASP Top 10 and API Security Top 10 offer awareness and verification prompts around input handling, access control, sensitive information, and configuration. They are practitioner guidance, not a complete security model or compliance substitute.[^owasp-top10][^owasp-api]
+The OWASP Top 10 and API Security Top 10 offer awareness and verification prompts around input handling, access control, sensitive information, and configuration. They are practitioner guidance, not a complete security model or compliance substitute.[^owasp-top10][^owasp-api-top10-2023]
 
 ## Common Misconceptions or Common Pitfalls
 
@@ -271,7 +271,7 @@ Create an **Input, Output, and Dependency Trust Review** for Atlas catalogue sea
 
 [^nist-ssdf]: National Institute of Standards and Technology. [Secure Software Development Framework](https://csrc.nist.gov/pubs/sp/800/218/final). SP 800-218, 2022. Accessed 2026-08-12.
 [^owasp-top10]: OWASP Foundation. [OWASP Top 10](https://owasp.org/Top10/). 2025. Accessed 2026-08-12.
-[^owasp-api]: OWASP Foundation. [OWASP API Security Top 10 — 2023](https://github.com/OWASP/API-Security/blob/master/editions/2023/en/0x03-introduction.md). 2023. Accessed 2026-08-12.
+[^owasp-api-top10-2023]: OWASP Foundation. [OWASP API Security Top 10 — 2023](https://github.com/OWASP/API-Security/blob/master/editions/2023/en/0x03-introduction.md). 2023. Accessed 2026-08-12.
 
 ## Chapter Checklist
 

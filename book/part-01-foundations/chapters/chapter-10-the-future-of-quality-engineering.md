@@ -83,11 +83,11 @@ These architectures create uncertainty around partial failure, latency, eventual
 
 Continuous integration and delivery allow teams to integrate, evaluate, and release smaller changes. This can make feedback more interpretable and limit exposure when combined with safe deployment and operational practices; it can also magnify weak controls.
 
-DORA’s current research model describes software delivery through related capabilities, metrics, and outcomes rather than through a single measure of success.[^dora] This is consistent with the MSQE view that a green pipeline, high deployment frequency, or a large automated suite is not complete evidence of quality. Teams need to understand the purpose and limitations of each signal, then combine signals with product context and professional judgement.
+DORA’s current research model describes software delivery through related capabilities, metrics, and outcomes rather than through a single measure of success.[^dora-research] This is consistent with the MSQE view that a green pipeline, high deployment frequency, or a large automated suite is not complete evidence of quality. Teams need to understand the purpose and limitations of each signal, then combine signals with product context and professional judgement.
 
 ### Observability and Resilience Engineering
 
-As systems become more distributed, operations becomes a primary source of quality evidence. **Observability** is the ability to infer meaningful state from signals such as logs, metrics, traces, events, and outcome indicators. **Resilience engineering** designs systems and organisations to anticipate, withstand, respond to, and learn from disruption. Google’s SRE guidance treats monitoring as an essential feedback source for distributed systems.[^googlesre] Testing remains vital, but it cannot be the only source of confidence.
+As systems become more distributed, operations becomes a primary source of quality evidence. **Observability** is the ability to infer meaningful state from signals such as logs, metrics, traces, events, and outcome indicators. **Resilience engineering** designs systems and organisations to anticipate, withstand, respond to, and learn from disruption. Google’s SRE guidance treats monitoring as an essential feedback source for distributed systems.[^sre-monitoring] Testing remains vital, but it cannot be the only source of confidence.
 
 ### Platform Engineering
 
@@ -97,7 +97,7 @@ Platform engineering can improve quality when it makes the safer or more observa
 
 ### AI-Assisted Engineering
 
-AI-assisted tools can generate code, tests, documentation, queries, summaries, and hypotheses. DORA’s 2025 research describes AI as an amplifier whose results depend on the underlying sociotechnical system, not as an independent replacement for engineering practice.[^dora] A generated artefact may still encode an incorrect expectation or introduce a risk. The quality question remains: what claim does it support, what evidence validates it, and what happens if it is wrong?
+AI-assisted tools can generate code, tests, documentation, queries, summaries, and hypotheses. DORA’s 2025 research describes AI as an amplifier whose results depend on the underlying sociotechnical system, not as an independent replacement for engineering practice.[^dora-research] A generated artefact may still encode an incorrect expectation or introduce a risk. The quality question remains: what claim does it support, what evidence validates it, and what happens if it is wrong?
 
 ---
 
@@ -362,7 +362,7 @@ The same approach applies to a platform template, data-quality product, observab
 
 ## Industry Perspective
 
-Current industry direction supports an integrated view of quality without prescribing one universal role or toolchain. DORA frames delivery improvement through related capabilities, metrics, and outcomes.[^dora] Google SRE materials demonstrate the importance of service-level feedback, monitoring, response, and learning in operating distributed systems.[^googlesre] NIST provides voluntary AI risk-management guidance and a Generative AI Profile that address trustworthy-AI considerations across lifecycle activities.[^nistairmf][^nistgai]
+Current industry direction supports an integrated view of quality without prescribing one universal role or toolchain. DORA frames delivery improvement through related capabilities, metrics, and outcomes.[^dora-research] Google SRE materials demonstrate the importance of service-level feedback, monitoring, response, and learning in operating distributed systems.[^sre-monitoring] NIST provides voluntary AI risk-management guidance and a Generative AI Profile that address trustworthy-AI considerations across lifecycle activities.[^nistairmf][^nistgai]
 
 Security guidance also continues to broaden the relevant system boundary. NIST’s SSDF and OWASP supply-chain guidance address secure development, dependencies, build integrity, monitoring, and response.[^nistssdf][^owaspsupply] The Software Carbon Intensity specification illustrates a growing effort to make sustainability a measurable engineering concern rather than a purely aspirational statement.[^sci]
 
@@ -504,9 +504,9 @@ Part I is therefore a beginning, not a conclusion. The remaining handbook parts 
 
 ## References
 
-[^dora]: DORA. [DORA Research](https://dora.dev/research/). Accessed 2026-08-08.
+[^dora-research]: DORA. [DORA Research](https://dora.dev/research/). Accessed 2026-08-08.
 
-[^googlesre]: Beyer, Betsy, Chris Jones, Jennifer Petoff, and Niall Richard Murphy, eds. [*Site Reliability Engineering: How Google Runs Production Systems*, “Monitoring Distributed Systems”](https://sre.google/sre-book/monitoring-distributed-systems/). Google. Accessed 2026-08-08.
+[^sre-monitoring]: Beyer, Betsy, Chris Jones, Jennifer Petoff, and Niall Richard Murphy, eds. [*Site Reliability Engineering: How Google Runs Production Systems*, “Monitoring Distributed Systems”](https://sre.google/sre-book/monitoring-distributed-systems/). Google. Accessed 2026-08-08.
 
 [^platform]: Google Cloud. [What is platform engineering?](https://cloud.google.com/solutions/platform-engineering). Accessed 2026-08-08.
 

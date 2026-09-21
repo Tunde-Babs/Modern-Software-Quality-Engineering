@@ -153,7 +153,7 @@ Learning must retain accountability for remedial work while avoiding blame-based
 
 ## Industry Perspective
 
-ISO/IEC/IEEE 29119-2 provides a generic process reference for testing activities.[^iso-29119-2] The SWEBOK Guide connects testing, maintenance, configuration management, and professional practice.[^swebok] Google's SRE guidance on postmortem culture provides an established example of blameless learning focused on system conditions and follow-up improvement.[^google-sre-postmortem] These sources do not prescribe a defect template, a severity scale, an incident process, or a root-cause technique. The learning loop in this chapter is MSQE educational framing for converting defect evidence into strategy improvement.
+ISO/IEC/IEEE 29119-2 provides a generic process reference for testing activities.[^iso-29119-2] The SWEBOK Guide connects testing, maintenance, configuration management, and professional practice.[^swebok-v4-0a] Google's SRE guidance on postmortem culture provides an established example of blameless learning focused on system conditions and follow-up improvement.[^sre-workbook-postmortem] These sources do not prescribe a defect template, a severity scale, an incident process, or a root-cause technique. The learning loop in this chapter is MSQE educational framing for converting defect evidence into strategy improvement.
 
 ## Common Misconceptions or Common Pitfalls
 
@@ -251,8 +251,8 @@ Quality Engineers turn an escape into proportionate prevention, evidence, diagno
 ## References
 
 [^iso-29119-2]: ISO/IEC/IEEE. [ISO/IEC/IEEE 29119-2:2021 — Software and systems engineering — Software testing — Part 2: Test processes](https://www.iso.org/standard/79428.html). 2021.
-[^swebok]: IEEE Computer Society. [*Guide to the Software Engineering Body of Knowledge (SWEBOK Guide) v4.0a*](https://ieeecs-media.computer.org/media/education/swebok/swebok-v4.pdf). 2026.
-[^google-sre-postmortem]: Google. [*Postmortem Culture: Learning from Failure*](https://sre.google/workbook/postmortem-culture/). *The Site Reliability Workbook*. Accessed 2026-08-09.
+[^swebok-v4-0a]: IEEE Computer Society. [*Guide to the Software Engineering Body of Knowledge (SWEBOK Guide) v4.0a*](https://ieeecs-media.computer.org/media/education/swebok/swebok-v4.pdf). 2026.
+[^sre-workbook-postmortem]: Google. [*Postmortem Culture: Learning from Failure*](https://sre.google/workbook/postmortem-culture/). *The Site Reliability Workbook*. Accessed 2026-08-09.
 
 ## Chapter Checklist
 

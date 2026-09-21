@@ -197,7 +197,7 @@ Quality Engineers contribute by exposing the difference between a fast-looking a
 
 ## Industry Perspective
 
-DORA research includes recovery performance among delivery and operational measures, but it does not make a low time-to-recover result evidence that every rollback practice is safe or that a team should optimize for a single metric.[^dora] Product documentation may explain a particular platform's rollback mechanics; those mechanics must not be generalized beyond the product. Compatibility and decision reasoning are transferable.
+DORA research includes recovery performance among delivery and operational measures, but it does not make a low time-to-recover result evidence that every rollback practice is safe or that a team should optimize for a single metric.[^dora-capabilities] Product documentation may explain a particular platform's rollback mechanics; those mechanics must not be generalized beyond the product. Compatibility and decision reasoning are transferable.
 
 ## Common Misconceptions or Common Pitfalls
 
@@ -266,7 +266,7 @@ Use a fictional state transition. Do not run a rollback, migrate data, restore i
 
 ## References
 
-[^dora]: Google Cloud. [DevOps capabilities](https://cloud.google.com/architecture/devops). Accessed 2026-08-11.
+[^dora-capabilities]: Google Cloud. [DevOps capabilities](https://cloud.google.com/architecture/devops). Accessed 2026-08-11.
 
 ## Chapter Checklist
 

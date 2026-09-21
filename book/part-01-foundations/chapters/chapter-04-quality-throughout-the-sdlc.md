@@ -101,7 +101,7 @@ DevOps extends collaboration beyond development and test to include the people a
 
 Continuous delivery is the capability to keep software in a deployable state and to make releases routine, repeatable, and appropriately controlled. Continuous quality is the corresponding discipline of producing useful evidence continuously: build results, test results, static-analysis findings, deployment verification, service telemetry, customer feedback, and incident learning. A pipeline can automate checks, but it cannot decide whether those checks represent the risks that matter.
 
-The DORA research programme currently groups delivery performance into throughput measures—change lead time, deployment frequency, and failed deployment recovery time—and instability measures—change fail rate and deployment rework rate.[^dora] These measures are not a scorecard for judging individual engineers or a universal release target. Used thoughtfully, they help a team examine its delivery system: whether changes move safely, whether failed changes are contained and recovered, and where unnecessary delay or rework occurs.
+The DORA research programme currently groups delivery performance into throughput measures—change lead time, deployment frequency, and failed deployment recovery time—and instability measures—change fail rate and deployment rework rate.[^dora-metrics] These measures are not a scorecard for judging individual engineers or a universal release target. Used thoughtfully, they help a team examine its delivery system: whether changes move safely, whether failed changes are contained and recovered, and where unnecessary delay or rework occurs.
 
 Continuous quality requires more than a passing pipeline:
 
@@ -146,7 +146,7 @@ The table does not imply that documentation is the only output. A testable examp
 
 Requirements are one of the earliest and highest-leverage places to engineer quality. A requirement should communicate the intended outcome and the constraints within which that outcome must be achieved. It is not enough to state that a user can perform an action. The team also needs to understand what happens with invalid input, concurrent activity, interruption, degraded dependencies, privacy obligations, accessibility needs, and support expectations.
 
-Chapter 3 distinguished ISO/IEC 25010 product quality characteristics from engineering capabilities. That distinction matters here. A requirement may express a needed product quality characteristic such as reliability, security, or performance efficiency. It may also create an engineering need such as observability or testability, which helps the team evaluate and operate the product. ISO/IEC 25010 supplies a product-quality model; it does not turn every desirable engineering capability into a product quality characteristic.[^iso25010]
+Chapter 3 distinguished ISO/IEC 25010 product quality characteristics from engineering capabilities. That distinction matters here. A requirement may express a needed product quality characteristic such as reliability, security, or performance efficiency. It may also create an engineering need such as observability or testability, which helps the team evaluate and operate the product. ISO/IEC 25010 supplies a product-quality model; it does not turn every desirable engineering capability into a product quality characteristic.[^iso-25010]
 
 Quality Engineers contribute by asking questions that make hidden assumptions testable:
 
@@ -229,7 +229,7 @@ Production is where a service meets its real workload, integrations, users, and 
 
 Teams need signals that connect system behaviour to customer outcomes. Technical telemetry may include latency, error rate, resource saturation, availability, logs, traces, queue depth, and dependency behaviour. Product and support signals may include failed journeys, abandoned transactions, customer contacts, or unusual business events. The appropriate set depends on the service and the risk.
 
-Service level objectives, or SLOs, are target levels of reliability for a defined **service indicator**—a measure of user-relevant service behaviour—over a stated period. An **error budget** is the amount of unreliability that remains consistent with that target; it makes the trade-off between reliability and change explicit. Google SRE guidance presents SLOs as a way to choose and manage the reliability level that matters to users, rather than pursuing an undefined maximum.[^sreslo] An SLO is useful only when its indicator represents meaningful user experience and its owners act on the resulting information.
+Service level objectives, or SLOs, are target levels of reliability for a defined **service indicator**—a measure of user-relevant service behaviour—over a stated period. An **error budget** is the amount of unreliability that remains consistent with that target; it makes the trade-off between reliability and change explicit. Google SRE guidance presents SLOs as a way to choose and manage the reliability level that matters to users, rather than pursuing an undefined maximum.[^sre-slo] An SLO is useful only when its indicator represents meaningful user experience and its owners act on the resulting information.
 
 Incident management is another source of quality learning. An incident is an unplanned interruption or degradation of a service that requires coordinated response. During an incident, the first priority is to limit impact and restore appropriate service. Afterwards, a blameless postmortem examines contributing conditions, detection, response, communication, and follow-up actions. Google SRE guidance stresses that postmortem action items should return to the team's backlog and that the process should improve detection, mitigation, coordination, and communication.[^sreincident]
 
@@ -410,7 +410,7 @@ Use the [Continuous Quality Planning Worksheet](../exercises/worksheet-continuou
 ## Further Reading
 
 - ISO/IEC/IEEE 12207:2026, *Systems and software engineering — Software life cycle processes*.[^iso12207]
-- ISO/IEC 25010:2023, *Systems and software engineering — Product quality model*.[^iso25010]
+- ISO/IEC 25010:2023, *Systems and software engineering — Product quality model*.[^iso-25010]
 - ISO/IEC/IEEE 29119-1:2022, *Software and systems engineering — Software testing — Part 1: General concepts*.[^iso29119]
 - DORA, [DORA metrics](https://dora.dev/guides/dora-metrics/), for current delivery-performance metric definitions.
 - Google SRE Book, [Service Level Objectives](https://sre.google/sre-book/service-level-objectives/), for a practical introduction to reliability targets.
@@ -421,13 +421,13 @@ Use the [Continuous Quality Planning Worksheet](../exercises/worksheet-continuou
 
 [^iso12207]: International Organization for Standardization, International Electrotechnical Commission, and IEEE. [ISO/IEC/IEEE 12207:2026 — Systems and software engineering — Software life cycle processes](https://www.iso.org/standard/90219.html). Published April 2026. Accessed 2026-08-08.
 
-[^iso25010]: International Organization for Standardization and International Electrotechnical Commission. [ISO/IEC 25010:2023 — Systems and software engineering — Systems and software Quality Requirements and Evaluation (SQuaRE) — Product quality model](https://www.iso.org/standard/78176.html). Published 2023. Accessed 2026-08-08.
+[^iso-25010]: International Organization for Standardization and International Electrotechnical Commission. [ISO/IEC 25010:2023 — Systems and software engineering — Systems and software Quality Requirements and Evaluation (SQuaRE) — Product quality model](https://www.iso.org/standard/78176.html). Published 2023. Accessed 2026-08-08.
 
 [^iso29119]: International Organization for Standardization, International Electrotechnical Commission, and IEEE. [ISO/IEC/IEEE 29119-1:2022 — Software and systems engineering — Software testing — Part 1: General concepts](https://www.iso.org/standard/81291.html). Published 2022. Accessed 2026-08-08.
 
-[^dora]: Google Cloud. [DORA metrics](https://dora.dev/guides/dora-metrics/). Accessed 2026-08-08.
+[^dora-metrics]: Google Cloud. [DORA metrics](https://dora.dev/guides/dora-metrics/). Accessed 2026-08-08.
 
-[^sreslo]: Google. [Service Level Objectives](https://sre.google/sre-book/service-level-objectives/). In *Site Reliability Engineering*. Accessed 2026-08-08.
+[^sre-slo]: Google. [Service Level Objectives](https://sre.google/sre-book/service-level-objectives/). In *Site Reliability Engineering*. Accessed 2026-08-08.
 
 [^sreincident]: Google. [Incident Management Guide](https://sre.google/resources/practices-and-processes/incident-management-guide/). Accessed 2026-08-08.
 

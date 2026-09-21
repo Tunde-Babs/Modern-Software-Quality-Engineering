@@ -385,16 +385,12 @@ Your portfolio must include a disclosure that it uses fictional, synthetic evide
 
 ## Further Reading
 
-- [NIST SP 800-145: The NIST Definition of Cloud Computing](https://csrc.nist.gov/pubs/sp/800/145/final)
-- [Open Container Initiative](https://opencontainers.org/)
-- [DORA State of DevOps research](https://cloud.google.com/resources/state-of-devops)
+- National Institute of Standards and Technology. [SP 800-145: The NIST Definition of Cloud Computing](https://csrc.nist.gov/pubs/sp/800/145/final). 2011.
+- Open Container Initiative. [Open Container Initiative specifications](https://opencontainers.org/). Accessed 2026-08-11.
+- Google Cloud. [DORA State of DevOps research](https://cloud.google.com/resources/state-of-devops). Accessed 2026-08-11.
 - [NIST SP 800-218: Secure Software Development Framework](https://csrc.nist.gov/pubs/sp/800/218/final)
 
 ## References
-
-[^nist-cloud]: National Institute of Standards and Technology. [SP 800-145: The NIST Definition of Cloud Computing](https://csrc.nist.gov/pubs/sp/800/145/final). 2011.
-[^oci]: Open Container Initiative. [Open Container Initiative specifications](https://opencontainers.org/). Accessed 2026-08-11.
-[^dora]: Google Cloud. [DORA State of DevOps research](https://cloud.google.com/resources/state-of-devops). Accessed 2026-08-11.
 
 ## Chapter Checklist
 

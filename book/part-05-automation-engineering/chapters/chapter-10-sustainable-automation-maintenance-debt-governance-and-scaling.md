@@ -257,7 +257,7 @@ Allocate maintenance by risk and feedback value. Fixing a flaky check that block
 
 ## Industry Perspective
 
-Maintainability is a recognized software-quality concern in ISO/IEC 25010; it is not an argument for a universal automation architecture.[^iso25010] Modern automation tools also evolve, so teams should treat their documented upgrade and compatibility behavior as inputs to an evidence plan rather than assuming tool stability.[^playwright-release-notes]
+Maintainability is a recognized software-quality concern in ISO/IEC 25010; it is not an argument for a universal automation architecture.[^iso-25010] Modern automation tools also evolve, so teams should treat their documented upgrade and compatibility behavior as inputs to an evidence plan rather than assuming tool stability.[^playwright-release-notes]
 
 ## Common Misconceptions or Common Pitfalls
 
@@ -329,7 +329,7 @@ Produce an **Automation Sustainability Improvement Plan**. For each relevant ite
 
 ## References
 
-[^iso25010]: ISO. [ISO/IEC 25010:2023 — Product quality model](https://www.iso.org/standard/78176.html). Accessed 2026-08-10.
+[^iso-25010]: ISO. [ISO/IEC 25010:2023 — Product quality model](https://www.iso.org/standard/78176.html). Accessed 2026-08-10.
 [^playwright-release-notes]: Microsoft. [Playwright Release Notes](https://playwright.dev/docs/release-notes). Accessed 2026-08-10.
 
 ## Chapter Checklist

@@ -108,7 +108,7 @@ The practical test is not aesthetic. Take the last twenty changes to the system 
 
 Atlas's notification module illustrates the opposite failure. It is highly cohesive in code — one thing, one team, sends messages. But its *reason to change* includes every state model it observes. When order management adds a status, notification must change. It is cohesive by function and incohesive by change driver, which is why the opening story happened.
 
-The classic articulation of the underlying principle is Parnas's argument that modules should be decomposed around the decisions they hide rather than around processing steps.[^parnas] The point survives translation to services: a boundary is valuable when it hides a decision that is likely to change, and weak when it exposes one.
+The classic articulation of the underlying principle is Parnas's argument that modules should be decomposed around the decisions they hide rather than around processing steps.[^parnas-modules-1972] The point survives translation to services: a boundary is valuable when it hides a decision that is likely to change, and weak when it exposes one.
 
 ## Coupling Is Not a Scalar
 
@@ -332,7 +332,7 @@ Then answer, in no more than 150 words: which single piece of evidence would you
 
 ## References
 
-[^parnas]: Parnas, D. L. [On the Criteria To Be Used in Decomposing Systems into Modules](https://doi.org/10.1145/361598.361623). *Communications of the ACM*, 15(12), pp. 1053–1058. December 1972. Accessed 2026-08-14.
+[^parnas-modules-1972]: Parnas, D. L. [On the Criteria To Be Used in Decomposing Systems into Modules](https://doi.org/10.1145/361598.361623). *Communications of the ACM*, 15(12), pp. 1053–1058. December 1972. Accessed 2026-08-14.
 [^conway]: Conway, M. E. [How Do Committees Invent?](https://www.melconway.com/Home/Committees_Paper.html) *Datamation*, 14(5), pp. 28–31. April 1968. Accessed 2026-08-14.
 
 ## Chapter Checklist

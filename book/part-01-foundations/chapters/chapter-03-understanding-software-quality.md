@@ -79,7 +79,7 @@ Quality-management practice introduced the disciplines of planning, assurance, c
 
 This is not a story in which one idea replaced another. It is an accumulation of perspectives. A production-quality system needs functional correctness, but it also needs the right response time, protection of sensitive data, a maintainable design, a usable interaction, and an operating model that can recover from failure. The more dependent a system is on external services, configuration, networks, and data, the more clearly these qualities interact.
 
-The ISO/IEC SQuaRE family provides an organised set of standards for quality management, quality models, measurement, requirements, and evaluation.[^square] ISO/IEC 25030:2019, for example, provides a framework for eliciting, defining, using, and governing quality requirements for systems, software products, and data.[^iso25030] These standards are reference points for rigorous work; they do not remove the need for product judgment or choose the appropriate trade-off for a particular context.
+The ISO/IEC SQuaRE family provides an organised set of standards for quality management, quality models, measurement, requirements, and evaluation.[^square] ISO/IEC 25030:2019, for example, provides a framework for eliciting, defining, using, and governing quality requirements for systems, software products, and data.[^iso-25030] These standards are reference points for rigorous work; they do not remove the need for product judgment or choose the appropriate trade-off for a particular context.
 
 The [Software Quality Perspectives diagram](../../../diagrams/chapter-03-software-quality-perspectives.md) shows how stakeholder needs, product properties, delivery practices, and production evidence combine to shape quality. It also keeps ISO/IEC 25010:2023 product-quality characteristics distinct from engineering capabilities that support their evaluation.
 
@@ -122,13 +122,13 @@ Product qualities describe properties of the software product or system. Quality
 
 ## The ISO/IEC 25010 Software Product Quality Model
 
-ISO/IEC 25010:2023 is the current product-quality model in the SQuaRE series. It defines nine product-quality characteristics, each with further subcharacteristics, as a reference model for specifying, measuring, and evaluating product quality.[^iso25010current] It applies to ICT products and software products, including elements such as software, data, infrastructure, and communications that form part of the product.
+ISO/IEC 25010:2023 is the current product-quality model in the SQuaRE series. It defines nine product-quality characteristics, each with further subcharacteristics, as a reference model for specifying, measuring, and evaluating product quality.[^iso-25010] It applies to ICT products and software products, including elements such as software, data, infrastructure, and communications that form part of the product.
 
 The model is valuable because it gives teams a shared vocabulary. It encourages questions that feature-focused requirements can omit: What reliability is needed? What security qualities matter? What does maintainability require? Which interaction capabilities must be supported? It does not say that every characteristic has equal priority, nor does it prescribe a universal metric or target.
 
 ### Current model and the 2011 model
 
-Many experienced QA Engineers learned the eight-characteristic model from ISO/IEC 25010:2011: functional suitability, performance efficiency, compatibility, usability, reliability, security, maintainability, and portability. That edition has been withdrawn and replaced by ISO/IEC 25010:2023.[^iso25010legacy][^iso25010current]
+Many experienced QA Engineers learned the eight-characteristic model from ISO/IEC 25010:2011: functional suitability, performance efficiency, compatibility, usability, reliability, security, maintainability, and portability. That edition has been withdrawn and replaced by ISO/IEC 25010:2023.[^iso25010legacy][^iso-25010]
 
 The current edition has nine characteristics: functional suitability, performance efficiency, compatibility, interaction capability, reliability, security, maintainability, flexibility, and safety. It uses **interaction capability** where the 2011 model listed usability, replaces the 2011 top-level **portability** characteristic with **flexibility**, and adds **safety** as a top-level characteristic. This chapter discusses the current model first, then uses the older terms where they remain useful for reading legacy material and job descriptions.
 
@@ -241,7 +241,7 @@ The purpose of a trade-off discussion is not to seek a permanent balance. Contex
 
 Measurement turns quality conversations into evidence, but a metric is not quality itself. Every measure has a definition, a collection method, a time window, and a potential for misuse. A defect count may reflect product risk, but it can also reflect the number of people testing, the maturity of reporting, or the classification policy. A high deployment frequency may indicate healthy flow, or it may simply count low-risk configuration changes.
 
-Start with a decision: what do we need to know, why does it matter, and what action will we take if the measure changes? ISO/IEC 25030:2019 connects quality requirements to the use of quality models and measurement as part of defining and governing expected quality.[^iso25030]
+Start with a decision: what do we need to know, why does it matter, and what action will we take if the measure changes? ISO/IEC 25030:2019 connects quality requirements to the use of quality models and measurement as part of defining and governing expected quality.[^iso-25030]
 
 ### Product and service measures
 
@@ -260,10 +260,10 @@ Start with a decision: what do we need to know, why does it matter, and what act
 | Mean time to restore (MTTR) | How quickly a team restores service after a relevant failure. | Define the start and end points before comparing results. MTTR can hide variation, so review severity, cause, and distribution as well as the average. |
 | Change failure rate | The proportion of deployments that require remediation because they impair service or require intervention. | Define a deployment and a failure consistently. Use it to improve delivery safety, not to penalise teams for surfacing problems. |
 | Lead time for changes | How long it takes a change to travel from a defined starting point to production. | State the start point; DORA's current definition uses commit to successful production deployment. Long lead time can reveal queues, rework, or manual constraints, but not every slow change is poor practice. |
-| Failed deployment recovery time | How quickly the team recovers when a production deployment fails and requires intervention. | DORA uses this current measure to focus recovery on impairment caused by a deployment, rather than every kind of operational incident.[^dora] |
-| Deployment rework rate | The proportion of deployments that are unplanned work arising from a production incident. | DORA's current five-metric model includes this measure. Use it with the other delivery signals, not as an isolated target.[^dora] |
+| Failed deployment recovery time | How quickly the team recovers when a production deployment fails and requires intervention. | DORA uses this current measure to focus recovery on impairment caused by a deployment, rather than every kind of operational incident.[^dora-metrics] |
+| Deployment rework rate | The proportion of deployments that are unplanned work arising from a production incident. | DORA's current five-metric model includes this measure. Use it with the other delivery signals, not as an isolated target.[^dora-metrics] |
 
-DORA's current guidance separates software-delivery throughput from instability and warns against using one measure as a universal target or comparing unrelated applications.[^dora] This reinforces a core MSQE principle: measures should inform improvement in the local system, not create a leaderboard detached from customer and engineering context.
+DORA's current guidance separates software-delivery throughput from instability and warns against using one measure as a universal target or comparing unrelated applications.[^dora-metrics] This reinforces a core MSQE principle: measures should inform improvement in the local system, not create a leaderboard detached from customer and engineering context.
 
 ### Build a balanced quality view
 
@@ -297,7 +297,7 @@ This approach does not require excessive process. It makes the work proportionat
 
 Modern engineering organisations increasingly treat quality as a cross-functional property of the product and the delivery system. Product, design, engineering, security, operations, data, and quality specialists contribute different expertise. The goal is not to dissolve professional boundaries; it is to avoid hand-offs that disconnect a decision from its operational consequences.
 
-Publicly available practices illustrate this direction without prescribing a vendor-specific model. Google's SRE guidance uses service-level indicators—measures of user-relevant service behaviour—and objectives to connect that behaviour with measurable reliability targets; it treats error budgets as a way to make risk tolerance explicit.[^sre] DORA research treats delivery performance as a combination of throughput and instability and recommends using measures in the context of a particular application or service.[^dora] The IEEE Computer Society's SWEBOK Guide presents software quality, requirements, testing, maintenance, configuration management, and engineering management as related bodies of knowledge.[^swebok]
+Publicly available practices illustrate this direction without prescribing a vendor-specific model. Google's SRE guidance uses service-level indicators—measures of user-relevant service behaviour—and objectives to connect that behaviour with measurable reliability targets; it treats error budgets as a way to make risk tolerance explicit.[^sre-slo] DORA research treats delivery performance as a combination of throughput and instability and recommends using measures in the context of a particular application or service.[^dora-metrics] The IEEE Computer Society's SWEBOK Guide presents software quality, requirements, testing, maintenance, configuration management, and engineering management as related bodies of knowledge.[^swebok-v4-topics]
 
 These are sources of principles, not a checklist to adopt wholesale. A team should choose methods, measures, and controls that match its domain, architecture, users, regulatory context, and consequences of failure. A safety-critical system may need independent assessment and formal assurance. A small internal reporting tool may need a lighter approach. Both still need an explicit understanding of what quality means for the people who rely on them.
 
@@ -428,17 +428,17 @@ Use the [Software Quality Profile Worksheet](../exercises/worksheet-software-qua
 
 [^square]: ISO/IEC JTC 1/SC 7. [ISO/IEC 25000 SQuaRE series](https://committee.iso.org/sites/jtc1sc7/home/projects/flagship-standards/iso-25000-square-series.html). Accessed 2026-08-08.
 
-[^iso25030]: International Organization for Standardization and International Electrotechnical Commission. [ISO/IEC 25030:2019 — Systems and software engineering — Systems and software quality requirements and evaluation (SQuaRE) — Quality requirements framework](https://www.iso.org/standard/72116.html). Published 2019. Accessed 2026-08-08.
+[^iso-25030]: International Organization for Standardization and International Electrotechnical Commission. [ISO/IEC 25030:2019 — Systems and software engineering — Systems and software quality requirements and evaluation (SQuaRE) — Quality requirements framework](https://www.iso.org/standard/72116.html). Published 2019. Accessed 2026-08-08.
 
-[^iso25010current]: International Organization for Standardization and International Electrotechnical Commission. [ISO/IEC 25010:2023 — Systems and software engineering — Systems and software Quality Requirements and Evaluation (SQuaRE) — Product quality model](https://www.iso.org/standard/78176.html). Published 2023. Accessed 2026-08-08.
+[^iso-25010]: International Organization for Standardization and International Electrotechnical Commission. [ISO/IEC 25010:2023 — Systems and software engineering — Systems and software Quality Requirements and Evaluation (SQuaRE) — Product quality model](https://www.iso.org/standard/78176.html). Published 2023. Accessed 2026-08-08.
 
 [^iso25010legacy]: International Organization for Standardization and International Electrotechnical Commission. [ISO/IEC 25010:2011 — Systems and software engineering — Systems and software quality models (withdrawn)](https://www.iso.org/standard/35733.html). Published 2011. Accessed 2026-08-08.
 
-[^dora]: Google Cloud. [DORA metrics](https://dora.dev/guides/dora-metrics/). Accessed 2026-08-08.
+[^dora-metrics]: Google Cloud. [DORA metrics](https://dora.dev/guides/dora-metrics/). Accessed 2026-08-08.
 
-[^sre]: Google. [Service Level Objectives](https://sre.google/sre-book/service-level-objectives/). In *Site Reliability Engineering*. Accessed 2026-08-08.
+[^sre-slo]: Google. [Service Level Objectives](https://sre.google/sre-book/service-level-objectives/). In *Site Reliability Engineering*. Accessed 2026-08-08.
 
-[^swebok]: IEEE Computer Society. [Guide to the Software Engineering Body of Knowledge (SWEBOK Guide), Version 4.0](https://www.computer.org/education/bodies-of-knowledge/software-engineering/topics). Accessed 2026-08-08.
+[^swebok-v4-topics]: IEEE Computer Society. [Guide to the Software Engineering Body of Knowledge (SWEBOK Guide), Version 4.0](https://www.computer.org/education/bodies-of-knowledge/software-engineering/topics). Accessed 2026-08-08.
 
 ## Chapter Checklist
 

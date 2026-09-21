@@ -76,7 +76,7 @@ Four aspects distinguish the role:
 3. **System orientation.** They reason about interactions among people, software, data, infrastructure, dependencies, and operational processes.
 4. **Enabling orientation.** They improve team capability through coaching, tools, examples, and feedback rather than becoming a permanent gate.
 
-ISO/IEC 25010:2023 provides a product-quality model that can support the specification, measurement, and evaluation of quality throughout a lifecycle.[^iso25010] It does not define a Quality Engineer role. MSQE uses standards as a vocabulary and source of discipline, then applies them through context-specific engineering responsibilities.
+ISO/IEC 25010:2023 provides a product-quality model that can support the specification, measurement, and evaluation of quality throughout a lifecycle.[^iso-25010] It does not define a Quality Engineer role. MSQE uses standards as a vocabulary and source of discipline, then applies them through context-specific engineering responsibilities.
 
 ## Core Responsibilities
 
@@ -348,9 +348,9 @@ The Quality Engineer is not the approval authority merely because they assembled
 
 ## Industry Perspective
 
-Public sources describe many of the capabilities that Quality Engineers need without prescribing one universal job description. ISO/IEC 25010:2023 supports product-quality requirements, evaluation, and measures for several lifecycle stakeholders.[^iso25010] ISO/IEC/IEEE 29119-1:2022 provides common concepts for software testing.[^iso29119] Together, they support clear quality language but do not define a single organisational role.
+Public sources describe many of the capabilities that Quality Engineers need without prescribing one universal job description. ISO/IEC 25010:2023 supports product-quality requirements, evaluation, and measures for several lifecycle stakeholders.[^iso-25010] ISO/IEC/IEEE 29119-1:2022 provides common concepts for software testing.[^iso29119] Together, they support clear quality language but do not define a single organisational role.
 
-DORA's current research describes a core model of capabilities, metrics, and outcomes grounded in its ongoing research programme, and highlights the value of continuous improvement in practitioner contexts.[^dora] Google SRE describes monitoring as an engineering activity involving collection, processing, aggregation, and display of real-time system data, and stresses signals that support action.[^googlesremonitoring] Microsoft DevOps guidance connects shared workload responsibility with clear roles, decision authority, and continuous learning.[^microsoftdevops]
+DORA's current research describes a core model of capabilities, metrics, and outcomes grounded in its ongoing research programme, and highlights the value of continuous improvement in practitioner contexts.[^dora-research] Google SRE describes monitoring as an engineering activity involving collection, processing, aggregation, and display of real-time system data, and stresses signals that support action.[^sre-monitoring] Microsoft DevOps guidance connects shared workload responsibility with clear roles, decision authority, and continuous learning.[^microsoftdevops]
 
 These sources support an engineering-first conclusion: the Quality Engineer's value is not tool ownership or final inspection. It is the ability to help a team create and use evidence across quality requirements, testing, delivery, operation, and improvement.
 
@@ -444,13 +444,13 @@ The Quality Engineer Competency Model is an original MSQE educational framework 
 
 ## References
 
-[^iso25010]: International Organization for Standardization and International Electrotechnical Commission. [ISO/IEC 25010:2023 — Systems and software engineering — Systems and software Quality Requirements and Evaluation (SQuaRE) — Product quality model](https://www.iso.org/standard/78176.html). Published 2023. Accessed 2026-08-08.
+[^iso-25010]: International Organization for Standardization and International Electrotechnical Commission. [ISO/IEC 25010:2023 — Systems and software engineering — Systems and software Quality Requirements and Evaluation (SQuaRE) — Product quality model](https://www.iso.org/standard/78176.html). Published 2023. Accessed 2026-08-08.
 
 [^iso29119]: International Organization for Standardization, International Electrotechnical Commission, and IEEE. [ISO/IEC/IEEE 29119-1:2022 — Software and systems engineering — Software testing — Part 1: General concepts](https://www.iso.org/standard/81291.html). Published 2022. Accessed 2026-08-08.
 
-[^dora]: DORA. [Research and reports](https://dora.dev/research/). Accessed 2026-08-08.
+[^dora-research]: DORA. [Research and reports](https://dora.dev/research/). Accessed 2026-08-08.
 
-[^googlesremonitoring]: Google. [Monitoring Distributed Systems](https://sre.google/sre-book/monitoring-distributed-systems/). In *Site Reliability Engineering*. Accessed 2026-08-08.
+[^sre-monitoring]: Google. [Monitoring Distributed Systems](https://sre.google/sre-book/monitoring-distributed-systems/). In *Site Reliability Engineering*. Accessed 2026-08-08.
 
 [^microsoftdevops]: Microsoft. [Architecture strategies for fostering DevOps culture](https://learn.microsoft.com/en-us/azure/well-architected/operational-excellence/devops-culture). Accessed 2026-08-08.
 

@@ -217,7 +217,7 @@ For Quality Engineers, an effective contribution is to ask whether evidence is b
 
 The principles in this chapter apply whether an organization uses a declarative or imperative infrastructure mechanism. OpenTofu documents one declarative implementation in which planning compares configured desired state with managed infrastructure and proposes changes without applying them.[^opentofu] This is an implementation example, not a platform-independent definition of IaC. Official product documentation can define a particular tool's planning, state, or replacement semantics; such semantics must not be generalized as universal facts.
 
-Version-controlled review practices described in [Git documentation](https://git-scm.com/docs) support traceable change discussions, but a commit history alone does not prove target state. The [NIST Secure Software Development Framework](https://csrc.nist.gov/pubs/sp/800/218/final) provides relevant guidance for protecting and maintaining software-release processes, while deep infrastructure security design remains outside this part.
+Version-controlled review practices described in [Git documentation](https://git-scm.com/docs) support traceable change discussions,[^git] but a commit history alone does not prove target state. The [NIST Secure Software Development Framework](https://csrc.nist.gov/pubs/sp/800/218/final) provides relevant guidance for protecting and maintaining software-release processes, while deep infrastructure security design remains outside this part.
 
 ## Common Misconceptions or Common Pitfalls
 

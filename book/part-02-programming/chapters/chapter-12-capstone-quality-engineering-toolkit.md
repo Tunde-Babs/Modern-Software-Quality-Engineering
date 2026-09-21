@@ -492,7 +492,7 @@ The project is deliberately not a production readiness claim. A production quali
 
 ## Industry Perspective
 
-The reference implementation uses TypeScript with strict checking and Node's built-in test runner because they keep the learning toolchain small while making the relevant boundaries explicit. TypeScript documents the distinction between compile-time checking and JavaScript runtime behaviour; Node documents `node:test` and `node:assert/strict` as standard-library facilities.[^typescript][^node-test][^node-assert]
+The reference implementation uses TypeScript with strict checking and Node's built-in test runner because they keep the learning toolchain small while making the relevant boundaries explicit. TypeScript documents the distinction between compile-time checking and JavaScript runtime behaviour; Node documents `node:test` and `node:assert/strict` as standard-library facilities.[^typescript-handbook][^node-test][^node-assert]
 
 The project declares Node.js 20 or later. Node's test-runner documentation records that the runner became stable in Node 20, making that a reasonable explicit baseline for this capstone.[^node-test] This is a local tooling decision, not an instruction to upgrade every previous learning project or a statement that Node is required for all Quality Engineering work. The transferable practice is to select and document a supported baseline that matches the APIs your project depends on, then validate the commands you publish.
 
@@ -586,7 +586,7 @@ The more important outcome is the engineering judgement behind the code. You sho
 
 ## References
 
-[^typescript]: Microsoft. [TypeScript Handbook](https://www.typescriptlang.org/docs/handbook/intro.html). Accessed 2026-08-09.
+[^typescript-handbook]: Microsoft. [TypeScript Handbook](https://www.typescriptlang.org/docs/handbook/intro.html). Accessed 2026-08-09.
 [^node-test]: OpenJS Foundation. [Node.js — Test runner](https://nodejs.org/api/test.html). Accessed 2026-08-09.
 [^node-assert]: OpenJS Foundation. [Node.js — Assert](https://nodejs.org/api/assert.html). Accessed 2026-08-09.
 

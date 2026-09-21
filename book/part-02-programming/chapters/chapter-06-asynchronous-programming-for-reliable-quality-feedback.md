@@ -205,7 +205,7 @@ const result = await retryBounded({
 });
 ```
 
-This code has a finite attempt limit and asks the caller to classify retryability. It does not pretend the helper can infer business safety. Production services may require exponential backoff, jitter, shared retry budgets, cancellation, and load-shedding decisions. Those are system-level concerns; Google SRE cautions that unbounded or layered retries can amplify load and contribute to cascading failure.[^google-sre-retries] The first responsibility of a Quality Engineering utility is to avoid masking deterministic defects or silently multiplying work.
+This code has a finite attempt limit and asks the caller to classify retryability. It does not pretend the helper can infer business safety. Production services may require exponential backoff, jitter, shared retry budgets, cancellation, and load-shedding decisions. Those are system-level concerns; Google SRE cautions that unbounded or layered retries can amplify load and contribute to cascading failure.[^sre-cascading-failures] The first responsibility of a Quality Engineering utility is to avoid masking deterministic defects or silently multiplying work.
 
 ### Backoff is a policy, not a magic formula
 
@@ -221,7 +221,7 @@ The most useful design is often the smallest one that preserves the needed disti
 
 JavaScript's promise combinators express different failure and completion contracts: `Promise.all` is appropriate when all results are required, while `Promise.allSettled` supports collecting every individual settlement.[^mdn-promise-all] TypeScript supports `async` functions and `await` in the JavaScript model; its static types clarify the values a continuation expects but cannot establish external timing or service state at runtime.[^typescript-async-await]
 
-At a larger operational scale, Google SRE documents how naive retries can intensify load and recommends distinguishing retryable from non-retryable conditions, limiting attempts, and considering backoff and retry budgets.[^google-sre-retries] This chapter applies the underlying reasoning to small quality utilities; it does not prescribe a production reliability policy.
+At a larger operational scale, Google SRE documents how naive retries can intensify load and recommends distinguishing retryable from non-retryable conditions, limiting attempts, and considering backoff and retry budgets.[^sre-cascading-failures] This chapter applies the underlying reasoning to small quality utilities; it does not prescribe a production reliability policy.
 
 ## Common Misconceptions or Common Pitfalls
 
@@ -319,7 +319,7 @@ Inject a virtual clock or sleep function so the polling and timeout tests are de
 
 [^typescript-async-await]: TypeScript. [TypeScript 1.7: `async`/`await` support](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-1-7.html). Accessed 2026-08-08.
 
-[^google-sre-retries]: Google. [Addressing Cascading Failures](https://sre.google/sre-book/addressing-cascading-failures/). *Site Reliability Engineering*. Accessed 2026-08-08.
+[^sre-cascading-failures]: Google. [Addressing Cascading Failures](https://sre.google/sre-book/addressing-cascading-failures/). *Site Reliability Engineering*. Accessed 2026-08-08.
 
 ## Chapter Checklist
 

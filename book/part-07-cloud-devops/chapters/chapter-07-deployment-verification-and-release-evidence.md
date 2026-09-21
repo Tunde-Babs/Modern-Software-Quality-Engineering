@@ -190,7 +190,7 @@ Quality Engineers challenge broad health claims, require identity and freshness 
 
 ## Industry Perspective
 
-Kubernetes and other runtime platforms document readiness and health mechanisms, but their specific semantics are platform-dependent.[^kubernetes] Such mechanisms are useful traffic controls, not universal business verification. DORA research can inform delivery feedback and learning discussions; it does not prescribe a verification probe set or a universal production threshold.[^dora]
+Kubernetes and other runtime platforms document readiness and health mechanisms, but their specific semantics are platform-dependent.[^kubernetes] Such mechanisms are useful traffic controls, not universal business verification. DORA research can inform delivery feedback and learning discussions; it does not prescribe a verification probe set or a universal production threshold.[^dora-capabilities]
 
 ## Common Misconceptions or Common Pitfalls
 
@@ -260,7 +260,7 @@ Use synthetic evidence only. Do not create monitoring dashboards, tracing config
 ## References
 
 [^kubernetes]: Kubernetes. [Liveness, readiness, and startup probes](https://kubernetes.io/docs/concepts/configuration/liveness-readiness-startup-probes/). Accessed 2026-08-11.
-[^dora]: Google Cloud. [DevOps capabilities](https://cloud.google.com/architecture/devops). Accessed 2026-08-11.
+[^dora-capabilities]: Google Cloud. [DevOps capabilities](https://cloud.google.com/architecture/devops). Accessed 2026-08-11.
 
 ## Chapter Checklist
 

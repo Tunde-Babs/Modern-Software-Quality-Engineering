@@ -103,7 +103,7 @@ The following concerns commonly matter at an API boundary:
 - **reliability and consumer impact:** whether the interaction supports the customer outcome under the relevant conditions; and
 - **evidence limitation:** what the available observation does not establish.
 
-Some are product-quality concerns; others are capabilities. In ISO/IEC 25010, observability and testability are not additional top-level product-quality characteristics.[^iso25010] Here they make API behaviour controllable, observable, and diagnosable.
+Some are product-quality concerns; others are capabilities. In ISO/IEC 25010, observability and testability are not additional top-level product-quality characteristics.[^iso-25010] Here they make API behaviour controllable, observable, and diagnosable.
 
 ## API Boundaries Are Evidence Boundaries
 
@@ -305,7 +305,7 @@ The best improvement is not always another API check. A team may need an explici
 
 HTTP provides a uniform interface with standardized request methods, status codes, metadata, and representation semantics.[^rfc9110] Those standards are useful because they make certain protocol expectations explicit, not because they make every application outcome automatic. The OpenAPI Specification provides a language-agnostic description format for HTTP APIs, which can help participants communicate an interface, but a description still needs semantic and consumer review.[^openapi]
 
-ISO/IEC 25010 provides a product-quality reference model; ISO/IEC/IEEE 29119-2 provides generic testing-process context, while SWEBOK places interfaces and testing within wider software-engineering concerns.[^iso25010][^iso-29119-2][^swebok] None prescribes an API tool, framework, or the API-evidence questions in this chapter. The API-outcome model and API-evidence prompt are explicitly MSQE educational framing.
+ISO/IEC 25010 provides a product-quality reference model; ISO/IEC/IEEE 29119-2 provides generic testing-process context, while SWEBOK places interfaces and testing within wider software-engineering concerns.[^iso-25010][^iso-29119-2][^swebok-v4-0a] None prescribes an API tool, framework, or the API-evidence questions in this chapter. The API-outcome model and API-evidence prompt are explicitly MSQE educational framing.
 
 ## Common Misconceptions or Common Pitfalls
 
@@ -428,11 +428,11 @@ Checkout currently displays “Order confirmed” whenever it receives a 201 res
 
 ## References
 
-[^iso25010]: International Organization for Standardization and International Electrotechnical Commission. [ISO/IEC 25010:2023 — Systems and software engineering — Systems and software Quality Requirements and Evaluation (SQuaRE) — Product quality model](https://www.iso.org/standard/78176.html). Published 2023. Accessed 2026-08-10.
+[^iso-25010]: International Organization for Standardization and International Electrotechnical Commission. [ISO/IEC 25010:2023 — Systems and software engineering — Systems and software Quality Requirements and Evaluation (SQuaRE) — Product quality model](https://www.iso.org/standard/78176.html). Published 2023. Accessed 2026-08-10.
 [^rfc9110]: Fielding, R., Nottingham, M., and J. Reschke, eds. [RFC 9110 — HTTP Semantics](https://www.rfc-editor.org/rfc/rfc9110.html). IETF, June 2022. Accessed 2026-08-10.
 [^openapi]: OpenAPI Initiative. [OpenAPI Specification](https://spec.openapis.org/oas/latest.html). Accessed 2026-08-10.
 [^iso-29119-2]: ISO/IEC/IEEE. [ISO/IEC/IEEE 29119-2:2021 — Software and systems engineering — Software testing — Part 2: Test processes](https://www.iso.org/standard/79428.html). 2021.
-[^swebok]: IEEE Computer Society. [Guide to the Software Engineering Body of Knowledge (SWEBOK Guide) v4.0a](https://ieeecs-media.computer.org/media/education/swebok/swebok-v4.pdf).
+[^swebok-v4-0a]: IEEE Computer Society. [Guide to the Software Engineering Body of Knowledge (SWEBOK Guide) v4.0a](https://ieeecs-media.computer.org/media/education/swebok/swebok-v4.pdf).
 
 ## Chapter Checklist
 

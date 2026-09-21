@@ -155,7 +155,7 @@ DevOps emerged because a change that works in a development environment can stil
 
 This does not mean every engineer must perform every operational task or that specialist roles disappear. It means that responsibility for the outcome cannot be transferred away with a ticket or a release approval. Operations specialists, security specialists, developers, product managers, and Quality Engineers bring different expertise; the service succeeds only when their contributions form a coherent system.
 
-Google's SRE guidance illustrates one production-oriented approach: teams define measurable service objectives, monitor the relevant indicators, and use the resulting evidence to make risk and investment decisions. An error budget is the permitted amount of unreliability within an objective over a defined period; it makes the trade-off between reliability and change explicit.[^sre]
+Google's SRE guidance illustrates one production-oriented approach: teams define measurable service objectives, monitor the relevant indicators, and use the resulting evidence to make risk and investment decisions. An error budget is the permitted amount of unreliability within an objective over a defined period; it makes the trade-off between reliability and change explicit.[^sre-slo]
 
 ### Cloud changed the unit of quality
 
@@ -163,7 +163,7 @@ Cloud platforms and cloud-native architectures made infrastructure, configuratio
 
 For example, a feature may be functionally correct while its identity policy denies a legitimate user, its configuration directs traffic incorrectly, a managed dependency times out, or its telemetry cannot distinguish a healthy response from a business failure. Quality work therefore needs to examine the system in operation, not only the application in isolation.
 
-**Observability** is the ability to infer a system's internal state from its externally available signals. It supports Quality Engineering by making production behaviour available as evidence. It is an engineering capability that helps teams achieve and evaluate quality; it is not an additional top-level product-quality characteristic in ISO/IEC 25010:2023.[^iso25010]
+**Observability** is the ability to infer a system's internal state from its externally available signals. It supports Quality Engineering by making production behaviour available as evidence. It is an engineering capability that helps teams achieve and evaluate quality; it is not an additional top-level product-quality characteristic in ISO/IEC 25010:2023.[^iso-25010]
 
 ## The Emergence of Quality Engineering
 
@@ -257,9 +257,9 @@ Both remain useful. QC provides conformance evidence, and QA supports prevention
 
 The profession evolved because the delivery environment evolved. Teams now commonly operate systems that are distributed, continuously changed, dependent on managed services, and directly connected to customers. Quality decisions are made in product refinement, code review, infrastructure design, pipeline configuration, deployment, incident response, and operational planning—not only in a dedicated test phase.
 
-Industry research reinforces the need to treat delivery performance as a system concern. DORA's current guidance describes five delivery-performance metrics that cover throughput and instability, and emphasises using them in the context of a particular application or service rather than as universal targets.[^dora] These measures are not a Quality Engineering scorecard. They are examples of the operational evidence teams can use to understand how safely and effectively change moves through their system.
+Industry research reinforces the need to treat delivery performance as a system concern. DORA's current guidance describes five delivery-performance metrics that cover throughput and instability, and emphasises using them in the context of a particular application or service rather than as universal targets.[^dora-metrics] These measures are not a Quality Engineering scorecard. They are examples of the operational evidence teams can use to understand how safely and effectively change moves through their system.
 
-The Software Engineering Body of Knowledge also recognises software requirements, software quality, software testing, software maintenance, configuration management, engineering management, and engineering professionalism as connected areas of practice.[^swebok] This breadth is important. Quality Engineering is not a claim that one person must master every specialty; it is a recognition that quality outcomes depend on how these specialties work together.
+The Software Engineering Body of Knowledge also recognises software requirements, software quality, software testing, software maintenance, configuration management, engineering management, and engineering professionalism as connected areas of practice.[^swebok-v4-topics] This breadth is important. Quality Engineering is not a claim that one person must master every specialty; it is a recognition that quality outcomes depend on how these specialties work together.
 
 For regulated, safety-critical, or high-consequence systems, formal assurance and independent assessment may be indispensable. For a small internal tool, a lighter approach may be sufficient. In both cases, the governing principle is the same: choose controls and evidence that are proportionate to the consequences of failure, and improve them as the system and its risks change.
 
@@ -354,13 +354,13 @@ The embedded evolution-and-evidence map is intentionally self-contained. For a r
 
 [^agile]: Agile Alliance. [Manifesto for Agile Software Development](https://agilemanifesto.org/). Published 2001. Accessed 2026-08-08.
 
-[^sre]: Google. [Service Level Objectives](https://sre.google/sre-book/service-level-objectives/). In *Site Reliability Engineering*. Accessed 2026-08-08.
+[^sre-slo]: Google. [Service Level Objectives](https://sre.google/sre-book/service-level-objectives/). In *Site Reliability Engineering*. Accessed 2026-08-08.
 
-[^iso25010]: International Organization for Standardization and International Electrotechnical Commission. [ISO/IEC 25010:2023 — Systems and software engineering — Systems and software Quality Requirements and Evaluation (SQuaRE) — Product quality model](https://www.iso.org/standard/78176.html). Published 2023. Accessed 2026-08-08.
+[^iso-25010]: International Organization for Standardization and International Electrotechnical Commission. [ISO/IEC 25010:2023 — Systems and software engineering — Systems and software Quality Requirements and Evaluation (SQuaRE) — Product quality model](https://www.iso.org/standard/78176.html). Published 2023. Accessed 2026-08-08.
 
-[^dora]: Google Cloud. [DORA metrics](https://dora.dev/guides/dora-metrics/). Accessed 2026-08-08.
+[^dora-metrics]: Google Cloud. [DORA metrics](https://dora.dev/guides/dora-metrics/). Accessed 2026-08-08.
 
-[^swebok]: IEEE Computer Society. [Guide to the Software Engineering Body of Knowledge (SWEBOK Guide), Version 4.0](https://www.computer.org/education/bodies-of-knowledge/software-engineering/topics). Accessed 2026-08-08.
+[^swebok-v4-topics]: IEEE Computer Society. [Guide to the Software Engineering Body of Knowledge (SWEBOK Guide), Version 4.0](https://www.computer.org/education/bodies-of-knowledge/software-engineering/topics). Accessed 2026-08-08.
 
 ## Chapter Checklist
 

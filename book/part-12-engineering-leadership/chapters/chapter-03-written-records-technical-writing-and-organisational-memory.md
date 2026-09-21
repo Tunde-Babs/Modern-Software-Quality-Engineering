@@ -92,7 +92,7 @@ This has three practical consequences.
 
 There is a tension in everything written so far. Records should present reasoning clearly and in a defensible order — but real engineering does not proceed in a defensible order. Decisions are made under time pressure, revised, half-forgotten, influenced by who was in the room, and sometimes arrived at before the reasoning that supports them.
 
-Parnas and Clements addressed this directly. Their argument is that a perfectly rational design process is unattainable — in their words, we will never find a process that allows software to be designed in a perfectly rational way — and that the useful response is not to abandon rational structure but to produce documentation *as if* an ideal process had been followed. They describe this explicitly as faking a rational design process: identifying an ideal process, following it as closely as possible, and writing the documentation that would have been produced had it been followed completely.[^parnas]
+Parnas and Clements addressed this directly. Their argument is that a perfectly rational design process is unattainable — in their words, we will never find a process that allows software to be designed in a perfectly rational way — and that the useful response is not to abandon rational structure but to produce documentation *as if* an ideal process had been followed. They describe this explicitly as faking a rational design process: identifying an ideal process, following it as closely as possible, and writing the documentation that would have been produced had it been followed completely.[^parnas-clements-design-1986]
 
 Applied to Part XII, the principle is narrow and useful: **a record may reconstruct a rational structure that the actual work did not have, because the structure is what serves the future reader.** Recording the reasoning in a defensible order is not dishonest, provided the record does not claim the process itself was orderly.
 
@@ -299,7 +299,7 @@ Use only synthetic data. Do not propose a removal plan for the shim; the exercis
 
 ## References
 
-[^parnas]: Parnas, D. L., and Clements, P. C. [A Rational Design Process: How and Why to Fake It](https://doi.org/10.1109/TSE.1986.6312940). *IEEE Transactions on Software Engineering*, SE-12(2), pp. 251–257. February 1986. **Verification:** bibliographic metadata verified against Crossref; the reconstruction argument cited here was verified against the full text of an institutionally hosted copy of the paper, not against the IEEE version of record. Metadata accessed 2026-08-14; full text accessed 2026-08-15.
+[^parnas-clements-design-1986]: Parnas, D. L., and Clements, P. C. [A Rational Design Process: How and Why to Fake It](https://doi.org/10.1109/TSE.1986.6312940). *IEEE Transactions on Software Engineering*, SE-12(2), pp. 251–257. February 1986. **Verification:** bibliographic metadata verified against Crossref; the reconstruction argument cited here was verified against the full text of an institutionally hosted copy of the paper, not against the IEEE version of record. Metadata accessed 2026-08-14; full text accessed 2026-08-15.
 
 The `RECORD ≠ REALITY` formulation, the Durable Decision Record, and the failure-mode taxonomy in this chapter are **original MSQE teaching material**, not industry standards. Atlas Commerce is a synthetic teaching baseline and all figures are illustrative.
 

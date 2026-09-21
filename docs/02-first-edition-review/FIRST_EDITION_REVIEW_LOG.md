@@ -1425,6 +1425,8 @@ git ls-files -s book | awk '$4 ~ /chapters\/chapter-.*\.md$/ {print $4":"$2}' | 
 | `FE-EV-049` | 2026-09-14 | H — WEB-5L public launch acceptance recording | Public launch 2026-09-11; msqe.dev Controlled RC; source 7028166b223322afc97af05d6ad6dfecef09dc8f; 27 PASS / 0 FAIL / 5 INCOMPLETE | **UNSCORED — LIVE EVIDENCE RECORDED; INFRASTRUCTURE ACCEPTANCE INCOMPLETE; First Edition IN PROGRESS** |
 | `FE-EV-050` | 2026-09-21 | H — FE-1 correction authorship | Six FE-1 findings; 137/137 chapters normalized; two bounded semantic repairs; findings remain OPEN / NOT VERIFIED | **UNSCORED — CORRECTION COMPLETE / AWAITING FRESH INDEPENDENT FE-1V; First Edition IN PROGRESS** |
 | `FE-EV-051` | 2026-09-21 | H — FE-1 closure and baseline evolution | Supplied FE-1V 37/0/0 Decision A; six CLOSED / VERIFIED; 137 accepted chapter bytes frozen; exact baseline/preservation evolution; FE-1 outstanding 0 | **UNSCORED recording — FE-1 COMPLETE / INDEPENDENTLY VERIFIED / CLOSED; fresh narrow FE-1CV before checkpoint** |
+| `FE-EV-052` | 2026-09-21 | H — FE-2 correction authorship | Five FE-2 findings; citation attachments, supplementary attribution, stable source keys and scoped census; all remain OPEN / NOT VERIFIED | **UNSCORED — CORRECTION COMPLETE / AWAITING FRESH INDEPENDENT FE-2V; First Edition IN PROGRESS** |
+| `FE-EV-053` | 2026-09-21 | H — FE-2 closure and baseline evolution | Supplied FE-2V 42/0/0 Decision A; five CLOSED / VERIFIED; accepted semantic bytes frozen; exact approved baseline/preservation evolution; FE-2=0, FE-3=4 | **UNSCORED recording — FE-2 COMPLETE / INDEPENDENTLY VERIFIED / CLOSED; fresh narrow FE-2CV before checkpoint** |
 
 > **Note on the FE-EV-008 → FE-EV-009 sequence — this is not a lost record.** Three quantitative-instrument events occurred between them — **F-IR4** (fresh independent re-acceptance, 39 PASS · 0 PARTIAL · 1 FAIL), **F-IR4V2** (independent verification establishing that the instrument is intact, that E9 is correct and that the E11 total is 51) and **F-IR4F** (the E11 occurrence-decomposition correction, commit `250cfe7`) — and **none was written to this log at the time it happened.** Their outcomes are recorded in the **plan §16 phase-history table**, and `FE-EV-009` states the chain it closes.
 >
@@ -1865,3 +1867,55 @@ baseline constant changed. Historical event bodies/index rows remain byte-identi
 | **Readiness / deployment boundary** | FE-1V semantic acceptance and this closure preparation do not constitute a new §18.3 Learning-Ready freeze, First Edition completion or deployment. Deployed bytes and public configuration unchanged. |
 | **Evidence / next action** | External `/tmp/msqe-fe1r/MSQE-FE-1R-CLOSURE-PREPARATION-REPORT.md` retains exact incoming/final manifests, closure-only delta, validation and disposable negative controls. Fresh narrow **FE-1CV** required before any separately authorized checkpoint/integration. |
 | **Score / verdict** | **UNSCORED recording — FE-1 CLOSURE PREPARED / AWAITING FRESH NARROW FE-1CV**. Package **UNSTAGED / UNCOMMITTED / UNPUSHED**; no tag, release or deployment. |
+
+---
+
+## Event FE-EV-052 — FE-2 First Edition Package 2 Correction Authorship
+
+| Field | Value |
+| --- | --- |
+| **Event ID** | `FE-EV-052` |
+| **Date** | 2026-09-21 |
+| **Phase** | H — bounded FE-2 correction authorship |
+| **Scope** | FE-L1-003, FE-L2-004, FE-L3-002, FE-T2-001, FE-T2-002; 48 canonical chapters plus six governance/status files; incoming `c2175c2e3ae111acfa615bbda19ea8ba53fea201` |
+| **Score / verdict** | **UNSCORED — CORRECTION COMPLETE / AWAITING FRESH INDEPENDENT FE-2V** |
+| **Independence** | Correction author only; no independent verification, scoring, gate or closure. Fresh FE-2V must re-derive evidence from the exact candidate. |
+| **Artefacts affected** | Additive evidence/current status in all four review artefacts; bounded README/current-sprint status; canonical citation corrections |
+| **Non-collapse note** | Separate from historical T2, FE-EV-050/051, FE-1 verification/closure and future FE-2V/closure events |
+
+Five supported attachments and seven full-attribution Further Reading consolidations resolve the twelve recorded orphan instances. Paired source-key normalization reconciles every affected family; claim prose, reference bodies/URLs/access dates, 137 heading structures, both FE-1 semantic repairs and all practical/numeric content remain preserved. All five FE-2 findings remain **OPEN / NOT VERIFIED**, retaining severity/class/provenance/triggers. FE-1 remains **COMPLETE / CLOSED**; FE-3 remains **NOT STARTED**, four outstanding. Census: **29 total; 9 OPEN / NOT VERIFIED; 20 CLOSED / VERIFIED**. Allocation: **LR-1=0 / LR-2=0 / FE-1=0 / FE-2=5 / FE-3=4**. **First Edition remains IN PROGRESS**; v1.0.0 is not released.
+
+Accepted chapter/test identities are not evolved by this event. Expected candidate-only manifest/source/count drift is author evidence requiring independent FE-2V, not a waived check. Historical events/index rows and original finding bodies are immutable; no closure event is created. Public **MSQE v0.16.0 — LEARNING-READY — CONTROLLED RC**, live at https://msqe.dev, is unchanged by this unpublished candidate. HEAD/index remain at the incoming base; no stage, commit, push, deployment or infrastructure change.
+
+### FE-2 scoped citation population — author evidence, 2026-09-21
+
+The operative measurement distinguishes **definition occurrences**, **distinct definition URLs**, and **distinct chapter-wide URLs**. A source identity is not a URL count. At incoming commit `c2175c2e3ae111acfa615bbda19ea8ba53fea201`, the independently reproducible raw census is **378 definitions; 519 body markers; 185 keys; 375 definition-URL occurrences / 175 distinct definition URLs; 744 chapter-wide URL occurrences / 210 distinct chapter URLs**. The chapter-only URL set difference is **35**; three definitions have no URL.
+
+The FE-2 candidate chapter manifest is **137 / `3a56e89be75d9bfbe63a01a938fa44d6f7067814fc8029af33ace8b5a85b6102`** (author identity only; not an accepted-baseline replacement). Its census is **371 definitions; 524 body markers; 173 keys; 368 definition-URL occurrences / 172 distinct definition URLs; 739 chapter-wide URL occurrences / 210 distinct chapter URLs**. Chapter-only URL set difference: **38**. **Unused definitions: 0. Undefined references: 0.** Seven definitions moved to complete Further Reading entries; five supported attachments added five body markers. Five duplicate Further Reading/definition URL occurrences were consolidated; no distinct chapter URL was lost. The three URL-less works remain formal citations.
+
+Extraction scope: the 137 tracked `book/part-*/chapters/chapter-*.md` files, sorted by path. Definitions match `^\[\^([^\]]+)\]:`; body markers are `[^key]` occurrences outside definition lines. URL extraction matches HTTP(S) tokens up to whitespace, angle brackets, closing square bracket, double quote or backtick, stripping only trailing `.,;:)`. URLs are case/transport/path-sensitive; no redirect, slash, fragment or HTTP/HTTPS coalescing occurs. Count occurrences separately from set cardinalities; chapter-only URLs are `set(chapter URLs) − set(definition URLs)`. Use a denominator of 172 only for the candidate's distinct definition-URL coverage; 210 is the all-content URL scope, never that denominator. These are descriptive author facts, not a score or source-verification PASS.
+
+This explicitly supersedes the ambiguous population phrase in **Review Plan §4 Level 7**, **Verification Ledgers §1 population statement**, **Review Log FE-EV-001 §2.4 footnote row**, and **Review Log transversal T2 model row** for operational use. Their original point-in-time text and T2 results remain immutable. The existing ledger scope note/SRC-T2-00 and T2 event discrepancy explanation remain valid historical evidence. Do not replace every 210 with 175, substitute candidate counts into historical records, or change any quantitative classifier, threshold or FE-3 method. FE-T2-002 remains **OPEN / NOT VERIFIED** pending FE-2V.
+
+---
+
+## Event FE-EV-053 — FE-2 Closure and Baseline Evolution
+
+| Field | Value |
+| --- | --- |
+| **Event ID** | `FE-EV-053` |
+| **Date** | 2026-09-21 |
+| **Phase** | H — FE-2 closure preparation / exact baseline evolution |
+| **Scope** | Five FE-2 findings; supplied FE-2V-accepted package `2f5cc5c78e1b658982f5a179dd7dffb7831333caa195b1462a6a167a52425244`: 48 canonical chapters and six governance/status files, authenticated at base `c2175c2e3ae111acfa615bbda19ea8ba53fea201` |
+| **Score / verdict** | **UNSCORED recording — FE-2 COMPLETE / INDEPENDENTLY VERIFIED / CLOSED; fresh narrow FE-2CV required before checkpoint** |
+| **Independence** | Supplied FE-2V **42 PASS / 0 FAIL / 0 INCOMPLETE, Decision A** is the independent semantic acceptance. FE-2R records it, does not perform semantic verification, and leaves the closure-only delta for fresh independent FE-2CV. |
+| **Artefacts affected** | Five finding lifecycle/closure rows; current allocation/census/status; additive plan/ledger/log evidence; exact chapter/source/reference/link and directly coupled test expectations |
+| **Non-collapse note** | Distinct from FE-EV-052 authorship, supplied FE-2V, FE-1 correction/verification/closure and future FE-2CV/checkpoint; all previous event bodies/index rows remain immutable |
+
+Exactly **FE-L1-003, FE-L2-004, FE-L3-002, FE-T2-001 and FE-T2-002** are **CLOSED / VERIFIED**, on the independently verified full correction and its dependent/systemic manifestations. The 48 accepted changed chapters are frozen; FE-1's 137 normalized headings, both semantic repairs, six closures and historical preservation evidence remain intact. Accepted baseline/preservation evolution is applied exactly as approved; no quantitative instrument or FE-3 correction is included.
+
+**29 total; 4 OPEN / NOT VERIFIED; 25 CLOSED / VERIFIED.** Outstanding allocation: **LR-1=0 / LR-2=0 / FE-1=0 / FE-2=0 / FE-3=4**, total four. FE-1 remains COMPLETE / CLOSED / VERIFIED; FE-3 remains NOT STARTED. **First Edition remains IN PROGRESS; v1.0.0 NOT YET RELEASED.** **MSQE v0.16.0 — LEARNING-READY — CONTROLLED RC** remains **PUBLICLY LIVE AT https://msqe.dev**. This event neither deploys the candidate nor establishes a new readiness freeze.
+
+Chapter digest evolves from `beea2f46a8a2ce9d3a7e6dc033dee510484a015a0ef2164a7bd6e2480f981822` to independently reproduced `3a56e89be75d9bfbe63a01a938fa44d6f7067814fc8029af33ace8b5a85b6102`; 12 Part README digest `eafd4ba0fc55275cf8bcd9094a225e408ab22d43e019d76319ce1897b1c11451` is unchanged. A chained exact source transition preserves historical WEB-5 and FE-1 checks. Reference totals become 371 formal/rendered and zero uncited; complete-DOM links become 13,599 with no broken destinations. Algorithms, negative guards and protected boundaries remain enforced.
+
+Real HEAD/index remain at `c2175c2e3ae111acfa615bbda19ea8ba53fea201`. Expected pre-checkpoint HEAD/index chapter-identity failures are not waived; disposable layer evidence must demonstrate eventual all-layer green. **UNSTAGED / UNCOMMITTED / UNPUSHED**. **Fresh narrow FE-2CV is required before any separately authorized checkpoint/integration. No push, deployment, tag, release or infrastructure mutation.**

@@ -140,7 +140,7 @@ It can reveal whether customers complete an important journey, whether a latency
 
 Operational feedback supports faster containment when a failure occurs. A feature flag may allow a team to stop exposing a capability without immediately redeploying. A canary analysis may stop a rollout before it reaches most users. A clear trace and correlation identifier may shorten diagnosis. These are not merely operations conveniences; they are quality capabilities designed into the system.
 
-Shift Right also encourages honest measurement. Google SRE guidance distinguishes monitoring of internal system signals from black-box monitoring of externally visible behaviour.[^googlesremonitoring] Both views are useful because a service can look healthy internally while a customer journey is failing, or a customer symptom may require internal evidence to diagnose. The combination strengthens the feedback loop.
+Shift Right also encourages honest measurement. Google SRE guidance distinguishes monitoring of internal system signals from black-box monitoring of externally visible behaviour.[^sre-monitoring] Both views are useful because a service can look healthy internally while a customer journey is failing, or a customer symptom may require internal evidence to diagnose. The combination strengthens the feedback loop.
 
 ## Production as a Learning Environment
 
@@ -176,7 +176,7 @@ Feedback loops differ in speed and scope:
 
 Feedback should be timely enough to affect a decision and trustworthy enough to justify action. A noisy alert is not a useful feedback loop if responders cannot tell what it means. A dashboard does not create learning if nobody has responsibility to review it. A postmortem does not improve quality if its actions disappear from the backlog.
 
-DORA's current guidance treats delivery performance as a combination of throughput and instability, advises teams to interpret measures in the context of a particular application or service, and warns against using them as broad targets or competitive rankings.[^dora] This supports an MSQE principle: measures should guide local improvement, not become a substitute for understanding quality.
+DORA's current guidance treats delivery performance as a combination of throughput and instability, advises teams to interpret measures in the context of a particular application or service, and warns against using them as broad targets or competitive rankings.[^dora-metrics] This supports an MSQE principle: measures should guide local improvement, not become a substitute for understanding quality.
 
 ## What Is Shift Everywhere?
 
@@ -259,7 +259,7 @@ Chapter 4 maps these activities by lifecycle stage. The following timing view id
 | During controlled exposure | deployment verification, feature flags, canary releases, and blue-green deployments | confirm target-environment behaviour and contain the impact of unexpected outcomes |
 | During operation and improvement | monitoring, logging, tracing, incident reviews, customer feedback, and postmortems | detect customer impact, diagnose conditions, and improve the next decision |
 
-**Threat modelling** is a structured activity for identifying assets, trust boundaries, potential threats, and mitigations before or during design. The OWASP Threat Modeling Cheat Sheet presents it as an activity for finding and addressing security weaknesses early, but its value in MSQE is broader: it makes security and abuse assumptions visible while design options remain open.[^owaspthreat]
+**Threat modelling** is a structured activity for identifying assets, trust boundaries, potential threats, and mitigations before or during design. The OWASP Threat Modeling Cheat Sheet presents it as an activity for finding and addressing security weaknesses early, but its value in MSQE is broader: it makes security and abuse assumptions visible while design options remain open.[^owasp-threat-modeling]
 
 **Contract testing** evaluates whether systems that communicate through an interface honour agreed expectations about requests, responses, events, schemas, or error behaviour. It is especially useful where independent services evolve at different speeds. It complements, rather than replaces, end-to-end testing because a correct pairwise contract does not establish the behaviour of every assembled workflow.
 
@@ -267,7 +267,7 @@ Chapter 4 maps these activities by lifecycle stage. The following timing view id
 
 **Deployment verification** is focused post-deployment evaluation of whether the intended artefact, configuration, access controls, migration, and critical path are functioning in the target environment. It should be fast enough to influence rollout decisions and targeted enough to address the change's important risks.
 
-**Monitoring** collects, processes, aggregates, and displays quantitative data about a system; **logging** records discrete events and diagnostic context; **tracing** follows a request or transaction across components. These capabilities overlap but answer different questions. Together, they help a team detect and investigate a customer-impacting condition without exposing unnecessary sensitive information.[^googlesremonitoring]
+**Monitoring** collects, processes, aggregates, and displays quantitative data about a system; **logging** records discrete events and diagnostic context; **tracing** follows a request or transaction across components. These capabilities overlap but answer different questions. Together, they help a team detect and investigate a customer-impacting condition without exposing unnecessary sensitive information.[^sre-monitoring]
 
 **Incident reviews** examine how a service was detected, mitigated, communicated, and restored. A **blameless postmortem** examines contributing conditions and systemic improvements without treating the review as a search for an individual to blame. Accountability still matters: actions need owners, priority, and follow-through.
 
@@ -291,7 +291,7 @@ Publicly documented practice from different organisations points in the same dir
 
 ISO/IEC/IEEE 29119-1:2022 provides common concepts for software testing.[^iso29119] It is valuable for clear testing language, but it does not imply that test execution is the only quality activity. A test strategy can be rigorous and still be connected to architecture decisions, deployment evidence, and operational learning.
 
-DORA's current research guidance focuses on the ability to deliver software safely, quickly, and efficiently. It recommends interpreting delivery measures at the application or service level and treating them as aids to improvement, not targets for unrelated teams to compete against.[^dora] This aligns with the Shift Everywhere emphasis on feedback, shared ownership, and local context.
+DORA's current research guidance focuses on the ability to deliver software safely, quickly, and efficiently. It recommends interpreting delivery measures at the application or service level and treating them as aids to improvement, not targets for unrelated teams to compete against.[^dora-metrics] This aligns with the Shift Everywhere emphasis on feedback, shared ownership, and local context.
 
 Google SRE documentation illustrates how monitoring, service objectives, incident response, and postmortems connect operational evidence to engineering action. Microsoft’s Azure Well-Architected guidance documents safe deployment practices such as progressive exposure, health monitoring, and rollback considerations.[^microsoftsafe] These examples demonstrate engineering principles rather than a product mandate: introduce change in a controlled way, observe meaningful signals, and retain the ability to respond.
 
@@ -411,11 +411,11 @@ Use the [Continuous Quality Planning Worksheet](../exercises/worksheet-continuou
 
 [^iso29119]: International Organization for Standardization, International Electrotechnical Commission, and IEEE. [ISO/IEC/IEEE 29119-1:2022 — Software and systems engineering — Software testing — Part 1: General concepts](https://www.iso.org/standard/81291.html). Published 2022. Accessed 2026-08-08.
 
-[^dora]: Google Cloud. [DORA metrics](https://dora.dev/guides/dora-metrics/). Accessed 2026-08-08.
+[^dora-metrics]: Google Cloud. [DORA metrics](https://dora.dev/guides/dora-metrics/). Accessed 2026-08-08.
 
-[^googlesremonitoring]: Google. [Monitoring Distributed Systems](https://sre.google/sre-book/monitoring-distributed-systems/). In *Site Reliability Engineering*. Accessed 2026-08-08.
+[^sre-monitoring]: Google. [Monitoring Distributed Systems](https://sre.google/sre-book/monitoring-distributed-systems/). In *Site Reliability Engineering*. Accessed 2026-08-08.
 
-[^owaspthreat]: OWASP Foundation. [Threat Modeling Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Threat_Modeling_Cheat_Sheet.html). Accessed 2026-08-08.
+[^owasp-threat-modeling]: OWASP Foundation. [Threat Modeling Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Threat_Modeling_Cheat_Sheet.html). Accessed 2026-08-08.
 
 [^microsoftsafe]: Microsoft. [Architecture strategies for safe deployment practices](https://learn.microsoft.com/en-us/azure/well-architected/operational-excellence/safe-deployments). Accessed 2026-08-08.
 

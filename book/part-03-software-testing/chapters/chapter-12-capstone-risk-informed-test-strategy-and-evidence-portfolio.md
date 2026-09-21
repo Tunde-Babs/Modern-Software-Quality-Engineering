@@ -386,7 +386,7 @@ This reasoning helps a team invest where it has leverage. Sometimes the best res
 
 ## Industry Perspective
 
-ISO/IEC/IEEE 29119-2 provides a generic reference for testing processes, while ISO/IEC 25010:2023 defines a product-quality model.[^iso-29119-2][^iso-25010] The SWEBOK Guide places testing within the wider discipline of software engineering.[^swebok] These sources support disciplined terminology and traceable evidence, but they do not prescribe this capstone's matrix, decision brief, stage sequence, or risk ranking. Those are intentionally labelled MSQE educational framing.
+ISO/IEC/IEEE 29119-2 provides a generic reference for testing processes, while ISO/IEC 25010:2023 defines a product-quality model.[^iso-29119-2][^iso-25010] The SWEBOK Guide places testing within the wider discipline of software engineering.[^swebok-v4-0a] These sources support disciplined terminology and traceable evidence, but they do not prescribe this capstone's matrix, decision brief, stage sequence, or risk ranking. Those are intentionally labelled MSQE educational framing.
 
 In professional settings, a portfolio would be reviewed with people who own product, engineering, operations, data, security, accessibility, and release decisions as relevant. The Quality Engineer's contribution is to make evidence and uncertainty clear, ask better questions, and improve the quality system's ability to learn; it is not to unilaterally certify a release.
 
@@ -477,6 +477,8 @@ Keep the final portfolio concise. If a section does not influence an evidence ch
 - [Chapter 10 — Regression Strategy, Test Selection, and Continuous Delivery Feedback](chapter-10-regression-strategy-test-selection-and-continuous-delivery-feedback.md)
 - [Chapter 11 — Defect Investigation, Escaped Defects, and Production Learning](chapter-11-defect-investigation-escaped-defects-and-production-learning.md)
 - [QA to Quality Engineering Transition Framework](../../../docs/00-project/QA_TO_QE_TRANSITION_FRAMEWORK.md)
+- International Software Testing Qualifications Board. [Certified Tester Foundation Level Syllabus v4.0.1](https://istqb.org/wp-content/uploads/2024/11/ISTQB_CTFL_Syllabus_v4.0.1.pdf). 2024. Accessed 2026-08-09.
+- Google. [Postmortem Culture: Learning from Failure](https://sre.google/workbook/postmortem-culture/). *The Site Reliability Workbook*. Accessed 2026-08-09.
 
 ## References
 
@@ -484,11 +486,7 @@ Keep the final portfolio concise. If a section does not influence an evidence ch
 
 [^iso-25010]: ISO. [ISO/IEC 25010:2023 — Systems and software engineering — Systems and software Quality Requirements and Evaluation (SQuaRE) — Product quality model](https://www.iso.org/standard/78176.html). 2023. Accessed 2026-08-09.
 
-[^swebok]: IEEE Computer Society. [*Guide to the Software Engineering Body of Knowledge (SWEBOK Guide) v4.0a*](https://ieeecs-media.computer.org/media/education/swebok/swebok-v4.pdf). 2026. Accessed 2026-08-09.
-
-[^istqb]: International Software Testing Qualifications Board. [Certified Tester Foundation Level Syllabus v4.0.1](https://istqb.org/wp-content/uploads/2024/11/ISTQB_CTFL_Syllabus_v4.0.1.pdf). 2024. Accessed 2026-08-09.
-
-[^google-sre]: Google. [Postmortem Culture: Learning from Failure](https://sre.google/workbook/postmortem-culture/). *The Site Reliability Workbook*. Accessed 2026-08-09.
+[^swebok-v4-0a]: IEEE Computer Society. [*Guide to the Software Engineering Body of Knowledge (SWEBOK Guide) v4.0a*](https://ieeecs-media.computer.org/media/education/swebok/swebok-v4.pdf). 2026. Accessed 2026-08-09.
 
 ## Chapter Checklist
 

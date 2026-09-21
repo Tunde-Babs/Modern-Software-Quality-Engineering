@@ -1,5 +1,20 @@
 # First Edition Findings
 
+> **Current FE-2R closure preparation — 2026-09-21:** FE-2 **COMPLETE / INDEPENDENTLY VERIFIED / CLOSED** (FE-EV-053); closure package **AWAITING FRESH NARROW FE-2CV BEFORE CHECKPOINT**.
+> Supplied independent **FE-2V: 42 PASS / 0 FAIL / 0 INCOMPLETE, Decision A**, accepted correction package `2f5cc5c78e1b658982f5a179dd7dffb7831333caa195b1462a6a167a52425244`. FE-2R records that acceptance; it does not perform semantic verification.
+> Exactly five FE-2 findings are now **CLOSED / VERIFIED**. FE-1 remains **COMPLETE / CLOSED / VERIFIED**. Census: **29 total; 4 OPEN / NOT VERIFIED; 25 CLOSED / VERIFIED**. Outstanding allocation: **LR-1=0, LR-2=0, FE-1=0, FE-2=0, FE-3=4**.
+> **FE-3: NOT STARTED. First Edition: IN PROGRESS. v1.0.0: NOT YET RELEASED.** **MSQE v0.16.0 — LEARNING-READY — CONTROLLED RC** remains **PUBLICLY LIVE AT https://msqe.dev**.
+> All FE-2V-accepted manuscript/asset bytes remain frozen. Only approved accepted identities/counts and directly coupled closure expectations evolve; HEAD/index retain the prior accepted chapter identity until a separately authorized checkpoint. Those expected layer failures are not waived.
+> This statement supersedes earlier current-activity/census summaries while preserving their historical evidence. It establishes no new Learning-Ready freeze and changes no deployed baseline. Next: fresh narrow **FE-2CV**; **UNSTAGED / UNCOMMITTED / UNPUSHED**. No checkpoint, push or deployment.
+
+
+> **Current FE-2 correction authorship — 2026-09-21:** FE-2 **CORRECTION COMPLETE / AWAITING FRESH INDEPENDENT FE-2V** (FE-EV-052). This is unscored author evidence, not independent verification or closure.
+> FE-1 remains **COMPLETE / CLOSED / DEPLOYED** at the supplied integrated base `c2175c2e3ae111acfa615bbda19ea8ba53fea201`. All five FE-2 findings remain **OPEN / NOT VERIFIED**; FE-3 remains **NOT STARTED**.
+> Census: **29 total; 9 OPEN / NOT VERIFIED; 20 CLOSED / VERIFIED**. Outstanding allocation: **LR-1=0, LR-2=0, FE-1=0, FE-2=5, FE-3=4**. **First Edition: IN PROGRESS. v1.0.0: NOT YET RELEASED.**
+> Public: **MSQE v0.16.0 — LEARNING-READY — CONTROLLED RC — LIVE AT https://msqe.dev**. This unpublished candidate does not alter the public deployment or establish a new readiness freeze; affected-scope independent review and later authorized baseline evolution remain required.
+> This current statement supersedes earlier preparation/status summaries below only as current activity. Their historical evidence remains intact. Candidate: **UNSTAGED / UNCOMMITTED / UNPUSHED**; HEAD/index unchanged. Next: fresh independent **FE-2V**; no closure, checkpoint or deployment is authorized here.
+
+
 > **Current FE-1R closure preparation — 2026-09-21:** FE-1 **COMPLETE / INDEPENDENTLY VERIFIED / CLOSED** (FE-EV-051); closure package **AWAITING FRESH NARROW FE-1CV BEFORE CHECKPOINT**.
 > Supplied independent **FE-1V: 37 PASS / 0 FAIL / 0 INCOMPLETE, Decision A**, accepted correction package `8876eb47adfc6fa18152b340c804419edb00ed47f05fb42b56b89f42d170f91b`. FE-1R records that acceptance; it did not perform FE-1V.
 > Exactly six FE-1 findings are **CLOSED / VERIFIED**. Census: **29 total; 9 OPEN / NOT VERIFIED; 20 CLOSED / VERIFIED**. Outstanding allocation: **LR-1=0, LR-2=0, FE-1=0, FE-2=5, FE-3=4**.
@@ -198,10 +213,11 @@ Every finding records all of the following. A row missing any mandatory field is
 | **Evidence** | Deterministic reconciliation of `^\[\^key\]:` definitions against `[^key]` occurrences outside definition lines, across all 22 L1 chapters: exactly these two chapters diverge; the other 20 reconcile with zero unused and zero undefined. Contrast `chapter-09-maintainable-code-and-refactoring.md` line 144, which attaches `[^fowler-refactoring]` and `[^google-code-review]` to the sentences they support. |
 | **Consequence** | Six of L1's 110 citations support no claim, so **Level 7's primary test — claim–source alignment — cannot be applied to them.** They function as an uncited bibliography while being counted as citations. |
 | **Recommended action** | Phase H: either attach each to the claim it supports, or move to *Further Reading*. Not corrected here. |
-| **Status** | `OPEN` |
+| **Status** | `CLOSED` |
 | **Owner** | Project Founder |
 | **Revision trigger** | Escalate to P2 if the same pattern proves systemic across three or more Parts in later batches |
-| **Verification** | `NOT VERIFIED` |
+| **Verification** | `VERIFIED` |
+| **FE-2R closure evidence** | FE-2 correction authorship (FE-EV-052) independently accepted by supplied FE-2V **42 PASS / 0 FAIL / 0 INCOMPLETE, Decision A**; exact correction package `2f5cc5c78e1b658982f5a179dd7dffb7831333caa195b1462a6a167a52425244`. This finding and its dependent/systemic manifestations are CLOSED / VERIFIED in FE-EV-053; FE-1 preserved; exact baseline/preservation evolution approved. FE-2R records acceptance, not new semantic review. Original defect, severity/class, provenance, historical evidence and revision trigger remain intact; fresh narrow FE-2CV required before checkpoint. |
 
 ### FE-L1-004 — Template section naming varies from the required structure (systemic, 5 instances)
 
@@ -475,9 +491,10 @@ These are **not** manuscript findings and **do not** appear in the register abov
 | **Finding** | `[^google-sre]` and `[^istqb]` are defined in the References section but carry no in-body citation marker. |
 | **Evidence** | Footnote reconciliation across all 34 L2 chapters: **33 of 34 reconcile exactly** with zero unused and zero undefined; this capstone is the sole exception. |
 | **Consequence** | Two of L2's 125 citations support no claim, so Level 7's claim–source alignment test cannot be applied to them. |
-| **Status** | `OPEN` · **Owner** Project Founder |
+| **Status** | `CLOSED` · **Owner** Project Founder |
 | **Revision trigger assessment** | FE-L1-003's trigger was *"escalate to P2 if the pattern proves systemic across three or more Parts"*. The population is now **two Parts (II and III)**. **The trigger is NOT tripped and severity is NOT escalated.** |
-| **Verification** | `NOT VERIFIED` |
+| **Verification** | `VERIFIED` |
+| **FE-2R closure evidence** | FE-2 correction authorship (FE-EV-052) independently accepted by supplied FE-2V **42 PASS / 0 FAIL / 0 INCOMPLETE, Decision A**; exact correction package `2f5cc5c78e1b658982f5a179dd7dffb7831333caa195b1462a6a167a52425244`. This finding and its dependent/systemic manifestations are CLOSED / VERIFIED in FE-EV-053; FE-1 preserved; exact baseline/preservation evolution approved. FE-2R records acceptance, not new semantic review. Original defect, severity/class, provenance, historical evidence and revision trigger remain intact; fresh narrow FE-2CV required before checkpoint. |
 
 ### FE-L2-005 — Template section naming deviates in Part III Chapter 12 (systemic with FE-L1-004)
 
@@ -537,8 +554,9 @@ These are **not** manuscript findings and **do not** appear in the register abov
 | **Evidence** | Reference/definition census across all 33 L3 chapters: definitions **62**, undefined references **0**, unused definitions **4**, all four in Part VII. Each of the four keys occurs exactly once in its chapter, on its definition line, with no `[^key]` reference anywhere in the body. |
 | **Consequence** | The four sources are carried as apparent citations but support no statement; a renderer emits an unreferenced footnote. **Ch11 is the capstone**, where the reader is most likely to follow references. |
 | **Recommended action** | Phase H. Either cite each source at the claim it supports or move it to Further Reading. **No correction made by this task.** |
-| **Status** | `OPEN` · **Owner** Project Founder |
-| **Verification** | `NOT VERIFIED` |
+| **Status** | `CLOSED` · **Owner** Project Founder |
+| **Verification** | `VERIFIED` |
+| **FE-2R closure evidence** | FE-2 correction authorship (FE-EV-052) independently accepted by supplied FE-2V **42 PASS / 0 FAIL / 0 INCOMPLETE, Decision A**; exact correction package `2f5cc5c78e1b658982f5a179dd7dffb7831333caa195b1462a6a167a52425244`. This finding and its dependent/systemic manifestations are CLOSED / VERIFIED in FE-EV-053; FE-1 preserved; exact baseline/preservation evolution approved. FE-2R records acceptance, not new semantic review. Original defect, severity/class, provenance, historical evidence and revision trigger remain intact; fresh narrow FE-2CV required before checkpoint. |
 
 ---
 
@@ -846,9 +864,10 @@ These are **not** manuscript findings and **do not** appear in the register abov
 | **Materiality — deliberately bounded** | **Bibliographic hygiene and traceability only; not claim support.** Markdown footnote keys are **chapter-scoped**, so every chapter renders and resolves correctly and **no reader is misdirected**. `[^parnas]` is the sharpest case and even there both papers are **well matched to their claims** — the 1972 modules paper for boundaries in II/XI, the 1986 documentation paper for written records in XII. **No claim is unsupported as a result.** |
 | **Consequence** | Maintenance and audit cost rather than reader-facing error: a global reference audit cannot key on the footnote label, and a future citation update must be applied under several aliases. **Not a rendering defect.** |
 | **Recommended action** | Phase H, low priority. Normalise keys to one stable identifier per source and give `[^parnas]` distinct keys per paper. **T2 made no correction** — §4 forbids citation rewriting. |
-| **Status** | `OPEN` · **Owner** Project Founder |
+| **Status** | `CLOSED` · **Owner** Project Founder |
 | **Revision trigger** | Escalate to **P2** if a citation update is ever applied to one alias and not its siblings, producing divergent metadata for the same source. |
-| **Verification** | `NOT VERIFIED` |
+| **Verification** | `VERIFIED` |
+| **FE-2R closure evidence** | FE-2 correction authorship (FE-EV-052) independently accepted by supplied FE-2V **42 PASS / 0 FAIL / 0 INCOMPLETE, Decision A**; exact correction package `2f5cc5c78e1b658982f5a179dd7dffb7831333caa195b1462a6a167a52425244`. This finding and its dependent/systemic manifestations are CLOSED / VERIFIED in FE-EV-053; FE-1 preserved; exact baseline/preservation evolution approved. FE-2R records acceptance, not new semantic review. Original defect, severity/class, provenance, historical evidence and revision trigger remain intact; fresh narrow FE-2CV required before checkpoint. |
 
 ---
 
@@ -869,9 +888,10 @@ These are **not** manuscript findings and **do not** appear in the register abov
 | **Materiality** | **Descriptive only — no verification work was misdirected**, because T2 re-derived the population independently as the brief required rather than relying on the stated figure. Recorded because a future reviewer taking 210 as the definition-scoped denominator would compute wrong coverage ratios. |
 | **Consequence** | Same class of defect the E11 remediation corrected and that T5 found in FE-L2-003's persona evidence: **two populations described with one denominator.** Third instance of that pattern in the review record. |
 | **Recommended action** | Phase H. State both figures with their scopes — *"378 footnote definitions over 175 distinct definition URLs; 210 distinct URLs across all chapter content."* **T2 did not amend the plan or ledgers.** |
-| **Status** | `OPEN` · **Owner** Review architecture owner |
+| **Status** | `CLOSED` · **Owner** Review architecture owner |
 | **Revision trigger** | Escalate to **P2** if any downstream gate or score uses 210 as the definition-scoped denominator. |
-| **Verification** | `NOT VERIFIED` |
+| **Verification** | `VERIFIED` |
+| **FE-2R closure evidence** | FE-2 correction authorship (FE-EV-052) independently accepted by supplied FE-2V **42 PASS / 0 FAIL / 0 INCOMPLETE, Decision A**; exact correction package `2f5cc5c78e1b658982f5a179dd7dffb7831333caa195b1462a6a167a52425244`. This finding and its dependent/systemic manifestations are CLOSED / VERIFIED in FE-EV-053; FE-1 preserved; exact baseline/preservation evolution approved. FE-2R records acceptance, not new semantic review. Original defect, severity/class, provenance, historical evidence and revision trigger remain intact; fresh narrow FE-2CV required before checkpoint. |
 
 ---
 
@@ -1214,19 +1234,19 @@ The required sequence after Phase H is: **Phase I independent closure verificati
 
 These are **execution-layer dispositions**, separate from severity, defect class, blocker class, systemic grouping, closure status and verification status. Historical classification is never mutated merely because a finding receives one. In particular, DEFER-CANDIDATE does not change a record to `DEFERRED` or `ACCEPTED`. Any such lifecycle decision still requires the established owner record. P2 acceptance retains named owner, rationale, accepted consequence and revision trigger; P3 retains conscious documented acceptance. Final blocker handling remains governed by Plan §7 and §13, not by an intermediate label.
 
-The conservative initial allocation reserved LR-1/LR-2 for learning blockers and retained the other work as FE-REQUIRED. The current outstanding allocation below excludes the two independently verified LR-1, three independently verified LR-2 and six independently verified FE-1 closures while preserving their history. A later, explicitly recorded owner proposal may identify a DEFER-CANDIDATE only with evidence of tolerable learning impact, owner, rationale, final destination and revision trigger, followed by independent Learning-Ready assessment. No such decision is fabricated in FTR-1. The residual inventory must include **every outstanding finding**, even if its disposition remains FE-REQUIRED; any unmet learning criterion blocks PASS. No label alone establishes learner safety or suitability.
+The conservative initial allocation reserved LR-1/LR-2 for learning blockers and retained the other work as FE-REQUIRED. The current outstanding allocation below excludes the two independently verified LR-1, three independently verified LR-2, six independently verified FE-1 and five independently verified FE-2 closures while preserving their history. A later, explicitly recorded owner proposal may identify a DEFER-CANDIDATE only with evidence of tolerable learning impact, owner, rationale, final destination and revision trigger, followed by independent Learning-Ready assessment. No such decision is fabricated in FTR-1. The residual inventory must include **every outstanding finding**, even if its disposition remains FE-REQUIRED; any unmet learning criterion blocks PASS. No label alone establishes learner safety or suitability.
 
-### 8.2 Canonical current 9-finding allocation
+### 8.2 Canonical current 4-finding allocation
 
 | Package | Historical origin | Finding IDs | Execution disposition | Dependency / verification retained |
 | --- | --- | --- | --- | --- |
 | **LR-1** | H4 |  | LR-BLOCKER (historical) | Zero outstanding; original two findings CLOSED / VERIFIED at LR-1V, recorded by FE-EV-043; full status/maturity/navigation verification retained |
 | **LR-2** | H5 |  | LR-BLOCKER (historical) | Zero outstanding; FE-L2-003, FE-L3-003 and FE-T5-001 CLOSED / VERIFIED on supplied LR-2V2 25 PASS / 0 FAIL, Decision A, recorded at FE-EV-046; continuity and persona-evidence verification retained |
 | **FE-1** | H4 and H7 |  | FE-REQUIRED (historical) | Zero outstanding; six findings CLOSED / VERIFIED on supplied FE-1V 37 PASS / 0 FAIL / 0 INCOMPLETE, Decision A, recorded at FE-EV-051; full 137-chapter naming and two semantic-repair acceptance retained; fresh narrow FE-1CV before checkpoint |
-| **FE-2** | H5 | FE-L1-003 · FE-L2-004 · FE-L3-002 · FE-T2-001 · FE-T2-002 | FE-REQUIRED | Integrated relevant H4/FE-1 and LR-2 changes; full footnote/key/denominator recheck and changed-source checks; historical evidence corrected by explicit new record |
+| **FE-2** | H5 |  | FE-REQUIRED (historical) | Zero outstanding; five findings CLOSED / VERIFIED on supplied FE-2V 42 PASS / 0 FAIL / 0 INCOMPLETE, Decision A, recorded at FE-EV-053; accepted correction package `2f5cc5c78e1b658982f5a179dd7dffb7831333caa195b1462a6a167a52425244`; fresh narrow FE-2CV before checkpoint |
 | **FE-3** | H6 | FE-L1-006 · FE-L3-004 · FE-L5-003 · FE-T3-001 | FE-REQUIRED | Owner quantitative disposition; separate specialist authorisation before any instrument mutation; clean integrated citation baseline and fresh independent re-acceptance if changed |
 
-**Allocation invariant: 0 + 0 + 0 + 5 + 4 = 9; each currently open finding appears exactly once in this table.** The empty LR-1, LR-2 and FE-1 Finding IDs cells mean zero outstanding findings. Systemic roots are not extra finding IDs. H4–H7 remain the historical remediation architecture in §7; their origin allocations, dependency rationale, closure standards and specialist boundary are preserved. The overlay splits their execution, not their findings or scoring roots. Plan §18 governs the narrower learning-first sequence and conflict checks.
+**Allocation invariant: 0 + 0 + 0 + 0 + 4 = 4; each currently open finding appears exactly once in this table.** The empty LR-1, LR-2, FE-1 and FE-2 Finding IDs cells mean zero outstanding findings. Systemic roots are not extra finding IDs. H4–H7 remain the historical remediation architecture in §7; their origin allocations, dependency rationale, closure standards and specialist boundary are preserved. The overlay splits their execution, not their findings or scoring roots. Plan §18 governs the narrower learning-first sequence and conflict checks.
 
 **Historical versus current counts.** §6.1 retains the Phase-F snapshot (28 open / 1 closed), and §7 retains the 28-ID H0 planning allocation. The pre-H3 state was 25 open / 4 closed; FE-EV-037 recorded 20 open / 9 closed. **Historical LR-1 allocation:** FE-L1-002 and FE-L1-007, originating in H4, were both LR-BLOCKER and remained open at FE-EV-042. The original five-package counts were 2/3/6/5/4 = 20. LR-1V independently found both eligible for closure; LR-1R records them CLOSED / VERIFIED at FE-EV-043. LR-1 closure produced 18 open / 11 closed and allocation 0/3/6/5/4 = 18. LR-2R records the three supplied independently verified LR-2 closures at FE-EV-046; that closure produced **15 open / 14 closed and independently verified**, allocation 0/0/6/5/4 = 15. No historical batch or finding is deleted.
 
@@ -1276,3 +1296,50 @@ The supplied LR-2V2 acceptance covers the corrected 18-person / 31-mention Atlas
 **LRG-1 Learning-Ready Gate PASS — 12 PASS / 0 FAIL, Decision A**, recorded from the supplied independent assessment in **FE-EV-047**. **Learning-Ready RC: DECLARATION PREPARED — AWAITING INDEPENDENT DECLARATION VERIFICATION**. Designation: **LEARNING-READY — CONTROLLED RC**; this is an unverified declaration-preparation package, not a completed declaration checkpoint. Content baseline: `5c7359a3a07530dc26457208e8092d8ebcc3f469`; declaration checkpoint commit: **NOT YET CREATED**. LR-1/LR-2 remain COMPLETE / INDEPENDENTLY VERIFIED / CLOSED. Census: **29 total; 15 OPEN / NOT VERIFIED; 14 CLOSED / VERIFIED**. Outstanding allocation: **LR-1=0, LR-2=0, FE-1=6, FE-2=5, FE-3=4**. LRG-1 residual disposition: **10 SAFE TO DEFER / 5 EARLY CORRECTION RECOMMENDED / NON-BLOCKING / 0 LR BLOCKING**. First Edition remains **IN PROGRESS**; FE-1/FE-2/FE-3 **NOT STARTED**; v0.16.0 remains unreleased. Next: fresh independent LR-RC declaration verification before separately authorized checkpointing. Package: **UNSTAGED / UNCOMMITTED / UNPUSHED**.
 
 The supplied LRG-1 / LRG-1E assessment mapping is persisted without reclassification in [the complete 15-finding residual register](LEARNING_READY_RC_DECLARATION.md#4-authoritative-residual-register). All fifteen remain P3 / Class C / OPEN / NOT VERIFIED and FE-REQUIRED; the LR dispositions grant no canonical acceptance, deferral, closure, verification or First Edition waiver. LRG-CANDIDATE-01 remains an assessment-local NON-BLOCKING observation; no canonical finding is created.
+
+---
+
+## FE-2 correction authorship evidence — 2026-09-21
+
+Authority: FE-2P remediation handoff and separately authorized bounded FE-2 correction at `c2175c2e3ae111acfa615bbda19ea8ba53fea201`. See FE-EV-052 and the scoped population/additive source record in the Verification Ledgers. Original finding bodies, class, severity, provenance, revision triggers and historical review results are unchanged. This section records actions only; **all five remain OPEN / NOT VERIFIED**.
+
+| Finding | Root correction and dependent scope | Required fresh FE-2V evidence |
+| --- | --- | --- |
+| FE-L1-003 | II-10: attach pro-git, git-rebase, github-pr and google-review to existing primary-supported passages. II-11: consolidate complete Meszaros/Feathers bibliography into existing Further Reading, retaining accepted HTTP xUnit locator. | Re-read the four attachments; authenticate full attribution and all systemic siblings. |
+| FE-L2-004 | III-12: move complete ISTQB and SRE Workbook entries into Further Reading; preserve MSQE scenario/rubric authority boundary. | Confirm both sources retained, no fabricated claim support, capstone/prerequisites unchanged. |
+| FE-L3-002 | VII-04: attach git to existing version-controlled discussion clause. VII-11: consolidate complete NIST/OCI/DORA entries into Further Reading; preserve synthetic/release-owner boundaries. | Re-read attachment and all three moves; inspect practical flow and systemic census. |
+| FE-T2-001 | Paired canonical key substitutions across the edition; distinguish works/versions, preserve full reference bodies and URLs. All 15 incoming URL alias families reconciled; seven heterogeneous key families split; RFC8259's two locators retained as one documented identity. | Independently reproduce source identity map, every paired marker/definition, and all retained metadata/limitations. |
+| FE-T2-002 | Add scoped incoming/candidate census and explicit supersession at plan/ledger/log surfaces; preserve historical statements. | Recompute all scoped quantities and validate every supersession; no coverage ratio may mix scopes. |
+
+The orphan pattern spans Parts II/III/VII. This fact meets FE-L1-003's original three-Part revision-trigger wording; later standing reconciliation retained P3. Preserve both facts and all existing P3/Class C records. This authoring pass makes no severity reassignment and does not depend on deferral or downgrade.
+
+State: **CORRECTION COMPLETE / AWAITING FRESH INDEPENDENT FE-2V**. Census remains 29 / 9 open / 20 closed, allocation 0/0/0/5/4. FE-1 stays closed; all four FE-3 findings remain outstanding. Accepted manifests, source-transition fixtures and test expectations remain unchanged until independent verification and separately authorized evolution.
+
+---
+
+## FE-2R closure and accepted-baseline recording — 2026-09-21
+
+Supplied **independent FE-2V: 42 PASS / 0 FAIL / 0 INCOMPLETE, Decision A** accepted all five FE-2 corrections and every material dependent manifestation in package `2f5cc5c78e1b658982f5a179dd7dffb7831333caa195b1462a6a167a52425244`, preserved FE-1, and approved exact baseline/preservation evolution. FE-2R records this acceptance without reinterpreting or changing the accepted semantic content. Exactly **FE-L1-003, FE-L2-004, FE-L3-002, FE-T2-001, FE-T2-002** are now **CLOSED / VERIFIED**. The accepted full-corpus/systemic verification satisfies the shared orphan/citation acceptance boundary; historical aliases and revision triggers remain preserved.
+
+Current census: **29 total; 4 OPEN / NOT VERIFIED; 25 CLOSED / VERIFIED**. Allocation: **0/0/0/0/4**. All four FE-3 findings remain OPEN / NOT VERIFIED; six FE-1 findings remain CLOSED / VERIFIED. The five finding tables change only Status/Verification and add the closure-evidence row. Prior “remain OPEN” authorship text below/above is historical at FE-EV-052, superseded for current lifecycle by FE-EV-053.
+
+### Historical FE-2V incoming allocation snapshot
+
+The following reproduces the incoming §8.2 allocation as historical evidence; the current operative allocation is the four-finding table above.
+
+**Incoming §8.2 — nine findings before FE-2R**
+
+| Package | Historical origin | Finding IDs | Execution disposition | Dependency / verification retained |
+| --- | --- | --- | --- | --- |
+| **LR-1** | H4 |  | LR-BLOCKER (historical) | Zero outstanding; original two findings CLOSED / VERIFIED at LR-1V, recorded by FE-EV-043; full status/maturity/navigation verification retained |
+| **LR-2** | H5 |  | LR-BLOCKER (historical) | Zero outstanding; FE-L2-003, FE-L3-003 and FE-T5-001 CLOSED / VERIFIED on supplied LR-2V2 25 PASS / 0 FAIL, Decision A, recorded at FE-EV-046; continuity and persona-evidence verification retained |
+| **FE-1** | H4 and H7 |  | FE-REQUIRED (historical) | Zero outstanding; six findings CLOSED / VERIFIED on supplied FE-1V 37 PASS / 0 FAIL / 0 INCOMPLETE, Decision A, recorded at FE-EV-051; full 137-chapter naming and two semantic-repair acceptance retained; fresh narrow FE-1CV before checkpoint |
+| **FE-2** | H5 | FE-L1-003 · FE-L2-004 · FE-L3-002 · FE-T2-001 · FE-T2-002 | FE-REQUIRED | Integrated relevant H4/FE-1 and LR-2 changes; full footnote/key/denominator recheck and changed-source checks; historical evidence corrected by explicit new record |
+| **FE-3** | H6 | FE-L1-006 · FE-L3-004 · FE-L5-003 · FE-T3-001 | FE-REQUIRED | Owner quantitative disposition; separate specialist authorisation before any instrument mutation; clean integrated citation baseline and fresh independent re-acceptance if changed |
+
+**Allocation invariant: 0 + 0 + 0 + 5 + 4 = 9; each currently open finding appears exactly once in this table.** The empty LR-1, LR-2 and FE-1 Finding IDs cells mean zero outstanding findings. Systemic roots are not extra finding IDs. H4–H7 remain the historical remediation architecture in §7; their origin allocations, dependency rationale, closure standards and specialist boundary are preserved. The overlay splits their execution, not their findings or scoring roots. Plan §18 governs the narrower learning-first sequence and conflict checks.
+
+**Historical versus current counts.** §6.1 retains the Phase-F snapshot (28 open / 1 closed), and §7 retains the 28-ID H0 planning allocation. The pre-H3 state was 25 open / 4 closed; FE-EV-037 recorded 20 open / 9 closed. **Historical LR-1 allocation:** FE-L1-002 and FE-L1-007, originating in H4, were both LR-BLOCKER and remained open at FE-EV-042. The original five-package counts were 2/3/6/5/4 = 20. LR-1V independently found both eligible for closure; LR-1R records them CLOSED / VERIFIED at FE-EV-043. LR-1 closure produced 18 open / 11 closed and allocation 0/3/6/5/4 = 18. LR-2R records the three supplied independently verified LR-2 closures at FE-EV-046; that closure produced **15 open / 14 closed and independently verified**, allocation 0/0/6/5/4 = 15. No historical batch or finding is deleted.
+
+
+**Historical FE-1 allocation and current closure:** FE-L1-004, FE-L2-005, FE-L3-005, FE-L4-002, FE-L5-002, FE-T4-001 were the six H4/H7-origin FE-REQUIRED findings in FE-1; all remained OPEN / NOT VERIFIED at FE-EV-050. Supplied independent FE-1V accepted their corrections (37 PASS / 0 FAIL / 0 INCOMPLETE, Decision A). FE-1R records six CLOSED / VERIFIED at FE-EV-051, leaving **9 OPEN / NOT VERIFIED; 20 CLOSED / VERIFIED**, allocation **0/0/0/5/4 = 9**. FE-2/FE-3 membership and ownership are unchanged.

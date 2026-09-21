@@ -174,7 +174,7 @@ Quality Engineers contribute by making the decision path inspectable. They can c
 
 ## Industry Perspective
 
-OpenTelemetry documents logs, metrics, and traces as core telemetry signals and provides a common conceptual ecosystem for them.[^otel-signals] It is useful vocabulary, not a mandatory implementation choice. The Google SRE literature describes monitoring as a way to make a service’s state visible and discusses the importance of choosing signals that support actionable response.[^google-monitoring] These are influential practitioner resources, not universal standards or a required SRE operating model.
+OpenTelemetry documents logs, metrics, and traces as core telemetry signals and provides a common conceptual ecosystem for them.[^otel-signals] It is useful vocabulary, not a mandatory implementation choice. The Google SRE literature describes monitoring as a way to make a service’s state visible and discusses the importance of choosing signals that support actionable response.[^sre-monitoring] These are influential practitioner resources, not universal standards or a required SRE operating model.
 
 ## Common Misconceptions or Common Pitfalls
 
@@ -254,7 +254,7 @@ Do not use real customer data. This is a manuscript exercise; no standalone lab 
 
 [^otel-signals]: OpenTelemetry. [Signals](https://opentelemetry.io/docs/concepts/signals/). Accessed 2026-08-12.
 
-[^google-monitoring]: Beyer, Betsy, et al. [Monitoring Distributed Systems](https://sre.google/sre-book/monitoring-distributed-systems/). *Site Reliability Engineering*. Google. Accessed 2026-08-12.
+[^sre-monitoring]: Beyer, Betsy, et al. [Monitoring Distributed Systems](https://sre.google/sre-book/monitoring-distributed-systems/). *Site Reliability Engineering*. Google. Accessed 2026-08-12.
 
 ## Chapter Checklist
 

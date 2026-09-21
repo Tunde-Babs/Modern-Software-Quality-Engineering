@@ -214,7 +214,7 @@ Quality Engineers add value by making these trade-offs explicit. They help teams
 
 ## Industry Perspective
 
-DORA's continuous-delivery research provides useful context for reliable, low-risk deployment capability, but it does not prescribe canary, blue-green, or flag-based strategies for every system.[^dora] Official deployment-controller documentation can describe a product's mechanics only when it is clearly labelled as an implementation illustration. The transferable curriculum is the release hypothesis, evidence boundary, and decision criteria.
+DORA's continuous-delivery research provides useful context for reliable, low-risk deployment capability, but it does not prescribe canary, blue-green, or flag-based strategies for every system.[^dora-capabilities] Official deployment-controller documentation can describe a product's mechanics only when it is clearly labelled as an implementation illustration. The transferable curriculum is the release hypothesis, evidence boundary, and decision criteria.
 
 ## Common Misconceptions or Common Pitfalls
 
@@ -285,7 +285,7 @@ Use synthetic conditions only. Do not configure routing, flags, deployment contr
 
 ## References
 
-[^dora]: Google Cloud. [DevOps capabilities](https://cloud.google.com/architecture/devops). Accessed 2026-08-11.
+[^dora-capabilities]: Google Cloud. [DevOps capabilities](https://cloud.google.com/architecture/devops). Accessed 2026-08-11.
 
 ## Chapter Checklist
 

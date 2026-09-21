@@ -129,7 +129,7 @@ This is not a requirement to run uncontrolled faults in production. The next cha
 
 ## Industry Perspective
 
-The Google SRE literature discusses overload and the need for systems to shed load or protect critical work under pressure.[^google-overload] It provides useful practitioner reasoning, not a universal pattern catalogue or threshold policy. Product and dependency context determine whether a mechanism is acceptable.
+The Google SRE literature discusses overload and the need for systems to shed load or protect critical work under pressure.[^sre-overload] It provides useful practitioner reasoning, not a universal pattern catalogue or threshold policy. Product and dependency context determine whether a mechanism is acceptable.
 
 ## Common Misconceptions or Common Pitfalls
 
@@ -190,7 +190,7 @@ Create a **Resilience Trade-off Assessment** for a fictional dependency timeout.
 
 ## References
 
-[^google-overload]: Beyer, Betsy, et al. [Handling Overload](https://sre.google/sre-book/handling-overload/). *Site Reliability Engineering*. Google. Accessed 2026-08-12.
+[^sre-overload]: Beyer, Betsy, et al. [Handling Overload](https://sre.google/sre-book/handling-overload/). *Site Reliability Engineering*. Google. Accessed 2026-08-12.
 
 ## Chapter Checklist
 

@@ -22,12 +22,12 @@ def events(ids=('001', '002')):
             + '\n'.join('| `FE-EV-' + i + '` | 2026-09-06 |' for i in ids) + '\n')
 
 
-def findings(open_count=9):
+def findings(open_count=4):
     text = ''
     for i in range(1, 30):
         status, verification = ('OPEN', 'NOT VERIFIED') if i <= open_count else ('CLOSED', 'VERIFIED')
         text += ('### FE-G-%03d — Example\n| **Status** | `%s` |\n| **Verification** | `%s` |\n' % (i, status, verification))
-    text += '### 8.2 Canonical current 9-finding allocation\n| Package | Historical origin | Finding IDs | Execution disposition | Dependency / verification retained |\n| --- | --- | --- | --- | --- |\n'
+    text += '### 8.2 Canonical current 4-finding allocation\n| Package | Historical origin | Finding IDs | Execution disposition | Dependency / verification retained |\n| --- | --- | --- | --- | --- |\n'
     cursor = 1
     for package, count in gate.PACKAGES.items():
         ids = ' · '.join('FE-G-%03d' % i for i in range(cursor, cursor+count))
@@ -79,15 +79,15 @@ class IntegrityTests(unittest.TestCase):
         records, result = gate.finding_checks(findings())
         self.assertEqual(result['status'], 'PASS', result)
         self.assertEqual(result['observed'], {'total': 29, 'distribution': {
-            'OPEN / NOT VERIFIED': 9, 'CLOSED / VERIFIED': 20}})
+            'OPEN / NOT VERIFIED': 4, 'CLOSED / VERIFIED': 25}})
         allocation = gate.allocation_check(findings(), records)
         self.assertEqual(allocation['status'], 'PASS', allocation)
         self.assertEqual(allocation['observed'], {'packages': {
-            'LR-1': 0, 'LR-2': 0, 'FE-1': 0, 'FE-2': 5, 'FE-3': 4},
-            'total': 9, 'open_count': 9})
+            'LR-1': 0, 'LR-2': 0, 'FE-1': 0, 'FE-2': 0, 'FE-3': 4},
+            'total': 4, 'open_count': 4})
 
     def test_preclosure_finding_census_rejected(self):
-        for stale_count in (15, 18, 20):
+        for stale_count in (9, 15, 18, 20):
             with self.subTest(stale_count=stale_count):
                 self.assertFails(gate.finding_checks(findings(open_count=stale_count))[1], 'census')
 
@@ -133,7 +133,7 @@ class IntegrityTests(unittest.TestCase):
                          'package cardinalities differ')
 
     def test_empty_and_malformed_outstanding_allocation(self):
-        ids = ' · '.join('FE-G-%03d' % i for i in range(1, 6))
+        ids = ' · '.join('FE-G-%03d' % i for i in range(1, 5))
         self.assertFails(self.allocation(ids, ''), 'FE-G-001 observed 0')
         for replacement in [ids + ' · ', ' · ' + ids, '—']:
             with self.subTest(replacement=replacement):

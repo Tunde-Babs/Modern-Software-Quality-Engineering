@@ -228,7 +228,7 @@ The Quality Engineer's contribution is to make a quality concern concrete enough
 
 ## Industry Perspective
 
-ISO/IEC 25010:2023 provides a formal product-quality model with nine characteristics that can inform quality requirements, objectives, and evaluation.[^iso-25010] ISO/IEC/IEEE 29119-2 provides generic testing-process context across lifecycle models.[^iso-29119-2] The SWEBOK Guide connects software testing to broader requirements, architecture, data, maintenance, and operational concerns.[^swebok]
+ISO/IEC 25010:2023 provides a formal product-quality model with nine characteristics that can inform quality requirements, objectives, and evaluation.[^iso-25010] ISO/IEC/IEEE 29119-2 provides generic testing-process context across lifecycle models.[^iso-29119-2] The SWEBOK Guide connects software testing to broader requirements, architecture, data, maintenance, and operational concerns.[^swebok-v4-0a]
 
 These sources provide vocabulary and reference models. They do not determine a universal quality-attribute checklist, a threshold, a toolchain, or a release decision. The evidence-portfolio progression in this chapter is MSQE educational framing for making selected product-quality questions, boundaries, and limitations explicit.
 
@@ -333,7 +333,7 @@ Data-oriented evidence examines not only how software uses data but whether data
 
 [^iso-25010]: ISO/IEC. [ISO/IEC 25010:2023 — Systems and software engineering — Systems and software Quality Requirements and Evaluation (SQuaRE) — Product quality model](https://www.iso.org/standard/78176.html). 2023.
 [^iso-29119-2]: ISO/IEC/IEEE. [ISO/IEC/IEEE 29119-2:2021 — Software and systems engineering — Software testing — Part 2: Test processes](https://www.iso.org/standard/79428.html). 2021.
-[^swebok]: IEEE Computer Society. [*Guide to the Software Engineering Body of Knowledge (SWEBOK Guide) v4.0a*](https://ieeecs-media.computer.org/media/education/swebok/swebok-v4.pdf). 2026.
+[^swebok-v4-0a]: IEEE Computer Society. [*Guide to the Software Engineering Body of Knowledge (SWEBOK Guide) v4.0a*](https://ieeecs-media.computer.org/media/education/swebok/swebok-v4.pdf). 2026.
 
 ## Chapter Checklist
 

@@ -160,7 +160,7 @@ The table names the principal question, not an exclusive scope. For example, per
 
 Engineering Foundations concerns the practices that make software understandable, changeable, and dependable. It includes design clarity, code quality, version control, code review, modularity, dependency management, interface design, configuration discipline, and the management of technical debt. These practices are not separate from quality; they shape how safely a team can change a system and how effectively it can diagnose problems.
 
-For a Quality Engineer, this domain changes the quality conversation. Rather than receiving a build as an opaque object to test, the Quality Engineer can participate in discussions about testability, controllability, diagnosability, and failure handling. Testability is an engineering capability: the degree to which a system can be set up, observed, and exercised so that its behaviour can be evaluated. It is not an ISO/IEC 25010 product quality characteristic, although it can support the evaluation of product quality characteristics such as reliability and maintainability.[^iso25010]
+For a Quality Engineer, this domain changes the quality conversation. Rather than receiving a build as an opaque object to test, the Quality Engineer can participate in discussions about testability, controllability, diagnosability, and failure handling. Testability is an engineering capability: the degree to which a system can be set up, observed, and exercised so that its behaviour can be evaluated. It is not an ISO/IEC 25010 product quality characteristic, although it can support the evaluation of product quality characteristics such as reliability and maintainability.[^iso-25010]
 
 ### Software Quality Engineering
 
@@ -196,7 +196,7 @@ The domain is relevant to quality because the delivered system includes its runt
 
 Observability & Reliability concerns whether teams can infer meaningful internal system state from its outputs and sustain expected service behaviour over time. Observability is supported by useful logs, metrics, traces, events, dashboards, and business signals. Reliability includes the ability to prevent, withstand, detect, respond to, and learn from failure.
 
-Monitoring and alerting should serve decisions. Google’s Site Reliability Engineering guidance distinguishes symptom-based signals from lower-level causes and emphasises service-level thinking rather than indiscriminate alerting.[^googlesre] In a quality context, the question is not simply whether a dashboard exists. It is whether the system supplies evidence that a team can use to understand customer-impacting behaviour and act before harm becomes widespread.
+Monitoring and alerting should serve decisions. Google’s Site Reliability Engineering guidance distinguishes symptom-based signals from lower-level causes and emphasises service-level thinking rather than indiscriminate alerting.[^sre-monitoring] In a quality context, the question is not simply whether a dashboard exists. It is whether the system supplies evidence that a team can use to understand customer-impacting behaviour and act before harm becomes widespread.
 
 This domain connects directly to testing. Production signals can expose assumptions that test environments could not reproduce. Test findings can suggest telemetry that will make future failures diagnosable. The relationship is a feedback loop, not a replacement of one activity with another.
 
@@ -210,7 +210,7 @@ The framework does not prescribe a universal set of AI metrics. A customer-suppo
 
 Performance & Security brings together two concerns that are often discovered too late: whether a system remains responsive under meaningful load, and whether it protects assets against relevant threats. They are related through architecture and risk, but they remain distinct engineering specialties. Performance work includes workload modelling, capacity, latency, throughput, resource contention, resilience under load, and analysis of bottlenecks. Security work includes threat modelling, secure design, identity and access management, dependency and vulnerability management, security testing, and incident preparedness.
 
-The OWASP threat-modelling guidance frames threat modelling as a structured activity for identifying and addressing threats during design rather than only after implementation.[^owasp] The MSQE framework does not replace OWASP guidance or turn security into a testing checklist. It makes the dependency visible: a quality decision about a new capability may require both performance and security evidence because either weakness can cause customer harm.
+The OWASP threat-modelling guidance frames threat modelling as a structured activity for identifying and addressing threats during design rather than only after implementation.[^owasp-threat-modeling] The MSQE framework does not replace OWASP guidance or turn security into a testing checklist. It makes the dependency visible: a quality decision about a new capability may require both performance and security evidence because either weakness can cause customer harm.
 
 ### Engineering Leadership
 
@@ -238,7 +238,7 @@ The domains make capability visible. The following concerns connect them and sho
 
 Risk provides a useful starting point because it directs attention. It should not, however, be treated as an excuse to omit evidence. A risk-based approach makes assumptions explicit, considers likelihood and impact, and chooses controls that are proportionate to the consequences of failure. It also revisits those choices when evidence changes.
 
-Metrics require similar care. Build-pass percentage, test count, deployment count, and mean time to resolve can all be useful in context, but none independently describes product quality. DORA research presents software delivery performance as a model of capabilities, metrics, and outcomes rather than a single universal score.[^dora] The MSQE framework adopts the same caution in principle: select measures to inform a decision, inspect their limitations, and combine them with qualitative evidence.
+Metrics require similar care. Build-pass percentage, test count, deployment count, and mean time to resolve can all be useful in context, but none independently describes product quality. DORA research presents software delivery performance as a model of capabilities, metrics, and outcomes rather than a single universal score.[^dora-research] The MSQE framework adopts the same caution in principle: select measures to inform a decision, inspect their limitations, and combine them with qualitative evidence.
 
 ---
 
@@ -336,7 +336,7 @@ The framework also helps prevent a common engineering mistake: treating an absen
 
 ## Industry Perspective
 
-Industry practice increasingly treats quality as a delivery and operational capability, not an isolated test phase. ISO quality and testing standards provide structured terminology and models. DORA research connects technical and organisational capabilities to delivery performance. Site Reliability Engineering brings service-level objectives, monitoring, incident response, and learning into everyday engineering. OWASP guidance helps teams address security earlier in design and delivery. These sources address different problems and should be used for their stated purposes.[^iso25010][^iso29119][^dora][^googlesre][^owasp]
+Industry practice increasingly treats quality as a delivery and operational capability, not an isolated test phase. ISO quality and testing standards provide structured terminology and models. DORA research connects technical and organisational capabilities to delivery performance. Site Reliability Engineering brings service-level objectives, monitoring, incident response, and learning into everyday engineering. OWASP guidance helps teams address security earlier in design and delivery. These sources address different problems and should be used for their stated purposes.[^iso-25010][^iso29119][^dora-research][^sre-monitoring][^owasp-threat-modeling]
 
 The MSQE Educational Framework does not combine them into a single universal doctrine. Its contribution is integrative: it helps a Quality Engineer understand why a data-quality concern may need an operational signal, why a security decision affects a release strategy, or why automation architecture is an engineering investment rather than a measure of testing effort. This framing is particularly useful in organisations where responsibilities have evolved faster than the shared language for connecting them.
 
@@ -482,17 +482,17 @@ The framework should be used with, not instead of, established standards, resear
 
 ## References
 
-[^iso25010]: International Organization for Standardization and International Electrotechnical Commission. [ISO/IEC 25010:2023 — Systems and software engineering — Systems and software Quality Requirements and Evaluation (SQuaRE) — Product quality model](https://www.iso.org/standard/78176.html). Published 2023. Accessed 2026-08-08.
+[^iso-25010]: International Organization for Standardization and International Electrotechnical Commission. [ISO/IEC 25010:2023 — Systems and software engineering — Systems and software Quality Requirements and Evaluation (SQuaRE) — Product quality model](https://www.iso.org/standard/78176.html). Published 2023. Accessed 2026-08-08.
 
 [^iso29119]: International Organization for Standardization, International Electrotechnical Commission, and IEEE. [ISO/IEC/IEEE 29119-1:2022 — Software and systems engineering — Software testing — Part 1: General concepts](https://www.iso.org/standard/81291.html). Published 2022. Accessed 2026-08-08.
 
 [^iso12207]: International Organization for Standardization, International Electrotechnical Commission, and IEEE. [ISO/IEC/IEEE 12207:2026 — Systems and software engineering — Software life cycle processes](https://www.iso.org/standard/90219.html). Published April 2026. Accessed 2026-08-08.
 
-[^owasp]: OWASP Foundation. [Threat Modeling Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Threat_Modeling_Cheat_Sheet.html). Accessed 2026-08-08.
+[^owasp-threat-modeling]: OWASP Foundation. [Threat Modeling Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Threat_Modeling_Cheat_Sheet.html). Accessed 2026-08-08.
 
-[^dora]: DORA. [DORA Research](https://dora.dev/research/). Accessed 2026-08-08.
+[^dora-research]: DORA. [DORA Research](https://dora.dev/research/). Accessed 2026-08-08.
 
-[^googlesre]: Beyer, Betsy, Chris Jones, Jennifer Petoff, and Niall Richard Murphy, eds. [*Site Reliability Engineering: How Google Runs Production Systems*, “Monitoring Distributed Systems”](https://sre.google/sre-book/monitoring-distributed-systems/). Google. Accessed 2026-08-08.
+[^sre-monitoring]: Beyer, Betsy, Chris Jones, Jennifer Petoff, and Niall Richard Murphy, eds. [*Site Reliability Engineering: How Google Runs Production Systems*, “Monitoring Distributed Systems”](https://sre.google/sre-book/monitoring-distributed-systems/). Google. Accessed 2026-08-08.
 
 ---
 

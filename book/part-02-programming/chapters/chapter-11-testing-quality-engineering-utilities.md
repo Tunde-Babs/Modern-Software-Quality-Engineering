@@ -304,7 +304,7 @@ The result is not “tests for test code” as an isolated activity. It is a str
 
 ## Industry Perspective
 
-Node.js documents its built-in test runner and strict assertion APIs as part of its standard library.[^node-test][^node-assert] TypeScript's documentation explains the language and compiler options used to make contracts visible in the companion.[^typescript] These are tooling references, not a mandate to standardise on Node or TypeScript. The broader practices—controlled dependencies, focused assertions, risk-based selection, and honest evidence limits—transfer to other languages and test runners.
+Node.js documents its built-in test runner and strict assertion APIs as part of its standard library.[^node-test][^node-assert] TypeScript's documentation explains the language and compiler options used to make contracts visible in the companion.[^typescript-docs] These are tooling references, not a mandate to standardise on Node or TypeScript. The broader practices—controlled dependencies, focused assertions, risk-based selection, and honest evidence limits—transfer to other languages and test runners.
 
 ## Common Misconceptions or Common Pitfalls
 
@@ -409,8 +409,8 @@ Identify one test that would become fragile after a safe refactor because it ass
 
 - Node.js. [Test runner](https://nodejs.org/api/test.html) and [Assert](https://nodejs.org/api/assert.html) documentation.
 - TypeScript. [Handbook](https://www.typescriptlang.org/docs/handbook/intro.html) and [TSConfig reference](https://www.typescriptlang.org/tsconfig/).
-- Gerard Meszaros. [xUnit Test Patterns](http://xunitpatterns.com/).
-- Michael Feathers. [Working Effectively with Legacy Code](https://www.oreilly.com/library/view/working-effectively-with/0131177052/).
+- Gerard Meszaros. [xUnit Test Patterns](http://xunitpatterns.com/). Addison-Wesley, 2007. Accessed 2026-08-09.
+- Michael Feathers. [Working Effectively with Legacy Code](https://www.oreilly.com/library/view/working-effectively-with/0131177052/). Prentice Hall, 2004. Accessed 2026-08-09.
 - Google Testing Blog. [Test Smarter](https://testing.googleblog.com/) — practitioner perspectives to evaluate alongside your local context.
 
 ## References
@@ -419,11 +419,7 @@ Identify one test that would become fragile after a safe refactor because it ass
 
 [^node-assert]: Node.js. [Assert](https://nodejs.org/api/assert.html). Accessed 2026-08-09.
 
-[^typescript]: Microsoft. [TypeScript Documentation](https://www.typescriptlang.org/docs/). Accessed 2026-08-09.
-
-[^meszaros]: Gerard Meszaros. [xUnit Test Patterns](http://xunitpatterns.com/). Addison-Wesley, 2007. Accessed 2026-08-09.
-
-[^feathers]: Michael Feathers. [Working Effectively with Legacy Code](https://www.oreilly.com/library/view/working-effectively-with/0131177052/). Prentice Hall, 2004. Accessed 2026-08-09.
+[^typescript-docs]: Microsoft. [TypeScript Documentation](https://www.typescriptlang.org/docs/). Accessed 2026-08-09.
 
 ## Chapter Checklist
 

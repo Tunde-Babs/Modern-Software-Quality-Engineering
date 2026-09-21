@@ -58,7 +58,7 @@ Software quality is the degree to which a system satisfies relevant stakeholder 
 
 Quality is therefore neither a single score nor a synonym for "few bugs." A product can be feature-complete while being difficult to use, insecure, unreliable under load, expensive to change, or impossible to operate safely. Conversely, a technically elegant service that does not solve a meaningful user problem is not high quality for its stakeholders.
 
-The ISO/IEC 25010:2023 product quality model provides a useful common vocabulary. It defines nine product-quality characteristics and is intended to support the specification, measurement, and evaluation of quality throughout the lifecycle. It is a reference model, not a substitute for product decisions: a team must still select the attributes that matter and define their required levels for a particular context.[^iso25010]
+The ISO/IEC 25010:2023 product quality model provides a useful common vocabulary. It defines nine product-quality characteristics and is intended to support the specification, measurement, and evaluation of quality throughout the lifecycle. It is a reference model, not a substitute for product decisions: a team must still select the attributes that matter and define their required levels for a particular context.[^iso-25010]
 
 ### Quality attributes and quality requirements
 
@@ -437,7 +437,7 @@ The practical habit introduced in this chapter is simple: for every important qu
 
 ## References
 
-[^iso25010]: International Organization for Standardization and International Electrotechnical Commission. [ISO/IEC 25010:2023 — Systems and software engineering — Systems and software Quality Requirements and Evaluation (SQuaRE) — Product quality model](https://www.iso.org/standard/78176.html). Published 2023. Accessed 2026-08-08.
+[^iso-25010]: International Organization for Standardization and International Electrotechnical Commission. [ISO/IEC 25010:2023 — Systems and software engineering — Systems and software Quality Requirements and Evaluation (SQuaRE) — Product quality model](https://www.iso.org/standard/78176.html). Published 2023. Accessed 2026-08-08.
 
 [^iso25000]: International Organization for Standardization and International Electrotechnical Commission. [ISO/IEC 25000:2014 — Systems and software engineering — Systems and software Quality Requirements and Evaluation (SQuaRE) — Guide to SQuaRE](https://www.iso.org/standard/64764.html). Published 2014. Accessed 2026-08-08.
 

@@ -135,7 +135,7 @@ Quality Engineers can contribute scenario analysis: reachable-but-stale data, su
 
 ## Industry Perspective
 
-Google’s SRE literature treats service monitoring as an aid to understanding user-facing service behaviour and discusses latency, errors, traffic, and saturation as useful perspectives.[^google-monitoring] It is influential practitioner literature, not a universal reliability definition. ISO/IEC 25010:2023 supplies the relevant formal product-quality context.[^iso-25010]
+Google’s SRE literature treats service monitoring as an aid to understanding user-facing service behaviour and discusses latency, errors, traffic, and saturation as useful perspectives.[^sre-monitoring] It is influential practitioner literature, not a universal reliability definition. ISO/IEC 25010:2023 supplies the relevant formal product-quality context.[^iso-25010]
 
 ## Common Misconceptions or Common Pitfalls
 
@@ -198,7 +198,7 @@ Create a **Reliability Claim Assessment** for a fictional customer-notification 
 
 [^iso-25010]: International Organization for Standardization. [ISO/IEC 25010:2023 — Product quality model](https://www.iso.org/standard/78176.html). 2023. Accessed 2026-08-12.
 
-[^google-monitoring]: Beyer, Betsy, et al. [Monitoring Distributed Systems](https://sre.google/sre-book/monitoring-distributed-systems/). *Site Reliability Engineering*. Google. Accessed 2026-08-12.
+[^sre-monitoring]: Beyer, Betsy, et al. [Monitoring Distributed Systems](https://sre.google/sre-book/monitoring-distributed-systems/). *Site Reliability Engineering*. Google. Accessed 2026-08-12.
 
 ## Chapter Checklist
 
