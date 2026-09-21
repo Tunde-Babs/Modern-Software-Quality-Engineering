@@ -307,7 +307,7 @@ A useful QA-to-QE roadmap spans 12–24 months and is tied to real engineering w
 
 Keep a small portfolio of evidence: a before-and-after view of feedback time, a design decision you influenced, a capability you created, an incident finding that changed practice, or a colleague's adoption of a tool. This is more useful for career conversations than a list of courses alone.
 
-## Common Misconceptions
+## Common Misconceptions or Common Pitfalls
 
 ### “QE Replaces QA”
 

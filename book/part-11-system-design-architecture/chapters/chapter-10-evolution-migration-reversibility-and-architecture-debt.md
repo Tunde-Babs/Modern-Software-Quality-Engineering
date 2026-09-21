@@ -284,7 +284,7 @@ It is not universally correct, and this chapter declines to prescribe it. Its co
 
 Evolutionary-architecture practitioner literature makes the complementary case that architecture should be designed for incremental change rather than for a target state.[^ford-evolutionary] Part XI takes the compatible position without the prescription: the intermediate states are the design problem, and a plan that has designed only its endpoint has designed the easy half.
 
-## Common Misconceptions and Pitfalls
+## Common Misconceptions or Common Pitfalls
 
 ### "We can roll back."
 

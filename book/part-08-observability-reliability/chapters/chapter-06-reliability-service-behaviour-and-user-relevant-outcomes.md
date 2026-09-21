@@ -137,7 +137,7 @@ Quality Engineers can contribute scenario analysis: reachable-but-stale data, su
 
 Google’s SRE literature treats service monitoring as an aid to understanding user-facing service behaviour and discusses latency, errors, traffic, and saturation as useful perspectives.[^google-monitoring] It is influential practitioner literature, not a universal reliability definition. ISO/IEC 25010:2023 supplies the relevant formal product-quality context.[^iso-25010]
 
-## Common Misconceptions and Pitfalls
+## Common Misconceptions or Common Pitfalls
 
 ### “HTTP 200 means the customer journey succeeded”
 

@@ -208,7 +208,7 @@ ISO/IEC/IEEE 29119-2 provides generic test-process terminology applicable across
 
 These sources are useful references, not a prescription that every organisation use the same level names, team boundaries, test counts, or workflow. The boundary-mapping model in this chapter is MSQE educational framing that connects a risk to the most useful available evidence boundary and its limitations.
 
-## Common Misconceptions
+## Common Misconceptions or Common Pitfalls
 
 ### “A lower-level check is always better because it is fast.”
 

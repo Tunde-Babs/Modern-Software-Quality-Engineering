@@ -290,7 +290,7 @@ The quality strategy should make handoffs explicit. Part III supplies evidence-e
 
 NIST AI RMF provides a risk-management framework that can help organise AI governance and measurement in context.[^nist-rmf] A framework is not a release decision: the Atlas portfolio must still state its own evidence, limitations, and accountable owners.
 
-## Common Misconceptions and Pitfalls
+## Common Misconceptions or Common Pitfalls
 
 ### “The capstone needs one master score”
 

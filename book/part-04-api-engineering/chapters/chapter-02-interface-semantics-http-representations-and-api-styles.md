@@ -294,7 +294,7 @@ RFC 9110 is the primary source for HTTP method, status, field, and representatio
 
 The API-semantic review prompts in this chapter are MSQE educational framing. They are vendor-neutral and intentionally precede OpenAPI, JSON Schema, compatibility, security, and tooling practices taught later in Part IV.
 
-## Common Misconceptions
+## Common Misconceptions or Common Pitfalls
 
 ### “POST means create, and 200 means complete.”
 

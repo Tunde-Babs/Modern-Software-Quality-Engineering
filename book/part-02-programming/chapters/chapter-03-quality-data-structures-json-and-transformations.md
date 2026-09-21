@@ -467,7 +467,7 @@ TypeScript's narrowing documentation describes how runtime checks let a program 
 
 Teams may later choose contract or schema tools based on system risk, interoperability needs, and maintenance cost. This chapter deliberately teaches the principle before a tool: external data must earn the right to be treated as an expected type.
 
-## Common Misconceptions and Pitfalls
+## Common Misconceptions or Common Pitfalls
 
 ### “JSON.parse validates my response.”
 

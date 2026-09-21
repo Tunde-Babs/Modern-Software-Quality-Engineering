@@ -217,7 +217,7 @@ Distributed-tracing practice illustrates the architecture-versus-implementation 
 
 This is offered as an illustration of the boundary between architecture and implementation, not as a recommendation of a specific tool or vendor.
 
-## Common Misconceptions and Pitfalls
+## Common Misconceptions or Common Pitfalls
 
 ### "Testability is a testing concern."
 

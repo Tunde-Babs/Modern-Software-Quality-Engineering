@@ -265,7 +265,7 @@ Use a joint record for release changes that affect both dimensions. Keep facts s
 
 NIST CSF and SSDF support risk-based, context-aware secure-development practice; neither supplies a universal trade-off score.[^nist-csf][^nist-ssdf] Their boundaries reinforce the Part X approach: a decision should be evidence-led and owned, not delegated to a single tool output.
 
-## Common Misconceptions and Pitfalls
+## Common Misconceptions or Common Pitfalls
 
 ### “A security improvement outweighs any latency regression.”
 

@@ -216,7 +216,7 @@ Documented engineering practice contains several mechanisms that transfer reason
 
 Where they fail, the failure is usually the same: the mechanism is retained and the visibility is dropped. A review that only records approval, a pairing session where one person types and narrates nothing, an incident review that lists causes without reconstructing what was known — each preserves the form and loses the transfer.
 
-## Common Misconceptions and Pitfalls
+## Common Misconceptions or Common Pitfalls
 
 ### "We should document it."
 

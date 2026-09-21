@@ -247,7 +247,7 @@ Version a workload-and-threat assumption register alongside the change or eviden
 
 NIST's Cybersecurity Framework frames cybersecurity risk management as outcomes and context, rather than a fixed catalogue of technical tests.[^nist-csf] OWASP's application and API materials are influential practitioner guidance; they support coverage questions but are not a universal risk analysis or legal obligation.[^owasp-api] Part X uses those sources to inform bounded verification, not to turn a workload or threat model into compliance training.
 
-## Common Misconceptions and Pitfalls
+## Common Misconceptions or Common Pitfalls
 
 ### “Virtual users are the workload.”
 

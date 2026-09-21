@@ -143,7 +143,7 @@ QA experience supports this work directly. Test design develops attention to cas
 
 Martin Fowler defines refactoring as changing a software system's internal structure without changing its observable behaviour, and emphasises small steps supported by tests.[^fowler-refactoring] Google Engineering Practices similarly recommends readable, focused changes that reviewers can understand and verify.[^google-code-review] These are established engineering practices, not a mandate that every change follow one prescribed pattern or metric.
 
-## Common Misconceptions and Pitfalls
+## Common Misconceptions or Common Pitfalls
 
 ### “Refactoring means rewriting code until it looks cleaner.”
 

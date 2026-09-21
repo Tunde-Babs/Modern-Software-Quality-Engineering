@@ -335,7 +335,7 @@ Data rules are more useful when they are traceable to an agreed information need
 
 Relational systems offer constraints and query operations that can contribute useful integrity evidence. Their effectiveness still depends on model, lifecycle, source, and consumer context. A foreign key, for example, can protect a defined relationship at one storage boundary but cannot by itself prove that every downstream representation or business interpretation is correct.
 
-## Common Misconceptions
+## Common Misconceptions or Common Pitfalls
 
 ### “Equal counts mean the systems reconcile.”
 

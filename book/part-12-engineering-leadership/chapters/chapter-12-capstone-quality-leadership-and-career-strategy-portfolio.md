@@ -33,6 +33,12 @@ Every one of these has a reasonable person behind it, holding a reasonable posit
 
 You do not own any of these decisions. You own the recommendation.
 
+## Why This Chapter Matters
+
+Technical evidence can be sound and still leave an organisation unable to decide what to do. Quality Engineers need to connect that evidence to the interests, constraints, and decision rights of the people who must act on it. This chapter develops that professional need through a recommendation whose reasoning and limits others can examine, rather than through additional technical analysis alone.
+
+The capstone brings together the evidence practices of Parts I–XI and the communication, ownership, measurement, and capability work of this Part. Its purpose is to make a decision better supported while leaving authority with the decision owner. The career reflection records what you can demonstrate and what you still need to learn; it does not establish certification, promotion readiness, or authority to decide.
+
 ## What This Capstone Is
 
 This capstone asks one question, and the career reflection at the end is secondary to it:
@@ -430,7 +436,7 @@ Decisions of this shape — irreversible date, distributed authority, incomplete
 
 That is a low bar and it is not commonly cleared. Most organisations discover after an incident that the concern was raised, the record was not kept, and the person who accepted the risk cannot be identified — which is LEAD-COMM-01 and LEAD-COMM-02, and is why they are in the packet.
 
-## Common Misconceptions and Pitfalls
+## Common Misconceptions or Common Pitfalls
 
 ### "The right answer is to fix the underlying problems first."
 

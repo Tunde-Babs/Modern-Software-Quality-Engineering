@@ -240,7 +240,7 @@ The ISO/IEC/IEEE 29119 series provides references for testing concepts, processe
 
 Exploratory testing has a substantial practitioner literature. Kaner's work emphasizes the relationship among learning, test design, execution, and result interpretation.[^kaner-exploratory] These references are useful vocabulary and practice sources, not a mandate for a single exploratory style, record format, or organizational role. The risk-to-learning loop in this chapter is MSQE educational framing.
 
-## Common Misconceptions
+## Common Misconceptions or Common Pitfalls
 
 ### “Exploratory testing means random clicking.”
 

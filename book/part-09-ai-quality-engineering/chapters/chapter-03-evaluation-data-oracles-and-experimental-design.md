@@ -182,7 +182,7 @@ Evaluation data is a versioned quality dependency. A model, prompt, or retrieval
 
 NIST’s Generative AI Profile identifies evaluation and measurement as context-dependent risk-management activities.[^nist-genai] Its relevance here is not a prescribed dataset template. It is the need to connect evidence to the actual system, use, and affected population.
 
-## Common Misconceptions and Pitfalls
+## Common Misconceptions or Common Pitfalls
 
 ### “More prompts always mean a better evaluation”
 

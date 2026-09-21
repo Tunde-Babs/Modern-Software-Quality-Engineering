@@ -239,7 +239,7 @@ Formal data-quality guidance supports the use of explicit data rules and assessm
 
 Across domains, reconciliation commonly relies on layered comparison: record identity, aggregate value, expected exceptions, and investigation records. The transferable practice is not a particular platform report; it is the ability to explain agreement and difference accurately.
 
-## Common Misconceptions
+## Common Misconceptions or Common Pitfalls
 
 ### “Matching totals mean reconciliation is complete.”
 

@@ -219,7 +219,7 @@ The principles in this chapter apply whether an organization uses a declarative 
 
 Version-controlled review practices described in [Git documentation](https://git-scm.com/docs) support traceable change discussions, but a commit history alone does not prove target state. The [NIST Secure Software Development Framework](https://csrc.nist.gov/pubs/sp/800/218/final) provides relevant guidance for protecting and maintaining software-release processes, while deep infrastructure security design remains outside this part.
 
-## Common Misconceptions and Pitfalls
+## Common Misconceptions or Common Pitfalls
 
 ### “A clean plan proves the target will be safe”
 

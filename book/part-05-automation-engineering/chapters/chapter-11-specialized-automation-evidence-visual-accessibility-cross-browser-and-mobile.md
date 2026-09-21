@@ -257,7 +257,7 @@ Specialized automation is most reliable when the evidence contract is explicit: 
 
 WCAG is a W3C recommendation and provides internationally recognized accessibility guidance, but it should not be reduced to a scanner output.[^wcag] Playwright documents visual comparison and device-emulation capabilities; their availability does not change the limitation of the evidence.[^playwright-snapshots][^playwright-emulation]
 
-## Common Misconceptions
+## Common Misconceptions or Common Pitfalls
 
 ### “A new snapshot should be accepted when it makes the suite green.”
 

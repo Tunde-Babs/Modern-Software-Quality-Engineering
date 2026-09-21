@@ -307,7 +307,7 @@ HTTP provides a uniform interface with standardized request methods, status code
 
 ISO/IEC 25010 provides a product-quality reference model; ISO/IEC/IEEE 29119-2 provides generic testing-process context, while SWEBOK places interfaces and testing within wider software-engineering concerns.[^iso25010][^iso-29119-2][^swebok] None prescribes an API tool, framework, or the API-evidence questions in this chapter. The API-outcome model and API-evidence prompt are explicitly MSQE educational framing.
 
-## Common Misconceptions
+## Common Misconceptions or Common Pitfalls
 
 ### “One successful request proves the API works.”
 

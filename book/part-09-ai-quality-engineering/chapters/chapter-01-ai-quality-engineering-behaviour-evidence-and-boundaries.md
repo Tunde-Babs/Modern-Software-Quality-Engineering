@@ -147,7 +147,7 @@ Quality Engineers create useful pressure on ambiguous AI claims. They ask whethe
 
 NIST’s Generative AI Profile treats generative-AI risk management as context dependent and encourages organizations to consider the full system and its use conditions.[^nist-genai] Part IX applies that perspective as an engineering practice. It does not prescribe a vendor’s evaluation service or a particular governance model.
 
-## Common Misconceptions and Pitfalls
+## Common Misconceptions or Common Pitfalls
 
 ### “An AI quality test needs one expected answer”
 

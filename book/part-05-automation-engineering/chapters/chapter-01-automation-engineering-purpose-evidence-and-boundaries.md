@@ -262,7 +262,7 @@ ISO/IEC/IEEE 29119-2 describes testing processes in a broader lifecycle context,
 
 Large-scale engineering experience also illustrates why flaky feedback deserves active management. Google describes flakiness as a passing and failing result with the same code and identifies causes that include concurrency, nondeterministic behaviour, third-party code, and infrastructure.[^google-flaky] Its mitigation examples do not make reruns a repair: unreliable feedback still creates delay and can cause teams to ignore real failures. The same principle applies to a smaller team: a green result must remain interpretable enough to support action.
 
-## Common Misconceptions
+## Common Misconceptions or Common Pitfalls
 
 ### “If it can be automated, it should be automated.”
 

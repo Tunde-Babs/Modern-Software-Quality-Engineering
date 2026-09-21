@@ -189,7 +189,7 @@ Quality Engineers do not need to own every data definition. They help identify w
 
 W3C PROV provides a vendor-neutral data model for representing provenance and its core concepts.[^w3c-prov] ISO/TS 8000-82 supports data-quality assessment through explicit rules.[^iso-8000-82] These standards and specifications inform terminology; they do not prescribe an enterprise catalogue, governance structure, or technology selection.
 
-## Common Misconceptions
+## Common Misconceptions or Common Pitfalls
 
 ### “A schema is the complete data contract.”
 

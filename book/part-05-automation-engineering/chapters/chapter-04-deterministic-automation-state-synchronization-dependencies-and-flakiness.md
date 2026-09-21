@@ -290,7 +290,7 @@ Playwright documents actionability checks and auto-retrying assertions that can 
 
 Google's published work on flaky tests identifies concurrency, nondeterministic behaviour, third-party code, and infrastructure among possible causes and describes reruns and quarantine as mitigations with real trade-offs.[^google-flaky] This supports the chapter's central point: mitigation can be necessary, but trustworthy feedback requires investigation, ownership, and repair rather than routine dismissal.
 
-## Common Misconceptions
+## Common Misconceptions or Common Pitfalls
 
 ### “A deterministic check never fails.”
 

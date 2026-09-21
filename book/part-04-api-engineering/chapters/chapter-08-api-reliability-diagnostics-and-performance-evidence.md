@@ -260,7 +260,7 @@ Industry guidance provides useful vocabulary but should not replace contextual e
 
 Google’s SRE literature explains monitoring and service-level thinking from an operational perspective, while OpenTelemetry describes common observability signal concepts. Those sources are valuable background for diagnostic and measurement vocabulary.[^google-monitoring][^opentelemetry] They are not universal latency targets, mandated technology choices, or evidence that an individual API has met its product-specific quality expectations. MSQE uses them here to support a narrower educational principle: quality claims need an observable condition, an interpretable result, and an honest limitation.
 
-## Common Misconceptions
+## Common Misconceptions or Common Pitfalls
 
 ### “A successful response proves the API is reliable.”
 

@@ -141,7 +141,7 @@ The companion's planted defect illustrates an important boundary: a timeout is a
 
 Node.js provides debugger and inspector integration that supports attaching standard debugging tools and pausing at the beginning of execution when needed.[^node-debugger] Google SRE's troubleshooting material treats investigation as gathering and testing information under time pressure; the workflow in this chapter adapts the underlying discipline for local, controlled Quality Engineering utilities rather than operational incident command.[^google-sre-troubleshooting]
 
-## Common Misconceptions and Pitfalls
+## Common Misconceptions or Common Pitfalls
 
 ### “The first stack frame is the root cause.”
 

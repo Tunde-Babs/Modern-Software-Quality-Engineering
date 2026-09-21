@@ -158,7 +158,7 @@ Testing can expose trace-quality faults. A contract or integration test can chec
 
 W3C Trace Context is the primary specification for the propagation concept used here.[^w3c-trace-context] OpenTelemetry provides a widely used ecosystem for trace concepts and instrumentation.[^otel-traces] Both inform transferable vocabulary. They do not mandate a platform, guarantee cross-service coverage, or replace application-level outcome semantics.
 
-## Common Misconceptions and Pitfalls
+## Common Misconceptions or Common Pitfalls
 
 ### “A trace is a complete request history”
 

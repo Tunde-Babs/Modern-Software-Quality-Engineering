@@ -270,7 +270,7 @@ Documented practice contains several mechanisms that exist specifically to attac
 
 What these mechanisms share is not a governance model but a habit: they name the thing to be owned, and then name a role — and they are documented in enough detail that the assignment survives the person. Where they fail, the characteristic failure is an action item with no owner and no date, which is this chapter's subject in miniature.
 
-## Common Misconceptions and Pitfalls
+## Common Misconceptions or Common Pitfalls
 
 ### "We have clear ownership — every service has a team."
 

@@ -205,7 +205,7 @@ JavaScript's `Error` options can preserve a causal error when one error is wrapp
 
 These language facilities do not define an organisation's failure taxonomy. The MSQE teaching distinction in this chapter is a practical way to preserve evidence in small quality utilities.
 
-## Common Misconceptions and Pitfalls
+## Common Misconceptions or Common Pitfalls
 
 ### “Every failure should be `false`.”
 

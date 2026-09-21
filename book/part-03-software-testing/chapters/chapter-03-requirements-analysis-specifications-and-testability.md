@@ -230,7 +230,7 @@ ISO/IEC 25030:2019 provides a framework for eliciting, defining, using, and gove
 
 Specification by example and Given/When/Then notation are widely used industry practices, but their value comes from the collaborative clarification they enable—not from a particular syntax or automation framework. ISTQB’s foundation syllabus includes testing across the software development lifecycle and test-analysis concepts, but it is not the governing definition of this chapter or of Modern Quality Engineering.[^istqb-ctfl]
 
-## Common Misconceptions
+## Common Misconceptions or Common Pitfalls
 
 ### “Acceptance criteria are test cases.”
 

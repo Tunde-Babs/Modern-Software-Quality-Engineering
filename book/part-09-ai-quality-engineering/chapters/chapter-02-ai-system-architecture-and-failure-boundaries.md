@@ -137,7 +137,7 @@ Failure-boundary maps improve collaboration. A Quality Engineer can turn “the 
 
 The AI RMF frames AI risk as socio-technical and context dependent.[^nist-rmf] In practical engineering, that means the model cannot be evaluated apart from the data, interface, deployment, and people who determine how its outputs are used.
 
-## Common Misconceptions and Pitfalls
+## Common Misconceptions or Common Pitfalls
 
 ### “A citation proves the answer is grounded”
 

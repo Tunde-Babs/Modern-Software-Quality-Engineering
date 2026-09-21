@@ -162,7 +162,7 @@ An evaluator version includes its rubric, prompt, model or human protocol, examp
 
 Research identifies order and other biases in LLM-as-a-judge evaluation, reinforcing the need for controlled comparison and scoped use.[^position-bias] This is a reason to validate evaluator behaviour, not a reason to abandon structured evaluation.
 
-## Common Misconceptions and Pitfalls
+## Common Misconceptions or Common Pitfalls
 
 ### “Human review is ground truth”
 

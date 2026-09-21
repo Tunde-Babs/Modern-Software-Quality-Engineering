@@ -158,7 +158,7 @@ This is not a requirement to build a logging platform. It is a requirement to av
 
 OpenTelemetry documents logs as one of its telemetry signals and provides conceptual guidance for correlating signal types.[^otel-logs] The project is a reference ecosystem, not a required SDK or schema. Its terminology is useful when a team wants common signal concepts, but an implementation must still define its own safe semantics and evidence boundaries.
 
-## Common Misconceptions and Pitfalls
+## Common Misconceptions or Common Pitfalls
 
 ### “INFO means successful and ERROR means failed”
 

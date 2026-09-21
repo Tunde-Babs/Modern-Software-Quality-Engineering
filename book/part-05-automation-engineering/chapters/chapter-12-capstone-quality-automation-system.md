@@ -428,7 +428,7 @@ The capstone is a systems-design exercise. Its quality lies in the traceability 
 
 Professional automation systems commonly combine multiple evidence boundaries, controlled state, reporting, ownership, and continuous feedback. The particular tool or hosted platform is secondary to these decisions. Official tool documentation can inform implementation capabilities, but this capstone deliberately evaluates design reasoning before implementation.[^playwright-best-practices]
 
-## Common Misconceptions
+## Common Misconceptions or Common Pitfalls
 
 ### “The capstone is a large test suite.”
 

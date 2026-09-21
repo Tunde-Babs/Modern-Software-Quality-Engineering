@@ -177,7 +177,7 @@ Published engineering practice contains many claims about organisational structu
 
 What can be said with reasonable confidence is narrower than what is usually asserted: communication boundaries impose coordination cost; longer feedback loops degrade decision quality; and knowledge concentrated in one person is a risk to continuity. Those are defensible. "This structure produces better quality than that one" generally is not, at least not without the context that made it true somewhere.
 
-## Common Misconceptions and Pitfalls
+## Common Misconceptions or Common Pitfalls
 
 ### "Architecture mirrors the organisation."
 

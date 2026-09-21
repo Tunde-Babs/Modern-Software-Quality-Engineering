@@ -327,7 +327,7 @@ The strongest portfolio is proportionate. It directs attention to the decisions 
 
 The capstone draws on formal and transferable vocabulary without claiming that any standard supplies a complete strategy. ISO/IEC 25012 informs structured-data quality concepts.[^iso-25012] ISO/TS 8000-82 informs explicit data rules for assessment.[^iso-8000-82] W3C PROV informs provenance concepts.[^w3c-prov] The portfolio’s decision, risk, evidence, and learning models are original MSQE teaching framings.
 
-## Common Misconceptions
+## Common Misconceptions or Common Pitfalls
 
 ### “The capstone is a larger set of data checks.”
 

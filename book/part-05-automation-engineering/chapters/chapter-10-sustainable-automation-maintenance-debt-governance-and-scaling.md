@@ -259,7 +259,7 @@ Allocate maintenance by risk and feedback value. Fixing a flaky check that block
 
 Maintainability is a recognized software-quality concern in ISO/IEC 25010; it is not an argument for a universal automation architecture.[^iso25010] Modern automation tools also evolve, so teams should treat their documented upgrade and compatibility behavior as inputs to an evidence plan rather than assuming tool stability.[^playwright-release-notes]
 
-## Common Misconceptions
+## Common Misconceptions or Common Pitfalls
 
 ### “Deleting checks reduces quality.”
 

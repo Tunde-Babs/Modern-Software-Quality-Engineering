@@ -195,7 +195,7 @@ Quality Engineers contribute by connecting learning to evidence quality. They ca
 
 DORA research emphasizes that technical, process, and cultural capabilities interact; its findings should not be used to reduce DevOps to throughput metrics or a prescribed organisational chart.[^dora] The [DORA State of DevOps research](https://cloud.google.com/resources/state-of-devops) and official product documentation can provide context for a specific claim, but local evidence should drive the improvement decision.
 
-## Common Misconceptions and Pitfalls
+## Common Misconceptions or Common Pitfalls
 
 ### “Blameless means no accountability”
 

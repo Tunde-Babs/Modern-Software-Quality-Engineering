@@ -119,7 +119,7 @@ Robustness relations become durable regression checks when they are connected to
 
 Metamorphic testing is a long-standing approach for systems with difficult test oracles. In AI products it is particularly valuable when it states the expected relation precisely rather than declaring an input “adversarial” after an outcome surprises the team.[^metamorphic]
 
-## Common Misconceptions and Pitfalls
+## Common Misconceptions or Common Pitfalls
 
 ### “A prompt-injection test proves the product is secure”
 

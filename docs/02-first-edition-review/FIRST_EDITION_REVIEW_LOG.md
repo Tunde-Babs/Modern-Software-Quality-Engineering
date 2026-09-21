@@ -1423,6 +1423,8 @@ git ls-files -s book | awk '$4 ~ /chapters\/chapter-.*\.md$/ {print $4":"$2}' | 
 | `FE-EV-047` | 2026-09-10 | H — LR-RC1R declaration preparation | Supplied independent LRG-1 PASS 12/12; exact residual 10 safe / 5 early correction / 0 blocking; frozen content preserved; checkpoint NOT YET CREATED | **UNSCORED recording — DECLARATION PREPARED / AWAITING INDEPENDENT DECLARATION VERIFICATION** |
 | `FE-EV-048` | 2026-09-10 | H — WEB-5BR closure preparation | Supplied WEB-5BV2 21/0/0 Decision A; license and confirmed external references closed; approved final baseline expectations applied | **UNSCORED preparation — STOPPED FOR CHECKPOINT-LAYER ADJUDICATION; WEB-5BCV REQUIRED** |
 | `FE-EV-049` | 2026-09-14 | H — WEB-5L public launch acceptance recording | Public launch 2026-09-11; msqe.dev Controlled RC; source 7028166b223322afc97af05d6ad6dfecef09dc8f; 27 PASS / 0 FAIL / 5 INCOMPLETE | **UNSCORED — LIVE EVIDENCE RECORDED; INFRASTRUCTURE ACCEPTANCE INCOMPLETE; First Edition IN PROGRESS** |
+| `FE-EV-050` | 2026-09-21 | H — FE-1 correction authorship | Six FE-1 findings; 137/137 chapters normalized; two bounded semantic repairs; findings remain OPEN / NOT VERIFIED | **UNSCORED — CORRECTION COMPLETE / AWAITING FRESH INDEPENDENT FE-1V; First Edition IN PROGRESS** |
+| `FE-EV-051` | 2026-09-21 | H — FE-1 closure and baseline evolution | Supplied FE-1V 37/0/0 Decision A; six CLOSED / VERIFIED; 137 accepted chapter bytes frozen; exact baseline/preservation evolution; FE-1 outstanding 0 | **UNSCORED recording — FE-1 COMPLETE / INDEPENDENTLY VERIFIED / CLOSED; fresh narrow FE-1CV before checkpoint** |
 
 > **Note on the FE-EV-008 → FE-EV-009 sequence — this is not a lost record.** Three quantitative-instrument events occurred between them — **F-IR4** (fresh independent re-acceptance, 39 PASS · 0 PARTIAL · 1 FAIL), **F-IR4V2** (independent verification establishing that the instrument is intact, that E9 is correct and that the E11 total is 51) and **F-IR4F** (the E11 occurrence-decomposition correction, commit `250cfe7`) — and **none was written to this log at the time it happened.** Their outcomes are recorded in the **plan §16 phase-history table**, and `FE-EV-009` states the chain it closes.
 >
@@ -1821,3 +1823,45 @@ with provenance; no deployment ID is inferred. No infrastructure setting changed
 LR-1=0, LR-2=0, FE-1=6, FE-2=5, FE-3=4 outstanding. v1.0.0 NOT YET RELEASED.
 No canonical content, chapter/Part manifest, finding lifecycle or deterministic
 baseline constant changed. Historical event bodies/index rows remain byte-identical.
+## Event FE-EV-050 — FE-1 First Edition Package 1 Correction Authorship
+
+| Field | Value |
+| --- | --- |
+| **Event ID** | `FE-EV-050` |
+| **Date** | 2026-09-21 |
+| **Phase** | H — bounded FE-1 correction authorship |
+| **Author / independence** | Codex correction author in the separately authorized FE-1 session; no independent verification or scoring performed. A fresh independent FE-1V reviewer is required. |
+| **Incoming baseline / handoff** | `feature/fe-1-first-edition-remediation` at `1cf371e1be74cf58ceff0940573a51dd20d717f5`; live origin branch authenticated; clean worktree/index. FE-1P Decision A existing-template route; no new owner exception. |
+| **Scope** | FE-L1-004, FE-L2-005, FE-L3-005, FE-L4-002, FE-L5-002 and FE-T4-001. 137 canonical chapters assessed; 137 changed; zero already compliant. All 12 Part READMEs preserved. |
+| **Heading correction** | 82 “Common Misconceptions and Pitfalls”, 52 “Common Misconceptions” and three singleton labels become the template's literal “Common Misconceptions or Common Pitfalls”. II-12 opening/motivation/exercise labels and III-12 motivation label normalized. Permitted Motivating Scenario and titled Practical Exercise forms retained. |
+| **Semantic repairs** | FE-L5-002: explicit professional motivation added before XII-12's unchanged scope section; decision authority, evidence packet and unsolved options preserved. FE-T4-001: only I-09 Review Question 2 replaced with a bounded scenario requiring capability connections, evidence and a justified improvement choice. |
+| **Finding preservation** | All six remain **OPEN / NOT VERIFIED**, P3 / Class C / FE-REQUIRED. Original finding evidence, severity, classification, ownership, triggers and systemic provenance preserved. Five naming findings share the edition-wide normalization; no independent closure implied. |
+| **Census / allocation** | **29 total; 15 OPEN / NOT VERIFIED; 14 CLOSED / VERIFIED**. Outstanding **LR-1=0, LR-2=0, FE-1=6, FE-2=5, FE-3=4**. |
+| **Acceptance boundary** | Accepted gate manifests and website preservation expectations remain unchanged. Candidate worktree drift is expected to fail those identity guards; HEAD/index retain the accepted baseline. No weakened checks or author acceptance. Exact command outcomes and candidate identities are retained in the external author report. |
+| **Anchor / website impact** | Canonical sources continue to drive rendering, TOCs and search. Renamed headings generate new fragments; repository link analysis found no inbound links to retired fragments. External bookmarks are not inventoried. No website implementation or deployment change. |
+| **Readiness drift** | Review Plan §18.3 applies to all changed candidate chapters: affected-scope independent review and a new freeze are required before readiness is claimed for these bytes. Deployed public content is unchanged. |
+| **Current lifecycle** | FE-1 **CORRECTION COMPLETE / AWAITING FRESH INDEPENDENT FE-1V**; FE-2 and FE-3 **NOT STARTED**; First Edition **IN PROGRESS**. Public site **LIVE**; **MSQE v0.16.0 — LEARNING-READY — CONTROLLED RC**. v1.0.0 **NOT YET RELEASED**. |
+| **Evidence** | External `/tmp/msqe-fe1/MSQE-FE-1-CORRECTION-REPORT.md`, incoming identities and full tracked-source snapshot, frozen allow-list/contract, AST/link inventories, exact changed-path manifest and package SHA-256. These are author evidence requiring fresh independent authentication. |
+| **Score / verdict** | **UNSCORED — FE-1 CORRECTION AUTHORSHIP COMPLETE / AWAITING FRESH INDEPENDENT FE-1V**. No lifecycle closure. |
+| **Mutation / next action** | **UNSTAGED / UNCOMMITTED / UNPUSHED**. Fresh independent FE-1V, then separately authorized baseline/expectation evolution and closure preparation after acceptance. No checkpoint, release or deployment. |
+## Event FE-EV-051 — FE-1 Closure and Baseline Evolution
+
+| Field | Value |
+| --- | --- |
+| **Event ID** | `FE-EV-051` |
+| **Date** | 2026-09-21 |
+| **Phase** | H — verified correction closure preparation and baseline evolution |
+| **Recording role / provenance** | Codex FE-1R closure author records the supplied independently performed FE-1V; this session did not perform FE-1V or reinterpret accepted semantics. Fresh independent verifier report: `/tmp/msqe-fe1v/MSQE-FE-1V-VERIFICATION-REPORT.md`, SHA-256 `dd6cef5152acee03e1431a4a5e6fbc2a9f8c9630e6b117d2ebe9bf8b88754676`. |
+| **Independent result** | **37 PASS / 0 FAIL / 0 INCOMPLETE, Decision A — FE-1 corrections independently verified; six findings eligible for closure; 137-chapter normalization accepted; baseline/preservation evolution approved.** |
+| **Authenticated candidate** | Required HEAD `1cf371e1be74cf58ceff0940573a51dd20d717f5`; branch `feature/fe-1-first-edition-remediation`; 143 incoming changed paths exactly reproduce FE-1V package SHA-256 `8876eb47adfc6fa18152b340c804419edb00ed47f05fb42b56b89f42d170f91b`. |
+| **Finding closures** | FE-L1-004, FE-L2-005, FE-L3-005, FE-L4-002, FE-L5-002, FE-T4-001: exactly six **CLOSED / VERIFIED**. Original defect statements, P3 severity, Class C, historical evidence, provenance, owners and triggers retained. |
+| **Accepted content** | All 137 normalized chapters frozen byte-for-byte from FE-1V; II/III capstone labels, XII-12 motivation and I-09 Review Question 2 independently accepted. No new manuscript correction. |
+| **Accepted chapter identity** | 137 sorted `path:blob` records, LF-terminated; reproduced digest **`beea2f46a8a2ce9d3a7e6dc033dee510484a015a0ef2164a7bd6e2480f981822`** replaces prior `176539f62ef89a7d0fbc99ddb98d20b852eff18103d67dda4aab4b93f4d17f02` for current deterministic expectation only. Historical baselines remain intact. |
+| **Part identity** | 12 Part READMEs unchanged; digest `eafd4ba0fc55275cf8bcd9094a225e408ab22d43e019d76319ce1897b1c11451`. |
+| **Preservation evolution** | Exact source transition from the required Git baseline retains historical WEB-5 URL transforms and negative controls. FE-1V-accepted chapter hashes plus closure-only governance/tool/test hashes are explicitly enumerated. Link-count expectation 13,588 → 13,589: exactly the new XII-12 motivation TOC entry; no broken destination. Closure-only expectations require FE-1CV authentication. |
+| **Census / allocation** | **29 total; 9 OPEN / NOT VERIFIED; 20 CLOSED / VERIFIED**. Outstanding **LR-1=0, LR-2=0, FE-1=0, FE-2=5, FE-3=4**. Historical allocation retained; no non-FE-1 lifecycle change. |
+| **Layer boundary** | Updated working-tree chapter expectation matches accepted content. Unstaged HEAD/index still retain the prior chapter baseline; all-layer checks remain enforced and cannot become fully green until the separately authorized checkpoint. No staging/commit to force PASS. |
+| **Current state** | FE-1 **COMPLETE / INDEPENDENTLY VERIFIED / CLOSED**; FE-2 and FE-3 **NOT STARTED**. First Edition **IN PROGRESS**; **MSQE v0.16.0 — LEARNING-READY — CONTROLLED RC** remains **PUBLICLY LIVE AT https://msqe.dev**; v1.0.0 **NOT YET RELEASED**. |
+| **Readiness / deployment boundary** | FE-1V semantic acceptance and this closure preparation do not constitute a new §18.3 Learning-Ready freeze, First Edition completion or deployment. Deployed bytes and public configuration unchanged. |
+| **Evidence / next action** | External `/tmp/msqe-fe1r/MSQE-FE-1R-CLOSURE-PREPARATION-REPORT.md` retains exact incoming/final manifests, closure-only delta, validation and disposable negative controls. Fresh narrow **FE-1CV** required before any separately authorized checkpoint/integration. |
+| **Score / verdict** | **UNSCORED recording — FE-1 CLOSURE PREPARED / AWAITING FRESH NARROW FE-1CV**. Package **UNSTAGED / UNCOMMITTED / UNPUSHED**; no tag, release or deployment. |

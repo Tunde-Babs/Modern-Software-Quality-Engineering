@@ -176,7 +176,7 @@ Quality Engineers can use test design to examine metric behaviour. For example, 
 
 The Prometheus documentation describes counters, gauges, histograms, and summaries in an official implementation context.[^prometheus-types] Google’s SRE literature discusses latency, traffic, errors, and saturation as useful service-monitoring perspectives.[^google-monitoring] Both support conceptual learning. Neither provides a universal target, denominator, dashboard layout, or complete reliability model.
 
-## Common Misconceptions and Pitfalls
+## Common Misconceptions or Common Pitfalls
 
 ### “The average is healthy, so users are healthy”
 

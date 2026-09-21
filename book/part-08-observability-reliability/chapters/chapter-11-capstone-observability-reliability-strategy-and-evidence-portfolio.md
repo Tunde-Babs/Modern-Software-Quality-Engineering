@@ -246,7 +246,7 @@ Instrumentation improvements should follow from a named gap. In this case, safe 
 
 The SRE literature offers practical guidance for service-level objectives and alerting, while OpenTelemetry and W3C Trace Context provide signal and propagation concepts.[^google-slo][^google-alerting][^otel-signals][^w3c-trace] This capstone applies them as transferable evidence practices. It does not require an SRE organisational model, a particular vendor, or a production observability deployment.
 
-## Common Misconceptions and Pitfalls
+## Common Misconceptions or Common Pitfalls
 
 ### “The average is healthy, so there is no incident”
 

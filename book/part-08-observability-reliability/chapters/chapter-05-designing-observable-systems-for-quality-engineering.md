@@ -147,7 +147,7 @@ The design should also be resilient to telemetry failure. If a collector is dela
 
 OpenTelemetry provides conceptual signal, resource, and semantic-convention material that can inform consistent observability design.[^otel-signals] It is not a substitute for defining a business outcome, evidence boundary, or privacy decision. A quality requirement should remain meaningful if a team changes its telemetry implementation.
 
-## Common Misconceptions and Pitfalls
+## Common Misconceptions or Common Pitfalls
 
 ### “Instrumentation is an operations task after feature completion”
 

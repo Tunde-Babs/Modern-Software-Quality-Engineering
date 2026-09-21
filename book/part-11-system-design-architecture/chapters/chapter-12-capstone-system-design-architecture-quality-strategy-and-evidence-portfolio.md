@@ -453,7 +453,7 @@ ISO/IEC/IEEE 42010:2022 supplies the frame for what you are producing: architect
 
 ISO/IEC 25010:2023 supplies the quality vocabulary, and — as Chapter 11 noted — pointedly does not supply a means of combining characteristics into a single figure.[^iso-25010] That absence is the standard declining to make a business judgement. Your portfolio should decline in the same way.
 
-## Common Misconceptions and Pitfalls
+## Common Misconceptions or Common Pitfalls
 
 ### "The capstone has a correct answer."
 

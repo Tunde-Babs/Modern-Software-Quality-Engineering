@@ -275,7 +275,7 @@ Organisations that publish engineering career frameworks describe them in terms 
 
 That variation is the observation worth taking. Frameworks are **organisational artefacts** describing what one organisation values and how it allocates roles, and they are not portable instruments. Reading one closely tells you a great deal about that organisation and comparatively little about capability in general. A reader who finds one useful should use it as a description of a context they might work in, not as a measure of themselves.
 
-## Common Misconceptions and Pitfalls
+## Common Misconceptions or Common Pitfalls
 
 ### "Management is the next step."
 

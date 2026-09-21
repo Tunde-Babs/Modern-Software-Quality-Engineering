@@ -227,7 +227,7 @@ Continuous delivery practice emphasizes fast feedback and deployable systems, bu
 
 Part III Chapter 10 provides the handbook’s regression-strategy foundation. This chapter applies that reasoning to automation execution and deliberately leaves CI/CD implementation, deployment controls, and production release mechanics to later parts.
 
-## Common Misconceptions
+## Common Misconceptions or Common Pitfalls
 
 ### “Every check should run after every change.”
 

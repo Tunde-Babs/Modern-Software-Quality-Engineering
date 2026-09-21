@@ -178,7 +178,7 @@ An AI regression suite should make its decision hierarchy visible. A determinist
 
 NIST AI RMF promotes ongoing risk management across AI-system lifecycle activities.[^nist-rmf] In MSQE terms, production learning must feed a governed evidence and change process rather than becoming passive metric collection.
 
-## Common Misconceptions and Pitfalls
+## Common Misconceptions or Common Pitfalls
 
 ### “A better overall score means ship”
 

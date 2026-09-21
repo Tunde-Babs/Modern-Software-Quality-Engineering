@@ -217,7 +217,7 @@ The Open Container Initiative defines open specifications for container images, 
 
 Official documentation for a particular runtime may explain a readiness or resource setting. Use it only after first explaining the general claim, assumption, evidence, and limitation. Product-specific configuration is not transferable curriculum content.
 
-## Common Misconceptions and Pitfalls
+## Common Misconceptions or Common Pitfalls
 
 ### “A tag uniquely identifies what is running”
 

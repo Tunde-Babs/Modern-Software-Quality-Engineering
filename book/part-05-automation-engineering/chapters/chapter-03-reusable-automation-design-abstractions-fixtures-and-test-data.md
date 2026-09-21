@@ -301,7 +301,7 @@ Playwright's fixture model illustrates that setup and teardown can be scoped and
 
 Fowler's Page Object discussion identifies the pattern's purpose as an application-specific API that hides page mechanics from tests.[^fowler-page-object] That purpose aligns with this chapter's emphasis on stable interaction intent. The MSQE abstraction review prompt, fixture-scope guidance, and data-ownership questions are original educational framing; they are not industry standards or a prescribed framework architecture.
 
-## Common Misconceptions
+## Common Misconceptions or Common Pitfalls
 
 ### “Every duplicated line should become a helper.”
 

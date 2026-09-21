@@ -232,7 +232,7 @@ ISO/IEC 25010:2023 provides a formal product-quality model with nine characteris
 
 These sources provide vocabulary and reference models. They do not determine a universal quality-attribute checklist, a threshold, a toolchain, or a release decision. The evidence-portfolio progression in this chapter is MSQE educational framing for making selected product-quality questions, boundaries, and limitations explicit.
 
-## Common Misconceptions
+## Common Misconceptions or Common Pitfalls
 
 ### “Functional tests prove that a feature is high quality.”
 

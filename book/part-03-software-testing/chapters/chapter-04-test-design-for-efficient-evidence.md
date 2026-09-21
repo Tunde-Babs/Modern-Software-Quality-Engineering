@@ -224,7 +224,7 @@ ISO/IEC/IEEE 29119-4:2021 defines test-design techniques for use with the test-d
 
 These sources provide useful terminology and techniques. They do not prescribe one test inventory, risk model, or evidence threshold for every product. The selection model in this chapter is MSQE educational framing: it connects known techniques to the decision, risk, evidence value, and stated limitation that matter in a particular context.
 
-## Common Misconceptions
+## Common Misconceptions or Common Pitfalls
 
 ### “One test per partition proves the whole partition.”
 

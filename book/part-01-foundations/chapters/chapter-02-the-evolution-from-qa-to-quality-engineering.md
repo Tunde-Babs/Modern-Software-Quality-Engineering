@@ -231,7 +231,7 @@ The following comparison is a teaching model, not a maturity ranking. Teams may 
 | Test Automation | Repeatable feedback | Which checks should run consistently and economically? | Automated results, logs, diagnostic artefacts | To provide fast, repeatable feedback as change volume grows. | Can create misleading confidence when checks are low value, brittle, or poorly understood. |
 | Quality Engineering | Quality across the lifecycle | How do we design, deliver, operate, and improve systems so that desired quality is sustained? | Connected evidence from discovery through production | To coordinate quality work in fast, complex, continuously operated systems. | Requires shared ownership and cannot be delegated to one role. |
 
-## Common Misconceptions
+## Common Misconceptions or Common Pitfalls
 
 ### "Quality Engineering is just a new name for test automation"
 

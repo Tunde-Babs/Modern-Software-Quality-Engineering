@@ -199,7 +199,7 @@ Quality Engineers contribute by exposing the difference between a fast-looking a
 
 DORA research includes recovery performance among delivery and operational measures, but it does not make a low time-to-recover result evidence that every rollback practice is safe or that a team should optimize for a single metric.[^dora] Product documentation may explain a particular platform's rollback mechanics; those mechanics must not be generalized beyond the product. Compatibility and decision reasoning are transferable.
 
-## Common Misconceptions and Pitfalls
+## Common Misconceptions or Common Pitfalls
 
 ### “Rollback is always the safest action”
 

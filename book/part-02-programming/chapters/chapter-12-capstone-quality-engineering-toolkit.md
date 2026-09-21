@@ -17,7 +17,7 @@
 
 > **MSQE principle:** A Quality Engineer earns trust not by claiming that code is complete, but by making its assumptions, boundaries, evidence, failures, and limitations inspectable.
 
-## Opening Scenario
+## Opening Story
 
 The following illustrative scenario concerns a Quality Engineer asked to improve the release evidence for a product team. The team has several small scripts. One reads execution records from a file, another polls for a test export, and a third produces a spreadsheet-like summary. Each script works often enough to be useful, but no one can clearly answer what happens when the configuration is malformed, a record is duplicated, the export remains pending, or a dependency fails temporarily.
 
@@ -25,7 +25,7 @@ During a busy release, the scripts produce a result that appears reassuring: all
 
 This capstone brings the programming work of Part II together in one deliberately small system: a **Quality Engineering Toolkit** that reads fictional execution evidence, validates it, derives a useful report, simulates asynchronous readiness, and handles selected failures predictably. The objective is not to imitate a production platform. It is to make a bounded engineering contribution that you can build, test, debug, review, and explain.
 
-## Why This Capstone Matters
+## Why This Chapter Matters
 
 Earlier chapters introduced individual capabilities. You learned to read and write TypeScript, work with structured data, compose functions and modules, treat files and configuration as external boundaries, reason about asynchronous work, classify failures, debug systematically, refactor with evidence, prepare reviewable changes, and test Quality Engineering utilities. Those capabilities become professionally valuable when they can be combined without losing their purpose.
 
@@ -440,7 +440,7 @@ The progression is cumulative. The final project does not replace the earlier ch
 
 The resulting programming foundation supports later MSQE work in Software Testing Engineering, API Engineering, Automation Engineering, Data Quality Engineering, Cloud and DevOps, and related disciplines. Those domains add their own methods, risks, tools, and evidence needs. This chapter does not begin teaching them; it prepares you to approach them with stronger programming judgement.
 
-## Common Misconceptions and Pitfalls
+## Common Misconceptions or Common Pitfalls
 
 ### “This is just a coding exercise.”
 
@@ -498,7 +498,7 @@ The project declares Node.js 20 or later. Node's test-runner documentation recor
 
 Industry practice varies in libraries, language, deployment environment, and review process. The underlying engineering questions remain: where does untrusted data enter, what quality decision does a transformation support, which failures are recoverable, what information is safe to disclose, what test evidence protects the most consequential behaviour, and what operational uncertainty remains? The capstone teaches those questions without prescribing a vendor platform.
 
-## Practical Capstone Tasks
+## Practical Exercise
 
 Complete the tasks in order. Keep the scope bounded; a clear small project is stronger evidence than a partially built platform.
 

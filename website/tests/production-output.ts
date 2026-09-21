@@ -108,7 +108,8 @@ test('every internal link and fragment resolves, including noscript and absolute
       count++;
     });
   }
-  assert.equal(count, 13588, '13,587 default-DOM links plus one noscript fallback link');
+  // FE-1V: XII-12 motivation adds exactly one TOC link; all destinations checked above.
+  assert.equal(count, 13589, '13,588 default-DOM links plus one noscript fallback link');
 });
 
 test('Pages headers are copied exactly and retain WASM support without script unsafe-eval', () => {

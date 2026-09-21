@@ -218,7 +218,7 @@ Risk-based testing is established industry terminology, including in the ISTQB f
 
 ISO/IEC 25030:2019 provides a quality-requirements framework that can help stakeholders make quality needs explicit.[^iso-25030] ISO/IEC 25010:2023 provides a product-quality model that can help organise relevant quality requirements and evaluation objectives.[^iso-25010] Neither source tells a team exactly how much testing is sufficient for a particular change; context and accountable judgement remain necessary.
 
-## Common Misconceptions
+## Common Misconceptions or Common Pitfalls
 
 ### “Risk-based testing means testing only high-risk features.”
 

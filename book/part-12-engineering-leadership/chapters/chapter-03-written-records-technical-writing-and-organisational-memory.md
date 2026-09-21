@@ -206,7 +206,7 @@ Documented practice converges on a small set of structural features rather than 
 
 The agreement is telling. Each was developed by people who discovered independently that recording the decision alone was insufficient, and that what future readers needed was the reasoning, the alternatives, and a way to tell whether the record still applied.
 
-## Common Misconceptions and Pitfalls
+## Common Misconceptions or Common Pitfalls
 
 ### "We have documentation."
 

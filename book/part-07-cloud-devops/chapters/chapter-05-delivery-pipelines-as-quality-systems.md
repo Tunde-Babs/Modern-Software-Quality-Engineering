@@ -235,7 +235,7 @@ DORA research treats continuous delivery, cloud infrastructure, and related tech
 
 Git's version-control concepts support traceable input and review records.[^git] CI/CD product documentation can explain a concrete retry, approval, or artifact mechanism, but it should be cited as product-specific and never presented as the general delivery model.
 
-## Common Misconceptions and Pitfalls
+## Common Misconceptions or Common Pitfalls
 
 ### “Green means ready”
 

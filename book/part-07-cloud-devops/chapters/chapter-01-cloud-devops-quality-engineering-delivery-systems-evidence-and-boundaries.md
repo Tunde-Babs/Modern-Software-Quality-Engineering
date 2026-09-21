@@ -212,7 +212,7 @@ NIST SP 800-145 supplies a vendor-neutral vocabulary for cloud service and deplo
 
 The Open Container Initiative provides interoperable specifications for image, runtime, and distribution concepts.[^oci] Later chapters use those concepts to distinguish an artifact from a running workload. A product name may help explain a local implementation, but it must not silently become the general model.
 
-## Common Misconceptions and Pitfalls
+## Common Misconceptions or Common Pitfalls
 
 ### “A deployment is a single event”
 

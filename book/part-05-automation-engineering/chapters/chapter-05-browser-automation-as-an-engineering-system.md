@@ -267,7 +267,7 @@ Playwright provides a useful, bounded illustration of current browser-tool pract
 
 They do not make a suite tool-independent, automatically accessible, business-complete, parallel-safe at the backend, or diagnostically sufficient. The industry lesson is broader: understand what a tool feature actually controls, then design the evidence claim, state ownership, and limitation around it. A team can apply the same discipline with different browser tools and frameworks.
 
-## Common Misconceptions
+## Common Misconceptions or Common Pitfalls
 
 ### “A real browser is the most realistic boundary, so it is always the best one.”
 

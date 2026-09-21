@@ -270,7 +270,7 @@ RFC 9110 defines HTTP authentication challenges and the semantics of 401, 403, a
 
 These sources do not prescribe one authorization architecture, role model, error policy, or testing tool. The access lens and evidence matrix in this chapter are MSQE educational framing, intended to help readers connect an API access question to a consumer outcome, evidence boundary, and residual risk.
 
-## Common Misconceptions
+## Common Misconceptions or Common Pitfalls
 
 ### “A valid token means the caller is authorised.”
 

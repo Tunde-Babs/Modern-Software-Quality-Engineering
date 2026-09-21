@@ -225,7 +225,7 @@ Aviation and healthcare incident-reporting systems, and operational engineering'
 
 The transferable observation is not a particular process. It is that the durable fix is structural rather than dispositional.
 
-## Common Misconceptions and Pitfalls
+## Common Misconceptions or Common Pitfalls
 
 ### "If it's important, escalate it."
 

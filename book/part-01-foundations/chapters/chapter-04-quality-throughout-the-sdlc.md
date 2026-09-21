@@ -308,7 +308,7 @@ DORA research contributes operationally focused measures for examining delivery 
 
 MSQE draws a practical conclusion from these sources: establish lifecycle coverage, make risks and evidence visible, and use feedback to improve decisions. This is an **original MSQE synthesis**, not a formal definition from ISO, IEEE, DORA, or Google.
 
-## Common Anti-Patterns
+## Common Misconceptions or Common Pitfalls
 
 ### Throwing Work Over the Wall
 

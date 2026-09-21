@@ -277,7 +277,7 @@ Brewer's 2012 reassessment of CAP is instructive precisely because it is a retra
 
 The pattern is worth noting beyond CAP. A compressed heuristic circulates, becomes a slogan, gets applied as a classification scheme, and outlives its accuracy. Part XI's response is not to avoid such results but to state what they establish and where they stop.
 
-## Common Misconceptions and Pitfalls
+## Common Misconceptions or Common Pitfalls
 
 ### "CAP means we must choose two of three."
 

@@ -173,7 +173,7 @@ The primary oracle for a consequential action is often deterministic: was the to
 
 The NIST AI RMF frames risk management as socio-technical and context-specific.[^nist-rmf] For tool use, that context includes user authority, workflow design, API semantics, operational recovery, and people affected by an erroneous action.
 
-## Common Misconceptions and Pitfalls
+## Common Misconceptions or Common Pitfalls
 
 ### “The model chose the right tool, so the action is safe”
 

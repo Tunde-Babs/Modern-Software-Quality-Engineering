@@ -259,7 +259,7 @@ Keep identity evidence matrices versioned with role rules, resource states, rout
 
 OWASP ASVS provides a widely used verification framework that can inform coverage questions around authentication and access control; it is an open verification standard, not a legal requirement or proof of system security.[^owasp-asvs] RFC 9700 provides OAuth security best-current-practice guidance where OAuth semantics are relevant; it does not replace application authorization decisions.[^rfc-9700]
 
-## Common Misconceptions and Pitfalls
+## Common Misconceptions or Common Pitfalls
 
 ### “The user is logged in, so the request should be allowed.”
 

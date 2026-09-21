@@ -322,7 +322,7 @@ The sequence is designed to be coherent, not restrictive. A reader may need to e
 
 ---
 
-## Common Misconceptions
+## Common Misconceptions or Common Pitfalls
 
 ### “AI will replace Quality Engineers.”
 

@@ -136,7 +136,7 @@ Metrics should be reviewed with data provenance, label quality, population slice
 
 Precision-recall analysis is widely used to examine class-imbalanced decisions, but its interpretation remains task-specific.[^davis-goadrich] The metric is not the release policy; it is one input to a decision with operational and user consequences.
 
-## Common Misconceptions and Pitfalls
+## Common Misconceptions or Common Pitfalls
 
 ### “Accuracy is the quality score”
 

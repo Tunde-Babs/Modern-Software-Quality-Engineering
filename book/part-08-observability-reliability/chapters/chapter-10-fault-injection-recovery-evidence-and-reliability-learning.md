@@ -145,7 +145,7 @@ Testing and operational evidence reinforce each other here. A controlled test ca
 
 Google’s SRE literature treats postmortems and their follow-up actions as a way to learn from significant incidents.[^google-postmortem] It is practitioner guidance. The experiment model in this chapter is an MSQE teaching framework intended to make safety, evidence, and limitation explicit; it is not a certification programme or a mandate to run production experiments.
 
-## Common Misconceptions and Pitfalls
+## Common Misconceptions or Common Pitfalls
 
 ### “Fault injection means breaking production”
 

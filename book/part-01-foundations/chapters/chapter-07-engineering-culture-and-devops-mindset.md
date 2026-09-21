@@ -304,7 +304,7 @@ Google SRE's published postmortem practices connect blameless language with lear
 
 DORA research and guidance connect technical delivery capabilities with organisational and cultural outcomes, while cautioning teams to interpret measures in service context.[^dora] These sources support an MSQE conclusion: culture is not a substitute for engineering controls, and engineering controls are not independent of culture. Teams need both to deliver, operate, and improve software responsibly.
 
-## Common Misconceptions
+## Common Misconceptions or Common Pitfalls
 
 ### “DevOps Is a Job Title”
 

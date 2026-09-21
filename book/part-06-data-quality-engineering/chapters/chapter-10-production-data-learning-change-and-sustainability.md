@@ -217,7 +217,7 @@ Sustainable data quality is a property of maintainable definitions, evidence, an
 
 Formal data-quality references support explicit rules and structured-data terminology. ISO/TS 8000-82 addresses data rules for assessment, and ISO/IEC 25012 provides a data-quality model.[^iso-8000-82][^iso-25012] They do not prescribe incident processes, monitoring platforms, or organisational ownership structures. Those must be shaped by context while remaining inspectable.
 
-## Common Misconceptions
+## Common Misconceptions or Common Pitfalls
 
 ### “Correcting the affected rows resolves the defect.”
 

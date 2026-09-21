@@ -131,7 +131,7 @@ This is not a requirement to run uncontrolled faults in production. The next cha
 
 The Google SRE literature discusses overload and the need for systems to shed load or protect critical work under pressure.[^google-overload] It provides useful practitioner reasoning, not a universal pattern catalogue or threshold policy. Product and dependency context determine whether a mechanism is acceptable.
 
-## Common Misconceptions and Pitfalls
+## Common Misconceptions or Common Pitfalls
 
 ### “Retries increase reliability”
 

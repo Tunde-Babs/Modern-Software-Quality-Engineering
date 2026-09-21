@@ -212,7 +212,7 @@ The Security Quality and Threat Evidence Model should be small enough to use. St
 
 NIST CSF 2.0 frames risk management through outcomes and context; it does not prescribe a particular threat-model diagram or verification product.[^nist-csf] This supports an engineering approach in which evidence is proportional to asset and decision context.
 
-## Common Misconceptions and Pitfalls
+## Common Misconceptions or Common Pitfalls
 
 ### “Authentication proves authorization.”
 

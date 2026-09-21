@@ -296,7 +296,7 @@ RFC 9110 defines HTTP method idempotency, conditional requests, ETags, and 412 P
 
 The RFCs define protocol semantics; the Amazon article describes one organisation’s practice. None prescribes a universal idempotency key, transaction model, error design, or concurrency implementation. The stateful-operation and stateful-evidence models in this chapter are MSQE educational framing.
 
-## Common Misconceptions
+## Common Misconceptions or Common Pitfalls
 
 ### “HTTP is stateless, so the API has no state.”
 

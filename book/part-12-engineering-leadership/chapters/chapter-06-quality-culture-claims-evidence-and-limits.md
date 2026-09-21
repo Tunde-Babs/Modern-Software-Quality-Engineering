@@ -192,7 +192,7 @@ Documented practice in safety-critical domains treats culture assessment as a sp
 
 The transferable lesson for a Quality Engineer is not to acquire those instruments. It is that if measuring culture properly requires a validated instrument and a trained assessor, then a paragraph written from three retrospectives and a nine-response survey should be worded accordingly.
 
-## Common Misconceptions and Pitfalls
+## Common Misconceptions or Common Pitfalls
 
 ### "Our culture is blameless."
 

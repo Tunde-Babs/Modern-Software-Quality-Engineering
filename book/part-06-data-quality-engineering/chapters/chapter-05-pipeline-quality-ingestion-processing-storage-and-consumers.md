@@ -207,7 +207,7 @@ Data-quality assessment benefits from explicit, reviewable rules and traceable o
 
 In mature delivery environments, teams commonly distinguish accepted, rejected, delayed, and corrected data rather than reducing all outcomes to job success. The useful practice is transferable: make the population and consumer consequence of exceptions visible.
 
-## Common Misconceptions
+## Common Misconceptions or Common Pitfalls
 
 ### “All stages are green, so the consumer has complete data.”
 

@@ -219,7 +219,7 @@ The ISO/IEC/IEEE 29119 series provides a reference for testing concepts and proc
 
 These sources do not prescribe a framework, a single test-double taxonomy, or a universal isolation policy. The reliability dimensions and investigation sequence in this chapter are MSQE educational framing for connecting automation design to evidence quality.
 
-## Common Misconceptions
+## Common Misconceptions or Common Pitfalls
 
 ### “A passing automated check is automatically trustworthy.”
 

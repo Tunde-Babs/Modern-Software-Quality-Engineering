@@ -211,7 +211,7 @@ RFC 9110 defines HTTP semantics, including which request methods are idempotent 
 
 Semantic Versioning 2.0.0 is a community specification, not a formal standard, and it defines version-number semantics: a breaking change requires a major increment.[^semver] It is genuinely useful for signalling intent, and it does not determine whether a change is breaking — that determination requires exactly the per-layer, per-consumer analysis this chapter describes. Atlas's change would attract an argument about whether it is a minor or a major version, and the argument would be a proxy for the undecided open-versus-closed enumeration question. The version number is a communication of a conclusion, not a substitute for reaching one.
 
-## Common Misconceptions and Pitfalls
+## Common Misconceptions or Common Pitfalls
 
 ### "The schema check passed, so it is compatible."
 

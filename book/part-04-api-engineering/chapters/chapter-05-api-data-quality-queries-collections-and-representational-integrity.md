@@ -316,7 +316,7 @@ OpenAPI defines a language-agnostic description format for HTTP APIs, including 
 
 The data-quality evidence prompt in this chapter is MSQE educational framing. It is not a data-governance standard, a reconciliation method, or a promise that an API can expose every provenance detail.
 
-## Common Misconceptions
+## Common Misconceptions or Common Pitfalls
 
 ### “If every returned record is valid, the collection is correct.”
 

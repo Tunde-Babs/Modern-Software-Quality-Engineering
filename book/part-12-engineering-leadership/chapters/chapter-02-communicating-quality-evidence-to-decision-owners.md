@@ -232,7 +232,7 @@ Documented practice in high-consequence domains tends to converge on the same st
 
 The common feature is not a particular template. It is that the condition and the population are treated as part of the result rather than as metadata — so that compressing them out is visibly an omission rather than a formatting choice.
 
-## Common Misconceptions and Pitfalls
+## Common Misconceptions or Common Pitfalls
 
 ### "Executives only want the headline."
 

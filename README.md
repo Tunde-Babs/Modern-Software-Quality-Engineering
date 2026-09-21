@@ -1,5 +1,14 @@
 <p align="center">
 
+> **Current FE-1R closure preparation — 2026-09-21:** FE-1 **COMPLETE / INDEPENDENTLY VERIFIED / CLOSED** (FE-EV-051); closure package **AWAITING FRESH NARROW FE-1CV BEFORE CHECKPOINT**.
+> Supplied independent **FE-1V: 37 PASS / 0 FAIL / 0 INCOMPLETE, Decision A**, accepted correction package `8876eb47adfc6fa18152b340c804419edb00ed47f05fb42b56b89f42d170f91b`. FE-1R records that acceptance; it did not perform FE-1V.
+> Exactly six FE-1 findings are **CLOSED / VERIFIED**. Census: **29 total; 9 OPEN / NOT VERIFIED; 20 CLOSED / VERIFIED**. Outstanding allocation: **LR-1=0, LR-2=0, FE-1=0, FE-2=5, FE-3=4**.
+> **FE-2: NOT STARTED. FE-3: NOT STARTED. First Edition: IN PROGRESS.** **MSQE v0.16.0 — LEARNING-READY — CONTROLLED RC** remains **PUBLICLY LIVE AT https://msqe.dev**. v1.0.0 **NOT YET RELEASED**.
+> All 137 FE-1V-accepted chapter bytes remain frozen. Accepted chapter identity and directly coupled deterministic expectations evolve in this closure package; Part README identity is unchanged. HEAD/index still contain the pre-FE-1 chapter baseline until a separately authorized checkpoint; those layer failures are not waived.
+> This statement supersedes earlier current-activity/census summaries, which retain their historical evidence. FE-1V acceptance does not itself establish a new Learning-Ready freeze under Review Plan §18.3 or change the deployed baseline.
+> Next: fresh narrow **FE-1CV**, then separately authorized checkpoint/integration. **UNSTAGED / UNCOMMITTED / UNPUSHED**; no deployment.
+
+
 
 > **Current public availability — WEB-5L, recorded 2026-09-14:**
 > **MSQE v0.16.0 — LEARNING-READY — CONTROLLED RC** is **PUBLICLY AVAILABLE AT

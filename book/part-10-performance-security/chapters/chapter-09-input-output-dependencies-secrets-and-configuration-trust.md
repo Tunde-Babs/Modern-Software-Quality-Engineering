@@ -215,7 +215,7 @@ Use a trust review to connect a data flow to its receiving assumptions, evidence
 
 The OWASP Top 10 and API Security Top 10 offer awareness and verification prompts around input handling, access control, sensitive information, and configuration. They are practitioner guidance, not a complete security model or compliance substitute.[^owasp-top10][^owasp-api]
 
-## Common Misconceptions and Pitfalls
+## Common Misconceptions or Common Pitfalls
 
 ### “Rejected malformed input proves validation.”
 

@@ -281,7 +281,7 @@ The Software Engineering Institute's Architecture Tradeoff Analysis Method (ATAM
 
 The wider point is that architecture evaluation is an established discipline with a research literature behind it. A Quality Engineer contributing to an architecture conversation is not improvising a new practice. They are participating in one, with the specific contribution of evidence discipline.
 
-## Common Misconceptions and Pitfalls
+## Common Misconceptions or Common Pitfalls
 
 ### "The architecture is the diagram."
 

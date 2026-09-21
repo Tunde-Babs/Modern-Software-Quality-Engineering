@@ -180,7 +180,7 @@ ISO/IEC/IEEE 29119-2 provides generic test-process context for testing activitie
 
 The Amazon source describes one organisation's practice; it does not make AWS tooling or architecture a requirement. None of these sources prescribes a REST style, an API tool, a contract-testing framework, or one distributed-system strategy. The service-evidence model in this chapter is MSQE educational framing for selecting proportionate evidence across interaction boundaries.
 
-## Common Misconceptions
+## Common Misconceptions or Common Pitfalls
 
 ### “One successful request proves the service integration works.”
 

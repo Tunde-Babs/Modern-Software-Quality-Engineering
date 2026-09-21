@@ -243,7 +243,7 @@ Those language capabilities matter to Quality Engineering because automation and
 
 The Software Engineering Body of Knowledge treats software construction, configuration management, and engineering management as connected professional concerns rather than isolated coding activities.[^swebok] MSQE applies that principle to Quality Engineering assets: a test, utility, or report processor may be small, but if teams rely on it, its design and maintenance affect the wider delivery system.
 
-## Common Misconceptions and Pitfalls
+## Common Misconceptions or Common Pitfalls
 
 ### “Test code is disposable.”
 

@@ -383,7 +383,7 @@ The Node.js filesystem documentation describes the promise-based filesystem APIs
 
 npm documentation describes package manifests, production and development dependency categories, semantic version ranges, lockfiles, and scripts.[^npm-dependencies][^npm-package-json][^npm-lockfile][^npm-scripts] These documents support reproducible dependency state but do not relieve a team of reviewing the necessity, update behaviour, and operational implications of its dependencies.
 
-## Common Misconceptions and Pitfalls
+## Common Misconceptions or Common Pitfalls
 
 ### “An environment variable already has the type I need.”
 

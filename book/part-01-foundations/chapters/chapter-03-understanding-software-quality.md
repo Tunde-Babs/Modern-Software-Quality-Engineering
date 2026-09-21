@@ -301,7 +301,7 @@ Publicly available practices illustrate this direction without prescribing a ven
 
 These are sources of principles, not a checklist to adopt wholesale. A team should choose methods, measures, and controls that match its domain, architecture, users, regulatory context, and consequences of failure. A safety-critical system may need independent assessment and formal assurance. A small internal reporting tool may need a lighter approach. Both still need an explicit understanding of what quality means for the people who rely on them.
 
-## Common Misconceptions
+## Common Misconceptions or Common Pitfalls
 
 ### "More tests always mean better quality"
 

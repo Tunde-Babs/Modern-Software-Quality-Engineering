@@ -1,5 +1,14 @@
 # First Edition Findings
 
+> **Current FE-1R closure preparation — 2026-09-21:** FE-1 **COMPLETE / INDEPENDENTLY VERIFIED / CLOSED** (FE-EV-051); closure package **AWAITING FRESH NARROW FE-1CV BEFORE CHECKPOINT**.
+> Supplied independent **FE-1V: 37 PASS / 0 FAIL / 0 INCOMPLETE, Decision A**, accepted correction package `8876eb47adfc6fa18152b340c804419edb00ed47f05fb42b56b89f42d170f91b`. FE-1R records that acceptance; it did not perform FE-1V.
+> Exactly six FE-1 findings are **CLOSED / VERIFIED**. Census: **29 total; 9 OPEN / NOT VERIFIED; 20 CLOSED / VERIFIED**. Outstanding allocation: **LR-1=0, LR-2=0, FE-1=0, FE-2=5, FE-3=4**.
+> **FE-2: NOT STARTED. FE-3: NOT STARTED. First Edition: IN PROGRESS.** **MSQE v0.16.0 — LEARNING-READY — CONTROLLED RC** remains **PUBLICLY LIVE AT https://msqe.dev**. v1.0.0 **NOT YET RELEASED**.
+> All 137 FE-1V-accepted chapter bytes remain frozen. Accepted chapter identity and directly coupled deterministic expectations evolve in this closure package; Part README identity is unchanged. HEAD/index still contain the pre-FE-1 chapter baseline until a separately authorized checkpoint; those layer failures are not waived.
+> This statement supersedes earlier current-activity/census summaries, which retain their historical evidence. FE-1V acceptance does not itself establish a new Learning-Ready freeze under Review Plan §18.3 or change the deployed baseline.
+> Next: fresh narrow **FE-1CV**, then separately authorized checkpoint/integration. **UNSTAGED / UNCOMMITTED / UNPUSHED**; no deployment.
+
+
 | Field | Value |
 | --- | --- |
 | **Project** | Modern Software Quality Engineering (MSQE) |
@@ -211,10 +220,11 @@ Every finding records all of the following. A row missing any mandatory field is
 | **Evidence** | Heading census across all 22 L1 chapters against the template's required-section list. **In every case the required content is present** — only the label differs. The other 19 chapters conform exactly. |
 | **Consequence** | Navigation coherence is weakened: a reader or tool locating a required section by heading will miss it in these three chapters. No content is absent. |
 | **Recommended action** | Phase H: rename to template headings, or record the capstone variant as an approved template exception. Not corrected here. |
-| **Status** | `OPEN` |
+| **Status** | `CLOSED` |
 | **Owner** | Project Founder |
 | **Revision trigger** | Escalate to P2 if later batches show the edition has no consistent capstone-heading convention |
-| **Verification** | `NOT VERIFIED` |
+| **Verification** | `VERIFIED` |
+| **FE-1R closure evidence** | FE-EV-051, 2026-09-21: FE-1 correction package `8876eb47adfc6fa18152b340c804419edb00ed47f05fb42b56b89f42d170f91b` independently accepted by supplied FE-1V, **37 PASS / 0 FAIL / 0 INCOMPLETE, Decision A**. 137-chapter systemic naming normalization and applicable capstone labels accepted. FE-1R records the independent result and CLOSED / VERIFIED disposition; original defect, severity, provenance and trigger preserved. Fresh narrow FE-1CV required before checkpoint. |
 
 ### FE-L1-005 — The accepted Tier-1 census is not reproducible from the committed classifier text
 
@@ -484,9 +494,10 @@ These are **not** manuscript findings and **do not** appear in the register abov
 | **Finding** | Two headings deviate: **"Why This Capstone Matters"** for the template's *Why This Chapter Matters*, and **"Common Mistakes"** for *Common Misconceptions or Common Pitfalls*. Content is present in both cases. |
 | **Evidence** | Heading census across all 34 L2 chapters: **33 of 34 use "Common Misconceptions"**; this capstone alone uses "Common Mistakes". The **Part IV and Part V capstones both use the conformant "Why This Chapter Matters"**. |
 | **Consequence** | Navigation by heading fails for these two sections in one chapter. |
-| **Status** | `OPEN` · **Owner** Project Founder |
+| **Status** | `CLOSED` · **Owner** Project Founder |
 | **Revision trigger assessment** | FE-L1-004's trigger was *"escalate to P2 if later batches show the edition has no consistent capstone-heading convention"*. **L2 evidence WEAKENS that case**: two of three L2 capstones conform, and 33 of 34 chapters use the template heading. **A consistent convention does exist; the deviations are isolated. Severity is NOT escalated.** |
-| **Verification** | `NOT VERIFIED` |
+| **Verification** | `VERIFIED` |
+| **FE-1R closure evidence** | FE-EV-051, 2026-09-21: FE-1 correction package `8876eb47adfc6fa18152b340c804419edb00ed47f05fb42b56b89f42d170f91b` independently accepted by supplied FE-1V, **37 PASS / 0 FAIL / 0 INCOMPLETE, Decision A**. 137-chapter systemic naming normalization and applicable capstone labels accepted. FE-1R records the independent result and CLOSED / VERIFIED disposition; original defect, severity, provenance and trigger preserved. Fresh narrow FE-1CV required before checkpoint. |
 
 ### FE-L3-001 — Lifecycle drift in the Part VI and Part VII READMEs (systemic with FE-L1-001 and FE-L2-001)
 
@@ -592,8 +603,9 @@ These are **not** manuscript findings and **do not** appear in the register abov
 | **Evidence** | Heading census across all 33 L3 chapters: Part VI 11/11 `Common Misconceptions`; Part VII 11/11 and Part VIII 11/11 `Common Misconceptions and Pitfalls`. Each Part is internally consistent; the divergence is between Parts. Structural variation also recorded, non-defect: `Chapter Purpose` and `QA → QE Transition` appear in VII and VIII (22/22) but not VI, and `Navigation` appears only in VII (11/11). |
 | **Consequence** | Navigation by exact heading fails across the batch boundary. No content is missing — all 15 required template sections are present in 33 of 33 chapters. |
 | **Revision trigger assessment** | **FE-L1-004's trigger — *"escalate to P2 if later batches show the edition has no consistent capstone-heading convention"* — is NOT met by L3.** All three L3 capstones use the template heading `Why This Chapter Matters`, as do all 33 chapters. The trigger remains armed for L4 and L5. |
-| **Status** | `OPEN` · **Owner** Project Founder |
-| **Verification** | `NOT VERIFIED` |
+| **Status** | `CLOSED` · **Owner** Project Founder |
+| **Verification** | `VERIFIED` |
+| **FE-1R closure evidence** | FE-EV-051, 2026-09-21: FE-1 correction package `8876eb47adfc6fa18152b340c804419edb00ed47f05fb42b56b89f42d170f91b` independently accepted by supplied FE-1V, **37 PASS / 0 FAIL / 0 INCOMPLETE, Decision A**. 137-chapter systemic naming normalization and applicable capstone labels accepted. FE-1R records the independent result and CLOSED / VERIFIED disposition; original defect, severity, provenance and trigger preserved. Fresh narrow FE-1CV required before checkpoint. |
 
 ---
 
@@ -644,8 +656,9 @@ These are **not** manuscript findings and **do not** appear in the register abov
 | **Evidence** | Heading census across all 24 L4 chapters: Part IX 12/12 and Part X 12/12 use `Common Misconceptions and Pitfalls`; 0/24 use the Part I–VI form `Common Misconceptions`. **The edition now carries two internally consistent conventions, neither of which is the template's**: Parts I–VI use `Common Misconceptions` and Parts VII–X use `Common Misconceptions and Pitfalls`. All 15 required template sections are present in 24/24 chapters; `Chapter Navigation` also appears in 24/24, where Part VII used `Navigation`. |
 | **Consequence** | Navigation by exact heading fails across the VI/VII boundary. No content is missing. |
 | **Revision trigger assessment** | **FE-L1-004's trigger — *"escalate to P2 if later batches show the edition has no consistent capstone-heading convention"* — is NOT met by L4.** Both L4 capstones (IX ch12, X ch12) use the template heading `Why This Chapter Matters`, as do all 24 chapters. **The trigger remains armed for L5.** The split is two consistent conventions, not an absence of convention, so no escalation is recorded. |
-| **Status** | `OPEN` · **Owner** Project Founder |
-| **Verification** | `NOT VERIFIED` |
+| **Status** | `CLOSED` · **Owner** Project Founder |
+| **Verification** | `VERIFIED` |
+| **FE-1R closure evidence** | FE-EV-051, 2026-09-21: FE-1 correction package `8876eb47adfc6fa18152b340c804419edb00ed47f05fb42b56b89f42d170f91b` independently accepted by supplied FE-1V, **37 PASS / 0 FAIL / 0 INCOMPLETE, Decision A**. 137-chapter systemic naming normalization and applicable capstone labels accepted. FE-1R records the independent result and CLOSED / VERIFIED disposition; original defect, severity, provenance and trigger preserved. Fresh narrow FE-1CV required before checkpoint. |
 
 ---
 
@@ -706,8 +719,9 @@ These are **not** manuscript findings and **do not** appear in the register abov
 | **Evidence** | Required-section census across all 24 L5 chapters: 21/24 carry all 15 required sections; the three exceptions are listed above. Deviation **(c)** is qualitatively different from every prior instance in this group: `What This Capstone Is` states **scope** (*"This capstone asks one question…"*) where the template requires **motivation**, so this is a function substitution rather than a rename. **It is the only chapter in all 137 with no `Why This…` section**; edition-wide the heading census is 134 `Why This Chapter Matters`, 2 `Why This Capstone Matters`, 1 absent. |
 | **Consequence** | For (a) and (b), navigation by exact heading fails and no content is missing. For (c), the edition's closing chapter omits a required motivational section; the Opening Quote and Opening Story partly carry that load, so documenting is sufficient and the severity stays **P3**. |
 | **FE-L1-004 revision-trigger assessment — edition scope, assessable for the first time** | The trigger reads *"escalate to P2 if later batches show the edition has no consistent capstone-heading convention."* With the longitudinal axis closed, all 11 capstones are now measurable: **8 use `Why This Chapter Matters`, 2 use `Why This Capstone Matters` (Parts II, III), 1 has none (Part XII)**. **Assessment: NOT met on a strict reading** — a dominant convention exists at 8/11 (73%). **The margin is narrow and the judgement is recorded rather than assumed:** three forms across eleven capstones, and an edition-wide misconceptions split of Parts I–VI versus VII–XII in which **neither** form matches the template. **No severity was changed unilaterally.** A reviewer could reasonably read the trigger as met; that decision belongs to the owner at Phase H or T6. |
-| **Status** | `OPEN` · **Owner** Project Founder |
-| **Verification** | `NOT VERIFIED` |
+| **Status** | `CLOSED` · **Owner** Project Founder |
+| **Verification** | `VERIFIED` |
+| **FE-1R closure evidence** | FE-EV-051, 2026-09-21: FE-1 correction package `8876eb47adfc6fa18152b340c804419edb00ed47f05fb42b56b89f42d170f91b` independently accepted by supplied FE-1V, **37 PASS / 0 FAIL / 0 INCOMPLETE, Decision A**. 137-chapter naming normalization and XII-12 motivation repair accepted. FE-1R records the independent result and CLOSED / VERIFIED disposition; original defect, severity, provenance and trigger preserved. Fresh narrow FE-1CV required before checkpoint. |
 
 ---
 
@@ -985,8 +999,9 @@ These are **not** manuscript findings and **do not** appear in the register abov
 | **Evidence** | Full T4 exercise census: **1,724** prompts across 137 chapters. The 71 initially recall-shaped review/interview candidates received contextual review; **1,723** require a distinction, reason, example, application, boundary choice or decision. This is the sole prompt whose requested answer is stated directly as the requested proposition. Ledger: `PRG-T4-05` and `T4-009`. |
 | **Consequence** | The question confirms retrieval of a sentence rather than requiring the reader to explain the framework's use or apply it to a quality problem. It is confined to one review question and does not leave a capability untaught. |
 | **Recommended action** | Phase H, if authorised: replace the retrieval wording with a bounded application or comparison prompt, for example asking how the framework identifies a capability gap in a stated scenario. **T4 made no manuscript change.** |
-| **Status** | `OPEN` · **Owner** Project Founder |
-| **Verification** | `NOT VERIFIED` |
+| **Status** | `CLOSED` · **Owner** Project Founder |
+| **Verification** | `VERIFIED` |
+| **FE-1R closure evidence** | FE-EV-051, 2026-09-21: FE-1 correction package `8876eb47adfc6fa18152b340c804419edb00ed47f05fb42b56b89f42d170f91b` independently accepted by supplied FE-1V, **37 PASS / 0 FAIL / 0 INCOMPLETE, Decision A**. I-09 Review Question 2 semantic repair accepted; overlapping chapter naming normalization accepted. FE-1R records the independent result and CLOSED / VERIFIED disposition; original defect, severity, provenance and trigger preserved. Fresh narrow FE-1CV required before checkpoint. |
 
 **T4 relationships to standing findings.** The Level 10 artefact census independently sees the nine malformed-table locations as reader-facing output defects but creates **no duplicate** of `FE-T6-001`; those tables are not treated as evidence that the artefacts fail to accumulate. The non-existent/contradictory editorial authority remains `FE-T6-002`'s governance root cause and is not reclassified by T4. No existing finding changed severity, blocker class or scope. **Open Class-B Review-Execution Blockers: 0.**
 
@@ -1199,21 +1214,24 @@ The required sequence after Phase H is: **Phase I independent closure verificati
 
 These are **execution-layer dispositions**, separate from severity, defect class, blocker class, systemic grouping, closure status and verification status. Historical classification is never mutated merely because a finding receives one. In particular, DEFER-CANDIDATE does not change a record to `DEFERRED` or `ACCEPTED`. Any such lifecycle decision still requires the established owner record. P2 acceptance retains named owner, rationale, accepted consequence and revision trigger; P3 retains conscious documented acceptance. Final blocker handling remains governed by Plan §7 and §13, not by an intermediate label.
 
-The conservative initial allocation reserved LR-1/LR-2 for learning blockers and retained the other work as FE-REQUIRED. The current outstanding allocation below excludes the two independently verified LR-1 and three independently verified LR-2 closures while preserving their history. A later, explicitly recorded owner proposal may identify a DEFER-CANDIDATE only with evidence of tolerable learning impact, owner, rationale, final destination and revision trigger, followed by independent Learning-Ready assessment. No such decision is fabricated in FTR-1. The residual inventory must include **every outstanding finding**, even if its disposition remains FE-REQUIRED; any unmet learning criterion blocks PASS. No label alone establishes learner safety or suitability.
+The conservative initial allocation reserved LR-1/LR-2 for learning blockers and retained the other work as FE-REQUIRED. The current outstanding allocation below excludes the two independently verified LR-1, three independently verified LR-2 and six independently verified FE-1 closures while preserving their history. A later, explicitly recorded owner proposal may identify a DEFER-CANDIDATE only with evidence of tolerable learning impact, owner, rationale, final destination and revision trigger, followed by independent Learning-Ready assessment. No such decision is fabricated in FTR-1. The residual inventory must include **every outstanding finding**, even if its disposition remains FE-REQUIRED; any unmet learning criterion blocks PASS. No label alone establishes learner safety or suitability.
 
-### 8.2 Canonical current 15-finding allocation
+### 8.2 Canonical current 9-finding allocation
 
 | Package | Historical origin | Finding IDs | Execution disposition | Dependency / verification retained |
 | --- | --- | --- | --- | --- |
 | **LR-1** | H4 |  | LR-BLOCKER (historical) | Zero outstanding; original two findings CLOSED / VERIFIED at LR-1V, recorded by FE-EV-043; full status/maturity/navigation verification retained |
 | **LR-2** | H5 |  | LR-BLOCKER (historical) | Zero outstanding; FE-L2-003, FE-L3-003 and FE-T5-001 CLOSED / VERIFIED on supplied LR-2V2 25 PASS / 0 FAIL, Decision A, recorded at FE-EV-046; continuity and persona-evidence verification retained |
-| **FE-1** | H4 and H7 | FE-L1-004 · FE-L2-005 · FE-L3-005 · FE-L4-002 · FE-L5-002 · FE-T4-001 | FE-REQUIRED | H1 authority preserved; LR-1 integrated before overlapping Part-I work; full heading/component census and independent Level-16 contextual exercise review |
+| **FE-1** | H4 and H7 |  | FE-REQUIRED (historical) | Zero outstanding; six findings CLOSED / VERIFIED on supplied FE-1V 37 PASS / 0 FAIL / 0 INCOMPLETE, Decision A, recorded at FE-EV-051; full 137-chapter naming and two semantic-repair acceptance retained; fresh narrow FE-1CV before checkpoint |
 | **FE-2** | H5 | FE-L1-003 · FE-L2-004 · FE-L3-002 · FE-T2-001 · FE-T2-002 | FE-REQUIRED | Integrated relevant H4/FE-1 and LR-2 changes; full footnote/key/denominator recheck and changed-source checks; historical evidence corrected by explicit new record |
 | **FE-3** | H6 | FE-L1-006 · FE-L3-004 · FE-L5-003 · FE-T3-001 | FE-REQUIRED | Owner quantitative disposition; separate specialist authorisation before any instrument mutation; clean integrated citation baseline and fresh independent re-acceptance if changed |
 
-**Allocation invariant: 0 + 0 + 6 + 5 + 4 = 15; each currently open finding appears exactly once in this table.** The empty LR-1 and LR-2 Finding IDs cells mean zero outstanding findings. Systemic roots are not extra finding IDs. H4–H7 remain the historical remediation architecture in §7; their origin allocations, dependency rationale, closure standards and specialist boundary are preserved. The overlay splits their execution, not their findings or scoring roots. Plan §18 governs the narrower learning-first sequence and conflict checks.
+**Allocation invariant: 0 + 0 + 0 + 5 + 4 = 9; each currently open finding appears exactly once in this table.** The empty LR-1, LR-2 and FE-1 Finding IDs cells mean zero outstanding findings. Systemic roots are not extra finding IDs. H4–H7 remain the historical remediation architecture in §7; their origin allocations, dependency rationale, closure standards and specialist boundary are preserved. The overlay splits their execution, not their findings or scoring roots. Plan §18 governs the narrower learning-first sequence and conflict checks.
 
-**Historical versus current counts.** §6.1 retains the Phase-F snapshot (28 open / 1 closed), and §7 retains the 28-ID H0 planning allocation. The pre-H3 state was 25 open / 4 closed; FE-EV-037 recorded 20 open / 9 closed. **Historical LR-1 allocation:** FE-L1-002 and FE-L1-007, originating in H4, were both LR-BLOCKER and remained open at FE-EV-042. The original five-package counts were 2/3/6/5/4 = 20. LR-1V independently found both eligible for closure; LR-1R records them CLOSED / VERIFIED at FE-EV-043. LR-1 closure produced 18 open / 11 closed and allocation 0/3/6/5/4 = 18. LR-2R records the three supplied independently verified LR-2 closures at FE-EV-046; current census is **15 open / 14 closed and independently verified**, allocation 0/0/6/5/4 = 15. No historical batch or finding is deleted.
+**Historical versus current counts.** §6.1 retains the Phase-F snapshot (28 open / 1 closed), and §7 retains the 28-ID H0 planning allocation. The pre-H3 state was 25 open / 4 closed; FE-EV-037 recorded 20 open / 9 closed. **Historical LR-1 allocation:** FE-L1-002 and FE-L1-007, originating in H4, were both LR-BLOCKER and remained open at FE-EV-042. The original five-package counts were 2/3/6/5/4 = 20. LR-1V independently found both eligible for closure; LR-1R records them CLOSED / VERIFIED at FE-EV-043. LR-1 closure produced 18 open / 11 closed and allocation 0/3/6/5/4 = 18. LR-2R records the three supplied independently verified LR-2 closures at FE-EV-046; that closure produced **15 open / 14 closed and independently verified**, allocation 0/0/6/5/4 = 15. No historical batch or finding is deleted.
+
+
+**Historical FE-1 allocation and current closure:** FE-L1-004, FE-L2-005, FE-L3-005, FE-L4-002, FE-L5-002, FE-T4-001 were the six H4/H7-origin FE-REQUIRED findings in FE-1; all remained OPEN / NOT VERIFIED at FE-EV-050. Supplied independent FE-1V accepted their corrections (37 PASS / 0 FAIL / 0 INCOMPLETE, Decision A). FE-1R records six CLOSED / VERIFIED at FE-EV-051, leaving **9 OPEN / NOT VERIFIED; 20 CLOSED / VERIFIED**, allocation **0/0/0/5/4 = 9**. FE-2/FE-3 membership and ownership are unchanged.
 
 ### 8.3 Required owner decisions before dependent remediation
 

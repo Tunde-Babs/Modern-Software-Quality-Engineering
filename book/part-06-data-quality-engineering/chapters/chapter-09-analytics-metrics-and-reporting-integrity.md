@@ -213,7 +213,7 @@ This work is not an argument against dashboards or metrics. It makes them more u
 
 ISO/IEC 25012 provides a recognised model for structured-data quality concepts.[^iso-25012] ISO/TS 8000-82 addresses explicit data rules for assessment.[^iso-8000-82] They support a disciplined vocabulary, but they do not determine an organisation’s KPI definitions or dashboard decisions. Metric meaning remains a domain-owned, evidence-tested claim.
 
-## Common Misconceptions
+## Common Misconceptions or Common Pitfalls
 
 ### “The metric has a formula, so its meaning is clear.”
 

@@ -395,7 +395,7 @@ The TypeScript module reference also explains why Node.js-oriented TypeScript pr
 
 Established software-design literature has long treated modularity, information hiding, and dependency direction as ways to reduce the cost of understanding and changing systems.[^parnas] The enduring lesson for Quality Engineering is proportionate rather than ceremonial: make the boundary clear enough for the risk, expected reuse, and likely change.
 
-## Common Misconceptions and Pitfalls
+## Common Misconceptions or Common Pitfalls
 
 ### “A function must be short to be good.”
 

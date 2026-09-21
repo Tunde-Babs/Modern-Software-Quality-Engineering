@@ -194,7 +194,7 @@ Documented engineering practice shows a consistent asymmetry: organisations have
 
 The transferable observation is not a particular review cadence. It is that the accumulation is structural rather than a failure of judgement, and that the effective countermeasures act at introduction — stated stop conditions, bounded pilots, sunset dates — rather than relying on someone later making the case for removal against a rhetorical disadvantage.
 
-## Common Misconceptions and Pitfalls
+## Common Misconceptions or Common Pitfalls
 
 ### "Compliance is 100%, so the practice is working."
 

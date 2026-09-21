@@ -263,7 +263,7 @@ Current Playwright documentation provides one practical example of composition: 
 
 The transferable industry practice is separation of responsibilities. Mature automation systems use focused boundaries to improve feedback and retain selected integrated evidence for the assumptions only a broader flow can challenge. The result should be a portfolio of claims, not a contest between UI, API, and component tools.
 
-## Common Misconceptions
+## Common Misconceptions or Common Pitfalls
 
 ### “UI automation is the only evidence that matters because users do not call APIs.”
 

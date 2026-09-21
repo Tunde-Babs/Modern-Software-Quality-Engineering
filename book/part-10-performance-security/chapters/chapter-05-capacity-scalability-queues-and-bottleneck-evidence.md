@@ -241,7 +241,7 @@ Use a Capacity and Bottleneck Evidence Record to keep fact, claim, competing hyp
 
 Queueing concepts are useful because they make waiting and service imbalance visible. They do not remove the need for measurement boundaries, workload validity, or domain consequences. Google SRE guidance on overload similarly emphasizes controlled load shedding and protection of critical work rather than unlimited acceptance.[^sre-overload]
 
-## Common Misconceptions and Pitfalls
+## Common Misconceptions or Common Pitfalls
 
 ### “CPU is not high, so there is no capacity problem.”
 

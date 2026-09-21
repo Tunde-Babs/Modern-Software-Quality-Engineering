@@ -193,7 +193,7 @@ The ISO/IEC/IEEE 29119 series provides internationally agreed references for tes
 
 These sources can improve terminology and traceability. They do not remove the need for engineering judgement about context, risk, and evidence sufficiency. Similarly, ISTQB’s current foundation syllabus is a useful common-language resource, but this handbook uses it as one reference among several rather than as a certification preparation sequence.[^istqb-ctfl]
 
-## Common Misconceptions
+## Common Misconceptions or Common Pitfalls
 
 ### “A green suite means the release is safe.”
 

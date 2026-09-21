@@ -245,7 +245,7 @@ The Architecture Tradeoff Analysis Method treats an architecture evaluation as p
 
 Evolutionary-architecture practitioner literature makes the complementary argument that architectural characteristics erode silently unless something checks them repeatedly.[^ford-evolutionary] Both are worth holding together, and neither is a standard: the first is a facilitated method with substantial overhead, the second a practitioner framework whose central mechanism has the three limitations described above. Part XI cites them for the specific claims attached and does not adopt either as a required process.
 
-## Common Misconceptions and Pitfalls
+## Common Misconceptions or Common Pitfalls
 
 ### "We have an ADR, so the decision was made properly."
 

@@ -297,7 +297,7 @@ Google SRE documentation illustrates how monitoring, service objectives, inciden
 
 The enduring principle is vendor-neutral. The appropriate practices depend on system risk, architecture, users, data, regulation, and recovery options. A team should borrow patterns and evidence models, then adapt them to its own context.
 
-## Common Misconceptions
+## Common Misconceptions or Common Pitfalls
 
 ### “Shift Left Replaces Testing”
 

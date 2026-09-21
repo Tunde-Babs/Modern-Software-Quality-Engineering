@@ -158,7 +158,7 @@ Responsible-quality work is operational. Add refusal, escalation, appeal, overri
 
 NIST AI RMF provides a voluntary risk-management framework that helps organisations frame and manage AI risks in context.[^nist-rmf] It does not turn a local metric into a universal assurance claim.
 
-## Common Misconceptions and Pitfalls
+## Common Misconceptions or Common Pitfalls
 
 ### “Equal aggregate accuracy proves fairness”
 

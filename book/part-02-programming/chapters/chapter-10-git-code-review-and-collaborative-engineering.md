@@ -265,7 +265,7 @@ Experienced QA Engineers already use much of this reasoning in a different form:
 
 Git's staged snapshot model and branch history are documented in the open [Pro Git book](https://git-scm.com/book/en/v2). Hosted pull-request systems add review and discussion around branch comparison; [GitHub's pull-request documentation](https://docs.github.com/en/pull-requests/reference/pull-requests) is one implementation example. These sources describe tools and platform concepts. MSQE does not prescribe a host, branching model, merge policy, or commit-message format; teams should adopt conventions that improve their own traceability, reviewability, and recovery.
 
-## Common Misconceptions and Pitfalls
+## Common Misconceptions or Common Pitfalls
 
 ### “The staging area is just a list of files waiting to be committed.”
 

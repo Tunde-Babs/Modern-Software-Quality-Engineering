@@ -274,7 +274,7 @@ Data-quality rules are more useful when they are traceable to a stated informati
 
 In delivery practice, teams often record mappings, rules, and exceptions in reviews, specifications, migration plans, or versioned configuration. The durable capability is not the document format. It is the ability to inspect a transformation’s meaning and evidence before a downstream decision is harmed.
 
-## Common Misconceptions
+## Common Misconceptions or Common Pitfalls
 
 ### “Every source row produced a target row, so the transformation is correct.”
 

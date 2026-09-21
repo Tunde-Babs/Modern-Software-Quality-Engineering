@@ -225,7 +225,7 @@ The [Twelve-Factor App configuration guidance](https://12factor.net/config) is a
 
 Cloud-provider, container-orchestrator, and secret-service documentation can explain a product's resolution or identity mechanics when a chapter uses a clearly labelled example. Such documentation is not a substitute for the transferable questions in this chapter: intended value, effective value, provenance, access boundary, evidence, limitation, and owner.
 
-## Common Misconceptions and Pitfalls
+## Common Misconceptions or Common Pitfalls
 
 ### “Staging should be identical to production”
 

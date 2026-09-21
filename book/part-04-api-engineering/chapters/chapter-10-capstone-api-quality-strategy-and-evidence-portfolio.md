@@ -279,7 +279,7 @@ The sources used throughout Part IV support specific portions of the portfolio. 
 
 The integrated matrix and decision brief are MSQE educational framing. They combine these sources with context-specific engineering judgement; they are not standards, certification criteria, or a universal delivery process.
 
-## Common Misconceptions
+## Common Misconceptions or Common Pitfalls
 
 ### “The capstone is a complete API test plan.”
 

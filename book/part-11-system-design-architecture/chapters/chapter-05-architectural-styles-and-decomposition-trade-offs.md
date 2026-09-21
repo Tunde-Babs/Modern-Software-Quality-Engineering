@@ -262,7 +262,7 @@ The microservices literature is unusually explicit about its own preconditions, 
 
 These are practitioner sources, not standards, and Part XI treats them as such: useful, attributable, contested, and bounded by the contexts their authors observed. The point of citing them is not that they settle the question. It is that even the advocacy literature states preconditions that proposal documents routinely omit.
 
-## Common Misconceptions and Pitfalls
+## Common Misconceptions or Common Pitfalls
 
 ### "We need to pick a style."
 

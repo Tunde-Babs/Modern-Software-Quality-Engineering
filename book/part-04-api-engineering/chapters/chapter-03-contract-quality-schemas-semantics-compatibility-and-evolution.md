@@ -318,7 +318,7 @@ The OpenAPI Specification describes a standard, programming-language-agnostic in
 
 The contract lens and evolution prompt in this chapter are MSQE educational framing. They are not a replacement for a standard, an API-governance process, or a contract-testing product.
 
-## Common Misconceptions
+## Common Misconceptions or Common Pitfalls
 
 ### “The schema is the contract.”
 

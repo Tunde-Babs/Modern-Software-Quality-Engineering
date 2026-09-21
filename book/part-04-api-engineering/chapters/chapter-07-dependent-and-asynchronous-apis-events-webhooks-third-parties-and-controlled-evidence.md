@@ -257,7 +257,7 @@ RFC 9110 defines HTTP `202 Accepted` as acceptance for processing rather than co
 
 These sources do not define a universal event-delivery guarantee, callback model, retry schedule, service-virtualization method, or recovery design. The dependency evidence prompt is MSQE educational framing for selecting and communicating proportionate evidence.
 
-## Common Misconceptions
+## Common Misconceptions or Common Pitfalls
 
 ### “A `202 Accepted` response means the business operation succeeded.”
 

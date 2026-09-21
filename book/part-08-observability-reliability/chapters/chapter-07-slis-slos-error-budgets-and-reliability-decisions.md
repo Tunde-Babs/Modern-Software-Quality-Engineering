@@ -165,7 +165,7 @@ This work links test design to operations. A failure-path test can show whether 
 
 Google’s SRE Workbook describes implementation and evolution of service-level objectives and highlights the need to choose indicators that represent meaningful service behaviour.[^google-slo] It is practitioner guidance. The formulas and examples in this chapter are MSQE educational applications to synthetic evidence; teams must establish objectives appropriate to their context.
 
-## Common Misconceptions and Pitfalls
+## Common Misconceptions or Common Pitfalls
 
 ### “An SLO is the same as a dashboard metric”
 

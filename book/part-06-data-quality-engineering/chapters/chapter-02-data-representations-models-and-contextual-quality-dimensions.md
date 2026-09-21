@@ -224,7 +224,7 @@ Formal data-quality models help teams avoid using one term to mean several thing
 
 Interoperable representations also rely on explicitly shared specifications. For example, RFC 3339 defines a profile of date and time formats for Internet protocols.[^rfc-3339] A conforming timestamp format remains only one part of an evidence argument: its business interpretation, source, and temporal role must still be established.
 
-## Common Misconceptions
+## Common Misconceptions or Common Pitfalls
 
 ### “A schema-valid record is correct.”
 

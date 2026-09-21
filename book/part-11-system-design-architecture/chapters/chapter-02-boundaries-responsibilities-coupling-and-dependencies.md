@@ -248,7 +248,7 @@ Conway's 1968 observation — that a system's structure tends to mirror the comm
 
 Part XI uses this as a reason to record the ownership boundary explicitly alongside the technical ones. It does not follow that teams should be reorganised to match a desired architecture; organisation design is Part XII's territory and is not a Quality Engineering decision.
 
-## Common Misconceptions and Pitfalls
+## Common Misconceptions or Common Pitfalls
 
 ### "We have a service boundary, so we have a data boundary."
 

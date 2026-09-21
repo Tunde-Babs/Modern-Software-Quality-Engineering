@@ -19,9 +19,9 @@ MEANINGS = {0: 'implemented deterministic checks passed',
             3: 'required deterministic evidence incomplete'}
 PROFILES = ('batch', 'learning-ready', 'first-edition', 'baseline')
 REVIEW = 'docs/02-first-edition-review/'
-CHAPTER_DIGEST = '176539f62ef89a7d0fbc99ddb98d20b852eff18103d67dda4aab4b93f4d17f02'
+CHAPTER_DIGEST = 'beea2f46a8a2ce9d3a7e6dc033dee510484a015a0ef2164a7bd6e2480f981822'
 PART_DIGEST = 'eafd4ba0fc55275cf8bcd9094a225e408ab22d43e019d76319ce1897b1c11451'
-PACKAGES = {'LR-1': 0, 'LR-2': 0, 'FE-1': 6, 'FE-2': 5, 'FE-3': 4}
+PACKAGES = {'LR-1': 0, 'LR-2': 0, 'FE-1': 0, 'FE-2': 5, 'FE-3': 4}
 FINDING_ID = r'FE-(?:L[1-5]|T[1-6]|G|J)-[0-9]{3}'
 EVENT_ID = r'FE-EV-(?:[0-9]{3}|[1-9][0-9]{3,})'
 
@@ -128,16 +128,16 @@ def finding_checks(text):
             errors.append('Invalid lifecycle combination: ' + fid + ' ' + str((state, verification)))
         records[fid] = (state, verification)
     distribution = Counter(str(s) + ' / ' + str(v) for s, v in records.values())
-    expected = {'OPEN / NOT VERIFIED': 15, 'CLOSED / VERIFIED': 14}
+    expected = {'OPEN / NOT VERIFIED': 9, 'CLOSED / VERIFIED': 20}
     if len(headings) != 29 or len(records) != 29 or dict(distribution) != expected:
-        errors.append('Post-LR-2 baseline finding census differs; investigate or separately authorise rebaselining')
+        errors.append('Post-FE-1 baseline finding census differs; investigate or separately authorise rebaselining')
     return records, check('finding_lifecycle', errors, {'total': 29, 'distribution': expected},
                           {'total': len(headings), 'distribution': dict(sorted(distribution.items()))})
 
 
 def allocation_check(text, records):
     errors, packages, allocated = [], {}, []
-    for row in table_rows(section(text, '### 8.2 Canonical current 15-finding allocation')):
+    for row in table_rows(section(text, '### 8.2 Canonical current 9-finding allocation')):
         if row[0] == 'Package' or re.fullmatch(r'[- :]+', row[0]):
             continue
         package = row[0]
@@ -160,7 +160,7 @@ def allocation_check(text, records):
         if counts[fid] != 1:
             errors.append('Allocation multiplicity must equal 1: %s observed %d' % (fid, counts[fid]))
     if packages != PACKAGES:
-        errors.append('Post-LR-2 package cardinalities differ; inspect canonical allocation')
+        errors.append('Post-FE-1 package cardinalities differ; inspect canonical allocation')
     return check('fast_track_allocation', errors, PACKAGES,
                  {'packages': packages, 'total': len(allocated), 'open_count': len(open_ids)})
 

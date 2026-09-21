@@ -275,7 +275,7 @@ Maintain a Security Finding and Remediation Verification Record that separates f
 
 NIST SSDF promotes integrating secure-development practices into the development lifecycle, while leaving implementation choices to organizations and systems.[^nist-ssdf] Its value here is the emphasis on evidence, ownership, and repeatable change handling—not a claim that one record establishes compliance.
 
-## Common Misconceptions and Pitfalls
+## Common Misconceptions or Common Pitfalls
 
 ### “A rejected finding is a false positive everywhere.”
 

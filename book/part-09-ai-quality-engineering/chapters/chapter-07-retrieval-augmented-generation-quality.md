@@ -183,7 +183,7 @@ Retain safe, proportionate evidence: query class, source and index versions, ran
 
 NIST’s Generative AI Profile emphasises managing risks in context rather than treating model output as isolated from data and deployment.[^nist-genai] RAG makes this especially visible: content governance and retrieval quality are part of the delivered behaviour.
 
-## Common Misconceptions and Pitfalls
+## Common Misconceptions or Common Pitfalls
 
 ### “A citation proves the answer is safe”
 

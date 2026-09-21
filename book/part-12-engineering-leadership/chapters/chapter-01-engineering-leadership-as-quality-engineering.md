@@ -255,7 +255,7 @@ Publicly documented engineering practice tends to encode this distinction in art
 
 The common pattern is that mature practice makes decision ownership **explicit and recorded**, rather than leaving it to be inferred from seniority. Where organisations differ enormously is in how those roles are named and distributed, which is why this handbook reasons about roles and accountability rather than prescribing an operating model.
 
-## Common Misconceptions and Pitfalls
+## Common Misconceptions or Common Pitfalls
 
 ### "Leadership means getting people to agree with you."
 

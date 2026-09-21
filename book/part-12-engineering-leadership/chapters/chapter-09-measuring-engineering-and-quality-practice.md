@@ -237,7 +237,7 @@ Documented measurement practice in engineering has converged on a small set of d
 
 The common thread is that each convention exists to prevent a specific known failure — single-metric optimisation, level misapplication, false comparison, and benchmark chasing. Where measurement programmes fail, the failure is usually not a bad metric but a good metric applied at the wrong level or reported without the segment that explains it.
 
-## Common Misconceptions and Pitfalls
+## Common Misconceptions or Common Pitfalls
 
 ### "The numbers don't lie."
 

@@ -191,7 +191,7 @@ Quality Engineers should challenge the use of “real time,” “fresh,” and 
 
 Date and time representation standards can reduce ambiguity at interfaces, but they do not settle the business meaning of time. RFC 3339 provides a common timestamp profile and RFC 9557 updates it; teams should consult the current specification set when an interface conformance profile matters.[^rfc-3339][^rfc-9557] Formal data-quality models, including ISO/IEC 25012, provide relevant vocabulary for timeliness and related concerns.[^iso-25012] A team must still define the period, source, cutoff, exception policy, and decision impact.
 
-## Common Misconceptions
+## Common Misconceptions or Common Pitfalls
 
 ### “Processed today” means “occurred today.”
 

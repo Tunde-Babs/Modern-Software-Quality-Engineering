@@ -176,7 +176,7 @@ Quality Engineers contribute by making the decision path inspectable. They can c
 
 OpenTelemetry documents logs, metrics, and traces as core telemetry signals and provides a common conceptual ecosystem for them.[^otel-signals] It is useful vocabulary, not a mandatory implementation choice. The Google SRE literature describes monitoring as a way to make a service’s state visible and discusses the importance of choosing signals that support actionable response.[^google-monitoring] These are influential practitioner resources, not universal standards or a required SRE operating model.
 
-## Common Misconceptions and Pitfalls
+## Common Misconceptions or Common Pitfalls
 
 ### “A green availability check proves the service is reliable”
 

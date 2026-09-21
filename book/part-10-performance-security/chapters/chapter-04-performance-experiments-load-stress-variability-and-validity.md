@@ -241,7 +241,7 @@ Treat the experiment plan and the resulting evidence as a paired artifact. If a 
 
 Performance-engineering research emphasizes measurement validity, workload definition, and repeatability because a number without a method is difficult to interpret. The IETF's framework for IP performance metrics similarly distinguishes a metric definition from a broad claim about service quality.[^rfc-2330]
 
-## Common Misconceptions and Pitfalls
+## Common Misconceptions or Common Pitfalls
 
 ### “A successful load test proves capacity.”
 

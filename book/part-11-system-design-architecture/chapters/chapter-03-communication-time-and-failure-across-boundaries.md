@@ -263,7 +263,7 @@ RFC 9110 defines HTTP semantics, including the property that certain request met
 
 The specification is used here only for that protocol claim. RFC 9110 is a protocol specification, not an architecture standard, and it does not settle an architecture decision. Part IV owns HTTP semantics as a curriculum.
 
-## Common Misconceptions and Pitfalls
+## Common Misconceptions or Common Pitfalls
 
 ### "A timeout means the operation failed."
 

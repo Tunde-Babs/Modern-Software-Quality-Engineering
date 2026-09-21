@@ -239,7 +239,7 @@ Sustainable API quality needs explicit ownership of assumptions. Teams benefit f
 
 OpenAPI and JSON Schema support interface description and structural validation, while RFC 9110 defines HTTP semantics; none defines every semantic, compatibility, or release decision.[^openapi][^json-schema][^rfc9110] ISO/IEC 25010 provides a product-quality model, not a regression-suite prescription.[^iso25010] Google SRE's postmortem guidance illustrates blameless learning as practitioner guidance, not a universal incident process.[^google-postmortem]
 
-## Common Misconceptions
+## Common Misconceptions or Common Pitfalls
 
 ### “Regression means rerun every check.”
 

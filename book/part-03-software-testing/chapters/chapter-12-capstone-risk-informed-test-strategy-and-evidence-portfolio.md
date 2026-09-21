@@ -35,7 +35,7 @@ This capstone brings those practices together in one bounded context. You will p
 
 The capstone deliberately avoids implementation work. You do not need a live API, an automation framework, production access, cloud infrastructure, paid tools, or a complete test plan. The important work is deciding what evidence is proportionate and communicating the decision honestly.
 
-## Why This Capstone Matters
+## Why This Chapter Matters
 
 Experienced QA Engineers commonly possess many of the ingredients of Quality Engineering: user advocacy, scenario thinking, exploratory skill, defect investigation, test design, and knowledge of delivery risk. The professional shift is to connect those skills into a strategy that influences design and delivery decisions rather than treating them as separate testing activities.
 
@@ -390,7 +390,7 @@ ISO/IEC/IEEE 29119-2 provides a generic reference for testing processes, while I
 
 In professional settings, a portfolio would be reviewed with people who own product, engineering, operations, data, security, accessibility, and release decisions as relevant. The Quality Engineer's contribution is to make evidence and uncertainty clear, ask better questions, and improve the quality system's ability to learn; it is not to unilaterally certify a release.
 
-## Common Mistakes
+## Common Misconceptions or Common Pitfalls
 
 - Treating the capstone as a comprehensive test plan or a test-case-count competition.
 - Writing eleven disconnected chapter summaries instead of one chain of risk-to-evidence reasoning.

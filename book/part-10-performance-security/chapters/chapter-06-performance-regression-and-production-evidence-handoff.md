@@ -269,7 +269,7 @@ Versioning protects decision integrity. Store the comparison record with the cha
 
 DORA research emphasizes that delivery performance measures are contextual and should support improvement rather than simplistic ranking.[^dora] The same principle applies at a smaller scale: a delta supports engineering learning only with its system and decision context.
 
-## Common Misconceptions and Pitfalls
+## Common Misconceptions or Common Pitfalls
 
 ### “Any delta is a regression.”
 

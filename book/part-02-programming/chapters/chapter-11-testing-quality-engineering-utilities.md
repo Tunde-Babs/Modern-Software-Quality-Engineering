@@ -306,7 +306,7 @@ The result is not “tests for test code” as an isolated activity. It is a str
 
 Node.js documents its built-in test runner and strict assertion APIs as part of its standard library.[^node-test][^node-assert] TypeScript's documentation explains the language and compiler options used to make contracts visible in the companion.[^typescript] These are tooling references, not a mandate to standardise on Node or TypeScript. The broader practices—controlled dependencies, focused assertions, risk-based selection, and honest evidence limits—transfer to other languages and test runners.
 
-## Common Misconceptions and Pitfalls
+## Common Misconceptions or Common Pitfalls
 
 ### “Quality utilities do not need tests because they only support tests.”
 

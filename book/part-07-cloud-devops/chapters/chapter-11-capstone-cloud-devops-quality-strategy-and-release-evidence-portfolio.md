@@ -323,7 +323,7 @@ A capstone portfolio demonstrates engineering judgement when it helps a stakehol
 
 The portfolio's concepts draw on primary cloud, container, delivery, and secure-development sources referenced in earlier chapters. DORA research is relevant to delivery capability and learning context, not to a universal portfolio score. The portfolio, matrix, and Decision Brief are original MSQE educational framings and are not formal standards or compliance artifacts.
 
-## Common Misconceptions and Pitfalls
+## Common Misconceptions or Common Pitfalls
 
 ### “The capstone must reach a binary ship/no-ship answer”
 

@@ -173,7 +173,7 @@ ISO/IEC/IEEE 29119-2 provides generic test-process context across lifecycle mode
 
 These references do not prescribe a CI/CD platform, execution order, test selection algorithm, or release policy. The feedback stages and selection approach in this chapter are MSQE educational framing for connecting change risk to useful, timely evidence.
 
-## Common Misconceptions
+## Common Misconceptions or Common Pitfalls
 
 ### “Regression means run every test.”
 

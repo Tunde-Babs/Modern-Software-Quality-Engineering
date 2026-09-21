@@ -216,7 +216,7 @@ Quality Engineers add value by making these trade-offs explicit. They help teams
 
 DORA's continuous-delivery research provides useful context for reliable, low-risk deployment capability, but it does not prescribe canary, blue-green, or flag-based strategies for every system.[^dora] Official deployment-controller documentation can describe a product's mechanics only when it is clearly labelled as an implementation illustration. The transferable curriculum is the release hypothesis, evidence boundary, and decision criteria.
 
-## Common Misconceptions and Pitfalls
+## Common Misconceptions or Common Pitfalls
 
 ### “Canary always means safe”
 

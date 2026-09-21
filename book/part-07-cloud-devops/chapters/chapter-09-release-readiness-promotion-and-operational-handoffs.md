@@ -196,7 +196,7 @@ Quality Engineers turn ambiguous status into bounded claims and help recipients 
 
 DORA research discusses delivery and organisational capabilities, including documentation and feedback, as context for improving technology delivery.[^dora] It does not define a universal release checklist or release-approval hierarchy. The structured brief in this chapter is original MSQE educational framing, designed to make local decisions challengeable.
 
-## Common Misconceptions and Pitfalls
+## Common Misconceptions or Common Pitfalls
 
 ### “Readiness is a one-time final approval”
 

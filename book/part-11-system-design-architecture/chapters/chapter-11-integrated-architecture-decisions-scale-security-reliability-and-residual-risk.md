@@ -275,7 +275,7 @@ ISO/IEC 25010:2023 supplies the vocabulary that keeps this chapter's concerns di
 
 The Architecture Tradeoff Analysis Method takes the same position from the evaluation side: its outputs are sensitivity points, trade-off points, and risks, and it does not produce a verdict.[^sei-atam] An evaluation of the Atlas promotion findings that concluded "the architecture needs improvement" would have said nothing. One that concludes "three findings implicate one decision, one option turns on an unverified provider contract, and the security implication belongs to a different owner" has produced work with names attached.
 
-## Common Misconceptions and Pitfalls
+## Common Misconceptions or Common Pitfalls
 
 ### "Fix the findings independently, then reassess."
 

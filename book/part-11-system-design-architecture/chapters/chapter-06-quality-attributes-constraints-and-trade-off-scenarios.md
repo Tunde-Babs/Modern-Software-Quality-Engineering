@@ -295,7 +295,7 @@ The Architecture Tradeoff Analysis Method, developed at the Software Engineering
 
 The relevant lesson for a Quality Engineer is the shape of the output. An architecture evaluation that produces "the architecture is good" has produced nothing actionable. One that produces "this cache TTL is a trade-off point between three characteristics, the priority context favours correctness in this window, and nobody currently knows whether entitlement values are cached" has produced work.
 
-## Common Misconceptions and Pitfalls
+## Common Misconceptions or Common Pitfalls
 
 ### "We covered all nine characteristics."
 

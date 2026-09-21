@@ -192,7 +192,7 @@ Quality Engineers challenge broad health claims, require identity and freshness 
 
 Kubernetes and other runtime platforms document readiness and health mechanisms, but their specific semantics are platform-dependent.[^kubernetes] Such mechanisms are useful traffic controls, not universal business verification. DORA research can inform delivery feedback and learning discussions; it does not prescribe a verification probe set or a universal production threshold.[^dora]
 
-## Common Misconceptions and Pitfalls
+## Common Misconceptions or Common Pitfalls
 
 ### “Deployment succeeded, therefore the release succeeded”
 

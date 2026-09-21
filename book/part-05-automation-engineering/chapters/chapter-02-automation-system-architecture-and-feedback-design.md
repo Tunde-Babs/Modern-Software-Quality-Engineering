@@ -274,7 +274,7 @@ Playwright describes test fixtures as a way to establish the environment needed 
 
 Martin Fowler describes Page Objects as application-specific APIs that wrap page mechanics and can reduce brittleness from direct HTML manipulation.[^fowler-page-object] That pattern can be valuable when it expresses stable user or component behaviour. It does not justify a universal Page Object hierarchy, hidden assertions, or a method for every locator. The architecture review model in this chapter is MSQE educational framing, not a standard or a prescribed framework pattern.
 
-## Common Misconceptions
+## Common Misconceptions or Common Pitfalls
 
 ### “Architecture means a fixed folder structure.”
 

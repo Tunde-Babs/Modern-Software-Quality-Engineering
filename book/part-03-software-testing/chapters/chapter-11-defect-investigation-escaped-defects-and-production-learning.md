@@ -155,7 +155,7 @@ Learning must retain accountability for remedial work while avoiding blame-based
 
 ISO/IEC/IEEE 29119-2 provides a generic process reference for testing activities.[^iso-29119-2] The SWEBOK Guide connects testing, maintenance, configuration management, and professional practice.[^swebok] Google's SRE guidance on postmortem culture provides an established example of blameless learning focused on system conditions and follow-up improvement.[^google-sre-postmortem] These sources do not prescribe a defect template, a severity scale, an incident process, or a root-cause technique. The learning loop in this chapter is MSQE educational framing for converting defect evidence into strategy improvement.
 
-## Common Misconceptions
+## Common Misconceptions or Common Pitfalls
 
 ### “A defect report is complete when it has reproduction steps.”
 

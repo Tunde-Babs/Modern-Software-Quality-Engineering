@@ -304,7 +304,7 @@ Playwright illustrates several diagnostic mechanisms that can support browser au
 
 The transferable engineering practice is to map mechanisms to questions and safety needs. A trace is not automatically a root-cause record; an HTML report is not automatically actionable; a JUnit result is not a sufficient investigation brief. Tooling should serve the evidence contract, not determine it.
 
-## Common Misconceptions
+## Common Misconceptions or Common Pitfalls
 
 ### “Pass or fail is all a reliable suite needs.”
 

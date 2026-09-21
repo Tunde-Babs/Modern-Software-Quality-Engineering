@@ -217,7 +217,7 @@ Formal models can improve vocabulary, but they do not decide local fitness for p
 
 In practical delivery work, data-quality evidence may appear in code review, a migration plan, a reconciliation record, a defect investigation, or a release decision. The artefact matters less than whether it allows an informed person to understand the claim, challenge the evidence, and act on the remaining risk.
 
-## Common Misconceptions
+## Common Misconceptions or Common Pitfalls
 
 ### “If a row has the expected value, the data is correct.”
 

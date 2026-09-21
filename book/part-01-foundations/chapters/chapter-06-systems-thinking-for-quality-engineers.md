@@ -350,7 +350,7 @@ Public reliability guidance provides concrete examples of this reasoning. Google
 
 High-consequence systems may need more specialist assurance than low-risk internal workflows.
 
-## Common Misconceptions
+## Common Misconceptions or Common Pitfalls
 
 ### “More Component Tests Guarantee System Quality”
 

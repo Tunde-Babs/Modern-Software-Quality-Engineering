@@ -223,7 +223,7 @@ JavaScript's promise combinators express different failure and completion contra
 
 At a larger operational scale, Google SRE documents how naive retries can intensify load and recommends distinguishing retryable from non-retryable conditions, limiting attempts, and considering backoff and retry budgets.[^google-sre-retries] This chapter applies the underlying reasoning to small quality utilities; it does not prescribe a production reliability policy.
 
-## Common Misconceptions and Pitfalls
+## Common Misconceptions or Common Pitfalls
 
 ### “`await` makes the external state ready.”
 

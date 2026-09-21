@@ -437,7 +437,7 @@ The portfolio is a reusable professional artifact because it preserves the reaso
 
 NIST CSF 2.0 and SSDF are useful for framing risk, evidence, ownership, and secure-development context; they do not choose the capstone decision.[^nist-csf][^nist-ssdf] ISO/IEC 25010 supplies product-quality vocabulary, not a universal performance or security threshold.[^iso-25010]
 
-## Common Misconceptions and Pitfalls
+## Common Misconceptions or Common Pitfalls
 
 ### “The capstone must identify the one correct release answer.”
 

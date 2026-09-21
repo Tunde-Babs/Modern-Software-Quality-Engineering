@@ -152,7 +152,7 @@ Evaluation is a maintained engineering asset: inputs, source versions, configura
 
 HELM demonstrates the value of stating scenarios, metrics, and trade-offs rather than treating one benchmark score as a general property of a language model.[^helm] MSQE applies that discipline to a specific product claim and user decision.
 
-## Common Misconceptions and Pitfalls
+## Common Misconceptions or Common Pitfalls
 
 ### “A passing answer proves the feature works”
 

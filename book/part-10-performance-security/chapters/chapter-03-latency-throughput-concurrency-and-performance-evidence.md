@@ -259,7 +259,7 @@ Design evidence records so that another engineer can reproduce the interpretatio
 
 The W3C Resource Timing specification describes browser measurement interfaces and their limits; it is a specification for a defined browser context, not a complete user-experience model.[^w3c-resource-timing] Use it when a browser measurement claim is relevant, and revalidate its current status at Final Gate.
 
-## Common Misconceptions and Pitfalls
+## Common Misconceptions or Common Pitfalls
 
 ### “The average improved, so the release improved.”
 

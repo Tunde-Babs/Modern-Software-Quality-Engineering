@@ -210,7 +210,7 @@ For security work, use the same discipline to avoid both complacency and alarmis
 
 The NIST Cybersecurity Framework describes outcomes for managing cybersecurity risk rather than prescribing one implementation or testing product.[^nist-csf] The NIST Secure Software Development Framework similarly describes high-level secure-development practices, not a certification that a particular system is secure.[^nist-ssdf] These boundaries align with the Part X approach: use recognized guidance to frame questions and evidence, then make claims proportionate to the system and decision.
 
-## Common Misconceptions and Pitfalls
+## Common Misconceptions or Common Pitfalls
 
 ### “A lower average proves performance improved.”
 

@@ -342,7 +342,7 @@ The MSQE Educational Framework does not combine them into a single universal doc
 
 ---
 
-## Common Misconceptions
+## Common Misconceptions or Common Pitfalls
 
 ### “The framework replaces ISO, OWASP, DORA, or Google SRE.”
 
@@ -433,7 +433,7 @@ The framework should be used with, not instead of, established standards, resear
 ## Review Questions
 
 1. Why is a testing-only view of quality insufficient for modern software systems?
-2. What is the stated purpose of the MSQE Educational Framework?
+2. A team must choose between adding more browser tests and clarifying who responds when users report inaccessible pages. Existing tests pass, but support reports do not reach the delivery team. Which framework capabilities would you connect to investigate this gap, and what evidence would help you choose the first improvement? Explain why the passing tests alone do not settle the choice.
 3. How does the framework differ from a maturity model?
 4. What is the difference between a core domain and a cross-cutting concern?
 5. How does the framework differ from the Quality Engineer Competency Model in Chapter 8?

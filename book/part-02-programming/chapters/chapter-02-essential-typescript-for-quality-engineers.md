@@ -478,7 +478,7 @@ Prefer names that reflect the domain decision. `findFailedResult` communicates m
 
 Similarly, avoid making a type model look more authoritative than its source. `ApiExecutionResult` is a useful internal representation after validation. It is not proof that the remote API contract is complete, stable, or semantically correct. The Chapter 3 validation boundary makes that distinction operational.
 
-## Common QA Coding Problems
+## Common Misconceptions or Common Pitfalls
 
 ### Excessive `any`
 

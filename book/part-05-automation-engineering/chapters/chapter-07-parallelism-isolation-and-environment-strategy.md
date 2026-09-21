@@ -262,7 +262,7 @@ Playwright provides useful examples of scope-aware execution. Its test runner de
 
 The tool’s features reduce certain client-side and process-level collisions. They do not isolate a team’s database rows, third-party quota, shared tenant, or global feature configuration. The durable industry practice is to combine runner support with explicit data ownership and environment strategy.
 
-## Common Misconceptions
+## Common Misconceptions or Common Pitfalls
 
 ### “Parallel execution only changes how quickly the suite finishes.”
 

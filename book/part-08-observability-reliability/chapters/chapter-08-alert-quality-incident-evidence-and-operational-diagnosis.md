@@ -129,7 +129,7 @@ The aim is not alert perfection. It is an honest response design: a signal suppo
 
 The SRE Workbook’s alerting guidance distinguishes alerting from general visibility and relates alerts to service-level objectives.[^google-alerting] This chapter applies those ideas through a vendor-neutral evidence model. No specific paging system, threshold language, routing scheme, or incident command method is required.
 
-## Common Misconceptions and Pitfalls
+## Common Misconceptions or Common Pitfalls
 
 ### “Every alert should name the root cause”
 

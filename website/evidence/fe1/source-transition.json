@@ -1,0 +1,881 @@
+{
+  "sourceBase": "1cf371e1be74cf58ceff0940573a51dd20d717f5",
+  "acceptedCorrectionPackageSha256": "8876eb47adfc6fa18152b340c804419edb00ed47f05fb42b56b89f42d170f91b",
+  "independentAcceptance": "FE-1V: 37 PASS / 0 FAIL / 0 INCOMPLETE; Decision A",
+  "closureBoundary": "FE-1R records acceptance; closure-only expectations await fresh narrow FE-1CV before checkpoint.",
+  "sources": {
+    "CURRENT_SPRINT.md": {
+      "baselineBlob": "d14c59aedb5d9a3750e2cac212716c4841e392b1",
+      "fe1vSha256": "a1135d4874087aeebfba916e5fd94606d24abb31eed83c03d0aa5c35703c74d2",
+      "sha256": "66847ca503d2821c2ac4c0684763926ef5e772b0b70f63815fe359276e69d9a6",
+      "kind": "FE-1R closure-only expectation"
+    },
+    "README.md": {
+      "baselineBlob": "dc9ae7de86ccecac9b85fc7f3330a47a5bc54ce6",
+      "fe1vSha256": "acd5b453c1f32007d9aa1c97299442fe1f07eee2e4beb73078130f1b3b7ec78a",
+      "sha256": "33a46c49119dd04044bddb2b4ef61c29c8d68b73f023676fb0d1484b7307523f",
+      "kind": "FE-1R closure-only expectation"
+    },
+    "book/part-01-foundations/chapters/chapter-01-what-is-modern-software-quality-engineering.md": {
+      "baselineBlob": "7d052777b49c6d1debe5d3b00b8c202af5243ebd",
+      "fe1vSha256": "e5731bbe4306595afe6e346943f1c4d6c8013c6d925baa4f4937566f8705a5cd",
+      "sha256": "e5731bbe4306595afe6e346943f1c4d6c8013c6d925baa4f4937566f8705a5cd",
+      "kind": "FE-1V accepted content"
+    },
+    "book/part-01-foundations/chapters/chapter-02-the-evolution-from-qa-to-quality-engineering.md": {
+      "baselineBlob": "8c473257ab17a36c0747eee9a73a42c72b5541f8",
+      "fe1vSha256": "8c26fb736b2bbd45e84c2bb388fe15cbe089709f9d55b6686d314f1071b45a19",
+      "sha256": "8c26fb736b2bbd45e84c2bb388fe15cbe089709f9d55b6686d314f1071b45a19",
+      "kind": "FE-1V accepted content"
+    },
+    "book/part-01-foundations/chapters/chapter-03-understanding-software-quality.md": {
+      "baselineBlob": "4cdc11a79262eae77c966e33b45ad7f830dd546c",
+      "fe1vSha256": "9116e585e42465b336d15505d9746196ba1f388bdb04e7262abedd52e4db79ff",
+      "sha256": "9116e585e42465b336d15505d9746196ba1f388bdb04e7262abedd52e4db79ff",
+      "kind": "FE-1V accepted content"
+    },
+    "book/part-01-foundations/chapters/chapter-04-quality-throughout-the-sdlc.md": {
+      "baselineBlob": "0d5391ef76cc801f23980c65298415c3f9ef15f0",
+      "fe1vSha256": "46f07a6be9962c36afa04adde284f3b069884139995ea39e4598fe7f68d27b2f",
+      "sha256": "46f07a6be9962c36afa04adde284f3b069884139995ea39e4598fe7f68d27b2f",
+      "kind": "FE-1V accepted content"
+    },
+    "book/part-01-foundations/chapters/chapter-05-shift-left-shift-right-shift-everywhere.md": {
+      "baselineBlob": "9d89cd6ddd38cd7c0f7b4ce21edd89c1f3d90a10",
+      "fe1vSha256": "708ece933e585e2e6a3a7404a444d3dd8cbcfd51bb73fe168d406a7f49fd95a5",
+      "sha256": "708ece933e585e2e6a3a7404a444d3dd8cbcfd51bb73fe168d406a7f49fd95a5",
+      "kind": "FE-1V accepted content"
+    },
+    "book/part-01-foundations/chapters/chapter-06-systems-thinking-for-quality-engineers.md": {
+      "baselineBlob": "d98b15c9e1f82960ffe5a0a86c0fa04a70d33822",
+      "fe1vSha256": "8d278c2172e6cdbf0b88b60ee062f16f705a064d97d73049608cfcde607a8838",
+      "sha256": "8d278c2172e6cdbf0b88b60ee062f16f705a064d97d73049608cfcde607a8838",
+      "kind": "FE-1V accepted content"
+    },
+    "book/part-01-foundations/chapters/chapter-07-engineering-culture-and-devops-mindset.md": {
+      "baselineBlob": "05f1b54d0ad624d2dfbac9b2f914d53236043012",
+      "fe1vSha256": "a8db444c2d2204be37b59154ec72ad340edad1aa6f502081d2708135e11e5906",
+      "sha256": "a8db444c2d2204be37b59154ec72ad340edad1aa6f502081d2708135e11e5906",
+      "kind": "FE-1V accepted content"
+    },
+    "book/part-01-foundations/chapters/chapter-08-the-modern-quality-engineer.md": {
+      "baselineBlob": "94c35ca91669ae93b17b201ea3f44b5437de7c18",
+      "fe1vSha256": "f5b886a5dbac07e0deb1068de582b89d8147e514ee62b244706db0e956e82279",
+      "sha256": "f5b886a5dbac07e0deb1068de582b89d8147e514ee62b244706db0e956e82279",
+      "kind": "FE-1V accepted content"
+    },
+    "book/part-01-foundations/chapters/chapter-09-the-modern-software-quality-engineering-framework.md": {
+      "baselineBlob": "a23921c66a1121e9ed34b5100ff4fb3141e706a0",
+      "fe1vSha256": "668b900233f4889fb2bc841e16a62f64f6d88a66f50de70fbefc1eaa2bedd645",
+      "sha256": "668b900233f4889fb2bc841e16a62f64f6d88a66f50de70fbefc1eaa2bedd645",
+      "kind": "FE-1V accepted content"
+    },
+    "book/part-01-foundations/chapters/chapter-10-the-future-of-quality-engineering.md": {
+      "baselineBlob": "fde1a6376a722c9e8c338af4bbd0ea7432358014",
+      "fe1vSha256": "a219b691a7495965b54f8160a95a779b320eff76274d0c47f848f0c658e8502a",
+      "sha256": "a219b691a7495965b54f8160a95a779b320eff76274d0c47f848f0c658e8502a",
+      "kind": "FE-1V accepted content"
+    },
+    "book/part-02-programming/chapters/chapter-01-programming-as-a-quality-engineering-practice.md": {
+      "baselineBlob": "11d4df6f6057dea51d8782860639de1d063e33e5",
+      "fe1vSha256": "d6798e49ac8850c3bc5d1a7e95b80530a93879528d8dfeea6bf43e20de91d58b",
+      "sha256": "d6798e49ac8850c3bc5d1a7e95b80530a93879528d8dfeea6bf43e20de91d58b",
+      "kind": "FE-1V accepted content"
+    },
+    "book/part-02-programming/chapters/chapter-02-essential-typescript-for-quality-engineers.md": {
+      "baselineBlob": "6f6df0f28efdc1d858f9d5f604801f52dbd3d901",
+      "fe1vSha256": "49bbd74ca028e9751020b6c506ca88f206f7b885f66a7a7797b0cbf6eca87e75",
+      "sha256": "49bbd74ca028e9751020b6c506ca88f206f7b885f66a7a7797b0cbf6eca87e75",
+      "kind": "FE-1V accepted content"
+    },
+    "book/part-02-programming/chapters/chapter-03-quality-data-structures-json-and-transformations.md": {
+      "baselineBlob": "6cdedc544e5fb52b7b2c778f2e1f418713971304",
+      "fe1vSha256": "2ffbca15c9fb721b67835a5cdc71710674914b276401e6808c3a51be37acd37f",
+      "sha256": "2ffbca15c9fb721b67835a5cdc71710674914b276401e6808c3a51be37acd37f",
+      "kind": "FE-1V accepted content"
+    },
+    "book/part-02-programming/chapters/chapter-04-functions-modules-and-composable-design.md": {
+      "baselineBlob": "0e6e5b215ab83de9b5a1c25fccf5bb0208accdcb",
+      "fe1vSha256": "bfb78d16cd480ad169511c9c823edf3f8444dea7863380bc46f20819f4f2b260",
+      "sha256": "bfb78d16cd480ad169511c9c823edf3f8444dea7863380bc46f20819f4f2b260",
+      "kind": "FE-1V accepted content"
+    },
+    "book/part-02-programming/chapters/chapter-05-configuration-files-dependencies-and-test-data.md": {
+      "baselineBlob": "e5ee91e5ab21ae79db1bf102fb681ad699ba1d2a",
+      "fe1vSha256": "ea160f6c19c5f3c900ae22031e08f0d4900c0fdb0dab202dc1034d3317b772c0",
+      "sha256": "ea160f6c19c5f3c900ae22031e08f0d4900c0fdb0dab202dc1034d3317b772c0",
+      "kind": "FE-1V accepted content"
+    },
+    "book/part-02-programming/chapters/chapter-06-asynchronous-programming-for-reliable-quality-feedback.md": {
+      "baselineBlob": "ad72f9a14afbd69548e07aa3823b3ba6c8e68bd7",
+      "fe1vSha256": "0c454733b5204425e2f783b319542f4ee37e7fabc6f2421c08dfe704516e0ff1",
+      "sha256": "0c454733b5204425e2f783b319542f4ee37e7fabc6f2421c08dfe704516e0ff1",
+      "kind": "FE-1V accepted content"
+    },
+    "book/part-02-programming/chapters/chapter-07-error-handling-and-defensive-quality-utilities.md": {
+      "baselineBlob": "78ccaebc4d0f72468a4954d8fc6f38d64687b0b0",
+      "fe1vSha256": "2fa0e3fe4c8b72050e2808ea9adfa7b1f3cb0289bedb37150c87e0e53e4b3f6c",
+      "sha256": "2fa0e3fe4c8b72050e2808ea9adfa7b1f3cb0289bedb37150c87e0e53e4b3f6c",
+      "kind": "FE-1V accepted content"
+    },
+    "book/part-02-programming/chapters/chapter-08-debugging-quality-engineering-code.md": {
+      "baselineBlob": "29ed5717e303fb53ce909ecb06107ce74a450c01",
+      "fe1vSha256": "5cc75b865f1bec789d16bfa268bf64fd543f1e8aab73ce72be7b8e6e71994b1f",
+      "sha256": "5cc75b865f1bec789d16bfa268bf64fd543f1e8aab73ce72be7b8e6e71994b1f",
+      "kind": "FE-1V accepted content"
+    },
+    "book/part-02-programming/chapters/chapter-09-maintainable-code-and-refactoring.md": {
+      "baselineBlob": "6dec3c5ee1de9a8da00cd05d8e40324aa2c7a8c6",
+      "fe1vSha256": "426add305dbc86ef0be3315940a14868d724d18ebfe502d16719361f3aa6d55d",
+      "sha256": "426add305dbc86ef0be3315940a14868d724d18ebfe502d16719361f3aa6d55d",
+      "kind": "FE-1V accepted content"
+    },
+    "book/part-02-programming/chapters/chapter-10-git-code-review-and-collaborative-engineering.md": {
+      "baselineBlob": "cb104fd0373cfa58bc3b8d4e92cba330c237eeb0",
+      "fe1vSha256": "668cb5552b22767850764fc7b35da11b2211c5cc73b701314dabcd31c47873d1",
+      "sha256": "668cb5552b22767850764fc7b35da11b2211c5cc73b701314dabcd31c47873d1",
+      "kind": "FE-1V accepted content"
+    },
+    "book/part-02-programming/chapters/chapter-11-testing-quality-engineering-utilities.md": {
+      "baselineBlob": "ed8f6dfa137f7e0b6310eac4b3400d0600afe102",
+      "fe1vSha256": "54d97fa8723ff875d96b8d815e8090f1d20122f5364c0de72f8693ef15cde041",
+      "sha256": "54d97fa8723ff875d96b8d815e8090f1d20122f5364c0de72f8693ef15cde041",
+      "kind": "FE-1V accepted content"
+    },
+    "book/part-02-programming/chapters/chapter-12-capstone-quality-engineering-toolkit.md": {
+      "baselineBlob": "e78503f1dfef9e3c8c434ea72d76198d329dc6bd",
+      "fe1vSha256": "9a45834d17a9088f608253a10299eb5bf65f72e3b7331cb894c8d0043a5cca93",
+      "sha256": "9a45834d17a9088f608253a10299eb5bf65f72e3b7331cb894c8d0043a5cca93",
+      "kind": "FE-1V accepted content"
+    },
+    "book/part-03-software-testing/chapters/chapter-01-testing-as-evidence-engineering.md": {
+      "baselineBlob": "d22999309106e2cf8e02e16b167f3af565efbd2f",
+      "fe1vSha256": "0a84d36ff12ae087134124b35abf21163626a07ed7a166d1e04a22ce7b51a4d9",
+      "sha256": "0a84d36ff12ae087134124b35abf21163626a07ed7a166d1e04a22ce7b51a4d9",
+      "kind": "FE-1V accepted content"
+    },
+    "book/part-03-software-testing/chapters/chapter-02-risk-informed-test-strategy.md": {
+      "baselineBlob": "27d9eced97bf1f1793161e0968f2c90f048f31aa",
+      "fe1vSha256": "46c7dd7bcbcf407bfe97520228a8fd8e6dbe3a9db64bd7b69397335025540c24",
+      "sha256": "46c7dd7bcbcf407bfe97520228a8fd8e6dbe3a9db64bd7b69397335025540c24",
+      "kind": "FE-1V accepted content"
+    },
+    "book/part-03-software-testing/chapters/chapter-03-requirements-analysis-specifications-and-testability.md": {
+      "baselineBlob": "384711485b967defd5f809318fe8ad3e27333d7e",
+      "fe1vSha256": "505c264721eef6b7f27c766b49ec6e9ebf1c10ff925c6660a603b5f100293aca",
+      "sha256": "505c264721eef6b7f27c766b49ec6e9ebf1c10ff925c6660a603b5f100293aca",
+      "kind": "FE-1V accepted content"
+    },
+    "book/part-03-software-testing/chapters/chapter-04-test-design-for-efficient-evidence.md": {
+      "baselineBlob": "f839c4b083a2190a90c23579578d10d901a38f98",
+      "fe1vSha256": "02baa223696f1b45dcf17aa7ffc916a142d2d357f158309788490992d9d23394",
+      "sha256": "02baa223696f1b45dcf17aa7ffc916a142d2d357f158309788490992d9d23394",
+      "kind": "FE-1V accepted content"
+    },
+    "book/part-03-software-testing/chapters/chapter-05-exploratory-testing-and-adaptive-investigation.md": {
+      "baselineBlob": "3de57b7d2f29028b6ad31e57e37ef22790bff0a3",
+      "fe1vSha256": "2ee338c54aeffe717644eb3d9f258e17eb3c4ac3e62597ae16f8e466415f5d2d",
+      "sha256": "2ee338c54aeffe717644eb3d9f258e17eb3c4ac3e62597ae16f8e466415f5d2d",
+      "kind": "FE-1V accepted content"
+    },
+    "book/part-03-software-testing/chapters/chapter-06-test-levels-boundaries-and-integration-evidence.md": {
+      "baselineBlob": "45b47e2641c045b3dca268e802f868da93bbc125",
+      "fe1vSha256": "e32fa5adc714eb63ed77a02a79c060c83e860061bdf62d880147684ca9f9c934",
+      "sha256": "e32fa5adc714eb63ed77a02a79c060c83e860061bdf62d880147684ca9f9c934",
+      "kind": "FE-1V accepted content"
+    },
+    "book/part-03-software-testing/chapters/chapter-07-reliable-automated-checks-isolation-doubles-and-determinism.md": {
+      "baselineBlob": "3884b4ca95d535bdaa5277a6128d3545ea28328f",
+      "fe1vSha256": "b98579cd2399ffd88596dae1b70976e3f2d3f98de63202d83072f384aa43bc25",
+      "sha256": "b98579cd2399ffd88596dae1b70976e3f2d3f98de63202d83072f384aa43bc25",
+      "kind": "FE-1V accepted content"
+    },
+    "book/part-03-software-testing/chapters/chapter-08-functional-quality-attribute-and-data-oriented-evidence.md": {
+      "baselineBlob": "a476a3e32e9b6b99bc7f3d53ff48e635fdf47e2e",
+      "fe1vSha256": "93e24907059553889f26a9f537c368bd070460c54b4ad8bbc7203a71dff24c15",
+      "sha256": "93e24907059553889f26a9f537c368bd070460c54b4ad8bbc7203a71dff24c15",
+      "kind": "FE-1V accepted content"
+    },
+    "book/part-03-software-testing/chapters/chapter-09-service-api-and-distributed-system-testing-strategy.md": {
+      "baselineBlob": "99ee60e3c42980912cf335e18a95a46340c567d4",
+      "fe1vSha256": "b08365c19702952b25620d8495dbcd78829b8d684b72f17241b8428bff7a8e66",
+      "sha256": "b08365c19702952b25620d8495dbcd78829b8d684b72f17241b8428bff7a8e66",
+      "kind": "FE-1V accepted content"
+    },
+    "book/part-03-software-testing/chapters/chapter-10-regression-strategy-test-selection-and-continuous-delivery-feedback.md": {
+      "baselineBlob": "8789d18d12a7dc7ab209c4ea86de8e2c26bce8ee",
+      "fe1vSha256": "2f154a6e39c2d34aa4c7510c2ddd015ba77b3033c0c3b4a5f0d41f9534886eb4",
+      "sha256": "2f154a6e39c2d34aa4c7510c2ddd015ba77b3033c0c3b4a5f0d41f9534886eb4",
+      "kind": "FE-1V accepted content"
+    },
+    "book/part-03-software-testing/chapters/chapter-11-defect-investigation-escaped-defects-and-production-learning.md": {
+      "baselineBlob": "ac006584484fb505dffa359a8150c71ccc4d68f0",
+      "fe1vSha256": "4ff60126166214559f51656f42521e3a60ebf52c471f425027376066bbe37302",
+      "sha256": "4ff60126166214559f51656f42521e3a60ebf52c471f425027376066bbe37302",
+      "kind": "FE-1V accepted content"
+    },
+    "book/part-03-software-testing/chapters/chapter-12-capstone-risk-informed-test-strategy-and-evidence-portfolio.md": {
+      "baselineBlob": "4f5c572f7ded1e5b22e58015f5223df7301bfa5e",
+      "fe1vSha256": "a34d87c5bbf993ba2be157ec6f1b9a2dc27ca49750d1e50666cab48ec8f68308",
+      "sha256": "a34d87c5bbf993ba2be157ec6f1b9a2dc27ca49750d1e50666cab48ec8f68308",
+      "kind": "FE-1V accepted content"
+    },
+    "book/part-04-api-engineering/chapters/chapter-01-api-quality-engineering-boundaries-outcomes-and-evidence.md": {
+      "baselineBlob": "a37eb78f578dfe0def94daed7426b391be793979",
+      "fe1vSha256": "d60442e54df258901e443b16011a9bee168b3b124bdf613261b32b16831463d2",
+      "sha256": "d60442e54df258901e443b16011a9bee168b3b124bdf613261b32b16831463d2",
+      "kind": "FE-1V accepted content"
+    },
+    "book/part-04-api-engineering/chapters/chapter-02-interface-semantics-http-representations-and-api-styles.md": {
+      "baselineBlob": "568af98ff0e04ede8ed510bedfa254fe958d9083",
+      "fe1vSha256": "5c500915745bb40196763f92d25626c9a5c0c5e0be265d2dfe2bf9da640e0d5c",
+      "sha256": "5c500915745bb40196763f92d25626c9a5c0c5e0be265d2dfe2bf9da640e0d5c",
+      "kind": "FE-1V accepted content"
+    },
+    "book/part-04-api-engineering/chapters/chapter-03-contract-quality-schemas-semantics-compatibility-and-evolution.md": {
+      "baselineBlob": "adf58870b0c84ebd8e95f9c930e0ab7dfcbc4bcb",
+      "fe1vSha256": "7f662d412fb70edb5fe250ee352f3c38bc48d0c78680cf7d049dce854e4fbb8a",
+      "sha256": "7f662d412fb70edb5fe250ee352f3c38bc48d0c78680cf7d049dce854e4fbb8a",
+      "kind": "FE-1V accepted content"
+    },
+    "book/part-04-api-engineering/chapters/chapter-04-stateful-api-behaviour-validation-errors-idempotency-and-concurrency.md": {
+      "baselineBlob": "2eba05020c2fe13864de106b05de0ec7164d7ba6",
+      "fe1vSha256": "8941e450ad6c397d6950dea9eb2ec902e7bc713011f3ffa0066de6d6fa0dcf6f",
+      "sha256": "8941e450ad6c397d6950dea9eb2ec902e7bc713011f3ffa0066de6d6fa0dcf6f",
+      "kind": "FE-1V accepted content"
+    },
+    "book/part-04-api-engineering/chapters/chapter-05-api-data-quality-queries-collections-and-representational-integrity.md": {
+      "baselineBlob": "547af3604ac2ee74ae095a300e39a04c64dac80d",
+      "fe1vSha256": "c94165ed6adc4ff97354adda1b1d14eca54f1d272a6cc0f75e7954a0c5323cad",
+      "sha256": "c94165ed6adc4ff97354adda1b1d14eca54f1d272a6cc0f75e7954a0c5323cad",
+      "kind": "FE-1V accepted content"
+    },
+    "book/part-04-api-engineering/chapters/chapter-06-identity-at-the-boundary-authentication-authorization-and-safe-behaviour.md": {
+      "baselineBlob": "23e59a67d919d4b4464571290c345010c1ea45b6",
+      "fe1vSha256": "fd68a3b0c1705a5d43184646bb9cab80298e34400843df778b79bf76a07aea51",
+      "sha256": "fd68a3b0c1705a5d43184646bb9cab80298e34400843df778b79bf76a07aea51",
+      "kind": "FE-1V accepted content"
+    },
+    "book/part-04-api-engineering/chapters/chapter-07-dependent-and-asynchronous-apis-events-webhooks-third-parties-and-controlled-evidence.md": {
+      "baselineBlob": "36b9dbc5008d8444a470ecd6d505163687facf0d",
+      "fe1vSha256": "2e53e14f2ea8e3dfe2af08fe3556aba18556c55d0e808e72f466e0688b40da11",
+      "sha256": "2e53e14f2ea8e3dfe2af08fe3556aba18556c55d0e808e72f466e0688b40da11",
+      "kind": "FE-1V accepted content"
+    },
+    "book/part-04-api-engineering/chapters/chapter-08-api-reliability-diagnostics-and-performance-evidence.md": {
+      "baselineBlob": "7bb352e6bbbb99415a02edca9eccfb9af934d2cf",
+      "fe1vSha256": "e17af644e26a0bb154ccef7e65aaea2f18572a1be2754b74b11ff99e49d91133",
+      "sha256": "e17af644e26a0bb154ccef7e65aaea2f18572a1be2754b74b11ff99e49d91133",
+      "kind": "FE-1V accepted content"
+    },
+    "book/part-04-api-engineering/chapters/chapter-09-sustaining-api-quality-change-impact-regression-and-production-learning.md": {
+      "baselineBlob": "82f473e21b342e472d5672dadee2ff41351467ae",
+      "fe1vSha256": "30dca40746ff6c71970befe98b9d5b64747218b7e2d01f030bb061e59ff4b3f9",
+      "sha256": "30dca40746ff6c71970befe98b9d5b64747218b7e2d01f030bb061e59ff4b3f9",
+      "kind": "FE-1V accepted content"
+    },
+    "book/part-04-api-engineering/chapters/chapter-10-capstone-api-quality-strategy-and-evidence-portfolio.md": {
+      "baselineBlob": "afbcbd7326e6e57e28a702351adfb1f41689dd8f",
+      "fe1vSha256": "b0a282635e7dc4780e132a8f4241cf1236da9f4d2b5fdfc9efeb452e8ac82333",
+      "sha256": "b0a282635e7dc4780e132a8f4241cf1236da9f4d2b5fdfc9efeb452e8ac82333",
+      "kind": "FE-1V accepted content"
+    },
+    "book/part-05-automation-engineering/chapters/chapter-01-automation-engineering-purpose-evidence-and-boundaries.md": {
+      "baselineBlob": "6f55cf7d77b748325bc3d695a4cf874ee183776c",
+      "fe1vSha256": "da4831553e0c50d8a203f7a136213bac0bcae4042e52fdaf6d2fe15725cada52",
+      "sha256": "da4831553e0c50d8a203f7a136213bac0bcae4042e52fdaf6d2fe15725cada52",
+      "kind": "FE-1V accepted content"
+    },
+    "book/part-05-automation-engineering/chapters/chapter-02-automation-system-architecture-and-feedback-design.md": {
+      "baselineBlob": "fc8915661ab55f3ddcc430c3d85839134584c9a0",
+      "fe1vSha256": "c8375183206b480ec151c1569e51da8be0842d3fc3b84e940a3e45f81d95de3b",
+      "sha256": "c8375183206b480ec151c1569e51da8be0842d3fc3b84e940a3e45f81d95de3b",
+      "kind": "FE-1V accepted content"
+    },
+    "book/part-05-automation-engineering/chapters/chapter-03-reusable-automation-design-abstractions-fixtures-and-test-data.md": {
+      "baselineBlob": "2228eb18b652afc586ed01d22178972ac3816622",
+      "fe1vSha256": "d02cec054b59047e838d992d02a0c159433c8f7b90a10bbe0fd21abff6b81f24",
+      "sha256": "d02cec054b59047e838d992d02a0c159433c8f7b90a10bbe0fd21abff6b81f24",
+      "kind": "FE-1V accepted content"
+    },
+    "book/part-05-automation-engineering/chapters/chapter-04-deterministic-automation-state-synchronization-dependencies-and-flakiness.md": {
+      "baselineBlob": "b766bc5499e2da9f4ff3f92d3dfc1996dc3a1e1f",
+      "fe1vSha256": "7e4a7f9a38b3eb3f1c1c638244ff7768446730205d6a7d03d340040b315b0fdc",
+      "sha256": "7e4a7f9a38b3eb3f1c1c638244ff7768446730205d6a7d03d340040b315b0fdc",
+      "kind": "FE-1V accepted content"
+    },
+    "book/part-05-automation-engineering/chapters/chapter-05-browser-automation-as-an-engineering-system.md": {
+      "baselineBlob": "899a3f58fbc09e24441a56c8d5b17526e5f2876a",
+      "fe1vSha256": "108204ea39edd73a7f61d7faaaad35940bb190c5bcb04779fb59683faebb9d4c",
+      "sha256": "108204ea39edd73a7f61d7faaaad35940bb190c5bcb04779fb59683faebb9d4c",
+      "kind": "FE-1V accepted content"
+    },
+    "book/part-05-automation-engineering/chapters/chapter-06-composing-ui-api-component-and-service-automation.md": {
+      "baselineBlob": "0e0f1650216ed031cdbf7e4c686befa6daa6c5bd",
+      "fe1vSha256": "ed0a5d9bc3c0e9c88ba610b631f6187ecd31248e6994f725700dfb5abb1e15f8",
+      "sha256": "ed0a5d9bc3c0e9c88ba610b631f6187ecd31248e6994f725700dfb5abb1e15f8",
+      "kind": "FE-1V accepted content"
+    },
+    "book/part-05-automation-engineering/chapters/chapter-07-parallelism-isolation-and-environment-strategy.md": {
+      "baselineBlob": "99b47680f5bea8bd4263b7fb057b6db128cb3a8a",
+      "fe1vSha256": "e0a0080e201b1e374398bde8f6c7b9b67b95cb901291d4db7b0ba2f2f5f0dab8",
+      "sha256": "e0a0080e201b1e374398bde8f6c7b9b67b95cb901291d4db7b0ba2f2f5f0dab8",
+      "kind": "FE-1V accepted content"
+    },
+    "book/part-05-automation-engineering/chapters/chapter-08-diagnostics-reporting-and-failure-investigation.md": {
+      "baselineBlob": "220818e50e88fc0bb6df3021e03d677ab3aa8d3b",
+      "fe1vSha256": "f67ea941eb0ff4e22a4f880173a29583456be6a170558626c3ca671cf0a12220",
+      "sha256": "f67ea941eb0ff4e22a4f880173a29583456be6a170558626c3ca671cf0a12220",
+      "kind": "FE-1V accepted content"
+    },
+    "book/part-05-automation-engineering/chapters/chapter-09-continuous-feedback-ci-oriented-execution-and-test-selection.md": {
+      "baselineBlob": "5c30a86b1a6ca7450e08918831eeee81c6f5feda",
+      "fe1vSha256": "2436b64053fbb910ce60758c2e026e3bc83e34b0eecdef5e30455455d2f4fa6d",
+      "sha256": "2436b64053fbb910ce60758c2e026e3bc83e34b0eecdef5e30455455d2f4fa6d",
+      "kind": "FE-1V accepted content"
+    },
+    "book/part-05-automation-engineering/chapters/chapter-10-sustainable-automation-maintenance-debt-governance-and-scaling.md": {
+      "baselineBlob": "0969271e68a8dea40b812b4716e2caa7285b59c2",
+      "fe1vSha256": "d97ee21f71765dd9116f5f0df30d16f716c0095174603540a94ad44956fae946",
+      "sha256": "d97ee21f71765dd9116f5f0df30d16f716c0095174603540a94ad44956fae946",
+      "kind": "FE-1V accepted content"
+    },
+    "book/part-05-automation-engineering/chapters/chapter-11-specialized-automation-evidence-visual-accessibility-cross-browser-and-mobile.md": {
+      "baselineBlob": "d31276fcd8cba597dec4be91bf598908c4aa3de5",
+      "fe1vSha256": "3f46d15318fa9302537a17432a06e7da71a29e0deeb9c8312bfab87b68e96d4d",
+      "sha256": "3f46d15318fa9302537a17432a06e7da71a29e0deeb9c8312bfab87b68e96d4d",
+      "kind": "FE-1V accepted content"
+    },
+    "book/part-05-automation-engineering/chapters/chapter-12-capstone-quality-automation-system.md": {
+      "baselineBlob": "3fd07e259ba60a6fbdbc0f9628bcd7f41a5f8bca",
+      "fe1vSha256": "149ded6b4c985ac97cab97f797b2112a7a57ab6e161ac973e36f0e5b8f83a6f9",
+      "sha256": "149ded6b4c985ac97cab97f797b2112a7a57ab6e161ac973e36f0e5b8f83a6f9",
+      "kind": "FE-1V accepted content"
+    },
+    "book/part-06-data-quality-engineering/chapters/chapter-01-data-quality-engineering-evidence-meaning-and-risk.md": {
+      "baselineBlob": "9864698623e1ef85a3d71678c719b57c092d69ab",
+      "fe1vSha256": "e8bf6a7d26307f52e711c11445d25d7568717f5b39609718aac26cd6213af0e1",
+      "sha256": "e8bf6a7d26307f52e711c11445d25d7568717f5b39609718aac26cd6213af0e1",
+      "kind": "FE-1V accepted content"
+    },
+    "book/part-06-data-quality-engineering/chapters/chapter-02-data-representations-models-and-contextual-quality-dimensions.md": {
+      "baselineBlob": "73ce1909545ee8db3b9d9ececcdb43c1002c7f05",
+      "fe1vSha256": "090e80b26ce1bb9b725485df434e066265847ff4465dc3a0c815cdde6fdfe527",
+      "sha256": "090e80b26ce1bb9b725485df434e066265847ff4465dc3a0c815cdde6fdfe527",
+      "kind": "FE-1V accepted content"
+    },
+    "book/part-06-data-quality-engineering/chapters/chapter-03-query-based-data-evidence-integrity-and-relationships.md": {
+      "baselineBlob": "bad5b90c3dbe4edee972c02e380c1ce076184145",
+      "fe1vSha256": "3c6a73ff090349469cd3fd7877e6755717596806d7224b7dfa30e940b2cd45d0",
+      "sha256": "3c6a73ff090349469cd3fd7877e6755717596806d7224b7dfa30e940b2cd45d0",
+      "kind": "FE-1V accepted content"
+    },
+    "book/part-06-data-quality-engineering/chapters/chapter-04-transformation-quality-and-business-rules.md": {
+      "baselineBlob": "57617c04c00ec573c38ba08b318168950e63b35f",
+      "fe1vSha256": "656c24cd42bd1485075a6105d3384a48f4aa027fa03f06b74961024967610f47",
+      "sha256": "656c24cd42bd1485075a6105d3384a48f4aa027fa03f06b74961024967610f47",
+      "kind": "FE-1V accepted content"
+    },
+    "book/part-06-data-quality-engineering/chapters/chapter-05-pipeline-quality-ingestion-processing-storage-and-consumers.md": {
+      "baselineBlob": "24df82a5a67ffd0d7c0a0d1624dcd52248c9a417",
+      "fe1vSha256": "6cd237ff0045f1f49ff52c5dc75b6e297decd22a71a3a168052cb934e78f085e",
+      "sha256": "6cd237ff0045f1f49ff52c5dc75b6e297decd22a71a3a168052cb934e78f085e",
+      "kind": "FE-1V accepted content"
+    },
+    "book/part-06-data-quality-engineering/chapters/chapter-06-reconciliation-and-cross-system-consistency.md": {
+      "baselineBlob": "885d7f5f481db4fbc6896ef96109d08d8fd240eb",
+      "fe1vSha256": "b6942481a4927364816ecbf0a88ee316aadd1ba50c50960a45010b4a2e58a10e",
+      "sha256": "b6942481a4927364816ecbf0a88ee316aadd1ba50c50960a45010b4a2e58a10e",
+      "kind": "FE-1V accepted content"
+    },
+    "book/part-06-data-quality-engineering/chapters/chapter-07-batch-streaming-and-temporal-data-quality.md": {
+      "baselineBlob": "362dfe532fe20982afee4725af980f497a45b5d8",
+      "fe1vSha256": "790c7ee6cb4bb594e13f72959ab0e00ff9ffde5ffbe4747d4875d649c00ae4e8",
+      "sha256": "790c7ee6cb4bb594e13f72959ab0e00ff9ffde5ffbe4747d4875d649c00ae4e8",
+      "kind": "FE-1V accepted content"
+    },
+    "book/part-06-data-quality-engineering/chapters/chapter-08-data-contracts-lineage-provenance-and-ownership.md": {
+      "baselineBlob": "22a5bb4e779006a54ec4a10d7cebe40efeb01f6f",
+      "fe1vSha256": "97bfb6a7aaf805d043927708b788fca1b8fe991f78252226a33f62447f14ecac",
+      "sha256": "97bfb6a7aaf805d043927708b788fca1b8fe991f78252226a33f62447f14ecac",
+      "kind": "FE-1V accepted content"
+    },
+    "book/part-06-data-quality-engineering/chapters/chapter-09-analytics-metrics-and-reporting-integrity.md": {
+      "baselineBlob": "dc593559b45d137b6263cd956c100f8fe7b7c2a2",
+      "fe1vSha256": "a9631fe2db67d9ce3f675ab8e12e2bf3a7ba371010ff81ca33b3e79876f91d02",
+      "sha256": "a9631fe2db67d9ce3f675ab8e12e2bf3a7ba371010ff81ca33b3e79876f91d02",
+      "kind": "FE-1V accepted content"
+    },
+    "book/part-06-data-quality-engineering/chapters/chapter-10-production-data-learning-change-and-sustainability.md": {
+      "baselineBlob": "8273031f7fc26d7aac5ac5c2bbcc4c76a9598d70",
+      "fe1vSha256": "4d476533184d20c4eaa38c9db1d1fff5934f8851a800189ce34dcd681d150097",
+      "sha256": "4d476533184d20c4eaa38c9db1d1fff5934f8851a800189ce34dcd681d150097",
+      "kind": "FE-1V accepted content"
+    },
+    "book/part-06-data-quality-engineering/chapters/chapter-11-capstone-data-quality-strategy-and-evidence-portfolio.md": {
+      "baselineBlob": "e8957ae3f1cd00e0c6ed94360cfadee994491cfd",
+      "fe1vSha256": "8b9b8c3c1d8cada3b5cf1907f62d10d35004db3f5d5e4c42d995cfa0e76dd21a",
+      "sha256": "8b9b8c3c1d8cada3b5cf1907f62d10d35004db3f5d5e4c42d995cfa0e76dd21a",
+      "kind": "FE-1V accepted content"
+    },
+    "book/part-07-cloud-devops/chapters/chapter-01-cloud-devops-quality-engineering-delivery-systems-evidence-and-boundaries.md": {
+      "baselineBlob": "553477e57471c72f10ab1c1f83d1a8f4938d05b9",
+      "fe1vSha256": "81e5fdbb045259c363fc8ef086bc8c2b4edc7f713c8fdbe971889c466288c242",
+      "sha256": "81e5fdbb045259c363fc8ef086bc8c2b4edc7f713c8fdbe971889c466288c242",
+      "kind": "FE-1V accepted content"
+    },
+    "book/part-07-cloud-devops/chapters/chapter-02-environment-strategy-configuration-and-secret-boundaries.md": {
+      "baselineBlob": "94d059f16ca9cc5ff344613743d901e07498c2a1",
+      "fe1vSha256": "6bbea20bbe474a17e3538413983c3eb5211a6aff85673283081dc80f9ad97e98",
+      "sha256": "6bbea20bbe474a17e3538413983c3eb5211a6aff85673283081dc80f9ad97e98",
+      "kind": "FE-1V accepted content"
+    },
+    "book/part-07-cloud-devops/chapters/chapter-03-container-artifacts-runtime-assumptions-and-reproducible-delivery.md": {
+      "baselineBlob": "65463bd479dfd867e68defdfe64f0ff20a33cc8f",
+      "fe1vSha256": "e85bb3b4fc16c2d77d1b185dd32d8da1b16ee2d9e2201f3791c68a3254a8d834",
+      "sha256": "e85bb3b4fc16c2d77d1b185dd32d8da1b16ee2d9e2201f3791c68a3254a8d834",
+      "kind": "FE-1V accepted content"
+    },
+    "book/part-07-cloud-devops/chapters/chapter-04-infrastructure-as-code-change-evidence-review-and-drift.md": {
+      "baselineBlob": "673e84a0c6a4661ace5cb1477c8362f2fcbce9c8",
+      "fe1vSha256": "ef104e104ce516610caec4a500133b21f758ac655c980162a237d656e9151609",
+      "sha256": "ef104e104ce516610caec4a500133b21f758ac655c980162a237d656e9151609",
+      "kind": "FE-1V accepted content"
+    },
+    "book/part-07-cloud-devops/chapters/chapter-05-delivery-pipelines-as-quality-systems.md": {
+      "baselineBlob": "ec6d299e9f7f076f8160b4ce5b2c37b160a13e16",
+      "fe1vSha256": "1be2096eab55af0329f989d305faf88ae6f67ee00437f331322054cee4e9a0f9",
+      "sha256": "1be2096eab55af0329f989d305faf88ae6f67ee00437f331322054cee4e9a0f9",
+      "kind": "FE-1V accepted content"
+    },
+    "book/part-07-cloud-devops/chapters/chapter-06-deployment-strategies-progressive-delivery-and-release-exposure.md": {
+      "baselineBlob": "f078ef7de614ca464ebdeee932c9e5b7ec846124",
+      "fe1vSha256": "487f545a1b80ecfb1236da5ce61f31773691f5d902f230fc225a3bca99ef25f1",
+      "sha256": "487f545a1b80ecfb1236da5ce61f31773691f5d902f230fc225a3bca99ef25f1",
+      "kind": "FE-1V accepted content"
+    },
+    "book/part-07-cloud-devops/chapters/chapter-07-deployment-verification-and-release-evidence.md": {
+      "baselineBlob": "8cee6c5ba40572d0ccbbfe69ff53e11aa4ea6c71",
+      "fe1vSha256": "95fe03e3bd493e7676b0147f4a1f582ac6a9f870d6354ab550996e66b00c68df",
+      "sha256": "95fe03e3bd493e7676b0147f4a1f582ac6a9f870d6354ab550996e66b00c68df",
+      "kind": "FE-1V accepted content"
+    },
+    "book/part-07-cloud-devops/chapters/chapter-08-rollback-roll-forward-and-recovery-decisions.md": {
+      "baselineBlob": "f762586a29b5709fc8248a4d0bd78133cad1d5cf",
+      "fe1vSha256": "734eafede810f6181b0d35b8a04baffc6ef797f4f7a6814c0f65fc23831d72af",
+      "sha256": "734eafede810f6181b0d35b8a04baffc6ef797f4f7a6814c0f65fc23831d72af",
+      "kind": "FE-1V accepted content"
+    },
+    "book/part-07-cloud-devops/chapters/chapter-09-release-readiness-promotion-and-operational-handoffs.md": {
+      "baselineBlob": "c0988d6d0ea059a90f56d8a165230a6a59129f39",
+      "fe1vSha256": "22d2c0466a0c8899df4e6fa37e9f24376ac1bede990c4f175759637f3ec36f4c",
+      "sha256": "22d2c0466a0c8899df4e6fa37e9f24376ac1bede990c4f175759637f3ec36f4c",
+      "kind": "FE-1V accepted content"
+    },
+    "book/part-07-cloud-devops/chapters/chapter-10-devops-collaboration-delivery-learning-and-sustainable-change.md": {
+      "baselineBlob": "d30ca79d807f01a1350c934f870a132c11838520",
+      "fe1vSha256": "739254172764f2889672767005ac81e0921a8fe3fd7b65e1367da799faa1ba5e",
+      "sha256": "739254172764f2889672767005ac81e0921a8fe3fd7b65e1367da799faa1ba5e",
+      "kind": "FE-1V accepted content"
+    },
+    "book/part-07-cloud-devops/chapters/chapter-11-capstone-cloud-devops-quality-strategy-and-release-evidence-portfolio.md": {
+      "baselineBlob": "d6974f6aa14c5a05e57d6d3936a07af1176dada0",
+      "fe1vSha256": "4eb391d77ad577a8673d5c18d7d878c5b9ae5729faa5aeb2f5cca9885eac7acd",
+      "sha256": "4eb391d77ad577a8673d5c18d7d878c5b9ae5729faa5aeb2f5cca9885eac7acd",
+      "kind": "FE-1V accepted content"
+    },
+    "book/part-08-observability-reliability/chapters/chapter-01-observability-reliability-engineering-evidence-behaviour-and-boundaries.md": {
+      "baselineBlob": "b63fea5e0595905439a65544f7645085b8a8d813",
+      "fe1vSha256": "a2a276752a109615ffd45cc1eaf628409cc6fccdb9b1576a7ccbb11d2a912e32",
+      "sha256": "a2a276752a109615ffd45cc1eaf628409cc6fccdb9b1576a7ccbb11d2a912e32",
+      "kind": "FE-1V accepted content"
+    },
+    "book/part-08-observability-reliability/chapters/chapter-02-telemetry-quality-logs-events-and-context.md": {
+      "baselineBlob": "1097323e79bc25f596205241f7336e99d3abb481",
+      "fe1vSha256": "1c8fb6a0a316782f6b0363d2945037aecc648bdb4c904d1234b834afddd5e145",
+      "sha256": "1c8fb6a0a316782f6b0363d2945037aecc648bdb4c904d1234b834afddd5e145",
+      "kind": "FE-1V accepted content"
+    },
+    "book/part-08-observability-reliability/chapters/chapter-03-metrics-and-operational-measurement.md": {
+      "baselineBlob": "a8ac0ab82239732250c8cc223ab97548f8f41a7e",
+      "fe1vSha256": "0505da35639baa4958eb007b0a5eab8425aef264ee468bb1c3bb48b7b4afac5d",
+      "sha256": "0505da35639baa4958eb007b0a5eab8425aef264ee468bb1c3bb48b7b4afac5d",
+      "kind": "FE-1V accepted content"
+    },
+    "book/part-08-observability-reliability/chapters/chapter-04-distributed-tracing-and-cross-service-investigation.md": {
+      "baselineBlob": "969cf50ad044024aff63592c3020657af94ddc27",
+      "fe1vSha256": "ed25ef9f5c4f1b25b2935e76cf5096e773a758c4228b51784483057037900dfe",
+      "sha256": "ed25ef9f5c4f1b25b2935e76cf5096e773a758c4228b51784483057037900dfe",
+      "kind": "FE-1V accepted content"
+    },
+    "book/part-08-observability-reliability/chapters/chapter-05-designing-observable-systems-for-quality-engineering.md": {
+      "baselineBlob": "0e8765a43569e0aeb55a3b588c70a661aa135215",
+      "fe1vSha256": "7ec6a7d928970bccc484d5045c585cc30c4471a9059b2572c4c9e5020cb6c27a",
+      "sha256": "7ec6a7d928970bccc484d5045c585cc30c4471a9059b2572c4c9e5020cb6c27a",
+      "kind": "FE-1V accepted content"
+    },
+    "book/part-08-observability-reliability/chapters/chapter-06-reliability-service-behaviour-and-user-relevant-outcomes.md": {
+      "baselineBlob": "484f40136166957f0726cfa47603c8916248b4ea",
+      "fe1vSha256": "dda3c1d82e710e3ccb5cc4cb433b6270ea66889ab0658e7a07ff63c3e6ac0871",
+      "sha256": "dda3c1d82e710e3ccb5cc4cb433b6270ea66889ab0658e7a07ff63c3e6ac0871",
+      "kind": "FE-1V accepted content"
+    },
+    "book/part-08-observability-reliability/chapters/chapter-07-slis-slos-error-budgets-and-reliability-decisions.md": {
+      "baselineBlob": "a2fe901a63c33a1146078fa95886f0670e20e7de",
+      "fe1vSha256": "6217f61e15f4bef27ab6c02c03deaffefc7a4c6c8624e35f6aa5f20ade1f0ce9",
+      "sha256": "6217f61e15f4bef27ab6c02c03deaffefc7a4c6c8624e35f6aa5f20ade1f0ce9",
+      "kind": "FE-1V accepted content"
+    },
+    "book/part-08-observability-reliability/chapters/chapter-08-alert-quality-incident-evidence-and-operational-diagnosis.md": {
+      "baselineBlob": "4cc0a11c6625a9fb995162118bc008f86faf2d2a",
+      "fe1vSha256": "199a5abe1f951eabc7da397dd9914f88961a276d2f9411f2809e88202407635d",
+      "sha256": "199a5abe1f951eabc7da397dd9914f88961a276d2f9411f2809e88202407635d",
+      "kind": "FE-1V accepted content"
+    },
+    "book/part-08-observability-reliability/chapters/chapter-09-resilience-patterns-dependencies-and-failure-containment.md": {
+      "baselineBlob": "4dc47af0d27e2d14bb3c0ddd80abd061a4876b70",
+      "fe1vSha256": "aaa7ccbad709e396ba030c8688ae36ba54448a7923d7907eabd0c0eda36407a0",
+      "sha256": "aaa7ccbad709e396ba030c8688ae36ba54448a7923d7907eabd0c0eda36407a0",
+      "kind": "FE-1V accepted content"
+    },
+    "book/part-08-observability-reliability/chapters/chapter-10-fault-injection-recovery-evidence-and-reliability-learning.md": {
+      "baselineBlob": "9e5d2ed89c9d4dfcddb4f7f24abda9670d8c9065",
+      "fe1vSha256": "c124d4345e2809707228d6498fb5bf30b0f1373efc28131821af4e4f73c47b7c",
+      "sha256": "c124d4345e2809707228d6498fb5bf30b0f1373efc28131821af4e4f73c47b7c",
+      "kind": "FE-1V accepted content"
+    },
+    "book/part-08-observability-reliability/chapters/chapter-11-capstone-observability-reliability-strategy-and-evidence-portfolio.md": {
+      "baselineBlob": "be1d0c9feb1b8a992d9be648c4d01ac30fd234c4",
+      "fe1vSha256": "a6a9094fabf906c758d038cbd57f786d39f666c3854c72640f6352a24dbe21dd",
+      "sha256": "a6a9094fabf906c758d038cbd57f786d39f666c3854c72640f6352a24dbe21dd",
+      "kind": "FE-1V accepted content"
+    },
+    "book/part-09-ai-quality-engineering/chapters/chapter-01-ai-quality-engineering-behaviour-evidence-and-boundaries.md": {
+      "baselineBlob": "292591052d96d9508ca669743772ba6913e449ca",
+      "fe1vSha256": "8ed4770f0da9333593a89a88c9aafec65af58f028836719a09a6b5c13b231e61",
+      "sha256": "8ed4770f0da9333593a89a88c9aafec65af58f028836719a09a6b5c13b231e61",
+      "kind": "FE-1V accepted content"
+    },
+    "book/part-09-ai-quality-engineering/chapters/chapter-02-ai-system-architecture-and-failure-boundaries.md": {
+      "baselineBlob": "0588a6945100835ec8ab76ea54744b62304013df",
+      "fe1vSha256": "5004c1ea0a4bcb72c9f457992ebc7dfee778cfeaec66e727067d1ef348d9a4ec",
+      "sha256": "5004c1ea0a4bcb72c9f457992ebc7dfee778cfeaec66e727067d1ef348d9a4ec",
+      "kind": "FE-1V accepted content"
+    },
+    "book/part-09-ai-quality-engineering/chapters/chapter-03-evaluation-data-oracles-and-experimental-design.md": {
+      "baselineBlob": "21ed22123fe9dea236706b14c2fb4f2922104550",
+      "fe1vSha256": "b68b581656fce2f1073e067fcb391be8a2c8d8ab6851b02ff0f763fd405e04c6",
+      "sha256": "b68b581656fce2f1073e067fcb391be8a2c8d8ab6851b02ff0f763fd405e04c6",
+      "kind": "FE-1V accepted content"
+    },
+    "book/part-09-ai-quality-engineering/chapters/chapter-04-classification-ranking-and-predictive-model-evaluation.md": {
+      "baselineBlob": "4abb5f22bd3c58e06064612e1df83bfd7ed975e8",
+      "fe1vSha256": "cdff2aee005e12c4c4e2ff5bdbd60cabeb8a6081a8b18a1ff0e52969e367a794",
+      "sha256": "cdff2aee005e12c4c4e2ff5bdbd60cabeb8a6081a8b18a1ff0e52969e367a794",
+      "kind": "FE-1V accepted content"
+    },
+    "book/part-09-ai-quality-engineering/chapters/chapter-05-generative-ai-evaluation-rubrics-factuality-and-instruction-following.md": {
+      "baselineBlob": "00dc278ec1d94c92fea918c8709263767f8a7e89",
+      "fe1vSha256": "9d2cbddcfc2d858d4ea477a5816ad075a8fc5bc3bfadc57e8a97810977bebea0",
+      "sha256": "9d2cbddcfc2d858d4ea477a5816ad075a8fc5bc3bfadc57e8a97810977bebea0",
+      "kind": "FE-1V accepted content"
+    },
+    "book/part-09-ai-quality-engineering/chapters/chapter-06-robustness-metamorphic-testing-and-adversarial-inputs.md": {
+      "baselineBlob": "14e10f95cee3c3540e44035b2a2264f20c7208b3",
+      "fe1vSha256": "c8ea477a85bd7445290e1652a093f7bf55ac8c7dd7698768bc792c9635130c78",
+      "sha256": "c8ea477a85bd7445290e1652a093f7bf55ac8c7dd7698768bc792c9635130c78",
+      "kind": "FE-1V accepted content"
+    },
+    "book/part-09-ai-quality-engineering/chapters/chapter-07-retrieval-augmented-generation-quality.md": {
+      "baselineBlob": "314dea950fa6e8430b7d0af913d3c72be1869bf8",
+      "fe1vSha256": "677837d7021a64876ffd1559572776a860dada0ba036106ef4b4a5489b63b89a",
+      "sha256": "677837d7021a64876ffd1559572776a860dada0ba036106ef4b4a5489b63b89a",
+      "kind": "FE-1V accepted content"
+    },
+    "book/part-09-ai-quality-engineering/chapters/chapter-08-human-evaluation-and-model-based-evaluators.md": {
+      "baselineBlob": "41cc23daea7beaeb175de8fb7843ecfed5480df7",
+      "fe1vSha256": "988d93c4029b654607b091bac9af9a1bb0532e19b8bd210f1cb72e6cdc7992e0",
+      "sha256": "988d93c4029b654607b091bac9af9a1bb0532e19b8bd210f1cb72e6cdc7992e0",
+      "kind": "FE-1V accepted content"
+    },
+    "book/part-09-ai-quality-engineering/chapters/chapter-09-tool-using-and-agentic-ai-systems.md": {
+      "baselineBlob": "071fb291baebbbf601ea5ef33a0542afd0abc0da",
+      "fe1vSha256": "a22ae9cb428bd168dce37db04695bf45552787f148e5a6818719227d1b492688",
+      "sha256": "a22ae9cb428bd168dce37db04695bf45552787f148e5a6818719227d1b492688",
+      "kind": "FE-1V accepted content"
+    },
+    "book/part-09-ai-quality-engineering/chapters/chapter-10-safety-fairness-privacy-and-responsible-quality-boundaries.md": {
+      "baselineBlob": "cca62ff2ea597ecd1139330e900c3d2156a81a0f",
+      "fe1vSha256": "96879eeed3db782e11f8f3bfcd3e70bdc18ea4e0c17efb5b705bdf8457d82939",
+      "sha256": "96879eeed3db782e11f8f3bfcd3e70bdc18ea4e0c17efb5b705bdf8457d82939",
+      "kind": "FE-1V accepted content"
+    },
+    "book/part-09-ai-quality-engineering/chapters/chapter-11-ai-regression-production-learning-and-change.md": {
+      "baselineBlob": "f831784b46e71fce73d659205b95d6c7e077ef83",
+      "fe1vSha256": "a6e9a75a626b013b1304f0759c3f052d09cade9a5d69bd9e74c96a46a9325394",
+      "sha256": "a6e9a75a626b013b1304f0759c3f052d09cade9a5d69bd9e74c96a46a9325394",
+      "kind": "FE-1V accepted content"
+    },
+    "book/part-09-ai-quality-engineering/chapters/chapter-12-capstone-ai-quality-strategy-and-evaluation-portfolio.md": {
+      "baselineBlob": "631e8f8b58cae6c3664e14caa81e8a65fb2cc0d6",
+      "fe1vSha256": "7433affc3e71128077ad6e851fe73751afc4ad89dbe47e31d0e5d6d6a06f3a48",
+      "sha256": "7433affc3e71128077ad6e851fe73751afc4ad89dbe47e31d0e5d6d6a06f3a48",
+      "kind": "FE-1V accepted content"
+    },
+    "book/part-10-performance-security/chapters/chapter-01-performance-security-engineering-boundaries-evidence-and-decisions.md": {
+      "baselineBlob": "2e13d963fc5a56b4a8fa339c5d134261906b61c9",
+      "fe1vSha256": "5f7cb6742e3cf0407745a183336ba4c113695172db8251e6c94c580665557668",
+      "sha256": "5f7cb6742e3cf0407745a183336ba4c113695172db8251e6c94c580665557668",
+      "kind": "FE-1V accepted content"
+    },
+    "book/part-10-performance-security/chapters/chapter-02-workload-threat-and-measurement-models.md": {
+      "baselineBlob": "3c56d42c3e0e7d482d19af105d1c238af0789eac",
+      "fe1vSha256": "fb9b04706c53eb8ccd4f9b98cd413efff86093a68ff19537a36ef508f8c51d6c",
+      "sha256": "fb9b04706c53eb8ccd4f9b98cd413efff86093a68ff19537a36ef508f8c51d6c",
+      "kind": "FE-1V accepted content"
+    },
+    "book/part-10-performance-security/chapters/chapter-03-latency-throughput-concurrency-and-performance-evidence.md": {
+      "baselineBlob": "ae00e076287ac48c229ae1c449b8833f2f34e160",
+      "fe1vSha256": "8309eae0bd19de640e68090ffc828c16f57cb1e0a988fe2dfbb8a31ca999f937",
+      "sha256": "8309eae0bd19de640e68090ffc828c16f57cb1e0a988fe2dfbb8a31ca999f937",
+      "kind": "FE-1V accepted content"
+    },
+    "book/part-10-performance-security/chapters/chapter-04-performance-experiments-load-stress-variability-and-validity.md": {
+      "baselineBlob": "d852128d6a979d6d5695974fa2f6ceb8461d01a1",
+      "fe1vSha256": "fa742b5a9ca60a9acb219feebc43522cf4dcea9b6b9296e15da657fc8a8d2b1b",
+      "sha256": "fa742b5a9ca60a9acb219feebc43522cf4dcea9b6b9296e15da657fc8a8d2b1b",
+      "kind": "FE-1V accepted content"
+    },
+    "book/part-10-performance-security/chapters/chapter-05-capacity-scalability-queues-and-bottleneck-evidence.md": {
+      "baselineBlob": "fef8af3b2a551372fa02c5887dae64a0b86443f7",
+      "fe1vSha256": "44a37e2299a22fe5f491fc0fc236ce3d7fe1d990b9f2b638b30be1d9548567fc",
+      "sha256": "44a37e2299a22fe5f491fc0fc236ce3d7fe1d990b9f2b638b30be1d9548567fc",
+      "kind": "FE-1V accepted content"
+    },
+    "book/part-10-performance-security/chapters/chapter-06-performance-regression-and-production-evidence-handoff.md": {
+      "baselineBlob": "6b297a3f4b99d018af287e40ca93923204fd7fb5",
+      "fe1vSha256": "3cee3d3e839a4afa28540c40828281009e4849fb2e589f94f99f3f5a870d95ef",
+      "sha256": "3cee3d3e839a4afa28540c40828281009e4849fb2e589f94f99f3f5a870d95ef",
+      "kind": "FE-1V accepted content"
+    },
+    "book/part-10-performance-security/chapters/chapter-07-security-quality-assets-trust-boundaries-and-threat-models.md": {
+      "baselineBlob": "3efb9d355500164408d6d2ede563329417ec6c95",
+      "fe1vSha256": "c2497d4d1f008e577b5c856e0ebb4bac2068ab93c207e5d429a4e5955a11fc8a",
+      "sha256": "c2497d4d1f008e577b5c856e0ebb4bac2068ab93c207e5d429a4e5955a11fc8a",
+      "kind": "FE-1V accepted content"
+    },
+    "book/part-10-performance-security/chapters/chapter-08-authentication-authorization-sessions-and-api-boundaries.md": {
+      "baselineBlob": "6e228153c6764230da544bb5be394b305c6b0797",
+      "fe1vSha256": "98a186365cbd10beb9cab1be48fe2b72b6ba90fae7b039708f7cc779c3b1610d",
+      "sha256": "98a186365cbd10beb9cab1be48fe2b72b6ba90fae7b039708f7cc779c3b1610d",
+      "kind": "FE-1V accepted content"
+    },
+    "book/part-10-performance-security/chapters/chapter-09-input-output-dependencies-secrets-and-configuration-trust.md": {
+      "baselineBlob": "458ab6f91ddbf40200727af5bafe462d525064a6",
+      "fe1vSha256": "1fda2e7e185402e20f3a0ed10daccbd143685f85c6494d3cfb282586e1235da4",
+      "sha256": "1fda2e7e185402e20f3a0ed10daccbd143685f85c6494d3cfb282586e1235da4",
+      "kind": "FE-1V accepted content"
+    },
+    "book/part-10-performance-security/chapters/chapter-10-security-evidence-findings-verification-and-residual-risk.md": {
+      "baselineBlob": "6516d14d40b78828a00761f26b9d49c790b7774d",
+      "fe1vSha256": "d6cc5f2b82db813d50419c6d6a0236adc79d2b373d236ad5c7c64567ab25b56e",
+      "sha256": "d6cc5f2b82db813d50419c6d6a0236adc79d2b373d236ad5c7c64567ab25b56e",
+      "kind": "FE-1V accepted content"
+    },
+    "book/part-10-performance-security/chapters/chapter-11-performance-security-trade-offs-regression-and-decision-readiness.md": {
+      "baselineBlob": "47f87f6744a221e10efef870a0aec2afe43b1213",
+      "fe1vSha256": "8f2490cc4936e1a6da6952961b0d346d8e05eb222de3f46589158c4c184b52f3",
+      "sha256": "8f2490cc4936e1a6da6952961b0d346d8e05eb222de3f46589158c4c184b52f3",
+      "kind": "FE-1V accepted content"
+    },
+    "book/part-10-performance-security/chapters/chapter-12-capstone-performance-security-strategy-and-evidence-portfolio.md": {
+      "baselineBlob": "a53b841a7bc9b3bb86219b097f2aa7cf5f3245f0",
+      "fe1vSha256": "4115dd878064d41f500392dbc693bd11ae1dd809e72731de37a175a7dc7a9036",
+      "sha256": "4115dd878064d41f500392dbc693bd11ae1dd809e72731de37a175a7dc7a9036",
+      "kind": "FE-1V accepted content"
+    },
+    "book/part-11-system-design-architecture/chapters/chapter-01-system-design-architecture-as-quality-engineering.md": {
+      "baselineBlob": "3519df6f6e82de9742de96fa5e898752c164ef28",
+      "fe1vSha256": "5cfdc2c1a670edb85f0d7e40b3edb2d54f419c628b4c4eadbf6549070d01e08a",
+      "sha256": "5cfdc2c1a670edb85f0d7e40b3edb2d54f419c628b4c4eadbf6549070d01e08a",
+      "kind": "FE-1V accepted content"
+    },
+    "book/part-11-system-design-architecture/chapters/chapter-02-boundaries-responsibilities-coupling-and-dependencies.md": {
+      "baselineBlob": "107138bf61a0d45c2944da103269061e947dbc03",
+      "fe1vSha256": "d0bf10c735c22c6e7ac252297fc53645bf94d99a1f6cdba52dd33f725ec96d60",
+      "sha256": "d0bf10c735c22c6e7ac252297fc53645bf94d99a1f6cdba52dd33f725ec96d60",
+      "kind": "FE-1V accepted content"
+    },
+    "book/part-11-system-design-architecture/chapters/chapter-03-communication-time-and-failure-across-boundaries.md": {
+      "baselineBlob": "503eda74a04a9f8fcb04231c79bd006aac8fb7c3",
+      "fe1vSha256": "a1c8a29b1c7ce2751be5781f07af842e97245f243eb7f04ba620bcc9b115d6de",
+      "sha256": "a1c8a29b1c7ce2751be5781f07af842e97245f243eb7f04ba620bcc9b115d6de",
+      "kind": "FE-1V accepted content"
+    },
+    "book/part-11-system-design-architecture/chapters/chapter-04-state-ownership-consistency-and-transactional-boundaries.md": {
+      "baselineBlob": "efb8be63376c62ad9d917c53f60a493a38b1a920",
+      "fe1vSha256": "085bf15b49f46142cc4228fdaabe6d117b29474abf9d3f554cf57ba9c41ccb85",
+      "sha256": "085bf15b49f46142cc4228fdaabe6d117b29474abf9d3f554cf57ba9c41ccb85",
+      "kind": "FE-1V accepted content"
+    },
+    "book/part-11-system-design-architecture/chapters/chapter-05-architectural-styles-and-decomposition-trade-offs.md": {
+      "baselineBlob": "874472ce1e7090822e7f6657c267c17e1859160c",
+      "fe1vSha256": "a27d5aa02ba226b85b58e6da6427567684eb5a5af2a4ced6b517faa71b7b3c0d",
+      "sha256": "a27d5aa02ba226b85b58e6da6427567684eb5a5af2a4ced6b517faa71b7b3c0d",
+      "kind": "FE-1V accepted content"
+    },
+    "book/part-11-system-design-architecture/chapters/chapter-06-quality-attributes-constraints-and-trade-off-scenarios.md": {
+      "baselineBlob": "e3b2daa37dc56d253a73470a4ea4257c59a19138",
+      "fe1vSha256": "fcc95ea435e0705736d14a47fc25f144283161781d3bf3f24883acc85c0eea46",
+      "sha256": "fcc95ea435e0705736d14a47fc25f144283161781d3bf3f24883acc85c0eea46",
+      "kind": "FE-1V accepted content"
+    },
+    "book/part-11-system-design-architecture/chapters/chapter-07-architecture-for-testability-observability-operability-and-recovery.md": {
+      "baselineBlob": "6c2dddfa11ac5fdcfedc9d0f7a34b245a4e5e772",
+      "fe1vSha256": "f173882f40a4894f4474d05b348ed64e2f0aeb9c8f20a842595854b5bb0f79c5",
+      "sha256": "f173882f40a4894f4474d05b348ed64e2f0aeb9c8f20a842595854b5bb0f79c5",
+      "kind": "FE-1V accepted content"
+    },
+    "book/part-11-system-design-architecture/chapters/chapter-08-contracts-compatibility-and-change-impact.md": {
+      "baselineBlob": "0e9bc5138fcb14beb48603c79af54a99ac12f476",
+      "fe1vSha256": "7bf40b32232d3a082363b6ea2f78f09ca44c2df3c997d3b876ea00968d5ccaa2",
+      "sha256": "7bf40b32232d3a082363b6ea2f78f09ca44c2df3c997d3b876ea00968d5ccaa2",
+      "kind": "FE-1V accepted content"
+    },
+    "book/part-11-system-design-architecture/chapters/chapter-09-architecture-evidence-fitness-functions-and-decision-records.md": {
+      "baselineBlob": "13aba31e7cf7eb86f4f5a2300677f836837bb336",
+      "fe1vSha256": "08f4e33932d35d9b93deaf3dd7290feee619ce869c200208b0d45b8eb7503d21",
+      "sha256": "08f4e33932d35d9b93deaf3dd7290feee619ce869c200208b0d45b8eb7503d21",
+      "kind": "FE-1V accepted content"
+    },
+    "book/part-11-system-design-architecture/chapters/chapter-10-evolution-migration-reversibility-and-architecture-debt.md": {
+      "baselineBlob": "98372b0e047fe6928e0f8c234e2f430c7052b843",
+      "fe1vSha256": "bc79b98e2bbb3287a1aecf853335b5b4a6160ce3f36f55f15f39e457ce9b0525",
+      "sha256": "bc79b98e2bbb3287a1aecf853335b5b4a6160ce3f36f55f15f39e457ce9b0525",
+      "kind": "FE-1V accepted content"
+    },
+    "book/part-11-system-design-architecture/chapters/chapter-11-integrated-architecture-decisions-scale-security-reliability-and-residual-risk.md": {
+      "baselineBlob": "f0c53cae42f842f36ed4ba41be02543e439e301c",
+      "fe1vSha256": "4fb5d31c3633af5e3bb4d235ca8cd663b12fe1111b2e701129609b11044004a0",
+      "sha256": "4fb5d31c3633af5e3bb4d235ca8cd663b12fe1111b2e701129609b11044004a0",
+      "kind": "FE-1V accepted content"
+    },
+    "book/part-11-system-design-architecture/chapters/chapter-12-capstone-system-design-architecture-quality-strategy-and-evidence-portfolio.md": {
+      "baselineBlob": "248ce3e817098136106468099088dddb1df8ef2b",
+      "fe1vSha256": "984832ad8a3076f5d3832d465114bce0d8afd754e011dfb130b389be60d8a39c",
+      "sha256": "984832ad8a3076f5d3832d465114bce0d8afd754e011dfb130b389be60d8a39c",
+      "kind": "FE-1V accepted content"
+    },
+    "book/part-12-engineering-leadership/chapters/chapter-01-engineering-leadership-as-quality-engineering.md": {
+      "baselineBlob": "4e0d10a1d3201be8b4942aaade70ec456c75c3d8",
+      "fe1vSha256": "52d81dcccb2406a47b140a033aa475aa312eac19ac00d0960f8b34e3a45cdb8c",
+      "sha256": "52d81dcccb2406a47b140a033aa475aa312eac19ac00d0960f8b34e3a45cdb8c",
+      "kind": "FE-1V accepted content"
+    },
+    "book/part-12-engineering-leadership/chapters/chapter-02-communicating-quality-evidence-to-decision-owners.md": {
+      "baselineBlob": "463ca77b2bc3a7ca1be118c0842bdb5c6f3c3504",
+      "fe1vSha256": "b2356f02fdfd10789406eb7b3d11c5f6c5c9cd596f628e9a30bdffe023b8fd10",
+      "sha256": "b2356f02fdfd10789406eb7b3d11c5f6c5c9cd596f628e9a30bdffe023b8fd10",
+      "kind": "FE-1V accepted content"
+    },
+    "book/part-12-engineering-leadership/chapters/chapter-03-written-records-technical-writing-and-organisational-memory.md": {
+      "baselineBlob": "d3bee62ccdc1bab7514f2f4f8e07c1ffe614b9dd",
+      "fe1vSha256": "bb529d1b0cb4250e8c1376d7a5174a3a2c663b02709a84fd224803fbdfeab8fe",
+      "sha256": "bb529d1b0cb4250e8c1376d7a5174a3a2c663b02709a84fd224803fbdfeab8fe",
+      "kind": "FE-1V accepted content"
+    },
+    "book/part-12-engineering-leadership/chapters/chapter-04-disagreement-escalation-and-recording-an-unheeded-concern.md": {
+      "baselineBlob": "cbc9ef3e7c951622417a6d7df08b7cdc405bc1c1",
+      "fe1vSha256": "9779369b4036da58d70e0e5ab1fbc77bda789e7afe6f526871dccea8f55f21a8",
+      "sha256": "9779369b4036da58d70e0e5ab1fbc77bda789e7afe6f526871dccea8f55f21a8",
+      "kind": "FE-1V accepted content"
+    },
+    "book/part-12-engineering-leadership/chapters/chapter-05-decision-rights-ownership-models-governance-operating-models-and-accountability.md": {
+      "baselineBlob": "3ec7bd6ad85311f0aa056a77d9690b4f250652f4",
+      "fe1vSha256": "4dc392f6ba2cb816a08083eab878962c4dea331e5403816fee77f0b667ba1e56",
+      "sha256": "4dc392f6ba2cb816a08083eab878962c4dea331e5403816fee77f0b667ba1e56",
+      "kind": "FE-1V accepted content"
+    },
+    "book/part-12-engineering-leadership/chapters/chapter-06-quality-culture-claims-evidence-and-limits.md": {
+      "baselineBlob": "76b1b0631ec23e41508154c8f3874c9bb846dfcc",
+      "fe1vSha256": "945b1251b2fb4cccf07801878077f86fc38b827f62072f6cb046cdeb5a32bb3b",
+      "sha256": "945b1251b2fb4cccf07801878077f86fc38b827f62072f6cb046cdeb5a32bb3b",
+      "kind": "FE-1V accepted content"
+    },
+    "book/part-12-engineering-leadership/chapters/chapter-07-organisation-structure-and-its-quality-consequences.md": {
+      "baselineBlob": "d2907e4b3984b81ce970de193c28ef0adbc07589",
+      "fe1vSha256": "7bdb783a4a144a216f0b1965ea04685bc878cc8f6c325f4a59a9e7a330eeae5b",
+      "sha256": "7bdb783a4a144a216f0b1965ea04685bc878cc8f6c325f4a59a9e7a330eeae5b",
+      "kind": "FE-1V accepted content"
+    },
+    "book/part-12-engineering-leadership/chapters/chapter-08-mentoring-and-growing-quality-reasoning-in-others.md": {
+      "baselineBlob": "6d9ec8bf054684f80aa1b808e93a87c3b0530f27",
+      "fe1vSha256": "9cc7a830bdbd47c7f2c1662185a2e7f9752a9b7519c7cd02ded21a1b81e9ae86",
+      "sha256": "9cc7a830bdbd47c7f2c1662185a2e7f9752a9b7519c7cd02ded21a1b81e9ae86",
+      "kind": "FE-1V accepted content"
+    },
+    "book/part-12-engineering-leadership/chapters/chapter-09-measuring-engineering-and-quality-practice.md": {
+      "baselineBlob": "10e0ba36646926dc6212382b42c93e16af06cde4",
+      "fe1vSha256": "c5c39b34b1f0719efa6bb9da06c61410ef97a0ade91b5c9e81b3b0983f3d32d7",
+      "sha256": "c5c39b34b1f0719efa6bb9da06c61410ef97a0ade91b5c9e81b3b0983f3d32d7",
+      "kind": "FE-1V accepted content"
+    },
+    "book/part-12-engineering-leadership/chapters/chapter-10-changing-practice-adoption-evidence-and-reversibility.md": {
+      "baselineBlob": "d2780bccfe2a13388d3eb6e473bff170331b443c",
+      "fe1vSha256": "89009eb9dd5265169c14c50a4147e3f478c8ca1d4a43748adab4a0d2baa233c8",
+      "sha256": "89009eb9dd5265169c14c50a4147e3f478c8ca1d4a43748adab4a0d2baa233c8",
+      "kind": "FE-1V accepted content"
+    },
+    "book/part-12-engineering-leadership/chapters/chapter-11-career-growth-as-an-evidence-led-practice.md": {
+      "baselineBlob": "51acedc26307094ad30432e9c3f750a43cb0c0e9",
+      "fe1vSha256": "3412cf80e5480c9e7a347e43bb607b88ecde3d536c9924d80269c944711d3d4f",
+      "sha256": "3412cf80e5480c9e7a347e43bb607b88ecde3d536c9924d80269c944711d3d4f",
+      "kind": "FE-1V accepted content"
+    },
+    "book/part-12-engineering-leadership/chapters/chapter-12-capstone-quality-leadership-and-career-strategy-portfolio.md": {
+      "baselineBlob": "01712cab922c44470a11d8232f03a0e8d77f7451",
+      "fe1vSha256": "24c58120dc2cbbdabb9fdc3095590521c1d4f4a2129db562239aaf4f7f6ea568",
+      "sha256": "24c58120dc2cbbdabb9fdc3095590521c1d4f4a2129db562239aaf4f7f6ea568",
+      "kind": "FE-1V accepted content"
+    },
+    "docs/02-first-edition-review/FIRST_EDITION_FINDINGS.md": {
+      "baselineBlob": "d419f180d8951118d2a79a20541532da95aa9a1b",
+      "fe1vSha256": "3f8e676f0a645c65ba6e8b697779862d33fab506be67c3278d327ecd9dc04d5e",
+      "sha256": "2b4ecbc5314c2731583228883d0654881748f02622b9da735f391a0e1edda99f",
+      "kind": "FE-1R closure-only expectation"
+    },
+    "docs/02-first-edition-review/FIRST_EDITION_REVIEW_LOG.md": {
+      "baselineBlob": "1baa4b43893097f135287f049ab1d594ebd9df18",
+      "fe1vSha256": "6439d03d7062a9631295cdd721fd55cfb7bfadeb8773037abbdf987c751cec7a",
+      "sha256": "9d17e0076ac410179b39d2387a1aa8b4bb425f9aed02e26d93a59157466b3d89",
+      "kind": "FE-1R closure-only expectation"
+    },
+    "docs/02-first-edition-review/FIRST_EDITION_REVIEW_PLAN.md": {
+      "baselineBlob": "1c417a47688033c903841ce57c2bbb41a2a90983",
+      "fe1vSha256": "9766f3fc751ebdc54308491353fe39a37000f8fdea989c858965a39918fa684e",
+      "sha256": "6e5417163e70f8ab1f19d03a0bb7a37eb0f866e2553b0f408ce2bfb2040c313f",
+      "kind": "FE-1R closure-only expectation"
+    },
+    "docs/02-first-edition-review/FIRST_EDITION_VERIFICATION_LEDGERS.md": {
+      "baselineBlob": "c75b86ae2939de672c8c10bfc0d8677242ff6805",
+      "fe1vSha256": "b1fd086efdb9a2ff0c215c1ec7d6df422288ab2ff0db1381c7daad56bafbca6f",
+      "sha256": "5da88cb920a3542fa742c4399f0ca73b5a63ba1300963f408693a46fadd574a7",
+      "kind": "FE-1R closure-only expectation"
+    },
+    "tests/test_first_edition_gate.py": {
+      "baselineBlob": "34f4a75fd5df8698a5934c65f9684de74b913883",
+      "fe1vSha256": "4d1d7fda4ac6d59e96d8ffe29093d7095484fb1c5f005ff85569c8ebe9865756",
+      "sha256": "bad10231fb332d61e9546f3faf5930225df82c1df29a2335718d8e300ec727e3",
+      "kind": "FE-1R closure-only expectation"
+    },
+    "tools/first_edition_gate.py": {
+      "baselineBlob": "677e2d810e4214d0e321eae44f3b5777f7d2f5ad",
+      "fe1vSha256": "30a3d44461a07aed3c7ebd8da1d38c041bd7a22affdc72e78fc75f8e1d056b07",
+      "sha256": "2d8eb7d526030c93c6cf252c26b276ba8156ada58b8c35c0e045b6e7eaaf3d10",
+      "kind": "FE-1R closure-only expectation"
+    }
+  },
+  "preserved": {
+    "website/LIVE_LAUNCH_ACCEPTANCE.md": "3bb99dae4cd1f82089224c17ad93b6b3016c0eff2af0012b77bc63ef59549b75"
+  }
+}
