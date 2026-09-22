@@ -3,7 +3,8 @@
 MSQE First Edition Review — canonical quantitative-census reference implementation.
 
 Implements, without deviation, the classification pipeline specified in
-docs/02-first-edition-review/FIRST_EDITION_REVIEW_PLAN.md sections 6.1 and 6.2.
+docs/02-first-edition-review/FIRST_EDITION_REVIEW_PLAN.md section 6.0 (FE-3
+authored candidate, awaiting independent re-acceptance) and inherited 6.1/6.2.
 
 The specification governs this file. This file does not define the specification.
 No accepted or expected total is hard-coded; every figure is derived from the
@@ -38,8 +39,11 @@ Output contract (specification section 6.3.1):
 
   --json    Aggregates ("per_part", "per_batch", "chapters") plus a
             "candidates" array carrying every row of all four populations as
-            {part, path, line, population, class, text}. The aggregate keys are
-            unchanged from earlier revisions; "candidates" is additive.
+            {part, path, line, column, start, end, population, class, text}.
+            Offsets are zero-based Unicode character positions, end exclusive;
+            line/column are one-based, including for inline-code observations.
+            "identifiers" audits E13's NOT APPLICABLE version spans with reason;
+            these are not a quantitative population and do not enter totals.
 
 No output file is written. Nothing is cached.
 """
@@ -77,9 +81,9 @@ UNIT_FORMS = [
 _UNIT_ALT = "|".join(sorted((re.escape(u) for u in UNIT_FORMS), key=len, reverse=True))
 
 TIER1_CLASSES = [
-    ("pct",   r"\d[\d,]*(?:\.\d+)?\s?%"),
+    ("pct",   r"\d[\d,]*(?:\.\d+)?(?:\s?%|\spercent\b)"),
     ("cur",   r"[€$£]\s?\d[\d,]*(?:\.\d+)?"),
-    ("unit",  r"\d[\d,]*(?:\.\d+)?\s?(?:" + _UNIT_ALT + r")\b"),
+    ("unit",  r"\d[\d,]*(?:\.\d+)?(?:\s?|-)(?:" + _UNIT_ALT + r")\b"),
     # ratio: slash form only. The right operand must NOT be a four-digit year
     # 1900-2099, which would make the token a date rather than a ratio (6.2).
     ("ratio", r"\d[\d,]*(?:\.\d+)?\s?/\s?(?!(?:19|20)\d{2}(?!\d))\d+(?!\d)"),
@@ -103,6 +107,45 @@ CODE_NUMERIC = re.compile(r"\d+(?:[.,]\d+)*")
 
 # Tier-2 residue: bare integers of two or more digits.
 TIER2_PATTERN = re.compile(r"(?<![\d.,])\d{2,}(?![\d.,])")
+
+# E13: closed contextual version grammar. Never blacklist a decimal value.
+_VERSION_NUMBER = r"\d+(?:\.\d+)+(?:[A-Za-z])?"
+_VERSION_LABEL = (r"version|Semantic[ \t]Versioning|"
+                  r"NIST[ \t](?:CSF|Cybersecurity[ \t]Framework)|OAuth")
+VERSION_PATTERNS = [
+    ("labelled-version", re.compile(
+        r"\b(?:" + _VERSION_LABEL + r")[ \t](v?" + _VERSION_NUMBER
+        + r")(?!\w|\.\d)", re.IGNORECASE)),
+    ("v-prefixed-version", re.compile(
+        r"(?<![\w.])(v" + _VERSION_NUMBER + r")(?!\w|\.\d)", re.IGNORECASE)),
+]
+_QUANTITY_SUFFIX = re.compile(
+    r"(?:\s?%|\spercent\b|(?:\s?|-)(?:" + _UNIT_ALT + r")\b"
+    r"|\s?per\s+\w+|\s?/\s?(?!(?:19|20)\d{2}(?!\d))\d+(?!\d))")
+
+
+def version_identifiers(residue):
+    """Return auditable, non-overlapping E13 spans before masking."""
+    spans = []
+    for priority, (reason, pattern) in enumerate(VERSION_PATTERNS):
+        for m in pattern.finditer(residue):
+            start, end = m.span(1)
+            if not _QUANTITY_SUFFIX.match(residue, end):
+                spans.append((start, end, priority, reason))
+    kept = []
+    for start, end, priority, reason in sorted(spans, key=lambda x: (x[0], -(x[1] - x[0]), x[2])):
+        if not any(start < b and end > a for a, b, _ in kept):
+            kept.append((start, end, reason))
+    return kept
+
+
+def mask_identifiers(residue, identifiers):
+    chars = list(residue)
+    for start, end, _ in identifiers:
+        for i in range(start, end):
+            if chars[i] != "\n":
+                chars[i] = " "
+    return "".join(chars)
 
 
 def _blank(match):
@@ -153,8 +196,8 @@ def separate_fenced_code(text):
     return "\n".join(prose), "\n".join(code)
 
 
-def pass0(prose):
-    """PASS 0 — structurally unambiguous non-claims, E2 through E11.
+def pass0(prose, exclude_versions=True):
+    """PASS 0 — structurally unambiguous non-claims, E2 through E11, then E13.
 
     Every step is length- and newline-preserving and consumes the output of
     the previous step. E5 and E7 are decided on the ORIGINAL line text so the
@@ -214,6 +257,8 @@ def pass0(prose):
     # E11 - bare years standing alone.
     s = re.sub(r"(?<![\d.,/-])(19\d{2}|20\d{2})(?![\d.,/%-])", _blank, s)
 
+    if exclude_versions:
+        s = mask_identifiers(s, version_identifiers(s))
     return s, inline_code
 
 
@@ -266,9 +311,12 @@ def pass2_and_3(residue, protected):
 
 
 def classify_chapter(path):
-    text = open(path, encoding="utf-8").read()
+    with open(path, encoding="utf-8") as source:
+        text = source.read()
     prose, code = separate_fenced_code(text)
-    residue, inline_code = pass0(prose)
+    residue, _ = pass0(prose, exclude_versions=False)
+    identifiers = version_identifiers(residue)
+    residue = mask_identifiers(residue, identifiers)
 
     tier1 = pass1(residue)
     tier2 = pass2_and_3(residue, tier1)
@@ -283,28 +331,33 @@ def classify_chapter(path):
     # is visible rather than silent. PASS-4 deduplication does NOT apply here
     # (6.2.3): this population records what E2 removed, and its members do not
     # compete for prose tier membership.
-    # The inline stream carries one line per source line, so the newline count
-    # before a match is that match's source line.
+    # Match each original span separately: never concatenate numeric operands
+    # across code spans, and retain true source offsets for independent review.
     class_order = {c: i for i, (c, _) in enumerate(TIER1_CLASSES)}
     inline_candidates = []
-    for cls, pattern in TIER1_CLASSES:
-        for m in re.finditer(pattern, inline_code):
-            line = inline_code.count("\n", 0, m.start()) + 1
-            inline_candidates.append((line, class_order[cls], cls, m.group(0)))
-    inline_candidates.sort(key=lambda t: (t[0], t[1]))
+    for span in re.finditer(r"`([^`\n]*)`", prose):
+        for cls, pattern in TIER1_CLASSES:
+            for m in re.finditer(pattern, span.group(1)):
+                start = span.start(1) + m.start()
+                end = span.start(1) + m.end()
+                line = text.count("\n", 0, start) + 1
+                inline_candidates.append((line, class_order[cls], start, end, cls, m.group(0)))
+    inline_candidates.sort(key=lambda t: (t[0], t[1], t[2]))
+
+    def row(pop, cls, start, end, token):
+        return {"pop": pop, "class": cls, "line": text.count("\n", 0, start) + 1,
+                "column": start - text.rfind("\n", 0, start),
+                "start": start, "end": end, "text": token}
 
     matches = []
     for a, b, cls in tier1:
-        line = text.count("\n", 0, a) + 1
-        matches.append({"pop": "T1", "class": cls, "line": line, "text": residue[a:b].strip()})
+        matches.append(row("T1", cls, a, b, residue[a:b]))
     for a, b, tok in tier2:
-        line = text.count("\n", 0, a) + 1
-        matches.append({"pop": "T2", "class": "int", "line": line, "text": tok})
+        matches.append(row("T2", "int", a, b, tok))
     for start, tok in code_numerics:
-        line = code.count("\n", 0, start) + 1
-        matches.append({"pop": "code-fence", "class": "num", "line": line, "text": tok})
-    for line, _, cls, tok in inline_candidates:
-        matches.append({"pop": "inline-code", "class": cls, "line": line, "text": tok})
+        matches.append(row("code-fence", "num", start, start + len(tok), tok))
+    for line, _, start, end, cls, tok in inline_candidates:
+        matches.append(row("inline-code", cls, start, end, tok))
 
     return {
         "tier1": len(tier1),
@@ -313,6 +366,9 @@ def classify_chapter(path):
         "inline": len(inline_candidates),
         "words": len(text.split()),
         "matches": matches,
+        "identifiers": [dict(row("identifier", "version", a, b, text[a:b]),
+                             reason=reason, disposition="NOT APPLICABLE")
+                        for a, b, reason in identifiers],
     }
 
 
@@ -366,13 +422,18 @@ def main():
 
     if args.json:
         candidates = [{"part": ROMAN[pnum], "path": c["path"], "line": m["line"],
+                       "column": m["column"], "start": m["start"], "end": m["end"],
                        "population": m["pop"], "class": m["class"], "text": m["text"]}
                       for pnum in sorted(parts) for c in parts[pnum] for m in c["matches"]]
         json.dump({"per_part": {ROMAN[k]: v for k, v in sorted(per_part.items())},
                    "per_batch": per_batch,
                    "chapters": {c["path"]: {k: c[k] for k in ("tier1", "tier2", "code", "inline", "words")}
                                 for cs in parts.values() for c in cs},
-                   "candidates": candidates},
+                   "candidates": candidates,
+                   "identifiers": [dict(part=ROMAN[pnum], path=c["path"],
+                                        **{k: v for k, v in m.items() if k != "pop"})
+                                   for pnum in sorted(parts) for c in parts[pnum]
+                                   for m in c["identifiers"]]},
                   sys.stdout, indent=2, sort_keys=True)
         print()
         return

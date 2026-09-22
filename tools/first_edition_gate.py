@@ -17,11 +17,11 @@ MEANINGS = {0: 'implemented deterministic checks passed',
             1: 'deterministic invariant failure / gate blocker',
             2: 'invocation or configuration error',
             3: 'required deterministic evidence incomplete'}
-PROFILES = ('batch', 'learning-ready', 'first-edition', 'baseline')
+PROFILES = ('batch', 'learning-ready', 'first-edition', 'baseline', 'fe3-historical')
 REVIEW = 'docs/02-first-edition-review/'
 CHAPTER_DIGEST = '3a56e89be75d9bfbe63a01a938fa44d6f7067814fc8029af33ace8b5a85b6102'
 PART_DIGEST = 'eafd4ba0fc55275cf8bcd9094a225e408ab22d43e019d76319ce1897b1c11451'
-PACKAGES = {'LR-1': 0, 'LR-2': 0, 'FE-1': 0, 'FE-2': 0, 'FE-3': 4}
+PACKAGES = {'LR-1': 0, 'LR-2': 0, 'FE-1': 0, 'FE-2': 0, 'FE-3': 0}
 FINDING_ID = r'FE-(?:L[1-5]|T[1-6]|G|J)-[0-9]{3}'
 EVENT_ID = r'FE-EV-(?:[0-9]{3}|[1-9][0-9]{3,})'
 
@@ -128,16 +128,16 @@ def finding_checks(text):
             errors.append('Invalid lifecycle combination: ' + fid + ' ' + str((state, verification)))
         records[fid] = (state, verification)
     distribution = Counter(str(s) + ' / ' + str(v) for s, v in records.values())
-    expected = {'OPEN / NOT VERIFIED': 4, 'CLOSED / VERIFIED': 25}
+    expected = {'CLOSED / VERIFIED': 29}
     if len(headings) != 29 or len(records) != 29 or dict(distribution) != expected:
-        errors.append('Post-FE-2 baseline finding census differs; investigate or separately authorise rebaselining')
+        errors.append('Post-FE-3 baseline finding census differs; investigate or separately authorise rebaselining')
     return records, check('finding_lifecycle', errors, {'total': 29, 'distribution': expected},
                           {'total': len(headings), 'distribution': dict(sorted(distribution.items()))})
 
 
 def allocation_check(text, records):
     errors, packages, allocated = [], {}, []
-    for row in table_rows(section(text, '### 8.2 Canonical current 4-finding allocation')):
+    for row in table_rows(section(text, '### 8.2 Canonical current 0-finding allocation')):
         if row[0] == 'Package' or re.fullmatch(r'[- :]+', row[0]):
             continue
         package = row[0]
@@ -160,7 +160,7 @@ def allocation_check(text, records):
         if counts[fid] != 1:
             errors.append('Allocation multiplicity must equal 1: %s observed %d' % (fid, counts[fid]))
     if packages != PACKAGES:
-        errors.append('Post-FE-2 package cardinalities differ; inspect canonical allocation')
+        errors.append('Post-FE-3 package cardinalities differ; inspect canonical allocation')
     return check('fast_track_allocation', errors, PACKAGES,
                  {'packages': packages, 'total': len(allocated), 'open_count': len(open_ids)})
 
@@ -252,6 +252,133 @@ class Parser(argparse.ArgumentParser):
         raise ConfigurationError(message)
 
 
+# FE-3F1 controls only. Pins identify original Git evidence and the semantic
+# record independently inspected at FE-3V §§16–20 (not package acceptance).
+# They are NOT website-preservation baseline evolution or numeric inputs.
+FE3_SOURCE = 'd06fcec4bb4fe70eac40e66b5675e4ca285e4d18'
+FE3_BASE = '8fa0389fc1ba7c40ee33bc408a739dd082fdbbcd'
+FE3_OLD_TOOL = '3b1a2560d886c7227cbad61e24a7da8a36e10ea1'
+FE3_RECORD_HASHES = {'correction_section': '65a2eba00cc072132954d98723ed74d079b20279837127f7ecfb6f68b3d432ba', 'owner_record': '3ab79df15698fe0ab494cbb5f2fc0a86ea98dc3b5e770a17f93c30607833d693', 'ledger_row': '7c8bbc4d5b4caecec8237c296c763a3f77c9f2f5665c3638381d48c5ae9fa633', 'ledger_interpretation': '3b992fdfd28021e20c9ccb404b7633e103ed1350ed37f69113d576b6af78c9b5', 'authorship_event': 'e1ee141aa62d47c538fcf2b5c299b2832765632849c7c83a8df0da02bf31694d'}
+
+
+def historical_partx_inputs(root):
+    """Reproduce old L4 candidates; never import the amended candidate tool.
+
+    The pinned, hash-authenticated historical program is evaluated only from
+    its immutable Git object. Its classifier is used on original IX/X blobs.
+    Identifier context is independently recognized here, not read from the
+    candidate's delta or E13 implementation. Counts are occurrence counts.
+    """
+    import tempfile
+    import types
+    tool = git(root, 'show', FE3_SOURCE + ':tools/quantitative_census.py')
+    blob = git(root, 'hash-object', '--stdin', input_bytes=tool).decode().strip()
+    if blob != FE3_OLD_TOOL:
+        raise ConfigurationError('Historical classifier identity mismatch')
+    old = types.ModuleType('fe3_authenticated_historical_census')
+    exec(compile(tool, '<authenticated historical census>', 'exec'), old.__dict__)
+    paths = git(root, 'ls-tree', '-r', '--name-only', FE3_SOURCE, '--', 'book').decode().splitlines()
+    paths = [p for p in paths if re.fullmatch(r'book/part-(09|10)-[^/]+/chapters/chapter-[^/]+\.md', p)]
+    if len(paths) != 24:
+        raise EvidenceMissing('Historical IX/X chapter population is incomplete')
+    denominator, occurrences = 0, []
+    # These source labels identify the adjudicated bibliographic versions.
+    # Numeric literals are captured from source, never supplied as test data.
+    context = re.compile(r'(?:NIST (?:Cybersecurity Framework|CSF)|OAuth) (\d+\.\d+)\b')
+    with tempfile.TemporaryDirectory(prefix='msqe-fe3-history-') as tmp:
+        for path in sorted(paths):
+            text = git(root, 'show', FE3_SOURCE + ':' + path).decode('utf-8')
+            local = Path(tmp) / path
+            local.parent.mkdir(parents=True, exist_ok=True)
+            local.write_text(text, encoding='utf-8')
+            denominator += old.classify_chapter(str(local))['tier1']
+            prose, _ = old.separate_fenced_code(text)
+            residue, _ = old.pass0(prose)
+            candidates = {(a, b, cls) for a, b, cls in old.pass1(residue)}
+            for match in context.finditer(residue):
+                a, b = match.span(1)
+                if (a, b, 'dec') in candidates:
+                    occurrences.append({'path': path, 'line': text.count('\n', 0, a)+1,
+                                        'offset': a, 'text': text[a:b]})
+    return len(occurrences), denominator, occurrences
+
+
+def fe3_historical_check(root):
+    """Deterministic prerequisite; independent review/public evidence still required."""
+    from decimal import Decimal, ROUND_HALF_UP, localcontext
+    errors = []
+    numerator, denominator, occurrences = historical_partx_inputs(root)
+    if (numerator, denominator) != (8, 379):
+        # Expected values are FE-3A1's independently reconstructed historical
+        # decision, not a duplicate source used to manufacture the calculation.
+        errors.append('Historical source does not reproduce FE-3A1 population')
+    with localcontext() as ctx:
+        ctx.prec = 28
+        proportion = Decimal(numerator) / Decimal(denominator)
+        percentage = proportion * 100
+        rounded = percentage.quantize(Decimal('0.01'), rounding=ROUND_HALF_UP)
+    evidence = read_evidence(root, 'FE3_CORRECTION_EVIDENCE.md')
+    correction = section(evidence, '## 4. Additive historical Part X correction')
+    inputs = re.search(r'total historical L4 population \*\*(\d+)\*\*; contaminated population \*\*(\d+)\*\*', correction)
+    percent = re.search(r'half-up to two decimal places = (\d+(?:\.\d+)?)%', correction)
+    ratio = re.search(r'`(\d+)/(\d+) = ([0-9.]+)\u2026', correction)
+    if not inputs or tuple(map(int, inputs.groups())) != (denominator, numerator):
+        errors.append('Corrective numerator/denominator disagree with historical source')
+    if not percent or Decimal(percent[1]) != rounded:
+        errors.append('Corrective percentage disagrees with independently calculated half-up result')
+    if not ratio or (int(ratio[1]), int(ratio[2])) != (numerator, denominator) or Decimal(ratio[3]) != proportion:
+        errors.append('Corrective ratio disagrees with historical source arithmetic')
+    rows = []
+    for line in correction.splitlines():
+        m = re.match(r'\| \[book/[^]]+\]\(../../(book/[^)]+)\) \| (\d+) \| `([^`]+)` \| (\d+) \|', line)
+        if m:
+            rows.append({'path': m[1], 'line': int(m[2]), 'text': m[3], 'offset': int(m[4])})
+    if rows != occurrences:
+        errors.append('Corrective occurrence table disagrees with historical spans')
+    texts = {}
+    for filename in ('FIRST_EDITION_VERIFICATION_LEDGERS.md', 'FIRST_EDITION_REVIEW_LOG.md'):
+        current = read_evidence(root, filename)
+        texts[filename] = current
+        original = git(root, 'show', FE3_BASE + ':' + REVIEW + filename).decode()
+        # Insert-only comparison protects every original historical line,
+        # including zero/all-confirmed claims and dependent events.
+        remaining = iter(current.splitlines(keepends=True))
+        if not all(any(line == candidate for candidate in remaining)
+                   for line in original.splitlines(keepends=True)):
+            errors.append('Historical evidence deleted/rewritten: ' + filename)
+    ledger = texts['FIRST_EDITION_VERIFICATION_LEDGERS.md']
+    def unique_line(prefix):
+        lines = [line for line in ledger.splitlines() if line.startswith(prefix)]
+        if len(lines) != 1:
+            raise EvidenceMissing('Missing/ambiguous corrective ledger evidence: ' + prefix)
+        return lines[0]
+    records = {
+        'correction_section': correction,
+        'owner_record': section(evidence, '## 1. Owner authority and frozen boundary').split('Exact authoring allow-list')[0],
+        'ledger_row': unique_line('| NUM-FE3-HIST |'),
+        'ledger_interpretation': unique_line('This supersedes the historical zero/all-confirmed'),
+        'authorship_event': section(texts['FIRST_EDITION_REVIEW_LOG.md'], '## Event FE-EV-054'),
+    }
+    # Bind the independently derived numbers to FE-3V-inspected meaning:
+    # historical zero is explicitly historical, current correction supersedes
+    # it, and FE-3A/FE-3A1 ownership and non-acceptance limits stay intact.
+    for name, text in records.items():
+        if hashlib.sha256(text.encode()).hexdigest() != FE3_RECORD_HASHES[name]:
+            errors.append('Inspected corrective interpretation/provenance changed: ' + name)
+    paths = git(root, 'ls-tree', '-r', '--name-only', FE3_BASE, '--', 'book').decode().splitlines()
+    for path in paths:
+        if re.fullmatch(r'book/part-10-[^/]+/(README\.md|chapters/chapter-[^/]+\.md)', path):
+            local = root / path
+            if local.is_symlink() or not local.is_file() or local.read_bytes() != git(root, 'show', FE3_BASE + ':' + path):
+                errors.append('Accepted current Part X content changed: ' + path)
+    return check('FE3-HIST-PARTX', errors,
+                 'Preserved history; source-derived 8/379; half-up percentage; owner-traceable correction; unchanged Part X',
+                 {'numerator': numerator, 'denominator': denominator,
+                  'proportion': str(proportion), 'percentage': str(percentage),
+                  'rounded_percentage': str(rounded), 'occurrences': occurrences,
+                  'semantic_or_public_acceptance': 'NOT CONFERRED'})
+
+
 def run(root, profile, allowed):
     checks = []
     def execute(name, action):
@@ -262,6 +389,9 @@ def run(root, profile, allowed):
             checks.append(check(name, [str(exc)], status='INCOMPLETE'))
         except (OSError, UnicodeError, ConfigurationError) as exc:
             checks.append(check(name, [str(exc)], status='ERROR'))
+    if profile == 'fe3-historical':
+        execute('FE3-HIST-PARTX', lambda: fe3_historical_check(root))
+        return checks
     execute('controlled_manifests', lambda: manifests(root))
     execute('event_integrity', lambda: event_check(read_evidence(root, 'FIRST_EDITION_REVIEW_LOG.md')))
     def findings():
@@ -285,6 +415,12 @@ def run(root, profile, allowed):
             checks.append(check('batch_scope', ['Supply repeatable --allow-path for the frozen authorised file inventory.'], status='INCOMPLETE'))
         else:
             execute('batch_scope', lambda: scope_check(changed_paths(root), allowed))
+    if profile == 'first-edition':
+        execute('FE3-HIST-PARTX', lambda: fe3_historical_check(root))
+        checks.append(check('FE3-HIST-PARTX-independent-acceptance',
+                            ['Fresh independent FE-3V2 acceptance and public/source semantic evidence have not been recorded as an authorised gate input. Author checks cannot satisfy this requirement.'],
+                            expected='Independent accepted adjudication plus verification of all six affected public/source routes; evidence §8 obligations',
+                            observed='NOT RECORDED; author quantitative PASS is insufficient', status='INCOMPLETE'))
     if profile in ('learning-ready', 'first-edition'):
         requirement = ('Plan §18.3 expanded Learning-Ready candidate/freeze inventory and residual evidence'
                        if profile == 'learning-ready' else 'Plan §13.4 complete 141-object Phase K baseline and drift evidence')

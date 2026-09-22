@@ -1,0 +1,80 @@
+{
+  "sourceBase": "8fa0389fc1ba7c40ee33bc408a739dd082fdbbcd",
+  "acceptedCorrectionPackageSha256": "cfedf6db3f9ec68b5a3f3d2a8c7a557f28fe02416532f0de8da987f35598677e",
+  "acceptance": "FE-3V2: 50 PASS / 0 FAIL / 0 INCOMPLETE; complete 12-path package",
+  "closureBoundary": "FE-3R author preparation; fresh independent FE-3CV required before checkpoint; First Edition remains IN PROGRESS",
+  "sources": {
+    "CURRENT_SPRINT.md": {
+      "baselineBlob": "ce27ef3ece28da50292107426e12b83a4d529421",
+      "fe3v2Sha256": "59fa95085f529617a29067673fad35d01c895433545593a96c8acac611a3ea8d",
+      "sha256": "c7a6c155a7a23b4bcc2d9bf5509c1524be149d13143396be9dd38f7b3837122c",
+      "kind": "FE-3R CLOSURE/GOVERNANCE/COUPLED EXPECTATION ONLY"
+    },
+    "README.md": {
+      "baselineBlob": "6a590d9dcf7c88bde349ad0be88f4a3a716e5624",
+      "fe3v2Sha256": "cdf819dcbd8d9b0bdc8142960ccabefa28b2d693db6decc0ea5e5cb1804f31c4",
+      "sha256": "eabbef1c0511d37f05d8f7291599bf3072cb0f5b78398997f8766963a1a420eb",
+      "kind": "FE-3R CLOSURE/GOVERNANCE/COUPLED EXPECTATION ONLY"
+    },
+    "docs/02-first-edition-review/FE3_CANDIDATE_DELTA.json": {
+      "baselineBlob": null,
+      "fe3v2Sha256": "a201e77501b2d3e0a84e472f690c3e0d8699a40a552076083c27ad669435977b",
+      "sha256": "a201e77501b2d3e0a84e472f690c3e0d8699a40a552076083c27ad669435977b",
+      "kind": "CARRIED VERIFIED FE-3 SEMANTIC/CONTROL CONTENT"
+    },
+    "docs/02-first-edition-review/FE3_CORRECTION_EVIDENCE.md": {
+      "baselineBlob": null,
+      "fe3v2Sha256": "9509e1724936b3d369db3786a9fe91fc1d46f9daef8682983971a7f8328f3eb4",
+      "sha256": "9509e1724936b3d369db3786a9fe91fc1d46f9daef8682983971a7f8328f3eb4",
+      "kind": "CARRIED VERIFIED FE-3 SEMANTIC/CONTROL CONTENT"
+    },
+    "docs/02-first-edition-review/FIRST_EDITION_FINDINGS.md": {
+      "baselineBlob": "3805879ea74f120184b64c8d38c5bda79918fb3d",
+      "fe3v2Sha256": "3e831fba6ab3fe7c4b4342b5e828c05c34e796def057d96e20b8d2fd22492b3e",
+      "sha256": "91d7c269ae791a46041ee122ff0030eccbec37d10eb6c5e5be20eaa1ecfe001d",
+      "kind": "FE-3R CLOSURE/GOVERNANCE/COUPLED EXPECTATION ONLY"
+    },
+    "docs/02-first-edition-review/FIRST_EDITION_REVIEW_LOG.md": {
+      "baselineBlob": "95e9eb1d0a24949b5e6f4f20d687fa6693ebb7e1",
+      "fe3v2Sha256": "27ef76d7463fe72e2f2ecf2684fba5b78a158eaa444851a518a88ad58cfb4b88",
+      "sha256": "77418c70262e6a00dbb3c13a04b084526df82edbd27c103e072c125857a8266e",
+      "kind": "FE-3R CLOSURE/GOVERNANCE/COUPLED EXPECTATION ONLY"
+    },
+    "docs/02-first-edition-review/FIRST_EDITION_REVIEW_PLAN.md": {
+      "baselineBlob": "ed039bf427bf564f3cdce1374d2d240dd94e3e95",
+      "fe3v2Sha256": "5eb58b33b0918932b59f68516ebd1d96e8770b5a837b47c77e5c6848cdfb763c",
+      "sha256": "1cdc7e6fd462ffc6a9887ebd0856e450b9958650dad150978c9299cdc7cc9195",
+      "kind": "FE-3R CLOSURE/GOVERNANCE/COUPLED EXPECTATION ONLY"
+    },
+    "docs/02-first-edition-review/FIRST_EDITION_VERIFICATION_LEDGERS.md": {
+      "baselineBlob": "d13b9ab820226a95794c2ef9e2fd131f4f1e2348",
+      "fe3v2Sha256": "facbaa877a62e6ba53369743ce16d10a8428aac7237a1d1976adbfc4d47c92c0",
+      "sha256": "38ee16b83bd42f753201942166ebf57a000b006f6e3233d22f17a817991a88ba",
+      "kind": "FE-3R CLOSURE/GOVERNANCE/COUPLED EXPECTATION ONLY"
+    },
+    "tests/test_first_edition_gate.py": {
+      "baselineBlob": "fc325e4e130f0b2d0f757097d830769b20d6b7a9",
+      "fe3v2Sha256": "95f10f309e8b8efa8bab2c55c18f7148f571b085956f1c131eeddc307ac32a4c",
+      "sha256": "3c773a31aa0f29c29aa4b27ad40813e2561e319a3c1b8a56ca6d4c027cd0c54d",
+      "kind": "FE-3R CLOSURE/GOVERNANCE/COUPLED EXPECTATION ONLY"
+    },
+    "tests/test_quantitative_census.py": {
+      "baselineBlob": null,
+      "fe3v2Sha256": "f41e5afb04bb3d7c33e3b8f87e5606fbff1f524df884e8f43b7916770d3135c2",
+      "sha256": "f41e5afb04bb3d7c33e3b8f87e5606fbff1f524df884e8f43b7916770d3135c2",
+      "kind": "CARRIED VERIFIED FE-3 SEMANTIC/CONTROL CONTENT"
+    },
+    "tools/first_edition_gate.py": {
+      "baselineBlob": "c8d2a073d1071e440994779a2c9de1d4c340dba0",
+      "fe3v2Sha256": "59dada0312860c88da3517c67cd4dc296fac711d7a7976cbed6517ec7f89c454",
+      "sha256": "b148249b5d983ead92e6e66e8d0e2eb328774d37fd352444c8178309aea87b68",
+      "kind": "FE-3R CLOSURE/GOVERNANCE/COUPLED EXPECTATION ONLY"
+    },
+    "tools/quantitative_census.py": {
+      "baselineBlob": "3b1a2560d886c7227cbad61e24a7da8a36e10ea1",
+      "fe3v2Sha256": "542db4e805c0d50ee34e5c2d90b9c22e25dbfaad8fd85f3c4b8402b198355d1b",
+      "sha256": "542db4e805c0d50ee34e5c2d90b9c22e25dbfaad8fd85f3c4b8402b198355d1b",
+      "kind": "CARRIED VERIFIED FE-3 SEMANTIC/CONTROL CONTENT"
+    }
+  }
+}

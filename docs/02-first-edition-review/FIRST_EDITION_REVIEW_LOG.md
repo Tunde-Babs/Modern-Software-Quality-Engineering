@@ -1427,6 +1427,8 @@ git ls-files -s book | awk '$4 ~ /chapters\/chapter-.*\.md$/ {print $4":"$2}' | 
 | `FE-EV-051` | 2026-09-21 | H — FE-1 closure and baseline evolution | Supplied FE-1V 37/0/0 Decision A; six CLOSED / VERIFIED; 137 accepted chapter bytes frozen; exact baseline/preservation evolution; FE-1 outstanding 0 | **UNSCORED recording — FE-1 COMPLETE / INDEPENDENTLY VERIFIED / CLOSED; fresh narrow FE-1CV before checkpoint** |
 | `FE-EV-052` | 2026-09-21 | H — FE-2 correction authorship | Five FE-2 findings; citation attachments, supplementary attribution, stable source keys and scoped census; all remain OPEN / NOT VERIFIED | **UNSCORED — CORRECTION COMPLETE / AWAITING FRESH INDEPENDENT FE-2V; First Edition IN PROGRESS** |
 | `FE-EV-053` | 2026-09-21 | H — FE-2 closure and baseline evolution | Supplied FE-2V 42/0/0 Decision A; five CLOSED / VERIFIED; accepted semantic bytes frozen; exact approved baseline/preservation evolution; FE-2=0, FE-3=4 | **UNSCORED recording — FE-2 COMPLETE / INDEPENDENTLY VERIFIED / CLOSED; fresh narrow FE-2CV before checkpoint** |
+| `FE-EV-054` | 2026-09-22 | H — FE-3 correction authorship | FE-3A1 adopted; two classifier roots corrected; additive historical 8/379; four findings remain OPEN / NOT VERIFIED | **UNSCORED author evidence — AWAITING FRESH INDEPENDENT FE-3V** |
+| `FE-EV-055` | 2026-09-22 | H — FE-3 closure and final remediation baseline evolution | Supplied FE-3V2 50/0/0 Decision A; four CLOSED / VERIFIED; FE-3A1 and quantitative gate accepted; all 29 known findings closed; all allocations zero | **UNSCORED recording — remediation complete; First Edition IN PROGRESS; fresh FE-3CV before checkpoint** |
 
 > **Note on the FE-EV-008 → FE-EV-009 sequence — this is not a lost record.** Three quantitative-instrument events occurred between them — **F-IR4** (fresh independent re-acceptance, 39 PASS · 0 PARTIAL · 1 FAIL), **F-IR4V2** (independent verification establishing that the instrument is intact, that E9 is correct and that the E11 total is 51) and **F-IR4F** (the E11 occurrence-decomposition correction, commit `250cfe7`) — and **none was written to this log at the time it happened.** Their outcomes are recorded in the **plan §16 phase-history table**, and `FE-EV-009` states the chain it closes.
 >
@@ -1919,3 +1921,52 @@ Exactly **FE-L1-003, FE-L2-004, FE-L3-002, FE-T2-001 and FE-T2-002** are **CLOSE
 Chapter digest evolves from `beea2f46a8a2ce9d3a7e6dc033dee510484a015a0ef2164a7bd6e2480f981822` to independently reproduced `3a56e89be75d9bfbe63a01a938fa44d6f7067814fc8029af33ace8b5a85b6102`; 12 Part README digest `eafd4ba0fc55275cf8bcd9094a225e408ab22d43e019d76319ce1897b1c11451` is unchanged. A chained exact source transition preserves historical WEB-5 and FE-1 checks. Reference totals become 371 formal/rendered and zero uncited; complete-DOM links become 13,599 with no broken destinations. Algorithms, negative guards and protected boundaries remain enforced.
 
 Real HEAD/index remain at `c2175c2e3ae111acfa615bbda19ea8ba53fea201`. Expected pre-checkpoint HEAD/index chapter-identity failures are not waived; disposable layer evidence must demonstrate eventual all-layer green. **UNSTAGED / UNCOMMITTED / UNPUSHED**. **Fresh narrow FE-2CV is required before any separately authorized checkpoint/integration. No push, deployment, tag, release or infrastructure mutation.**
+
+
+---
+
+## Event FE-EV-054 — FE-3 Correction Authorship and Additive Historical Adjudication
+
+| Field | Value |
+| --- | --- |
+| **Event ID** | `FE-EV-054` |
+| **Date** | 2026-09-22 |
+| **Phase** | H — FE-3 correction authorship |
+| **Scope** | Four FE-3 findings, two quantitative-classifier roots, 15 prior version candidates and 77 written forms on unchanged 137 chapters; additive Part X historical adjudication under FE-3A1 |
+| **Baseline** | Clean incoming `feature/first-edition-review` at `8fa0389fc1ba7c40ee33bc408a739dd082fdbbcd`, live remote equal, 0 ahead / 0 behind |
+| **Score / verdict** | **UNSCORED AUTHOR EVIDENCE — AWAITING FRESH INDEPENDENT FE-3V** |
+| **Independence** | Correction author does not independently accept this package. FE-3A reconstructed the historical error; Founder / Editor FE-3A1 adopted that treatment and authorized authorship. Neither is independent acceptance of the newly authored tool. Fresh separate specialist FE-3V required under Plan §11 and H6. |
+| **Artefacts affected** | Plan candidate specification; quantitative tool and bounded author tests; additive Ledgers/Findings/Log; explicit source-bound correction evidence/delta; directly coupled README/sprint status only |
+| **Non-collapse note** | Distinct from FE-3P planning, FE-3A reconstruction, FE-3A1 owner decision, all FE-EV-001–053 events, future FE-3V and any later closure/checkpoint/deployment |
+
+**Founder / Editor FE-3A1 decision implemented:** original NUM-L4-ADJ/NUM-T3-06 and FE-EV-013/017 zero-contamination statements remain immutable. **HISTORICAL RECORDED RESULT: 0/379=0.00%, incorrect. INDEPENDENTLY RECONSTRUCTED CORRECT RESULT: 8/379=0.0211081794…=2.11%, two-place half-up.** Seven NIST CSF and one OAuth version occurrences existed in the original 379-candidate L4 population. Current Part X manuscript and public labels are correct and preserved. [Durable additive record and primary inputs](FE3_CORRECTION_EVIDENCE.md#4-additive-historical-part-x-correction--fe-3a--fe-3a1) preserve the original source/tool basis and explain why the historical claim was wrong. No new canonical finding, manuscript defect, rollback or FE-1/FE-2 reopening is warranted by this dependent evidence manifestation.
+
+Candidate grammar is specified in Plan §6.0 before implementation: bounded version-context exclusion with explicit NA audit; class-specific ASCII-hyphen units and word-percent; source coordinates; no cross-span inline matches; unchanged remaining exclusions and source corpus. Census changes from 1170/1528/310/366 to authored 1226/1464/310/366; 26 E13 observations comprise 15 former candidates plus 11 audit-only version labels. [Complete occurrence delta](FE3_CANDIDATE_DELTA.json) explains every changed row. These are candidate counts, not complete confirmed-claim acceptance.
+
+**29 total; 4 OPEN / NOT VERIFIED; 25 CLOSED / VERIFIED**. Outstanding **0/0/0/0/4**. FE-L1-006, FE-L3-004, FE-L5-003, FE-T3-001 retain original lifecycle/severity/provenance/triggers. FE-1, FE-2 and current production remain accepted. **First Edition IN PROGRESS; v1.0.0 NOT YET AUTHORIZED.** The targeted future **FE3-HIST-PARTX** gate control is mandatory before v1.0.0.
+
+All 137 chapter and 12 Part README identities remain accepted and unchanged. Existing exact-source preservation fixtures are not updated to accept author changes; candidate-stage failures must be explicitly mapped and independently resolved by an authorized later transition. No tests are weakened to manufacture green status.
+
+**UNSTAGED / UNCOMMITTED / UNPUSHED. No deploy, release, tag or infrastructure mutation.** Next: fresh independent FE-3V of the exact final candidate and complete historical/current population evidence. Only after that acceptance may a separately authorized closure package change the four finding states.
+## Event FE-EV-055 — FE-3 Closure and Final Remediation Baseline Evolution
+
+| Field | Value |
+| --- | --- |
+| **Event ID** | `FE-EV-055` |
+| **Date** | 2026-09-22 |
+| **Phase** | H — final remediation closure preparation; not First Edition acceptance |
+| **Scope** | Exactly four FE-3 findings: FE-L1-006, FE-L3-004, FE-L5-003, FE-T3-001; complete 12-path FE-3V2 semantic/control candidate and bounded closure/preservation expectations |
+| **Score / verdict** | **UNSCORED closure recording**; supplied independent **FE-3V2 50 PASS / 0 FAIL / 0 INCOMPLETE, Decision A**; fresh FE-3CV required before checkpoint |
+| **Independence** | FE-3V2 is the independent semantic acceptance authority. FE-3R records that result and performs author-side closure/baseline preparation; it does not independently verify its own delta. |
+| **Accepted package** | `cfedf6db3f9ec68b5a3f3d2a8c7a557f28fe02416532f0de8da987f35598677e`; authoritative `/tmp/msqe-fe3v2/accepted-package-manifest.txt`; exact 12 paths authenticated before edits |
+| **Acceptance record** | `/tmp/msqe-fe3v2/MSQE-FE-3V2-VERIFICATION-REPORT.md`, raw SHA-256 `284278f4a6d5e82995a19632d20343ba45612d37482f802d0b12c2418cfbd0ad`; source-transition fixture retains each accepted raw identity |
+| **Artefacts affected** | Findings, Plan, Verification Ledgers, this Log; current status; exact baseline/preservation expectations and coupled tests |
+| **Non-collapse note** | Distinct from FE-3A/FE-3A1 owner adjudication, FE-EV-054 authorship, FE-3F1 control correction, FE-3V2 independent acceptance, future FE-3CV, checkpoint, deployment and comprehensive First Edition acceptance. All 54 prior bodies/index rows are preserved. |
+
+The supplied FE-3V2 accepted all four FE-3 corrections, **FE-3A1 quantitative adjudication**, and the **deterministic First Edition quantitative gate**, with FE-1 and FE-2 accepted states preserved. It approved subsequent exact baseline/preservation evolution. FE-3R now records exactly four **CLOSED / VERIFIED** findings. **29/29 known findings CLOSED / VERIFIED; 0 OPEN / NOT VERIFIED; LR-1=0 / LR-2=0 / FE-1=0 / FE-2=0 / FE-3=0.** Remediation phase complete; no new semantic correction or finding is introduced.
+
+The original historical **0%** claim remains unchanged as historical evidence. The additive **8/379 = 2.11%** correction, FE-3A/FE-3A1 provenance, source-derived quantitative control and correct current Part X manuscript remain accepted and preserved. The authored classifier/tests/specification are not reinterpreted. All 137 chapter identities and 12 Part README identities remain unchanged; their accepted manifest digests do not evolve. Only exact independently approved source identities, zero-outstanding lifecycle expectations and directly coupled closure tests evolve through the existing preservation chain.
+
+**First Edition remains IN PROGRESS — REMEDIATION COMPLETE / AWAITING COMPREHENSIVE ACCEPTANCE GATE.** The comprehensive First Edition Acceptance Gate is still required; this event does not perform it. **v1.0.0 NOT YET RELEASED.** Public milestone remains **MSQE v0.16.0 — LEARNING-READY — CONTROLLED RC — PUBLICLY LIVE AT https://msqe.dev**. No new Learning-Ready freeze, release, deployment or infrastructure change occurs.
+
+**UNSTAGED / UNCOMMITTED / UNPUSHED. Fresh independent FE-3CV is required before checkpoint.** FE-3R author validation and fingerprints are not independent acceptance of this closure-only delta. Quantitative prerequisite PASS does not confer whole-book or public deployment acceptance.

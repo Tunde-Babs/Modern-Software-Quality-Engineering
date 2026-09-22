@@ -1,5 +1,16 @@
 # First Edition Review Plan
 
+> **Current FE-3R closure preparation — 2026-09-22:** **FE-3 COMPLETE / INDEPENDENTLY VERIFIED / CLOSED**, recorded at FE-EV-055. Supplied **FE-3V2: 50 PASS / 0 FAIL / 0 INCOMPLETE, Decision A**, accepted the complete 12-path semantic/control package `cfedf6db3f9ec68b5a3f3d2a8c7a557f28fe02416532f0de8da987f35598677e`, FE-3A1 quantitative adjudication and deterministic quantitative gate, and approved exact baseline/preservation evolution. FE-3R records that independent acceptance; it does not perform FE-3V2.
+> **29 total; 0 OPEN / NOT VERIFIED; 29 CLOSED / VERIFIED.** Outstanding **LR-1=0 / LR-2=0 / FE-1=0 / FE-2=0 / FE-3=0**. FE-1 and FE-2 remain **COMPLETE / CLOSED / VERIFIED**. All known findings are closed; remediation is complete.
+> **First Edition: IN PROGRESS — REMEDIATION COMPLETE / AWAITING COMPREHENSIVE ACCEPTANCE GATE. v1.0.0: NOT YET RELEASED.** **MSQE v0.16.0 — LEARNING-READY — CONTROLLED RC — PUBLICLY LIVE AT https://msqe.dev** remains the public milestone. No edition acceptance, release or deployment is implied.
+> Historical 0% evidence, additive **8/379 = 2.11%**, correct current Part X and the accepted quantitative-gate logic are preserved. Exact closure/preservation identities require **fresh independent FE-3CV before checkpoint**. **UNSTAGED / UNCOMMITTED / UNPUSHED; no deployment.** This statement supersedes older current-activity summaries; their point-in-time evidence remains intact.
+
+> **Current FE-3 correction authorship — 2026-09-22:** Founder / Editor decision **FE-3A1 APPROVED**; four-finding correction authored under FE-3P, with FE-3A's historical **8/379 = 2.11%** adjudication recorded additively in FE-EV-054. **AWAITING FRESH INDEPENDENT FE-3V**; author checks are not acceptance.
+> **29 total; 4 OPEN / NOT VERIFIED; 25 CLOSED / VERIFIED**. Outstanding **LR-1=0 / LR-2=0 / FE-1=0 / FE-2=0 / FE-3=4**. No finding reopened or closed. FE-1, FE-2 and production remain accepted at integrated `8fa0389fc1ba7c40ee33bc408a739dd082fdbbcd`; all manuscript/asset bytes are preserved.
+> **First Edition IN PROGRESS; v1.0.0 NOT YET AUTHORIZED.** Historical zero is preserved as erroneous historical evidence, not current quantitative truth. The new classifier/census is an authored candidate, not an accepted-baseline replacement. [FE-3 evidence](FE3_CORRECTION_EVIDENCE.md) and the targeted pre-v1.0.0 control require fresh independent verification.
+> **UNSTAGED / UNCOMMITTED / UNPUSHED; no deployment.** This current statement supersedes older activity banners only; their point-in-time evidence remains intact.
+
+
 > **Current FE-2R closure preparation — 2026-09-21:** FE-2 **COMPLETE / INDEPENDENTLY VERIFIED / CLOSED** (FE-EV-053); closure package **AWAITING FRESH NARROW FE-2CV BEFORE CHECKPOINT**.
 > Supplied independent **FE-2V: 42 PASS / 0 FAIL / 0 INCOMPLETE, Decision A**, accepted correction package `2f5cc5c78e1b658982f5a179dd7dffb7831333caa195b1462a6a167a52425244`. FE-2R records that acceptance; it does not perform semantic verification.
 > Exactly five FE-2 findings are now **CLOSED / VERIFIED**. FE-1 remains **COMPLETE / CLOSED / VERIFIED**. Census: **29 total; 4 OPEN / NOT VERIFIED; 25 CLOSED / VERIFIED**. Outstanding allocation: **LR-1=0, LR-2=0, FE-1=0, FE-2=0, FE-3=4**.
@@ -435,6 +446,47 @@ A longitudinal-only review reproduces the Part gates and finds nothing new. A tr
 ---
 
 ## 6. Quantitative-Content Census
+
+### 6.0 FE-3 candidate amendment — authorized, awaiting independent re-acceptance
+
+FE-3A1 (Founder / Editor, 2026-09-22) authorizes four-finding correction authorship and adopts the additive Part X adjudication. This section is the **normative contract for the authored candidate**, not an independently accepted instrument. It supersedes only the specified rules/counts below for this candidate. The retained §6.1–§6.9 acceptance narrative, old boundary examples and old “active” census describe the prior instrument; they are not current candidate results. All other rules remain inherited unchanged. Candidate evidence: [FE3_CORRECTION_EVIDENCE.md](FE3_CORRECTION_EVIDENCE.md). All four findings remain OPEN / NOT VERIFIED pending fresh independent FE-3V and separate closure recording.
+
+#### 6.0.1 Written quantities (FE-T3-001)
+
+`NUM`, class order and the closed 19-form unit vocabulary are unchanged. Only `pct` and `unit` gain alternatives:
+
+```text
+pct  := NUM (\s?%|\spercent\b)
+unit := NUM (\s?|-) UNIT \b
+```
+
+Patterns are case-sensitive, with Python Unicode `\d`, `\s`, `\w` and `\b` semantics as before. The word is exactly lowercase `percent`, preceded by exactly one whitespace character and closed at a word boundary: no `percentile`, `percentage`, plural or title-case extension. `%` retains zero/one whitespace. The hyphen is exactly one ASCII `-`, with no surrounding space, and applies only to units. En/em dashes, two whitespace characters and unlisted units remain outside these alternatives. No global change to `SEP` is made. Single-digit, decimal and comma-containing quantities use the existing NUM rule; leftmost-longest/tie-order deduplication still chooses one prose candidate. Examples: `5-second`, `1.2-second`, `43,200-minute`, `95 percent` now qualify; `30  seconds`, `30 -second` and `95 percentile` do not qualify under the new alternatives. The inline-code observation stream uses the amended class grammar and still does not apply PASS-4 deduplication.
+
+#### 6.0.2 E13 version-identifier routing (SYS-TIER1-IDENTIFIER)
+
+Apply **after E11 and before PASS 1**, to retained prose only. E1/E2 observability populations are not masked by E13. Recognition is deterministic and bounded; it is not a general natural-language classifier. No particular decimal value, chapter path, occurrence count or expected total is used as an exclusion.
+
+```text
+VERSION_NUMBER := \d+(?:\.\d+)+(?:[A-Za-z])?
+LABEL := version | Semantic[ \t]Versioning |
+         NIST[ \t](?:CSF|Cybersecurity[ \t]Framework) | OAuth
+labelled := \b LABEL [ \t] (v? VERSION_NUMBER) (?!\w|\.\d)
+prefixed := (?<![\w.]) (v VERSION_NUMBER) (?!\w|\.\d)
+```
+
+Both recognizers use case-insensitive matching. Alternatives in LABEL are the closed list above; all internal/separating `[ \t]` matches are exactly one horizontal space or tab. Parenthesized version spans alone are routed; label text remains. VERSION_NUMBER requires at least two dot-separated digit components and allows one optional alphabetic suffix (e.g. `v4.0a`). Greedy matching consumes the complete dotted version, including a leading `v` when present. The right guard rejects partial matches followed by a word character or by another dot+digit, but permits sentence punctuation. The prefixed form requires a non-word/non-dot left boundary or start of text.
+
+**Quantity protection:** do not route a recognized span if its immediately following residue matches `(?:\s?%|\spercent\b|(?:\s?|-)UNIT\b|\s?per\s+\w+|\s?/\s?(?!(?:19|20)\d{2}(?!\d))\d+(?!\d))`, case-sensitively with the same UNIT order. Thus `version 4.0 ms`, `version 4.0%`, `version 4.0-second`, `version 4.0 per second` and `version 4.0/2` remain quantity candidates, and a separate `1.2 ms` near a version is untouched. Version meaning without one of the declared contexts remains subject to manual candidate adjudication, not silently inferred.
+
+Collect both recognizers' spans; sort by start, descending length, then labelled before prefixed; discard overlapping later spans. Record each retained span with original path, line, one-based column, zero-based start and exclusive end **Unicode character offsets**, original version text and reason (`labelled-version` or `v-prefixed-version`). Replace only its non-newline characters with spaces. These spans are explicit **NOT APPLICABLE — version identifier** observations in a separate `identifiers` audit array; they are not a fifth quantitative population and enter neither tier nor any density. E12 still runs after Tier-1 protection and cannot suppress the newly admitted quantities. Candidate audit reasons are author classifications awaiting FE-3V.
+
+#### 6.0.3 Output, source identity and acceptance
+
+Existing aggregate keys and the six-field `--detail` candidate format remain unchanged. `--json` retains `candidates`, `chapters`, `per_part`, `per_batch` and adds `identifiers` as above. Candidate JSON rows add `start`, `end` and `column`, with the same true-source coordinate definitions for all four populations. Inline-code matching is performed separately within each original backtick span; no match may bridge two spans. Sort inline rows by line, class order, then source offset; other populations retain source order. `--detail` remains quantitative-candidates-only; use `--json` to audit identifiers. Aggregates never include identifiers. Code-fence literal grammar, numeric inputs, raw word definition and corpus paths are unchanged.
+
+The prior current source/tool pair at `8fa0389` yields 1,170/1,528/310/366. The older Phase-F pair yields 1,169/1,516/310/366. Neither is a target for the amended instrument. Derive fresh chapter/Part/batch totals, class counts and density from unchanged `8fa0389` chapters. A change list must explain every gained, lost, resized or reclassified occurrence and explicitly cover all 15 known versions and 77 written forms (64 Tier-2, six overlaps, seven neither-tier). Existing §6.2.4 continues to require reasoned candidate adjudication; a census is not semantic acceptance. Review all changed coverage and preserve independent arithmetic/inference verdicts.
+
+The historical Part X **8/379** uses the historical classifier and population, never the amended denominator. FE-3A1 accepts that result and the existing FE-1/FE-2/public baselines; independent FE-3V must rederive it from original source. Historical zero is preserved evidence of the error, not current authoritative truth. No numeric “comparable sparse batch” threshold is invented; the corrected comparisons and limitations must accompany any trigger conclusion. See the targeted pre-v1.0.0 gate control in the correction evidence.
 
 ### 6.1 Classification pipeline — deterministic ordering
 
@@ -1528,3 +1580,20 @@ Supplied independent **FE-2V: 42 PASS / 0 FAIL / 0 INCOMPLETE, Decision A** is t
 A new exact FE-2 source transition authenticates each incoming `c2175c2e3ae111acfa615bbda19ea8ba53fea201` blob through the unchanged WEB-5→FE-1 chain and checks its exact new SHA-256. It retains the independently accepted FE-2V SHA for each of the 54 correction-package paths, distinguishing 48 unchanged semantic outputs from six closure-updated governance/status outputs; the two directly coupled Python gate/test files receive separate closure-only identities. Historical FE-1/WEB-5 fixtures stay immutable. No exclusion, loose identity, suppressed assertion, manifest algorithm or protected-path removal is introduced.
 
 The current baseline operates on HEAD/index/working-tree independently. Here HEAD/index still contain the previous chapter manifest while the working tree matches the new accepted constant; this expected pre-checkpoint layer mismatch is not waived. A disposable staged/committed model must reproduce eventual all-layer PASS; the real repository stays unstaged/uncommitted/unpushed. Fresh narrow **FE-2CV** must authenticate the closure-only delta and final package before checkpoint. First Edition remains IN PROGRESS; FE-3 remains NOT STARTED with four outstanding; public v0.16.0 Learning-Ready Controlled RC remains live. No new readiness freeze, release or deployment occurs.
+
+### FE-3R final remediation baseline preparation — 2026-09-22
+
+Supplied independent FE-3V2 accepted the complete 12-path semantic/control candidate `cfedf6db3f9ec68b5a3f3d2a8c7a557f28fe02416532f0de8da987f35598677e` with **50 PASS / 0 FAIL / 0 INCOMPLETE, Decision A**. FE-3R records four finding closures at FE-EV-055, preserves the accepted quantitative specification and controls, and evolves only exact stale source identities plus lifecycle expectations and coupled tests. It does not perform semantic re-verification or comprehensive edition acceptance.
+
+| Control | FE-3V2 incoming value | FE-3R proposed accepted value |
+| --- | --- | --- |
+| 137-chapter manifest | `3a56e89be75d9bfbe63a01a938fa44d6f7067814fc8029af33ace8b5a85b6102` | Unchanged; no chapter mutation |
+| 12 Part README manifest | `eafd4ba0fc55275cf8bcd9094a225e408ab22d43e019d76319ce1897b1c11451` | Unchanged |
+| Finding census | 4 OPEN / 25 CLOSED; total 29 | 0 OPEN / 29 CLOSED; total 29 |
+| Outstanding allocation | 0/0/0/0/4 | 0/0/0/0/0 |
+| Event population | 54 | 55; only FE-EV-055 added |
+| References / generated destinations | 371 canonical/rendered; zero newly broken destinations | Unchanged source population; no count evolution needed |
+
+The exact FE-3 source transition preserves each FE-3V2 raw identity, authenticates its incoming accepted FE-2 source through the existing WEB-5→FE-1→FE-2 chain, and separately records FE-3R closure-only identities. Exact new files are enumerated; no broad exemption is introduced. Chapter/Part manifest algorithms and all three layers are unchanged. The real index and HEAD stay at the incoming accepted state; all-layer manuscript checks can pass because no manuscript changed. The website's unstaged-work rule still rejects a staged candidate; a disposable committed model must pass without weakening that rule.
+
+Accepted `FE3-HIST-PARTX` logic remains unchanged and is retained for the future whole-book gate. Its separate incomplete independent/public-source evidence prerequisite is not converted to an author-side acceptance assertion. Public Part X must remain consistent when a later deployment is separately authorized. **First Edition IN PROGRESS — REMEDIATION COMPLETE / AWAITING COMPREHENSIVE ACCEPTANCE GATE; v1.0.0 NOT YET RELEASED.** Fresh independent **FE-3CV** is required before checkpoint. No release acceptance, checkpoint, push or deployment here.

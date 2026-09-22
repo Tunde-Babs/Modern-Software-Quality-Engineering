@@ -64,7 +64,7 @@ assert.equal(fe2.acceptedCorrectionPackageSha256, '2f5cc5c78e1b658982f5a179dd7df
 const fe2AcceptedManifest = Object.keys(fe2.sources).filter(path => fe2.sources[path].fe2vSha256 !== null).sort().map(path => `${path}:${fe2.sources[path].fe2vSha256}\n`).join('');
 assert.equal(createHash('sha256').update(fe2AcceptedManifest).digest('hex'), fe2.acceptedCorrectionPackageSha256, 'Exact FE-2V accepted package');
 const fe2Hashes = Object.fromEntries(Object.entries(fe2.sources).map(([path, entry]) => [path, entry.sha256]));
-export function assertAuthorizedSource(path: string, original: string, actual: string) {
+function assertFe2Source(path: string, original: string, actual: string) {
   const accepted = fe2.sources[path];
   if (!accepted) return assertFe1Source(path, original, actual);
   const incoming = git('show', `${fe2.sourceBase}:${path}`);
@@ -72,17 +72,47 @@ export function assertAuthorizedSource(path: string, original: string, actual: s
   assertFe1Source(path, original, incoming);
   assert.equal(createHash('sha256').update(actual).digest('hex'), accepted.sha256, `FE-2 exact candidate bytes: ${path}`);
 }
+// FE-3V2 accepted all twelve semantic/control paths. FE-3R records exact
+// closure-only output separately; fresh FE-3CV is required before checkpoint.
+// Historical WEB-5, FE-1 and FE-2 fixtures and validators remain intact.
+type Fe3SourceTransition = { baselineBlob: string | null; fe3v2Sha256: string; sha256: string; kind: string };
+const fe3Bytes = readFileSync(resolve(repoRoot, 'website/evidence/fe3/source-transition.json'));
+assert.equal(createHash('sha256').update(fe3Bytes).digest('hex'), 'b0d98228b4888575b8cddb8c305a0eaa33cc4fb3f0f20a05c4668b70bbf8e731', 'Frozen FE-3 source-transition fixture');
+const fe3: { sourceBase: string; acceptedCorrectionPackageSha256: string; sources: Record<string, Fe3SourceTransition> } = JSON.parse(fe3Bytes.toString('utf8'));
+assert.equal(fe3.sourceBase, '8fa0389fc1ba7c40ee33bc408a739dd082fdbbcd');
+assert.equal(fe3.acceptedCorrectionPackageSha256, 'cfedf6db3f9ec68b5a3f3d2a8c7a557f28fe02416532f0de8da987f35598677e');
+assert.equal(Object.keys(fe3.sources).length, 12, 'Exact FE-3V2 path population');
+const fe3AcceptedManifest = Object.keys(fe3.sources).sort().map(path => `${path}:${fe3.sources[path].fe3v2Sha256}\n`).join('');
+assert.equal(createHash('sha256').update(fe3AcceptedManifest).digest('hex'), fe3.acceptedCorrectionPackageSha256, 'Exact FE-3V2 accepted package');
+const fe3Hashes = Object.fromEntries(Object.entries(fe3.sources).map(([path, entry]) => [path, entry.sha256]));
+export function assertAuthorizedSource(path: string, original: string, actual: string) {
+  const accepted = fe3.sources[path];
+  if (!accepted) return assertFe2Source(path, original, actual);
+  if (accepted.baselineBlob === null) {
+    assert.equal(git('ls-tree', fe3.sourceBase, '--', path), '', `FE-3 accepted new path absent at baseline: ${path}`);
+    assert.equal(original, '', `FE-3 new path has no historical content: ${path}`);
+  } else {
+    const incoming = git('show', `${fe3.sourceBase}:${path}`);
+    assert.equal(git('rev-parse', `${fe3.sourceBase}:${path}`).trim(), accepted.baselineBlob, `FE-3 incoming blob: ${path}`);
+    assertFe2Source(path, original, incoming);
+  }
+  assert.equal(createHash('sha256').update(actual).digest('hex'), accepted.sha256, `FE-3 exact candidate bytes: ${path}`);
+}
 export function authenticateSources() {
   // WEB-5B's explicit URL-only authorization is checked as a transformation of
   // immutable Git content, never as a blanket exemption for a changed chapter.
   // This website check does not alter the separate first_edition_gate baseline.
-  const allowed = new Set([...mutations.map(item => item.path), ...Object.keys(licenses), ...Object.keys(closureSources), ...Object.keys(transition.sources)]);
+  const allowed = new Set([...mutations.map(item => item.path), ...Object.keys(licenses), ...Object.keys(closureSources), ...Object.keys(transition.sources), ...Object.keys(fe3.sources)]);
   for (const command of [['diff', '--name-only', base], ['ls-files', '--others', '--exclude-standard']]) {
     const paths = git(...command, '--', '.', ':(exclude)website').trim().split('\n').filter(Boolean);
     paths.forEach(path => assert.ok(allowed.has(path), `Unauthorized path outside website: ${path}`));
   }
   assert.equal(git('diff', '--cached', '--name-only'), '', 'WEB-5B must remain unstaged');
-  assert.equal(git('diff', '--summary', structuralBase, '--', '.', ':(exclude)website'), '', 'Unexpected source mode, deletion or rename');
+  // Three exact FE-3 additions become tracked only in the staged/committed
+  // model. Admit only their 100644 create records, never arbitrary additions.
+  const acceptedAdditions = new Set(Object.entries(fe3.sources).filter(([, entry]) => entry.baselineBlob === null).map(([path]) => ` create mode 100644 ${path}`));
+  const structuralDrift = git('diff', '--summary', structuralBase, '--', '.', ':(exclude)website').split('\n').filter(line => line && !acceptedAdditions.has(line));
+  assert.deepEqual(structuralDrift, [], 'Unexpected source mode, deletion or rename');
   const manifest = git('ls-tree', '-r', base, '--', ...protectedPaths);
   const entries = manifest.trimEnd().split('\n').map(line => {
     const [info, path] = line.split('\t');
@@ -99,12 +129,17 @@ export function authenticateSources() {
       assert.equal(entry.blob, change.beforeBlob);
       // The reviewed WEB-5 output is now the FE-1 input, still checked exactly.
       assert.equal(transition.sources[entry.path]?.baselineBlob ?? git('hash-object', entry.path).trim(), change.afterBlob);
-    } else if (!closureSources[entry.path] && !transition.sources[entry.path]) assert.equal(git('hash-object', entry.path).trim(), entry.blob);
+    } else if (!closureSources[entry.path] && !transition.sources[entry.path] && !fe3.sources[entry.path]) assert.equal(git('hash-object', entry.path).trim(), entry.blob);
   }
-  for (const [path, expected] of Object.entries({ ...licenses, ...closureSources, ...transitionedHashes, ...transition.preserved, ...fe2Hashes })) {
+  for (const [path, expected] of Object.entries({ ...licenses, ...closureSources, ...transitionedHashes, ...transition.preserved, ...fe2Hashes, ...fe3Hashes })) {
     const file = resolve(repoRoot, path);
     assert.ok(lstatSync(file).isFile() && !lstatSync(file).isSymbolicLink());
     assert.equal(createHash('sha256').update(readFileSync(file)).digest('hex'), expected, `Reviewed licensing bytes: ${path}`);
+    if (fe3.sources[path]) {
+      const originalEntry = git('ls-tree', base, '--', path);
+      const original = originalEntry ? git('show', `${base}:${path}`) : '';
+      assertAuthorizedSource(path, original, readFileSync(file, 'utf8'));
+    }
   }
-  return { base, files: entries.length, manifestSha256: createHash('sha256').update(manifest).digest('hex'), groups: Object.fromEntries(protectedPaths.map(path => [path, entries.filter(entry => entry.path === path || entry.path.startsWith(path + '/')).length])), authorizedCanonicalFiles: mutations.length, authorizedUrlSubstitutions: mutations.reduce((sum, item) => sum + item.substitutions.reduce((n, change) => n + change.count, 0), 0), acceptedFe1Chapters: Object.keys(transition.sources).filter(path => path.startsWith('book/')).length, exactTransitionSources: Object.keys(transition.sources).length, acceptedFe2Chapters: Object.keys(fe2.sources).filter(path => path.startsWith('book/')).length, exactFe2TransitionSources: Object.keys(fe2.sources).length, unauthorizedModifications: 0 };
+  return { base, files: entries.length, manifestSha256: createHash('sha256').update(manifest).digest('hex'), groups: Object.fromEntries(protectedPaths.map(path => [path, entries.filter(entry => entry.path === path || entry.path.startsWith(path + '/')).length])), authorizedCanonicalFiles: mutations.length, authorizedUrlSubstitutions: mutations.reduce((sum, item) => sum + item.substitutions.reduce((n, change) => n + change.count, 0), 0), acceptedFe1Chapters: Object.keys(transition.sources).filter(path => path.startsWith('book/')).length, exactTransitionSources: Object.keys(transition.sources).length, acceptedFe2Chapters: Object.keys(fe2.sources).filter(path => path.startsWith('book/')).length, exactFe2TransitionSources: Object.keys(fe2.sources).length, exactFe3TransitionSources: Object.keys(fe3.sources).length, acceptedFe3PackageSha256: fe3.acceptedCorrectionPackageSha256, unauthorizedModifications: 0 };
 }

@@ -6,6 +6,7 @@ import io
 import json
 from pathlib import Path
 import subprocess
+import shutil
 import tempfile
 import unittest
 from unittest.mock import patch
@@ -22,14 +23,14 @@ def events(ids=('001', '002')):
             + '\n'.join('| `FE-EV-' + i + '` | 2026-09-06 |' for i in ids) + '\n')
 
 
-def findings(open_count=4):
+def findings(open_count=0):
     text = ''
     for i in range(1, 30):
         status, verification = ('OPEN', 'NOT VERIFIED') if i <= open_count else ('CLOSED', 'VERIFIED')
         text += ('### FE-G-%03d — Example\n| **Status** | `%s` |\n| **Verification** | `%s` |\n' % (i, status, verification))
-    text += '### 8.2 Canonical current 4-finding allocation\n| Package | Historical origin | Finding IDs | Execution disposition | Dependency / verification retained |\n| --- | --- | --- | --- | --- |\n'
+    text += '### 8.2 Canonical current 0-finding allocation\n| Package | Historical origin | Finding IDs | Execution disposition | Dependency / verification retained |\n| --- | --- | --- | --- | --- |\n'
     cursor = 1
-    for package, count in gate.PACKAGES.items():
+    for package, count in {**gate.PACKAGES, 'FE-3': open_count}.items():
         ids = ' · '.join('FE-G-%03d' % i for i in range(cursor, cursor+count))
         text += '| **%s** | H | %s | FE-REQUIRED | evidence |\n' % (package, ids)
         cursor += count
@@ -79,15 +80,15 @@ class IntegrityTests(unittest.TestCase):
         records, result = gate.finding_checks(findings())
         self.assertEqual(result['status'], 'PASS', result)
         self.assertEqual(result['observed'], {'total': 29, 'distribution': {
-            'OPEN / NOT VERIFIED': 4, 'CLOSED / VERIFIED': 25}})
+            'CLOSED / VERIFIED': 29}})
         allocation = gate.allocation_check(findings(), records)
         self.assertEqual(allocation['status'], 'PASS', allocation)
         self.assertEqual(allocation['observed'], {'packages': {
-            'LR-1': 0, 'LR-2': 0, 'FE-1': 0, 'FE-2': 0, 'FE-3': 4},
-            'total': 4, 'open_count': 4})
+            'LR-1': 0, 'LR-2': 0, 'FE-1': 0, 'FE-2': 0, 'FE-3': 0},
+            'total': 0, 'open_count': 0})
 
     def test_preclosure_finding_census_rejected(self):
-        for stale_count in (9, 15, 18, 20):
+        for stale_count in (4, 9, 15, 18, 20):
             with self.subTest(stale_count=stale_count):
                 self.assertFails(gate.finding_checks(findings(open_count=stale_count))[1], 'census')
 
@@ -96,23 +97,29 @@ class IntegrityTests(unittest.TestCase):
         self.assertFails(gate.finding_checks(text)[1], 'census')
 
     def test_invalid_lifecycle(self):
-        for original, replacement in [('`OPEN`', '`CLOSED`'), ('`NOT VERIFIED`', '`VERIFIED`')]:
+        for original, replacement in [('`CLOSED`', '`OPEN`'), ('`VERIFIED`', '`NOT VERIFIED`')]:
             self.assertFails(gate.finding_checks(findings().replace(original, replacement, 1))[1], 'Invalid lifecycle')
 
     def test_missing_duplicate_unknown_fields_and_ids(self):
-        for text in [findings().replace('| **Verification** | `NOT VERIFIED` |', '', 1),
-                     findings().replace('`OPEN`', '`UNKNOWN`', 1),
+        for text in [findings().replace('| **Verification** | `VERIFIED` |', '', 1),
+                     findings().replace('`CLOSED`', '`UNKNOWN`', 1),
                      findings().replace('### FE-G-002', '### FE-G-001', 1),
                      findings().replace('### FE-G-002', '### FE-Z-002', 1),
-                     findings().replace('| **Status** | `OPEN` |', '| **Status** | `OPEN` |\n| **Status** | `OPEN` |', 1)]:
+                     findings().replace('| **Status** | `CLOSED` |', '| **Status** | `CLOSED` |\n| **Status** | `CLOSED` |', 1)]:
             self.assertFails(gate.finding_checks(text)[1])
 
     def allocation(self, old, new):
-        text = findings()
+        text = findings(open_count=4)
         prefix, table = text.split('### 8.2', 1)
         modified = prefix + '### 8.2' + table.replace(old, new, 1)
         records, _ = gate.finding_checks(modified)
-        return gate.allocation_check(modified, records)
+        # Keep the generic multiplicity/parser negatives discriminating with
+        # a coherent four-open synthetic allocation, independently of the
+        # real post-FE-3 zero-outstanding baseline tested above.
+        with patch.object(gate, 'PACKAGES', {**gate.PACKAGES, 'FE-3': 4}):
+            clean_records, _ = gate.finding_checks(text)
+            self.assertEqual(gate.allocation_check(text, clean_records)['status'], 'PASS')
+            return gate.allocation_check(modified, records)
 
     def test_duplicate_allocation(self):
         self.assertFails(self.allocation('FE-G-002', 'FE-G-001'), 'multiplicity')
@@ -285,6 +292,96 @@ class TemporaryGitTests(unittest.TestCase):
         path.symlink_to(self.root / 'tracked.txt')
         with self.assertRaises(gate.ConfigurationError):
             gate.manifests(self.root)
+
+
+class FE3HistoricalTests(unittest.TestCase):
+    """FE-3F1: real immutable Git sources, mutations only in disposable clones."""
+
+    def setUp(self):
+        self.temp = tempfile.TemporaryDirectory(prefix='msqe-fe3f1-test-')
+        self.addCleanup(self.temp.cleanup)
+        self.root = Path(self.temp.name) / 'repo'
+        subprocess.run(['git', 'clone', '--quiet', '--shared', '--no-hardlinks',
+                        str(ROOT), str(self.root)], check=True, capture_output=True)
+        for name in ('FE3_CORRECTION_EVIDENCE.md', 'FIRST_EDITION_REVIEW_LOG.md',
+                     'FIRST_EDITION_VERIFICATION_LEDGERS.md'):
+            shutil.copyfile(ROOT / gate.REVIEW / name, self.root / gate.REVIEW / name)
+
+    def result(self, profile='fe3-historical'):
+        return gate.report(profile, gate.run(self.root, profile, []))
+
+    def mutate(self, filename, before, after):
+        path = self.root / gate.REVIEW / filename
+        text = path.read_text()
+        self.assertIn(before, text)
+        path.write_text(text.replace(before, after, 1))
+
+    def assertRejected(self, fragment):
+        result = self.result()
+        self.assertNotEqual(result['exit_code'], 0, result)
+        self.assertIn(fragment, result['checks'][0]['message'])
+
+    def test_source_derivation_and_clean_gate(self):
+        result = self.result()
+        self.assertEqual(result['exit_code'], 0, result)
+        observed = result['checks'][0]['observed']
+        self.assertEqual((observed['numerator'], observed['denominator']), (8, 379))
+        self.assertEqual(observed['rounded_percentage'], '2.11')
+        self.assertEqual(len(observed['occurrences']), 8)
+
+    def test_percentage_corruption(self):
+        self.mutate('FE3_CORRECTION_EVIDENCE.md',
+                    'half-up to two decimal places = 2.11%', 'half-up to two decimal places = 0%')
+        self.assertRejected('percentage disagrees')
+
+    def test_numerator_corruption(self):
+        self.mutate('FE3_CORRECTION_EVIDENCE.md', 'contaminated population **8**',
+                    'contaminated population **9**')
+        self.assertRejected('numerator/denominator disagree')
+
+    def test_denominator_corruption(self):
+        self.mutate('FE3_CORRECTION_EVIDENCE.md', 'total historical L4 population **379**',
+                    'total historical L4 population **378**')
+        self.assertRejected('numerator/denominator disagree')
+
+    def test_corrective_evidence_removal(self):
+        (self.root / gate.REVIEW / 'FE3_CORRECTION_EVIDENCE.md').unlink()
+        self.assertRejected('Required canonical evidence missing')
+
+    def test_historical_rewrite(self):
+        self.mutate('FIRST_EDITION_REVIEW_LOG.md', '379 CONFIRMED', '378 CONFIRMED')
+        self.assertRejected('Historical evidence deleted/rewritten')
+
+    def test_historical_removal(self):
+        self.mutate('FIRST_EDITION_VERIFICATION_LEDGERS.md',
+                    next(x for x in (self.root / gate.REVIEW / 'FIRST_EDITION_VERIFICATION_LEDGERS.md').read_text().splitlines(True)
+                         if x.startswith('| NUM-L4-ADJ |')), '')
+        self.assertRejected('Historical evidence deleted/rewritten')
+
+    def test_current_partx_mutation(self):
+        path = next((self.root / 'book/part-10-performance-security/chapters').glob('chapter-01-*.md'))
+        path.write_text(path.read_text() + '\nUnauthorized reconciliation.\n')
+        self.assertRejected('Accepted current Part X content changed')
+
+    def test_owner_provenance_mutation(self):
+        self.mutate('FE3_CORRECTION_EVIDENCE.md', 'FE-3A1', 'FE-OTHER')
+        self.assertRejected('interpretation/provenance changed')
+
+    def test_current_interpretation_mutation(self):
+        self.mutate('FIRST_EDITION_VERIFICATION_LEDGERS.md',
+                    'This supersedes the historical zero/all-confirmed',
+                    'This endorses the historical zero/all-confirmed')
+        self.assertRejected('Missing/ambiguous corrective ledger evidence')
+
+    def test_first_edition_profile_invokes_and_rejects(self):
+        clean = self.result('first-edition')
+        self.assertEqual(next(c for c in clean['checks'] if c['name'] == 'FE3-HIST-PARTX-independent-acceptance')['status'], 'INCOMPLETE')
+        self.assertEqual(next(c for c in clean['checks'] if c['name'] == 'FE3-HIST-PARTX')['status'], 'PASS')
+        self.mutate('FE3_CORRECTION_EVIDENCE.md',
+                    'half-up to two decimal places = 2.11%', 'half-up to two decimal places = 0%')
+        corrupt = self.result('first-edition')
+        self.assertNotEqual(corrupt['exit_code'], 0)
+        self.assertEqual(next(c for c in corrupt['checks'] if c['name'] == 'FE3-HIST-PARTX')['status'], 'FAIL')
 
 
 if __name__ == '__main__':
