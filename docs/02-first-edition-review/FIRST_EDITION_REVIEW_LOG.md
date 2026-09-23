@@ -1429,6 +1429,8 @@ git ls-files -s book | awk '$4 ~ /chapters\/chapter-.*\.md$/ {print $4":"$2}' | 
 | `FE-EV-053` | 2026-09-21 | H — FE-2 closure and baseline evolution | Supplied FE-2V 42/0/0 Decision A; five CLOSED / VERIFIED; accepted semantic bytes frozen; exact approved baseline/preservation evolution; FE-2=0, FE-3=4 | **UNSCORED recording — FE-2 COMPLETE / INDEPENDENTLY VERIFIED / CLOSED; fresh narrow FE-2CV before checkpoint** |
 | `FE-EV-054` | 2026-09-22 | H — FE-3 correction authorship | FE-3A1 adopted; two classifier roots corrected; additive historical 8/379; four findings remain OPEN / NOT VERIFIED | **UNSCORED author evidence — AWAITING FRESH INDEPENDENT FE-3V** |
 | `FE-EV-055` | 2026-09-22 | H — FE-3 closure and final remediation baseline evolution | Supplied FE-3V2 50/0/0 Decision A; four CLOSED / VERIFIED; FE-3A1 and quantitative gate accepted; all 29 known findings closed; all allocations zero | **UNSCORED recording — remediation complete; First Edition IN PROGRESS; fresh FE-3CV before checkpoint** |
+| `FE-EV-056` | 2026-09-22 | J / H — FE-AG1R1 | Gate-defect admission and bounded correction authorship; OPEN / NOT VERIFIED | UNSCORED |
+| `FE-EV-057` | 2026-09-22 | I / J — FE-J-001R | Gate-defect closure recording and coupled baseline evolution | UNSCORED; records FE-AG1R1V2 acceptance |
 
 > **Note on the FE-EV-008 → FE-EV-009 sequence — this is not a lost record.** Three quantitative-instrument events occurred between them — **F-IR4** (fresh independent re-acceptance, 39 PASS · 0 PARTIAL · 1 FAIL), **F-IR4V2** (independent verification establishing that the instrument is intact, that E9 is correct and that the E11 total is 51) and **F-IR4F** (the E11 occurrence-decomposition correction, commit `250cfe7`) — and **none was written to this log at the time it happened.** Their outcomes are recorded in the **plan §16 phase-history table**, and `FE-EV-009` states the chain it closes.
 >
@@ -1970,3 +1972,39 @@ The original historical **0%** claim remains unchanged as historical evidence. T
 **First Edition remains IN PROGRESS — REMEDIATION COMPLETE / AWAITING COMPREHENSIVE ACCEPTANCE GATE.** The comprehensive First Edition Acceptance Gate is still required; this event does not perform it. **v1.0.0 NOT YET RELEASED.** Public milestone remains **MSQE v0.16.0 — LEARNING-READY — CONTROLLED RC — PUBLICLY LIVE AT https://msqe.dev**. No new Learning-Ready freeze, release, deployment or infrastructure change occurs.
 
 **UNSTAGED / UNCOMMITTED / UNPUSHED. Fresh independent FE-3CV is required before checkpoint.** FE-3R author validation and fingerprints are not independent acceptance of this closure-only delta. Quantitative prerequisite PASS does not confer whole-book or public deployment acceptance.
+
+## Event FE-EV-056 — FE-AG1R1 gate-defect admission and bounded correction authorship
+
+| Field | Value |
+| --- | --- |
+| Event ID | FE-EV-056 |
+| Date | 2026-09-22 |
+| Phase | Phase J discovery / Phase H bounded correction |
+| Scope | AG-CAND-FE-AG1-R1-002 admitted as FE-J-001; three Part I case-study Version omissions, new FE-AG1R1 package |
+| Score / verdict | UNSCORED correction authorship; no acceptance verdict or closure |
+| Independence | Author self-checks only. Fresh independent FE-AG1R1V must reproduce the exact candidate fingerprint and assess all manifestations. |
+| Artefacts affected | Three metadata rows; additive Findings/Ledgers/Log and current README/sprint summaries; loader guard, baseline census/allocation coupling, tests and exact source-transition fixture. Frozen 15-path scope in FE_AG1R1_CORRECTION_EVIDENCE.md. |
+| Non-collapse note | Distinct from FE-EV-001–055, FE-1/2/3 acceptance, FE-AG1 discovery and future FE-AG1R1V/closure; no historical evidence rewritten. |
+
+**30 total: historical 29 CLOSED / VERIFIED; new FE-J-001 OPEN / NOT VERIFIED.** Correction applied does not close the finding. First Edition IN PROGRESS; FE-AG1 NOT ACCEPTED / REMEDIATION PENDING; FE-AG2 NOT STARTED; v1.0.0 NOT YET RELEASED. No staging, commit, push or deployment. See [authorship evidence](FE_AG1R1_CORRECTION_EVIDENCE.md).
+
+## Event FE-EV-057 — FE-J-001 verified closure preparation
+
+| Field | Value |
+| --- | --- |
+| Event ID | FE-EV-057 |
+| Date | 2026-09-22 |
+| Phase | I closure recording / J acceptance-gate remediation |
+| Scope | FE-J-001 only; three Part I case studies, accepted Version 0.1.0 metadata and population-wide recurrence control |
+| Score / verdict | UNSCORED closure authorship; records FE-AG1R1V2 Decision A, 36 PASS / 0 FAIL / 0 INCOMPLETE; no new gate score |
+| Independence | FE-AG1R1V2 independently accepted the correction; this author records that authority and cannot independently accept the closure delta. Fresh FE-J-001CV required before checkpoint. |
+| Artefacts affected | Findings lifecycle/allocation, additive Ledgers/Log/evidence, current README/sprint summaries and directly coupled exact baseline/preservation/test expectations |
+| Non-collapse note | Distinct from FE-EV-001–056, original FE-AG1, FE-AG1R1V rejection, FE-AG1R1F1 correction, FE-AG1R1V2 acceptance, later FE-J-001CV and any future controlled FE-AG1 resumption |
+
+**FE-J-001 CLOSED / VERIFIED** under independently supplied **FE-AG1R1V2: 36 PASS / 0 FAIL / 0 INCOMPLETE, Decision A**, accepted correction package `07b6ff0c5a50c0584ede8da193bb354a5d874992e3d491afb3f81d0773a028dc`. Authority: `/tmp/msqe-fe-ag1r1v2/MSQE-FE-AG1R1V2-VERIFICATION-REPORT.md` (SHA-256 `2280ee2cd20c4a84625dd76a6b3827391b064233ecc1b29e65a04ba18b3f5818`) and its `accepted-package-manifest.txt`. FE-AG1 discovered the three Version omissions; FE-AG1R1 added Version 0.1.0 and the recurrence guard; initial FE-AG1R1V returned B (33 PASS / 1 FAIL) for the guard's template-separator false rejection; FE-AG1R1F1 corrected that guard; FE-AG1R1V2 independently accepted the exact final correction. No discovery evidence or accepted correction bytes are rewritten.
+
+Historical remediation: **29 total / 29 CLOSED / VERIFIED**. Acceptance-gate defects: **1 total / 1 CLOSED / VERIFIED / 0 OPEN / NOT VERIFIED**. Current unresolved known defects: **0**. FE-1/FE-2/FE-3 remain COMPLETE / CLOSED / VERIFIED.
+
+**FE-AG1: NOT YET ACCEPTED / READY FOR CONTROLLED RESUMPTION AFTER CHECKPOINT, DEPLOYMENT AND LIVE ACCEPTANCE. First Edition: IN PROGRESS. Comprehensive acceptance: IN PROGRESS / FE-AG1 PAUSED. FE-AG2: NOT STARTED. v1.0.0: NOT YET RELEASED.** Closing FE-J-001 does not retroactively accept FE-AG1. Fresh independent **FE-J-001CV** must verify this closure-only package before any separately authorized checkpoint. **UNSTAGED / UNCOMMITTED / UNPUSHED; no deployment.**
+
+The accepted case-study full files/bodies and recurrence loader/tests remain byte-identical. Historical 29 findings, FE-EV-055, Part X adjudication and quantitative control remain intact. This event is additive; it authorizes no checkpoint or deployment.

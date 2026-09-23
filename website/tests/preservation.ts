@@ -85,7 +85,7 @@ assert.equal(Object.keys(fe3.sources).length, 12, 'Exact FE-3V2 path population'
 const fe3AcceptedManifest = Object.keys(fe3.sources).sort().map(path => `${path}:${fe3.sources[path].fe3v2Sha256}\n`).join('');
 assert.equal(createHash('sha256').update(fe3AcceptedManifest).digest('hex'), fe3.acceptedCorrectionPackageSha256, 'Exact FE-3V2 accepted package');
 const fe3Hashes = Object.fromEntries(Object.entries(fe3.sources).map(([path, entry]) => [path, entry.sha256]));
-export function assertAuthorizedSource(path: string, original: string, actual: string) {
+function assertFe3Source(path: string, original: string, actual: string) {
   const accepted = fe3.sources[path];
   if (!accepted) return assertFe2Source(path, original, actual);
   if (accepted.baselineBlob === null) {
@@ -98,11 +98,47 @@ export function assertAuthorizedSource(path: string, original: string, actual: s
   }
   assert.equal(createHash('sha256').update(actual).digest('hex'), accepted.sha256, `FE-3 exact candidate bytes: ${path}`);
 }
+// FE-AG1R1V2 independently accepted the correction; FE-J-001R closure
+// output awaits fresh FE-J-001CV. Keep both exact identities distinct.
+// Authenticate its input through the unchanged historical preservation chain.
+const ag1Bytes = readFileSync(resolve(repoRoot, 'website/evidence/fe-ag1r1/source-transition.json'));
+assert.equal(createHash('sha256').update(ag1Bytes).digest('hex'), '5f4f40c4a9f3eaef010df0e519c6192546228c1b781f3a046b0443524374ffbd', 'Frozen FE-J-001R closure transition fixture');
+const ag1: { sourceBase: string; state: string; acceptedCorrectionPackageSha256: string; acceptedCorrectionManifest: Record<string, string>; sources: Record<string, { baselineBlob: string | null; sha256: string; acceptedCorrectionSha256: string; kind: string }> } = JSON.parse(ag1Bytes.toString('utf8'));
+assert.equal(ag1.sourceBase, '48c9f0aae867e50bfe9a7c94e57c74a98bdf592b');
+assert.equal(ag1.state, 'FE-AG1R1V2 ACCEPTED CORRECTION; FE-J-001R CLOSURE AWAITS FE-J-001CV');
+assert.equal(ag1.acceptedCorrectionPackageSha256, '07b6ff0c5a50c0584ede8da193bb354a5d874992e3d491afb3f81d0773a028dc');
+const ag1AcceptedManifest = Object.keys(ag1.acceptedCorrectionManifest).sort().map(path => `${path}:${ag1.acceptedCorrectionManifest[path]}\n`).join('');
+assert.equal(createHash('sha256').update(ag1AcceptedManifest).digest('hex'), ag1.acceptedCorrectionPackageSha256, 'Exact independently accepted FE-AG1R1V2 package');
+for (const [path, entry] of Object.entries(ag1.sources)) {
+  assert.equal(entry.acceptedCorrectionSha256, ag1.acceptedCorrectionManifest[path], `FE-AG1R1V2 source identity: ${path}`);
+}
+// These accepted behavioral files are frozen through closure, independently
+// of the exact governance-output identities below.
+for (const path of ['website/src/lib/content/loader.ts', 'website/tests/case-study-metadata.test.ts']) {
+  assert.equal(createHash('sha256').update(readFileSync(resolve(repoRoot, path))).digest('hex'), ag1.acceptedCorrectionManifest[path], `Accepted recurrence control unchanged: ${path}`);
+}
+const ag1Hashes = Object.fromEntries(Object.entries(ag1.sources).map(([path, entry]) => [path, entry.sha256]));
+export function assertAuthorizedSource(path: string, original: string, actual: string) {
+  const candidate = ag1.sources[path];
+  if (!candidate) return assertFe3Source(path, original, actual);
+  if (candidate.baselineBlob === null) {
+    assert.equal(git('ls-tree', ag1.sourceBase, '--', path), '', `FE-AG1R1 new path absent at baseline: ${path}`);
+    assert.equal(original, '');
+  } else {
+    const incoming = git('show', `${ag1.sourceBase}:${path}`);
+    assert.equal(git('rev-parse', `${ag1.sourceBase}:${path}`).trim(), candidate.baselineBlob);
+    assertFe3Source(path, original, incoming);
+    if (candidate.kind === 'CASE-STUDY METADATA CORRECTION') {
+      assert.equal(actual, incoming.replace('| **Status** |', '| **Version** | 0.1.0 |\n| **Status** |'), `Only authorized Version row: ${path}`);
+    }
+  }
+  assert.equal(createHash('sha256').update(actual).digest('hex'), candidate.sha256, `FE-J-001R exact closure candidate: ${path}`);
+}
 export function authenticateSources() {
   // WEB-5B's explicit URL-only authorization is checked as a transformation of
   // immutable Git content, never as a blanket exemption for a changed chapter.
   // This website check does not alter the separate first_edition_gate baseline.
-  const allowed = new Set([...mutations.map(item => item.path), ...Object.keys(licenses), ...Object.keys(closureSources), ...Object.keys(transition.sources), ...Object.keys(fe3.sources)]);
+  const allowed = new Set([...mutations.map(item => item.path), ...Object.keys(licenses), ...Object.keys(closureSources), ...Object.keys(transition.sources), ...Object.keys(fe3.sources), ...Object.keys(ag1.sources)]);
   for (const command of [['diff', '--name-only', base], ['ls-files', '--others', '--exclude-standard']]) {
     const paths = git(...command, '--', '.', ':(exclude)website').trim().split('\n').filter(Boolean);
     paths.forEach(path => assert.ok(allowed.has(path), `Unauthorized path outside website: ${path}`));
@@ -110,7 +146,7 @@ export function authenticateSources() {
   assert.equal(git('diff', '--cached', '--name-only'), '', 'WEB-5B must remain unstaged');
   // Three exact FE-3 additions become tracked only in the staged/committed
   // model. Admit only their 100644 create records, never arbitrary additions.
-  const acceptedAdditions = new Set(Object.entries(fe3.sources).filter(([, entry]) => entry.baselineBlob === null).map(([path]) => ` create mode 100644 ${path}`));
+  const acceptedAdditions = new Set(Object.entries({ ...fe3.sources, ...ag1.sources }).filter(([, entry]) => entry.baselineBlob === null).map(([path]) => ` create mode 100644 ${path}`));
   const structuralDrift = git('diff', '--summary', structuralBase, '--', '.', ':(exclude)website').split('\n').filter(line => line && !acceptedAdditions.has(line));
   assert.deepEqual(structuralDrift, [], 'Unexpected source mode, deletion or rename');
   const manifest = git('ls-tree', '-r', base, '--', ...protectedPaths);
@@ -129,13 +165,13 @@ export function authenticateSources() {
       assert.equal(entry.blob, change.beforeBlob);
       // The reviewed WEB-5 output is now the FE-1 input, still checked exactly.
       assert.equal(transition.sources[entry.path]?.baselineBlob ?? git('hash-object', entry.path).trim(), change.afterBlob);
-    } else if (!closureSources[entry.path] && !transition.sources[entry.path] && !fe3.sources[entry.path]) assert.equal(git('hash-object', entry.path).trim(), entry.blob);
+    } else if (!closureSources[entry.path] && !transition.sources[entry.path] && !fe3.sources[entry.path] && !ag1.sources[entry.path]) assert.equal(git('hash-object', entry.path).trim(), entry.blob);
   }
-  for (const [path, expected] of Object.entries({ ...licenses, ...closureSources, ...transitionedHashes, ...transition.preserved, ...fe2Hashes, ...fe3Hashes })) {
+  for (const [path, expected] of Object.entries({ ...licenses, ...closureSources, ...transitionedHashes, ...transition.preserved, ...fe2Hashes, ...fe3Hashes, ...ag1Hashes })) {
     const file = resolve(repoRoot, path);
     assert.ok(lstatSync(file).isFile() && !lstatSync(file).isSymbolicLink());
     assert.equal(createHash('sha256').update(readFileSync(file)).digest('hex'), expected, `Reviewed licensing bytes: ${path}`);
-    if (fe3.sources[path]) {
+    if (fe3.sources[path] || ag1.sources[path]) {
       const originalEntry = git('ls-tree', base, '--', path);
       const original = originalEntry ? git('show', `${base}:${path}`) : '';
       assertAuthorizedSource(path, original, readFileSync(file, 'utf8'));

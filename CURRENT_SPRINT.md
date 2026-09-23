@@ -1,5 +1,17 @@
 # Current Sprint
 
+> **Current FE-J-001R closure preparation — 2026-09-22:** FE-J-001 **CLOSED / VERIFIED**, recording FE-AG1R1V2 **36/36 independent acceptance** at FE-EV-057. Accepted correction package `07b6ff0c5a50c0584ede8da193bb354a5d874992e3d491afb3f81d0773a028dc`.
+> Historical remediation: **29 total / 29 CLOSED / VERIFIED**. Acceptance-gate defects: **1 total / 1 CLOSED / VERIFIED / 0 OPEN / NOT VERIFIED**. Current unresolved known defects: **0**. FE-1/FE-2/FE-3 remain COMPLETE / CLOSED / VERIFIED.
+>
+> **FE-AG1: NOT YET ACCEPTED / READY FOR CONTROLLED RESUMPTION AFTER CHECKPOINT, DEPLOYMENT AND LIVE ACCEPTANCE. First Edition: IN PROGRESS. Comprehensive acceptance: IN PROGRESS / FE-AG1 PAUSED. FE-AG2: NOT STARTED. v1.0.0: NOT YET RELEASED.** Closing FE-J-001 does not retroactively accept FE-AG1. Fresh independent **FE-J-001CV** must verify this closure-only package before any separately authorized checkpoint. **UNSTAGED / UNCOMMITTED / UNPUSHED; no deployment.**
+> This supersedes all earlier current-state/count/next-action summaries below; their historical evidence remains unchanged.
+
+
+> **Current FE-AG1R1 correction authorship — 2026-09-22:** **30 total: 29 historical CLOSED / VERIFIED; 1 new acceptance-gate defect OPEN / NOT VERIFIED (FE-J-001).** FE-1, FE-2 and FE-3 remain COMPLETE / CLOSED / VERIFIED. Historical remediation allocations remain zero; new package FE-AG1R1 has one outstanding finding.
+> **First Edition: IN PROGRESS. FE-AG1: NOT ACCEPTED / REMEDIATION PENDING. FE-AG2: NOT STARTED. v1.0.0: NOT YET RELEASED.** Correction applied is unscored author evidence; fresh independent FE-AG1R1V is required. No closure, checkpoint or deployment is authorized here.
+> This current statement supersedes earlier current-state/count/next-action summaries below; their point-in-time evidence remains unchanged. The production baseline remains `48c9f0aae867e50bfe9a7c94e57c74a98bdf592b`. Candidate remains UNSTAGED / UNCOMMITTED / UNPUSHED.
+
+
 > **Current FE-3R closure preparation — 2026-09-22:** **FE-3 COMPLETE / INDEPENDENTLY VERIFIED / CLOSED**, recorded at FE-EV-055. Supplied **FE-3V2: 50 PASS / 0 FAIL / 0 INCOMPLETE, Decision A**, accepted the complete 12-path semantic/control package `cfedf6db3f9ec68b5a3f3d2a8c7a557f28fe02416532f0de8da987f35598677e`, FE-3A1 quantitative adjudication and deterministic quantitative gate, and approved exact baseline/preservation evolution. FE-3R records that independent acceptance; it does not perform FE-3V2.
 > **29 total; 0 OPEN / NOT VERIFIED; 29 CLOSED / VERIFIED.** Outstanding **LR-1=0 / LR-2=0 / FE-1=0 / FE-2=0 / FE-3=0**. FE-1 and FE-2 remain **COMPLETE / CLOSED / VERIFIED**. All known findings are closed; remediation is complete.
 > **First Edition: IN PROGRESS — REMEDIATION COMPLETE / AWAITING COMPREHENSIVE ACCEPTANCE GATE. v1.0.0: NOT YET RELEASED.** **MSQE v0.16.0 — LEARNING-READY — CONTROLLED RC — PUBLICLY LIVE AT https://msqe.dev** remains the public milestone. No edition acceptance, release or deployment is implied.

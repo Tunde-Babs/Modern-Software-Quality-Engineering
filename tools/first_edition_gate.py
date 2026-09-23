@@ -22,6 +22,9 @@ REVIEW = 'docs/02-first-edition-review/'
 CHAPTER_DIGEST = '3a56e89be75d9bfbe63a01a938fa44d6f7067814fc8029af33ace8b5a85b6102'
 PART_DIGEST = 'eafd4ba0fc55275cf8bcd9094a225e408ab22d43e019d76319ce1897b1c11451'
 PACKAGES = {'LR-1': 0, 'LR-2': 0, 'FE-1': 0, 'FE-2': 0, 'FE-3': 0}
+# FE-J-001R records FE-AG1R1V2 acceptance; closure is not FE-AG1 acceptance.
+GATE_FINDINGS = {'FE-J-001': ('CLOSED', 'VERIFIED')}
+HISTORICAL_FINDINGS = ('FE-L1-001', 'FE-L1-002', 'FE-L1-003', 'FE-L1-004', 'FE-L1-005', 'FE-L1-006', 'FE-L1-007', 'FE-L2-001', 'FE-L2-002', 'FE-L2-003', 'FE-L2-004', 'FE-L2-005', 'FE-L3-001', 'FE-L3-002', 'FE-L3-003', 'FE-L3-004', 'FE-L3-005', 'FE-L4-001', 'FE-L4-002', 'FE-L5-001', 'FE-L5-002', 'FE-L5-003', 'FE-T3-001', 'FE-T5-001', 'FE-T2-001', 'FE-T2-002', 'FE-T6-001', 'FE-T6-002', 'FE-T4-001')
 FINDING_ID = r'FE-(?:L[1-5]|T[1-6]|G|J)-[0-9]{3}'
 EVENT_ID = r'FE-EV-(?:[0-9]{3}|[1-9][0-9]{3,})'
 
@@ -98,7 +101,8 @@ def event_check(text):
                   'maximum_id': 'FE-EV-%03d' % max(numbers) if numbers else None})
 
 
-def finding_checks(text):
+def finding_checks(text, admitted=None, historical_ids=None):
+    admitted = admitted or {}
     errors, records = [], {}
     headings = list(re.finditer(r'^### (FE-\S+)[^\n]*', text, re.M))
     for i, match in enumerate(headings):
@@ -128,26 +132,44 @@ def finding_checks(text):
             errors.append('Invalid lifecycle combination: ' + fid + ' ' + str((state, verification)))
         records[fid] = (state, verification)
     distribution = Counter(str(s) + ' / ' + str(v) for s, v in records.values())
-    expected = {'CLOSED / VERIFIED': 29}
-    if len(headings) != 29 or len(records) != 29 or dict(distribution) != expected:
+    expected = Counter({'CLOSED / VERIFIED': 29})
+    expected.update(Counter(' / '.join(state) for state in admitted.values()))
+    for fid, state in admitted.items():
+        if records.get(fid) != state:
+            errors.append('Admitted gate finding state differs: ' + fid)
+    if historical_ids is not None and set(records) != set(historical_ids) | set(admitted):
+        errors.append('Historical/admitted finding identity census differs')
+    if len(headings) != 29 + len(admitted) or len(records) != 29 + len(admitted) or dict(distribution) != expected:
         errors.append('Post-FE-3 baseline finding census differs; investigate or separately authorise rebaselining')
-    return records, check('finding_lifecycle', errors, {'total': 29, 'distribution': expected},
+    return records, check('finding_lifecycle', errors, {'total': 29 + len(admitted), 'distribution': expected},
                           {'total': len(headings), 'distribution': dict(sorted(distribution.items()))})
 
 
-def allocation_check(text, records):
+def allocation_check(text, records, admitted=None):
+    admitted = admitted or {}
+    admitted_open = {fid for fid, state in admitted.items() if state[0] == 'OPEN'}
     errors, packages, allocated = [], {}, []
-    for row in table_rows(section(text, '### 8.2 Canonical current 0-finding allocation')):
+    expected_packages = dict(PACKAGES)
+    allocation = section(text, '### 8.2 Canonical current 0-finding allocation')
+    if admitted:
+        expected_packages['FE-AG1R1'] = len(admitted_open)
+        heading = ('### 9.1 Current acceptance-gate allocation' if admitted_open
+                   else '### 9.2 Current acceptance-gate allocation after FE-J-001 closure')
+        allocation += section(text, heading)
+    for row in table_rows(allocation):
         if row[0] == 'Package' or re.fullmatch(r'[- :]+', row[0]):
             continue
         package = row[0]
-        if package not in PACKAGES or package in packages:
+        if package not in expected_packages or package in packages:
             errors.append('Unknown or duplicate package row: ' + package)
         if len(row) != 5:
             errors.append('Malformed allocation row: ' + package)
             continue
         ids = [] if row[2] == '' else [x.strip() for x in row[2].split('·')]
         packages[package] = len(ids)
+        if admitted and ((package == 'FE-AG1R1' and set(ids) != admitted_open)
+                         or (package != 'FE-AG1R1' and set(ids) & set(admitted))):
+            errors.append('Gate finding must belong only to FE-AG1R1')
         for fid in ids:
             if not re.fullmatch(FINDING_ID, fid) or fid not in records:
                 errors.append('Unknown/malformed allocated finding: ' + fid)
@@ -159,9 +181,9 @@ def allocation_check(text, records):
     for fid in sorted(open_ids | set(allocated)):
         if counts[fid] != 1:
             errors.append('Allocation multiplicity must equal 1: %s observed %d' % (fid, counts[fid]))
-    if packages != PACKAGES:
+    if packages != expected_packages:
         errors.append('Post-FE-3 package cardinalities differ; inspect canonical allocation')
-    return check('fast_track_allocation', errors, PACKAGES,
+    return check('fast_track_allocation', errors, expected_packages,
                  {'packages': packages, 'total': len(allocated), 'open_count': len(open_ids)})
 
 
@@ -396,9 +418,9 @@ def run(root, profile, allowed):
     execute('event_integrity', lambda: event_check(read_evidence(root, 'FIRST_EDITION_REVIEW_LOG.md')))
     def findings():
         text = read_evidence(root, 'FIRST_EDITION_FINDINGS.md')
-        records, result = finding_checks(text)
+        records, result = finding_checks(text, GATE_FINDINGS, HISTORICAL_FINDINGS)
         checks.append(result)
-        return allocation_check(text, records)
+        return allocation_check(text, records, GATE_FINDINGS)
     execute('finding_allocation', findings)
     for cached in (False, True):
         def hygiene(cached=cached):
@@ -416,6 +438,11 @@ def run(root, profile, allowed):
         else:
             execute('batch_scope', lambda: scope_check(changed_paths(root), allowed))
     if profile == 'first-edition':
+        if any(state != ('CLOSED', 'VERIFIED') for state in GATE_FINDINGS.values()):
+            checks.append(check('acceptance_gate_defects', ['Acceptance-gate defects remain unresolved.']))
+        checks.append(check('FE-AG1-controlled-resumption',
+                            ['FE-J-001 closure does not accept FE-AG1. Closure verification, checkpoint, deployment, live acceptance and controlled resumption remain required.'],
+                            status='INCOMPLETE'))
         execute('FE3-HIST-PARTX', lambda: fe3_historical_check(root))
         checks.append(check('FE3-HIST-PARTX-independent-acceptance',
                             ['Fresh independent FE-3V2 acceptance and public/source semantic evidence have not been recorded as an authorised gate input. Author checks cannot satisfy this requirement.'],

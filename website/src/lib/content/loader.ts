@@ -44,6 +44,24 @@ export function parseSource(source: string, markdown: string, kind: Entry['kind'
     const part = Number(/\/part-(\d{2})-/.exec(source)?.[1]);
     if (!roman[part] || !metadata.Part.startsWith(`Part ${roman[part]} — `)) throw new Error(`${source}: Part metadata and directory numbering disagree`);
   }
+  if (kind === 'case-study') {
+    // Existing assets use a leading table. CASE_STUDY_TEMPLATE places a
+    // thematic break before its Metadata heading. Consume that prefix only;
+    // never search past body content for a substitute metadata table.
+    let index = 1;
+    const separator = tree.children[index]?.type === 'thematicBreak';
+    if (separator) index++;
+    const first = tree.children[index];
+    const heading = first?.type === 'heading' && first.depth === 2 && mdText(first) === 'Metadata';
+    const table = heading ? tree.children[index + 1] : separator ? undefined : first;
+    if (table?.type !== 'table') throw new Error(`${source}: missing case-study metadata table`);
+    const versions = table.children.slice(1).map(row => row.children.map(cell => mdText(cell).trim()))
+      .filter(([key]) => key === 'Version');
+    if (versions.length !== 1) throw new Error(`${source}: expected exactly one case-study Version field`);
+    // SemVer: numeric core, optional prerelease/build; no numeric leading zeroes.
+    const semver = /^(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)(?:-(?:0|[1-9]\d*|\d*[A-Za-z-][0-9A-Za-z-]*)(?:\.(?:0|[1-9]\d*|\d*[A-Za-z-][0-9A-Za-z-]*))*)?(?:\+[0-9A-Za-z-]+(?:\.[0-9A-Za-z-]+)*)?$/;
+    if (versions[0].length !== 2 || !semver.test(versions[0][1])) throw new Error(`${source}: malformed case-study Version`);
+  }
   let previous = 0;
   visit(tree, 'heading', node => {
     if (node.depth > previous + 1) throw new Error(`${source}: skipped heading level at ${mdText(node)}`);

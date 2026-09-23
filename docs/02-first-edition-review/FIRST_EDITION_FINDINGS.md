@@ -1,5 +1,17 @@
 # First Edition Findings
 
+> **Current FE-J-001R closure preparation — 2026-09-22:** FE-J-001 **CLOSED / VERIFIED**, recording FE-AG1R1V2 **36/36 independent acceptance** at FE-EV-057. Accepted correction package `07b6ff0c5a50c0584ede8da193bb354a5d874992e3d491afb3f81d0773a028dc`.
+> Historical remediation: **29 total / 29 CLOSED / VERIFIED**. Acceptance-gate defects: **1 total / 1 CLOSED / VERIFIED / 0 OPEN / NOT VERIFIED**. Current unresolved known defects: **0**. FE-1/FE-2/FE-3 remain COMPLETE / CLOSED / VERIFIED.
+>
+> **FE-AG1: NOT YET ACCEPTED / READY FOR CONTROLLED RESUMPTION AFTER CHECKPOINT, DEPLOYMENT AND LIVE ACCEPTANCE. First Edition: IN PROGRESS. Comprehensive acceptance: IN PROGRESS / FE-AG1 PAUSED. FE-AG2: NOT STARTED. v1.0.0: NOT YET RELEASED.** Closing FE-J-001 does not retroactively accept FE-AG1. Fresh independent **FE-J-001CV** must verify this closure-only package before any separately authorized checkpoint. **UNSTAGED / UNCOMMITTED / UNPUSHED; no deployment.**
+> This supersedes all earlier current-state/count/next-action summaries below; their historical evidence remains unchanged.
+
+
+> **Current FE-AG1R1 correction authorship — 2026-09-22:** **30 total: 29 historical CLOSED / VERIFIED; 1 new acceptance-gate defect OPEN / NOT VERIFIED (FE-J-001).** FE-1, FE-2 and FE-3 remain COMPLETE / CLOSED / VERIFIED. Historical remediation allocations remain zero; new package FE-AG1R1 has one outstanding finding.
+> **First Edition: IN PROGRESS. FE-AG1: NOT ACCEPTED / REMEDIATION PENDING. FE-AG2: NOT STARTED. v1.0.0: NOT YET RELEASED.** Correction applied is unscored author evidence; fresh independent FE-AG1R1V is required. No closure, checkpoint or deployment is authorized here.
+> This current statement supersedes earlier current-state/count/next-action summaries below; their point-in-time evidence remains unchanged. The production baseline remains `48c9f0aae867e50bfe9a7c94e57c74a98bdf592b`. Candidate remains UNSTAGED / UNCOMMITTED / UNPUSHED.
+
+
 > **Current FE-3R closure preparation — 2026-09-22:** **FE-3 COMPLETE / INDEPENDENTLY VERIFIED / CLOSED**, recorded at FE-EV-055. Supplied **FE-3V2: 50 PASS / 0 FAIL / 0 INCOMPLETE, Decision A**, accepted the complete 12-path semantic/control package `cfedf6db3f9ec68b5a3f3d2a8c7a557f28fe02416532f0de8da987f35598677e`, FE-3A1 quantitative adjudication and deterministic quantitative gate, and approved exact baseline/preservation evolution. FE-3R records that independent acceptance; it does not perform FE-3V2.
 > **29 total; 0 OPEN / NOT VERIFIED; 29 CLOSED / VERIFIED.** Outstanding **LR-1=0 / LR-2=0 / FE-1=0 / FE-2=0 / FE-3=0**. FE-1 and FE-2 remain **COMPLETE / CLOSED / VERIFIED**. All known findings are closed; remediation is complete.
 > **First Edition: IN PROGRESS — REMEDIATION COMPLETE / AWAITING COMPREHENSIVE ACCEPTANCE GATE. v1.0.0: NOT YET RELEASED.** **MSQE v0.16.0 — LEARNING-READY — CONTROLLED RC — PUBLICLY LIVE AT https://msqe.dev** remains the public milestone. No edition acceptance, release or deployment is implied.
@@ -1391,3 +1403,59 @@ The following is the exact pre-closure §8.2 body, retained as historical eviden
 
 
 **Historical FE-1 allocation and current closure:** FE-L1-004, FE-L2-005, FE-L3-005, FE-L4-002, FE-L5-002, FE-T4-001 were the six H4/H7-origin FE-REQUIRED findings in FE-1; all remained OPEN / NOT VERIFIED at FE-EV-050. Supplied independent FE-1V accepted their corrections (37 PASS / 0 FAIL / 0 INCOMPLETE, Decision A). FE-1R records six CLOSED / VERIFIED at FE-EV-051, leaving **9 OPEN / NOT VERIFIED; 20 CLOSED / VERIFIED**, allocation **0/0/0/5/4 = 9**. FE-2/FE-3 membership and ownership are unchanged.
+
+## 9. FE-AG1 gate-defect admission — FE-AG1R1
+
+This additive record supersedes §8.2 only as the complete current allocation. Its five historical remediation packages retain zero outstanding findings; the historical 29 records are unchanged. Findings §2.4 supports one shared defect with three manifestations, rather than three duplicate findings. FE-AGP §§26–29 authorize a distinct gate-discovered population under this separately authorized correction task.
+
+### FE-J-001 — Required Version omitted from Part I case studies
+
+| Field | Value |
+| --- | --- |
+| Finding ID | FE-J-001 |
+| Phase / batch | Phase J discovery FE-AG1; bounded Phase H correction FE-AG1R1 |
+| Part | I |
+| Chapter / path | `book/part-01-foundations/case-studies/case-study-01-quality-beyond-test-execution.md`<br>`book/part-01-foundations/case-studies/case-study-02-shared-ownership-and-engineering-culture.md`<br>`book/part-01-foundations/case-studies/case-study-03-qa-to-quality-engineering-transition.md` |
+| Review level | Level 4 — structural completeness, applied to the practical-asset schema through FE-AGP AGV-A |
+| Defect class | missing required section — required Version metadata field within the asset metadata section |
+| PRIMARY score category | 7 — Editorial consistency; violation of the existing publishing standard (Plan §9) |
+| Secondary categories | Governance integrity / completeness consequences; no separate deduction |
+| Severity | P2 |
+| Blocker class | C — Final-Gate Blocker |
+| Finding | All three published case studies lack the Version row required by CASE_STUDY_TEMPLATE and per-artefact VERSIONING policy. |
+| Evidence | AG-CAND-FE-AG1-R1-002 → FE-J-001; FE-AG1 AGV-A published asset metadata FAIL and dependent AGV-X07 FAIL. Each metadata table ends with “Status” / “Draft” and contains no “Version”. Original paths, hashes, quotations and derivation: [FE-AG1R1 evidence](FE_AG1R1_CORRECTION_EVIDENCE.md). |
+| Consequence | Missing declared asset revision prevents required metadata completeness and final-gate acceptance; Git identity does not supply the absent declared field. |
+| Recommended action | Add evidence-derived 0.1.0 Version rows only; enforce Version for every discovered case study; fresh independent FE-AG1R1V must inspect exact candidate, all manifestations, negative controls, governance and regressions before any separately authorized closure. |
+| Status | CLOSED |
+| Owner | Founder / Editor (Tunde Ajala), with Codex as delegated correction author under FE-AG1R1 |
+| Revision trigger | Any omitted, duplicate or malformed case-study Version, population change, body drift, or independent verification disagreement requires renewed investigation; no risk acceptance is claimed. |
+| Verification status | VERIFIED |
+| Systemic root-cause group | AG-CASE-VERSION-01 — shared initial asset-authoring omission and absent case-study metadata guard |
+
+Correction applied: three Version rows and a population-wide loader guard are authored. This is not verification or closure. No historical finding is reopened; no score or gate verdict is recomputed.
+
+### 9.1 Current acceptance-gate allocation
+
+| Package | Historical origin | Finding IDs | Execution disposition | Dependency / verification retained |
+| --- | --- | --- | --- | --- |
+| FE-AG1R1 | FE-AG1 / AGV-A | FE-J-001 | FE-REQUIRED | Fresh independent FE-AG1R1V; OPEN / NOT VERIFIED |
+
+Current union: §8.2 historical remediation packages (0) plus §9.1 acceptance-gate correction (1). **30 total; 29 CLOSED / VERIFIED; 1 OPEN / NOT VERIFIED.** No outstanding acceptance-defect-zero claim survives this admission.
+
+### 9.2 Current acceptance-gate allocation after FE-J-001 closure
+
+This supersedes §9.1 and its prior current-union statement as current allocation; §9.1 is retained as immutable admission-time evidence. The historical five packages in §8.2 remain at zero.
+
+| Package | Historical origin | Finding IDs | Execution disposition | Dependency / verification retained |
+| --- | --- | --- | --- | --- |
+| FE-AG1R1 | FE-AG1 / AGV-A |  | FE-REQUIRED completed | FE-J-001 CLOSED / VERIFIED under FE-AG1R1V2; closure-only FE-J-001CV pending |
+
+### 9.3 FE-J-001R additive closure evidence
+
+**FE-J-001 CLOSED / VERIFIED** under independently supplied **FE-AG1R1V2: 36 PASS / 0 FAIL / 0 INCOMPLETE, Decision A**, accepted correction package `07b6ff0c5a50c0584ede8da193bb354a5d874992e3d491afb3f81d0773a028dc`. Authority: `/tmp/msqe-fe-ag1r1v2/MSQE-FE-AG1R1V2-VERIFICATION-REPORT.md` (SHA-256 `2280ee2cd20c4a84625dd76a6b3827391b064233ecc1b29e65a04ba18b3f5818`) and its `accepted-package-manifest.txt`. FE-AG1 discovered the three Version omissions; FE-AG1R1 added Version 0.1.0 and the recurrence guard; initial FE-AG1R1V returned B (33 PASS / 1 FAIL) for the guard's template-separator false rejection; FE-AG1R1F1 corrected that guard; FE-AG1R1V2 independently accepted the exact final correction. No discovery evidence or accepted correction bytes are rewritten.
+
+Historical remediation: **29 total / 29 CLOSED / VERIFIED**. Acceptance-gate defects: **1 total / 1 CLOSED / VERIFIED / 0 OPEN / NOT VERIFIED**. Current unresolved known defects: **0**. FE-1/FE-2/FE-3 remain COMPLETE / CLOSED / VERIFIED.
+
+**FE-AG1: NOT YET ACCEPTED / READY FOR CONTROLLED RESUMPTION AFTER CHECKPOINT, DEPLOYMENT AND LIVE ACCEPTANCE. First Edition: IN PROGRESS. Comprehensive acceptance: IN PROGRESS / FE-AG1 PAUSED. FE-AG2: NOT STARTED. v1.0.0: NOT YET RELEASED.** Closing FE-J-001 does not retroactively accept FE-AG1. Fresh independent **FE-J-001CV** must verify this closure-only package before any separately authorized checkpoint. **UNSTAGED / UNCOMMITTED / UNPUSHED; no deployment.**
+
+Exactly FE-J-001 changes lifecycle; its statement, severity P2, blocker C, root group, original evidence, affected paths and verification requirements remain intact. See FE-EV-057 and the additive closure ledger; no other finding is changed.

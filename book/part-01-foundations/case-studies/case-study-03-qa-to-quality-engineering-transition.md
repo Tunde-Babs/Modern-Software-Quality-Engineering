@@ -8,6 +8,7 @@
 | **Industry** | B2B SaaS |
 | **Difficulty** | Foundation to intermediate |
 | **Estimated time** | 60–90 minutes, plus personal follow-through |
+| **Version** | 0.1.0 |
 | **Status** | Draft |
 
 ## Purpose

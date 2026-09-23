@@ -1,0 +1,90 @@
+{
+  "sourceBase": "48c9f0aae867e50bfe9a7c94e57c74a98bdf592b",
+  "state": "FE-AG1R1V2 ACCEPTED CORRECTION; FE-J-001R CLOSURE AWAITS FE-J-001CV",
+  "sources": {
+    "CURRENT_SPRINT.md": {
+      "baselineBlob": "f2c202e22daa284d42f745bc8b28abaf96d49208",
+      "sha256": "0584a6191df03be532d5ace45f77392852b7f585361cc804289b6e23d3b156d2",
+      "kind": "GATE-DEFECT GOVERNANCE",
+      "acceptedCorrectionSha256": "999eb67d502c26e0b856f52d4dbbe31e0ccc556a02facb655c9f7d074ac38629"
+    },
+    "README.md": {
+      "baselineBlob": "d00480da2e090755278ee1f3585fb9d222b96bdd",
+      "sha256": "f3d9075a3cbb3efc15ac544b4c8d7ab49ef40d14c479b728078aa551fd86ffde",
+      "kind": "GATE-DEFECT GOVERNANCE",
+      "acceptedCorrectionSha256": "8300f4059a2de4329e9b03402cdcc42ce37ea9503a86d6906b7b3f1bdd99105a"
+    },
+    "book/part-01-foundations/case-studies/case-study-01-quality-beyond-test-execution.md": {
+      "baselineBlob": "d52bc9ee981a01974e6a8b1f8d7a1094c1a9cbc8",
+      "sha256": "c51cc81776af47365a091f0131e1c6e83a3a01b4a05d75dc5c17329331a7ef65",
+      "kind": "CASE-STUDY METADATA CORRECTION",
+      "acceptedCorrectionSha256": "c51cc81776af47365a091f0131e1c6e83a3a01b4a05d75dc5c17329331a7ef65"
+    },
+    "book/part-01-foundations/case-studies/case-study-02-shared-ownership-and-engineering-culture.md": {
+      "baselineBlob": "2293d36ae5a7a056ae86a4ba0f3280ebd4112159",
+      "sha256": "4e9d5cf52f3fc3fee7b9e34f8eea7190efd42155273940cf6157a7b0a72a27bc",
+      "kind": "CASE-STUDY METADATA CORRECTION",
+      "acceptedCorrectionSha256": "4e9d5cf52f3fc3fee7b9e34f8eea7190efd42155273940cf6157a7b0a72a27bc"
+    },
+    "book/part-01-foundations/case-studies/case-study-03-qa-to-quality-engineering-transition.md": {
+      "baselineBlob": "47d0a317f184b244db6086a12c11519e6393fb68",
+      "sha256": "7ee23e29c4ba593f18fe61984db96271ba2f2a1367d53ee484c304ad3fef45ef",
+      "kind": "CASE-STUDY METADATA CORRECTION",
+      "acceptedCorrectionSha256": "7ee23e29c4ba593f18fe61984db96271ba2f2a1367d53ee484c304ad3fef45ef"
+    },
+    "docs/02-first-edition-review/FE_AG1R1_CORRECTION_EVIDENCE.md": {
+      "baselineBlob": null,
+      "sha256": "313601483f4a8e5133e7ed5a6f2eeb7b7cb296460be381c8eaf9a2a9ae5e11a0",
+      "kind": "GATE-DEFECT GOVERNANCE",
+      "acceptedCorrectionSha256": "30e44e0d83d3ef6fbf5d93d6c1f83da5441176fc36de0e5f7fd7bbef1537653e"
+    },
+    "docs/02-first-edition-review/FIRST_EDITION_FINDINGS.md": {
+      "baselineBlob": "a9ba635dc345422f5e38a7075faa723bc33a692b",
+      "sha256": "30e0055a74e8c49990d02560fa1b6554907606ab88b51fb287c8f0b9eb161743",
+      "kind": "GATE-DEFECT GOVERNANCE",
+      "acceptedCorrectionSha256": "c7f5a185c36a390bb0760607848a999da46a186360db4c45f4dfa191092c2686"
+    },
+    "docs/02-first-edition-review/FIRST_EDITION_REVIEW_LOG.md": {
+      "baselineBlob": "2ecb4f12625ce46e7c2f055e6cd50ff56469fc11",
+      "sha256": "c231f9723d1b536fde5f766dc3b40c9894243f4cc53f2f6c5575be2060dedcd0",
+      "kind": "GATE-DEFECT GOVERNANCE",
+      "acceptedCorrectionSha256": "05385d008e4dc8f42b5477f9cc2a7276e62b97d2c4675e58ce01c151a1dbbc5e"
+    },
+    "docs/02-first-edition-review/FIRST_EDITION_VERIFICATION_LEDGERS.md": {
+      "baselineBlob": "237d3d9581bdae12dd118b4d7858091c1424653f",
+      "sha256": "c9ad7fe4e8712150b581ee30aa14cff51f3a14e32dc9e50dde1d7eb868911328",
+      "kind": "GATE-DEFECT GOVERNANCE",
+      "acceptedCorrectionSha256": "8e3952b6680de3cec8fc2aab484062d22cd069d97bda3e55d7e8236adc839e71"
+    },
+    "tests/test_first_edition_gate.py": {
+      "baselineBlob": "17328e5572be23c7f506b06fdaa2c24ed4085dd6",
+      "sha256": "5e42c385e71a92f3c8a0b7e7c641a24cddc999152447f00f04e1754b7d9278d0",
+      "kind": "COUPLED TEST",
+      "acceptedCorrectionSha256": "a89b393c70c65d88953b654f4b14688c1577145a7c53bcf813f102e3a18f8b4b"
+    },
+    "tools/first_edition_gate.py": {
+      "baselineBlob": "7ce0b32fa49a79ca554904c98d82dc0c8bddf43b",
+      "sha256": "0c5a0c4343c17e729805b21b1979b22e8fb01dd885dbc716809ebd65bf65933c",
+      "kind": "DETERMINISTIC STRUCTURAL CONTROL",
+      "acceptedCorrectionSha256": "38fc7aa6bf031793d57b49a2ba236368649220ac4502cb54b97d837f451ba223"
+    }
+  },
+  "acceptedCorrectionPackageSha256": "07b6ff0c5a50c0584ede8da193bb354a5d874992e3d491afb3f81d0773a028dc",
+  "acceptedCorrectionManifest": {
+    "CURRENT_SPRINT.md": "999eb67d502c26e0b856f52d4dbbe31e0ccc556a02facb655c9f7d074ac38629",
+    "README.md": "8300f4059a2de4329e9b03402cdcc42ce37ea9503a86d6906b7b3f1bdd99105a",
+    "book/part-01-foundations/case-studies/case-study-01-quality-beyond-test-execution.md": "c51cc81776af47365a091f0131e1c6e83a3a01b4a05d75dc5c17329331a7ef65",
+    "book/part-01-foundations/case-studies/case-study-02-shared-ownership-and-engineering-culture.md": "4e9d5cf52f3fc3fee7b9e34f8eea7190efd42155273940cf6157a7b0a72a27bc",
+    "book/part-01-foundations/case-studies/case-study-03-qa-to-quality-engineering-transition.md": "7ee23e29c4ba593f18fe61984db96271ba2f2a1367d53ee484c304ad3fef45ef",
+    "docs/02-first-edition-review/FE_AG1R1_CORRECTION_EVIDENCE.md": "30e44e0d83d3ef6fbf5d93d6c1f83da5441176fc36de0e5f7fd7bbef1537653e",
+    "docs/02-first-edition-review/FIRST_EDITION_FINDINGS.md": "c7f5a185c36a390bb0760607848a999da46a186360db4c45f4dfa191092c2686",
+    "docs/02-first-edition-review/FIRST_EDITION_REVIEW_LOG.md": "05385d008e4dc8f42b5477f9cc2a7276e62b97d2c4675e58ce01c151a1dbbc5e",
+    "docs/02-first-edition-review/FIRST_EDITION_VERIFICATION_LEDGERS.md": "8e3952b6680de3cec8fc2aab484062d22cd069d97bda3e55d7e8236adc839e71",
+    "tests/test_first_edition_gate.py": "a89b393c70c65d88953b654f4b14688c1577145a7c53bcf813f102e3a18f8b4b",
+    "tools/first_edition_gate.py": "38fc7aa6bf031793d57b49a2ba236368649220ac4502cb54b97d837f451ba223",
+    "website/evidence/fe-ag1r1/source-transition.json": "48a29f6aa70117dd88143474d18a7e1325e31e1e170a7235feb5276b31e46204",
+    "website/src/lib/content/loader.ts": "d819ff2b7679197071ec0f9d042c63d2623f047d69a0f6287c03811d44758d6b",
+    "website/tests/case-study-metadata.test.ts": "5b327320c92af31dffee500e21711d031179d7390922a69a0ff0a3d8fd0bdf63",
+    "website/tests/preservation.ts": "1d8d62f2ddb87365c99cc4b6d0eafdc57b25f265e798e36f4e53f8027fe4fea8"
+  }
+}

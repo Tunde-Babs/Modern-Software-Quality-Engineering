@@ -1619,3 +1619,25 @@ Supplied independent **FE-3V2: 50 PASS / 0 FAIL / 0 INCOMPLETE, Decision A**, ac
 | Finding census / allocation | Closure authorized by FE-3V2; recorded by FE-3R | 29 total, 0 OPEN / NOT VERIFIED, 29 CLOSED / VERIFIED; all five outstanding allocations zero |
 
 FE-3R does not perform FE-3V2 or comprehensive acceptance. **First Edition IN PROGRESS — REMEDIATION COMPLETE / AWAITING COMPREHENSIVE ACCEPTANCE GATE; v1.0.0 NOT YET RELEASED.** The future quantitative control and independent/public-source evidence obligations remain. Fresh independent FE-3CV must authenticate closure-only changes and exact preservation identities before checkpoint; no deployment.
+
+## FE-AG1R1 — Additive gate-defect correction evidence
+
+| Evidence ID | Scope | Discovery / expected vs actual | Correction evidence | Verification |
+| --- | --- | --- | --- | --- |
+| AG1R1-VERSION-01 | Complete three-case-study population, Part I | FE-AG1 AGV-A FAIL: required Version absent in all three; AGV-X07 dependent FAIL; AG-CAND-FE-AG1-R1-002 maps to FE-J-001 | [Exact paths, original hashes, policy/history derivation, frozen scope and handoff](FE_AG1R1_CORRECTION_EVIDENCE.md); Version 0.1.0 inserted; content bodies frozen; loader validates every discovered case study | AUTHOR EVIDENCE ONLY; OPEN / NOT VERIFIED; fresh independent FE-AG1R1V required |
+
+Historical 29 findings and FE-1/2/3 evidence remain intact. Current census is 30 / 29 CLOSED VERIFIED / 1 OPEN NOT VERIFIED. No AGV-A or AGV-X07 independent acceptance is recorded here; FE-AG1 remains NOT ACCEPTED pending remediation verification and separately authorized resumption.
+
+## FE-J-001R — Verified gate-defect closure record
+
+| Evidence ID | Scope | Independent authority | Current lifecycle | Boundary |
+| --- | --- | --- | --- | --- |
+| AG1R1-CLOSURE-01 | FE-J-001, three Part I case-study Versions and accepted guard | FE-AG1R1V2 36/36 PASS, Decision A; package `07b6ff0c5a50c0584ede8da193bb354a5d874992e3d491afb3f81d0773a028dc` | CLOSED / VERIFIED | Closure-only FE-J-001CV required; FE-AG1 not yet accepted |
+
+**FE-J-001 CLOSED / VERIFIED** under independently supplied **FE-AG1R1V2: 36 PASS / 0 FAIL / 0 INCOMPLETE, Decision A**, accepted correction package `07b6ff0c5a50c0584ede8da193bb354a5d874992e3d491afb3f81d0773a028dc`. Authority: `/tmp/msqe-fe-ag1r1v2/MSQE-FE-AG1R1V2-VERIFICATION-REPORT.md` (SHA-256 `2280ee2cd20c4a84625dd76a6b3827391b064233ecc1b29e65a04ba18b3f5818`) and its `accepted-package-manifest.txt`. FE-AG1 discovered the three Version omissions; FE-AG1R1 added Version 0.1.0 and the recurrence guard; initial FE-AG1R1V returned B (33 PASS / 1 FAIL) for the guard's template-separator false rejection; FE-AG1R1F1 corrected that guard; FE-AG1R1V2 independently accepted the exact final correction. No discovery evidence or accepted correction bytes are rewritten.
+
+Historical remediation: **29 total / 29 CLOSED / VERIFIED**. Acceptance-gate defects: **1 total / 1 CLOSED / VERIFIED / 0 OPEN / NOT VERIFIED**. Current unresolved known defects: **0**. FE-1/FE-2/FE-3 remain COMPLETE / CLOSED / VERIFIED.
+
+**FE-AG1: NOT YET ACCEPTED / READY FOR CONTROLLED RESUMPTION AFTER CHECKPOINT, DEPLOYMENT AND LIVE ACCEPTANCE. First Edition: IN PROGRESS. Comprehensive acceptance: IN PROGRESS / FE-AG1 PAUSED. FE-AG2: NOT STARTED. v1.0.0: NOT YET RELEASED.** Closing FE-J-001 does not retroactively accept FE-AG1. Fresh independent **FE-J-001CV** must verify this closure-only package before any separately authorized checkpoint. **UNSTAGED / UNCOMMITTED / UNPUSHED; no deployment.**
+
+This additive entry supersedes AG1R1-VERSION-01 only as current verification/lifecycle evidence; the earlier author record remains unchanged.

@@ -87,6 +87,58 @@ class IntegrityTests(unittest.TestCase):
             'LR-1': 0, 'LR-2': 0, 'FE-1': 0, 'FE-2': 0, 'FE-3': 0},
             'total': 0, 'open_count': 0})
 
+    def gate_findings(self):
+        return (findings() + '\n## 9. Gate defects\n### FE-J-001 — Version\n'
+                '| Status | OPEN |\n| Verification status | NOT VERIFIED |\n'
+                '### 9.1 Current acceptance-gate allocation\n'
+                '| FE-AG1R1 | FE-AG1 | FE-J-001 | FE-REQUIRED | review |\n')
+
+    def test_gate_admission_preserves_historical_census(self):
+        text = self.gate_findings()
+        records, result = gate.finding_checks(text, {'FE-J-001': ('OPEN', 'NOT VERIFIED')})
+        self.assertEqual(result['status'], 'PASS', result)
+        self.assertEqual(result['observed']['distribution'], {'CLOSED / VERIFIED': 29, 'OPEN / NOT VERIFIED': 1})
+        self.assertEqual(gate.allocation_check(text, records, {'FE-J-001': ('OPEN', 'NOT VERIFIED')})['status'], 'PASS')
+        for old, new in [('### FE-J-001', '### Removed'), ('| Status | OPEN |', '| Status | CLOSED |'),
+                         ('| Verification status | NOT VERIFIED |', '| Verification status | VERIFIED |'),
+                         ('### FE-G-029', '### FE-J-002'), ('`CLOSED`', '`OPEN`')]:
+            with self.subTest(mutation=old):
+                self.assertFails(gate.finding_checks(text.replace(old, new, 1), {'FE-J-001': ('OPEN', 'NOT VERIFIED')},
+                    tuple('FE-G-%03d' % i for i in range(1, 30)))[1])
+
+    def test_gate_allocation_cannot_hide_or_duplicate_admission(self):
+        text = self.gate_findings()
+        records, _ = gate.finding_checks(text, {'FE-J-001': ('OPEN', 'NOT VERIFIED')})
+        for replacement in ['', 'FE-J-001 · FE-J-001', 'FE-G-001']:
+            mutated = text.replace('| FE-J-001 | FE-REQUIRED', '| ' + replacement + ' | FE-REQUIRED')
+            self.assertFails(gate.allocation_check(mutated, records, {'FE-J-001': ('OPEN', 'NOT VERIFIED')}))
+
+    def closed_gate_findings(self):
+        return (self.gate_findings().replace('| Status | OPEN |', '| Status | CLOSED |')
+                .replace('| Verification status | NOT VERIFIED |', '| Verification status | VERIFIED |')
+                + '\n### 9.2 Current acceptance-gate allocation after FE-J-001 closure\n'
+                '| FE-AG1R1 | FE-AG1 |  | completed | independent acceptance |\n')
+
+    def test_gate_closure_adds_to_historical_census_without_replacing_it(self):
+        text = self.closed_gate_findings()
+        records, result = gate.finding_checks(text, gate.GATE_FINDINGS)
+        self.assertEqual(result['status'], 'PASS', result)
+        self.assertEqual(result['observed'], {'total': 30, 'distribution': {'CLOSED / VERIFIED': 30}})
+        self.assertEqual(gate.allocation_check(text, records, gate.GATE_FINDINGS)['observed']['open_count'], 0)
+        self.assertFails(gate.finding_checks(self.gate_findings(), gate.GATE_FINDINGS)[1])
+        for old, new in [('| Status | CLOSED |', '| Status | OPEN |'),
+                         ('| Verification status | VERIFIED |', '| Verification status | NOT VERIFIED |'),
+                         ('### FE-J-001', '### Removed'), ('`CLOSED`', '`OPEN`')]:
+            self.assertFails(gate.finding_checks(text.replace(old, new, 1), gate.GATE_FINDINGS)[1])
+
+    def test_closed_gate_allocation_uses_current_zero_not_historical_admission(self):
+        text = self.closed_gate_findings()
+        records, _ = gate.finding_checks(text, gate.GATE_FINDINGS)
+        self.assertEqual(gate.allocation_check(text, records, gate.GATE_FINDINGS)['status'], 'PASS')
+        self.assertFails(gate.allocation_check(text.replace('|  | completed', '| FE-J-001 | completed'), records, gate.GATE_FINDINGS))
+        with self.assertRaises(gate.EvidenceMissing):
+            gate.allocation_check(self.gate_findings(), records, gate.GATE_FINDINGS)
+
     def test_preclosure_finding_census_rejected(self):
         for stale_count in (4, 9, 15, 18, 20):
             with self.subTest(stale_count=stale_count):
@@ -209,7 +261,7 @@ class IntegrityTests(unittest.TestCase):
         self.assertEqual(result['overall_deterministic_result'], 'ERROR')
 
     def test_incomplete_profiles_and_batch_scope(self):
-        with patch.object(gate, 'manifests', return_value=[]), patch.object(gate, 'read_evidence', side_effect=lambda r, f: events() if 'LOG' in f else findings()):
+        with patch.object(gate, 'GATE_FINDINGS', {}), patch.object(gate, 'HISTORICAL_FINDINGS', tuple('FE-G-%03d' % i for i in range(1, 30))), patch.object(gate, 'manifests', return_value=[]), patch.object(gate, 'read_evidence', side_effect=lambda r, f: events() if 'LOG' in f else findings()):
             for profile in gate.PROFILES:
                 result = gate.report(profile, gate.run(ROOT, profile, []))
                 self.assertEqual(result['exit_code'], 0 if profile == 'baseline' else 3, result)
