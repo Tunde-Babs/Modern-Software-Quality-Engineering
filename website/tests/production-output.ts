@@ -10,7 +10,8 @@ const production = process.env.MSQE_TEST_MODE === 'production';
 const root = resolve('dist');
 const walk = (dir: string): string[] => readdirSync(dir, { withFileTypes: true }).flatMap(e => e.isDirectory() ? walk(resolve(dir, e.name)) : [resolve(dir, e.name)]);
 const files = walk(root);
-const pages = new Map(files.filter(p => p.endsWith('.html')).map(p => ['/' + p.slice(root.length + 1).replace(/index\.html$/, ''), load(readFileSync(p, 'utf8'), { scriptingEnabled: false })]));
+const auxiliaryRoutes = ['/labs/playwright/learn/', '/labs/playwright/shop/'];
+const pages = new Map(files.filter(p => p.endsWith('.html') && !auxiliaryRoutes.some(route => p === resolve(root, '.' + route, 'index.html'))).map(p => ['/' + p.slice(root.length + 1).replace(/index\.html$/, ''), load(readFileSync(p, 'utf8'), { scriptingEnabled: false })]));
 const read = (name: string) => readFileSync(resolve(root, name), 'utf8');
 
 test(`${production ? 'production indexability' : 'preview noindex'} across every HTML page`, () => {
@@ -21,7 +22,7 @@ test(`${production ? 'production indexability' : 'preview noindex'} across every
     assert.equal($('meta[name="robots"]').attr('content'), expected, route);
     if (expected === 'index, follow') indexed++;
   }
-  assert.equal(indexed, production ? 260 : 0);
+  assert.equal(indexed, production ? 261 : 0);
 });
 
 test('robots agrees with the selected mode and advertises the apex sitemap', () => {
@@ -41,7 +42,7 @@ test('every canonical and Open Graph URL uses HTTPS apex without host leakage', 
 test('sitemap is the complete unique public page set, excluding search and 404', () => {
   const $ = load(read('sitemap.xml'), { xml: true });
   const urls = $('loc').map((_, el) => $(el).text()).get();
-  assert.equal(urls.length, 260);
+  assert.equal(urls.length, 261);
   assert.equal(new Set(urls).size, urls.length);
   assert.deepEqual(urls.sort(), [...pages.keys()].filter(p => !['/search/', '/404.html'].includes(p)).map(p => `https://msqe.dev${p}`).sort());
   assert.ok(urls.every(url => !/\/docs\/00-project\/|\/docs\/02-first-edition-review\/|localhost|pages\.dev/.test(url)));
@@ -67,7 +68,7 @@ test('production build contract retains static Astro, locked dependencies, Pagef
   assert.match(pkg.scripts.build, /astro build && pagefind --site dist && node scripts\/prune-search.mjs/);
   assert.match(readFileSync('astro.config.mjs', 'utf8'), /output: 'static'/);
   for (const path of ['_worker.js', '_routes.json', 'functions']) assert.ok(!existsSync(resolve(root, path)));
-  assert.equal(JSON.parse(read('pagefind/pagefind-entry.json')).languages.en.page_count, 258);
+  assert.equal(JSON.parse(read('pagefind/pagefind-entry.json')).languages.en.page_count, 259);
 });
 
 test('all referenced browser assets are local, present, and contain no embedded executable integration', () => {
@@ -102,14 +103,14 @@ test('every internal link and fragment resolves, including noscript and absolute
       const href = $(el).attr('href')!;
       const url = new URL(href, `https://msqe.dev${route}`);
       if (url.origin !== 'https://msqe.dev') return;
-      const target = pages.get(url.pathname);
+      const target = pages.get(url.pathname) ?? (auxiliaryRoutes.includes(url.pathname) ? load(readFileSync(resolve(root, '.' + url.pathname, 'index.html'), 'utf8')) : undefined);
       assert.ok(target, `${route}: missing ${href}`);
       if (url.hash) assert.ok(target('[id]').toArray().some(node => target(node).attr('id') === decodeURIComponent(url.hash.slice(1))), `${route}: missing fragment ${href}`);
       count++;
     });
   }
   // FE-1V: XII-12 motivation adds exactly one TOC link; all destinations checked above.
-  assert.equal(count, 13599, '13,598 FE-2V-accepted default-DOM links plus one noscript fallback link');
+  assert.equal(count, 13610, '13,599 existing links plus two discovery links and nine landing-page links; auxiliary lab views checked separately');
 });
 
 test('Pages headers are copied exactly and retain WASM support without script unsafe-eval', () => {

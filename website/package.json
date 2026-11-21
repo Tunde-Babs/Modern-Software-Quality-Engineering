@@ -10,13 +10,13 @@
     "dev": "ASTRO_TELEMETRY_DISABLED=1 astro dev",
     "check": "ASTRO_TELEMETRY_DISABLED=1 astro check && tsc --noEmit",
     "test": "node --import tsx --test tests/*.test.ts",
-    "build": "ASTRO_TELEMETRY_DISABLED=1 astro build && pagefind --site dist && node scripts/prune-search.mjs",
-    "verify": "npm run check && npm test && npm run build && node --import tsx tests/build-smoke.ts && node --import tsx --test tests/production-output.ts",
+    "build": "ASTRO_TELEMETRY_DISABLED=1 astro build && pagefind --site dist && node scripts/prune-search.mjs && node scripts/export-playwright.mjs",
+    "verify": "npm run check && npm test && npm run build && node --import tsx tests/build-smoke.ts && node --import tsx --test tests/production-output.ts && node --import tsx --test tests/atlas-output.ts",
     "preview": "ASTRO_TELEMETRY_DISABLED=1 astro preview",
     "links": "node --import tsx scripts/external-links.ts",
     "test:browser": "playwright test",
     "build:production": "MSQE_INDEXING=production npm run build",
-    "verify:production": "npm run check && npm test && npm run build:production && node --import tsx tests/build-smoke.ts --production && MSQE_TEST_MODE=production node --import tsx --test tests/production-output.ts",
+    "verify:production": "npm run check && npm test && npm run build:production && node --import tsx tests/build-smoke.ts --production && MSQE_TEST_MODE=production node --import tsx --test tests/production-output.ts && node --import tsx --test tests/atlas-output.ts",
     "test:production-browser": "playwright test --config playwright.production.config.ts"
   },
   "dependencies": {

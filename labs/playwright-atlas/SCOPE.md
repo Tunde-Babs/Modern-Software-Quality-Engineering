@@ -309,3 +309,48 @@ Scope: 31 paths (13 existing / 18 new). Add success/error/modified/aborted/HAR/c
 ### Pre-edit fixture failure-path check amendment
 
 Before creating it, `checks/fixture-lifecycle.spec.ts` is explicitly added to the advanced-framework allow-list. It runs a deliberately failing child test against the owned local server and checks that fixture teardown deletes the child-owned workspace and attaches failure evidence. The outer regression expects and reports that controlled failure; it does not waive an unexpected failure. Generated child files stay under ignored artifacts. Final scope: 32 paths (13 existing / 19 new); expected companion population 123; the 490-file preservation scope is unchanged.
+
+
+## Handbook publication candidate — frozen before implementation, 2026-11-21
+
+The user requested production release, selecting integration with msqe.dev. Prepare a static handbook entry, complete read-only 27-lab bench and browser-only practice shop under `/labs/playwright/`. Tests, fixtures and server-backed advanced scenarios continue on the learner’s local Node server; no public API service is introduced. Independent publication review remains outstanding. No edition release/tag or governance closure is included.
+
+Preflight: branch `feature/first-edition-review`, HEAD `60bc19d93f05514e4dfe1a941ade1563eca8322d`, 0/0 local tracking divergence, three existing worktrees, empty index and clean companion. Candidate branch `codex/playwright-production-integration` created at the same HEAD to avoid automatic production deployment on push. Existing 25 tracked and two untracked unrelated corrections remain excluded.
+
+Before edits, baseline `website npm run verify:production` failed its existing source-preservation assertion: `Unauthorized path outside website: .github/workflows/playwright-atlas.yml` (44/45 unit checks passed). This historical website guard does not yet recognize the committed companion. It stays intact; no bypass or gate PASS is claimed. Production is BLOCKED pending an independently accepted source-baseline reconciliation and publication review.
+
+Exact allow-list (14 paths; 8 existing / 6 new):
+
+- `labs/playwright-atlas/SCOPE.md`
+- `labs/playwright-atlas/PRODUCTION.md`
+- `website/package.json`
+- `website/scripts/export-playwright.mjs`
+- `website/src/pages/labs/playwright/index.astro`
+- `website/src/pages/resources/index.astro`
+- `website/src/pages/index.astro`
+- `website/src/pages/sitemap.xml.ts`
+- `website/tests/build-smoke.ts`
+- `website/tests/production-output.ts`
+- `website/tests/atlas-output.ts`
+- `website/tests/production-browser/atlas.spec.ts`
+- `website/playwright.production.config.ts`
+- `.github/workflows/playwright-atlas-publication.yml`
+
+Preservation snapshot: `/tmp/msqe-atlas-publication-preservation.json`, 514 outside-scope files. Existing web output counts may change only by the new entry and two separately checked companion views; manuscript counts, historical source-preservation rules and edition gates remain unchanged. New CI checks the static candidate without deployment. Commit/push use explicit paths to this candidate branch only; no production push or deployment while required checks/review remain outstanding.
+
+### Pre-edit publication accessibility/search amendment
+
+The browser run found insufficient contrast in lab numbers and code scroll regions without keyboard access. Before editing, add the following exact paths to fix the shared local/published lesson UI and recognize the new indexed labs landing page in the existing search check:
+
+- `labs/playwright-atlas/app/learn.css`
+- `labs/playwright-atlas/app/learn.html`
+- `labs/playwright-atlas/app/lesson-renderer.js`
+- `website/tests/production-browser/production.spec.ts`
+
+Final allow-list: 18 paths (12 existing / 6 new); preservation snapshot now covers 510 outside-scope files. Local companion source population becomes 124 (one new publication record); root workflow addition is separate. No source-preservation gate or edition authority changes.
+
+### Pre-edit exact companion baseline amendment
+
+Prepare a concrete reconciliation for independent review rather than waive the historical guard: add `website/tests/preservation.ts` and new `website/evidence/playwright-publication/source-transition.json` before editing. Preserve every existing manuscript/edition identity check. Extend only the source allow-list and exact addition records with a frozen SHA-256 manifest of the complete companion and its two dedicated workflows. Recheck its exact path population, regular-file modes and every byte; reject extra companion paths, alterations and deletions. This author-prepared transition is pending independent acceptance and proves identity only. No semantic acceptance or edition closure is inferred.
+
+Final scope: 20 paths (13 existing / 7 new); 509 outside-scope files remain frozen. The earlier baseline failure remains historical evidence; a passing clean candidate can establish only automated invariants. Unrelated dirty corrections remain outside this transition and must continue to fail the full gate. The candidate branch remains excluded from production deployment pending review.

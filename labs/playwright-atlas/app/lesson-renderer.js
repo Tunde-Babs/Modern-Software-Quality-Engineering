@@ -48,6 +48,7 @@ export function renderLesson(markdown, resolveLink) {
       const block = [];
       while (++index < lines.length && !lines[index].trim().startsWith('```')) block.push(lines[index]);
       const pre = add('pre'), code = document.createElement('code');
+      pre.tabIndex = 0; pre.setAttribute('aria-label', 'Code example');
       code.textContent = block.join('\n'); pre.append(code); continue;
     }
     const heading = /^(#{2,3}) (.+)$/.exec(line);

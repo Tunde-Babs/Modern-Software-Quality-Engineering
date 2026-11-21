@@ -30,7 +30,7 @@ test('production CSP permits all nine representative searches with local public 
     expect(titles.some(title => expected.test(title))).toBeTruthy();
     const hrefs = await page.locator('#search-results a').evaluateAll(els => els.map(el => el.getAttribute('href')!));
     for (const href of hrefs) {
-      expect(href).toMatch(/^\/(?:handbook|resources|paths)\//);
+      expect(href).toMatch(/^\/(?:handbook|resources|paths|labs)\//);
       const pathname = new URL(href, 'https://msqe.dev').pathname;
       expect(existsSync(resolve('dist', '.' + pathname, 'index.html'))).toBeTruthy();
     }

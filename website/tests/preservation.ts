@@ -135,10 +135,27 @@ export function assertAuthorizedSource(path: string, original: string, actual: s
   assert.equal(createHash('sha256').update(actual).digest('hex'), candidate.sha256, `FE-J-001R exact closure candidate: ${path}`);
 }
 export function authenticateSources() {
+  // Author-prepared companion publication transition: exact identities only,
+  // pending independent acceptance. Historical manuscript guards below remain.
+  const atlasBytes = readFileSync(resolve(repoRoot, 'website/evidence/playwright-publication/source-transition.json'));
+  assert.equal(createHash('sha256').update(atlasBytes).digest('hex'), '8669de8b46507cb306c0dfb889eb1478bb60ee549d6352cad38c8ac5016dc595', 'Frozen companion publication transition');
+  const atlas: { sourceBase: string; review: string; sources: Record<string, string> } = JSON.parse(atlasBytes.toString('utf8'));
+  assert.equal(atlas.sourceBase, '60bc19d93f05514e4dfe1a941ade1563eca8322d');
+  assert.equal(atlas.review, 'PENDING INDEPENDENT PUBLICATION REVIEW');
+  const atlasPaths = Object.keys(atlas.sources).sort();
+  const atlasPopulation = git('ls-files', '--cached', '--others', '--exclude-standard', '--', 'labs/playwright-atlas', '.github/workflows/playwright-atlas.yml', '.github/workflows/playwright-atlas-publication.yml').trim().split('\n').filter(Boolean).sort();
+  assert.deepEqual(atlasPopulation, atlasPaths, 'Exact companion publication path population');
+  for (const path of atlasPaths) {
+    assert.ok(path.startsWith('labs/playwright-atlas/') || ['.github/workflows/playwright-atlas.yml', '.github/workflows/playwright-atlas-publication.yml'].includes(path), `Bounded companion scope: ${path}`);
+    const file = resolve(repoRoot, path);
+    const stat = lstatSync(file);
+    assert.ok(stat.isFile() && !stat.isSymbolicLink() && (stat.mode & 0o111) === 0, `Regular nonexecutable teaching file: ${path}`);
+    assert.equal(createHash('sha256').update(readFileSync(file)).digest('hex'), atlas.sources[path], `Exact companion candidate bytes: ${path}`);
+  }
   // WEB-5B's explicit URL-only authorization is checked as a transformation of
   // immutable Git content, never as a blanket exemption for a changed chapter.
   // This website check does not alter the separate first_edition_gate baseline.
-  const allowed = new Set([...mutations.map(item => item.path), ...Object.keys(licenses), ...Object.keys(closureSources), ...Object.keys(transition.sources), ...Object.keys(fe3.sources), ...Object.keys(ag1.sources)]);
+  const allowed = new Set([...mutations.map(item => item.path), ...Object.keys(licenses), ...Object.keys(closureSources), ...Object.keys(transition.sources), ...Object.keys(fe3.sources), ...Object.keys(ag1.sources), ...atlasPaths]);
   for (const command of [['diff', '--name-only', base], ['ls-files', '--others', '--exclude-standard']]) {
     const paths = git(...command, '--', '.', ':(exclude)website').trim().split('\n').filter(Boolean);
     paths.forEach(path => assert.ok(allowed.has(path), `Unauthorized path outside website: ${path}`));
@@ -147,6 +164,9 @@ export function authenticateSources() {
   // Three exact FE-3 additions become tracked only in the staged/committed
   // model. Admit only their 100644 create records, never arbitrary additions.
   const acceptedAdditions = new Set(Object.entries({ ...fe3.sources, ...ag1.sources }).filter(([, entry]) => entry.baselineBlob === null).map(([path]) => ` create mode 100644 ${path}`));
+  for (const path of atlasPaths) {
+    if (!git('ls-tree', structuralBase, '--', path).trim()) acceptedAdditions.add(` create mode 100644 ${path}`);
+  }
   const structuralDrift = git('diff', '--summary', structuralBase, '--', '.', ':(exclude)website').split('\n').filter(line => line && !acceptedAdditions.has(line));
   assert.deepEqual(structuralDrift, [], 'Unexpected source mode, deletion or rename');
   const manifest = git('ls-tree', '-r', base, '--', ...protectedPaths);
@@ -177,5 +197,5 @@ export function authenticateSources() {
       assertAuthorizedSource(path, original, readFileSync(file, 'utf8'));
     }
   }
-  return { base, files: entries.length, manifestSha256: createHash('sha256').update(manifest).digest('hex'), groups: Object.fromEntries(protectedPaths.map(path => [path, entries.filter(entry => entry.path === path || entry.path.startsWith(path + '/')).length])), authorizedCanonicalFiles: mutations.length, authorizedUrlSubstitutions: mutations.reduce((sum, item) => sum + item.substitutions.reduce((n, change) => n + change.count, 0), 0), acceptedFe1Chapters: Object.keys(transition.sources).filter(path => path.startsWith('book/')).length, exactTransitionSources: Object.keys(transition.sources).length, acceptedFe2Chapters: Object.keys(fe2.sources).filter(path => path.startsWith('book/')).length, exactFe2TransitionSources: Object.keys(fe2.sources).length, exactFe3TransitionSources: Object.keys(fe3.sources).length, acceptedFe3PackageSha256: fe3.acceptedCorrectionPackageSha256, unauthorizedModifications: 0 };
+  return { base, companionFiles: atlasPaths.filter(path => path.startsWith('labs/playwright-atlas/')).length, companionPublicationFiles: atlasPaths.length, companionReview: atlas.review, files: entries.length, manifestSha256: createHash('sha256').update(manifest).digest('hex'), groups: Object.fromEntries(protectedPaths.map(path => [path, entries.filter(entry => entry.path === path || entry.path.startsWith(path + '/')).length])), authorizedCanonicalFiles: mutations.length, authorizedUrlSubstitutions: mutations.reduce((sum, item) => sum + item.substitutions.reduce((n, change) => n + change.count, 0), 0), acceptedFe1Chapters: Object.keys(transition.sources).filter(path => path.startsWith('book/')).length, exactTransitionSources: Object.keys(transition.sources).length, acceptedFe2Chapters: Object.keys(fe2.sources).filter(path => path.startsWith('book/')).length, exactFe2TransitionSources: Object.keys(fe2.sources).length, exactFe3TransitionSources: Object.keys(fe3.sources).length, acceptedFe3PackageSha256: fe3.acceptedCorrectionPackageSha256, unauthorizedModifications: 0 };
 }

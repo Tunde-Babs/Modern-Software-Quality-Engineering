@@ -1,0 +1,24 @@
+---
+import Base from '../../../layouts/Base.astro';
+---
+<Base title="Playwright labs: beginner to advanced" description="27 practical Playwright labs covering browser automation, API mocking, fixtures, POM and Component Object Model.">
+  <div class="page index-page" data-pagefind-body>
+    <p class="eyebrow">Learn by building</p><h1>Playwright: beginner to advanced</h1>
+    <p class="subtitle">27 labs. One fictional shop. Evidence you can explain.</p>
+    <p>Start with login, search and cart checks, then build reliable automation with isolated data, API response mocking, typed fixtures, Page Object Model (POM) and Component Object Model (COM).</p>
+    <p><a class="button" href="/labs/playwright/learn/">Open the lab bench</a> · <a href="/labs/playwright/shop/">Explore the practice shop</a></p>
+    <section><h2>Read online, practise locally</h2>
+      <p>All lesson guides, supplied exercises and worked solutions are readable here. The browser shop supports fictional sign-in, search and cart practice. Run Playwright tests, advanced API scenarios and checkout simulation on your computer.</p>
+      <ol><li>Clone the repository and open <code>labs/playwright-atlas</code>.</li><li>Use Node 24, run <code>npm ci</code>, then <code>npx playwright install chromium firefox</code>.</li><li>Run <code>npm start</code> to explore the complete local simulator, or <code>npm test -- 01-login --headed</code> for your first lab.</li></ol>
+      <p><a href="https://github.com/Tunde-Babs/Modern-Software-Quality-Engineering/tree/60bc19d93f05514e4dfe1a941ade1563eca8322d/labs/playwright-atlas">Get the versioned companion source and setup instructions</a></p>
+    </section>
+    <section><h2>Your progression</h2><ul>
+      <li>Labs 1–7: actions, assertions, locators, navigation, validation and asynchronous UI.</li>
+      <li>Labs 8–16: fixtures, data factories, authentication, API setup, cleanup, failures, clocks and traces.</li>
+      <li>Labs 17–24: parallel isolation, browser projects, CI artifacts, visual and accessibility checks, risk selection and an incident capstone.</li>
+      <li>Labs 25–27: API mocking and HAR replay, advanced fixture lifecycle, POM and reusable component objects.</li>
+    </ul></section>
+    <section><h2>Demonstrate your skill</h2><p>Passing the supplied examples confirms execution. Repeat each lab with your own variation, explain the evidence and complete the independent assessment. Advanced describes the practical engineering scope of this track; it is not exhaustive Playwright API coverage or a certification.</p><p>COM means Component Object Model: reusable UI interactions scoped to a component. It is distinct from framework component testing.</p></section>
+    <p>Companion publication candidate: authored examples awaiting independent technical, editorial and learning review. The handbook’s Controlled RC designation does not establish acceptance of this companion.</p>
+  </div>
+</Base>

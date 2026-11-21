@@ -7,6 +7,7 @@ const groups = [{ kind: 'lab', title: 'Labs' }, { kind: 'case-study', title: 'Ca
 <Base title="Resources" description="Delivered MSQE labs, case studies, worksheets, diagrams, and TypeScript learning projects.">
   <div class="page index-page" data-pagefind-body><p class="eyebrow">Supporting your study</p><h1>Resources</h1>
     <p class="subtitle">Available now</p><p>Part I activities and diagrams, plus five Part II code projects. Code project pages include their delivered source, tests, fixtures, configuration, and illustrative review artifacts as readable text.</p>
+    <section><h2>Playwright learning companion</h2><p>27 labs covering browser automation, API mocking, fixtures, POM and component objects. Read online and run tests locally.</p><a href="/labs/playwright/">Explore the Playwright labs</a></section>
     {groups.map(group => <section><h2>{group.title}</h2><ul class="curriculum">{resources.filter(doc => doc.kind === group.kind && (doc.kind !== 'code' || doc.source.endsWith('/README.md'))).map(doc => <li><a href={doc.route}>{doc.title}</a></li>)}</ul></section>)}
     <section><h2>Planned / not yet published</h2><p>Additional companion assets for Parts III–XII are not published here. Worked examples and practical exercises delivered inside chapters remain available in the handbook.</p><a href="/handbook/">Browse the handbook</a></section>
   </div>

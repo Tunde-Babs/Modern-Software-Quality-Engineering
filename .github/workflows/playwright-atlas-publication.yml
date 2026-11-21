@@ -1,0 +1,51 @@
+name: Atlas static publication candidate
+on:
+  push:
+    paths:
+      - 'labs/playwright-atlas/**'
+      - 'website/**'
+      - '.github/workflows/playwright-atlas-publication.yml'
+  pull_request:
+    paths:
+      - 'labs/playwright-atlas/**'
+      - 'website/**'
+      - '.github/workflows/playwright-atlas-publication.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  candidate:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    defaults:
+      run:
+        working-directory: website
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '24.20.0'
+          cache: npm
+          cache-dependency-path: website/package-lock.json
+      - run: npm ci
+      - run: npx playwright install --with-deps chrome
+      - run: npm run check
+      - name: Preserve the existing full publication gate
+        id: publication
+        continue-on-error: true
+        run: npm run verify:production
+      - name: Build and inspect the isolated static companion
+        run: npm run build:production && MSQE_TEST_MODE=production node --import tsx --test tests/production-output.ts tests/atlas-output.ts
+      - run: npm run test:production-browser
+      - uses: actions/upload-artifact@v7
+        if: always()
+        with:
+          name: atlas-publication-candidate
+          path: website/artifacts/
+          retention-days: 14
+      - name: Require the existing publication gate
+        if: always() && steps.publication.outcome != 'success'
+        run: exit 1
