@@ -5,6 +5,55 @@ let products = [];
 let cart = {};
 let signedIn = false;
 let scenario = 'normal';
+let catalogController;
+
+function waitForCatalogDelay(milliseconds, signal) {
+  return new Promise((resolve, reject) => {
+    const onAbort = () => {
+      clearTimeout(timer);
+      reject(new DOMException('Catalog load cancelled', 'AbortError'));
+    };
+    const timer = setTimeout(() => {
+      signal.removeEventListener('abort', onAbort);
+      resolve();
+    }, milliseconds);
+    signal.addEventListener('abort', onAbort, { once: true });
+  });
+}
+
+async function loadCatalog() {
+  catalogController?.abort();
+  const controller = new AbortController();
+  catalogController = controller;
+  const delay = Number($('catalog-delay').value);
+  const unavailable = scenario === 'catalog-unavailable';
+  $('catalog-error').hidden = true;
+  $('catalog-status').textContent = 'Loading products…';
+  $('product-count').textContent = '';
+  $('products').replaceChildren();
+  $('products').setAttribute('aria-busy', 'true');
+  $('reload-catalog').disabled = true;
+  try {
+    await waitForCatalogDelay(delay, controller.signal);
+    if (unavailable) throw new Error('Simulated catalog failure');
+    const response = await fetch('/products.json', { signal: controller.signal });
+    if (!response.ok) throw new Error('Catalog request failed');
+    const nextProducts = await response.json();
+    if (controller.signal.aborted) return;
+    products = nextProducts;
+    renderProducts(); renderCart();
+    $('catalog-status').textContent = 'Products ready.';
+  } catch (error) {
+    if (controller.signal.aborted) return;
+    $('catalog-error').hidden = false;
+    $('catalog-status').textContent = 'Products unavailable.';
+  } finally {
+    if (!controller.signal.aborted) {
+      $('products').setAttribute('aria-busy', 'false');
+      $('reload-catalog').disabled = false;
+    }
+  }
+}
 try {
   const saved = JSON.parse(sessionStorage.getItem(storageKey) || '{}');
   cart = saved.cart && typeof saved.cart === 'object' ? saved.cart : {};
@@ -68,7 +117,10 @@ function renderCart() {
   $('cart-total').textContent = money(total);
   $('empty-cart').hidden = quantity > 0;
 }
-$('search').addEventListener('input', renderProducts);
+$('search').addEventListener('input', () => {
+  if ($('catalog-status').textContent === 'Products ready.') renderProducts();
+});
+$('reload-catalog').addEventListener('click', loadCatalog);
 $('login-form').addEventListener('submit', (event) => {
   event.preventDefault();
   let error = '';
@@ -90,15 +142,11 @@ $('reset').addEventListener('click', () => {
   cart = {}; signedIn = false; scenario = 'normal';
   sessionStorage.removeItem(storageKey);
   $('scenario').value = 'normal'; $('search').value = '';
+  $('catalog-delay').value = '0';
   $('login-form').reset(); $('login-error').hidden = true;
   $('cart-message').textContent = ''; $('practice-message').textContent = 'Practice reset. Ready to begin.';
-  account(); renderProducts(); renderCart();
+  account(); renderCart();
+  void loadCatalog();
 });
 account();
-try {
-  const response = await fetch('/products.json');
-  if (!response.ok) throw new Error('Catalog request failed');
-  products = await response.json();
-  renderProducts(); renderCart();
-} catch { $('catalog-error').hidden = false; }
-finally { $('products').setAttribute('aria-busy', 'false'); }
+await loadCatalog();

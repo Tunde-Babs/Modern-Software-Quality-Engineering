@@ -91,3 +91,47 @@ test('desktop shop renders without browser errors', async ({ page }) => {
   expect(errors).toEqual([]);
   await page.screenshot({ path: 'artifacts/atlas-desktop.png', fullPage: true });
 });
+
+test('reset cancels a pending delayed failure and restores controls', async ({ page }) => {
+  await page.clock.install();
+  await page.goto('/');
+  await expect(page.getByRole('article')).toHaveCount(4);
+  await page.getByText('Practice controls', { exact: true }).click();
+  await page.getByLabel('Scenario', { exact: true }).selectOption('catalog-unavailable');
+  await page.getByLabel('Catalog delay', { exact: true }).selectOption('1600');
+  await page.getByRole('button', { name: 'Reload products', exact: true }).click();
+  await expect(page.getByRole('status', { name: 'Catalog status' })).toHaveText('Loading products…');
+  await page.getByRole('button', { name: 'Reset practice' }).click();
+  await expect(page.getByRole('status', { name: 'Catalog status' })).toHaveText('Products ready.');
+  await page.clock.fastForward(2000);
+  await expect(page.getByRole('status', { name: 'Catalog status' })).toHaveText('Products ready.');
+  await expect(page.getByRole('article')).toHaveCount(4);
+  await expect(page.getByLabel('Catalog delay', { exact: true })).toHaveValue('0');
+  await expect(page.getByLabel('Scenario', { exact: true })).toHaveValue('normal');
+  await expect(page.getByRole('alert').filter({ hasText: 'Products could not be loaded.' })).toBeHidden();
+});
+
+test('a delayed reload applies the latest query and keeps the cart', async ({ page }) => {
+  await page.goto('/');
+  await page.getByRole('article', { name: 'Atlas Backpack', exact: true }).getByRole('button', { name: 'Add to cart' }).click();
+  await page.getByText('Practice controls', { exact: true }).click();
+  await page.getByLabel('Catalog delay', { exact: true }).selectOption('800');
+  await page.getByRole('button', { name: 'Reload products', exact: true }).click();
+  await page.getByRole('searchbox').fill('mug');
+  await expect(page.getByRole('status', { name: 'Catalog status' })).toHaveText('Products ready.');
+  await expect(page.getByRole('article')).toHaveCount(1);
+  await expect(page.getByRole('article', { name: 'Trail Mug', exact: true })).toBeVisible();
+  await expect(page.getByLabel('Cart total', { exact: true })).toHaveText('€49.00');
+});
+
+test('search cannot restore stale cards after a catalog failure', async ({ page }) => {
+  await page.goto('/');
+  await expect(page.getByRole('article')).toHaveCount(4);
+  await page.getByText('Practice controls', { exact: true }).click();
+  await page.getByLabel('Scenario', { exact: true }).selectOption('catalog-unavailable');
+  await page.getByRole('button', { name: 'Reload products', exact: true }).click();
+  await expect(page.getByRole('status', { name: 'Catalog status' })).toHaveText('Products unavailable.');
+  await page.getByRole('searchbox').fill('mug');
+  await expect(page.getByRole('article')).toHaveCount(0);
+  await expect(page.getByRole('status', { name: 'Catalog status' })).toHaveText('Products unavailable.');
+});

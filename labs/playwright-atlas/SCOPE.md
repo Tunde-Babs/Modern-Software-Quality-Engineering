@@ -47,3 +47,34 @@ Dependencies, reports and screenshots are ignored local outputs beneath the comp
 ## Review boundary
 
 VALIDATION.md contains author execution evidence. Independent technical, editorial and learning review of the exact companion remains outstanding before publication. Later labs are proposals. The approved Part V curriculum and released manuscript evidence remain unchanged.
+
+## Slice 2 — frozen before implementation, 2026-11-21
+
+The user subsequently authorised committing and pushing the completed companion and proceeding with the planned labs. That instruction supersedes the initial no-stage/no-commit/no-push scope for companion files only. The first slice was committed as `b8f4576`; its evidence above remains a point-in-time record. This next bounded slice implements Labs 4–7: fragment navigation, native form validation, locator ambiguity and controllable asynchronous catalog loading.
+
+Preflight: branch `feature/first-edition-review`, first-slice HEAD `b8f4576`; upstream was fetched before that checkpoint and had zero divergence. The same three worktrees remain. The 25 unrelated tracked modifications and untracked polling test work are excluded. A SHA-256 snapshot of 398 unrelated tracked/untracked files is retained at `/tmp/msqe-atlas-slice2-preservation.json`. No concurrent agent work is authorised or used.
+
+Exact slice-2 allow-list, relative to `labs/playwright-atlas/`:
+
+- `SCOPE.md`
+- `VALIDATION.md`
+- `README.md`
+- `ROADMAP.md`
+- `app/index.html`
+- `app/app.js`
+- `app/styles.css`
+- `checks/simulator.spec.ts`
+- `lessons/04-navigation.md`
+- `lessons/05-validation.md`
+- `lessons/06-locators.md`
+- `lessons/07-async.md`
+- `exercises/04-navigation.spec.ts`
+- `exercises/05-validation.spec.ts`
+- `exercises/06-locators.spec.ts`
+- `exercises/07-async.spec.ts`
+- `solutions/04-navigation.spec.ts`
+- `solutions/05-validation.spec.ts`
+- `solutions/06-locators.spec.ts`
+- `solutions/07-async.spec.ts`
+
+Eight existing companion paths may change and twelve may be added: expected post-slice source population 38. Dependency versions and execution configuration stay as recorded in the first slice. Commit and push are authorised after author validation and explicit-path staging checks. Publication, independent acceptance, releases and edition-review corrections remain outside this task. Labs 8–24 remain planned for later slices.
