@@ -1,0 +1,25 @@
+{
+  "name": "msqe-playwright-atlas",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "start": "node server.mjs",
+    "bridge": "node bridge/essentials.ts",
+    "check": "tsc --noEmit",
+    "test": "playwright test --project=learner",
+    "test:ui": "playwright test --project=learner --ui",
+    "test:solutions": "playwright test --project=solutions",
+    "test:simulator": "playwright test --project=simulator",
+    "verify": "npm run check && npm run bridge && playwright test --project=solutions --project=simulator",
+    "report": "playwright show-report"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.63.0",
+    "@types/node": "22.20.2",
+    "typescript": "6.0.3"
+  }
+}

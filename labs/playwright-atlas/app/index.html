@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Atlas Commerce | Playwright Practice</title>
+  <link rel="stylesheet" href="/styles.css"><script type="module" src="/app.js"></script>
+</head>
+<body>
+  <header><a class="brand" href="/" aria-label="Atlas Commerce home"><span class="brand-mark">A</span> ATLAS <span class="brand-sub">COMMERCE</span></a><span class="badge">MSQE PRACTICE SHOP</span></header>
+  <main>
+    <section class="intro"><p class="eyebrow">A SMALL SHOP. A NEW SKILL.</p><h1>Your next discovery<br>starts here.</h1><p>Explore the collection. Build a cart. Learn by doing.</p><p class="notice">Fictional products and accounts. No purchases or real payments.</p></section>
+    <div class="workspace">
+      <section aria-labelledby="collection-title" class="collection">
+        <div class="section-heading"><h2 id="collection-title">The collection</h2><span id="product-count" role="status"></span></div>
+        <label for="search">Search products</label><input type="search" id="search" placeholder="Try backpack or mug" autocomplete="off">
+        <div id="products" class="products" aria-busy="true"></div>
+        <p id="catalog-error" role="alert" hidden>Products could not be loaded. Reload to try again.</p>
+      </section>
+      <aside>
+        <section class="panel" aria-labelledby="account-title"><p class="eyebrow">YOUR ACCOUNT</p><h2 id="account-title">Welcome back</h2>
+          <form id="login-form"><label for="email">Email</label><input type="email" id="email" required autocomplete="username"><label for="password">Password</label><input type="password" id="password" required autocomplete="current-password"><button type="submit">Sign in</button></form>
+          <p id="login-error" role="alert" hidden></p><div id="account" hidden><p id="welcome" role="status"></p><button id="sign-out" class="secondary">Sign out</button></div>
+          <p class="demo-note">Demo: learner@atlas.test<br>Password: AtlasPractice123!</p>
+        </section>
+        <section class="panel" aria-labelledby="cart-title"><div class="section-heading"><h2 id="cart-title">Your cart</h2><span id="cart-count" class="count" aria-label="Cart quantity">0</span></div><ul id="cart-items"></ul><p id="empty-cart">Your cart is empty.</p><div class="total"><span>Total</span><output id="cart-total" aria-label="Cart total">€0.00</output></div><p id="cart-message" role="status"></p></section>
+      </aside>
+    </div>
+    <details class="practice"><summary>Practice controls</summary><p>Reset clears this tab's account and cart. Fault mode deliberately changes the shop so you can practise finding a defect.</p><label for="scenario">Scenario</label><select id="scenario"><option value="normal">Normal shop</option><option value="login-unavailable">Sign-in service unavailable</option><option value="cart-total-bug">Challenge: incorrect cart total</option></select><button id="reset" class="secondary">Reset practice</button><p id="practice-message" role="status"></p></details>
+  </main>
+  <footer>ATLAS COMMERCE <span>Local learning simulator · First steps in Playwright</span></footer>
+</body>
+</html>

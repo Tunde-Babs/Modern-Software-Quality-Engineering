@@ -1,0 +1,34 @@
+[
+  {
+    "id": "backpack",
+    "name": "Atlas Backpack",
+    "category": "Travel",
+    "priceCents": 4900,
+    "description": "A compact everyday bag for your next journey.",
+    "symbol": "\u25a5"
+  },
+  {
+    "id": "mug",
+    "name": "Trail Mug",
+    "category": "Outdoors",
+    "priceCents": 1500,
+    "description": "A sturdy companion for your morning break.",
+    "symbol": "\u25e1"
+  },
+  {
+    "id": "notebook",
+    "name": "Field Notebook",
+    "category": "Stationery",
+    "priceCents": 900,
+    "description": "Space for observations, sketches and discoveries.",
+    "symbol": "\u25a4"
+  },
+  {
+    "id": "lamp",
+    "name": "Desk Lamp",
+    "category": "Home",
+    "priceCents": 3500,
+    "description": "A little more light for focused evenings.",
+    "symbol": "\u25d2"
+  }
+]
