@@ -221,3 +221,31 @@ The following **43 Git blob IDs**, excluding this validation record, identify th
 | `tsconfig.json` | `5b8385b00838317dfb72236e7255a9926f643d27` |
 
 The prior user-authorised commit/push scope continues for this companion package, subject to exact explicit-path staging and final preservation checks. No root governance, manuscript, accepted review event, quantitative rule/tool, release artifact or website publication surface is included. This package establishes neither a live release nor independent acceptance.
+
+
+## Guided Lab 1 author execution — 2026-11-21
+
+**Assisted example implemented; two learner-project tests pass.** This is an authored teaching demonstration, not evidence of independent learner mastery. No browser progress, assessment, chapter/review status or publication gate was advanced.
+
+Baseline: `e6df2fe540509dbea6b66adc63ae13cda24761ca`, branch `feature/first-edition-review`. The upstream branch was fetched and remained at that commit, 0 ahead / 0 behind. Actual source population **44 before / 44 after**; three existing files changed, no additions. The exact allow-list is SCOPE.md, this validation record and exercises/01-login.spec.ts. All **439/439** files outside that scope match the preflight SHA-256 snapshot, including the other six learner exercises and unrelated edition-review changes.
+
+| Check | Observed result |
+|---|---|
+| `npm run check` | Exit 0; TypeScript check passed |
+| `npm test -- 01-login --headed` | Exit 0; **2 passed** in 5.2 seconds, using the learner project in a visible browser |
+| Temporary wrong-name assertion | The successful-login check was temporarily changed to expect `Welcome, Morgan!`; exactly one selected test failed at that visible-state assertion after its 5-second timeout. Screenshot, error context and trace were retained under `artifacts/lab1-negative-control/`. A `finally` block restored the correct source byte-for-byte |
+| Final `npm test -- 01-login` | Exit 0; **2 passed** after restoring `Welcome, Alex!` |
+| Whitespace and preservation | `git diff --check` passed; exact three-path package; 439 other files preserved |
+
+The first control filter was overly anchored and matched no tests; it established no assertion evidence. The corrected filter `--grep 'accepts the demo account'` selected one test and produced the expected assertion failure above. The final report at `playwright-report/index.html` records the restored passing pair; the negative-control evidence remains separately retained. Tests own port 4180 and leave manual practice sessions running.
+
+The two checks use labelled inputs, the named Sign in button and retrying assertions on the resulting success/rejection states. They demonstrate simulated account behaviour for two credential combinations, not real authentication security or identity-provider integration. A learner should next try the invalid-email/valid-password variation and explain the observation without consulting the answer key. That variation has not been performed or credited here.
+
+Exact changed-source identities (this validation record is excluded to avoid self-reference; other package files retain the baseline's blob IDs):
+
+| Companion path | Before Git blob ID | After Git blob ID |
+|---|---|---|
+| `SCOPE.md` | `92dddd1377bd1846b9f37668a504bd78f202bf5e` | `bfc1e6dd486711809d3c81a5998541e1c33dfeaf` |
+| `exercises/01-login.spec.ts` | `cd5598c1c5b4236cbbe4950b7b8cc316430f5b1d` | `4b005cd5e984f951f54531b84df98f33b44f1dfb` |
+
+Prior companion commit/push authorisation continues after explicit-path staging and final scope checks. No release, deployment, independent acceptance, finding closure or unrelated correction is included.

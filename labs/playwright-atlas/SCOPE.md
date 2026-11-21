@@ -112,3 +112,17 @@ Exact allow-list, relative to `labs/playwright-atlas/` (17 existing and six new 
 - `checks/learning.spec.ts` (new)
 
 Existing lessons change only their local-server instructions; the navigation solution and context-isolation check replace the hardcoded test origin with the configured base URL. All learner exercise source remains frozen. The seven lessons, bridge, setup and roadmap may be served read-only through explicit mappings; governance, dependencies and arbitrary repository paths are excluded. Dependency versions stay fixed. Prior companion commit/push authorisation continues after validation and explicit-path scope checks. No live release, publication acceptance or edition-review correction is authorised by this package.
+
+## Guided Lab 1 implementation — frozen before implementation, 2026-11-21
+
+The user asked to proceed from the Lab 1 implementation instructions. This bounded step implements the two login exercise checks as an explicitly assisted example and demonstrates that a deliberately incorrect expectation fails. It does not represent independent learner mastery or mark browser progress as practised. The earlier exercise freeze applied to the workspace package; this task explicitly permits editing Lab 1 only.
+
+Preflight: `feature/first-edition-review`, HEAD `e6df2fe540509dbea6b66adc63ae13cda24761ca`, 0 ahead / 0 behind locally recorded upstream; same three worktrees; empty index and companion diff. Existing 25 modified tracked paths and untracked polling tests remain excluded. Preservation snapshot: `/tmp/msqe-atlas-lab1-preservation.json`. Source population remains 44 before and after; no new source files or dependencies.
+
+Exact allow-list, relative to `labs/playwright-atlas/`:
+
+- `SCOPE.md`
+- `VALIDATION.md`
+- `exercises/01-login.spec.ts`
+
+Run the type check, the two learner-project tests, and a temporary wrong-expectation control, restoring the correct expectation before final validation/checkpoint. Other exercises, answer keys, app/lesson source and all edition-review surfaces remain frozen. Prior companion commit/push authorisation continues with explicit-path staging and preservation checks. No independent review, score, publication or release is implied.
