@@ -274,3 +274,31 @@ Exact changed-source identities (the validation record is excluded to avoid self
 | `exercises/02-search.spec.ts` | `ba481a9e650dc0cc8a109cd742803f85b3df53de` | `c5b02879122114e97bdeea1d4394fa53dad4d085` |
 
 Prior companion commit/push authorisation continues after explicit-path staging and final scope checks. No edition finding, accepted review event, release, deployment or independent gate is changed.
+
+
+## Guided Lab 3 author execution — 2026-11-21
+
+**Assisted cart example implemented; two learner-project tests pass.** The user's supplied screenshot established two passing search tests; it did not establish independent mastery or completion of an unseen variation. No browser practice progress, assessment or review status is advanced here.
+
+Baseline: `fcc42a593223751f49ccefa030e9eda778181f9b`, branch `feature/first-edition-review`. Upstream was fetched and remained at that commit, 0 ahead / 0 behind. Source population **44 before / 44 after**; exactly three existing files changed, none added. All **439/439** files outside SCOPE.md / VALIDATION.md / exercises/03-cart.spec.ts match the preflight SHA-256 snapshot, including the login/search exercises and unrelated edition-review work.
+
+| Check | Observed result |
+|---|---|
+| `npm run check` | Exit 0; TypeScript check passed |
+| `npm test -- 03-cart --headed` | Exit 0; **2 passed** in 5.0 seconds, in a visible browser using the learner project |
+| Repeated product and removal | Two scoped backpack adds yield quantity 2 and €98.00; whole-line removal yields the empty message, quantity 0 and €0.00 |
+| Mixed product total | Backpack plus mug yields two cart lines, quantity 2 and €64.00 |
+| Whitespace and preservation | `git diff --check` passed; exact three-path diff; 439 other files preserved |
+
+Expected values are calculated from the stated prices (2 × €49 = €98; €49 + €15 = €64), not copied or derived from the displayed cart total. Product names scope repeated Add to cart buttons. No fixed sleeps, retries, solution changes or dependencies were introduced. Tests use the owned server on port 4180 and leave manual sessions running. The replaceable ignored report is `playwright-report/index.html`.
+
+These checks cover selected local cart arithmetic and browser state, not tax, discounts, stock, checkout or real payments. The independent learner variation remains one Desk Lamp and two Field Notebooks, expected €53; it has not been performed or credited here. The deliberate incorrect-total challenge and later navigation exercise remain available for further practice.
+
+Exact changed-source identities (this validation record is excluded to avoid self-reference; other files retain the baseline's blob IDs):
+
+| Companion path | Before Git blob ID | After Git blob ID |
+|---|---|---|
+| `SCOPE.md` | `3b022b16939faf6ae628283ebd32d1070e673d27` | `f2956707253fad37d1911d07c951ac39b854b895` |
+| `exercises/03-cart.spec.ts` | `b64f01a398fe1320be8c968635196a012db3d334` | `2dc5657706575639d1459d322c2626c292026fbe` |
+
+Prior companion commit/push authorisation continues after explicit-path staging and final scope checks. No edition finding, accepted event, quantitative rule, release, deployment or independent gate is included.

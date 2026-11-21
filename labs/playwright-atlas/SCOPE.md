@@ -140,3 +140,17 @@ Exact allow-list, relative to `labs/playwright-atlas/`:
 - `exercises/02-search.spec.ts`
 
 Run the TypeScript check and the two search tests. Other exercises, solutions, lessons, app source and edition-review surfaces stay frozen. Prior companion commit/push authorisation continues with explicit-path staging and preservation checks. This is author execution evidence only; no independent review, gate, release or deployment is implied.
+
+## Guided Lab 3 implementation — frozen before implementation, 2026-11-21
+
+The user supplied a screenshot of two passing search tests and asked to proceed. This bounded step implements the two cart exercises as assisted examples: repeated additions and whole-line removal, plus a mixed-product total calculated from the stated product prices. No independent learner mastery or browser practice progress is recorded.
+
+Preflight: branch `feature/first-edition-review`, HEAD `fcc42a593223751f49ccefa030e9eda778181f9b`, 0 ahead / 0 behind locally recorded upstream; same three worktrees; empty index and companion diff. Existing 25 tracked modifications and untracked polling tests remain excluded. Preservation snapshot: `/tmp/msqe-atlas-lab3-preservation.json`. Source population remains 44 before / 44 after; no new files or dependencies.
+
+Exact allow-list, relative to `labs/playwright-atlas/`:
+
+- `SCOPE.md`
+- `VALIDATION.md`
+- `exercises/03-cart.spec.ts`
+
+Run the TypeScript check and two learner-project cart tests. Other exercises, solutions, lessons, application and edition-review surfaces remain frozen. Prior companion commit/push authorisation continues after explicit-path staging and preservation checks. No independent assessment, review gate, publication, release or deployment is implied.
