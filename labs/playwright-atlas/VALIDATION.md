@@ -249,3 +249,28 @@ Exact changed-source identities (this validation record is excluded to avoid sel
 | `exercises/01-login.spec.ts` | `cd5598c1c5b4236cbbe4950b7b8cc316430f5b1d` | `4b005cd5e984f951f54531b84df98f33b44f1dfb` |
 
 Prior companion commit/push authorisation continues after explicit-path staging and final scope checks. No release, deployment, independent acceptance, finding closure or unrelated correction is included.
+
+
+## Guided Lab 2 author execution — 2026-11-21
+
+**Assisted search example implemented; two learner-project tests pass.** This is author execution, not independent learner mastery, assessment or publication acceptance. No browser practice progress was marked.
+
+Pre-change baseline: `7bd3b4c71b5fe05331a996860ad08a2929be6ad7`, branch `feature/first-edition-review`. Upstream was fetched and remained at that commit, 0 ahead / 0 behind. Source population **44 before / 44 after**; exactly three existing files changed and none added. All **439/439** files outside the SCOPE.md / VALIDATION.md / exercises/02-search.spec.ts allow-list match the preflight SHA-256 snapshot, including Lab 1 and all unrelated edition-review work.
+
+| Check | Observed result |
+|---|---|
+| `npm run check` | Exit 0; TypeScript check passed |
+| `npm test -- 02-search --headed` | Exit 0; **2 passed** in 5.2 seconds, in a visible browser using the learner project |
+| Search evidence | Four cards established before each query; uppercase BACKPACK yields exactly the named Atlas Backpack card; spaceship yields zero cards plus No products found.; clearing restores four cards and removes the empty-state message |
+| Whitespace and preservation | `git diff --check` passed; exact three-path diff; 439 other files preserved |
+
+Tests use the owned server on port 4180, without stopping manual practice. The current `playwright-report/index.html` records this run and is a replaceable ignored local artifact. No retries, fixed sleeps, DOM-position selectors, solution changes or new dependencies were introduced. The checks cover this fictional local catalog, not remote ranking, pagination or production catalog completeness. Trying the whitespace-padded ` mug ` variation independently remains a learner next step; it has not been credited here. Lab 3 is the next guided exercise.
+
+Exact changed-source identities (the validation record is excluded to avoid self-reference; other package files retain the baseline's blob IDs):
+
+| Companion path | Before Git blob ID | After Git blob ID |
+|---|---|---|
+| `SCOPE.md` | `bfc1e6dd486711809d3c81a5998541e1c33dfeaf` | `3b022b16939faf6ae628283ebd32d1070e673d27` |
+| `exercises/02-search.spec.ts` | `ba481a9e650dc0cc8a109cd742803f85b3df53de` | `c5b02879122114e97bdeea1d4394fa53dad4d085` |
+
+Prior companion commit/push authorisation continues after explicit-path staging and final scope checks. No edition finding, accepted review event, release, deployment or independent gate is changed.

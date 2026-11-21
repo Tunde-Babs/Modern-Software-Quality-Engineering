@@ -126,3 +126,17 @@ Exact allow-list, relative to `labs/playwright-atlas/`:
 - `exercises/01-login.spec.ts`
 
 Run the type check, the two learner-project tests, and a temporary wrong-expectation control, restoring the correct expectation before final validation/checkpoint. Other exercises, answer keys, app/lesson source and all edition-review surfaces remain frozen. Prior companion commit/push authorisation continues with explicit-path staging and preservation checks. No independent review, score, publication or release is implied.
+
+## Guided Lab 2 implementation — frozen before implementation, 2026-11-21
+
+The user asked to continue to the next steps after the guided login example. This bounded step implements the two search exercises as assisted examples: case-insensitive matching with product identity, and an empty result followed by clearing the query. No independent learner mastery or practice progress is recorded.
+
+Preflight: branch `feature/first-edition-review`, HEAD `7bd3b4c71b5fe05331a996860ad08a2929be6ad7`, 0 ahead / 0 behind locally recorded upstream; same three worktrees; empty index and companion diff. The existing 25 tracked modifications and untracked polling tests remain excluded. Preservation snapshot: `/tmp/msqe-atlas-lab2-preservation.json`. Source population: 44 before / 44 after, with no new source or dependencies.
+
+Exact allow-list, relative to `labs/playwright-atlas/`:
+
+- `SCOPE.md`
+- `VALIDATION.md`
+- `exercises/02-search.spec.ts`
+
+Run the TypeScript check and the two search tests. Other exercises, solutions, lessons, app source and edition-review surfaces stay frozen. Prior companion commit/push authorisation continues with explicit-path staging and preservation checks. This is author execution evidence only; no independent review, gate, release or deployment is implied.
