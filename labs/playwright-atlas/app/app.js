@@ -1,6 +1,12 @@
+import { createWorkspaceClient } from '/workspace-client.js';
 const $ = (id) => document.getElementById(id);
 const money = (cents) => `€${(cents / 100).toFixed(2)}`;
 const storageKey = 'atlas-practice-v1';
+const workspaceId = new URLSearchParams(location.search).get('workspace');
+const backend = workspaceId ? createWorkspaceClient(workspaceId) : null;
+let checkoutKey = crypto.randomUUID();
+let reservationTimer;
+let checkoutController;
 let products = [];
 let cart = {};
 let signedIn = false;
@@ -55,11 +61,11 @@ async function loadCatalog() {
   }
 }
 try {
-  const saved = JSON.parse(sessionStorage.getItem(storageKey) || '{}');
+  const saved = backend ? {} : JSON.parse(sessionStorage.getItem(storageKey) || '{}');
   cart = saved.cart && typeof saved.cart === 'object' ? saved.cart : {};
   signedIn = saved.signedIn === true;
 } catch { /* An invalid stored value starts a fresh practice session. */ }
-function save() { sessionStorage.setItem(storageKey, JSON.stringify({ cart, signedIn })); }
+function save() { if (!backend) sessionStorage.setItem(storageKey, JSON.stringify({ cart, signedIn })); }
 function account() {
   $('login-form').hidden = signedIn;
   $('account').hidden = !signedIn;
@@ -76,10 +82,16 @@ function renderProducts() {
     article.setAttribute('aria-label', product.name);
     // Only static, repository-owned catalog data is rendered through this template.
     article.innerHTML = `<div class="product-art" aria-hidden="true">${product.symbol}</div><div class="product-copy"><p class="category">${product.category}</p><h3>${product.name}</h3><p class="description">${product.description}</p><div class="buy"><span class="price">${money(product.priceCents)}</span><button type="button">Add to cart</button></div></div>`;
-    article.querySelector('button').addEventListener('click', () => {
-      cart[product.id] = (cart[product.id] || 0) + 1;
-      save(); renderCart();
-      $('cart-message').textContent = `${product.name} added to cart.`;
+    article.querySelector('button').addEventListener('click', async event => {
+      const button = event.currentTarget; button.disabled = true;
+      try {
+        if (backend) cart = (await backend.add(product.id, 1)).cart;
+        else cart[product.id] = (cart[product.id] || 0) + 1;
+        checkoutKey = crypto.randomUUID(); save(); renderCart();
+        $('cart-message').textContent = `${product.name} added to cart.`;
+        $('cart-error').hidden = true;
+      } catch (error) { $('cart-error').textContent = error.message; $('cart-error').hidden = false; }
+      finally { button.disabled = false; }
     });
     $('products').append(article);
   }
@@ -105,9 +117,13 @@ function renderCart() {
     remove.textContent = 'Remove';
     remove.className = 'secondary';
     remove.setAttribute('aria-label', `Remove ${product.name}`);
-    remove.addEventListener('click', () => {
-      delete cart[product.id]; save(); renderCart();
-      $('cart-message').textContent = `${product.name} removed from cart.`;
+    remove.addEventListener('click', async () => {
+      try {
+        if (backend) cart = (await backend.remove(product.id)).cart;
+        else delete cart[product.id];
+        checkoutKey = crypto.randomUUID(); save(); renderCart();
+        $('cart-message').textContent = `${product.name} removed from cart.`;
+      } catch (error) { $('cart-error').textContent = error.message; $('cart-error').hidden = false; }
     });
     row.append(text, remove); $('cart-items').append(row);
   }
@@ -116,29 +132,47 @@ function renderCart() {
   $('cart-count').textContent = String(quantity);
   $('cart-total').textContent = money(total);
   $('empty-cart').hidden = quantity > 0;
+  $('indicator-fill').setAttribute('width', String(Math.min(quantity, 4) * 16));
+  $('place-order').disabled = quantity === 0 || !signedIn;
 }
 $('search').addEventListener('input', () => {
   if ($('catalog-status').textContent === 'Products ready.') renderProducts();
 });
 $('reload-catalog').addEventListener('click', loadCatalog);
-$('login-form').addEventListener('submit', (event) => {
+$('login-form').addEventListener('submit', async (event) => {
   event.preventDefault();
   let error = '';
   if (scenario === 'login-unavailable') error = 'Sign-in is temporarily unavailable. Please try again.';
   else if ($('email').value.trim().toLowerCase() !== 'learner@atlas.test' || $('password').value !== 'AtlasPractice123!') error = 'Email or password is incorrect.';
+  if (!error && backend) {
+    try { await backend.login($('email').value, $('password').value); }
+    catch (failure) { error = failure.message; }
+  }
   $('login-error').textContent = error;
   $('login-error').hidden = !error;
   if (!error) {
-    signedIn = true; $('password').value = ''; save(); account();
+    signedIn = true; $('password').value = ''; save(); account(); renderCart();
   }
 });
-$('sign-out').addEventListener('click', () => { signedIn = false; save(); account(); });
+$('sign-out').addEventListener('click', async () => {
+  if (backend) await backend.logout();
+  signedIn = false; save(); account(); renderCart();
+});
 $('scenario').addEventListener('change', () => {
   scenario = $('scenario').value;
   $('practice-message').textContent = scenario === 'normal' ? 'Normal shop restored.' : 'Training fault enabled.';
   renderCart();
 });
-$('reset').addEventListener('click', () => {
+$('reset').addEventListener('click', async () => {
+  checkoutController?.abort(); checkoutController = null; clearInterval(reservationTimer);
+  if (backend) {
+    try { await backend.reset(); }
+    catch (error) { $('cart-error').textContent = error.message; $('cart-error').hidden = false; return; }
+  }
+  checkoutKey = crypto.randomUUID();
+  $('order-status').textContent = 'No practice order yet.';
+  $('reservation-status').textContent = 'No active reservation.';
+  $('order-error').hidden = true;
   cart = {}; signedIn = false; scenario = 'normal';
   sessionStorage.removeItem(storageKey);
   $('scenario').value = 'normal'; $('search').value = '';
@@ -148,5 +182,58 @@ $('reset').addEventListener('click', () => {
   account(); renderCart();
   void loadCatalog();
 });
+$('checkout-panel').hidden = !backend;
+if (backend) {
+  try {
+    const state = await backend.state(); cart = state.cart; signedIn = state.signedIn;
+    $('workspace-label').textContent = `Practice workspace: ${state.label}`;
+  } catch (error) { $('cart-error').textContent = error.message; $('cart-error').hidden = false; }
+}
+$('reserve-cart').addEventListener('click', () => {
+  clearInterval(reservationTimer);
+  const expiresAt = Date.now() + 60_000;
+  $('reservation-status').textContent = 'Reservation active.';
+  reservationTimer = setInterval(() => {
+    if (Date.now() >= expiresAt) {
+      $('reservation-status').textContent = 'Reservation expired.'; clearInterval(reservationTimer);
+    }
+  }, 250);
+});
+$('checkout-fault').addEventListener('change', async () => {
+  if (backend) await backend.faults($('checkout-fault').value, Number($('confirmation-delay').value));
+});
+$('confirmation-delay').addEventListener('change', async () => {
+  if (backend) await backend.faults($('checkout-fault').value, Number($('confirmation-delay').value));
+});
+$('place-order').addEventListener('click', async () => {
+  if (!backend) return;
+  $('place-order').disabled = true; $('order-error').hidden = true;
+  $('order-status').textContent = 'Submitting practice order…';
+  checkoutController?.abort();
+  const controller = new AbortController(); checkoutController = controller;
+  const deadline = setTimeout(() => controller.abort(), 4000);
+  try {
+    const order = await backend.place(checkoutKey, controller.signal);
+    $('order-status').textContent = 'Order pending.';
+    while (true) {
+      const current = await backend.order(order.id, controller.signal);
+      if (current.status === 'confirmed') break;
+      await waitForCatalogDelay(100, controller.signal);
+    }
+    if (controller.signal.aborted) return;
+    cart = (await backend.state(controller.signal)).cart; renderCart();
+    $('order-status').textContent = 'Order confirmed.';
+    checkoutKey = crypto.randomUUID();
+  } catch (error) {
+    if (controller !== checkoutController) return;
+    $('order-status').textContent = 'Order not confirmed.';
+    $('order-error').textContent = controller.signal.aborted ? 'Confirmation deadline reached. Review order state before retrying.' : error.message;
+    $('order-error').hidden = false;
+  } finally {
+    clearTimeout(deadline);
+    if (controller === checkoutController) renderCart();
+  }
+});
+window.addEventListener('pagehide', () => { clearInterval(reservationTimer); checkoutController?.abort(); });
 account();
 await loadCatalog();

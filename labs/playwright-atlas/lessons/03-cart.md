@@ -28,7 +28,7 @@ Detect incorrect totals using expectations calculated independently of the shop.
 
 1. Open `exercises/03-cart.spec.ts`. Calculate two backpacks before using the shop: 2 × €49 = €98.
 
-2. In the first test, replace the placeholder error. Find the Atlas Backpack article and click its Add to cart button twice. Assert Cart quantity `2` and Cart total `€98.00`.
+2. Review the first completed test. Find the Atlas Backpack article and click its Add to cart button twice. Assert Cart quantity `2` and Cart total `€98.00`.
 
 3. Remove Atlas Backpack. Removal deletes the entire line. Assert `Your cart is empty.`, quantity `0` and total `€0.00`.
 
@@ -56,7 +56,7 @@ Enable Incorrect cart total manually and add a mug. Record the steps, expected �
 
 ## Validation
 
-Run `npm test -- 03-cart`. Target: **2 passed** in the learner project. A TODO failure means the exercise is unfinished. Calculate your variation's expectation before observing the shop. Explain a failure before declaring the lab done.
+Run `npm test -- 03-cart`. Target: **2 passed** in the learner project. The supplied code is an authored example; repeat a variation independently before marking it practised. Calculate your variation's expectation before observing the shop. Explain a failure before declaring the lab done.
 
 After attempting the work, compare [the solution](../solutions/03-cart.spec.ts). Run `npm run test:solutions -- 03-cart` only to check the environment. A passing solution does not complete your attempt.
 

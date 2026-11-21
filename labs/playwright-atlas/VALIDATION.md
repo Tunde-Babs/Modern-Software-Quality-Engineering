@@ -302,3 +302,154 @@ Exact changed-source identities (this validation record is excluded to avoid sel
 | `exercises/03-cart.spec.ts` | `b64f01a398fe1320be8c968635196a012db3d334` | `2dc5657706575639d1459d322c2626c292026fbe` |
 
 Prior companion commit/push authorisation continues after explicit-path staging and final scope checks. No edition finding, accepted event, quantitative rule, release, deployment or independent gate is included.
+
+
+## Complete 24-lab track author validation — 2026-11-21
+
+**All 24 labs delivered as authored examples for user review. Local full validation: 124 PASS / 0 FAIL; browser-project validation: 8 PASS / 0 FAIL.** These are author execution results, not independent learner mastery, educational/editorial acceptance, publication approval or an edition gate. No browser progress was marked for the user.
+
+The user expressly selected **also build planned Labs 8–24** after requesting all labs be completed. Baseline: `215d3fa9fdd4fe93bc5fdfcc94fabdd159f6bc15`, branch `feature/first-edition-review`, 44 companion files. Upstream was fetched and stayed at that commit, 0 ahead / 0 behind. Actual post-change population: **104 companion files plus one root CI workflow**. Exact frozen scope including the two recorded pre-edit amendments: **88 paths, 27 modified / 61 added**. All **415/415** other tracked/untracked files retain their preflight SHA-256 bytes, including the unrelated 25 tracked edition-review modifications and untracked polling tests. No manuscript, Part README, quantitative rule/tool, accepted event or release artifact changed.
+
+| Check | Observed result |
+|---|---|
+| Final `npm run verify` | Exit 0; type check and bridge passed; **124 passed in 40.6 seconds**: 48 learner tests, 48 solution tests, 11 shop checks, 11 learning-workspace checks, 6 API/deadline/reset checks |
+| `npm run test:browsers` | Exit 0; **8 passed in 9.8 seconds**, exercising Lab 18 learner/solution files in Chromium and Firefox |
+| `npm run test:critical` | Exit 0; **2 passed in 2.3 seconds**, selecting the intended @critical purchase and lost-response learner checks |
+| Visual references | Explicit initial generation produced two 64 × 24 PNGs; both inspected as the intended empty/filled two-colour indicators; later default comparison runs passed without updating them |
+| Accessibility | Pinned @axe-core/playwright **4.14.0** scans passed for both inspected main-region states in learner and solution projects; keyboard entry/empty-result observations also passed |
+| JavaScript syntax | Server, practice API, browser controller, workspace client and learning controller passed `node --check` |
+| Lesson consistency | **24/24** guides preserve the lab template's section order; **148** relative Markdown links resolve; no exercise TODO implementations remain |
+| Workflow source | Ruby YAML parser accepted `.github/workflows/playwright-atlas.yml`; read-only contents permission, bounded job and no deployment operation verified from source |
+| Dependency installation | The official axe wrapper and axe-core installed with pinned lockfile; npm reported zero vulnerabilities in the installed nine-package tree |
+| Diff and preservation | `git diff --check` passed; exact 88-path scope and 415 unchanged files verified before staging |
+
+Earlier incremental complete runs passed 117 checks and then 124 checks as the regression package grew. The final result above includes the completed-example wording updates to the seven original guides. The Firefox and selection commands ran before the final full run; the final local HTML report therefore contains the entire 124-check review package. Generated reports/attachments, traces, screenshots and runtime workspaces are excluded from commits. Lab 16 explicitly retains successful diagnostic traces, and all projects use zero retries.
+
+### Delivered boundaries and review limits
+
+Labs 4–7 now have completed learner implementations. Labs 8–24 each include a distinct lesson, two authored learner tests and separate solutions. Shared code adds test-scoped workspace ownership/teardown, typed factories and a deliberately small cart abstraction. The browser workspace exposes all 24 labs through collapsible stage groups and can create disposable advanced manual state.
+
+The loopback server offers explicit in-memory workspace/cart/session/order/fault APIs; it does not write files or run shell commands through HTTP. Advanced sign-in uses a fictional HttpOnly cookie, with authentication-state reuse tested against a fresh-context counterexample. Checkout supports controlled 402/503 outcomes, delayed confirmation and ambiguous lost responses. One four-second deadline covers submission, pending fetches and polling. Reusing a request identity returns one order; confirmed quantity consumption occurs once and preserves later additions. Tests establish these stated invariants, including unresolved submission and reset cancellation.
+
+The browser reservation clock is independent of the server order clock. Tiny solid-colour visual references do not establish whole-page design correctness. Axe results and one keyboard interaction are not full accessibility conformance. Chromium/Firefox coverage in Lab 18 is not real-device coverage or whole-suite cross-engine evidence. Simulated checkout does not prove real authentication, payments, tax, stock, distributed settlement or production idempotency. All capstone skill assessment and independent publication review remain outstanding.
+
+### CI and local review delivery
+
+The root workflow runs the complete authored track on Ubuntu 24.04 with Node.js 24.20.0 and Chromium/Firefox, uploads the full report before a browser selection can overwrite it, and retains evidence for 14 days even after failure. The official actions/checkout, setup-node and upload-artifact v7 documentation was checked. Workflow definition/local PASS are separate from a subsequently observed GitHub Actions result; **no remote CI outcome is pre-claimed in this pre-push record**.
+
+The GitHub Actions public read API was reachable and showed no prior runs before this workflow was pushed. The old agent-owned preview on port 4179 was restarted with the new routes. The user's original port-4178 process was left running. Review URL: `http://127.0.0.1:4179/learn`; the ordinary setup remains `npm start` on 4178 after restarting an older server. In-memory workspaces are intentionally lost on restart; browser learning notes remain origin-local.
+
+### Exact current source identity
+
+The following **104 Git blob IDs** cover all 103 companion files other than this validation record plus the root CI workflow. This avoids self-reference. The pre-change companion identity is reproducible with `git ls-tree -r 215d3fa9fdd4fe93bc5fdfcc94fabdd159f6bc15 -- labs/playwright-atlas`; the root workflow did not exist there. Manifest format: UTF-8 `blob-id`, two spaces, repository-relative path, LF; sorted paths. SHA-256:
+
+`e0b2772ea4c10f9baa3db6a96d3690104e57aa4234a02d753cfaffc0563ea254`
+
+```text
+878f3ae792b8706c15780ead50142b6f462fcb2c  .github/workflows/playwright-atlas.yml
+50e16b7fc22dc01bd1b3c191fc8d008cc457e24a  labs/playwright-atlas/.gitignore
+f17f3582b76851060752475dca60c403bc5313cc  labs/playwright-atlas/README.md
+b9cfc96a44d91fc4907e2f35e7621847c3b67b96  labs/playwright-atlas/ROADMAP.md
+de4e6ce106802ac00d6b38df2754535da1128cb0  labs/playwright-atlas/SCOPE.md
+9ee44f93bea2c9fbca13e296c502f4c08de4adb6  labs/playwright-atlas/app/app.js
+292fbb3ebf3457acdd79dc887a4fd82f0edce213  labs/playwright-atlas/app/index.html
+638e96f8ce6c4229d39e5c5ff4b4c9d950bf47a4  labs/playwright-atlas/app/learn.css
+36e9d0167812a49a33496b141fe95bc08cd84393  labs/playwright-atlas/app/learn.html
+9c9cac71caf2e7cee066483c6747921f11fa0e05  labs/playwright-atlas/app/learn.js
+74b47fb6aae94e8f948f021decdd6ff78fbc01d2  labs/playwright-atlas/app/lesson-renderer.js
+0aad26ee6e5870ce39e74b721225ff98d74b2d5a  labs/playwright-atlas/app/products.json
+7884feef3f5333b6c6755b254a7bcc2e357f36ea  labs/playwright-atlas/app/styles.css
+d1444234b23ceef516ab3ec65a4fbaf0e120d50f  labs/playwright-atlas/app/workspace-client.js
+ba4e1dc0db4add43e2dbc5b90c7e50853bf22fc2  labs/playwright-atlas/bridge/README.md
+d858d012268300e58ac5a9d47b5a306e7ff63bf2  labs/playwright-atlas/bridge/essentials.ts
+e3dc319474126787037752b1c32495336ab31990  labs/playwright-atlas/checks/learning.spec.ts
+0c9ad2bce4eeeb2e029d52f2a10db7b112ae2f7e  labs/playwright-atlas/checks/simulator.spec.ts
+4394c3fc84097c769642cc69ccbf17c79a731a8e  labs/playwright-atlas/checks/workspaces.spec.ts
+1a05f0720341f6860dcd91db2bc28f591c791872  labs/playwright-atlas/ci/README.md
+4b005cd5e984f951f54531b84df98f33b44f1dfb  labs/playwright-atlas/exercises/01-login.spec.ts
+c5b02879122114e97bdeea1d4394fa53dad4d085  labs/playwright-atlas/exercises/02-search.spec.ts
+2dc5657706575639d1459d322c2626c292026fbe  labs/playwright-atlas/exercises/03-cart.spec.ts
+3054c807e4a451f702e49811b7b18f1038d426c9  labs/playwright-atlas/exercises/04-navigation.spec.ts
+f0a56b5a4a98ee33131f13a2bd6f65d779cfa72c  labs/playwright-atlas/exercises/05-validation.spec.ts
+5203566a4264b55ad3256ef356710fa7f5dde6a1  labs/playwright-atlas/exercises/06-locators.spec.ts
+0c623eeec1389fda03809afa611250370bcbb101  labs/playwright-atlas/exercises/07-async.spec.ts
+b889037a3eb0eccdd70b7b59be8fb9eafe0942a3  labs/playwright-atlas/exercises/08-fixtures.spec.ts
+1b723fcd2bec53b8235f21c80e45e204c465a256  labs/playwright-atlas/exercises/09-data-factories.spec.ts
+00d48ecd34a0d7536a46a671f0c5b1f865fa99c8  labs/playwright-atlas/exercises/10-authentication-state.spec.ts
+5d807aecbc6da73c38003852f3a840cb7a2d8667  labs/playwright-atlas/exercises/11-api-setup.spec.ts
+bbead03c306f09d945f1e8bf666a9e7aee40e52b  labs/playwright-atlas/exercises/12-cleanup.spec.ts
+586406477a9da450aefc0dd6baa16df6816c83b7  labs/playwright-atlas/exercises/13-http-errors.spec.ts
+dbda3152cd0a10360de99e6e656e26cd745fa469  labs/playwright-atlas/exercises/14-slow-dependencies.spec.ts
+9a5e94a5b88441a3297aac17c823a8f1834111d0  labs/playwright-atlas/exercises/15-clock-control.spec.ts
+d4ef719f79684aa807890770a0d7054fa434d92f  labs/playwright-atlas/exercises/16-trace-triage.spec.ts
+f0f20597bad64fd2265ba079579d6bddb789a2d0  labs/playwright-atlas/exercises/17-parallel-isolation.spec.ts
+0ad5eaa16e7427995bc4e84a4d9fdc7cce47b136  labs/playwright-atlas/exercises/18-browser-projects.spec.ts
+265fe9d40792b27f9aab36c3125f6d2486d0445b  labs/playwright-atlas/exercises/19-ci-artifacts.spec.ts
+7cca952e9ba953a428ed93ce60b2052f3dd10da9  labs/playwright-atlas/exercises/20-visual-checks.spec.ts
+f6feab4ecc0de63547488502e08e6cfb41ef5409  labs/playwright-atlas/exercises/21-accessibility.spec.ts
+c438de53fa1be066404fe9172d5e24c8bc88589a  labs/playwright-atlas/exercises/22-risk-selection.spec.ts
+f301da4e709e44fc66deb7f422b765e03f060dc6  labs/playwright-atlas/exercises/23-maintenance.spec.ts
+5d735f770547104c12d3cbb4b6d965e2d0bdf8e9  labs/playwright-atlas/exercises/24-incident-capstone.spec.ts
+c10863c5d9b67085555d031b3ed4a24843489db6  labs/playwright-atlas/fixtures/atlas.ts
+c3de225ed18ca5e6ff79143eabdd02c92a68e039  labs/playwright-atlas/fixtures/cart-panel.ts
+287c1b7ece1e34185bf00b78ee76f506ef0dc74a  labs/playwright-atlas/fixtures/data.ts
+26c49ecfe2f9235bd56f6a619ee05f557015cfa4  labs/playwright-atlas/learning-content.mjs
+4eeaab117462658fe5ed00a668a569135a2ee843  labs/playwright-atlas/lessons/01-login.md
+06bea1f9a6d7371f1b70f1d6747f6c4a868dbcc2  labs/playwright-atlas/lessons/02-search.md
+1863fac161a4b2649dd4d17d540b7d215f08406b  labs/playwright-atlas/lessons/03-cart.md
+45d30a8a3d0c3d6165228a59d5ea2e3256afbcf8  labs/playwright-atlas/lessons/04-navigation.md
+e3e12a78efb2e60c49d8781d88384943bed6b7f1  labs/playwright-atlas/lessons/05-validation.md
+09f21966eceef1810f0d085ea8b5612255ab3669  labs/playwright-atlas/lessons/06-locators.md
+c72158b59455b08fa0ede7b95268d4c232e6ca52  labs/playwright-atlas/lessons/07-async.md
+1a9370bbef2c903be943e98387c4a0d5c4d72911  labs/playwright-atlas/lessons/08-fixtures.md
+ca7dfaeffe8b7d7701b49a13a08031a7c0d60811  labs/playwright-atlas/lessons/09-data-factories.md
+0418a0543c882f003af5b74edf154993d1ed9355  labs/playwright-atlas/lessons/10-authentication-state.md
+d7f1f14879e60b1dab0f75c5c9022300b0e8dcf9  labs/playwright-atlas/lessons/11-api-setup.md
+3cd41b233e43bc8d4f3dfb03bd8a69d567d25e67  labs/playwright-atlas/lessons/12-cleanup.md
+d27e7565ae86c069694978e58ed86e874a47bae8  labs/playwright-atlas/lessons/13-http-errors.md
+45c5120ab44e2c5fa904b68997d2bb3bc511f0b9  labs/playwright-atlas/lessons/14-slow-dependencies.md
+7b3d24b49b47eb0828f726c3c97bc20da4a1662b  labs/playwright-atlas/lessons/15-clock-control.md
+566c7d99c7392f2655204fc0cd6ca6b6efa167dc  labs/playwright-atlas/lessons/16-trace-triage.md
+9028c476d1c56bf9212f0aebc99ee55916d9f262  labs/playwright-atlas/lessons/17-parallel-isolation.md
+cc4fa43849745169fa3fdeb59ca837c97d76a0ea  labs/playwright-atlas/lessons/18-browser-projects.md
+0cfc8dd5e5d41c63d48a0f8eac18e38c7890a928  labs/playwright-atlas/lessons/19-ci-artifacts.md
+055a8391d4a6217e7208bf401862e29676e86504  labs/playwright-atlas/lessons/20-visual-checks.md
+b15abd9163907352c0c845ee6c66adc8715e4b5a  labs/playwright-atlas/lessons/21-accessibility.md
+1fa7a1c1fd5da71aadb49c3184a7accd9d14a427  labs/playwright-atlas/lessons/22-risk-selection.md
+0678f39cb12ede0b2fa7ebc1ac383dd073592f80  labs/playwright-atlas/lessons/23-maintenance.md
+9dc9c1eb3276843f76349f428121308722b452d3  labs/playwright-atlas/lessons/24-incident-capstone.md
+1f5614ac5d10f4f33ce796047d14ee4f550a8ada  labs/playwright-atlas/package-lock.json
+a338bd0a6130899319f7c161ddbab0645ab5f9d9  labs/playwright-atlas/package.json
+4f0a35192371a1c969e063af98b47237d2aef5be  labs/playwright-atlas/playwright.config.ts
+8a20f1a345f513b1b823b572ae6024209ee589ee  labs/playwright-atlas/server-api.mjs
+6b6515772de604bd0bc667882471a6f5faa72cd3  labs/playwright-atlas/server.mjs
+56b7a849b0a1b26ad977e5c727b435abe1766de9  labs/playwright-atlas/solutions/01-login.spec.ts
+6ff9a8e765d2003b9a6ae148d182350019046636  labs/playwright-atlas/solutions/02-search.spec.ts
+72c25bbd69960d969d03160f4f24e4c78318cca5  labs/playwright-atlas/solutions/03-cart.spec.ts
+63dcfa4893da0f1c807f5ff0c837d296fa2ec8a0  labs/playwright-atlas/solutions/04-navigation.spec.ts
+ec76f5569b0ba59f0b354f7105d31a1082e8e823  labs/playwright-atlas/solutions/05-validation.spec.ts
+42a232fa6241e0230a3fa3a07c5ce66c3ef592cf  labs/playwright-atlas/solutions/06-locators.spec.ts
+6bf3da9a505874c567e91e33589fee009bd60e7c  labs/playwright-atlas/solutions/07-async.spec.ts
+44bb7806571c910d083733e2d32a672cf4fae103  labs/playwright-atlas/solutions/08-fixtures.spec.ts
+f80abf62b9208fdf4d32ec5bc996c137034f748d  labs/playwright-atlas/solutions/09-data-factories.spec.ts
+0e1f5e74f19ccaffd06c559a3426d45f1aa6d062  labs/playwright-atlas/solutions/10-authentication-state.spec.ts
+5d4bfdf5dfddf917e13a58677bdca4acca32b6a7  labs/playwright-atlas/solutions/11-api-setup.spec.ts
+2e026ca84f8d10b84799b2c9d7d9d04288547aae  labs/playwright-atlas/solutions/12-cleanup.spec.ts
+231ebb3fd542903a61f61d0b633989ec60401d78  labs/playwright-atlas/solutions/13-http-errors.spec.ts
+e45bd17f40e688e32d77d7b1f024aa86c3a78390  labs/playwright-atlas/solutions/14-slow-dependencies.spec.ts
+6d431ec0d2d9e52219de96f2dc0379e7b501dc16  labs/playwright-atlas/solutions/15-clock-control.spec.ts
+c5bb756749860a763d813e6d808ae3607a01c103  labs/playwright-atlas/solutions/16-trace-triage.spec.ts
+ed373657e81801ffde5b5d068dbe8e5df3dd1225  labs/playwright-atlas/solutions/17-parallel-isolation.spec.ts
+cd5bb78b9422ba7015fe32eefd077f7e53718f89  labs/playwright-atlas/solutions/18-browser-projects.spec.ts
+aebf21adec0b778fee30ecd3a1e0560ab5bfd093  labs/playwright-atlas/solutions/19-ci-artifacts.spec.ts
+095909df427eafe59868b1e3d24345d22c7fe63a  labs/playwright-atlas/solutions/20-visual-checks.spec.ts
+fca6f676783bb77ced2caadde0df8b0e561b7f58  labs/playwright-atlas/solutions/21-accessibility.spec.ts
+7b715726e985b10f99db4c57a87181176f7393dd  labs/playwright-atlas/solutions/22-risk-selection.spec.ts
+21628f23b7d78caafadb9616380f16f42a2de771  labs/playwright-atlas/solutions/23-maintenance.spec.ts
+e236f7dc2834ff4ed07d986e448665e23847ef12  labs/playwright-atlas/solutions/24-incident-capstone.spec.ts
+5b8385b00838317dfb72236e7255a9926f643d27  labs/playwright-atlas/tsconfig.json
+b4f3199ddaa323be54d91aac5b9398613727919d  labs/playwright-atlas/visual/empty-indicator.png
+78a300d82f4498e7f997b972a2d8c28162b57ae5  labs/playwright-atlas/visual/filled-indicator.png
+```
+
+Commit/push are authorised for this exact package after explicit-path staging and final preservation checks. No force push, release/tag, live deployment, finding closure or lifecycle advancement is included. User review follows delivery; author automation is not that review.

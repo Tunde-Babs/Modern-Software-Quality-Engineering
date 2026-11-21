@@ -12,6 +12,7 @@ export default defineConfig({
   workers: 2,
   timeout: 15_000,
   expect: { timeout: 5_000 },
+  snapshotPathTemplate: '{testDir}/visual/{arg}{ext}',
   reporter: [['list'], ['html', { open: 'never' }]],
   use: {
     baseURL,
@@ -32,5 +33,7 @@ export default defineConfig({
     { name: 'learner', testMatch: 'exercises/**/*.spec.ts' },
     { name: 'solutions', testMatch: 'solutions/**/*.spec.ts' },
     { name: 'simulator', testMatch: 'checks/**/*.spec.ts' },
+    { name: 'firefox-learner', testMatch: 'exercises/18-browser-projects.spec.ts', use: { ...devices['Desktop Firefox'], channel: undefined } },
+    { name: 'firefox-solutions', testMatch: 'solutions/18-browser-projects.spec.ts', use: { ...devices['Desktop Firefox'], channel: undefined } },
   ],
 });

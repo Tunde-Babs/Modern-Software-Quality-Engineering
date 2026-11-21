@@ -30,11 +30,12 @@ function stateFor(id) {
 function renderProgress() {
   const count = manifest.lessons.filter(lesson => stateFor(lesson.id).stage === 'practised').length;
   $('progress-count').textContent = `${count} / ${manifest.lessons.length}`;
+  $('track-progress').max = manifest.lessons.length;
   $('track-progress').value = count;
   for (const lesson of manifest.lessons) {
     const link = document.querySelector(`[data-lesson="${lesson.id}"]`);
     link.querySelector('.lab-state').textContent = stages[stateFor(lesson.id).stage];
-    if (activeLesson?.id === lesson.id) link.setAttribute('aria-current', 'page');
+    if (activeLesson?.id === lesson.id) { link.setAttribute('aria-current', 'page'); link.closest('details').open = true; }
     else link.removeAttribute('aria-current');
   }
 }
@@ -61,6 +62,17 @@ function resolveLink(target) {
   return null;
 }
 function renderNavigation() {
+  const stages = [
+    [1, 3, 'Beginner · Labs 1–3'], [4, 7, 'Browser foundations · Labs 4–7'],
+    [8, 12, 'Reliable automation · Labs 8–12'], [13, 16, 'Investigation · Labs 13–16'],
+    [17, 21, 'Advanced operation · Labs 17–21'], [22, 24, 'Capstone · Labs 22–24'],
+  ];
+  const lists = stages.map(([start, end, label]) => {
+    const item = document.createElement('li'), details = document.createElement('details'), summary = document.createElement('summary'), list = document.createElement('ol');
+    details.className = 'stage-group'; summary.textContent = label; list.className = 'stage-labs';
+    list.start = start; details.append(summary, list); item.append(details); $('lab-list').append(item);
+    return { start, end, list };
+  });
   for (const [index, lesson] of manifest.lessons.entries()) {
     const li = document.createElement('li'), link = document.createElement('a');
     link.href = `#${lesson.id}`; link.className = 'lab-link'; link.dataset.lesson = lesson.id;
@@ -68,7 +80,8 @@ function renderNavigation() {
     const text = document.createElement('span'), name = document.createElement('span'), stage = document.createElement('span');
     name.className = 'lab-name'; name.textContent = lesson.title.replace(/^Lab \d+ — /, '');
     stage.className = 'lab-state';
-    text.append(name, stage); link.append(number, text); li.append(link); $('lab-list').append(li);
+    text.append(name, stage); link.append(number, text); li.append(link);
+    lists.find(group => index + 1 >= group.start && index + 1 <= group.end).list.append(li);
   }
   renderProgress();
 }
@@ -119,7 +132,7 @@ async function selectDocument(focus = false) {
   $('interaction-status').textContent = '';
   $('lesson-title').textContent = document.title;
   $('lesson-objective').textContent = activeLesson?.objective ?? 'A small bridge from exploring the shop to explaining your own browser checks.';
-  $('lesson-kicker').textContent = activeLesson ? `LAB ${manifest.lessons.indexOf(activeLesson) + 1} OF 7 · DRAFT COMPANION` : 'GET READY TO PRACTISE · DRAFT COMPANION';
+  $('lesson-kicker').textContent = activeLesson ? `LAB ${manifest.lessons.indexOf(activeLesson) + 1} OF ${manifest.lessons.length} · DRAFT COMPANION` : 'GET READY TO PRACTISE · DRAFT COMPANION';
   $('lesson-duration').textContent = activeLesson?.duration ?? (id === 'bridge' ? '20–30 min' : 'Reference');
   $('lesson-content').replaceChildren(); $('lesson-content').setAttribute('aria-busy', 'true');
   $('solution-panel').hidden = true; $('solution-code').textContent = '';
@@ -128,6 +141,7 @@ async function selectDocument(focus = false) {
   for (const element of ['attempt-tools', 'progress-tools', 'solution-tools']) $(element).hidden = !activeLesson;
   $('support-tools').hidden = !!activeLesson;
   if (activeLesson) {
+    $('advanced-tools').hidden = Number(id.slice(0, 2)) < 8;
     $('exercise-file').textContent = activeLesson.exercise;
     $('run-command').textContent = `npm test -- ${id} --headed`;
     $('debug-command').textContent = `npm test -- ${id} --debug`;
@@ -139,7 +153,7 @@ async function selectDocument(focus = false) {
     $('previous-lesson').href = `#${manifest.lessons[index - 1]?.id ?? 'bridge'}`;
     $('previous-lesson').textContent = index ? `← Lab ${index}` : '← TypeScript bridge';
     $('next-lesson').href = `#${manifest.lessons[index + 1]?.id ?? 'roadmap'}`;
-    $('next-lesson').textContent = index < 6 ? `Next: Lab ${index + 2} →` : 'Next: learning roadmap →';
+    $('next-lesson').textContent = index < manifest.lessons.length - 1 ? `Next: Lab ${index + 2} →` : 'Next: learning roadmap →';
   } else {
     $('previous-lesson').href = '#setup'; $('previous-lesson').textContent = '← Setup';
     $('next-lesson').href = '#01-login'; $('next-lesson').textContent = 'Start Lab 1 →';
@@ -163,6 +177,18 @@ async function selectDocument(focus = false) {
     }
   } finally { if (version === selectionVersion) $('lesson-content').setAttribute('aria-busy', 'false'); }
 }
+$('create-practice').addEventListener('click', async () => {
+  $('create-practice').disabled = true;
+  try {
+    const response = await fetch('/api/workspaces', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ label: 'Manual advanced practice' }) });
+    if (!response.ok) throw new Error('Creation failed');
+    const { id } = await response.json();
+    $('advanced-shop-link').href = `/?workspace=${encodeURIComponent(id)}`;
+    $('advanced-shop-link').hidden = false;
+    $('advanced-status').textContent = 'Workspace ready. Open it above; demo sign-in enables practice checkout.';
+  } catch { $('advanced-status').textContent = 'Could not create practice state. Check that the updated local server is running.'; }
+  finally { $('create-practice').disabled = false; }
+});
 $('practice-state').addEventListener('change', saveProgress);
 $('evidence-note').addEventListener('input', saveProgress);
 document.querySelector('.skip').addEventListener('click', event => {

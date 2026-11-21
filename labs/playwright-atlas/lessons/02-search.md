@@ -26,7 +26,7 @@ Check matching and empty results without relying on product position. Use only t
 
 ## Tasks
 
-1. Open `exercises/02-search.spec.ts`. Replace the placeholder errors. In each test, first assert that four product articles are present, allowing the catalog to finish loading.
+1. Open `exercises/02-search.spec.ts`. Review the completed implementations before changing an input. In each test, first assert that four product articles are present, allowing the catalog to finish loading.
 
 2. In the matching test, fill Search products with `BACKPACK`. Assert exactly one article remains and its accessible name is `Atlas Backpack`.
 
@@ -56,7 +56,7 @@ Add a clear-query test and prove that search does not change an existing cart.
 
 ## Validation
 
-Run `npm test -- 02-search`. Target: **2 passed** in the learner project. A TODO failure means the exercise is unfinished. Calculate your variation's expectation before observing the shop. Explain a failure before declaring the lab done.
+Run `npm test -- 02-search`. Target: **2 passed** in the learner project. The supplied code is an authored example; repeat a variation independently before marking it practised. Calculate your variation's expectation before observing the shop. Explain a failure before declaring the lab done.
 
 After attempting the work, compare [the solution](../solutions/02-search.spec.ts). Run `npm run test:solutions -- 02-search` only to check the environment. A passing solution does not complete your attempt.
 

@@ -1,0 +1,58 @@
+name: Atlas Playwright labs
+on:
+  push:
+    paths:
+      - 'labs/playwright-atlas/**'
+      - '.github/workflows/playwright-atlas.yml'
+  pull_request:
+    paths:
+      - 'labs/playwright-atlas/**'
+      - '.github/workflows/playwright-atlas.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  authored-track:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    defaults:
+      run:
+        working-directory: labs/playwright-atlas
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '24.20.0'
+          cache: npm
+          cache-dependency-path: labs/playwright-atlas/package-lock.json
+      - run: npm ci
+      - run: npx playwright install --with-deps chromium firefox
+      - name: Validate the complete authored track
+        id: full
+        run: npm run verify
+      - name: Retain complete-track evidence
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: atlas-complete-track
+          path: |
+            labs/playwright-atlas/playwright-report/
+            labs/playwright-atlas/test-results/
+            labs/playwright-atlas/artifacts/
+          retention-days: 14
+          if-no-files-found: warn
+      - name: Exercise Chromium and Firefox projects
+        id: browsers
+        run: npm run test:browsers
+      - name: Retain browser-project evidence
+        if: always() && steps.browsers.outcome != 'skipped'
+        uses: actions/upload-artifact@v7
+        with:
+          name: atlas-browser-projects
+          path: |
+            labs/playwright-atlas/playwright-report/
+            labs/playwright-atlas/test-results/
+          retention-days: 14
+          if-no-files-found: warn

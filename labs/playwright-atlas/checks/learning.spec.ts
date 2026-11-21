@@ -17,10 +17,13 @@ test('opens the canonical login brief, progressive hints and the implementation 
   await expect(page.locator('#interaction-status')).toContainText(/Command copied|Copy this command/);
 });
 
-test('all seven lessons and supporting guides are reachable with correct commands', async ({ page }) => {
+test('all 24 lessons and supporting guides are reachable with correct commands', async ({ page }) => {
   await page.goto('/learn');
-  await expect(labNav(page).locator('.lab-link')).toHaveCount(7);
-  const ids = ['01-login', '02-search', '03-cart', '04-navigation', '05-validation', '06-locators', '07-async'];
+  await expect(labNav(page).locator('.lab-link')).toHaveCount(24);
+  for (const summary of await labNav(page).locator('.stage-group > summary').all()) {
+    if ((await summary.locator('..').getAttribute('open')) === null) await summary.click();
+  }
+  const ids = ["01-login", "02-search", "03-cart", "04-navigation", "05-validation", "06-locators", "07-async", "08-fixtures", "09-data-factories", "10-authentication-state", "11-api-setup", "12-cleanup", "13-http-errors", "14-slow-dependencies", "15-clock-control", "16-trace-triage", "17-parallel-isolation", "18-browser-projects", "19-ci-artifacts", "20-visual-checks", "21-accessibility", "22-risk-selection", "23-maintenance", "24-incident-capstone"];
   for (const [index, id] of ids.entries()) {
     await labNav(page).locator(`a[href="#${id}"]`).click();
     await expect(page.getByRole('heading', { level: 1 })).toContainText(`Lab ${index + 1} —`);
@@ -43,7 +46,7 @@ test('notes and reported practice persist independently across labs and reloads'
   await expect(page.locator('#exercise-file')).toHaveText('exercises/01-login.spec.ts');
   await page.getByLabel('What happened, and what remains unknown?', { exact: true }).fill('My variation rejected an unknown email; real authentication is untested.');
   await page.getByLabel('Your reported stage', { exact: true }).selectOption('practised');
-  await expect(page.locator('#progress-count')).toHaveText('1 / 7');
+  await expect(page.locator('#progress-count')).toHaveText('1 / 24');
   await labNav(page).locator('a[href="#02-search"]').click();
   await expect(page.getByLabel('Your reported stage', { exact: true })).toHaveValue('not-started');
   await expect(page.getByLabel('What happened, and what remains unknown?', { exact: true })).toHaveValue('');
@@ -53,7 +56,7 @@ test('notes and reported practice persist independently across labs and reloads'
   await expect(page.getByLabel('Your reported stage', { exact: true })).toHaveValue('practised');
   await expect(page.getByText('Saved in this browser. Self-reported, not a test result.', { exact: true })).toBeVisible();
   await page.getByLabel('Your reported stage', { exact: true }).selectOption('in-progress');
-  await expect(page.locator('#progress-count')).toHaveText('0 / 7');
+  await expect(page.locator('#progress-count')).toHaveText('0 / 24');
 });
 
 test('source views are read-only and worked solutions load only after requesting them', async ({ page }) => {
@@ -160,11 +163,26 @@ test('learning workspace is readable on mobile and offers keyboard navigation', 
 test('teaching routes expose only declared read-only content', async ({ request }) => {
   const manifest = await request.get('/learning/manifest.json');
   expect(manifest.ok()).toBe(true);
-  expect((await manifest.json()).lessons).toHaveLength(7);
-  for (const path of ['/learning/SCOPE.md', '/learning/../../AGENTS.md', '/learning/solutions/08-fixtures.spec.ts', '/server.mjs']) {
+  expect((await manifest.json()).lessons).toHaveLength(24);
+  for (const path of ['/learning/SCOPE.md', '/learning/../../AGENTS.md', '/learning/solutions/25-not-delivered.spec.ts', '/server.mjs']) {
     expect((await request.get(path)).status()).toBe(404);
   }
   expect((await request.post('/learning/exercises/01-login.spec.ts', { data: 'replace' })).status()).toBe(405);
   expect((await request.head('/learn')).status()).toBe(200);
   expect((await request.get('/learning/exercises/01-login.spec.ts')).headers()['x-content-type-options']).toBe('nosniff');
+});
+
+
+test('an advanced guide creates a disposable manual practice workspace', async ({ page, request }) => {
+  await page.goto('/learn#08-fixtures');
+  await page.getByRole('button', { name: 'Create advanced practice', exact: true }).click();
+  await expect(page.locator('#advanced-status')).toContainText('Workspace ready.');
+  const href = await page.getByRole('link', { name: 'Open your practice workspace ↗', exact: true }).getAttribute('href');
+  const id = new URL(href!, 'http://practice.invalid').searchParams.get('workspace');
+  try {
+    expect((await request.get(`/api/workspaces/${id}/state`)).ok()).toBe(true);
+    await page.goto(href!);
+    await expect(page.getByRole('region', { name: 'Practice checkout', exact: true })).toBeVisible();
+    await expect(page.getByRole('button', { name: 'Place practice order', exact: true })).toBeDisabled();
+  } finally { await request.delete(`/api/workspaces/${id}`); }
 });

@@ -11,9 +11,9 @@
   <div class="workbench">
     <aside class="sidebar" aria-label="Learning track">
       <p class="eyebrow">YOUR PLAYWRIGHT PATH</p><h2>Learn by building.</h2><p class="sidebar-copy">One shop. Small experiments.<br>Evidence you can explain.</p>
-      <div class="progress-card"><div class="progress-heading"><span>Reported progress</span><strong id="progress-count">0 / 7</strong></div><progress id="track-progress" max="7" value="0" aria-label="Labs marked practised"></progress><p>Saved in this browser. Self-reported, not a test result.</p></div>
+      <div class="progress-card"><div class="progress-heading"><span>Reported progress</span><strong id="progress-count">0 / 24</strong></div><progress id="track-progress" max="24" value="0" aria-label="Labs marked practised"></progress><p>Saved in this browser. Self-reported, not a test result.</p></div>
       <nav aria-label="Lab navigation"><a class="bridge-link" href="#bridge">00 <span>TypeScript bridge</span></a><ol id="lab-list"></ol></nav>
-      <div class="track-footer"><a href="#setup">Setup &amp; troubleshooting</a><a href="#roadmap">What comes after Lab 7?</a></div>
+      <div class="track-footer"><a href="#setup">Setup &amp; troubleshooting</a><a href="#roadmap">Review the complete track</a></div>
     </aside>
     <main id="workspace">
       <p class="eyebrow" id="lesson-kicker">BROWSER FOUNDATIONS · DRAFT COMPANION</p>
@@ -23,10 +23,10 @@
       <div class="lesson-grid">
         <article class="guide-card" aria-label="Lesson guide"><div class="card-heading"><h2>Today's brief</h2><span id="lesson-duration" class="pill">30–45 min</span></div><div id="lesson-content" class="markdown" aria-busy="true"></div></article>
         <aside class="tools" aria-label="Implementation tools">
-          <section class="tool-card" id="attempt-tools"><p class="eyebrow">MAKE IT YOURS</p><h2>Your implementation</h2><p>Edit this file in your code editor:</p><code id="exercise-file" class="file-path"></code><p class="small">Replace the TODO lines with your own actions and assertions. Your exercise files are never changed by this page.</p>
+          <section class="tool-card" id="attempt-tools"><p class="eyebrow">MAKE IT YOURS</p><h2>Your implementation</h2><p>Edit this file in your code editor:</p><code id="exercise-file" class="file-path"></code><p class="small">Review the completed example, then make your own variation in the editor. Your exercise files are never changed by this page.</p>
             <details id="starter-details"><summary>View starter / current exercise</summary><pre><code id="starter-code">Loading source…</code></pre><p class="small">Read-only view of the file on disk. Reopen to refresh after editing.</p></details>
             <div class="command-block"><p class="command-label">Run your attempt in Terminal</p><div class="command-row"><code id="run-command"></code><button type="button" id="copy-run">Copy command</button></div></div>
-            <p class="small">Run from <code>labs/playwright-atlas</code>. The shop can stay open; tests use a separate local server.</p>
+            <p class="small">Run from <code>labs/playwright-atlas</code>. The shop can stay open; tests use a separate local server. Completed examples are supplied for review; repeat with your own variation.</p><div id="advanced-tools" hidden><p class="small">Labs 8–24 use disposable server-backed practice state. Create a separate manual workspace to explore their scenarios.</p><button id="create-practice" type="button" class="secondary">Create advanced practice</button><p><a id="advanced-shop-link" href="/" target="_blank" rel="noopener" hidden>Open your practice workspace ↗</a></p><p id="advanced-status" role="status"></p></div>
             <details><summary>Investigate a failure</summary><p>Open the Playwright inspector:</p><pre><code id="debug-command"></code></pre><p>After the test finishes, open its report:</p><pre><code>npm run report</code></pre><p>A TODO error means the exercise is unfinished. A passing worked solution checks the training environment.</p></details>
           </section>
           <section class="tool-card" id="progress-tools"><p class="eyebrow">PAUSE &amp; EXPLAIN</p><h2>Your evidence note</h2><label for="practice-state">Your reported stage</label><select id="practice-state"><option value="not-started">Not started</option><option value="in-progress">Working on it</option><option value="practised">Practised independently</option></select><label for="evidence-note">What happened, and what remains unknown?</label><textarea id="evidence-note" rows="5" placeholder="Risk: …&#10;Command and outcome: …&#10;My variation: …&#10;Limit of this evidence: …"></textarea><p class="small">Mark practised after running your own checks, trying a variation and explaining the result. This page does not run or grade tests.</p><p id="save-status" class="save-status" role="status"></p></section>
@@ -38,6 +38,6 @@
       <p id="interaction-status" role="status" class="interaction-status"></p>
     </main>
   </div>
-  <footer>Local learning workspace <span>Labs 1–7 available · Labs 8–24 planned · Draft companion</span></footer>
+  <footer>Local learning workspace <span>Labs 1–24 authored · Review and practise independently · Draft companion</span></footer>
 </body>
 </html>

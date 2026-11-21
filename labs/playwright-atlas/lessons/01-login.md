@@ -26,9 +26,9 @@ Verify that valid credentials reach the signed-in state and invalid credentials 
 
 ## Tasks
 
-1. Run `npm test -- 01-login` once. Read the TODO failures, then open `exercises/01-login.spec.ts`.
+1. Run `npm test -- 01-login` once. Open and review the completed guided implementation in `exercises/01-login.spec.ts`.
 
-2. In the first test, replace the placeholder error. Fill Email with `learner@atlas.test` and Password with `AtlasPractice123!`. Click Sign in. Assert `Welcome, Alex!` is visible and Sign in is hidden.
+2. Review the first completed test. Fill Email with `learner@atlas.test` and Password with `AtlasPractice123!`. Click Sign in. Assert `Welcome, Alex!` is visible and Sign in is hidden.
 
 3. In the second test, use the same email and `incorrect-password`. Assert `Email or password is incorrect.` is visible and the welcome message is hidden.
 
@@ -56,7 +56,7 @@ Enable Sign-in service unavailable manually, then try valid credentials. Explain
 
 ## Validation
 
-Run `npm test -- 01-login`. Target: **2 passed** in the learner project. A TODO failure means the exercise is unfinished. Calculate your variation's expectation before observing the shop. Explain a failure before declaring the lab done.
+Run `npm test -- 01-login`. Target: **2 passed** in the learner project. The supplied code is an authored example; repeat a variation independently before marking it practised. Calculate your variation's expectation before observing the shop. Explain a failure before declaring the lab done.
 
 After attempting the work, compare [the solution](../solutions/01-login.spec.ts). Run `npm run test:solutions -- 01-login` only to check the environment. A passing solution does not complete your attempt.
 

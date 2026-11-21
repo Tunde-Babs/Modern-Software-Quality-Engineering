@@ -1,28 +1,28 @@
-# Atlas Playwright learning roadmap
+# Atlas Playwright complete learning track
 
-**Status: Draft companion and roadmap.** The bridge and Labs 1–7 are authored with local author validation. Labs 8–24 are planned, not delivered or validated. This companion supplements the approved Part V curriculum; it does not replace it or claim advanced mastery from test counts.
+**Status: all 24 labs authored with runnable exercise and solution implementations, Draft for user review.** Completion here describes delivered teaching material and author execution. It does not establish independent learner mastery, handbook approval or live publication.
 
-Finished the first three labs? Continue with [Lab 4: navigation](lessons/04-navigation.md), then [Lab 5: validation](lessons/05-validation.md), [Lab 6: locator ambiguity](lessons/06-locators.md) and [Lab 7: asynchronous UI](lessons/07-async.md).
+Run `npm start`, open `/learn`, choose a stage and review a lab. Each guide supplies the problem, implementation tasks, progressive hints, a variation, validation, limitations and reflection. Completed examples let you review the whole package now; reproduce a variation independently before marking your own progress.
 
-Run `npm start` and open `/learn` for the guided workspace: the same lesson briefs, hints, exercise source, terminal commands and browser-local practice notes. This facilitates implementing Labs 1–7; it does not add the planned advanced lessons or grade your work.
+| Stage | Delivered labs | Capability to review |
+|---|---|---|
+| Beginner | 1 login, 2 search, 3 cart | Actions, assertions, meaningful outcomes and independent price expectations |
+| Browser foundations | 4 navigation, 5 validation, 6 locator ambiguity, 7 asynchronous UI | History, browser validation, stable scope and observable completion |
+| Reliable automation | 8 fixtures, 9 factories, 10 auth state, 11 API setup, 12 cleanup | Test ownership, explicit data, deliberate session reuse and independent server state |
+| Failure investigation | 13 HTTP errors, 14 slow dependencies, 15 clock control, 16 trace triage | Controlled faults, bounded waits, clock boundaries and diagnostic evidence |
+| Advanced operation | 17 parallel isolation, 18 Chromium/Firefox projects, 19 CI artifacts, 20 visual baselines, 21 accessibility | Trustworthy execution and specialist evidence limits |
+| Capstone | 22 risk-based selection, 23 maintenance, 24 lost-response incident | Execution decisions, small abstractions and an idempotent retry investigation |
 
-| Stage | Labs | Practice | Observable capability |
-|---|---|---|---|
-| Beginner — authored | 1 login; 2 search; 3 cart | Labels, roles, actions, assertions, outcome selection | Write and explain six small checks |
-| Browser foundations — authored | 4 navigation; 5 validation; 6 locator ambiguity; 7 asynchronous UI | Customer flows and observable completion | Navigate history, separate validation boundaries, resolve ambiguity and observe delayed completion without fixed sleeps |
-| Reliable automation — planned | 8 fixtures; 9 data factories; 10 authenticated state; 11 API setup; 12 cleanup | Ownership, lifecycle, boundaries | Run independent tests without shared data |
-| Failure investigation — planned | 13 HTTP errors; 14 slow dependencies; 15 clock control; 16 trace triage | Controlled faults, evidence and root cause | Distinguish a product defect from a test defect |
-| Advanced operation — planned | 17 parallelism; 18 browser projects; 19 CI artifacts; 20 visual checks; 21 accessibility | Feedback cost, diagnostic context, limitations | Choose proportionate execution and explain gaps |
-| Capstone — planned | 22 risk-based selection; 23 maintenance/refactoring; 24 unfamiliar incident | Architecture, prioritisation and communication | Defend a solution using evidence and residual risk |
+## Review path
 
-## How to move quickly
+Start with the [setup and command guide](README.md). Run all learner tests with `npm test`, the whole package with `npm run verify`, and the two-engine Lab 18 selection with `npm run test:browsers`. The default completed examples have two tests per lab, 48 learner checks in total. Solutions are a separate 48-check project.
 
-Use one simulator and one command pattern throughout. Spend roughly 10 minutes understanding a problem, 20–30 minutes attempting it, and 10 minutes explaining the evidence. Advance after you can repeat the skill with a new input without reading the solution. Revisit a weak skill rather than repeating material you can already demonstrate.
+Use the original shop for Labs 1–7. For advanced manual exploration, select Create advanced practice in the workspace; tests create and clean up their own in-memory workspaces. Checkout, authentication and order faults are local simulations. No real payment, identity provider or production integration is claimed.
 
-Use Part II for targeted programming gaps and Part V for the reasoning behind fixtures, determinism, diagnostics and maintenance. Reading the entire handbook is not a prerequisite to the first lab. Later CI implementation and specialist depth should link to the appropriate Parts rather than silently expanding Part V's scope.
+## Independent practice and assessment
 
-## Assess progress
+For each lab, record the command, observed outcome, variation, evidence limit and next question. Review supplied code after predicting its behaviour, then change an input or scenario without reading the solution. A green supplied example is execution evidence, not an independent skill assessment. Keep your progress self-reported.
 
-Record locally for each lab: attempted date, command, observed outcome, variation attempted, evidence limitation and next question. Passing the provided solutions checks the training environment; it does not assess the learner. For the capstone, use an unfamiliar scenario and obtain another person's review of your reasoning. Automated checks are useful evidence, not an independent judgement of mastery.
+For the capstone, investigate the lost-response scenario before reading its implementation and ask another person to review your reasoning. Automation proves stated invariants; independent review evaluates meaning. Browser engines, tiny visual baselines, scanned accessibility states and a CI run each have distinct limits.
 
-Next implementation slice: Labs 8–12, covering fixtures, data factories, authenticated state, API setup and cleanup. This requires a bounded simulator extension for test-data/state interfaces and explicit distinctions between UI simulation and backend evidence. Checkout, real server-side accounts and API mutation do not yet exist. Current delay and catalog failure controls simulate browser-side behaviour only.
+No further lab is represented as planned or delivered by this track. Possible later enrichment—real infrastructure, production identity, distributed payments, broader devices and specialist evaluation—would require a new bounded task rather than a silent extension of these simulations. All authorised 24 lab topics are now supplied.

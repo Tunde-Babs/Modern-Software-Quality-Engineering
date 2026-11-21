@@ -26,9 +26,9 @@ The login form has required fields and an email input. The browser prevents subm
 
 ## Tasks
 
-1. Open `exercises/05-validation.spec.ts`. In the first starter, leave Email blank, fill the valid demo password and click Sign in. Check `valueMissing` on the email input and that the welcome message remains hidden.
+1. Open `exercises/05-validation.spec.ts`. In the first test, leave Email blank, fill the valid demo password and click Sign in. Check `valueMissing` on the email input and that the welcome message remains hidden.
 2. Fill `learner@atlas.test` and submit again. Assert the welcome message becomes visible. This successful control shows the first result was not simply a broken sign-in button.
-3. In the second starter, use `not-an-email` and the valid password. Submit. Assert email `typeMismatch` is true, the welcome message is hidden and the application's incorrect-credentials alert is hidden.
+3. In the second test, use `not-an-email` and the valid password. Submit. Assert email `typeMismatch` is true, the welcome message is hidden and the application's incorrect-credentials alert is hidden.
 4. Change Email to `unknown@atlas.test` and submit. Assert email `valid` is true and the application's `Email or password is incorrect.` alert is visible. A valid email shape does not prove a valid account.
 5. Run `npm test -- 05-validation`. Try the valid email with a blank password as an unseen variation. Predict which input property explains the rejection.
 
@@ -52,7 +52,7 @@ Check a blank password with `validity.valueMissing`. Explain why a browser-valid
 
 ## Validation
 
-Run `npm test -- 05-validation`. Target: **2 passed** in the learner project, plus an explanation and a variation completed without the answer key. A TODO failure means your starter is unfinished.
+Run `npm test -- 05-validation`. Target: **2 passed** in the learner project, plus an explanation and a variation completed without the answer key. The supplied implementation is for review; its passing result is not independent learner assessment.
 
 After attempting the work, compare [the worked solution](../solutions/05-validation.spec.ts). `npm run test:solutions -- 05-validation` checks that answer key; it does not complete or assess your attempt. Run `npm run check` to detect TypeScript errors.
 

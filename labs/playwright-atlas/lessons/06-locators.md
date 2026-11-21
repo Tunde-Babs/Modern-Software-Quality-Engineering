@@ -26,9 +26,9 @@ Every product has an Add to cart button. A page-wide click with that name is amb
 
 ## Tasks
 
-1. Run `npm test -- 06-locators`. In the first starter, wait for four Add to cart buttons with a count assertion. During a temporary experiment, attempt a page-wide Add to cart click and inspect the strict-mode failure. Remove that ambiguous action before completing the test.
+1. Run `npm test -- 06-locators`. In the first test, wait for four Add to cart buttons with a count assertion. During a temporary experiment, attempt a page-wide Add to cart click and inspect the strict-mode failure. Remove that ambiguous action before completing the test.
 2. Scope to the Trail Mug article, then click its Add to cart button. Scope assertions to the Your cart region. Check its Trail Mug line contains one mug at €15.00 and the cart total is €15.00.
-3. In the second starter, create a Trail Mug locator before searching. Wait for four articles, then search for `notebook`. Assert one article remains and the mug locator currently matches zero elements.
+3. In the second test, create a Trail Mug locator before searching. Wait for four articles, then search for `notebook`. Assert one article remains and the mug locator currently matches zero elements.
 4. Clear the query. Use the same named mug locator to add the mug, without recreating it or choosing a positional index. Assert €15.00, then remove the mug by its named button inside Your cart. Assert quantity zero.
 5. Try the same approach with Desk Lamp. Explain why a DOM rebuild does not require caching a browser element handle.
 
@@ -52,7 +52,7 @@ Explain a case where `.first()` would be legitimate, then explain why the produc
 
 ## Validation
 
-Run `npm test -- 06-locators`. Target: **2 passed** in the learner project, plus an explanation and a variation completed without the answer key. A TODO failure means your starter is unfinished.
+Run `npm test -- 06-locators`. Target: **2 passed** in the learner project, plus an explanation and a variation completed without the answer key. The supplied implementation is for review; its passing result is not independent learner assessment.
 
 After attempting the work, compare [the worked solution](../solutions/06-locators.spec.ts). `npm run test:solutions -- 06-locators` checks that answer key; it does not complete or assess your attempt. Run `npm run check` to detect TypeScript errors.
 

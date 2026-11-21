@@ -26,10 +26,10 @@ Reload products can pause for 800 or 1600 milliseconds before fetching the local
 
 ## Tasks
 
-1. Open `exercises/07-async.spec.ts`. In the first starter, wait for four initial articles. Open Practice controls and select Catalog delay `1600`, then click Reload products.
+1. Open `exercises/07-async.spec.ts`. In the first test, wait for four initial articles. Open Practice controls and select Catalog delay `1600`, then click Reload products.
 2. Assert Catalog status says `Loading products…`, Reload products is disabled and Product results has `aria-busy="true"`. Then use a retrying assertion to wait for `Products ready.`. Assert Reload products is enabled and four articles are present.
 3. Add a Trail Mug and assert €15.00. This checks that loading completed into a usable shop. Do not add `waitForTimeout` or retries.
-4. In the second starter, wait for four initial articles. Choose Scenario `catalog-unavailable` and Catalog delay `800`, then reload. Wait for `Products unavailable.`, assert the catalog error is visible and zero product articles remain.
+4. In the second test, wait for four initial articles. Choose Scenario `catalog-unavailable` and Catalog delay `800`, then reload. Wait for `Products unavailable.`, assert the catalog error is visible and zero product articles remain.
 5. Change Scenario to `normal` and reload again. Wait for `Products ready.`, assert the error is hidden and four articles return. Run `npm test -- 07-async`.
 6. Repeat the success check with delay `800` without changing any waits. Explain why its completion condition still works.
 
@@ -53,7 +53,7 @@ Start a delayed failing reload manually, then Reset practice before it finishes.
 
 ## Validation
 
-Run `npm test -- 07-async`. Target: **2 passed** in the learner project, plus an explanation and a variation completed without the answer key. A TODO failure means your starter is unfinished.
+Run `npm test -- 07-async`. Target: **2 passed** in the learner project, plus an explanation and a variation completed without the answer key. The supplied implementation is for review; its passing result is not independent learner assessment.
 
 After attempting the work, compare [the worked solution](../solutions/07-async.spec.ts). `npm run test:solutions -- 07-async` checks that answer key; it does not complete or assess your attempt. Run `npm run check` to detect TypeScript errors.
 

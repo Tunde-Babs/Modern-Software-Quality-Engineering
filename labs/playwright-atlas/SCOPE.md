@@ -154,3 +154,111 @@ Exact allow-list, relative to `labs/playwright-atlas/`:
 - `exercises/03-cart.spec.ts`
 
 Run the TypeScript check and two learner-project cart tests. Other exercises, solutions, lessons, application and edition-review surfaces remain frozen. Prior companion commit/push authorisation continues after explicit-path staging and preservation checks. No independent assessment, review gate, publication, release or deployment is implied.
+
+
+## Complete 24-lab track — frozen before implementation, 2026-11-21
+
+The user explicitly authorised completing the current seven exercises **and building planned Labs 8–24**, for later user review. This package delivers the full track as authored examples, not independent learner mastery or publication acceptance. Controlled local workspace APIs, fixtures, authentication-state simulation, order/fault scenarios, diagnostics, browser projects, CI, visual/accessibility checks and capstone exercises are included. All HTTP state mutations stay in memory; no HTTP shell execution or filesystem writes are added.
+
+Preflight: `feature/first-edition-review`, HEAD `215d3fa9fdd4fe93bc5fdfcc94fabdd159f6bc15`, 0 ahead / 0 behind local upstream; same three worktrees, empty index/companion diff. Existing 25 tracked review modifications and untracked polling tests remain excluded. No agents are delegated. Preservation snapshot: `/tmp/msqe-atlas-full-preservation.json`. Source population: 44 companion files before; expected 104 after, plus one new root CI workflow.
+
+Exact allow-list, repository-relative, allocated before edits:
+
+- `labs/playwright-atlas/SCOPE.md`
+- `labs/playwright-atlas/VALIDATION.md`
+- `labs/playwright-atlas/README.md`
+- `labs/playwright-atlas/ROADMAP.md`
+- `labs/playwright-atlas/package.json`
+- `labs/playwright-atlas/package-lock.json`
+- `labs/playwright-atlas/playwright.config.ts`
+- `labs/playwright-atlas/server.mjs`
+- `labs/playwright-atlas/learning-content.mjs`
+- `labs/playwright-atlas/app/index.html`
+- `labs/playwright-atlas/app/app.js`
+- `labs/playwright-atlas/app/styles.css`
+- `labs/playwright-atlas/app/learn.html`
+- `labs/playwright-atlas/app/learn.js`
+- `labs/playwright-atlas/checks/learning.spec.ts`
+- `labs/playwright-atlas/exercises/04-navigation.spec.ts`
+- `labs/playwright-atlas/exercises/05-validation.spec.ts`
+- `labs/playwright-atlas/exercises/06-locators.spec.ts`
+- `labs/playwright-atlas/exercises/07-async.spec.ts`
+- `labs/playwright-atlas/server-api.mjs`
+- `labs/playwright-atlas/app/workspace-client.js`
+- `labs/playwright-atlas/fixtures/atlas.ts`
+- `labs/playwright-atlas/fixtures/data.ts`
+- `labs/playwright-atlas/fixtures/cart-panel.ts`
+- `labs/playwright-atlas/checks/workspaces.spec.ts`
+- `labs/playwright-atlas/ci/README.md`
+- `labs/playwright-atlas/visual/empty-indicator.png`
+- `labs/playwright-atlas/visual/filled-indicator.png`
+- `labs/playwright-atlas/lessons/08-fixtures.md`
+- `labs/playwright-atlas/exercises/08-fixtures.spec.ts`
+- `labs/playwright-atlas/solutions/08-fixtures.spec.ts`
+- `labs/playwright-atlas/lessons/09-data-factories.md`
+- `labs/playwright-atlas/exercises/09-data-factories.spec.ts`
+- `labs/playwright-atlas/solutions/09-data-factories.spec.ts`
+- `labs/playwright-atlas/lessons/10-authentication-state.md`
+- `labs/playwright-atlas/exercises/10-authentication-state.spec.ts`
+- `labs/playwright-atlas/solutions/10-authentication-state.spec.ts`
+- `labs/playwright-atlas/lessons/11-api-setup.md`
+- `labs/playwright-atlas/exercises/11-api-setup.spec.ts`
+- `labs/playwright-atlas/solutions/11-api-setup.spec.ts`
+- `labs/playwright-atlas/lessons/12-cleanup.md`
+- `labs/playwright-atlas/exercises/12-cleanup.spec.ts`
+- `labs/playwright-atlas/solutions/12-cleanup.spec.ts`
+- `labs/playwright-atlas/lessons/13-http-errors.md`
+- `labs/playwright-atlas/exercises/13-http-errors.spec.ts`
+- `labs/playwright-atlas/solutions/13-http-errors.spec.ts`
+- `labs/playwright-atlas/lessons/14-slow-dependencies.md`
+- `labs/playwright-atlas/exercises/14-slow-dependencies.spec.ts`
+- `labs/playwright-atlas/solutions/14-slow-dependencies.spec.ts`
+- `labs/playwright-atlas/lessons/15-clock-control.md`
+- `labs/playwright-atlas/exercises/15-clock-control.spec.ts`
+- `labs/playwright-atlas/solutions/15-clock-control.spec.ts`
+- `labs/playwright-atlas/lessons/16-trace-triage.md`
+- `labs/playwright-atlas/exercises/16-trace-triage.spec.ts`
+- `labs/playwright-atlas/solutions/16-trace-triage.spec.ts`
+- `labs/playwright-atlas/lessons/17-parallel-isolation.md`
+- `labs/playwright-atlas/exercises/17-parallel-isolation.spec.ts`
+- `labs/playwright-atlas/solutions/17-parallel-isolation.spec.ts`
+- `labs/playwright-atlas/lessons/18-browser-projects.md`
+- `labs/playwright-atlas/exercises/18-browser-projects.spec.ts`
+- `labs/playwright-atlas/solutions/18-browser-projects.spec.ts`
+- `labs/playwright-atlas/lessons/19-ci-artifacts.md`
+- `labs/playwright-atlas/exercises/19-ci-artifacts.spec.ts`
+- `labs/playwright-atlas/solutions/19-ci-artifacts.spec.ts`
+- `labs/playwright-atlas/lessons/20-visual-checks.md`
+- `labs/playwright-atlas/exercises/20-visual-checks.spec.ts`
+- `labs/playwright-atlas/solutions/20-visual-checks.spec.ts`
+- `labs/playwright-atlas/lessons/21-accessibility.md`
+- `labs/playwright-atlas/exercises/21-accessibility.spec.ts`
+- `labs/playwright-atlas/solutions/21-accessibility.spec.ts`
+- `labs/playwright-atlas/lessons/22-risk-selection.md`
+- `labs/playwright-atlas/exercises/22-risk-selection.spec.ts`
+- `labs/playwright-atlas/solutions/22-risk-selection.spec.ts`
+- `labs/playwright-atlas/lessons/23-maintenance.md`
+- `labs/playwright-atlas/exercises/23-maintenance.spec.ts`
+- `labs/playwright-atlas/solutions/23-maintenance.spec.ts`
+- `labs/playwright-atlas/lessons/24-incident-capstone.md`
+- `labs/playwright-atlas/exercises/24-incident-capstone.spec.ts`
+- `labs/playwright-atlas/solutions/24-incident-capstone.spec.ts`
+- `.github/workflows/playwright-atlas.yml`
+
+The existing author-supplied learner implementations are retained; no browser progress is marked. Automated author validation includes all learner exercises, solutions, simulator checks, Firefox coverage for the browser-project lab, visual baselines and accessibility checks. Commit/push remain authorised with exact-path staging and preservation checks. The root workflow is expressly included for the CI lab; publication, deployment, releases/tags, manuscript and all edition-review records remain excluded.
+
+### Pre-edit workspace navigation amendment
+
+Before changing `labs/playwright-atlas/app/learn.css`, this existing path is explicitly added to the complete-track allow-list. The expanded 24-lesson navigation needs collapsible stage groups and a scrollable desktop rail. This changes presentation only, within the authorised complete companion. Final scope is 81 paths: 20 existing / 61 new. Companion population remains 104; the preservation snapshot now covers 422 other files.
+
+### Pre-edit completed-example instruction amendment
+
+Before editing them, the seven existing paths below are added to the allow-list so the original beginner/foundation guides describe completed examples instead of promising initial TODO failures. Test objectives and lab-template sections remain unchanged. Final scope: 88 paths (27 existing / 61 new); 415 other files remain under preservation. Companion population stays 104 plus the root CI workflow.
+
+- `labs/playwright-atlas/lessons/01-login.md`
+- `labs/playwright-atlas/lessons/02-search.md`
+- `labs/playwright-atlas/lessons/03-cart.md`
+- `labs/playwright-atlas/lessons/04-navigation.md`
+- `labs/playwright-atlas/lessons/05-validation.md`
+- `labs/playwright-atlas/lessons/06-locators.md`
+- `labs/playwright-atlas/lessons/07-async.md`

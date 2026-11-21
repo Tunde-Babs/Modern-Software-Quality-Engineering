@@ -27,9 +27,9 @@ Customers need to move between the collection, account and cart without losing t
 ## Tasks
 
 1. Run `npm test -- 04-navigation`, then open `exercises/04-navigation.spec.ts`.
-2. Replace the first TODO. Scope links to `page.getByRole('navigation', { name: 'Shop sections' })`. Click Account, assert the URL ends in `#account-title` and the Welcome back heading is in the viewport. Then click Cart and assert `#cart-title` and the Your cart heading in the viewport.
+2. Review the first completed test. Scope links to `page.getByRole('navigation', { name: 'Shop sections' })`. Click Account, assert the URL ends in `#account-title` and the Welcome back heading is in the viewport. Then click Cart and assert `#cart-title` and the Your cart heading in the viewport.
 3. Call `await page.goBack()` and assert the Account fragment. Call `await page.goForward()` and assert the Cart fragment. These are same-document history entries; a new response is not the completion signal.
-4. In the second starter, add a Trail Mug and search for `mug`. Assert one article remains. Navigate to Cart, then click the Atlas Commerce home link. Assert the root URL, an empty query, four articles and a cart total of €15.00.
+4. In the second test, add a Trail Mug and search for `mug`. Assert one article remains. Navigate to Cart, then click the Atlas Commerce home link. Assert the root URL, an empty query, four articles and a cart total of €15.00.
 5. Run both tests. Repeat manually with a backpack: which state survives Home, and which state survives a fresh tab?
 
 <details>
@@ -52,7 +52,7 @@ Repeat the history test at a 390-pixel viewport. Explain why clicking a link is 
 
 ## Validation
 
-Run `npm test -- 04-navigation`. Target: **2 passed** in the learner project, plus an explanation and a variation completed without the answer key. A TODO failure means your starter is unfinished.
+Run `npm test -- 04-navigation`. Target: **2 passed** in the learner project, plus an explanation and a variation completed without the answer key. The supplied implementation is for review; its passing result is not independent learner assessment.
 
 After attempting the work, compare [the worked solution](../solutions/04-navigation.spec.ts). `npm run test:solutions -- 04-navigation` checks that answer key; it does not complete or assess your attempt. Run `npm run check` to detect TypeScript errors.
 

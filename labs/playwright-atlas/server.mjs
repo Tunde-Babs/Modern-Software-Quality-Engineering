@@ -1,12 +1,14 @@
 import { createServer } from 'node:http';
 import { readFile } from 'node:fs/promises';
 import { learningManifest, learningSources } from './learning-content.mjs';
+import { handlePracticeApi } from './server-api.mjs';
 
 // Serve only the explicit simulator assets and read-only teaching-source list.
 const assets = new Map([
   ['/', ['./app/index.html', 'text/html; charset=utf-8']],
   ['/styles.css', ['./app/styles.css', 'text/css; charset=utf-8']],
   ['/app.js', ['./app/app.js', 'text/javascript; charset=utf-8']],
+  ['/workspace-client.js', ['./app/workspace-client.js', 'text/javascript; charset=utf-8']],
   ['/products.json', ['./app/products.json', 'application/json; charset=utf-8']],
   ['/learn', ['./app/learn.html', 'text/html; charset=utf-8']],
   ['/learn/', ['./app/learn.html', 'text/html; charset=utf-8']],
@@ -16,13 +18,13 @@ const assets = new Map([
   ...[...learningSources].map(([route, source]) => [route, [source, 'text/plain; charset=utf-8']]),
 ]);
 const server = createServer(async (request, response) => {
-  if (request.method !== 'GET' && request.method !== 'HEAD') {
-    response.writeHead(405, { Allow: 'GET, HEAD' }).end();
-    return;
-  }
   let pathname;
   try { pathname = new URL(request.url, 'http://127.0.0.1').pathname; }
   catch { response.writeHead(400).end('Invalid request'); return; }
+  if (await handlePracticeApi(request, response, pathname)) return;
+  if (request.method !== 'GET' && request.method !== 'HEAD') {
+    response.writeHead(405, { Allow: 'GET, HEAD' }).end(); return;
+  }
   const asset = assets.get(pathname);
   if (!asset && pathname !== '/learning/manifest.json') { response.writeHead(404).end('Not found'); return; }
   try {
