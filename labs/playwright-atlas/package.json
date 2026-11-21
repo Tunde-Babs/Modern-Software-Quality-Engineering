@@ -17,7 +17,8 @@
     "verify": "npm run check && npm run bridge && playwright test --project=learner --project=solutions --project=simulator",
     "report": "playwright show-report",
     "test:browsers": "playwright test 18-browser-projects --project=learner --project=solutions --project=firefox-learner --project=firefox-solutions",
-    "test:critical": "playwright test --project=learner --grep @critical"
+    "test:critical": "playwright test --project=learner --grep @critical",
+    "test:advanced": "playwright test '2[5-7]-' --project=learner --project=solutions"
   },
   "devDependencies": {
     "@axe-core/playwright": "4.14.0",

@@ -76,4 +76,4 @@ The fixture deletes its own workspace in finally and Playwright closes owned con
 
 ## Next Steps
 
-Continue to [Lab 14](14-slow-dependencies.md). Official reference checked 2026-11-21: [Playwright documentation](https://playwright.dev/docs/mock).
+For successful JSON stubs, route.fetch modification, aborts, POST inspection, route cleanup and HAR replay, study [Lab 25](25-api-mocking.md). Continue to [Lab 14](14-slow-dependencies.md). Official reference checked 2026-11-21: [Playwright documentation](https://playwright.dev/docs/mock).

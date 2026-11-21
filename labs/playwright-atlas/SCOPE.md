@@ -262,3 +262,50 @@ Before editing them, the seven existing paths below are added to the allow-list 
 - `labs/playwright-atlas/lessons/05-validation.md`
 - `labs/playwright-atlas/lessons/06-locators.md`
 - `labs/playwright-atlas/lessons/07-async.md`
+
+
+## Advanced framework skills — frozen before implementation, 2026-11-21
+
+The user requested an explicit learning-level audit and completion of API mocking, fixtures, Page Object Model (POM) and confirmed Component Object Model (COM) coverage. This bounded extension adds three focused labs (25–27), a capability/assessment map, real page/component composition and fixture patterns. It targets beginner-to-advanced practical automation engineering without claiming exhaustive Playwright API coverage or independent mastery. Existing Labs 1–24 remain delivered.
+
+Preflight: `feature/first-edition-review`, HEAD `0bd9389e1c1a74f08b7513ffe777faa8bc54f61c`, 0 ahead / 0 behind locally recorded upstream; same three worktrees; empty index and companion diff. The 25 unrelated tracked modifications and two untracked polling test files remain excluded. No agents are delegated. Preservation snapshot: `/tmp/msqe-atlas-advanced-preservation.json`. Source population: 104 companion files before / expected 122 after; existing root CI workflow unchanged.
+
+Exact allow-list, relative to labs/playwright-atlas, before edits:
+
+- `SCOPE.md`
+- `VALIDATION.md`
+- `README.md`
+- `ROADMAP.md`
+- `learning-content.mjs`
+- `app/learn.html`
+- `app/learn.js`
+- `checks/learning.spec.ts`
+- `package.json`
+- `ci/README.md`
+- `lessons/08-fixtures.md`
+- `lessons/13-http-errors.md`
+- `lessons/23-maintenance.md`
+- `LEARNING_LEVELS.md`
+- `ASSESSMENT.md`
+- `fixtures/advanced.ts`
+- `fixtures/model-fixtures.ts`
+- `fixtures/catalog.har`
+- `models/shop.page.ts`
+- `models/cart.component.ts`
+- `models/account.component.ts`
+- `models/product-card.component.ts`
+- `lessons/25-api-mocking.md`
+- `exercises/25-api-mocking.spec.ts`
+- `solutions/25-api-mocking.spec.ts`
+- `lessons/26-advanced-fixtures.md`
+- `exercises/26-advanced-fixtures.spec.ts`
+- `solutions/26-advanced-fixtures.spec.ts`
+- `lessons/27-page-component-models.md`
+- `exercises/27-page-component-models.spec.ts`
+- `solutions/27-page-component-models.spec.ts`
+
+Scope: 31 paths (13 existing / 18 new). Add success/error/modified/aborted/HAR/context-scoped API examples, worker/test/option/automatic/overridden fixtures, and ShopPage composed from account/product/cart component objects. Add runnable examples and independent assessment prompts, not automatic grading or progress marks. Shared source views are explicitly allow-listed, read-only and inert. No simulator API/production behaviour, dependency versions, original review records or release state changes. Prior companion commit/push authorisation continues with exact-path staging and preservation checks. Full local and CI verification follow; independent learning/editorial review remains separate.
+
+### Pre-edit fixture failure-path check amendment
+
+Before creating it, `checks/fixture-lifecycle.spec.ts` is explicitly added to the advanced-framework allow-list. It runs a deliberately failing child test against the owned local server and checks that fixture teardown deletes the child-owned workspace and attaches failure evidence. The outer regression expects and reports that controlled failure; it does not waive an unexpected failure. Generated child files stay under ignored artifacts. Final scope: 32 paths (13 existing / 19 new); expected companion population 123; the 490-file preservation scope is unchanged.

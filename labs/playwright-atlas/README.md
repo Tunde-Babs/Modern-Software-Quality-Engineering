@@ -1,6 +1,6 @@
 # Playwright from zero to advanced: Atlas Commerce
 
-**Status: complete 24-lab authored companion, Draft for review.** All 24 lesson briefs, learner-file implementations and separate worked solutions are supplied. Automated author checks establish the stated execution results; independent learner mastery, editorial/educational acceptance and live publication are separate. The approved handbook curriculum and edition-review work remain unchanged.
+**Status: complete 27-lab authored companion, Draft for review.** All 27 lesson briefs, learner-file implementations and separate worked solutions are supplied. Automated author checks establish the stated execution results; independent learner mastery, editorial/educational acceptance and live publication are separate. The approved handbook curriculum and edition-review work remain unchanged.
 
 ## Start the review
 
@@ -15,9 +15,21 @@ npm run test:browsers
 npm start
 ```
 
-Open <http://127.0.0.1:4178/learn>. The complete default suite contains **124 checks**: 48 learner checks, 48 solution checks and 28 simulator/workspace regressions. The separate browser command runs eight Lab 18 checks across Chromium and Firefox. See [the recorded author results](VALIDATION.md) for actual execution evidence; these commands are not pre-credited learner achievement.
+Open <http://127.0.0.1:4178/learn>. The complete default suite contains **162 checks**: 66 learner checks, 66 solution checks and 30 simulator/workspace regressions. The separate browser command runs eight Lab 18 checks across Chromium and Firefox. See [the recorded author results](VALIDATION.md) for actual execution evidence; these commands are not pre-credited learner achievement.
 
 If a server was started before this update, stop your own old `npm start` process with Ctrl+C and start it again so the new API and lesson routes load. A page reload alone cannot replace a running Node server. Manual practice defaults to port 4178, tests to 4180. Keep the shop open while tests run in another terminal. Tests refuse to reuse an unknown server. `ATLAS_PORT` can explicitly choose a different unused port for either process.
+
+## Target learning level
+
+The target is **beginner → advanced practical Playwright automation engineering**. Read the [capability map](LEARNING_LEVELS.md) for explicit evidence by skill and [independent assessment](ASSESSMENT.md) for what you should implement without the answer key. The original 24 labs cover the broad progression; Labs 25–27 deepen API response control, fixture architecture and explicit POM/COM design. Advanced here describes the stated engineering scope, not exhaustive API coverage or a credential.
+
+| Requested skill | Implementation and guide |
+|---|---|
+| API mocking | [Lab 25](lessons/25-api-mocking.md): successful JSON, route.fetch modification, aborts, scoped routes, cleanup, POST inspection and synthetic HAR replay |
+| Fixtures | [Lab 26](lessons/26-advanced-fixtures.md): test/worker scope, typed options, dependencies, automatic evidence, lazy setup and inherited overrides |
+| POM and COM | [Lab 27](lessons/27-page-component-models.md): ShopPage composes account/product/cart components, injected through typed fixtures |
+
+COM means **Component Object Model** here. It is a scoped design pattern, distinct from Playwright's React/Vue component-testing feature. Fixtures own lifecycle; pages/components own interactions; tests keep business expectations visible.
 
 ## How to review a lab
 
@@ -38,8 +50,9 @@ The workspace renders the same canonical Markdown files linked below. It offers 
 | Failure investigation | [13 HTTP errors](lessons/13-http-errors.md), [14 Slow dependencies](lessons/14-slow-dependencies.md), [15 Clock](lessons/15-clock-control.md), [16 Traces](lessons/16-trace-triage.md) | Controlled faults, overall deadlines, timer ownership and diagnostic bundles |
 | Advanced operation | [17 Parallelism](lessons/17-parallel-isolation.md), [18 Browser projects](lessons/18-browser-projects.md), [19 CI](lessons/19-ci-artifacts.md), [20 Visuals](lessons/20-visual-checks.md), [21 Accessibility](lessons/21-accessibility.md) | Isolation, real engine coverage, retained evidence and specialist limits |
 | Capstone | [22 Risk selection](lessons/22-risk-selection.md), [23 Maintenance](lessons/23-maintenance.md), [24 Lost-response incident](lessons/24-incident-capstone.md) | Proportionate selection, small abstractions and idempotent retry investigation |
+| Advanced framework design | [25 API mocking](lessons/25-api-mocking.md), [26 Advanced fixtures](lessons/26-advanced-fixtures.md), [27 POM/COM](lessons/27-page-component-models.md) | Network contracts, lifecycle architecture and reusable page/component composition |
 
-Each lab contains two completed learner-file tests and two separate solution-file tests. The same fixed scenario can be replayed while you study the code; successful execution of supplied implementations does not demonstrate independent ability. All lab guides use the repository's lab-template sections and include a new variation and reflection questions. The [roadmap](ROADMAP.md) explains the progression and review boundary.
+Labs 1–24 each contain two completed learner-file tests and two solution-file tests. Labs 25, 26 and 27 contain eight, four and six checks respectively in each project: 66 learner and 66 solution checks overall. The same fixed scenario can be replayed while you study the code; successful execution of supplied implementations does not demonstrate independent ability. All lab guides use the repository's lab-template sections and include a new variation and reflection questions. The [roadmap](ROADMAP.md) explains the progression and review boundary.
 
 ## Run, investigate and select
 
@@ -48,13 +61,14 @@ Run from this companion folder:
 ```sh
 npm run bridge
 npm run check
-npm test                         # All 48 learner checks
+npm test                         # All 66 learner checks
 npm test -- 08-fixtures --headed
 npm test -- 24-incident-capstone --debug
 npm run test:solutions            # Separate answer-key checks
 npm run test:simulator            # Shop, API and workspace regressions
 npm run test:browsers             # Lab 18 in Chromium and Firefox
 npm run test:critical             # Two explicitly tagged learner checks
+npm run test:advanced             # 36 API-mocking/fixture/POM/COM checks
 npm run test:ui
 npm run report
 ```
@@ -76,7 +90,7 @@ The ordinary `/` page keeps the original browser-only mode:
 - Practice controls provide browser-side sign-in failure, a deliberately wrong €5 cart surcharge, catalog failure and 800/1600 ms catalog waiting. Controls return to defaults on full reload.
 - Reset clears account/cart/query/fault/delay and cancels superseded catalog work. Reload products exposes loading, readiness and failure through named states.
 
-## Advanced practice: Labs 8–24
+## Advanced practice: Labs 8–27
 
 From an advanced lab in `/learn`, choose **Create advanced practice**, then **Open your practice workspace**. Sign in with the demo credentials to enable practice checkout. This is a local, in-memory backend simulation; there is no real payment processing, identity provider, database, delivery or production data.
 

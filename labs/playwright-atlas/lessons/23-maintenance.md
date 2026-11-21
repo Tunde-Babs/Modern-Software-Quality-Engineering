@@ -76,4 +76,4 @@ The fixture deletes its own workspace in finally and Playwright closes owned con
 
 ## Next Steps
 
-Continue to [Lab 24](24-incident-capstone.md). Official reference checked 2026-11-21: [Playwright documentation](https://playwright.dev/docs/pom).
+This small helper is an introduction to abstraction. For explicit POM and root-scoped COM composition through fixtures, study [Lab 27](27-page-component-models.md). Continue to [Lab 24](24-incident-capstone.md). Official reference checked 2026-11-21: [Playwright documentation](https://playwright.dev/docs/pom).

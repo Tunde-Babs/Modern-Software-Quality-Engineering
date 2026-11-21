@@ -76,4 +76,4 @@ The fixture deletes its own workspace in finally and Playwright closes owned con
 
 ## Next Steps
 
-Continue to [Lab 9](09-data-factories.md). Official reference checked 2026-11-21: [Playwright documentation](https://playwright.dev/docs/test-fixtures).
+For worker scope, options, automatic evidence and fixture overrides, continue with [Lab 26](26-advanced-fixtures.md) after studying this test-scoped foundation. Continue to [Lab 9](09-data-factories.md). Official reference checked 2026-11-21: [Playwright documentation](https://playwright.dev/docs/test-fixtures).

@@ -56,6 +56,8 @@ function resolveLink(target) {
   const resolved = new URL(target, `https://lesson.invalid/${activeDocument.source}`).pathname.slice(1);
   const document = manifest.documents.find(entry => entry.source === resolved);
   if (document) return `#${document.id}`;
+  const shared = manifest.sources?.find(entry => entry.source === resolved);
+  if (shared) return shared.route;
   if (activeLesson && resolved === `solutions/${activeLesson.id}.spec.ts`) return `#${activeLesson.id}/solution`;
   if (activeLesson && resolved === activeLesson.exercise) return activeLesson.starter;
   if (resolved === 'bridge/essentials.ts') return '/learning/bridge.ts';
@@ -66,6 +68,7 @@ function renderNavigation() {
     [1, 3, 'Beginner · Labs 1–3'], [4, 7, 'Browser foundations · Labs 4–7'],
     [8, 12, 'Reliable automation · Labs 8–12'], [13, 16, 'Investigation · Labs 13–16'],
     [17, 21, 'Advanced operation · Labs 17–21'], [22, 24, 'Capstone · Labs 22–24'],
+    [25, 27, 'Framework design · Labs 25–27'],
   ];
   const lists = stages.map(([start, end, label]) => {
     const item = document.createElement('li'), details = document.createElement('details'), summary = document.createElement('summary'), list = document.createElement('ol');
