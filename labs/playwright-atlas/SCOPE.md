@@ -78,3 +78,37 @@ Exact slice-2 allow-list, relative to `labs/playwright-atlas/`:
 - `solutions/07-async.spec.ts`
 
 Eight existing companion paths may change and twelve may be added: expected post-slice source population 38. Dependency versions and execution configuration stay as recorded in the first slice. Commit and push are authorised after author validation and explicit-path staging checks. Publication, independent acceptance, releases and edition-review corrections remain outside this task. Labs 8–24 remain planned for later slices.
+
+## Guided learning workspace — frozen before implementation, 2026-11-21
+
+The user has tried the shop successfully and authorised the next work to facilitate implementing the labs. This bounded package adds a browser learning workspace for the seven authored labs, using their existing Markdown as the instruction source. It provides hints, read-only starter/solution views, terminal commands and learner-reported progress. It does not run shell commands from HTTP requests, grade learners, modify exercise files or deliver Labs 8–24. Tests get a separate local port so manual practice can remain open.
+
+Preflight: `feature/first-edition-review`, HEAD `d1bbe28b58705ef731ffe1efbcb79c0201d4c0fd`, 0 ahead / 0 behind the locally recorded upstream; no fetch yet. The same three worktrees remain. Index and companion diffs are empty. The 25 unrelated tracked modifications and untracked polling tests are preserved. SHA-256 preservation snapshot: `/tmp/msqe-atlas-workspace-preservation.json`. No delegated agent work. Companion pre-population: 38 files; expected post-population: 44.
+
+Exact allow-list, relative to `labs/playwright-atlas/` (17 existing and six new paths):
+
+- `SCOPE.md`
+- `VALIDATION.md`
+- `README.md`
+- `ROADMAP.md`
+- `playwright.config.ts`
+- `server.mjs`
+- `app/index.html`
+- `app/styles.css`
+- `checks/simulator.spec.ts`
+- `solutions/04-navigation.spec.ts`
+- `lessons/01-login.md`
+- `lessons/02-search.md`
+- `lessons/03-cart.md`
+- `lessons/04-navigation.md`
+- `lessons/05-validation.md`
+- `lessons/06-locators.md`
+- `lessons/07-async.md`
+- `app/learn.html` (new)
+- `app/learn.js` (new)
+- `app/learn.css` (new)
+- `app/lesson-renderer.js` (new)
+- `learning-content.mjs` (new)
+- `checks/learning.spec.ts` (new)
+
+Existing lessons change only their local-server instructions; the navigation solution and context-isolation check replace the hardcoded test origin with the configured base URL. All learner exercise source remains frozen. The seven lessons, bridge, setup and roadmap may be served read-only through explicit mappings; governance, dependencies and arbitrary repository paths are excluded. Dependency versions stay fixed. Prior companion commit/push authorisation continues after validation and explicit-path scope checks. No live release, publication acceptance or edition-review correction is authorised by this package.

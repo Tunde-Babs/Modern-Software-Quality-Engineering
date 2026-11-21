@@ -18,7 +18,7 @@ Complete the [setup](../README.md) and [TypeScript bridge](../bridge/README.md).
 
 ## Environment Setup
 
-Run commands from `labs/playwright-atlas`. Stop a manually running simulator before testing. Tests start the server automatically and use fresh browser contexts. Use Normal shop for manual exploration.
+Run commands from `labs/playwright-atlas`. Keep the manual shop open on port 4178 if needed. Tests own a separate server on port 4180 and use fresh browser contexts. Use Normal shop for manual exploration.
 
 ## Problem Statement
 

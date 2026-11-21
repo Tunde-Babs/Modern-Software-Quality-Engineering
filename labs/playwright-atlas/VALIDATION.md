@@ -143,3 +143,81 @@ The following **37 Git blob IDs**, excluding this validation record, identify th
 | `tsconfig.json` | `5b8385b00838317dfb72236e7255a9926f643d27` |
 
 The authorised checkpoint uses explicit path staging and a final scope/preservation check. Independent publication review remains outstanding; author execution does not advance it. No root README, sprint, manuscript, findings register, event log, quantitative tool or release artifact is included in either companion commit.
+
+
+## Guided workspace author validation — 2026-11-21
+
+**Current author result: 35 passing solution/simulator/workspace checks; Draft companion.** All preceding evidence and source tables describe their historical authored packages. This section records the current extension, not independent review or a publication gate.
+
+Pre-change baseline: `d1bbe28b58705ef731ffe1efbcb79c0201d4c0fd`, branch `feature/first-edition-review`, **38 companion source files**. Exact pre-change blob IDs are available with `git ls-tree -r d1bbe28b58705ef731ffe1efbcb79c0201d4c0fd -- labs/playwright-atlas`. The upstream branch was fetched and remained at the same commit, 0 ahead / 0 behind. Actual post-change population: **44 source files**, with **17 existing files changed / 6 added**, exactly the frozen 23-path allow-list in SCOPE.md. Dependencies remain pinned and unchanged; no learner exercise source changed.
+
+| Check | Observed result |
+|---|---|
+| Final `npm run verify` on bundled Chromium | Exit 0; TypeScript check and executable bridge passed; **35 passed** in 10.3 seconds (14 solutions, 11 shop checks, 10 workspace checks) |
+| `npm test -- 01-login --reporter=line --output=artifacts/workspace-learner-check` | Exit 1 as expected; exactly **2 TODO failures**, with screenshots, contexts and traces; no port conflict while the manual shop and preview were running |
+| JavaScript syntax | `node --check` passed for the server, content manifest, workspace controller and Markdown renderer |
+| Whitespace | `git diff --check` passed |
+| Canonical lesson structure | **7/7** lessons retain the lab template's section order; their only changes concern separate local ports and the resulting navigation-test base URL |
+| Relative Markdown links | **54** resolve to files |
+| Preservation | **419/419** files outside the allow-list match the preflight SHA-256 snapshot, including all seven learner exercise files and all unrelated edition-review work |
+| Layout and navigation | Desktop 1440-pixel and mobile 390-pixel workspace views inspected; no mobile horizontal overflow; keyboard skip link and named lesson navigation checked |
+
+Workspace tests exercise every lesson and support guide, progressive hints, starter-source fidelity, answer-key reveal and deep-link reload, lesson-specific progress/notes through navigation and reload, corrupt/blocked browser storage, safe rendering of unexpected HTML/links, guide-load failure and recovery, and stale-request cancellation during lesson switching. Read-only route checks reject unlisted files and POST mutations. All existing shop/solution checks continue to pass, including fragment history and session state on the new configurable test origin.
+
+Manual practice defaults to `127.0.0.1:4178`, tests own `127.0.0.1:4180`, and both support an explicit `ATLAS_PORT` override. The existing user-owned server on 4178 was left running. An updated preview was started on **4179** at `/learn`, so the user can open the workspace without stopping that server. Local progress belongs to each browser origin, including its port. When using the normal 4178 command after this update, restart the old Node process once to load the new server routes. No server is silently reused or terminated.
+
+Ignored evidence: `playwright-report/index.html`, `artifacts/learning-desktop.png`, `artifacts/learning-mobile.png`, updated shop screenshots and `artifacts/workspace-learner-check/`. A later test run can replace the report. The workspace never writes test files or executes shell commands. It presents the canonical Markdown through a limited DOM-based renderer; notes/stages are explicitly self-reported local records, not test outcomes, grading or approval. Labs 8–24 remain planned. Automated author checks do not replace independent technical/editorial/learning review or live-release acceptance.
+
+### Guided workspace exact source identity
+
+The following **43 Git blob IDs**, excluding this validation record, identify the current 44-file package without self-reference. Manifest format: UTF-8 `blob-id`, two spaces, repository-relative path, LF; lexicographically sorted paths. Manifest SHA-256:
+
+`4f06bc1a8bc135f78d25e2b9ce651b669c1cb839bf084f861040bf5fc66dff63`
+
+| Path (relative to this companion) | Git blob ID |
+|---|---|
+| `.gitignore` | `50e16b7fc22dc01bd1b3c191fc8d008cc457e24a` |
+| `README.md` | `19c653658cd5fc175a9cbf4b922288f703afa2cf` |
+| `ROADMAP.md` | `34de89c7ebfc95883e8ac7c0deb3f23aa0ebe5ba` |
+| `SCOPE.md` | `92dddd1377bd1846b9f37668a504bd78f202bf5e` |
+| `app/app.js` | `846fc290c550689873d00501c4585911cccdbf14` |
+| `app/index.html` | `c84636626a8793cf96cdcbe8c52c728441a6abe2` |
+| `app/learn.css` | `3cf56786bf04ca9f21e2c097d96198bb043bd330` |
+| `app/learn.html` | `50567d66d2003be0673e08625ce3a3391c3de28e` |
+| `app/learn.js` | `8240b5562f19e08b323e907a5a9b64cc3fb56345` |
+| `app/lesson-renderer.js` | `74b47fb6aae94e8f948f021decdd6ff78fbc01d2` |
+| `app/products.json` | `0aad26ee6e5870ce39e74b721225ff98d74b2d5a` |
+| `app/styles.css` | `d2cb54e67fb2f385260c0bdeeb966fa33718a120` |
+| `bridge/README.md` | `ba4e1dc0db4add43e2dbc5b90c7e50853bf22fc2` |
+| `bridge/essentials.ts` | `d858d012268300e58ac5a9d47b5a306e7ff63bf2` |
+| `checks/learning.spec.ts` | `a6905d63227767da80750cadfc5bdc8595410448` |
+| `checks/simulator.spec.ts` | `0c9ad2bce4eeeb2e029d52f2a10db7b112ae2f7e` |
+| `exercises/01-login.spec.ts` | `cd5598c1c5b4236cbbe4950b7b8cc316430f5b1d` |
+| `exercises/02-search.spec.ts` | `ba481a9e650dc0cc8a109cd742803f85b3df53de` |
+| `exercises/03-cart.spec.ts` | `b64f01a398fe1320be8c968635196a012db3d334` |
+| `exercises/04-navigation.spec.ts` | `7c4c0e7801e69b4c9c316a38910e72ef53568597` |
+| `exercises/05-validation.spec.ts` | `bc7988099fe241d966f1bdb0aa73b540f80bb78b` |
+| `exercises/06-locators.spec.ts` | `321e4de55e92c4663b41296c9ec0b44b7230da8c` |
+| `exercises/07-async.spec.ts` | `d0bffe76586e264923ce3372d35845fa73d4914f` |
+| `learning-content.mjs` | `dc290120519e1972d6718b865c95565c4e532508` |
+| `lessons/01-login.md` | `f5acf4fbab0a07cf168e6c0d052d569b408d6b9c` |
+| `lessons/02-search.md` | `02c4d75e5f42638a6c584dcc23ed74894596cdf7` |
+| `lessons/03-cart.md` | `38447f342ae8da2b43ab077d6480aa4d1e1b3f0e` |
+| `lessons/04-navigation.md` | `86f712f37409b1f747a291fb5f60a4eeca26c20c` |
+| `lessons/05-validation.md` | `93d83ec9afcdc488ef0c9ab7c940dc7084174d00` |
+| `lessons/06-locators.md` | `85877b3d88ad1e1c140f2c8d4c290dec787bb6d6` |
+| `lessons/07-async.md` | `45279a2f57f1833cf0ef6732a7d585e8891d5b27` |
+| `package-lock.json` | `2721ea1ad379a90a3eabb1496fa951a1eba2ebf4` |
+| `package.json` | `11f0cae96f7dd30024efc86244160373b08c55db` |
+| `playwright.config.ts` | `de390c709d3f9799b354443d387ef1b48b7732f6` |
+| `server.mjs` | `4d722122d09944bc6bb4ebf0f3e1b443c79e7ffe` |
+| `solutions/01-login.spec.ts` | `56b7a849b0a1b26ad977e5c727b435abe1766de9` |
+| `solutions/02-search.spec.ts` | `6ff9a8e765d2003b9a6ae148d182350019046636` |
+| `solutions/03-cart.spec.ts` | `72c25bbd69960d969d03160f4f24e4c78318cca5` |
+| `solutions/04-navigation.spec.ts` | `63dcfa4893da0f1c807f5ff0c837d296fa2ec8a0` |
+| `solutions/05-validation.spec.ts` | `ec76f5569b0ba59f0b354f7105d31a1082e8e823` |
+| `solutions/06-locators.spec.ts` | `42a232fa6241e0230a3fa3a07c5ce66c3ef592cf` |
+| `solutions/07-async.spec.ts` | `6bf3da9a505874c567e91e33589fee009bd60e7c` |
+| `tsconfig.json` | `5b8385b00838317dfb72236e7255a9926f643d27` |
+
+The prior user-authorised commit/push scope continues for this companion package, subject to exact explicit-path staging and final preservation checks. No root governance, manuscript, accepted review event, quantitative rule/tool, release artifact or website publication surface is included. This package establishes neither a live release nor independent acceptance.

@@ -18,7 +18,7 @@ Complete [the setup](../README.md), [TypeScript bridge](../bridge/README.md) and
 
 ## Environment Setup
 
-Run commands from `labs/playwright-atlas`. Stop any manually started simulator before testing; Playwright starts its own server and creates a fresh browser context per test. Normal shop and no added delay are the defaults. Use only the supplied fictional data.
+Run commands from `labs/playwright-atlas`. The manual shop can stay open on port 4178; Playwright starts its own server on port 4180 and creates a fresh browser context per test. Normal shop and no added delay are the defaults. Use only the supplied fictional data.
 
 ## Problem Statement
 

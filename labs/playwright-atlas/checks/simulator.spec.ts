@@ -45,13 +45,13 @@ test('cart persists through reload and sign-out clears the account', async ({ pa
   await expect(page.getByRole('button', { name: 'Sign in', exact: true })).toBeVisible();
 });
 
-test('separate browser contexts have independent carts', async ({ page, browser }) => {
+test('separate browser contexts have independent carts', async ({ page, browser, baseURL }) => {
   await page.goto('/');
   await page.getByRole('article', { name: 'Trail Mug', exact: true }).getByRole('button', { name: 'Add to cart' }).click();
   const other = await browser.newContext();
   try {
     const otherPage = await other.newPage();
-    await otherPage.goto('http://127.0.0.1:4178');
+    await otherPage.goto(baseURL!);
     await expect(otherPage.getByRole('article')).toHaveCount(4);
     await expect(otherPage.getByLabel('Cart total', { exact: true })).toHaveText('€0.00');
     await expect(page.getByLabel('Cart total', { exact: true })).toHaveText('€15.00');

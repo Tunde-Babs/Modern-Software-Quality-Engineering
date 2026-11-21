@@ -4,6 +4,8 @@
 
 Finished the first three labs? Continue with [Lab 4: navigation](lessons/04-navigation.md), then [Lab 5: validation](lessons/05-validation.md), [Lab 6: locator ambiguity](lessons/06-locators.md) and [Lab 7: asynchronous UI](lessons/07-async.md).
 
+Run `npm start` and open `/learn` for the guided workspace: the same lesson briefs, hints, exercise source, terminal commands and browser-local practice notes. This facilitates implementing Labs 1–7; it does not add the planned advanced lessons or grade your work.
+
 | Stage | Labs | Practice | Observable capability |
 |---|---|---|---|
 | Beginner — authored | 1 login; 2 search; 3 cart | Labels, roles, actions, assertions, outcome selection | Write and explain six small checks |

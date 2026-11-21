@@ -20,14 +20,27 @@ Start here even if you have never written a browser test. You will use one ficti
 
    Expected: a short price calculation, a clean type check, then **14 passed**. The solutions run checks against the simulator; this is an installation check, not credit for completing the labs. Playwright starts and stops the local server for test commands. Installation needs internet access; test runs use local assets.
 3. Read [the beginner bridge](bridge/README.md). A text editor such as VS Code is useful. Open this companion folder in your editor; all later commands run from here.
-4. Explore manually with `npm start`, then open <http://127.0.0.1:4178>. Stop the server with Ctrl+C before running tests; the configuration deliberately refuses to reuse an unknown server on that port.
-5. Read [Lab 1: login](lessons/01-login.md). Edit `exercises/01-login.spec.ts`, then run:
+4. Explore manually with `npm start`, then open <http://127.0.0.1:4178>. Select **Guided labs** or open <http://127.0.0.1:4178/learn>. Keep this server running while you work; automated tests use their own server on port 4180.
+5. Follow Lab 1 in the workspace, or read [its Markdown guide](lessons/01-login.md). Edit `exercises/01-login.spec.ts` in your code editor. Open a second terminal in this companion folder, then run:
 
    ```sh
    npm test -- 01-login
    ```
 
    The two starters initially fail with `TODO`. Replace each placeholder error with your test. These failures are intentional unfinished work, not installation failures.
+
+## Guided learning workspace
+
+The browser workspace at `/learn` puts the seven existing lesson guides, progressive hints, exercise path and copyable test command beside each other. Start with the TypeScript bridge if the code is unfamiliar, then choose Lab 1. Use **Open practice shop** to keep the fictional shop in another tab.
+
+1. Read the brief and predict the result.
+2. Open the displayed `exercises/*.spec.ts` file in your editor and replace its TODOs.
+3. Copy the run command into Terminal. Use the debug command or `npm run report` to investigate a failure.
+4. Write an evidence note and try a variation before marking the lab practised. Compare the worked solution after your attempt.
+
+The workspace reads instructions and source directly from the companion files. Its source views are read-only; it does not execute commands, edit exercise files or grade tests. Progress and notes are self-reported and saved only in this browser's local storage. Reset practice affects the shop, not those learning notes. Solutions stay hidden until requested. If browser storage is unavailable, copy your notes before leaving.
+
+After updating from an older companion version, restart your own `npm start` process once so the new `/learn` routes become available. A page reload alone does not update a running Node server. Manual practice defaults to port 4178, tests to 4180; `ATLAS_PORT` can explicitly override either. Tests refuse to reuse an unknown server, so do not set the test port to your manual server's port. Local storage belongs to the origin, including its port.
 
 ## The learning loop
 
@@ -44,7 +57,7 @@ For each lab: predict the outcome, attempt the test, read the failure, use hints
 | 6 | [Locator ambiguity](lessons/06-locators.md) | `npm test -- 06-locators` | Select an intended product through named scope |
 | 7 | [Asynchronous UI](lessons/07-async.md) | `npm test -- 07-async` | Observe loading, completion, failure and recovery |
 
-`npm test` runs only your fourteen exercises (two per lab). It never runs the answer key. `npm run test:solutions` runs the answer key only. `npm run verify` type-checks, runs the bridge, and runs the fourteen solutions plus eleven simulator checks (**25 checks**). A passing answer key does not assess your independent ability. [Author validation and source identities](VALIDATION.md) record what was executed.
+`npm test` runs only your fourteen exercises (two per lab). It never runs the answer key. `npm run test:solutions` runs the answer key only. `npm run verify` type-checks, runs the bridge, and runs the fourteen solutions plus eleven shop and ten learning-workspace checks (**35 checks**). A passing answer key does not assess your independent ability. [Author validation and source identities](VALIDATION.md) record what was executed.
 
 ## Useful commands
 
@@ -89,6 +102,8 @@ For your own exercise, use `ATLAS_BROWSER_CHANNEL=chrome npm test -- 01-login`. 
 | Browser executable missing | Run `npx playwright install chromium` |
 | Missing Linux browser system libraries | Follow Playwright's official installation instructions for your distribution |
 | Port 4178 in use | Stop your manually started simulator with Ctrl+C; do not stop an unrelated process |
+| `/learn` returns Not found after an update | Restart your own `npm start` process, then reload the page |
+| Test port 4180 in use | Stop a previous owned test run or choose another port with `ATLAS_PORT`; leave unrelated processes alone |
 | `TODO` failure | Implement that exercise; installation is checked by the separate solutions command |
 | Locator matches multiple elements | Scope it to a labelled article, or use an exact accessible name |
 | Normal cart maths seems wrong | Open Practice controls and choose Normal shop, or reset |
